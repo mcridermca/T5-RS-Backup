@@ -4,6 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_App_Calc_Print_And_Apply
+'$ GenerateDate: 07/12/2025 19:19:17
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -206,6 +207,87 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Acq_Max_Local_Lookup_Time_Secs").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conv_Total_App_Belt_Length_Req_FT]() As Double
+      Get
+      Return Properties("Conv_Total_App_Belt_Length_Req_FT").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Conv_Total_App_Belt_Length_Req_FT").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conv_Total_App_Belt_Length_Req_FT_User]() As Double
+      Get
+      Return Properties("Conv_Total_App_Belt_Length_Req_FT_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Conv_Total_App_Belt_Length_Req_FT_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conv_Total_App_Belt_Length_Req_FT_User_UOM]() As String
+      Get
+      Return Properties("Conv_Total_App_Belt_Length_Req_FT_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Conv_Total_App_Belt_Length_Req_FT_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conv_Total_App_Belt_Length_Req_IN]() As Double
+      Get
+      Return Properties("Conv_Total_App_Belt_Length_Req_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Conv_Total_App_Belt_Length_Req_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conv_Total_App_Belt_Length_Req_IN_User]() As Double
+      Get
+      Return Properties("Conv_Total_App_Belt_Length_Req_IN_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Conv_Total_App_Belt_Length_Req_IN_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conv_Total_App_Belt_Length_Req_IN_User_UOM]() As String
+      Get
+      Return Properties("Conv_Total_App_Belt_Length_Req_IN_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Conv_Total_App_Belt_Length_Req_IN_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conv_Total_Solution_Length_FT]() As Double
+      Get
+      Return Properties("Conv_Total_Solution_Length_FT").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Conv_Total_Solution_Length_FT").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conv_Total_Solution_Length_FT_User]() As Double
+      Get
+      Return Properties("Conv_Total_Solution_Length_FT_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Conv_Total_Solution_Length_FT_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conv_Total_Solution_Length_FT_User_UOM]() As String
+      Get
+      Return Properties("Conv_Total_Solution_Length_FT_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Conv_Total_Solution_Length_FT_User_UOM").CalculatedValue = Value
       End Set
       End Property
     
@@ -1303,7 +1385,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_App_Calc_Print_And_Apply", <a><![CDATA[CAE_App_Calc_Print_And_Apply]]></a>.Value, 416, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/12/2025 14:32:46")
+    InitPart("CAE_App_Calc_Print_And_Apply", <a><![CDATA[CAE_App_Calc_Print_And_Apply]]></a>.Value, 416, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/12/2025 15:06:37")
     AddProperty("9808", "User_UOM_System", <a><![CDATA[User_UOM_System]]></a>.Value, "", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 6:08:33 PM")
     AddProperty("9951", "Acq_Label_Data_Acquisition_Method", <a><![CDATA[Acq_Label_Data_Acquisition_Method]]></a>.Value, "AppCalc^'Belted PandA'!74", "String","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:15:41 PM")
     AddProperty("9956", "Acq_Label_Data_Acquisition_Travel_IN", <a><![CDATA[Acq_Label_Data_Acquisition_Travel_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:47:28 PM")
@@ -1311,6 +1393,15 @@ Option Infer On
     AddProperty("9955", "Acq_Label_Data_Acquisition_Travel_User_UOM", <a><![CDATA[Acq_Label_Data_Acquisition_Travel_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:20:53 PM")
     AddProperty("9952", "Acq_Max_Host_Resp_Time_Secs", <a><![CDATA[Acq_Max_Host_Resp_Time_Secs]]></a>.Value, "AppCalc^'Belted PandA'!75", "Double","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:30:55 PM")
     AddProperty("9953", "Acq_Max_Local_Lookup_Time_Secs", <a><![CDATA[Acq_Max_Local_Lookup_Time_Secs]]></a>.Value, "AppCalc^'Belted PandA'!76", "Double","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:30:43 PM")
+    AddProperty("10006", "Conv_Total_App_Belt_Length_Req_FT", <a><![CDATA[Conv_Total_App_Belt_Length_Req_FT]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:06:14 PM")
+    AddProperty("10003", "Conv_Total_App_Belt_Length_Req_FT_User", <a><![CDATA[Conv_Total_App_Belt_Length_Req_FT_User]]></a>.Value, "AppCalc^'Belted PandA'!J131", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:04:47 PM")
+    AddProperty("10000", "Conv_Total_App_Belt_Length_Req_FT_User_UOM", <a><![CDATA[Conv_Total_App_Belt_Length_Req_FT_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:03:33 PM")
+    AddProperty("10005", "Conv_Total_App_Belt_Length_Req_IN", <a><![CDATA[Conv_Total_App_Belt_Length_Req_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:05:42 PM")
+    AddProperty("10002", "Conv_Total_App_Belt_Length_Req_IN_User", <a><![CDATA[Conv_Total_App_Belt_Length_Req_IN_User]]></a>.Value, "AppCalc^'Belted PandA'!J130", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:04:33 PM")
+    AddProperty("9999", "Conv_Total_App_Belt_Length_Req_IN_User_UOM", <a><![CDATA[Conv_Total_App_Belt_Length_Req_IN_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:02:54 PM")
+    AddProperty("10007", "Conv_Total_Solution_Length_FT", <a><![CDATA[Conv_Total_Solution_Length_FT]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:06:37 PM")
+    AddProperty("10004", "Conv_Total_Solution_Length_FT_User", <a><![CDATA[Conv_Total_Solution_Length_FT_User]]></a>.Value, "AppCalc^'Belted PandA'!J131", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:04:56 PM")
+    AddProperty("10001", "Conv_Total_Solution_Length_FT_User_UOM", <a><![CDATA[Conv_Total_Solution_Length_FT_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:04:03 PM")
     AddProperty("9832", "Gen_Accumulation_Convey_Type_Pre_Panda", <a><![CDATA[Gen_Accumulation_Convey_Type_Pre_Panda]]></a>.Value, "AppCalc^'Belted PandA'!J38", "String","","AppCalc_PandA_General_Input","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:37:20 PM")
     AddProperty("9825", "Gen_Accumulation_Zone_Length_IN", <a><![CDATA[Gen_Accumulation_Zone_Length_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_General_Input","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:47:42 PM")
     AddProperty("9818", "Gen_Accumulation_Zone_Length_User", <a><![CDATA[Gen_Accumulation_Zone_Length_User]]></a>.Value, "AppCalc^'Belted PandA'!J35", "Double","","AppCalc_PandA_General_Input","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:37:28 PM")
@@ -1448,6 +1539,12 @@ Option Infer On
     
       AddValidValue("Acq_Label_Data_Acquisition_Travel_User_UOM")
     
+      AddValidValue("Conv_Total_App_Belt_Length_Req_FT_User_UOM")
+    
+      AddValidValue("Conv_Total_App_Belt_Length_Req_IN_User_UOM")
+    
+      AddValidValue("Conv_Total_Solution_Length_FT_User_UOM")
+    
       AddValidValue("Gen_Accumulation_Zone_Length_User")
     
       AddValidValue("Gen_Accumulation_Zone_Length_User_UOM")
@@ -1574,6 +1671,33 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Acq_Max_Local_Lookup_Time_Secs", "9535", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 7:30:43 PM", "", "In Development",  0,16594)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conv_Total_App_Belt_Length_Req_FT", "9588", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:06:14 PM", "", "In Development",  0,16732)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conv_Total_App_Belt_Length_Req_FT_User", "9585", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:04:43 PM", "", "In Development",  0,16727)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conv_Total_App_Belt_Length_Req_FT_User_UOM", "9582", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:03:33 PM", "", "In Development",  0,16723)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conv_Total_App_Belt_Length_Req_IN", "9587", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:05:42 PM", "", "In Development",  0,16730)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conv_Total_App_Belt_Length_Req_IN_User", "9584", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:04:33 PM", "", "In Development",  0,16726)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conv_Total_App_Belt_Length_Req_IN_User_UOM", "9581", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:02:43 PM", "", "In Development",  0,16719)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conv_Total_Solution_Length_FT", "9589", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:06:37 PM", "", "In Development",  0,16734)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conv_Total_Solution_Length_FT_User", "9586", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:04:56 PM", "", "In Development",  0,16728)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conv_Total_Solution_Length_FT_User_UOM", "9583", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:04:03 PM", "", "In Development",  0,16724)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Gen_Accumulation_Convey_Type_Pre_Panda", "9416", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 6:26:59 PM", "", "In Development",  0,16160)
@@ -1957,6 +2081,18 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           
+        InitValidValue("Conv_Total_App_Belt_Length_Req_FT_User_UOM_ValidValues", "9582", "-1", 16722)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Conv_Total_App_Belt_Length_Req_IN_User_UOM_ValidValues", "9581", "-1", 16720)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Conv_Total_Solution_Length_FT_User_UOM_ValidValues", "9583", "-1", 16725)
+        End If
+            If Incontext("-1", ctx) Then
+          
         InitValidValue("Gen_Accumulation_Zone_Length_User_ValidValues", "9402", "-1", 16283)
         End If
             If Incontext("-1", ctx) Then
@@ -2332,6 +2468,219 @@ End Select
       '   END FORMULA; PROP ID:9535; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Acq_Max_Local_Lookup_Time_Secs", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conv_Total_App_Belt_Length_Req_FT() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_App_Belt_Length_Req_FT").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9588; TYPE:PF
+      Result = Units.Convert(Me.Conv_Total_App_Belt_Length_Req_FT_User, Me.Conv_Total_App_Belt_Length_Req_FT_User_UOM,"FT")
+      '   END FORMULA; PROP ID:9588; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_FT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conv_Total_App_Belt_Length_Req_FT_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_App_Belt_Length_Req_FT_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9585; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9585; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_FT_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conv_Total_App_Belt_Length_Req_FT_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_App_Belt_Length_Req_FT_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9582; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "FT" Else Result = "M"
+      '   END FORMULA; PROP ID:9582; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_FT_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conv_Total_App_Belt_Length_Req_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_App_Belt_Length_Req_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9587; TYPE:PF
+      Result = Units.Convert(Me.Conv_Total_App_Belt_Length_Req_IN_User, Me.Conv_Total_App_Belt_Length_Req_IN_User_UOM,"IN")
+      '   END FORMULA; PROP ID:9587; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conv_Total_App_Belt_Length_Req_IN_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_App_Belt_Length_Req_IN_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9584; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9584; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_IN_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conv_Total_App_Belt_Length_Req_IN_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_App_Belt_Length_Req_IN_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9581; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9581; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_IN_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conv_Total_Solution_Length_FT() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_Solution_Length_FT").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9589; TYPE:PF
+      Result = Units.Convert(Me.Conv_Total_Solution_Length_FT_User, Me.Conv_Total_Solution_Length_FT_User_UOM,"FT")
+      '   END FORMULA; PROP ID:9589; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_Solution_Length_FT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conv_Total_Solution_Length_FT_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_Solution_Length_FT_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9586; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9586; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_Solution_Length_FT_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conv_Total_Solution_Length_FT_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_Solution_Length_FT_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9583; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "FT" Else Result = "M"
+      '   END FORMULA; PROP ID:9583; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_Solution_Length_FT_User_UOM", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -5624,6 +5973,87 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_FT_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_FT_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_FT_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_IN_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_IN_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_Solution_Length_FT_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_Solution_Length_FT_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_Solution_Length_FT_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Gen_Accumulation_Convey_Type_Pre_Panda_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -6795,6 +7225,87 @@ End Select
               End Try
               Return Result
             
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_FT_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_FT_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_FT_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_IN_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_IN_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_Solution_Length_FT_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_Solution_Length_FT_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_Solution_Length_FT_User_UOM_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -8133,6 +8644,78 @@ End Select
       '   END FORMULA; PROP ID:9537; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Acq_Label_Data_Acquisition_Travel_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_FT_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_App_Belt_Length_Req_FT_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9582; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9582; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_FT_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_App_Belt_Length_Req_IN_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_App_Belt_Length_Req_IN_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9581; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9581; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_IN_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conv_Total_Solution_Length_FT_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conv_Total_Solution_Length_FT_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9583; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9583; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_Solution_Length_FT_User_UOM_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

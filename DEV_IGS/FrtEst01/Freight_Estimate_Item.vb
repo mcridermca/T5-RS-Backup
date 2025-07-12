@@ -4,6 +4,7 @@ Option Infer On
 
 '$ Application: FrtEst01
 '$ PartFamily: Freight_Estimate_Item
+'$ GenerateDate: 07/12/2025 19:19:17
 
     Imports Microsoft.VisualBasic
     Imports System

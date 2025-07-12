@@ -4,6 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: tmp_Metrics_Lookup_Sample
+'$ GenerateDate: 07/12/2025 19:19:35
 
     Imports Microsoft.VisualBasic
     Imports System

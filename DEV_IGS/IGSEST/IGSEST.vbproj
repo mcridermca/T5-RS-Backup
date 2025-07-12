@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{2304748c-4c70-412b-b8be-13fed719d45c}</ProjectGuid>
+		<ProjectGuid>{676cd49d-f10a-4045-aa8f-7cd450dd617f}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>IGSEST</RootNamespace>
 		<AssemblyName>IGSEST</AssemblyName>

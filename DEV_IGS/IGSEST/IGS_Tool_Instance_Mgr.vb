@@ -4,6 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: IGS_Tool_Instance_Mgr
+'$ GenerateDate: 07/12/2025 19:19:17
 
     Imports Microsoft.VisualBasic
     Imports System

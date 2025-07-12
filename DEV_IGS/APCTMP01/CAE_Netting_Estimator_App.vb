@@ -4,6 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: CAE_Netting_Estimator_App
+'$ GenerateDate: 07/12/2025 19:19:17
 
     Imports Microsoft.VisualBasic
     Imports System
