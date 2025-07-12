@@ -4,7 +4,6 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Elec_Install_Metrics
-'$ GenerateDate: 07/12/2025 14:40:53
 
     Imports Microsoft.VisualBasic
     Imports System

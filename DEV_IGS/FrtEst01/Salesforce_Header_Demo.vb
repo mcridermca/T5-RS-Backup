@@ -4,7 +4,6 @@ Option Infer On
 
 '$ Application: FrtEst01
 '$ PartFamily: Salesforce_Header_Demo
-'$ GenerateDate: 07/09/2025 14:43:21
 
     Imports Microsoft.VisualBasic
     Imports System

@@ -4,7 +4,6 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: IGS_Proposal_Data
-'$ GenerateDate: 07/09/2025 14:47:24
 
     Imports Microsoft.VisualBasic
     Imports System

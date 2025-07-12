@@ -4,7 +4,6 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: SFD_sm_PRD_Base_Item
-'$ GenerateDate: 07/12/2025 14:40:53
 
     Imports Microsoft.VisualBasic
     Imports System

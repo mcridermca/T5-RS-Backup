@@ -4,7 +4,6 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: HHS_Grouping_Matrix_Controller
-'$ GenerateDate: 07/12/2025 14:40:53
 
     Imports Microsoft.VisualBasic
     Imports System

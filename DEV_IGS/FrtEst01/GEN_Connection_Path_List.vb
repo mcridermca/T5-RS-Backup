@@ -4,7 +4,6 @@ Option Infer On
 
 '$ Application: FrtEst01
 '$ PartFamily: GEN_Connection_Path_List
-'$ GenerateDate: 07/12/2025 14:40:53
 
     Imports Microsoft.VisualBasic
     Imports System

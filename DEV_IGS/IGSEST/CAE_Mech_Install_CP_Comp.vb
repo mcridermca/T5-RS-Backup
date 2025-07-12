@@ -4,7 +4,6 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Mech_Install_CP_Comp
-'$ GenerateDate: 07/12/2025 14:40:53
 
     Imports Microsoft.VisualBasic
     Imports System

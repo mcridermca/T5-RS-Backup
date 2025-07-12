@@ -4,7 +4,6 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Print_And_Apply
-'$ GenerateDate: 07/09/2025 23:11:59
 
     Imports Microsoft.VisualBasic
     Imports System
