@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Configuration
-'$ GenerateDate: 07/12/2025 13:42:21
+'$ GenerateDate: 07/12/2025 14:03:44
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -318,6 +318,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [User_UOM_System]() As String
+      Get
+      Return Properties("User_UOM_System").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("User_UOM_System").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -330,6 +339,12 @@ Option Infer On
       Public ReadOnly Property [Panel_Configs]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Panel_Configs")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_PRD")
       End Get
       End Property
     
@@ -389,7 +404,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/12/2025 13:41:30")
+    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/12/2025 13:43:42")
     AddProperty("9964", "AppType", <a><![CDATA[AppType]]></a>.Value, "Primary Application Type", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:11:01 PM")
     AddProperty("9963", "BoxPanelsScanned", <a><![CDATA[BoxPanelsScanned]]></a>.Value, "Count of Box Panels Scanned", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:38:15 PM")
     AddProperty("9962", "CartonPresentation", <a><![CDATA[CartonPresentation]]></a>.Value, "Carton Presentation?", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:36:38 PM")
@@ -409,13 +424,20 @@ Option Infer On
     AddProperty("9960", "ShadowingPotential", <a><![CDATA[ShadowingPotential]]></a>.Value, "Shadowing Issues Possible?", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:34:50 PM")
     AddProperty("9961", "ShadowingStatus", <a><![CDATA[ShadowingStatus]]></a>.Value, "Shadowing Allowed?", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:34:17 PM")
     AddProperty("9959", "UsePandAMTBH", <a><![CDATA[UsePandAMTBH]]></a>.Value, "Use PandA MTBH Parameters (Required for PandA Use!)", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:35:03 PM")
+    AddProperty("9997", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/12/2025 1:43:37 PM")
     AddProperty("9940", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 5:59:25 PM")
     
       AddValidValue("CartonPresentation")
     
+      AddValidValue("User_UOM_System")
+    
       oSubpart = AddSubpart(333,"Panel_Configs", <a><![CDATA[Panel_Configs]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/11/2025 6:03:53 PM")
       
         oSubpart.AddVPF (418, "APC_Scan_Panel_Configuration", "APC_Scan_Panel_Configuration")
+      
+      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "165", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/12/2025 1:43:37 PM")
+      
+        oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
       
       oConnection = AddConnection("MySetup", <a><![CDATA[MySetup]]></a>.Value, "Connection to Primary AppCalc Setup Object", "164", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/12/2025 1:41:30 PM")
       
@@ -530,6 +552,9 @@ Option Infer On
             If Incontext("-1", ctx) Then
           InitProperty("UsePandAMTBH", "9541", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 12:36:21 PM", "Use PandA MTBH Parameters (Required for PandA Use!)", "In Development",  0,16615)
         End If
+            If Incontext("-1", ctx) Then
+          InitProperty("User_UOM_System", "9579", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:43:37 PM", "Default UOM System", "In Development",  0,16710)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -544,6 +569,10 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitValidValue("CartonPresentation_ValidValues", "9544", "-1", 16703)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("User_UOM_System_ValidValues", "9579", "-1", 16711)
         End If
     End Sub
 
@@ -573,6 +602,12 @@ Option Infer On
     Private Sub NewContextInit_Connections()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_PRD", "145", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/12/2025 1:43:37 PM", "", "In Development", "N",268)
+        
+          End If
+        
             If Incontext("-1", ctx) Then
           
         InitConnection("MySetup", "144", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/12/2025 1:41:12 PM", "", "In Development", "N",267)
@@ -632,6 +667,28 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_PRD_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:145; TYPE:PF
+        Result = Me.Parent.My_Prd(1)
+        '   END FORMULA; CON ID:145; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_My_PRD_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
     
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -1245,6 +1302,31 @@ End If
       Return Result
       End Function
     
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_User_UOM_System() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("User_UOM_System").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9579; TYPE:PF
+      result = "Imperial"
+      '   END FORMULA; PROP ID:9579; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_User_UOM_System", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
       '
@@ -1413,6 +1495,15 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_UsePandAMTBH_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_User_UOM_System_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1592,6 +1683,15 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_User_UOM_System_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_CartonPresentation_ValidValues() as Rulestream.Kernel.ValidValues
       
       Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
@@ -1606,6 +1706,30 @@ End If
       '   END FORMULA; PROP ID:9544; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_CartonPresentation_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_User_UOM_System_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("User_UOM_System").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9579; TYPE:VV
+      Result = MakeValidValues(Array( "Imperial", "Metric"))
+      '   END FORMULA; PROP ID:9579; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_User_UOM_System_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

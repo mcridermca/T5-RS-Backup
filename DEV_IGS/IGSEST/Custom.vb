@@ -1856,6 +1856,10 @@ Module Custom
                     result = InputValue / 2.54
                 Case "in->cm", "inch->cm"
                     result = InputValue * 2.54
+                Case = "ft->m"
+                    result = InputValue * 0.3048
+                Case = "m->ft"
+                    result = InputValue / 0.3048
 
                 ' Temperature Conversions
                 Case "c->f"
