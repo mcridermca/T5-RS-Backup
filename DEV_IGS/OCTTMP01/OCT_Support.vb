@@ -1,0 +1,1267 @@
+Option Strict Off
+Option Explicit On 
+Option Infer On
+
+'$ Application: OCTTMP01
+'$ PartFamily: OCT_Support
+'$ GenerateDate: 04/17/2025 23:15:25
+
+    Imports Microsoft.VisualBasic
+    Imports System
+    Imports System.IO
+    Imports System.Data
+    Imports System.Windows.Forms
+    Imports System.Collections
+    Imports System.Diagnostics
+    Imports System.Math
+    Imports System.Xml
+    Imports System.Xml.Linq
+    Imports RuleStream
+    Imports RuleStream.Kernel
+    Imports System.Collections.Generic
+    Imports RulestreamTCUtilities
+    Imports OCTTMP01.swMateType_e
+    Imports OCTTMP01.swMateAlign_e
+    Imports OCTTMP01.severity
+
+    Public Class [OCT_Support]
+    
+    Inherits RuleStream.Kernel.Part
+    Implements RuleStream.IRsPartFormulas
+
+    '*************************************************************************
+    '*                                                                       *
+    '*   This source code, together with any object or execution files       *
+    '*   generated herefrom (whether by compiling, translating, or linking   *
+    '*   this source file to any header files, resource files, library       *
+    '*   files, other source files or object files) are confidential and     *
+    '*   proprietary to Siemens Product Lifecycle Management Software Inc.   *
+    '*   No person may sell, offer for sale, copy, use, compile, translate   *
+    '*   or link this source                                                 *
+    '*   file without the written prior approval of Siemens Product          *
+    '*   Lifecycle Management Software Inc.                                  *
+    '*                                                                       *
+    '*   Copyright (C) 2024 Siemens. All rights reserved.                    *
+    '*                                                                       *
+    '*************************************************************************
+
+    Private this as OCT_Support = me
+
+    #Region " IRsPartFormulas Implementation "
+
+    Public Function GetNormalValue(ByVal Value as Object, ByVal propertyName As String, ByVal context As String) As Double Implements RuleStream.IRsPartFormulas.GetNormalValue
+    Dim MethodName as String = string.format("Formula_{0}_NORMALVALUE{1}", propertyName, context)
+    Return CallByName(Me, MethodName, CallType.Method, Value)
+    End Function
+
+    Public Function GetOptimalPartFamily(ByVal subpartSpecName As String, ByVal context As String) As String Implements RuleStream.IRsPartFormulas.GetOptimalPartFamily
+    Dim MethodName as String = string.format("Formula_{0}_OPTIMALPARTFAMILY{1}", subpartSpecName, context)
+    Return CallByName(Me, MethodName, CallType.Method)
+    End Function
+
+    Public Function GetPartNames(ByVal subpartSpecName As String, ByVal context As String) As Object Implements RuleStream.IRsPartFormulas.GetPartNames
+    Dim MethodName as String = string.format("Formula_{0}_PARTNAMES{1}", subpartSpecName, context)
+    Return CallByName(Me, MethodName, CallType.Method)
+    End Function
+
+    Public Function GetParts(ByVal specName As String, ByVal context As String) As Object Implements RuleStream.IRsPartFormulas.GetParts
+    Dim MethodName as String = string.format("Formula_{0}_PARTS{1}", specName, context)
+    Return CallByName(Me, MethodName, CallType.Method)
+    End Function
+
+    Public Function GetProcessStepComment(ByVal processId As String, ByVal processStep As String) As String Implements RuleStream.IRsPartFormulas.GetProcessStepComment
+    Dim Result as String = ""
+    
+    Return Result
+    End Function
+
+    Public Function GetProcessStepStatus(ByVal processId As String, ByVal processStep As String) As Integer Implements RuleStream.IRsPartFormulas.GetProcessStepStatus
+    Dim Result as Integer 'Long
+    
+    Return Result
+    End Function
+
+    Public Function GetQuantity(ByVal subpartSpecName As String, ByVal context As String) As Integer Implements RuleStream.IRsPartFormulas.GetQuantity
+    Dim MethodName as String = string.format("Formula_{0}_QUANTITY{1}",subpartSpecName, context)
+    Return CallByName(Me, MethodName, CallType.Method)
+    End Function
+
+    Public Function GetResult(ByVal propertyName As String, ByVal context As String) As Object Implements RuleStream.IRsPartFormulas.GetResult
+    Dim MethodName as String = string.format("Formula_{0}{1}",propertyName, context)
+    Return CallByName(Me, MethodName, CallType.Method)
+    End Function
+
+    Public Function GetResultCustomCheckDependancy(ByVal propertyName As String, ByVal context As String) As Boolean Implements RuleStream.IRsPartFormulas.GetResultCustomCheckDependancy
+    Dim MethodName as String = string.format("Formula_{0}{1}",propertyName, context)
+    Return CallByName(Me, MethodName, CallType.Method)
+    End Function
+
+    Public Function GetUserChange(ByVal specName As String, ByVal context As String) As Boolean Implements RuleStream.IRsPartFormulas.GetUserChange
+    Dim MethodName as String = string.format("Formula_{0}_USERCHANGE{1}", specName, context)
+    Return CallByName(Me, MethodName, CallType.Method)
+    End Function
+
+    Public Function GetHideCalculatedValue(ByVal propertyName As String, ByVal context As String) As Boolean Implements RuleStream.IRsPartFormulas.GetHideCalculatedValue
+    Dim MethodName as String = string.format("Formula_{0}_HIDE_CALCULATED_VALUE{1}",propertyName, context)
+    Return CallByName(Me, MethodName, CallType.Method)
+    End Function
+
+    Public Sub NewContextInit() Implements RuleStream.IRsPartFormulas.NewContextInit
+    NewContextInit_Properties()
+    NewContextInit_ValidValues()
+    NewContextInit_Subparts()
+    NewContextInit_Connections()
+    NewContextInit_DB()
+    End Sub
+
+    Public Sub OnChanged(ByVal specName As String, ByVal context As String) Implements RuleStream.IRsPartFormulas.OnChanged
+    'Dim MethodName as String = string.format("Formula_{0}_WHENCHANGED{1}", specName, context)
+    'CallByName(Me, MethodName, CallType.Method)
+    Select Case specName & "_" & context
+    End Select
+    Select Case specName & "_" & context
+    
+    End Select
+    End Sub
+
+    Public Sub OnChanged(ByRef Value as Object, ByVal OldValue as Object, ByVal specName As String, ByVal context As String) Implements RuleStream.IRsPartFormulas.OnChanged
+    'Dim MethodName as String = string.format("Formula_{0}_WHENCHANGED{1}", specName, context)
+    'CallByName(Me, MethodName, CallType.Method, Value)
+    Select Case specName & "_" & context
+    
+    End Select
+    End Sub
+
+    Public Function OnChangedStatus(ByRef Value as Object, ByVal OldValue as Object, ByVal specName As String, ByVal context As String)As Boolean Implements RuleStream.IRsPartFormulas.OnChangedStatus
+    'Dim MethodName as String = string.format("Formula_{0}_WHENCHANGED{1}", specName, context)
+    'CallByName(Me, MethodName, CallType.Method, Value)
+    Dim Status as Boolean = False
+    Select Case specName & "_" & context
+    Case Else
+    Status = False
+    End Select
+    Return Status
+    End Function
+
+    #End Region
+
+    #Region " Properties, Subparts, Connections "
+    
+          Public Property [Debug_Mode]() As Boolean
+      Get
+      Return Properties("Debug_Mode").Value
+      End Get
+      Set(ByVal Value As Boolean)
+      Properties("Debug_Mode").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Conveyor_Number]() As String
+      Get
+      Return Properties("Conveyor_Number").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Conveyor_Number").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Height]() As String
+      Get
+      Return Properties("Height").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Height").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [JSONObjectName]() As String
+      Get
+      Return Properties("JSONObjectName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("JSONObjectName").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [JSONObjectType]() As String
+      Get
+      Return Properties("JSONObjectType").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("JSONObjectType").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [JSONObjectValue]() As String
+      Get
+      Return Properties("JSONObjectValue").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("JSONObjectValue").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Paint_Color]() As String
+      Get
+      Return Properties("Paint_Color").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Paint_Color").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Support_Hardware]() As String
+      Get
+      Return Properties("Support_Hardware").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Support_Hardware").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Support_Quantity]() As String
+      Get
+      Return Properties("Support_Quantity").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Support_Quantity").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Support_Type]() As String
+      Get
+      Return Properties("Support_Type").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Support_Type").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Top_IN_OUT]() As String
+      Get
+      Return Properties("Top_IN_OUT").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Top_IN_OUT").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Top_Type]() As String
+      Get
+      Return Properties("Top_Type").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Top_Type").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Width]() As String
+      Get
+      Return Properties("Width").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Width").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectName]() As String
+      Get
+      Return Properties("XMLObjectName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectName").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectType]() As String
+      Get
+      Return Properties("XMLObjectType").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectType").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectValue]() As String
+      Get
+      Return Properties("XMLObjectValue").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectValue").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PartNumber]() As String
+      Get
+      Return Properties("PartNumber").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("PartNumber").CalculatedValue = Value
+      End Set
+      End Property
+    
+      Public ReadOnly Property [MySource]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("MySource")
+      End Get
+      End Property
+    
+    #End Region
+
+    #Region " Initialization "
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Public Sub Initialize() Implements RuleStream.IRsPartFormulas.Initialize
+    Dim oSpec As Rulestream.Kernel.Spec = Nothing
+    Dim oConnection as Rulestream.Kernel.Connection = Nothing
+    Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
+    dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
+    InitPart("OCT_Support", <a><![CDATA[OCT_Support]]></a>.Value, 323, "OCTTMP01",  "N", "N", False, False, "In Development", "", "Oracle Transfer Support Object", "", "", "",  "GLOBAL\H601424", "04/16/2025 01:50:10")
+    AddProperty("2146", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1941", "Conveyor_Number", <a><![CDATA[Conveyor_Number]]></a>.Value, "Conveyor Number", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1942", "Height", <a><![CDATA[Height]]></a>.Value, "Height", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1943", "JSONObjectName", <a><![CDATA[JSONObjectName]]></a>.Value, "JSON Export Object Name", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1944", "JSONObjectType", <a><![CDATA[JSONObjectType]]></a>.Value, "JSON Export Object Type", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("2154", "JSONObjectValue", <a><![CDATA[JSONObjectValue]]></a>.Value, "JSON Export Object Value", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1947", "Paint_Color", <a><![CDATA[Paint_Color]]></a>.Value, "Paint Color", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1948", "Support_Hardware", <a><![CDATA[Support_Hardware]]></a>.Value, "Support Hardware", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1949", "Support_Quantity", <a><![CDATA[Support_Quantity]]></a>.Value, "Support Quantity", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1950", "Support_Type", <a><![CDATA[Support_Type]]></a>.Value, "Support Type", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1951", "Top_IN_OUT", <a><![CDATA[Top_IN_OUT]]></a>.Value, "Top IN OUT", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1952", "Top_Type", <a><![CDATA[Top_Type]]></a>.Value, "Top Type", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1953", "Width", <a><![CDATA[Width]]></a>.Value, "Width", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("2159", "XMLObjectName", <a><![CDATA[XMLObjectName]]></a>.Value, "XML Export Object Name", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1946", "XMLObjectType", <a><![CDATA[XMLObjectType]]></a>.Value, "XML Export Object Type", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1945", "XMLObjectValue", <a><![CDATA[XMLObjectValue]]></a>.Value, "XML Export Object Value", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "4/15/2025 1:55:28 AM")
+    AddProperty("1811", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/2/2025 10:56:35 PM")
+    
+      oConnection = AddConnection("MySource", <a><![CDATA[My Source Part Family]]></a>.Value, "Connection to the Value Provider Part Family Instance", "55", "OO", 0, "","Oracle Config XML", 9999, "Oracle Configurator Transfer", "GLOBAL\H601424", "4/16/2025 1:36:14 AM")
+      
+        oConnection.AddVPF(323, "OCT_Support")
+      
+    End Sub
+
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Public Sub Initialize_Process(ByVal lngProcessID as Integer) Implements RuleStream.IRsPartFormulas.InitializeProcess
+    Select Case lngProcessID
+    
+    Case Else
+    Process = "DefaultProcess"
+    End Select
+    End Sub
+
+    
+
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Private Sub NewContextInit_Properties()
+    Dim ctx as String
+    ctx = ContextId
+    
+            If Incontext("-1", ctx) Then
+          InitProperty("Debug_Mode", "1814", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "True = Debug On / False = Debug Off", "In Development",  0,2359)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Conveyor_Number", "1618", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "Conveyor Number", "In Development",  0,2358)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Height", "1619", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "Height", "In Development",  0,2360)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("JSONObjectName", "1620", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "JSON Export Object Name", "In Development",  0,1726)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("JSONObjectType", "1621", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "JSON Export Object Type", "In Development",  0,1727)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("JSONObjectValue", "1822", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "JSON Export Object Value", "In Development",  0,2142)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Paint_Color", "1624", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "Paint Color", "In Development",  0,2361)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Support_Hardware", "1625", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "Support Hardware", "In Development",  0,2362)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Support_Quantity", "1626", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "Support Quantity", "In Development",  0,2363)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Support_Type", "1627", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "Support Type", "In Development",  0,2364)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Top_IN_OUT", "1628", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "Top IN OUT", "In Development",  0,2365)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Top_Type", "1629", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "Top Type", "In Development",  0,2366)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Width", "1630", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "Width", "In Development",  0,2367)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectName", "1827", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "XML Export Object Name", "In Development",  0,2148)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectType", "1623", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "XML Export Object Type", "In Development",  0,1729)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectValue", "1622", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/15/2025 1:55:28 AM", "XML Export Object Value", "In Development",  0,2368)
+        End If
+    End Sub
+
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Private Sub NewContextInit_ValidValues()
+    Dim ctx as String
+    ctx = ContextId
+    End Sub
+
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Private Sub NewContextInit_Subparts()
+    Dim ctx as String
+    ctx = ContextId
+    End Sub
+
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Private Sub NewContextInit_Connections()
+    Dim ctx as String
+    ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("MySource", "35", "N","N", "N", 0, "-1", "", "GLOBAL\H601424", "4/16/2025 1:36:14 AM", "Connection to the Value Provider Part Family Instance", "In Development", "Y",55)
+        
+          End If
+        
+    End Sub
+
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Private Sub NewContextInit_DB()
+    Dim ctx as String
+    ctx = ContextId
+    End Sub
+
+    #End Region
+
+    #Region " Formulas "
+
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MySource_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:35; TYPE:PF
+        Result = Nothing
+If Me.Debug_Mode Then
+	Result = Me.Parent.MySource(1).Supports(Me.SubPartID)
+End If
+        '   END FORMULA; CON ID:35; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_MySource_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Debug_Mode() As Boolean
+          Dim Result as Boolean
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Debug_Mode").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1814; TYPE:PF
+      Result = False
+If Not Me.Parent Is Nothing AndAlso Me.Parent.Properties.ContainsKey("Debug_Mode") Then
+		Result = Me.Parent.Debug_Mode
+End If
+      '   END FORMULA; PROP ID:1814; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Debug_Mode", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Conveyor_Number() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Conveyor_Number").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1618; TYPE:PF
+      Result = ""
+Dim MyPropName As String = Me.CurrentProperty.Name
+If Me.MySource(1).Properties.ContainsKey(MyPropName) Then
+	Result =$"{Me.MySource(1).Properties(MyPropName).DisplayValue:F0}"
+End If
+      '   END FORMULA; PROP ID:1618; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Conveyor_Number", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Height() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Height").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1619; TYPE:PF
+      Result = ""
+Dim MyPropName As String = Me.CurrentProperty.Name
+If Me.MySource(1).Properties.ContainsKey(MyPropName) Then
+	Result =$"{Me.MySource(1).Properties(MyPropName).DisplayValue:F2}"
+End If
+      '   END FORMULA; PROP ID:1619; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Height", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_JSONObjectName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("JSONObjectName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1620; TYPE:PF
+      result = "Support"
+      '   END FORMULA; PROP ID:1620; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_JSONObjectName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_JSONObjectType() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("JSONObjectType").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1621; TYPE:PF
+      result = "Element"
+      '   END FORMULA; PROP ID:1621; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_JSONObjectType", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_JSONObjectValue() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("JSONObjectValue").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1822; TYPE:PF
+      result = "{'X':'1'}"
+      '   END FORMULA; PROP ID:1822; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_JSONObjectValue", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Paint_Color() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Paint_Color").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1624; TYPE:PF
+      Result = ""
+Dim MyPropName As String = Me.CurrentProperty.Name
+If Me.MySource(1).Properties.ContainsKey(MyPropName) Then
+	Result =$"{Me.MySource(1).Properties(MyPropName).DisplayValue:F0}"
+End If
+      '   END FORMULA; PROP ID:1624; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Paint_Color", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Support_Hardware() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Support_Hardware").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1625; TYPE:PF
+      Result = ""
+Dim MyPropName As String = Me.CurrentProperty.Name
+If Me.MySource(1).Properties.ContainsKey(MyPropName) Then
+	Result =$"{Me.MySource(1).Properties(MyPropName).DisplayValue:F0}"
+End If
+      '   END FORMULA; PROP ID:1625; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Support_Hardware", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Support_Quantity() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Support_Quantity").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1626; TYPE:PF
+      Result = ""
+Dim MyPropName As String = Me.CurrentProperty.Name
+If Me.MySource(1).Properties.ContainsKey(MyPropName) Then
+	Result =$"{Me.MySource(1).Properties(MyPropName).DisplayValue:F0}"
+End If
+      '   END FORMULA; PROP ID:1626; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Support_Quantity", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Support_Type() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Support_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1627; TYPE:PF
+      Result = ""
+Dim MyPropName As String = Me.CurrentProperty.Name
+If Me.MySource(1).Properties.ContainsKey(MyPropName) Then
+	Result =$"{Me.MySource(1).Properties(MyPropName).DisplayValue:F0}"
+End If
+      '   END FORMULA; PROP ID:1627; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Support_Type", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Top_IN_OUT() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Top_IN_OUT").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1628; TYPE:PF
+      Result = ""
+Dim MyPropName As String = Me.CurrentProperty.Name
+If Me.MySource(1).Properties.ContainsKey(MyPropName) Then
+	Result =$"{Me.MySource(1).Properties(MyPropName).DisplayValue:F0}"
+End If
+      '   END FORMULA; PROP ID:1628; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Top_IN_OUT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Top_Type() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Top_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1629; TYPE:PF
+      Result = ""
+Dim MyPropName As String = Me.CurrentProperty.Name
+If Me.MySource(1).Properties.ContainsKey(MyPropName) Then
+	Result =$"{Me.MySource(1).Properties(MyPropName).DisplayValue:F0}"
+End If
+      '   END FORMULA; PROP ID:1629; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Top_Type", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Width() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Width").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1630; TYPE:PF
+      Result = ""
+Dim MyPropName As String = Me.CurrentProperty.Name
+If Me.MySource(1).Properties.ContainsKey(MyPropName) Then
+	Result =$"{Me.MySource(1).Properties(MyPropName).DisplayValue:F2}"
+End If
+      '   END FORMULA; PROP ID:1630; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_Width", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("XMLObjectName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1827; TYPE:PF
+      result = "Support"
+      '   END FORMULA; PROP ID:1827; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_XMLObjectName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectType() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("XMLObjectType").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1623; TYPE:PF
+      result = "Element"
+      '   END FORMULA; PROP ID:1623; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_XMLObjectType", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectValue() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("XMLObjectValue").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1622; TYPE:PF
+      Dim Prop As PropertySF = Me.CurrentProperty
+Result = Custom.GetPFXMLRepresentation(Prop)
+      '   END FORMULA; PROP ID:1622; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " OCT_Support.Formula_XMLObjectValue", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Debug_Mode_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conveyor_Number_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Height_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_JSONObjectName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_JSONObjectType_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_JSONObjectValue_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Paint_Color_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Support_Hardware_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Support_Quantity_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Support_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Top_IN_OUT_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Top_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Width_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectType_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectValue_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Debug_Mode_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Conveyor_Number_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Height_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_JSONObjectName_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_JSONObjectType_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_JSONObjectValue_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Paint_Color_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Support_Hardware_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Support_Quantity_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Support_Type_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Top_IN_OUT_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Top_Type_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Width_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectName_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectType_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectValue_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Public Function GetRecordsetSQL(ByVal lngDBConID as Long) as String Implements RuleStream.IRsPartFormulas.GetRecordsetSQL
+    Dim strSelectStmt As String = ""
+    Return strSelectStmt
+    End Function
+    #End Region
+
+    #Region "Event Handling "
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Public Overrides Sub AddRsEventHandlerMappings()
+    
+    End Sub
+
+    '*****************************************************************************
+    '   Copyright (C) 2024 Siemens. All rights reserved.
+    '
+    '   Do not modify this procedure. Changes may render this application
+    '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+    '*****************************************************************************
+    Public Overrides Sub RemoveRsEventHandlerMappings()
+    
+    End Sub
+    #End Region
+
+    End Class
+
+  

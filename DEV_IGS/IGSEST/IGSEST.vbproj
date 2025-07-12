@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProductVersion>10.0.20506</ProductVersion>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ProjectGuid>{dd0db1f4-3647-44b4-b6b7-cd6ee8a4f9b8}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<RootNamespace>IGSEST</RootNamespace>
+		<AssemblyName>IGSEST</AssemblyName>
+		<MyType>Windows</MyType>
+		<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+		<ResGenToolArchitecture>Managed32Bit</ResGenToolArchitecture>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<DefineDebug>true</DefineDebug>
+		<DefineTrace>true</DefineTrace>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DocumentationFile>IGSEST.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<DefineDebug>false</DefineDebug>
+		<DefineTrace>true</DefineTrace>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DocumentationFile>IGSEST.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="log4net">
+			<Name>log4net</Name>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\log4net.dll</HintPath>
+		</Reference>
+		<Reference Include="RuleStream">
+			<Name>RuleStream</Name>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.dll</HintPath>
+		</Reference>
+		<Reference Include="RuleStream.DataService">
+			<Name>RuleStream.DataService</Name>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.DataService.dll</HintPath>
+		</Reference>
+		<Reference Include="RuleStream.Kernel">
+			<Name>RuleStream.Kernel</Name>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.Kernel.dll</HintPath>
+		</Reference>
+		<Reference Include="Aspose.Cells">
+			<Name>Aspose.Cells</Name>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\Aspose.Cells.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Data.SqlClient">
+			<Name>Microsoft.Data.SqlClient</Name>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\Microsoft.Data.SqlClient.dll</HintPath>
+		</Reference>
+		<Reference Include="RulestreamTCUtilities">
+			<Name>RulestreamTCUtilities</Name>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RulestreamTCUtilities.dll</HintPath>
+		</Reference>
+		<Reference Include="System">
+			<Name>System</Name>
+		</Reference>
+		<Reference Include="System.Data">
+			<Name>System.Data</Name>
+		</Reference>
+		<Reference Include="System.Drawing">
+			<Name>System.Drawing</Name>
+		</Reference>
+		<Reference Include="System.Windows.Forms">
+			<Name>System.Windows.Forms</Name>
+		</Reference>
+		<Reference Include="System.Xml">
+			<Name>System.XML</Name>
+		</Reference>
+		<Reference Include="System.Xml.Linq"/>
+		<Reference Include="System.Core"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Import Include="Microsoft.VisualBasic" />
+		<Import Include="System" />
+		<Import Include="System.Collections" />
+		<Import Include="System.Collections.Generic" />
+		<Import Include="System.Data" />
+		<Import Include="System.Drawing" />
+		<Import Include="System.Diagnostics" />
+		<Import Include="System.Windows.Forms" />
+		<Import Include="System.Xml" />
+		<Import Include="System.Xml.Linq" />
+		<Import Include="Aspose.Cells" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="cae_air_piping_control_panel.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_app_calc.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_app_calc_print_and_apply.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_chutes.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_control_panels_structures_platforms.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_conveyor_costing.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_conveyor_costing_elec.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_conveyor_installs_elec.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_elec_install_metrics.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mech_install_conveyor_hours.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mech_install_cp_comp.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mech_install_metrics.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_power_feed_control_panel.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_power_feeds.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_print_and_apply.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_shuttle_elec.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_shuttle_mech.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_structures_platform.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_structures_platforms.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_ttcb_costing_elec.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_ttcb_costing_mech.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_opportunity.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_project_top_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_proposal_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_tool_instance_mgr.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="tmp_metrics_lookup_sample.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="ServerManager.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="Custom.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="Common.vb">
+			<SubType>Code</SubType>
+		</Compile>
+
+	</ItemGroup>
+	<Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+	<PropertyGroup>
+		<PreBuildEvent>
+		</PreBuildEvent>
+		<PostBuildEvent>
+		</PostBuildEvent>
+	</PropertyGroup>
+</Project>

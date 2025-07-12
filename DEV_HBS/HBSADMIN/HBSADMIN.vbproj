@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProductVersion>10.0.20506</ProductVersion>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ProjectGuid>{d6676f20-993b-48ee-b756-6b76349357b1}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<RootNamespace>HBSADMIN</RootNamespace>
+		<AssemblyName>HBSADMIN</AssemblyName>
+		<MyType>Windows</MyType>
+		<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+		<ResGenToolArchitecture>Managed32Bit</ResGenToolArchitecture>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<DefineDebug>true</DefineDebug>
+		<DefineTrace>true</DefineTrace>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DocumentationFile>HBSADMIN.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<DefineDebug>false</DefineDebug>
+		<DefineTrace>true</DefineTrace>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DocumentationFile>HBSADMIN.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="log4net">
+			<Name>log4net</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\log4net.dll</HintPath>
+		</Reference>
+		<Reference Include="RuleStream">
+			<Name>RuleStream</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.dll</HintPath>
+		</Reference>
+		<Reference Include="RuleStream.DataService">
+			<Name>RuleStream.DataService</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.DataService.dll</HintPath>
+		</Reference>
+		<Reference Include="RuleStream.Kernel">
+			<Name>RuleStream.Kernel</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.Kernel.dll</HintPath>
+		</Reference>
+		<Reference Include="Aspose.Cells">
+			<Name>Aspose.Cells</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Aspose.Cells.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Data.SqlClient">
+			<Name>Microsoft.Data.SqlClient</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Microsoft.Data.SqlClient.dll</HintPath>
+		</Reference>
+		<Reference Include="RulestreamTCUtilities">
+			<Name>RulestreamTCUtilities</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RulestreamTCUtilities.dll</HintPath>
+		</Reference>
+		<Reference Include="System">
+			<Name>System</Name>
+		</Reference>
+		<Reference Include="System.Data">
+			<Name>System.Data</Name>
+		</Reference>
+		<Reference Include="System.Drawing">
+			<Name>System.Drawing</Name>
+		</Reference>
+		<Reference Include="System.Windows.Forms">
+			<Name>System.Windows.Forms</Name>
+		</Reference>
+		<Reference Include="System.Xml">
+			<Name>System.XML</Name>
+		</Reference>
+		<Reference Include="System.Xml.Linq"/>
+		<Reference Include="System.Core"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Import Include="Microsoft.VisualBasic" />
+		<Import Include="System" />
+		<Import Include="System.Collections" />
+		<Import Include="System.Collections.Generic" />
+		<Import Include="System.Data" />
+		<Import Include="System.Drawing" />
+		<Import Include="System.Diagnostics" />
+		<Import Include="System.Windows.Forms" />
+		<Import Include="System.Xml" />
+		<Import Include="System.Xml.Linq" />
+		<Import Include="Aspose.Cells" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="adm_controller_family_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_controller_family_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_controller_family_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_controller_protocol_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_controller_protocol_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_controller_protocol_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_controller_spl_feature_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_controller_spl_feature_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_controller_spl_feature_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_cpu_io_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_cpu_io_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_cpu_io_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_data_master_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_engg_units_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_engg_units_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_engg_units_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_parts_accessory_mapping_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_parts_accessory_mapping_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_parts_accessory_mapping_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_plant_library_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_plant_library_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_plant_library_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_point_type_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_point_type_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_point_type_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_pole_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_pole_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_pole_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_process_variable_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_process_variable_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_process_variable_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_signal_type_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_signal_type_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_signal_type_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_sm_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_sm_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_sm_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_std_wiring_detail_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_std_wiring_detail_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_std_wiring_detail_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_voltage_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_voltage_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_voltage_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="rsxli_pli_search_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="rsxli_pli_search_data_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="rsxli_pli_search_data_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="ServerManager.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="Custom.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="Common.vb">
+			<SubType>Code</SubType>
+		</Compile>
+
+	</ItemGroup>
+	<Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+	<PropertyGroup>
+		<PreBuildEvent>
+		</PreBuildEvent>
+		<PostBuildEvent>
+		</PostBuildEvent>
+	</PropertyGroup>
+</Project>

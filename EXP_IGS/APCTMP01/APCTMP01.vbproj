@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProductVersion>10.0.20506</ProductVersion>
+		<SchemaVersion>2.0</SchemaVersion>
+		<ProjectGuid>{e604e8dc-f574-4a74-bc4f-6772c53f6952}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<RootNamespace>APCTMP01</RootNamespace>
+		<AssemblyName>APCTMP01</AssemblyName>
+		<MyType>Windows</MyType>
+		<TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+		<ResGenToolArchitecture>Managed32Bit</ResGenToolArchitecture>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<DefineDebug>true</DefineDebug>
+		<DefineTrace>true</DefineTrace>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DocumentationFile>APCTMP01.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<DefineDebug>false</DefineDebug>
+		<DefineTrace>true</DefineTrace>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DocumentationFile>APCTMP01.xml</DocumentationFile>
+		<NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	<ItemGroup>
+		<Reference Include="log4net">
+			<Name>log4net</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\log4net.dll</HintPath>
+		</Reference>
+		<Reference Include="RuleStream">
+			<Name>RuleStream</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.dll</HintPath>
+		</Reference>
+		<Reference Include="RuleStream.DataService">
+			<Name>RuleStream.DataService</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.DataService.dll</HintPath>
+		</Reference>
+		<Reference Include="RuleStream.Kernel">
+			<Name>RuleStream.Kernel</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.Kernel.dll</HintPath>
+		</Reference>
+		<Reference Include="Aspose.Cells">
+			<Name>Aspose.Cells</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Aspose.Cells.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.Data.SqlClient">
+			<Name>Microsoft.Data.SqlClient</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Microsoft.Data.SqlClient.dll</HintPath>
+		</Reference>
+		<Reference Include="RulestreamTCUtilities">
+			<Name>RulestreamTCUtilities</Name>
+			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RulestreamTCUtilities.dll</HintPath>
+		</Reference>
+		<Reference Include="System">
+			<Name>System</Name>
+		</Reference>
+		<Reference Include="System.Data">
+			<Name>System.Data</Name>
+		</Reference>
+		<Reference Include="System.Drawing">
+			<Name>System.Drawing</Name>
+		</Reference>
+		<Reference Include="System.Windows.Forms">
+			<Name>System.Windows.Forms</Name>
+		</Reference>
+		<Reference Include="System.Xml">
+			<Name>System.XML</Name>
+		</Reference>
+		<Reference Include="System.Xml.Linq"/>
+		<Reference Include="System.Core"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Import Include="Microsoft.VisualBasic" />
+		<Import Include="System" />
+		<Import Include="System.Collections" />
+		<Import Include="System.Collections.Generic" />
+		<Import Include="System.Data" />
+		<Import Include="System.Drawing" />
+		<Import Include="System.Diagnostics" />
+		<Import Include="System.Windows.Forms" />
+		<Import Include="System.Xml" />
+		<Import Include="System.Xml.Linq" />
+		<Import Include="Aspose.Cells" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="apc_advanced_calcs.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_belt_turn.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_belt_turn_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_belted_panda.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_belted_panda_layout.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_continuous_ra_discharge.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_ehs350data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_induction.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_instructions.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_intellimerge_psm.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_lists_1.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_lists_2.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_mdr_bw_divert.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_mdr_misc.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_mdr_rat.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_mdr_rat_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_mdr_sort.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_opportunity_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_pre_merge.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_r_m_merge.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_scan_belt.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_scan_config.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_setup.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_sortation.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_sortchoices.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_space_avail_merge.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_std_merge.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_std_mergesim.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_zfa_applications.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_zfachoices.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_zipper_merge.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_ziptable.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_ziptest.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_elec_install_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_elec_install_cp_comps.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_eqs_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_me_asrs_hours.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_me_hours.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_me_hours_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_me_system_hours.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mech_install_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_netting_estimator_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_pm_calc_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_pqi_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cpm_cora_data_mock.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cpm_dbdetails_cora.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_bom_item.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_component_item.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_component_item_db_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_dwgxlsx_import_line.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_dwgxlsx_importer.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_a.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_b.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_c.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_d.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_e.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_f.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_g.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_k.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_m.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_n.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_p.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_group_calculator_r.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_grouping_matrix_controller.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_hanger_item.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_hanger_item_db_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_headerhanger_calc.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_output_header.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_output_line.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hhs_output_line_db_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_appcalc_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_appcalc_app_tmp.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_conveyance_component.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_conveyance_product.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_opportunity_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_project_area.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_project_control_panel.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_project_facility.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_project_header.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_project_section.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_project_top_app_test_01.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_tool_instance_mgr.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="sfd_salesforce_data_mock.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="sfd_salesforce_prd_header_mock.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="sfd_salesforce_prd_product_item.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="sm_generic_bom_item.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="sm_hhs_group_calculator.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="ServerManager.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="Custom.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="Common.vb">
+			<SubType>Code</SubType>
+		</Compile>
+
+	</ItemGroup>
+	<Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+	<PropertyGroup>
+		<PreBuildEvent>
+		</PreBuildEvent>
+		<PostBuildEvent>
+		</PostBuildEvent>
+	</PropertyGroup>
+</Project>
