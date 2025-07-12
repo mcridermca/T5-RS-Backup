@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: PlantModel
-'$ GenerateDate: 06/27/2025 20:11:14
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -369,6 +369,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [PlantViewNodes]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("PlantViewNodes")
+      End Get
+      End Property
+    
       Public ReadOnly Property [SelectedGroupItem]() As Rulestream.Kernel.Connection
       Get
       Return Connections("SelectedGroupItem")
@@ -413,10 +419,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("PlantModel", <a><![CDATA[Plant Model]]></a>.Value, 24, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "06/19/2025 19:41:00")
-    AddProperty("451", "AddGroup", <a><![CDATA[Add Group]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    InitPart("PlantModel", <a><![CDATA[Plant Model]]></a>.Value, 24, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/07/2025 21:06:58")
+    AddProperty("451", "AddGroup", <a><![CDATA[Add Group]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/5/2025 6:16:00 AM")
     AddProperty("452", "AddPlant", <a><![CDATA[Add Plant]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("453", "AddSystem", <a><![CDATA[Add System]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("453", "AddSystem", <a><![CDATA[Add System]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/5/2025 4:06:22 AM")
     AddProperty("454", "CopyPlant", <a><![CDATA[Copy Plant]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("618", "CutSystem", <a><![CDATA[Cut System]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("455", "DeleteTreeItem", <a><![CDATA[Delete Tree Item]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -430,11 +436,11 @@ Option Infer On
     AddProperty("450", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601421", "4/20/2025 3:29:47 AM")
     AddProperty("456", "NumberOfLevels", <a><![CDATA[Number Of Levels]]></a>.Value, "How many levels down we support.", "Long","","UI Control","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601421", "4/20/2025 3:32:57 AM")
     
-      AddPropertyExtended(451,"AddGroup", "429", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "5/7/2025 4:45:04 AM")
+      AddPropertyExtended(451,"AddGroup", "429", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/5/2025 6:16:00 AM")
     
       AddPropertyExtended(452,"AddPlant", "430", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "5/5/2025 4:53:51 PM")
     
-      AddPropertyExtended(453,"AddSystem", "431", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "5/7/2025 3:57:34 AM")
+      AddPropertyExtended(453,"AddSystem", "431", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/5/2025 4:06:22 AM")
     
       AddPropertyExtended(454,"CopyPlant", "432", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "4/20/2025 3:32:57 AM")
     
@@ -462,6 +468,10 @@ Option Infer On
       
         oConnection.AddVPF(17, "HBSSystem")
       
+      oConnection = AddConnection("PlantViewNodes", <a><![CDATA[Plant View Nodes]]></a>.Value, "", "72", "MM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/5/2025 3:10:30 AM")
+      
+        oConnection.AddVPF(13, "Group")
+      
       oConnection = AddConnection("SelectedGroupItem", <a><![CDATA[Selected Group Item]]></a>.Value, "", "40", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
       
         oConnection.AddVPF(13, "Group")
@@ -474,7 +484,7 @@ Option Infer On
       
         oConnection.AddVPF(17, "HBSSystem")
       
-      oConnection = AddConnection("GroupTree", <a><![CDATA[Group Tree]]></a>.Value, "", "39", "OM", 0, "","Subparts and Connections", 9999, "", "GLOBAL\H601421", "5/6/2025 5:23:30 PM")
+      oConnection = AddConnection("GroupTree", <a><![CDATA[Group Tree]]></a>.Value, "", "39", "OM", 0, "","Subparts and Connections", 9999, "", "GLOBAL\H601421", "7/7/2025 9:06:58 PM")
       
         oConnection.AddVPF(4, "Plant")
       
@@ -521,13 +531,13 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("AddGroup", "429", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "5/7/2025 4:45:04 AM", "", "In Development",  0,1078)
+          InitProperty("AddGroup", "429", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/5/2025 6:16:00 AM", "", "In Development",  0,1078)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("AddPlant", "430", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "5/5/2025 4:53:51 PM", "", "In Development",  0,1390)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("AddSystem", "431", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "5/7/2025 3:57:34 AM", "", "In Development",  0,1084)
+          InitProperty("AddSystem", "431", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/5/2025 4:06:22 AM", "", "In Development",  0,1084)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("CopyPlant", "432", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/20/2025 3:32:57 AM", "", "In Development",  0,1087)
@@ -627,7 +637,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("GroupTree", "35", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "5/6/2025 5:23:30 PM", "", "In Development", "N",93)
+        InitConnection("GroupTree", "35", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/7/2025 9:06:58 PM", "", "In Development", "N",133)
         
           End If
         
@@ -1694,7 +1704,9 @@ If IsConnected(SelectedGroupItem) Then
 	Dim _group As Object = SelectedGroupItem(1)
 
 	'add the new group as a child to selected group
-	_group.Children.Connect(_newGroup)
+	_group.PlantViewNodes.Connect(_newGroup)
+Else
+	PlantViewNodes.Connect(_newGroup)
 End If
       '   END FORMULA; PROP ID:429; TYPE:WC
       Catch ex As Exception
@@ -1753,11 +1765,11 @@ End If
 
 	Select Case _treeItem.PartFamily
 		Case "Group"
-			_treeItem.Systems.Connect(_system)
+			_treeItem.PlantViewNodes.Connect(_system)
 		Case "HBSSystem"
-			_treeItem.ParentItem(1).Systems.Connect(_system)
+			_treeItem.ParentItem(1).PlantViewNodes.Connect(_system)
 		Case "Plant"
-			_treeItem.Parent.ParentItem(1).Connect(_system)
+			_treeItem.Parent.ParentItem(1).PlantViewNodes.Connect(_system)
 	End Select
 End If
       '   END FORMULA; PROP ID:431; TYPE:WC

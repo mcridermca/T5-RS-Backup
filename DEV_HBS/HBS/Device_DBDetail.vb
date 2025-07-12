@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Device_DBDetail
-'$ GenerateDate: 06/27/2025 20:11:04
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System

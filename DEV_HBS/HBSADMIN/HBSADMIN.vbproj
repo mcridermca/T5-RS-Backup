@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{d6676f20-993b-48ee-b756-6b76349357b1}</ProjectGuid>
+		<ProjectGuid>{85febb37-deae-4752-b9e6-bb87bf8b51cd}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>HBSADMIN</RootNamespace>
 		<AssemblyName>HBSADMIN</AssemblyName>
@@ -36,31 +36,31 @@
 	<ItemGroup>
 		<Reference Include="log4net">
 			<Name>log4net</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\log4net.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\log4net.dll</HintPath>
 		</Reference>
 		<Reference Include="RuleStream">
 			<Name>RuleStream</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.dll</HintPath>
 		</Reference>
 		<Reference Include="RuleStream.DataService">
 			<Name>RuleStream.DataService</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.DataService.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.DataService.dll</HintPath>
 		</Reference>
 		<Reference Include="RuleStream.Kernel">
 			<Name>RuleStream.Kernel</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.Kernel.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.Kernel.dll</HintPath>
 		</Reference>
 		<Reference Include="Aspose.Cells">
 			<Name>Aspose.Cells</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Aspose.Cells.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\Aspose.Cells.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Data.SqlClient">
 			<Name>Microsoft.Data.SqlClient</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Microsoft.Data.SqlClient.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\Microsoft.Data.SqlClient.dll</HintPath>
 		</Reference>
 		<Reference Include="RulestreamTCUtilities">
 			<Name>RulestreamTCUtilities</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RulestreamTCUtilities.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RulestreamTCUtilities.dll</HintPath>
 		</Reference>
 		<Reference Include="System">
 			<Name>System</Name>
@@ -94,6 +94,15 @@
 		<Import Include="Aspose.Cells" />
 	</ItemGroup>
 	<ItemGroup>
+		<Compile Include="adm_application_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_application_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_application_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
 		<Compile Include="adm_controller_family_master.vb">
 			<SubType>Code</SubType>
 		</Compile>
@@ -133,6 +142,15 @@
 		<Compile Include="adm_data_master_app.vb">
 			<SubType>Code</SubType>
 		</Compile>
+		<Compile Include="adm_device_type_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_device_type_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_device_type_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
 		<Compile Include="adm_engg_units_master.vb">
 			<SubType>Code</SubType>
 		</Compile>
@@ -140,6 +158,24 @@
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="adm_engg_units_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_parameter_name_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_parameter_name_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_parameter_name_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_part_type_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_part_type_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_part_type_master_row_dbinfo.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="adm_parts_accessory_mapping_master.vb">
@@ -203,6 +239,15 @@
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="adm_sm_master_row_dbinfo.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_standards_master.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_standards_master_row.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="adm_standards_master_row_dbinfo.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="adm_std_wiring_detail_master.vb">

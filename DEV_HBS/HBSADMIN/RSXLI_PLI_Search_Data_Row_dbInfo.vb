@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: RSXLI_PLI_Search_Data_Row_dbInfo
-'$ GenerateDate: 07/01/2025 01:42:37
+'$ GenerateDate: 07/12/2025 14:08:17
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -309,6 +309,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [RSXLI_PLI_Search_Data_ID]() As String
+      Get
+      Return Properties("RSXLI_PLI_Search_Data_ID").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("RSXLI_PLI_Search_Data_ID").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -332,7 +341,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("RSXLI_PLI_Search_Data_Row_dbInfo", <a><![CDATA[RSXLI_PLI_Search_Data_Row_dbInfo]]></a>.Value, 100, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/01/2025 01:41:57")
+    InitPart("RSXLI_PLI_Search_Data_Row_dbInfo", <a><![CDATA[RSXLI_PLI_Search_Data_Row_dbInfo]]></a>.Value, 100, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/01/2025 04:08:13")
     AddProperty("1264", "Country", <a><![CDATA[Country]]></a>.Value, "", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:41:57 AM")
     AddProperty("1256", "Honeywell_Designer", <a><![CDATA[Honeywell_Designer]]></a>.Value, "", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:41:57 AM")
     AddProperty("1257", "Honeywell_Designer_EID", <a><![CDATA[Honeywell_Designer_EID]]></a>.Value, "", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:41:57 AM")
@@ -351,7 +360,10 @@ Option Infer On
     AddProperty("1267", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:41:57 AM")
     AddProperty("1265", "LastUpdateDate_1", <a><![CDATA[LastUpdateDate]]></a>.Value, "", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:41:57 AM")
     AddProperty("1266", "LastUpdateUser", <a><![CDATA[LastUpdateUser]]></a>.Value, "", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:41:57 AM")
+    AddProperty("1270", "RSXLI_PLI_Search_Data_ID", <a><![CDATA[RSXLI_PLI_Search_Data_ID]]></a>.Value, "Primary Key for the Row", "String","","Master DBInfo","FD", 9999, "", 0,0, "RuleStream", "", "GLOBAL\H601422", "7/1/2025 3:45:43 AM")
     AddProperty("1249", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:41:56 AM")
+    
+      AddDBConstraint(34, "DbInfo", <a><![CDATA[DbInfo]]></a>.Value,"Master DBInfo", 9999)
     
     End Sub
 
@@ -435,6 +447,9 @@ Option Infer On
             If Incontext("-1", ctx) Then
           InitProperty("LastUpdateUser", "1168", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/1/2025 1:41:57 AM", "", "In Development",  0,2193)
         End If
+            If Incontext("-1", ctx) Then
+          InitProperty("RSXLI_PLI_Search_Data_ID", "1172", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/1/2025 3:45:43 AM", "", "In Development",  0,2204)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -479,6 +494,42 @@ Option Infer On
     Private Sub NewContextInit_DB()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitDBConstraint("DbInfo", 34,"", "Y","", "", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Country",34, "Country", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Honeywell_Designer",34, "Honeywell_Designer", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Honeywell_Designer_EID",34, "Honeywell_Designer_EID", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Honeywell_PM",34, "Honeywell_PM", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Honeywell_PM_EID",34, "Honeywell_PM_EID", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "LineItem_ID",34, "LineItem_ID", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Pole",34, "Pole", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Project_ID",34, "Project_ID", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Project_Name",34, "Project_Name", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Project_Number",34, "Project_Number", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Project_Type",34, "Project_Type", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Region",34, "Region", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "SAP_Plant",34, "SAP_Plant", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "SFDC_Opportunity_ID",34, "SFDC_Opportunity_ID", "RSXLI_PLI_Search_Data")
+        
+          InitDBproperty("DbInfo", "Vertical",34, "Vertical", "RSXLI_PLI_Search_Data")
+        
+          End If
+        
     End Sub
 
     #End Region
@@ -940,6 +991,31 @@ Next P
       Return Result
       End Function
     
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_RSXLI_PLI_Search_Data_ID() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("RSXLI_PLI_Search_Data_ID").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1172; TYPE:PF
+      Result = Me.Parent.Properties("RSXLI_PLI_Search_Data_ID").Value
+      '   END FORMULA; PROP ID:1172; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " RSXLI_PLI_Search_Data_Row_dbInfo.Formula_RSXLI_PLI_Search_Data_ID", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
       '
@@ -1107,6 +1183,15 @@ Next P
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_RSXLI_PLI_Search_Data_ID_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Country_USERCHANGE() as Boolean
       Return False
       End Function
@@ -1264,6 +1349,15 @@ Next P
       Return False
       End Function
     
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_RSXLI_PLI_Search_Data_ID_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
 
     '*****************************************************************************
     '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -1273,6 +1367,79 @@ Next P
     '*****************************************************************************
     Public Function GetRecordsetSQL(ByVal lngDBConID as Long) as String Implements RuleStream.IRsPartFormulas.GetRecordsetSQL
     Dim strSelectStmt As String = ""
+    
+      Dim strWhereClause as String = ""
+      Dim strSelectList as String = ""
+      Dim varPropSpecVal As Object
+      Dim ctx As Object
+      Dim leftDelimiter As String = String.Empty
+      Dim rightDelimiter As String = String.Empty
+      Try
+      Select Case g_rsUser.UserSettings.ActiveProfile.ComponentsDatabaseType
+      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.MSAccess, RuleStream.DataService.PublicEnumerations.DatabaseTypes.SQLServer
+      leftDelimiter = "["
+      rightDelimiter = "]"
+      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.Oracle
+      leftDelimiter = """"
+      rightDelimiter = """"
+      End Select
+      ObjectManager.UnitConversion = False
+      'Used to set the parameters results
+      Select Case lngDBConID
+      
+        Case 34
+        ctx = this
+            strWhereClause = ""
+            strSelectList = ""
+            
+              strSelectList = strSelectList & leftDelimiter & "Country" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Honeywell_Designer" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Honeywell_Designer_EID" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Honeywell_PM" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Honeywell_PM_EID" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "LineItem_ID" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Pole" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Project_ID" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Project_Name" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Project_Number" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Project_Type" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Region" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "SAP_Plant" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "SFDC_Opportunity_ID" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Vertical" & rightDelimiter & ", "
+            
+            'Build the WHERE clause
+            
+                  varPropSpecVal = me.RSXLI_PLI_Search_Data_ID
+              BuildWhereClause(strWhereClause, "0", "0", "  ", "[RSXLI_PLI_Search_Data_ID]", "=", varPropSpecVal, "")
+            
+            strSelectStmt = BuildSQLStatement(strSelectList, DelimitTableName("RSXLI_PLI_Search_Data"), strWhereClause, leftDelimiter & "RSXLI_PLI_Search_Data_ID" & rightDelimiter, "")
+          
+      End Select
+      Catch ex as Exception
+      Dim strError As String = ex.Message
+      If strSelectStmt <> "" Then
+      strError = strError & vbCrLf & vbCrLf & strSelectStmt
+      strSelectStmt = ""
+      End If
+      ObjectManager.LogError("Application: " + Me.Application + " RSXLI_PLI_Search_Data_Row_dbInfo.GetRecordset", strError)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      ObjectManager.UnitConversion = True
     Return strSelectStmt
     End Function
     #End Region

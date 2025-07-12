@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: SharedHW
 '$ PartFamily: CORA_Project_Information
-'$ GenerateDate: 06/27/2025 20:11:04
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -588,6 +588,24 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [RSXLI_PLI_Search_Data_ID]() As String
+      Get
+      Return Properties("RSXLI_PLI_Search_Data_ID").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("RSXLI_PLI_Search_Data_ID").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [_DataSharingMode]() As String
+      Get
+      Return Properties("_DataSharingMode").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("_DataSharingMode").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -611,38 +629,38 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CORA_Project_Information", <a><![CDATA[CORA Project Information]]></a>.Value, 19, "SharedHW",  "N", "N", True, False, "In Development", "", "A shared location for information imported from CORA.", "", "", "",  "GLOBAL\H601424", "06/19/2025 19:41:00")
+    InitPart("CORA_Project_Information", <a><![CDATA[CORA Project Information]]></a>.Value, 19, "SharedHW",  "N", "N", True, False, "In Development", "", "A shared location for information imported from CORA.", "", "", "RSXLI_PLI_Search_Data",  "GLOBAL\H601422", "07/01/2025 01:53:12")
     AddProperty("670", "Account_Name", <a><![CDATA[Account Name]]></a>.Value, "The name of the account associated with this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:17:10 PM")
     AddProperty("227", "Actual_Schedule_End_Date", <a><![CDATA[Actual Schedule End Date]]></a>.Value, "The actual end date of the schedule.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:44:25 PM")
     AddProperty("226", "Actual_Schedule_Start_Date", <a><![CDATA[Actual Schedule Start Date]]></a>.Value, "The actual start date of the schedule.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:38:57 PM")
-    AddProperty("218", "Country", <a><![CDATA[Country]]></a>.Value, "The country for the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:31:02 PM")
+    AddProperty("218", "Country", <a><![CDATA[Country]]></a>.Value, "The country for the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "Country", "GLOBAL\H601422", "6/30/2025 9:03:01 AM")
     AddProperty("672", "Currency_Local", <a><![CDATA[Currency - Local]]></a>.Value, "The local currency for this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:18:17 PM")
     AddProperty("232", "Customer_Contact_Email", <a><![CDATA[Customer Contact Email]]></a>.Value, "The contact email for the customer for this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:50:58 PM")
     AddProperty("231", "Customer_Name", <a><![CDATA[Customer Name]]></a>.Value, "The name of the customer for this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:50:15 PM")
     AddProperty("233", "Customer_PO_Number", <a><![CDATA[Customer PO Number]]></a>.Value, "The PO number of the customer for this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:51:40 PM")
     AddProperty("225", "ERP_Finish_Date", <a><![CDATA[ERP Finish Date]]></a>.Value, "The finish date of the ERP project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:37:35 PM")
-    AddProperty("230", "ERP_Project_Description", <a><![CDATA[ERP Project Description]]></a>.Value, "The description of the ERP project - mappped to the Project_Name in HBS.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601422", "4/24/2025 5:52:08 PM")
+    AddProperty("230", "ERP_Project_Description", <a><![CDATA[ERP Project Description]]></a>.Value, "The description of the ERP project - mappped to the Project_Name in HBS.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "Project_Name", "GLOBAL\H601422", "6/30/2025 8:46:48 AM")
     AddProperty("224", "ERP_Project_Start_Date", <a><![CDATA[ERP Project Start Date]]></a>.Value, "The start date of the ERP project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:37:01 PM")
     AddProperty("221", "ERP_Project_Status", <a><![CDATA[ERP Project Status]]></a>.Value, "The status of the ERP project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:35:08 PM")
     AddProperty("213", "GBE", <a><![CDATA[GBE]]></a>.Value, "The GBE.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:25:35 PM")
     AddProperty("242", "Lead_Engineer", <a><![CDATA[Lead Engineer]]></a>.Value, "The lead engineer of this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 1:01:48 PM")
     AddProperty("240", "LEAP_ID", <a><![CDATA[LEAP ID]]></a>.Value, "The LEAP ID for this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 1:00:45 PM")
     AddProperty("214", "LOB", <a><![CDATA[LOB]]></a>.Value, "The LOB.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:13:15 PM")
-    AddProperty("216", "Pole", <a><![CDATA[Pole]]></a>.Value, "A super-region of sorts.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:16:03 PM")
+    AddProperty("216", "Pole", <a><![CDATA[Pole]]></a>.Value, "A super-region of sorts.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "Pole", "GLOBAL\H601422", "6/30/2025 8:56:35 AM")
     AddProperty("219", "Profit_Center", <a><![CDATA[Profit Center]]></a>.Value, "The profit center for the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:33:00 PM")
-    AddProperty("208", "Project_Code", <a><![CDATA[Project Code]]></a>.Value, "The identifying code of the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\SVRSDevAdmin", "4/23/2025 9:00:17 PM")
+    AddProperty("208", "Project_Code", <a><![CDATA[Project Code]]></a>.Value, "The identifying code of the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "Project_Number", "GLOBAL\H601422", "6/30/2025 8:45:12 AM")
     AddProperty("210", "Project_ID", <a><![CDATA[Project ID]]></a>.Value, "The ID of the project. It is not editable once it has been selected and the model saved.", "Long","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:15:45 PM")
-    AddProperty("243", "Project_Manager", <a><![CDATA[Project Manager]]></a>.Value, "The project manager for this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 1:02:21 PM")
-    AddProperty("675", "Project_Manager_EID", <a><![CDATA[Project Manager EID]]></a>.Value, "The EID of the project manager.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:21:48 PM")
+    AddProperty("243", "Project_Manager", <a><![CDATA[Project Manager]]></a>.Value, "The project manager for this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "Honeywell_PM", "GLOBAL\H601422", "6/30/2025 8:58:40 AM")
+    AddProperty("675", "Project_Manager_EID", <a><![CDATA[Project Manager EID]]></a>.Value, "The EID of the project manager.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "Honeywell_PM_EID", "GLOBAL\H601422", "6/30/2025 8:58:55 AM")
     AddProperty("209", "Project_Name", <a><![CDATA[Project Name]]></a>.Value, "The name of the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:12:12 PM")
     AddProperty("228", "Project_Percentage_Complete", <a><![CDATA[Project Percentage Complete]]></a>.Value, "The percentage completion of the project.", "Double","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:46:19 PM")
     AddProperty("674", "Project_Site_Address", <a><![CDATA[Project Site Address]]></a>.Value, "The address, city/state, and PIN of the site of the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:21:08 PM")
     AddProperty("673", "Project_Site_Name", <a><![CDATA[Project Site Name]]></a>.Value, "The name of the site of the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:20:41 PM")
     AddProperty("220", "Project_Status", <a><![CDATA[Project Status]]></a>.Value, "The current status of the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:16:27 PM")
     AddProperty("241", "Project_Tier", <a><![CDATA[Project Tier]]></a>.Value, "The tier of this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 1:01:20 PM")
-    AddProperty("222", "Project_Type", <a><![CDATA[Project Type]]></a>.Value, "The type of project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:35:50 PM")
+    AddProperty("222", "Project_Type", <a><![CDATA[Project Type]]></a>.Value, "The type of project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "Project_Type", "GLOBAL\H601422", "6/30/2025 9:02:30 AM")
     AddProperty("678", "Project_Type_Others", <a><![CDATA[Project Type Others]]></a>.Value, "If Others is selected as the Project Type, then this field will contain the details.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:24:33 PM")
-    AddProperty("217", "Region", <a><![CDATA[Region]]></a>.Value, "The local region.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:16:20 PM")
+    AddProperty("217", "Region", <a><![CDATA[Region]]></a>.Value, "The local region.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "Region", "GLOBAL\H601422", "6/30/2025 9:02:43 AM")
     AddProperty("244", "Revenue_Type_Description_1", <a><![CDATA[Revenue Type Description 1]]></a>.Value, "The first description of the revenue type.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 1:03:02 PM")
     AddProperty("245", "Revenue_Type_Description_2", <a><![CDATA[Revenue Type Description 2]]></a>.Value, "The second description of the revenue type.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 1:03:34 PM")
     AddProperty("246", "Revenue_Type_Description_3", <a><![CDATA[Revenue Type Description 3]]></a>.Value, "The third description of the revenue type.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 1:04:00 PM")
@@ -654,13 +672,15 @@ Option Infer On
     AddProperty("676", "Sales_Rep_EID", <a><![CDATA[Sales Rep EID]]></a>.Value, "The EID of the sales rep.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:22:14 PM")
     AddProperty("212", "SBG", <a><![CDATA[SBG]]></a>.Value, "The SBG.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:24:59 PM")
     AddProperty("211", "SBU", <a><![CDATA[SBU]]></a>.Value, "The SBU.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:24:26 PM")
-    AddProperty("229", "SFDC_Opportunity_ID", <a><![CDATA[SFDC Opportunity ID]]></a>.Value, "The ID of the SFDC opportunity.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:48:09 PM")
+    AddProperty("229", "SFDC_Opportunity_ID", <a><![CDATA[SFDC Opportunity ID]]></a>.Value, "The ID of the SFDC opportunity.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "SFDC_Opportunity_ID", "GLOBAL\H601422", "6/30/2025 8:52:58 AM")
     AddProperty("234", "Ship_To_Customer_Name", <a><![CDATA[Ship to Customer Name]]></a>.Value, "The ship-to name of the customer for this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:52:30 PM")
     AddProperty("235", "Ship_To_Customer_Number", <a><![CDATA[Ship to Customer Number]]></a>.Value, "The ship-to number of the customer for this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:53:12 PM")
     AddProperty("671", "Solution", <a><![CDATA[Solution]]></a>.Value, "The solution associated with this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:17:40 PM")
     AddProperty("223", "Stage", <a><![CDATA[Stage]]></a>.Value, "The current stage of the project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:36:14 PM")
-    AddProperty("215", "SubLOB", <a><![CDATA[Sub-LOB]]></a>.Value, "The Sub-LOB.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:26:31 PM")
+    AddProperty("215", "SubLOB", <a><![CDATA[Sub-LOB]]></a>.Value, "The Sub-LOB.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "Vertical", "GLOBAL\H601422", "6/30/2025 9:04:14 AM")
     AddProperty("667", "Info_From_CORA", <a><![CDATA[Info From CORA?]]></a>.Value, "Should the information be from CORA or manual entry?", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("1248", "RSXLI_PLI_Search_Data_ID", <a><![CDATA[RSXLI_PLI_Search_Data_ID]]></a>.Value, "Concatenation of the Project_ID & ""_"" & LineItemID", "String","","RSXLI_Control","FD", 9999, "", 0,0, "HBS", "RSXLI_PLI_Search_Data_ID", "GLOBAL\H601422", "7/1/2025 1:53:12 AM")
+    AddProperty("1221", "_DataSharingMode", <a><![CDATA[_DataSharingMode]]></a>.Value, "Denote that any existing row for the given Project_ID and LineItem_ID would be deleted before new values are written to the OutputTable entry for this PartFamily.", "String","","SolidWorks","FD", 9999, "", 0,0, "RuleStream", "", "GLOBAL\H601422", "6/30/2025 6:42:10 PM")
     AddProperty("207", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601423", "3/17/2025 11:44:55 AM")
     
       AddValidValue("ERP_Project_Description")
@@ -847,6 +867,12 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Info_From_CORA", "622", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601423", "5/6/2025 9:31:41 PM", "", "In Development",  0,1463)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("RSXLI_PLI_Search_Data_ID", "1151", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/1/2025 1:53:12 AM", "", "In Development",  0,2199)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("_DataSharingMode", "1128", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "6/30/2025 6:42:10 PM", "", "In Development",  0,2151)
         End If
     End Sub
 
@@ -2206,6 +2232,56 @@ Option Infer On
       Return Result
       End Function
     
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_RSXLI_PLI_Search_Data_ID() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("RSXLI_PLI_Search_Data_ID").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1151; TYPE:PF
+      Result = Rootpart.ProjectID & "_" & Rootpart.LineItem.ToString
+      '   END FORMULA; PROP ID:1151; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CORA_Project_Information.Formula_RSXLI_PLI_Search_Data_ID", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula__DataSharingMode() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("_DataSharingMode").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1128; TYPE:PF
+      Result = "DELETE"
+      '   END FORMULA; PROP ID:1128; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CORA_Project_Information.Formula__DataSharingMode", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
       '
@@ -2644,6 +2720,24 @@ Option Infer On
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Info_From_CORA_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_RSXLI_PLI_Search_Data_ID_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula__DataSharingMode_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -3288,6 +3382,24 @@ End If
       '*****************************************************************************
       Public Function Formula_Info_From_CORA_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_RSXLI_PLI_Search_Data_ID_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula__DataSharingMode_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************

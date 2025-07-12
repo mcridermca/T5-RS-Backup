@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Controller_Family_Master
-'$ GenerateDate: 07/01/2025 01:42:37
+'$ GenerateDate: 07/12/2025 14:08:17
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -165,6 +165,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Is_Dirty]() As Boolean
+      Get
+      Return Properties("Is_Dirty").Value
+      End Get
+      Set(ByVal Value As Boolean)
+      Properties("Is_Dirty").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Selected_Row]() As Long
       Get
       Return Properties("Selected_Row").Value
@@ -203,9 +212,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Controller_Family_Master", <a><![CDATA[ADM_Controller_Family_Master]]></a>.Value, 81, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "06/27/2025 19:38:45")
+    InitPart("ADM_Controller_Family_Master", <a><![CDATA[ADM_Controller_Family_Master]]></a>.Value, 81, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601423", "07/11/2025 09:43:05")
     AddProperty("1027", "Row_DBKeys", <a><![CDATA[Row_DBKeys]]></a>.Value, "DataBase Extract of Key Values for Lines", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 7:38:21 PM")
     AddProperty("1026", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 7:38:03 PM")
+    AddProperty("1554", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601423", "7/11/2025 9:43:05 AM")
     AddProperty("1028", "Selected_Row", <a><![CDATA[Selected_Row]]></a>.Value, "Selected Row Identifier", "Long","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 7:38:45 PM")
     AddProperty("1014", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 7:37:40 PM")
     
@@ -248,6 +258,9 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Data_Hash", "936", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 7:38:03 PM", "Hash of Master Data Fields", "In Development",  0,1919)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Is_Dirty", "1435", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601423", "7/11/2025 9:43:05 AM", "Is this a new Record", "In Development",  0,2603)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Selected_Row", "938", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 7:38:45 PM", "Selected Row Identifier", "In Development",  0,1922)
@@ -360,6 +373,55 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Is_Dirty() As Boolean
+          Dim Result as Boolean
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Is_Dirty").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1435; TYPE:PF
+      Result = False
+If (Me.Rows.Count > 0) Then
+	Dim PartEnum As IEnumerator = Me.Rows.GetEnumerator
+	Dim _module As String = $"HBSADMIN.{Me.Name}"
+	
+	' Make sure you have an enumerator
+	If Not PartEnum Is Nothing Then
+		Dim PF As Part = Nothing
+		' loop the collection
+		While PartEnum.MoveNext
+			
+			' get the part, add it if it's not destroyed
+			PF = PartEnum.Current
+
+			If PF Is Nothing Then
+				g_ObjectManager.LogError(_module, "PF Is Nothing", False,)
+
+			Else
+				g_ObjectManager.LogInfo(_module, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+				If PF.Properties("Is_Dirty").Value = True Then
+					Result = True
+					Exit While
+				End If
+			End If
+		End While
+	End If
+End If
+      '   END FORMULA; PROP ID:1435; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Controller_Family_Master.Formula_Is_Dirty", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Selected_Row() As Long
           Dim Result as Long
       Dim ctx as Object
@@ -401,6 +463,15 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Is_Dirty_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Selected_Row_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -420,6 +491,15 @@ Option Infer On
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Data_Hash_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Is_Dirty_USERCHANGE() as Boolean
       Return False
       End Function
     

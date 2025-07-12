@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: RSXLI_PLI_Search_Data_Row
-'$ GenerateDate: 07/01/2025 01:42:37
+'$ GenerateDate: 07/12/2025 14:08:17
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -282,6 +282,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [RSXLI_PLI_Search_Data_ID]() As String
+      Get
+      Return Properties("RSXLI_PLI_Search_Data_ID").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("RSXLI_PLI_Search_Data_ID").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Data_Hash]() As String
       Get
       Return Properties("Data_Hash").Value
@@ -338,7 +347,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("RSXLI_PLI_Search_Data_Row", <a><![CDATA[RSXLI_PLI_Search_Data_Row]]></a>.Value, 99, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/01/2025 01:41:56")
+    InitPart("RSXLI_PLI_Search_Data_Row", <a><![CDATA[RSXLI_PLI_Search_Data_Row]]></a>.Value, 99, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/01/2025 03:55:49")
     AddProperty("1244", "Country", <a><![CDATA[Country]]></a>.Value, "", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:52 AM")
     AddProperty("1236", "Honeywell_Designer", <a><![CDATA[Honeywell_Designer]]></a>.Value, "", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:52 AM")
     AddProperty("1237", "Honeywell_Designer_EID", <a><![CDATA[Honeywell_Designer_EID]]></a>.Value, "", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:52 AM")
@@ -354,12 +363,13 @@ Option Infer On
     AddProperty("1240", "SAP_Plant", <a><![CDATA[SAP_Plant]]></a>.Value, "", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:52 AM")
     AddProperty("1234", "SFDC_Opportunity_ID", <a><![CDATA[SFDC_Opportunity_ID]]></a>.Value, "", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:51 AM")
     AddProperty("1243", "Vertical", <a><![CDATA[Vertical]]></a>.Value, "", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:52 AM")
+    AddProperty("1269", "RSXLI_PLI_Search_Data_ID", <a><![CDATA[RSXLI_PLI_Search_Data_ID]]></a>.Value, "The Primary Key for the Row", "String","","Master Data PK","FD", 9999, "", 0,0, "RuleStream", "", "GLOBAL\H601422", "7/1/2025 3:41:13 AM")
     AddProperty("1247", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:52 AM")
     AddProperty("1245", "LastUpdateDate_1", <a><![CDATA[LastUpdateDate]]></a>.Value, "User that modified the record", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:52 AM")
     AddProperty("1246", "LastUpdateUser", <a><![CDATA[LastUpdateUser]]></a>.Value, "Date modified", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:52 AM")
     AddProperty("1227", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:28:42 AM")
     
-      oSubpart = AddSubpart(114,"DbInfo", <a><![CDATA[DB Info Part Family]]></a>.Value, "FD", "Subpart for Database Information for this Part", "Master Audit", 9999, "", "GLOBAL\H601424", "7/1/2025 1:41:56 AM")
+      oSubpart = AddSubpart(114,"DbInfo", <a><![CDATA[DB Info Part Family]]></a>.Value, "FD", "Subpart for Database Information for this Part", "Master Audit", 9999, "", "GLOBAL\H601422", "7/1/2025 3:55:49 AM")
       
         oSubpart.AddVPF (100, "RSXLI_PLI_Search_Data_Row_dbInfo", "RSXLI_PLI_Search_Data_Row_dbInfo")
       
@@ -437,6 +447,9 @@ Option Infer On
           InitProperty("Vertical", "1146", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/1/2025 1:33:52 AM", "", "In Development",  0,2170)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("RSXLI_PLI_Search_Data_ID", "1171", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/1/2025 3:41:13 AM", "", "In Development",  0,2203)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Data_Hash", "1150", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/1/2025 1:33:52 AM", "Hash of Master Data Fields", "In Development",  0,2174)
         End If
             If Incontext("-1", ctx) Then
@@ -469,7 +482,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitSubpart("DbInfo", 99, "N", "N", "N", 0, "-1", "", "GLOBAL\H601424", "7/1/2025 1:41:56 AM", "Subpart for Database Information for this Part", "In Development", "N",0,227,228)
+        InitSubpart("DbInfo", 99, "", "", "Y", 0, "-1", "", "GLOBAL\H601422", "7/1/2025 3:55:49 AM", "Subpart for Database Information for this Part", "In Development", "N",0,227,231)
         
           End If
         
@@ -925,6 +938,34 @@ End If
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_RSXLI_PLI_Search_Data_ID() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("RSXLI_PLI_Search_Data_ID").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1171; TYPE:PF
+      If Me.DBInfo.Quantity = 1 Then
+	Dim MyPropertyName As String  = Me.CurrentProperty.Name
+	Result = Me.DBInfo(1).Properties(MyPropertyName).DisplayValue
+End If
+      '   END FORMULA; PROP ID:1171; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " RSXLI_PLI_Search_Data_Row.Formula_RSXLI_PLI_Search_Data_ID", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Data_Hash() As String
           
           Dim Result as String = String.Empty
@@ -1141,6 +1182,15 @@ Next P
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_RSXLI_PLI_Search_Data_ID_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Data_Hash_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1303,6 +1353,15 @@ Next P
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_RSXLI_PLI_Search_Data_ID_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Data_Hash_USERCHANGE() as Boolean
       Return False
       End Function
@@ -1363,11 +1422,11 @@ Next P
       '   BEGIN FORMULA; SUB ID:99; TYPE:QF
       Result = 0
 
-Dim TableName As String = Me.Parent.Name.Split(":")(0).Trim()
-Dim SubpartName As String = "Adm_" & TableName & "_Row"
+Dim TableName As String = "RSXLI_PLI_Search_Data"
+Dim SubpartName As String = TableName & "_Row"
 
 Dim PKField As String = TableName & "_ID" 
-If Me.Properties(PKField).Value > 0 Then
+If Not (String.IsNullOrEmpty(Me.Properties(PKField).Value)) Then
 	Result = 1
 End If
       '   END FORMULA; SUB ID:99; TYPE:QF

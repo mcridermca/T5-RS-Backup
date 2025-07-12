@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Building
-'$ GenerateDate: 06/27/2025 20:11:14
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -129,6 +129,9 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Select Case specName & "_" & context
     
+      Case "FacilityItemName_"
+      Formula_FacilityItemName_WHENCHANGED(Value, OldValue)
+    
     End Select
     End Sub
 
@@ -137,6 +140,10 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Dim Status as Boolean = False
     Select Case specName & "_" & context
+    
+      Case "FacilityItemName_"
+      'Formula_FacilityItemName_WHENCHANGED(Value, OldValue)
+      Status = True
     Case Else
     Status = False
     End Select
@@ -210,9 +217,15 @@ Option Infer On
       End Set
       End Property
     
-      Public ReadOnly Property [Floors]() As Rulestream.Kernel.Connection
+      Public ReadOnly Property [Floors]() As Rulestream.Kernel.Subpart
       Get
-      Return Connections("Floors")
+      Return Subparts("Floors")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [FacilityViewNodes]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("FacilityViewNodes")
       End Get
       End Property
     
@@ -236,18 +249,22 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Building", <a><![CDATA[Building]]></a>.Value, 45, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "06/19/2025 19:41:00")
+    InitPart("Building", <a><![CDATA[Building]]></a>.Value, 45, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/11/2025 18:36:59")
     AddProperty("573", "BuildingIndex", <a><![CDATA[Building Index]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("579", "BuildingName", <a><![CDATA[Building Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("574", "FacilityDisplayName", <a><![CDATA[Facility Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("590", "FacilityItemName", <a><![CDATA[Facility Item Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("581", "FloorNames", <a><![CDATA[Floor Names]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("590", "FacilityItemName", <a><![CDATA[Facility Item Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/11/2025 5:51:56 AM")
+    AddProperty("581", "FloorNames", <a><![CDATA[Floor Names]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/11/2025 6:36:59 PM")
     AddProperty("594", "Selected", <a><![CDATA[Selected]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("569", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601421", "4/25/2025 3:52:59 AM")
     
       AddValidValue("FloorNames")
     
-      oConnection = AddConnection("Floors", <a><![CDATA[Floors]]></a>.Value, "", "44", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+      oSubpart = AddSubpart(136,"Floors", <a><![CDATA[Floors]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601421", "7/11/2025 5:17:30 AM")
+      
+        oSubpart.AddVPF (46, "Floor", "Floor")
+      
+      oConnection = AddConnection("FacilityViewNodes", <a><![CDATA[Facility View Nodes]]></a>.Value, "", "84", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/11/2025 5:41:18 AM")
       
         oConnection.AddVPF(46, "Floor")
       
@@ -293,10 +310,10 @@ Option Infer On
           InitProperty("FacilityDisplayName", "530", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 4:53:18 AM", "", "In Development",  0,1265)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("FacilityItemName", "546", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 8:47:48 PM", "", "In Development",  0,1290)
+          InitProperty("FacilityItemName", "546", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/11/2025 5:51:56 AM", "", "In Development",  0,1290)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("FloorNames", "537", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 4:55:43 AM", "", "In Development",  0,1268)
+          InitProperty("FloorNames", "537", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/11/2025 6:36:59 PM", "", "In Development",  0,1268)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Selected", "550", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 10:15:25 PM", "", "In Development",  0,1298)
@@ -314,7 +331,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitValidValue("FloorNames_ValidValues", "537", "-1", 1269)
+        InitValidValue("FloorNames_ValidValues", "537", "-1", 2619)
         End If
     End Sub
 
@@ -327,6 +344,12 @@ Option Infer On
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("Floors", 116, "", "", "Y", 0, "-1", "", "GLOBAL\H601421", "7/11/2025 5:17:30 AM", "", "In Development", "Y",0,263,262)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -340,7 +363,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("Floors", "40", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/25/2025 4:42:34 AM", "", "In Development", "Y",72)
+        InitConnection("FacilityViewNodes", "76", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/11/2025 5:41:18 AM", "", "In Development", "N",148)
         
           End If
         
@@ -373,18 +396,27 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Floors_PARTS() as Rulestream.Kernel.rsCollection
+      Public Function Formula_FacilityViewNodes_PARTS() as Rulestream.Kernel.rsCollection
       
       Dim Result as Object = Nothing
       Dim ctx as Object
       Try
       ctx = this
-        '   BEGIN FORMULA; CON ID:40; TYPE:PF
-        Result = Nothing
-        '   END FORMULA; CON ID:40; TYPE:PF
+        '   BEGIN FORMULA; CON ID:76; TYPE:PF
+        Dim _floorsSorted As New SortedList
+
+For Each _floor As Object In Floors
+	_floorsSorted.Add(_floor.FloorIndex, _floor)
+Next
+
+Result = New rsCollection
+For Each _floor As Object In _floorsSorted
+	Result.Add(_floor)
+Next
+        '   END FORMULA; CON ID:76; TYPE:PF
       
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Building.Formula_Floors_PARTS", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " Building.Formula_FacilityViewNodes_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -651,7 +683,7 @@ Next
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_FacilityItemName_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -690,7 +722,7 @@ Next
       Result = New ValidValues
 
 For Each _floor As Object In Floors
-	Result.Add(_floor.FloorName)
+	Result.Add(_floor.FloorName, _floor)
 Next
       '   END FORMULA; PROP ID:537; TYPE:VV
       Catch ex As Exception
@@ -699,6 +731,111 @@ Next
       End Try
       Return Result
       End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Floors_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:116; TYPE:PN
+      
+      '   END FORMULA; SUB ID:116; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Building.Formula_Floors_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Floors_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Floors").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:116; TYPE:QF
+      Result = 0
+      '   END FORMULA; SUB ID:116; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Building.Formula_Floors_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Floors_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Floors").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:116; TYPE:OP
+      Result = "Floor"
+      '   END FORMULA; SUB ID:116; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Building.Formula_Floors_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_FacilityItemName_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FacilityItemName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:546; TYPE:WC
+      If Properties("FacilityItemName").UseCalculatedValue Then
+	Dim _newName As String = Value
+
+	For Each _building As Object In Owner
+		If _building IsNot Me Then
+			If _building.FacilityName = _newName Then
+				MessageBox.Show("Building Name Already Exists!", "Rename Building", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+				Value = OldValue
+
+				Exit For
+			End If
+		End If
+	Next
+End If
+      '   END FORMULA; PROP ID:546; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Building.Formula_FacilityItemName_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
     
 
     '*****************************************************************************

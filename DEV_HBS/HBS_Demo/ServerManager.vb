@@ -31,18 +31,18 @@ Imports RuleStream.DocumentManager
 
 	Public Function GetClassAssemblyName(ByVal strName as String) As String Implements RuleStream.IRsApplicationManager.GetClassAssemblyName
 		Select Case strName.ToLower
-			Case "circuit" : Return "HBS"
 			Case "controller" : Return "HBS"
+			Case "controllerphysical" : Return "HBS"
 			Case "cora_project_information" : Return "SharedHW"
 			Case "device" : Return "HBS"
 			Case "device_dbdetail" : Return "HBS"
+			Case "devicephysical" : Return "HBS"
 			Case "group" : Return "HBS"
 			Case "hbs_demo_tlp" : Return "HBS_Demo"
 			Case "hbs_project" : Return "HBS_Demo"
 			Case "hbs_system" : Return "HBS_Demo"
 			Case "partsearchresult" : Return "HBS"
 			Case "plant" : Return "HBS"
-			Case "powersupply" : Return "HBS"
 			Case "terminal_block" : Return "HBS_Demo"
 			Case "wire" : Return "HBS"
 
@@ -111,18 +111,18 @@ End Function
 
 	Public Function GetPartFamilies() As String() Implements RuleStream.IRsApplicationManager.GetPartFamilies
 		Dim arr(13) as String 
-		arr(0) = "23Circuit (HBS)Circuit"
-		arr(1) = "6Controller (HBS)Controller"
+		arr(0) = "6Controller (HBS)Controller"
+		arr(1) = "123ControllerPhysical (HBS)Controller Physical"
 		arr(2) = "19CORA_Project_Information (SharedHW)CORA Project Information"
 		arr(3) = "5Device (HBS)Device"
 		arr(4) = "10Device_DBDetail (HBS)Device_DBDetail"
-		arr(5) = "13Group (HBS)Group"
-		arr(6) = "1HBS_Demo_TLPHBS Demo"
-		arr(7) = "2HBS_ProjectHBS Project"
-		arr(8) = "3HBS_SystemHBS System"
-		arr(9) = "20PartSearchResult (HBS)Part Search Result"
-		arr(10) = "4Plant (HBS)Plant"
-		arr(11) = "22PowerSupply (HBS)Power Supply"
+		arr(5) = "122DevicePhysical (HBS)Device Physical"
+		arr(6) = "13Group (HBS)Group"
+		arr(7) = "1HBS_Demo_TLPHBS Demo"
+		arr(8) = "2HBS_ProjectHBS Project"
+		arr(9) = "3HBS_SystemHBS System"
+		arr(10) = "20PartSearchResult (HBS)Part Search Result"
+		arr(11) = "4Plant (HBS)Plant"
 		arr(12) = "7Terminal_BlockTerminal Block"
 		arr(13) = "21Wire (HBS)Wire"
 
@@ -132,7 +132,7 @@ End Function
 	Public Function GetProcessCategories() As String() Implements RuleStream.IRsApplicationManager.GetProcessCategories
 		Dim arr(6) as String
 		arr(0) = "1Input"
-		arr(1) = "2Design"
+		arr(1) = "2Schedules"
 		arr(2) = "3Analyze"
 		arr(3) = "4Output"
 		arr(4) = "95Cloaked"
@@ -277,7 +277,7 @@ End Function
 	End Sub
 
 	Public Function LastGenerated() As Date Implements RuleStream.IRsApplicationManager.LastGenerated
-		Return "06/27/2025 20:11:06"
+		Return "07/12/2025 14:07:30"
 	End Function
 
 	Public Function GetSpecPaths(ByVal intSYS as Integer) As String Implements RuleStream.IRsApplicationManager.GetSpecPaths

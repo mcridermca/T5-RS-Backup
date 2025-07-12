@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: FacilityModel
-'$ GenerateDate: 06/27/2025 20:11:14
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -271,15 +271,15 @@ Option Infer On
       End Get
       End Property
     
-      Public ReadOnly Property [Floors]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("Floors")
-      End Get
-      End Property
-    
       Public ReadOnly Property [FacilityTree]() As Rulestream.Kernel.Connection
       Get
       Return Connections("FacilityTree")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [FacilityViewNodes]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("FacilityViewNodes")
       End Get
       End Property
     
@@ -315,7 +315,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("FacilityModel", <a><![CDATA[Facility Model]]></a>.Value, 44, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "06/19/2025 19:41:00")
+    InitPart("FacilityModel", <a><![CDATA[Facility Model]]></a>.Value, 44, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/11/2025 18:19:15")
     AddProperty("588", "AddBuilding", <a><![CDATA[Add Building]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("589", "AddFloor", <a><![CDATA[Add Floor]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("580", "BuildingNames", <a><![CDATA[Building Names]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -339,17 +339,17 @@ Option Infer On
       
         oSubpart.AddVPF (45, "Building", "Building")
       
-      oSubpart = AddSubpart(64,"Floors", <a><![CDATA[Floors]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-      
-        oSubpart.AddVPF (46, "Floor", "Floor")
-      
-      oConnection = AddConnection("FacilityTree", <a><![CDATA[Facility Tree]]></a>.Value, "", "48", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+      oConnection = AddConnection("FacilityTree", <a><![CDATA[Facility Tree]]></a>.Value, "", "48", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/11/2025 6:19:15 PM")
       
         oConnection.AddVPF(44, "FacilityModel")
       
         oConnection.AddVPF(45, "Building")
       
         oConnection.AddVPF(46, "Floor")
+      
+      oConnection = AddConnection("FacilityViewNodes", <a><![CDATA[Facility View Nodes]]></a>.Value, "", "82", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/11/2025 5:37:52 AM")
+      
+        oConnection.AddVPF(45, "Building")
       
       oConnection = AddConnection("SelectedBuilding", <a><![CDATA[Selected Building]]></a>.Value, "", "51", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
       
@@ -454,12 +454,6 @@ Option Infer On
         
           End If
         
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("Floors", 64, "", "", "Y", 0, "-1", "", "GLOBAL\H601421", "4/25/2025 3:56:02 AM", "", "In Development", "Y",0,147,146)
-        
-          End If
-        
     End Sub
 
     '*****************************************************************************
@@ -473,7 +467,13 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("FacilityTree", "44", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/26/2025 5:16:16 AM", "", "In Development", "N",89)
+        InitConnection("FacilityTree", "44", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/11/2025 6:19:15 PM", "", "In Development", "N",149)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("FacilityViewNodes", "74", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/11/2025 5:37:52 AM", "", "In Development", "Y",147)
         
           End If
         
@@ -529,18 +529,16 @@ Option Infer On
 
 Result.Add(Me)
 
-For Each _building As Object In Buildings
+For Each _building As Object In FacilityViewNodes
 	Result.Add(_building)
 
 	If _building.Selected Then
-		For Each _floor As Object In _building.Floors
+		For Each _floor As Object In _building.FacilityViewNodes
 			Result.Add(_floor)
 
 			If _floor.Selected Then
-				For Each _plant As Object In _floor.Plants
-					For Each _controller As Object In _plant.Controllers
-						Result.Add(_controller)
-					Next
+				For Each _part As Object In _floor.FacilityViewNodes
+					Result.Add(_part)
 				Next
 			End If
 		Next
@@ -550,6 +548,37 @@ Next
       
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_FacilityTree_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FacilityViewNodes_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:74; TYPE:PF
+        Dim _buildingsSorted As New SortedList
+
+For Each _building As Object In Buildings
+	_buildingsSorted.Add(_building.BuildingIndex, _building)
+Next
+
+Result = New rsCollection
+For Each _building As Object In _buildingsSorted
+	Result.Add(_building)
+Next
+        '   END FORMULA; CON ID:74; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_FacilityViewNodes_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -1148,75 +1177,6 @@ Next
       '   END FORMULA; SUB ID:63; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_Buildings_OPTIMALPARTFAMILY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Floors_PARTNAMES() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      '   BEGIN FORMULA; SUB ID:64; TYPE:PN
-      
-      '   END FORMULA; SUB ID:64; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_Floors_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Floors_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Floors").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:64; TYPE:QF
-      Result = 0
-      '   END FORMULA; SUB ID:64; TYPE:QF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_Floors_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Floors_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Floors").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:64; TYPE:OP
-      Result = "Floor"
-      '   END FORMULA; SUB ID:64; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_Floors_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

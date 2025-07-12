@@ -32,6 +32,7 @@ Imports RuleStream.DocumentManager
 	Public Function GetClassAssemblyName(ByVal strName as String) As String Implements RuleStream.IRsApplicationManager.GetClassAssemblyName
 		Select Case strName.ToLower
 			Case "cora_project_information" : Return "SharedHW"
+			Case "rsxli_pli_project_information" : Return "SharedHW"
 			Case "shared_tlp" : Return "SharedHW"
 
 		End Select
@@ -98,9 +99,10 @@ End Function
 	End Function
 
 	Public Function GetPartFamilies() As String() Implements RuleStream.IRsApplicationManager.GetPartFamilies
-		Dim arr(1) as String 
+		Dim arr(2) as String 
 		arr(0) = "19CORA_Project_InformationCORA Project Information"
-		arr(1) = "18Shared_TLPShared Top-Level Part"
+		arr(1) = "117RSXLI_PLI_Project_InformationRSXLI_PLI_Project_Information"
+		arr(2) = "18Shared_TLPShared Top-Level Part"
 
 		GetPartFamilies = arr 
 	End Function
@@ -108,7 +110,7 @@ End Function
 	Public Function GetProcessCategories() As String() Implements RuleStream.IRsApplicationManager.GetProcessCategories
 		Dim arr(6) as String
 		arr(0) = "1Input"
-		arr(1) = "2Design"
+		arr(1) = "2Schedules"
 		arr(2) = "3Analyze"
 		arr(3) = "4Output"
 		arr(4) = "95Cloaked"
@@ -254,7 +256,7 @@ End Function
 	End Sub
 
 	Public Function LastGenerated() As Date Implements RuleStream.IRsApplicationManager.LastGenerated
-		Return "06/27/2025 20:11:19"
+		Return "07/12/2025 14:09:38"
 	End Function
 
 	Public Function GetSpecPaths(ByVal intSYS as Integer) As String Implements RuleStream.IRsApplicationManager.GetSpecPaths

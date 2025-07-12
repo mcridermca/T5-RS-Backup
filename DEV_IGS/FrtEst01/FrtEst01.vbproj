@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{3f8091ee-61c5-4957-a60b-faa1c2361d86}</ProjectGuid>
+		<ProjectGuid>{05d7d208-4b42-4f9c-9caa-8cfc6f514600}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>FrtEst01</RootNamespace>
 		<AssemblyName>FrtEst01</AssemblyName>

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: BuildingAutomation
-'$ GenerateDate: 06/19/2025 19:33:03
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -98,6 +98,15 @@ Option Infer On
         Case "10"
         Result = Process_Building_Automation_Controller_COMMENT()
         
+        Case "49"
+        Result = Process_Building_Automation_Media_Selection_COMMENT()
+        
+        Case "50"
+        Result = Process_Building_Automation_Water_Valve_Schedule_COMMENT()
+        
+        Case "51"
+        Result = Process_Building_Automation_Steam_Valve_Schedule_COMMENT()
+        
         Case "14"
         Result = Process_Building_Automation_Reports_COMMENT()
         
@@ -137,6 +146,15 @@ Option Infer On
         
         Case "10"
         Result = Process_Building_Automation_Controller_STATUS()
+        
+        Case "49"
+        Result = Process_Building_Automation_Media_Selection_STATUS()
+        
+        Case "50"
+        Result = Process_Building_Automation_Water_Valve_Schedule_STATUS()
+        
+        Case "51"
+        Result = Process_Building_Automation_Steam_Valve_Schedule_STATUS()
         
         Case "14"
         Result = Process_Building_Automation_Reports_STATUS()
@@ -251,6 +269,12 @@ Option Infer On
       End Set
       End Property
     
+      Public ReadOnly Property [Schedules]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("Schedules")
+      End Get
+      End Property
+    
       Public ReadOnly Property [CORA_Info]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("CORA_Info")
@@ -272,6 +296,12 @@ Option Infer On
       Public ReadOnly Property [PlantView]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("PlantView")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [PLI_Info]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("PLI_Info")
       End Get
       End Property
     
@@ -460,29 +490,37 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("BuildingAutomation", <a><![CDATA[Building Automation]]></a>.Value, 15, "HBS",  "", "", True, True, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "06/18/2025 17:06:48")
-    AddProperty("584", "EnableDrawings", <a><![CDATA[EnableDrawings]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H599123", "4/25/2025 5:34:13 AM")
+    InitPart("BuildingAutomation", <a><![CDATA[Building Automation]]></a>.Value, 15, "HBS",  "", "", True, True, "In Development", "", "", "", "", "",  "GLOBAL\H599123", "07/11/2025 10:29:54")
+    AddProperty("584", "EnableDrawings", <a><![CDATA[EnableDrawings]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("170", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601421", "3/14/2025 2:49:31 AM")
     AddProperty("441", "CORAInfoNotSavedText", <a><![CDATA[CORA Info Not Saved Text]]></a>.Value, "Text to display if the CORA Info has not yet been saved.", "String","","UI Control","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "4/14/2025 2:48:47 PM")
     AddProperty("440", "CORAInfoSaved", <a><![CDATA[CORA Info Saved]]></a>.Value, "Has the CORA Project Info been locked-in by a Model Save?", "Boolean","","UI Control","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "4/17/2025 2:20:46 AM")
     
+      oSubpart = AddSubpart(132,"Schedules", <a><![CDATA[Schedules]]></a>.Value, "FD", "", "A Popup UI", 9999, "", "GLOBAL\H599123", "7/9/2025 12:50:34 PM")
+      
+        oSubpart.AddVPF (118, "Schedule", "Schedule")
+      
       oSubpart = AddSubpart(18,"CORA_Info", <a><![CDATA[CORA Info]]></a>.Value, "FD", "Data imported from CORA.", "CORA Data", 9999, "CORA", "GLOBAL\H601423", "3/17/2025 1:12:36 PM")
       
         oSubpart.AddVPF (19, "CORA_Project_Information", "CORA Project Information")
       
-      oSubpart = AddSubpart(32,"Drawings", <a><![CDATA[Drawings]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H599123", "4/25/2025 5:40:57 AM")
+      oSubpart = AddSubpart(32,"Drawings", <a><![CDATA[Drawings]]></a>.Value, "FD", "", "Subparts and Connections", 9999, "", "GLOBAL\H601423", "7/2/2025 1:57:11 PM")
       
         oSubpart.AddVPF (29, "Drawing", "Drawing")
       
-      oSubpart = AddSubpart(62,"FacilityView", <a><![CDATA[Facility View]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601421", "4/25/2025 3:13:17 AM")
+      oSubpart = AddSubpart(62,"FacilityView", <a><![CDATA[Facility View]]></a>.Value, "FD", "", "Subparts and Connections", 9999, "", "GLOBAL\H601423", "7/2/2025 1:57:15 PM")
       
         oSubpart.AddVPF (44, "FacilityModel", "Facility Model")
       
-      oSubpart = AddSubpart(26,"PlantView", <a><![CDATA[Plant View]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601421", "4/20/2025 3:30:00 AM")
+      oSubpart = AddSubpart(26,"PlantView", <a><![CDATA[Plant View]]></a>.Value, "FD", "", "Subparts and Connections", 9999, "", "GLOBAL\H601423", "7/2/2025 1:57:35 PM")
       
         oSubpart.AddVPF (24, "PlantModel", "Plant Model")
       
-      oSubpart = AddSubpart(67,"PowerSupplyView", <a><![CDATA[Power Supply View]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601421", "6/18/2025 5:06:48 PM")
+      oSubpart = AddSubpart(116,"PLI_Info", <a><![CDATA[PLI Info]]></a>.Value, "FD", "A subpart with info for Project and Line-Item (PLI).", "Subparts and Connections", 9999, "", "GLOBAL\H601423", "7/2/2025 1:56:47 PM")
+      
+        oSubpart.AddVPF (101, "PLI_Information", "PLI Information")
+      
+      oSubpart = AddSubpart(67,"PowerSupplyView", <a><![CDATA[Power Supply View]]></a>.Value, "FD", "", "Subparts and Connections", 9999, "", "GLOBAL\H601423", "7/2/2025 1:57:26 PM")
       
         oSubpart.AddVPF (48, "PowerSupplyModel", "Power Supply Model")
       
@@ -515,6 +553,9 @@ Option Infer On
         Initialize_Process_Building_Automation_Power_Supplies()
         Initialize_Process_Building_Automation_Plant_Devices()
         Initialize_Process_Building_Automation_Controller()
+        Initialize_Process_Building_Automation_Media_Selection()
+        Initialize_Process_Building_Automation_Water_Valve_Schedule()
+        Initialize_Process_Building_Automation_Steam_Valve_Schedule()
         Initialize_Process_Building_Automation_Reports()
         Initialize_Process_Building_Automation_Drawings()
     Case Else
@@ -835,7 +876,7 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 24, "54", "52", "RsTextbox", 0, "SystemUserDefinedName", 28, 99, 22, 299, 45, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 24, "55", "52", "RsLabel", 0, "", 4, 1, 20, 93, 46, "Selected System", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 24, "56", "52", "RsLabel", 0, "", 29, 20, 21, 73, 47, "Building", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 24, "57", "0", "RsSubForm", 0, "", 75, 9, 688, 551, 48, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,13,SelectedPlantItem")
+        oProcessStep.AddCustomLayout(1, 24, "57", "0", "RsSubForm", 0, "", 75, 9, 688, 551, 48, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,41,SelectedPlantItem")
         oProcessStep.AddCustomLayout(1, 24, "58", "57", "RsGroupBox", 0, "", 8, 3, 677, 539, 49, "Library/Part Search", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
         oProcessStep.AddCustomLayout(1, 24, "59", "58", "RsLabel", 0, "", 54, 37, 21, 42, 50, "Filter 1", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 24, "60", "58", "RsButton", 0, "button_AddDevice", 617, 278, 35, 130, 51, "Add Device", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
@@ -851,8 +892,8 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 24, "70", "69", "RsGridColumn", 0, "SearchPartNumber", 0, 0, 0, 100, 0, "Search Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:SearchResults_Column1_Title;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 24, "71", "69", "RsGridColumn", 0, "SearchPartDescription", 0, 0, 0, 400, 0, "Search Part Description", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:SearchResults_Column2_Title;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 24, "72", "58", "RsGroupBox", 0, "", 13, 37, 37, 458, 61, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 24, "73", "72", "RsRadioButton", 0, "SearchType", 7, 321, 18, 92, 62, "Search Parts", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 24, "74", "72", "RsRadioButton", 0, "SearchType", 7, 16, 18, 100, 63, "Search Library", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 24, "73", "72", "RsRadioButton", 0, "SearchType", 7, 321, 24, 120, 62, "Search Parts", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 24, "74", "72", "RsRadioButton", 0, "SearchType", 7, 16, 24, 134, 63, "Search Library", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
         oProcessStep.AddCustomLayout(1, 24, "75", "72", "RsComboBox", 0, "Search_Default_Library", 7, 122, 22, 175, 64, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
         oProcessStep.AddCustomLayout(1, 24, "76", "58", "RsButton", 0, "button_AddPlant", 617, 111, 35, 130, 65, "Add Plant", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
         oProcessStep.AddCustomLayout(1, 24, "77", "0", "RsSubForm", 0, "", 12, 916, 57, 392, 66, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,13,SelectedPlantItem")
@@ -922,46 +963,51 @@ Option Infer On
         Private Sub Initialize_Process_Building_Automation_Power_Supplies()
         Dim oProcessStep As ProcessStep = Nothing
         oProcessStep = AddProcessStep(12, "Power Supplies", "", 1, 2, 1, 6, 50, 50)
-        oProcessStep.AddPath("BuildingAutomation.PlantView/PlantModel")
+        oProcessStep.AddPath("BuildingAutomation.PowerSupplyView/PowerSupplyModel")
         oProcessStep.AddLayout(1, 11, "")
-        oProcessStep.AddCustomLayout(1, 24, "1", "0", "RsSubForm", 0, "", 77, 13, 666, 1352, 0, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,13,SelectedPlantItem")
-        oProcessStep.AddCustomLayout(1, 24, "2", "1", "RsGroupBox", 0, "", 323, 601, 327, 745, 1, "All Parts", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 24, "3", "2", "RsGrid", 0, "", 19, 7, 302, 729, 2, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:C,26,AllParts;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:0,0;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
-        oProcessStep.AddCustomLayout(1, 24, "4", "3", "RsGridColumn", 0, "SelectedForPowerSupply", 0, 0, 0, 30, 0, "", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 24, "5", "3", "RsGridColumn", 0, "PartNumber", 0, 0, 0, 90, 0, "Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 24, "6", "3", "RsGridColumn", 0, "PartDescription", 0, 0, 0, 320, 0, "Description", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 24, "7", "3", "RsGridColumn", 0, "PowerSupply", 0, 0, 0, 100, 0, "Power Supply", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 24, "8", "3", "RsGridColumn", 0, "PowerConsumption", 0, 0, 0, 60, 0, "Power [VA]", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 24, "9", "3", "RsGridColumn", 0, "CurrentRating", 0, 0, 0, 60, 0, "Current [mA]", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 24, "10", "1", "RsGroupBox", 0, "", 14, 12, 636, 590, 3, "Available Power Supplies", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 24, "11", "10", "RsListBox", 0, "PowerSupplyPick", 19, 6, 571, 576, 4, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 24, "12", "10", "RsButton", 0, "button_AddPowerSupply", 596, 214, 23, 180, 5, "Add Power Supply", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
-        oProcessStep.AddCustomLayout(1, 24, "13", "1", "RsGrid", 0, "", 14, 608, 252, 729, 6, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:C,25,Circuits;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:0,0;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:SelectedPowerSupplyIndex")
-        oProcessStep.AddCustomLayout(1, 24, "14", "13", "RsGridColumn", 0, "PartNumber", 0, 0, 0, 100, 0, "Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 24, "15", "13", "RsGridColumn", 0, "CircuitDescription", 0, 0, 0, 270, 0, "Description", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 24, "16", "13", "RsGridColumn", 0, "InputVoltage", 0, 0, 0, 100, 0, "Input Voltage", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 24, "17", "13", "RsGridColumn", 0, "OutputVoltage", 0, 0, 0, 100, 0, "Output Voltage", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 24, "18", "13", "RsGridColumn", 0, "DevicePower", 0, 0, 0, 60, 0, "Device Power [VA/mA]]", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 24, "19", "13", "RsGridColumn", 0, "PowerRating", 0, 0, 0, 70, 0, "Power Rating", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 24, "20", "1", "RsButton", 0, "button_DeletePowerSupply", 289, 608, 23, 180, 7, "Delete Power Supply", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
-        oProcessStep.AddCustomLayout(1, 24, "21", "1", "RsSubForm", 0, "", 277, 831, 49, 506, 8, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,25,Circuits")
-        oProcessStep.AddCustomLayout(1, 24, "22", "21", "RsButton", 0, "button_AssignPower", 12, 3, 23, 194, 9, "Assign Devices", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
-        oProcessStep.AddCustomLayout(1, 24, "23", "21", "RsLabel", 0, "", 14, 256, 21, 150, 10, "Safety Margin", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 24, "24", "21", "RsTextbox", 0, "SafetyMargin", 14, 413, 21, 58, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 24, "25", "21", "RsLabel", 0, "", 13, 478, 22, 25, 12, "%", 0, 0, 1, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 24, "26", "0", "RsSubForm", 0, "", 12, 461, 57, 401, 13, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,14,SelectedSystemItem")
-        oProcessStep.AddCustomLayout(1, 24, "27", "26", "RsTextbox", 0, "SystemName", 3, 106, 22, 278, 14, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 24, "28", "26", "RsTextbox", 0, "SystemUserDefinedName", 28, 106, 22, 278, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 24, "29", "26", "RsLabel", 0, "", 4, 10, 21, 90, 16, "Selected System", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 24, "30", "26", "RsLabel", 0, "", 29, 10, 21, 90, 17, "Building", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 24, "31", "0", "RsSubForm", 0, "", 12, 868, 57, 392, 18, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,13,SelectedPlantItem")
-        oProcessStep.AddCustomLayout(1, 24, "32", "31", "RsLabel", 0, "", 30, 6, 21, 90, 19, "Floor", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 24, "33", "31", "RsTextbox", 0, "PlantUserDefinedName", 29, 102, 22, 278, 20, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 24, "34", "31", "RsTextbox", 0, "PlantNameGroup", 4, 102, 22, 278, 21, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 24, "35", "31", "RsLabel", 0, "", 5, 11, 21, 85, 22, "Selected Plant", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 24, "36", "0", "RsSubForm", 0, "", 12, 25, 49, 430, 23, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,12,SelectedGroupItem")
-        oProcessStep.AddCustomLayout(1, 24, "37", "36", "RsTextbox", 0, "GroupName", 10, 95, 22, 278, 24, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 24, "38", "36", "RsLabel", 0, "", 10, 7, 21, 78, 25, "Selected Group", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "1", "0", "RsGrid", 0, "", 68, 15, 560, 184, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:C,61,ProjectElements;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:0,0;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:True;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:SelectedElementIndex")
+        oProcessStep.AddCustomLayout(1, 48, "2", "1", "RsGridColumn", 0, "ElementName", 0, 0, 0, 150, 0, "Display Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 48, "3", "0", "RsSubForm", 0, "", 12, 206, 694, 1475, 1, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,61,ProjectElements")
+        oProcessStep.AddCustomLayout(1, 48, "4", "3", "RsGrid", 0, "", 56, 6, 320, 470, 2, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:C,63,Transformers;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:0,0;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:True;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:SelectedTransformerIndex")
+        oProcessStep.AddCustomLayout(1, 48, "5", "4", "RsGridColumn", 0, "PartNumber", 0, 0, 0, 70, 0, "Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 48, "6", "4", "RsGridColumn", 0, "PartDescription", 0, 0, 0, 250, 0, "Part Description", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 48, "7", "4", "RsGridColumn", 0, "Tag", 0, 0, 0, 100, 0, "Mnemonic", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 48, "8", "3", "RsSubForm", 0, "", 7, 485, 672, 978, 3, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,63,Transformers")
+        oProcessStep.AddCustomLayout(1, 48, "9", "8", "RsGrid", 0, "", 49, 10, 560, 255, 4, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,24,Circuits;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:0,0;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:True;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:SelectedCircuitIndex")
+        oProcessStep.AddCustomLayout(1, 48, "10", "9", "RsGridColumn", 0, "Tag", 0, 0, 0, 100, 0, "Mnemonic", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 48, "11", "9", "RsGridColumn", 0, "OutputVoltage", 0, 0, 0, 100, 0, "Output Voltage", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 48, "12", "8", "RsSubForm", 0, "", 8, 288, 652, 687, 5, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,24,Circuits")
+        oProcessStep.AddCustomLayout(1, 48, "13", "12", "RsLabel", 0, "", 21, 14, 21, 109, 6, "Circuit Power", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "14", "12", "RsTextbox", 0, "PowerConsumption", 21, 130, 21, 68, 7, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 48, "15", "12", "RsLabel", 0, "PowerUnits", 21, 205, 21, 40, 8, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "16", "12", "RsListBox", 0, "PoweredPartsText", 116, 12, 497, 231, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 48, "17", "12", "RsLabel", 0, "", 90, 14, 21, 150, 10, "Powered Parts", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "18", "12", "RsGrid", 0, "", 116, 253, 485, 428, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:C,77,PowerSupplyViewNodes;ShowFilter:False;ShowGroups:False;RowIcon:RowIconPowerSupplyAvailability;RowIconSize:20,20;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
+        oProcessStep.AddCustomLayout(1, 48, "19", "18", "RsGridColumn", 0, "SelectedForPowerSupply", 0, 0, 0, 20, 0, "", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 48, "20", "18", "RsGridColumn", 0, "ElementName", 0, 0, 0, 150, 0, "Part", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 48, "21", "18", "RsGridColumn", 0, "Tag", 0, 0, 0, 70, 0, "Tag", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 48, "22", "18", "RsGridColumn", 0, "PowerConsumptionDisplay", 0, 0, 0, 70, 0, "Pwr Rating", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 48, "23", "18", "RsGridColumn", 0, "DefaultQuantity", 0, 0, 0, 50, 0, "Qty", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 48, "24", "12", "RsLabel", 0, "CircuitPartsLabel", 87, 253, 22, 126, 12, "", 0, 0, 1, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "25", "12", "RsButton", 0, "button_AssignAll", 612, 276, 23, 127, 13, "Assign All", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
+        oProcessStep.AddCustomLayout(1, 48, "26", "12", "RsButton", 0, "button_UnassignAll", 612, 433, 23, 108, 14, "Unassign All", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
+        oProcessStep.AddCustomLayout(1, 48, "27", "8", "RsLabel", 0, "", 20, 10, 21, 150, 15, "Circuits", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "28", "3", "RsSubForm", 0, "", 387, 3, 243, 480, 16, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:C,63,Transformers")
+        oProcessStep.AddCustomLayout(1, 48, "29", "28", "RsLabel", 0, "", 12, 13, 21, 150, 17, "Description", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "30", "28", "RsTextbox", 0, "PartDescription", 12, 170, 56, 297, 18, "", -1, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 48, "31", "28", "RsLabel", 0, "", 80, 13, 21, 150, 19, "Quantity", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "32", "28", "RsTextbox", 0, "Qty", 80, 170, 21, 297, 20, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 48, "33", "28", "RsLabel", 0, "", 121, 13, 21, 150, 21, "Mnemonic", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "34", "28", "RsTextbox", 0, "Tag", 121, 170, 21, 297, 22, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 48, "35", "28", "RsLabel", 0, "", 162, 13, 21, 150, 23, "Scope", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "36", "28", "RsComboBox", 0, "Scope", 162, 170, 28, 297, 24, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 48, "37", "28", "RsButton", 0, "button_RemovePowerSupply", 208, 269, 23, 198, 25, "Remove Power Supply", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
+        oProcessStep.AddCustomLayout(1, 48, "38", "3", "RsLabel", 0, "", 27, 6, 21, 150, 26, "Power Supplies", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "39", "3", "RsLabel", 0, "", 27, 269, 21, 150, 27, "Safety Margin (%)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "40", "3", "RsTextbox", 0, "SafetyMargin", 27, 426, 21, 50, 28, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 48, "41", "0", "RsMultiCombo", 0, "AvailablePowerSupplies", 639, 169, 21, 30, 29, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;DDWidth:0;DBSpecID:22;Sorted:0;")
+        oProcessStep.AddCustomLayout(1, 48, "42", "0", "RsLabel", 0, "", 640, 15, 22, 131, 30, "Add Transformer", 0, 0, 1, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 48, "43", "0", "RsLabel", 0, "", 39, 15, 21, 150, 31, "Project Elements", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         
         End Sub
       
@@ -1076,9 +1122,267 @@ Option Infer On
         '   Do not modify this procedure. Changes may render this application
         '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
         '*****************************************************************************
+        Private Sub Initialize_Process_Building_Automation_Media_Selection()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(49, "Media Selection", "", 2, 2, 1, 9, 50, 50)
+        oProcessStep.AddPath("BuildingAutomation.Schedules/Schedule")
+        oProcessStep.AddLayout(1, 11, "")
+        oProcessStep.AddCustomLayout(1, 118, "1", "0", "RsGroupBox", 0, "", 9, 4, 116, 368, 0, "Schedules", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "2", "1", "RsLabel", 0, "", 29, 11, 24, 97, 1, "Please Select Media", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "3", "1", "RsNextStepActionButton", 0, "", 19, 255, 45, 77, 2, "Load Media", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:2;Enabled:;")
+        oProcessStep.AddCustomLayout(1, 118, "4", "1", "RsComboBox", 0, "ValveOptions", 26, 114, 28, 121, 3, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        
+        End Sub
+      
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
+        Private Sub Initialize_Process_Building_Automation_Water_Valve_Schedule()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(50, "Water Valve Schedule", "", 2, 2, 1, 10, 50, 50)
+        oProcessStep.AddPath("BuildingAutomation.Schedules/Schedule")
+        oProcessStep.AddLayout(1, 11, "")
+        oProcessStep.AddCustomLayout(1, 118, "1", "0", "RsActionButton", 0, "", 151, 225, 25, 50, 0, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.10;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:CreateSchedules;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 118, "2", "0", "RsGrid", 0, "", 12, 26, 134, 1201, 1, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,133,Valves;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:True;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
+        oProcessStep.AddCustomLayout(1, 118, "3", "2", "RsGridColumn", 0, "ValveTag", 0, 0, 0, 100, 0, "Valve Tag", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "4", "2", "RsGridColumn", 0, "EquipmentLocation", 0, 0, 0, 100, 0, "Equipment Location", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "5", "2", "RsGridColumn", 0, "Service_Application", 0, 0, 0, 100, 0, "Service_Application", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "6", "2", "RsGridColumn", 0, "ControlType", 0, 0, 0, 100, 0, "Control Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "7", "2", "RsGridColumn", 0, "LineSize", 0, 0, 0, 100, 0, "Line Size", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "8", "2", "RsGridColumn", 0, "DesignFlowGPM", 0, 0, 0, 100, 0, "Design Flow (GPM)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "9", "2", "RsGridColumn", 0, "DesignFlowLS", 0, 0, 0, 100, 0, "Design Flow (L/S)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "10", "2", "RsGridColumn", 0, "RadiantWaterF", 0, 0, 0, 100, 0, "Radiant Water (F)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "11", "2", "RsGridColumn", 0, "RadiantHeatKW", 0, 0, 0, 100, 0, "Radiant Heat (KW)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "12", "2", "RsGridColumn", 0, "RadiantWaterC", 0, 0, 0, 100, 0, "Radiant Water (C)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "13", "2", "RsGridColumn", 0, "RadiantHeatKW", 0, 0, 0, 100, 0, "Radiant Heat (KW)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "14", "2", "RsGridColumn", 0, "DesignPressureDropGPM", 0, 0, 0, 100, 0, "Design Pressure Drop (PSI)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "15", "2", "RsGridColumn", 0, "SizeIn", 0, 0, 0, 100, 0, "Size (In)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "16", "2", "RsGridColumn", 0, "Cv", 0, 0, 0, 100, 0, "Cv", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "17", "2", "RsGridColumn", 0, "Pattern", 0, 0, 0, 100, 0, "Pattern", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "18", "2", "RsGridColumn", 0, "Conn", 0, 0, 0, 100, 0, "Conn.", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "19", "2", "RsGridColumn", 0, "BodyRating", 0, 0, 0, 100, 0, "Body Rating", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "20", "2", "RsGridColumn", 0, "FlowCharacterstics", 0, 0, 0, 100, 0, "Flow Characterstics", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "21", "2", "RsGridColumn", 0, "ManufacturerType", 0, 0, 0, 250, 0, "Manufacturer Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "22", "2", "RsGridColumn", 0, "ValvePartNumber", 0, 0, 0, 100, 0, "Valve Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "23", "2", "RsGridColumn", 0, "ActuatorPartNumber", 0, 0, 0, 100, 0, "Actuator Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "24", "2", "RsGridColumn", 0, "LinkagePartNumber", 0, 0, 0, 100, 0, "Linkage Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "25", "2", "RsGridColumn", 0, "ActuatorType", 0, 0, 0, 100, 0, "Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "26", "2", "RsGridColumn", 0, "Signal", 0, 0, 0, 100, 0, "Signal", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "27", "2", "RsGridColumn", 0, "FailPos", 0, 0, 0, 100, 0, "Fail Pos", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "28", "2", "RsGridColumn", 0, "CloseOff", 0, 0, 0, 100, 0, "Close Off", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "29", "2", "RsGridColumn", 0, "Remarks", 0, 0, 0, 100, 0, "Remarks", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "30", "0", "RsAddDeleteCopy", 0, "", 152, 26, 24, 193, 2, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,133,Valves;CanDelete:;AddPrompt:False;ShowCopy:True")
+        oProcessStep.AddCustomLayout(1, 118, "31", "0", "RsSubForm", 0, "", 182, 23, 387, 1203, 3, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,133,Valves")
+        oProcessStep.AddCustomLayout(1, 118, "32", "31", "RsGroupBox", 0, "", 16, 13, 74, 710, 4, "System Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "33", "32", "RsTextbox", 0, "ValveTag", 35, 6, 26, 63, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "34", "32", "RsTextbox", 0, "EquipmentLocation", 35, 103, 26, 118, 6, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "35", "32", "RsTextbox", 0, "Service_Application", 35, 241, 26, 118, 7, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "36", "32", "RsLabel", 0, "", 18, 497, 17, 94, 8, "Line Size (IN)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "37", "32", "RsComboBox", 0, "ControlType", 35, 377, 28, 93, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "38", "32", "RsComboBox", 0, "LineSize", 35, 497, 28, 93, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "39", "32", "RsLabel", 0, "", 18, 6, 17, 94, 11, "Valve Tag", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "40", "32", "RsLabel", 0, "", 18, 376, 17, 94, 12, "Control Type", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "41", "32", "RsLabel", 0, "", 18, 241, 14, 94, 13, "Service/Application", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "42", "32", "RsLabel", 0, "", 18, 103, 17, 118, 14, "Equipment Location", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "43", "31", "RsGroupBox", 0, "", 98, 13, 77, 710, 15, "Water Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "44", "43", "RsLabel", 0, "", 20, 400, 27, 92, 16, "Radiant         WATER ∆T  (°C)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "45", "43", "RsLabel", 0, "", 18, 6, 26, 94, 17, "Design Flow               (GPM)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "46", "43", "RsLabel", 0, "", 16, 594, 31, 94, 18, "Design Press. Drop (PSI)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "47", "43", "RsLabel", 0, "", 19, 511, 27, 92, 19, "Radiant Heat         (KW)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "48", "43", "RsLabel", 0, "", 19, 315, 27, 92, 20, "Radiant Heat (BTU-HR)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "49", "43", "RsLabel", 0, "", 19, 208, 27, 92, 21, "Radiant         WATER ∆T  (°F)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "50", "43", "RsTextbox", 0, "DesignFlowGPM", 47, 6, 26, 77, 22, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "51", "43", "RsLabel", 0, "", 18, 106, 27, 92, 23, "Design Flow            (L/S)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "52", "43", "RsTextbox", 0, "DesignFlowLS", 48, 108, 26, 84, 24, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "53", "43", "RsTextbox", 0, "RadiantWaterF", 48, 208, 26, 92, 25, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "54", "43", "RsTextbox", 0, "RadiantHeatBTUHR", 48, 315, 26, 67, 26, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "55", "43", "RsTextbox", 0, "RadiantWaterC", 48, 400, 26, 91, 27, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "56", "43", "RsTextbox", 0, "RadiantHeatKW", 48, 511, 26, 67, 28, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "57", "43", "RsTextbox", 0, "DesignPressureDropPSI", 47, 594, 26, 94, 29, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "58", "31", "RsGroupBox", 0, "", 181, 13, 96, 710, 30, "Valve Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "59", "58", "RsLabel", 0, "", 17, 449, 14, 70, 31, "Body Rating", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "60", "58", "RsLabel", 0, "", 17, 6, 14, 63, 32, "Size (IN)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "61", "58", "RsLabel", 0, "", 51, 6, 15, 183, 33, "Manufacturer Type", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "62", "58", "RsLabel", 0, "", 15, 575, 12, 129, 34, "Flow Characterstics", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "63", "58", "RsLabel", 0, "", 17, 355, 12, 44, 35, "Conn", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "64", "58", "RsLabel", 0, "", 53, 355, 15, 94, 36, "Part Number", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "65", "58", "RsLabel", 0, "", 17, 241, 11, 59, 37, "Pattern", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "66", "58", "RsLabel", 0, "", 17, 121, 14, 38, 38, "Cv", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "67", "58", "RsTextbox", 0, "SizeIn", 31, 6, 26, 77, 39, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "68", "58", "RsTextbox", 0, "Cv", 31, 121, 26, 92, 40, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "69", "58", "RsComboBox", 0, "Pattern", 31, 241, 28, 93, 41, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "70", "58", "RsTextbox", 0, "Conn", 30, 355, 26, 67, 42, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "71", "58", "RsTextbox", 0, "BodyRating", 32, 449, 26, 91, 43, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "72", "58", "RsTextbox", 0, "FlowCharacterstics", 32, 575, 26, 112, 44, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "73", "58", "RsComboBox", 0, "ManufacturerType", 65, 6, 28, 329, 45, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "74", "58", "RsTextbox", 0, "ValvePartNumber", 68, 355, 26, 118, 46, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "75", "31", "RsGroupBox", 0, "", 283, 13, 90, 578, 47, "Actuator Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "76", "75", "RsLabel", 0, "", 26, 6, 26, 94, 48, "Actuator Part Number", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "77", "75", "RsLabel", 0, "", 33, 219, 16, 53, 49, "Type", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "78", "75", "RsLabel", 0, "", 26, 121, 26, 92, 50, "Linkage Part Number", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "79", "75", "RsGroupBox", 0, "", 15, 325, 64, 247, 51, "Control", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "80", "79", "RsLabel", 0, "", 16, 6, 12, 44, 52, "Signal", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "81", "79", "RsLabel", 0, "", 16, 90, 12, 44, 53, "Fail Pos", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "82", "79", "RsLabel", 0, "", 18, 172, 12, 67, 54, "Close Off", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "83", "79", "RsComboBox", 0, "Signal", 31, 6, 28, 73, 55, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "84", "79", "RsComboBox", 0, "FailPos", 31, 90, 28, 73, 56, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "85", "79", "RsTextbox", 0, "CloseOff", 31, 172, 26, 67, 57, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "86", "75", "RsComboBox", 0, "ActuatorPartNumber", 52, 6, 28, 105, 58, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "87", "75", "RsTextbox", 0, "LinkagePartNumber", 52, 119, 26, 84, 59, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "88", "75", "RsTextbox", 0, "ActuatorType", 52, 219, 26, 92, 60, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "89", "31", "RsGroupBox", 0, "", 16, 732, 294, 327, 61, "Modify Display Unit Preferences", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "90", "89", "RsGroupBox", 0, "", 12, 6, 128, 315, 62, "Design Flow", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "91", "90", "RsCheckbox", 0, "GallonsPerMin", 19, 6, 24, 215, 63, "Gallons Per Minute (GPM)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "92", "90", "RsCheckbox", 0, "LitresPerSec", 43, 6, 24, 192, 64, "Litres Per Minute (L/S)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "93", "90", "RsCheckbox", 0, "BTU_Hour", 68, 6, 24, 299, 65, "BTU Hour (BTU. Hr) * Radiant  Heats", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "94", "90", "RsCheckbox", 0, "KiloWatts", 92, 6, 24, 260, 66, "KiloWatts (KW) * Radiant  Heats", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "95", "89", "RsGroupBox", 0, "", 140, 6, 73, 315, 67, "Design Pressure Drop", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "96", "95", "RsCheckbox", 0, "PSI_Design", 19, 6, 24, 184, 68, "Pound Per Inch (PSI)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "97", "95", "RsCheckbox", 0, "kPa_Design", 43, 6, 24, 157, 69, "Kilo Pascals (kPa)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "98", "89", "RsGroupBox", 0, "", 215, 6, 73, 315, 70, "Valve Pressure Drop", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "99", "98", "RsCheckbox", 0, "PSI_Valve", 19, 6, 24, 184, 71, "Pound Per Inch (PSI)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "100", "98", "RsCheckbox", 0, "kPa_Valve", 43, 6, 24, 157, 72, "Kilo Pascals (kPa)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "101", "31", "RsGroupBox", 0, "", 316, 732, 53, 325, 73, "Actions", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "102", "101", "RsButton", 0, "EnableHiddenData", 15, 10, 30, 104, 74, "Unhide Water Data", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
+        oProcessStep.AddCustomLayout(1, 118, "103", "101", "RsButton", 0, "DisableHiddenData", 15, 122, 30, 104, 75, "Hide Water Data", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
+        oProcessStep.AddCustomLayout(1, 118, "104", "31", "RsGroupBox", 0, "", 283, 598, 91, 125, 76, "Remarks", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "105", "104", "RsTextbox", 0, "Remarks", 15, 4, 70, 115, 77, "", -1, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "106", "0", "RsDocumentLauncherButton", 0, "", 151, 281, 25, 55, 78, "", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.Export.jpg;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:2;Enabled:;DocumentFileName:1.Schedules_Report.xlsx;DocumentLocation:1;OutputPath:;")
+        oProcessStep.AddCustomLayout(1, 118, "107", "0", "RsPrevStepActionButton", 0, "", 151, 760, 25, 58, 79, "Back", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:2;Enabled:;")
+        
+        End Sub
+      
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
+        Private Sub Initialize_Process_Building_Automation_Steam_Valve_Schedule()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(51, "Steam Valve Schedule", "", 2, 2, 1, 11, 50, 50)
+        oProcessStep.AddPath("BuildingAutomation.Schedules/Schedule")
+        oProcessStep.AddLayout(1, 11, "")
+        oProcessStep.AddCustomLayout(1, 118, "1", "0", "RsActionButton", 0, "", 151, 225, 25, 50, 0, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.10;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:CreateSchedules;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 118, "2", "0", "RsGrid", 0, "", 12, 26, 134, 1201, 1, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,133,Valves;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:True;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
+        oProcessStep.AddCustomLayout(1, 118, "3", "2", "RsGridColumn", 0, "ValveTag", 0, 0, 0, 100, 0, "Valve Tag", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "4", "2", "RsGridColumn", 0, "EquipmentLocation", 0, 0, 0, 100, 0, "Equipment Location", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "5", "2", "RsGridColumn", 0, "Service_Application", 0, 0, 0, 100, 0, "Service_Application", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "6", "2", "RsGridColumn", 0, "ControlType", 0, 0, 0, 100, 0, "Control Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "7", "2", "RsGridColumn", 0, "LineSize", 0, 0, 0, 100, 0, "Line Size", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "8", "2", "RsGridColumn", 0, "DesignFlowGPM", 0, 0, 0, 100, 0, "Design Flow (GPM)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "9", "2", "RsGridColumn", 0, "DesignFlowLS", 0, 0, 0, 100, 0, "Design Flow (L/S)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "10", "2", "RsGridColumn", 0, "RadiantWaterF", 0, 0, 0, 100, 0, "Radiant Water (F)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "11", "2", "RsGridColumn", 0, "RadiantHeatKW", 0, 0, 0, 100, 0, "Radiant Heat (KW)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "12", "2", "RsGridColumn", 0, "RadiantWaterC", 0, 0, 0, 100, 0, "Radiant Water (C)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "13", "2", "RsGridColumn", 0, "RadiantHeatKW", 0, 0, 0, 100, 0, "Radiant Heat (KW)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "14", "2", "RsGridColumn", 0, "DesignPressureDropGPM", 0, 0, 0, 100, 0, "Design Pressure Drop (PSI)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "15", "2", "RsGridColumn", 0, "SizeIn", 0, 0, 0, 100, 0, "Size (In)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "16", "2", "RsGridColumn", 0, "Cv", 0, 0, 0, 100, 0, "Cv", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "17", "2", "RsGridColumn", 0, "Pattern", 0, 0, 0, 100, 0, "Pattern", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "18", "2", "RsGridColumn", 0, "Conn", 0, 0, 0, 100, 0, "Conn.", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "19", "2", "RsGridColumn", 0, "BodyRating", 0, 0, 0, 100, 0, "Body Rating", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "20", "2", "RsGridColumn", 0, "FlowCharacterstics", 0, 0, 0, 100, 0, "Flow Characterstics", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "21", "2", "RsGridColumn", 0, "ManufacturerType", 0, 0, 0, 250, 0, "Manufacturer Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "22", "2", "RsGridColumn", 0, "ValvePartNumber", 0, 0, 0, 100, 0, "Valve Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "23", "2", "RsGridColumn", 0, "ActuatorPartNumber", 0, 0, 0, 100, 0, "Actuator Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "24", "2", "RsGridColumn", 0, "LinkagePartNumber", 0, 0, 0, 100, 0, "Linkage Part Number", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "25", "2", "RsGridColumn", 0, "ActuatorType", 0, 0, 0, 100, 0, "Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "26", "2", "RsGridColumn", 0, "Signal", 0, 0, 0, 100, 0, "Signal", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "27", "2", "RsGridColumn", 0, "FailPos", 0, 0, 0, 100, 0, "Fail Pos", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "28", "2", "RsGridColumn", 0, "CloseOff", 0, 0, 0, 100, 0, "Close Off", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "29", "2", "RsGridColumn", 0, "Remarks", 0, 0, 0, 100, 0, "Remarks", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 118, "30", "0", "RsAddDeleteCopy", 0, "", 152, 26, 24, 193, 2, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,133,Valves;CanDelete:;AddPrompt:False;ShowCopy:True")
+        oProcessStep.AddCustomLayout(1, 118, "31", "0", "RsSubForm", 0, "", 182, 23, 387, 1203, 3, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,133,Valves")
+        oProcessStep.AddCustomLayout(1, 118, "32", "31", "RsGroupBox", 0, "", 16, 13, 74, 710, 4, "System Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "33", "32", "RsTextbox", 0, "ValveTag", 35, 6, 26, 63, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "34", "32", "RsTextbox", 0, "EquipmentLocation", 35, 103, 26, 118, 6, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "35", "32", "RsTextbox", 0, "Service_Application", 35, 241, 26, 118, 7, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "36", "32", "RsLabel", 0, "", 18, 497, 17, 94, 8, "Line Size (IN)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "37", "32", "RsComboBox", 0, "ControlType", 35, 377, 28, 93, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "38", "32", "RsComboBox", 0, "LineSize", 35, 497, 28, 93, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "39", "32", "RsLabel", 0, "", 18, 6, 17, 94, 11, "Valve Tag", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "40", "32", "RsLabel", 0, "", 18, 376, 17, 94, 12, "Control Type", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "41", "32", "RsLabel", 0, "", 18, 241, 14, 94, 13, "Service/Application", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "42", "32", "RsLabel", 0, "", 18, 103, 17, 118, 14, "Equipment Location", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "43", "31", "RsGroupBox", 0, "", 98, 13, 77, 710, 15, "Steam Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "44", "43", "RsLabel", 0, "", 20, 400, 27, 92, 16, "Design Press. Drop (PSI)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "45", "43", "RsLabel", 0, "", 18, 6, 26, 94, 17, "Steam Supply Press. (PSI)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "46", "43", "RsLabel", 0, "", 19, 511, 27, 92, 18, "Valve Drop At Design Flow (PSI)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "47", "43", "RsLabel", 0, "", 19, 315, 27, 92, 19, "Design Flow            (KG/HR)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "48", "43", "RsTextbox", 0, "DesignFlowGPM", 47, 6, 26, 77, 20, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "49", "43", "RsLabel", 0, "", 22, 210, 27, 92, 21, "Design Flow            (LBS/HR)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "50", "43", "RsLabel", 0, "", 18, 106, 27, 92, 22, "Steam Supplu Press. (KPA)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "51", "43", "RsTextbox", 0, "DesignFlowLS", 48, 108, 26, 84, 23, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "52", "43", "RsTextbox", 0, "RadiantWaterF", 48, 208, 26, 92, 24, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "53", "43", "RsTextbox", 0, "RadiantHeatBTUHR", 48, 315, 26, 67, 25, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "54", "43", "RsTextbox", 0, "RadiantWaterC", 48, 400, 26, 91, 26, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "55", "43", "RsTextbox", 0, "RadiantHeatKW", 48, 511, 26, 80, 27, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "56", "31", "RsGroupBox", 0, "", 181, 13, 96, 710, 28, "Valve Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "57", "56", "RsLabel", 0, "", 17, 449, 14, 70, 29, "Body Rating", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "58", "56", "RsLabel", 0, "", 17, 6, 14, 63, 30, "Size (IN)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "59", "56", "RsLabel", 0, "", 51, 6, 18, 183, 31, "Manufacturer Type", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "60", "56", "RsLabel", 0, "", 15, 575, 12, 129, 32, "Flow Characterstics", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "61", "56", "RsLabel", 0, "", 17, 355, 12, 44, 33, "Conn", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "62", "56", "RsLabel", 0, "", 53, 355, 17, 94, 34, "Part Number", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "63", "56", "RsLabel", 0, "", 17, 241, 11, 59, 35, "Pattern", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "64", "56", "RsLabel", 0, "", 17, 121, 14, 38, 36, "Cv", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "65", "56", "RsTextbox", 0, "SizeIn", 31, 6, 26, 77, 37, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "66", "56", "RsTextbox", 0, "Cv", 31, 121, 26, 92, 38, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "67", "56", "RsComboBox", 0, "Pattern", 31, 241, 28, 93, 39, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "68", "56", "RsTextbox", 0, "Conn", 30, 355, 26, 67, 40, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "69", "56", "RsTextbox", 0, "BodyRating", 32, 449, 26, 91, 41, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "70", "56", "RsTextbox", 0, "FlowCharacterstics", 32, 575, 26, 112, 42, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "71", "56", "RsComboBox", 0, "ManufacturerType", 65, 6, 28, 329, 43, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "72", "56", "RsTextbox", 0, "ValvePartNumber", 68, 355, 26, 118, 44, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "73", "31", "RsGroupBox", 0, "", 283, 13, 90, 578, 45, "Actuator Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "74", "73", "RsLabel", 0, "", 26, 6, 30, 94, 46, "Actuator Part Number", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "75", "73", "RsLabel", 0, "", 33, 219, 16, 53, 47, "Type", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "76", "73", "RsLabel", 0, "", 26, 121, 27, 92, 48, "Linkage Part Number", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "77", "73", "RsGroupBox", 0, "", 15, 325, 64, 247, 49, "Control", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "78", "77", "RsLabel", 0, "", 16, 6, 12, 44, 50, "Signal", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "79", "77", "RsLabel", 0, "", 16, 90, 12, 44, 51, "Fail Pos", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "80", "77", "RsLabel", 0, "", 18, 172, 12, 67, 52, "Close Off", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 118, "81", "77", "RsComboBox", 0, "Signal", 31, 6, 28, 73, 53, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "82", "77", "RsComboBox", 0, "FailPos", 31, 90, 28, 73, 54, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "83", "77", "RsTextbox", 0, "CloseOff", 31, 172, 26, 67, 55, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "84", "73", "RsComboBox", 0, "ActuatorPartNumber", 52, 6, 28, 105, 56, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "85", "73", "RsTextbox", 0, "LinkagePartNumber", 52, 119, 26, 84, 57, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "86", "73", "RsTextbox", 0, "ActuatorType", 52, 219, 26, 92, 58, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "87", "31", "RsGroupBox", 0, "", 16, 732, 294, 327, 59, "Modify Display Unit Preferences", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "88", "87", "RsGroupBox", 0, "", 12, 6, 128, 315, 60, "Design Flow", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "89", "88", "RsCheckbox", 0, "GallonsPerMin", 19, 6, 24, 215, 61, "Gallons Per Minute (GPM)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "90", "88", "RsCheckbox", 0, "LitresPerSec", 43, 6, 24, 192, 62, "Litres Per Minute (L/S)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "91", "88", "RsCheckbox", 0, "BTU_Hour", 68, 6, 24, 299, 63, "BTU Hour (BTU. Hr) * Radiant  Heats", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "92", "88", "RsCheckbox", 0, "KiloWatts", 92, 6, 24, 260, 64, "KiloWatts (KW) * Radiant  Heats", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "93", "87", "RsGroupBox", 0, "", 140, 6, 73, 315, 65, "Design Pressure Drop", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "94", "93", "RsCheckbox", 0, "PSI_Design", 19, 6, 24, 184, 66, "Pound Per Inch (PSI)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "95", "93", "RsCheckbox", 0, "kPa_Design", 43, 6, 24, 157, 67, "Kilo Pascals (kPa)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "96", "87", "RsGroupBox", 0, "", 215, 6, 73, 315, 68, "Valve Pressure Drop", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "97", "96", "RsCheckbox", 0, "PSI_Valve", 19, 6, 24, 184, 69, "Pound Per Inch (PSI)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "98", "96", "RsCheckbox", 0, "kPa_Valve", 43, 6, 24, 157, 70, "Kilo Pascals (kPa)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "99", "31", "RsGroupBox", 0, "", 316, 732, 53, 325, 71, "Actions", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "100", "99", "RsButton", 0, "EnableHiddenData", 15, 10, 30, 104, 72, "Unhide Water Data", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
+        oProcessStep.AddCustomLayout(1, 118, "101", "99", "RsButton", 0, "DisableHiddenData", 15, 122, 30, 104, 73, "Hide Water Data", 1, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;IsNavigation:False;IsURL:False;")
+        oProcessStep.AddCustomLayout(1, 118, "102", "31", "RsGroupBox", 0, "", 283, 598, 91, 125, 74, "Remarks", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 118, "103", "102", "RsTextbox", 0, "Remarks", 15, 4, 70, 115, 75, "", -1, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 118, "104", "0", "RsDocumentLauncherButton", 0, "", 151, 281, 25, 55, 76, "", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.Export.jpg;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:2;Enabled:;DocumentFileName:1.Schedules_Report.xlsx;DocumentLocation:1;OutputPath:;")
+        oProcessStep.AddCustomLayout(1, 118, "105", "0", "RsPrevStepActionButton", 0, "", 151, 760, 25, 58, 77, "Back", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:2;Enabled:;")
+        
+        End Sub
+      
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
         Private Sub Initialize_Process_Building_Automation_Reports()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(14, "Reports", "", 3, 2, 1, 9, 50, 50)
+        oProcessStep = AddProcessStep(14, "Reports", "", 3, 2, 1, 12, 50, 50)
         oProcessStep.AddPath("BuildingAutomation")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 15, "1", "0", "RsActionButton", 0, "", 12, 12, 103, 239, 0, "Generate Excel BOM", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:CreateExcelBOM;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
@@ -1094,7 +1398,7 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_Building_Automation_Drawings()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(17, "Drawings", "", 4, 2, 1, 10, 50, 50)
+        oProcessStep = AddProcessStep(17, "Drawings", "", 4, 2, 1, 13, 50, 50)
         oProcessStep.AddPath("BuildingAutomation.Drawings/Drawing")
         oProcessStep.AddLayout(1, 23, "DWGSpec")
         
@@ -1144,6 +1448,12 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
+        InitSubpart("Schedules", 112, "", "", "Y", 0, "-1", "", "GLOBAL\H599123", "7/9/2025 12:50:34 PM", "", "In Development", "N",0,255,254)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
         InitSubpart("CORA_Info", 18, "", "", "Y", 0, "-1", "", "GLOBAL\H601423", "3/17/2025 1:12:36 PM", "", "In Development", "Y",0,39,38)
         
           End If
@@ -1163,6 +1473,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitSubpart("PlantView", 26, "", "", "Y", 0, "-1", "", "GLOBAL\H601421", "4/20/2025 3:30:00 AM", "", "In Development", "N",0,63,62)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("PLI_Info", 101, "", "", "Y", 0, "-1", "", "GLOBAL\H601423", "7/2/2025 1:56:47 PM", "", "In Development", "N",0,233,232)
         
           End If
         
@@ -1632,6 +1948,151 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Process_Building_Automation_Media_Selection_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:49; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+Result = STATUS_ENABLED
+      '   END FORMULA; PROC ID:49; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Process_Building_Automation_Media_Selection_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_Building_Automation_Media_Selection_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:49; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:49; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Process_Building_Automation_Media_Selection_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_Building_Automation_Water_Valve_Schedule_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:50; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+
+If Me.Schedules(1).ValveOptions = "Water" Then
+	Result = STATUS_ENABLED
+Else
+	Result = STATUS_HIDDEN	
+End If
+      '   END FORMULA; PROC ID:50; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Process_Building_Automation_Water_Valve_Schedule_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_Building_Automation_Water_Valve_Schedule_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:50; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:50; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Process_Building_Automation_Water_Valve_Schedule_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_Building_Automation_Steam_Valve_Schedule_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:51; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+
+If Me.Schedules(1).ValveOptions = "Steam" Then
+	Result = STATUS_ENABLED
+Else
+	Result = STATUS_HIDDEN	
+End If
+      '   END FORMULA; PROC ID:51; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Process_Building_Automation_Steam_Valve_Schedule_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_Building_Automation_Steam_Valve_Schedule_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:51; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:51; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Process_Building_Automation_Steam_Valve_Schedule_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Process_Building_Automation_Reports_STATUS() as Integer 'Long
       Dim Result as Integer = 0 'Long
       Try
@@ -1866,6 +2327,75 @@ End If
       '*****************************************************************************
       Public Function Formula_CORAInfoSaved_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Schedules_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:112; TYPE:PN
+      
+      '   END FORMULA; SUB ID:112; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Formula_Schedules_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Schedules_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Schedules").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:112; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:112; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Formula_Schedules_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Schedules_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Schedules").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:112; TYPE:OP
+      result = "Schedule"
+      '   END FORMULA; SUB ID:112; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Formula_Schedules_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
       '*****************************************************************************
@@ -2139,6 +2669,75 @@ End If
       '   END FORMULA; SUB ID:26; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Formula_PlantView_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PLI_Info_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:101; TYPE:PN
+      
+      '   END FORMULA; SUB ID:101; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Formula_PLI_Info_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PLI_Info_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("PLI_Info").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:101; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:101; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Formula_PLI_Info_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PLI_Info_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("PLI_Info").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:101; TYPE:OP
+      result = "PLI_Information"
+      '   END FORMULA; SUB ID:101; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " BuildingAutomation.Formula_PLI_Info_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Circuit
-'$ GenerateDate: 06/27/2025 20:11:04
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -129,8 +129,11 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Select Case specName & "_" & context
     
-      Case "button_AssignPower_"
-      Formula_button_AssignPower_WHENCHANGED(Value, OldValue)
+      Case "button_AssignAll_"
+      Formula_button_AssignAll_WHENCHANGED(Value, OldValue)
+    
+      Case "button_UnassignAll_"
+      Formula_button_UnassignAll_WHENCHANGED(Value, OldValue)
     
     End Select
     End Sub
@@ -141,8 +144,12 @@ Option Infer On
     Dim Status as Boolean = False
     Select Case specName & "_" & context
     
-      Case "button_AssignPower_"
-      'Formula_button_AssignPower_WHENCHANGED(Value, OldValue)
+      Case "button_AssignAll_"
+      'Formula_button_AssignAll_WHENCHANGED(Value, OldValue)
+      Status = True
+    
+      Case "button_UnassignAll_"
+      'Formula_button_UnassignAll_WHENCHANGED(Value, OldValue)
       Status = True
     Case Else
     Status = False
@@ -154,12 +161,21 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
-          Public Property [button_AssignPower]() As String
+          Public Property [button_AssignAll]() As String
       Get
-      Return Properties("button_AssignPower").Value
+      Return Properties("button_AssignAll").Value
       End Get
       Set(ByVal Value As String)
-      Properties("button_AssignPower").CalculatedValue = Value
+      Properties("button_AssignAll").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [button_UnassignAll]() As String
+      Get
+      Return Properties("button_UnassignAll").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("button_UnassignAll").CalculatedValue = Value
       End Set
       End Property
     
@@ -172,12 +188,12 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [DevicePower]() As Double
+          Public Property [CircuitPartsLabel]() As String
       Get
-      Return Properties("DevicePower").Value
+      Return Properties("CircuitPartsLabel").Value
       End Get
-      Set(ByVal Value As Double)
-      Properties("DevicePower").CalculatedValue = Value
+      Set(ByVal Value As String)
+      Properties("CircuitPartsLabel").CalculatedValue = Value
       End Set
       End Property
     
@@ -208,12 +224,21 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [PowerConsumtion]() As Double
+          Public Property [PowerConsumption]() As Double
       Get
-      Return Properties("PowerConsumtion").Value
+      Return Properties("PowerConsumption").Value
       End Get
       Set(ByVal Value As Double)
-      Properties("PowerConsumtion").CalculatedValue = Value
+      Properties("PowerConsumption").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PoweredPartsText]() As String
+      Get
+      Return Properties("PoweredPartsText").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("PoweredPartsText").CalculatedValue = Value
       End Set
       End Property
     
@@ -223,6 +248,15 @@ Option Infer On
       End Get
       Set(ByVal Value As String)
       Properties("PowerRating").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PowerUnits]() As String
+      Get
+      Return Properties("PowerUnits").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("PowerUnits").CalculatedValue = Value
       End Set
       End Property
     
@@ -259,6 +293,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [PowerSupplyViewNodes]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("PowerSupplyViewNodes")
+      End Get
+      End Property
+    
     #End Region
 
     #Region " Initialization "
@@ -273,28 +313,43 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Circuit", <a><![CDATA[Circuit]]></a>.Value, 23, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "06/27/2025 04:37:36")
-    AddProperty("433", "button_AssignPower", <a><![CDATA[button_Assign Power]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/24/2025 4:22:43 AM")
+    InitPart("Circuit", <a><![CDATA[Circuit]]></a>.Value, 23, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/10/2025 04:27:17")
+    AddProperty("1186", "button_AssignAll", <a><![CDATA[button_Assign All]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 3:36:39 AM")
+    AddProperty("1185", "button_UnassignAll", <a><![CDATA[button_Unassign All]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/9/2025 3:08:59 AM")
     AddProperty("423", "CircuitDescription", <a><![CDATA[Circuit Description]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("434", "DevicePower", <a><![CDATA[Device Power]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("1287", "CircuitPartsLabel", <a><![CDATA[Circuit Parts Label]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/8/2025 6:13:17 PM")
     AddProperty("425", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("420", "InputVoltage", <a><![CDATA[Input Voltage]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("421", "OutputVoltage", <a><![CDATA[Output Voltage]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("854", "PowerConsumtion", <a><![CDATA[Power Consumtion]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/27/2025 4:37:36 AM")
+    AddProperty("1174", "PowerConsumption", <a><![CDATA[Power Consumption]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/28/2025 5:44:14 AM")
+    AddProperty("1181", "PoweredPartsText", <a><![CDATA[Powered Parts Text]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 3:24:33 AM")
     AddProperty("424", "PowerRating", <a><![CDATA[Power Rating]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("1182", "PowerUnits", <a><![CDATA[Power Units]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 3:19:37 AM")
     AddProperty("432", "SafetyMargin", <a><![CDATA[Safety Margin]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/27/2025 4:07:49 AM")
-    AddProperty("728", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/19/2025 8:19:17 PM")
-    AddProperty("418", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "4/8/2025 6:16:13 PM")
+    AddProperty("728", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/28/2025 4:50:15 AM")
+    AddProperty("418", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 1:37:17 AM")
     
-      AddPropertyExtended(433,"button_AssignPower", "412", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "6/24/2025 4:22:43 AM")
+      AddPropertyExtended(1186,"button_AssignAll", "1096", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/10/2025 3:36:39 AM")
+    
+      AddPropertyExtended(1185,"button_UnassignAll", "1095", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/9/2025 3:08:59 AM")
     
       AddValidValue("InputVoltage")
     
-      oConnection = AddConnection("PoweredParts", <a><![CDATA[Powered Parts]]></a>.Value, "", "24", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "6/27/2025 3:59:19 AM")
+      AddValidValue("PoweredPartsText")
+    
+      oConnection = AddConnection("PoweredParts", <a><![CDATA[Powered Parts]]></a>.Value, "", "24", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/10/2025 4:27:17 AM")
       
         oConnection.AddVPF(5, "Device")
       
         oConnection.AddVPF(6, "Controller")
+      
+      oConnection = AddConnection("PowerSupplyViewNodes", <a><![CDATA[Power Supply View Nodes]]></a>.Value, "", "77", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/10/2025 4:20:38 AM")
+      
+        oConnection.AddVPF(17, "HBSSystem")
+      
+        oConnection.AddVPF(122, "DevicePhysical")
+      
+        oConnection.AddVPF(123, "ControllerPhysical")
       
     End Sub
 
@@ -325,13 +380,16 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("button_AssignPower", "412", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/24/2025 4:22:43 AM", "", "In Development",  0,993)
+          InitProperty("button_AssignAll", "1096", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/10/2025 3:36:39 AM", "", "In Development",  0,2114)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("button_UnassignAll", "1095", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/9/2025 3:08:59 AM", "", "In Development",  0,2110)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("CircuitDescription", "402", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/8/2025 6:38:38 PM", "", "In Development",  0,971)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("DevicePower", "413", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/9/2025 2:52:03 AM", "", "In Development",  0,997)
+          InitProperty("CircuitPartsLabel", "1188", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/8/2025 6:13:17 PM", "", "In Development",  0,2251)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("DisplayName", "404", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/8/2025 8:00:20 PM", "", "In Development",  0,975)
@@ -343,19 +401,25 @@ Option Infer On
           InitProperty("OutputVoltage", "399", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/8/2025 7:12:53 PM", "", "In Development",  0,972)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("PowerConsumtion", "791", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/27/2025 4:37:36 AM", "", "In Development",  0,1769)
+          InitProperty("PowerConsumption", "1084", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/28/2025 5:44:14 AM", "", "In Development",  0,2075)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PoweredPartsText", "1091", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/30/2025 3:24:33 AM", "", "In Development",  0,2089)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PowerRating", "403", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/8/2025 7:49:59 PM", "", "In Development",  0,974)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("PowerUnits", "1092", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/30/2025 3:19:37 AM", "", "In Development",  0,2091)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("SafetyMargin", "411", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/27/2025 4:07:49 AM", "", "In Development",  0,1767)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Tag", "677", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/19/2025 8:19:17 PM", "", "In Development",  0,1584)
+          InitProperty("Tag", "677", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/28/2025 4:50:15 AM", "", "In Development",  0,2073)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("PartNumber", "401", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/8/2025 6:16:13 PM", "", "In Development",  0,970)
+          InitProperty("PartNumber", "401", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/30/2025 12:28:01 AM", "", "In Development",  0,2088)
         End If
     End Sub
 
@@ -371,6 +435,10 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitValidValue("InputVoltage_ValidValues", "398", "-1", 1075)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("PoweredPartsText_ValidValues", "1091", "-1", 2092)
         End If
     End Sub
 
@@ -396,7 +464,13 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("PoweredParts", "22", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "6/27/2025 3:59:19 AM", "", "In Development", "N",114)
+        InitConnection("PoweredParts", "22", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/10/2025 4:27:17 AM", "", "In Development", "N",142)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("PowerSupplyViewNodes", "66", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/10/2025 4:18:00 AM", "", "In Development", "N",141)
         
           End If
         
@@ -430,13 +504,13 @@ Option Infer On
       Try
       ctx = this
         '   BEGIN FORMULA; CON ID:22; TYPE:PF
-        Dim _me As String = Tag
-Dim _plantModel As Object = RootPart.PlantView(1)
-Result = New rsCollection
+        Result = New rsCollection
 
-For Each _system In _plantModel.Systems
+For Each _system In RootPart.PlantView(1).Systems
 	For Each _part As Object In _system.AllParts
-		If _part.AssignedPowerSupply = _me Then Result.Add(_part)
+		For Each _partPhysical As Object In _part.Physical
+			If IsConnected(_partPhysical.Circuit) AndAlso _partPhysical.Circuit(1) Is Me Then Result.Add(_partPhysical)
+		Next
 	Next
 Next
         '   END FORMULA; CON ID:22; TYPE:PF
@@ -448,26 +522,98 @@ Next
       Return ConvertToCollection(Result)
       End Function
     
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PowerSupplyViewNodes_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:66; TYPE:PF
+        Result = New rsCollection
+Dim _psType As String = String.Empty
+Dim _psTypePart As String
+Dim _selectedElement As Object = RootPart.PowerSupplyView(1).SelectedElement(1) 'this shouldn't be Nothing so no need to check for it
+
+_psType = OutputVoltage.Replace(" ", String.Empty).Trim().ToUpper()
+
+For Each _system As Object In RootPart.PlantView(1).Systems
+	'include the part if the selected element is the 'Project' Or if it is this 'System'
+	If _selectedElement.PartFamily <> "HBSSystem" OrElse _selectedElement Is _system Then
+		Result.Add(_system)
+
+		For Each _part As Object In _system.AllParts
+			_psTypePart = _part.PowerSupply.Replace(" ", String.Empty).Trim().ToUpper()
+
+			'if the part's power supply type is exactly same as selected circuit's power supply then
+			'add it to the list
+			If _psType = _psTypePart Then
+				'add the physical instances (that are based on quantity value
+				For Each _partPhysical As Object In _part.Physical
+					Result.Add(_partPhysical)
+				Next
+			End If
+		Next
+	End If
+Next
+        '   END FORMULA; CON ID:66; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PowerSupplyViewNodes_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
           '*****************************************************************************
           '   Copyright (C) 2024 Siemens. All rights reserved.
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_button_AssignPower() As String
+          Public Function Formula_button_AssignAll() As String
           
           Dim Result as String = String.Empty
         
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("button_AssignPower").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("button_AssignAll").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:412; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:1096; TYPE:PF
       Result = String.Empty
-      '   END FORMULA; PROP ID:412; TYPE:PF
+      '   END FORMULA; PROP ID:1096; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_button_AssignPower", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_button_AssignAll", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_button_UnassignAll() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("button_UnassignAll").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1095; TYPE:PF
+      Result = String.Empty
+      '   END FORMULA; PROP ID:1095; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_button_UnassignAll", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -503,23 +649,21 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_DevicePower() As Double
-          Dim Result as Double
+          Public Function Formula_CircuitPartsLabel() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("DevicePower").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("CircuitPartsLabel").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:413; TYPE:PF
-      Dim _ACorDC As String = If(OutputVoltage.ToUpper().Contains("VAC"), "AC", "DC")
-
-For Each _device As Object In PoweredParts
-	Result += If(_ACorDC = "AC", _device.PowerConsumption, _device.CurrentRating)
-Next
-      '   END FORMULA; PROP ID:413; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:1188; TYPE:PF
+      Result = "All " & OutputVoltage & " Parts"
+      '   END FORMULA; PROP ID:1188; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_DevicePower", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_CircuitPartsLabel", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -605,23 +749,48 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_PowerConsumtion() As Double
+          Public Function Formula_PowerConsumption() As Double
           Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("PowerConsumtion").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("PowerConsumption").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:791; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:1084; TYPE:PF
       For Each _part As Object In PoweredParts
 	Result += _part.PowerConsumption
 Next
 
 Result = Result * (1 + (SafetyMargin / 100))
-      '   END FORMULA; PROP ID:791; TYPE:PF
+      '   END FORMULA; PROP ID:1084; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PowerConsumtion", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PowerConsumption", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PoweredPartsText() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PoweredPartsText").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1091; TYPE:PF
+      Result = String.Empty
+      '   END FORMULA; PROP ID:1091; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PoweredPartsText", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -647,6 +816,31 @@ Result = Result * (1 + (SafetyMargin / 100))
       '   END FORMULA; PROP ID:403; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PowerRating", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PowerUnits() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PowerUnits").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1092; TYPE:PF
+      Result = If(OutputVoltage.ToLower().Contains("DC"), "mA", "VA")
+      '   END FORMULA; PROP ID:1092; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PowerUnits", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -691,7 +885,7 @@ Result = Result * (1 + (SafetyMargin / 100))
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:677; TYPE:PF
-      Result = Parent.Tag & "." & SubpartId
+      Result = PartNumber
       '   END FORMULA; PROP ID:677; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_Tag", ex.Message)
@@ -716,7 +910,7 @@ Result = Result * (1 + (SafetyMargin / 100))
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:401; TYPE:PF
-      Result = Parent.PartNumber & "-" & SubpartId
+      Result = Parent.Tag & "." & SubpartId
       '   END FORMULA; PROP ID:401; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PartNumber", ex.Message)
@@ -730,7 +924,16 @@ Result = Result * (1 + (SafetyMargin / 100))
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_button_AssignPower_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_button_AssignAll_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_button_UnassignAll_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -748,7 +951,7 @@ Result = Result * (1 + (SafetyMargin / 100))
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_DevicePower_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_CircuitPartsLabel_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -784,7 +987,16 @@ Result = Result * (1 + (SafetyMargin / 100))
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_PowerConsumtion_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_PowerConsumption_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PoweredPartsText_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -794,6 +1006,15 @@ Result = Result * (1 + (SafetyMargin / 100))
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_PowerRating_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PowerUnits_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -829,8 +1050,39 @@ Result = Result * (1 + (SafetyMargin / 100))
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_button_AssignPower_USERCHANGE() as Boolean
+      Public Function Formula_button_AssignAll_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_button_UnassignAll_USERCHANGE() as Boolean
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("button_UnassignAll").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:1095; TYPE:UC
+              Result = False
+
+'enable this button if there's at least one part that is connected to a circuit
+For Each _part As Object In PowerSupplyViewNodes
+	If _part.PartFamily <> "HBSSystem" AndAlso IsConnected(_part.Circuit) AndAlso _part.Circuit(1) Is Me Then Result = True : Exit For
+Next
+              '   END FORMULA; PROP ID:1095; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_button_UnassignAll_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -847,7 +1099,7 @@ Result = Result * (1 + (SafetyMargin / 100))
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_DevicePower_USERCHANGE() as Boolean
+      Public Function Formula_CircuitPartsLabel_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -883,7 +1135,16 @@ Result = Result * (1 + (SafetyMargin / 100))
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_PowerConsumtion_USERCHANGE() as Boolean
+      Public Function Formula_PowerConsumption_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PoweredPartsText_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -893,6 +1154,15 @@ Result = Result * (1 + (SafetyMargin / 100))
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_PowerRating_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PowerUnits_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -952,44 +1222,90 @@ Result = Result * (1 + (SafetyMargin / 100))
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Sub Formula_button_AssignPower_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      Public Function Formula_PoweredPartsText_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PoweredPartsText").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1091; TYPE:VV
+      Result = New ValidValues
+
+For Each _part As Object In PoweredParts
+	Result.Add(_part.Tag)
+Next
+
+Result.Add(String.Empty)
+      '   END FORMULA; PROP ID:1091; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PoweredPartsText_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_button_AssignAll_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
       
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("button_AssignPower").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      If Me.Properties("button_AssignAll").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:412; TYPE:WC
-      Dim _outputVoltage As String = OutputVoltage.ToUpper()
-Dim _myVout As String = CStr(Val(_outputVoltage))
-Dim _ACorDC As String = If(_outputVoltage.Contains("VAC"), "AC", If(_outputVoltage.Contains("VDC"), "DC", String.Empty))
-Dim _devicePower As String
-Dim _devicePowerTotal As Double
-Dim _myPowerRating As Double = Val(PowerRating) * (100.0 - SafetyMargin) / 100
-Dim _me As String = Tag
-Dim _parts As Subpart
+      '   BEGIN FORMULA; PROP ID:1096; TYPE:WC
+      Dim _devicePowerTotal As Double
+Dim _safetyMarginFactor As Double = 1 + (SafetyMargin / 100)
+Dim _myPowerRating As Double = Val(PowerRating)
+Dim _circuit As Object
 
-For Each _partType As String In {"Devices", "Controllers"}
-	_parts = Parent.Parent.Subparts(_partType)
-	For Each _part As Object In _parts
-		If _part.AssignedPowerSupply.Length = 0 Then
-			_devicePower = _part.PowerSupply
-			_devicePowerTotal += If(_ACorDC.Contains("AC"), _part.PowerConsumption, _part.CurrentRating)
+For Each _part As Object In PowerSupplyViewNodes
+	_circuit = If(_part.PartFamily <> "HBSSystem" AndAlso IsConnected(_part.Circuit), _part.Circuit(1), Nothing)
+	If _circuit Is Nothing OrElse _circuit = Me Then
+		'include it in total power calculation
+		_devicePowerTotal += _part.PowerConsumption * _safetyMarginFactor
 
-			If _devicePowerTotal <= _myPowerRating Then
-				If _devicePower.Contains(_myVout) AndAlso _devicePower.Contains(_ACorDC) Then
-					_part.Properties("AssignedPowerSupply").InputValue = _me
-				End If
-			Else 'exceeded power supply power rating including safety margin
-				Exit For
-			End If
+		If _devicePowerTotal <= _myPowerRating Then
+			If _circuit Is Nothing Then _part.Circuit.Connect(Me) 'connect only if not already connected
+		Else 'exceeded power supply power rating including safety margin
+			Exit For
 		End If
-	Next
+	End If
 Next
-      '   END FORMULA; PROP ID:412; TYPE:WC
+      '   END FORMULA; PROP ID:1096; TYPE:WC
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_button_AssignPower_WHENCHANGED", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_button_AssignAll_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_button_UnassignAll_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("button_UnassignAll").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1095; TYPE:WC
+      For Each _part As Object In PowerSupplyViewNodes
+	If _part.PartFamily <> "HBSSystem" AndAlso IsConnected(_part.Circuit) Then _part.Circuit.RevertToCalc()
+Next
+      '   END FORMULA; PROP ID:1095; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_button_UnassignAll_WHENCHANGED", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       End Sub

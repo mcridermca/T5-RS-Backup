@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{8d3b594a-7d16-4698-aecb-4e32d4b8d06e}</ProjectGuid>
+		<ProjectGuid>{4d54d34f-2c9c-46bb-9f99-1186cccfe8fd}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>HBS</RootNamespace>
 		<AssemblyName>HBS</AssemblyName>
@@ -36,31 +36,31 @@
 	<ItemGroup>
 		<Reference Include="log4net">
 			<Name>log4net</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\log4net.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\log4net.dll</HintPath>
 		</Reference>
 		<Reference Include="RuleStream">
 			<Name>RuleStream</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.dll</HintPath>
 		</Reference>
 		<Reference Include="RuleStream.DataService">
 			<Name>RuleStream.DataService</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.DataService.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.DataService.dll</HintPath>
 		</Reference>
 		<Reference Include="RuleStream.Kernel">
 			<Name>RuleStream.Kernel</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.Kernel.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.Kernel.dll</HintPath>
 		</Reference>
 		<Reference Include="Aspose.Cells">
 			<Name>Aspose.Cells</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Aspose.Cells.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\Aspose.Cells.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Data.SqlClient">
 			<Name>Microsoft.Data.SqlClient</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Microsoft.Data.SqlClient.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\Microsoft.Data.SqlClient.dll</HintPath>
 		</Reference>
 		<Reference Include="RulestreamTCUtilities">
 			<Name>RulestreamTCUtilities</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RulestreamTCUtilities.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RulestreamTCUtilities.dll</HintPath>
 		</Reference>
 		<Reference Include="System">
 			<Name>System</Name>
@@ -109,6 +109,9 @@
 		<Compile Include="controller.vb">
 			<SubType>Code</SubType>
 		</Compile>
+		<Compile Include="controllerphysical.vb">
+			<SubType>Code</SubType>
+		</Compile>
 		<Compile Include="cv1.vb">
 			<SubType>Code</SubType>
 		</Compile>
@@ -122,6 +125,9 @@
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="device_dbdetail.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="devicephysical.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="drawing.vb">
@@ -143,6 +149,9 @@
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="group.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="hbs_schedules.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="hbssystem.vb">
@@ -172,6 +181,9 @@
 		<Compile Include="plantmodel.vb">
 			<SubType>Code</SubType>
 		</Compile>
+		<Compile Include="pli_information.vb">
+			<SubType>Code</SubType>
+		</Compile>
 		<Compile Include="powersupply.vb">
 			<SubType>Code</SubType>
 		</Compile>
@@ -181,10 +193,16 @@
 		<Compile Include="project_information.vb">
 			<SubType>Code</SubType>
 		</Compile>
+		<Compile Include="schedule.vb">
+			<SubType>Code</SubType>
+		</Compile>
 		<Compile Include="sf.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="site.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="valve.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="wire.vb">

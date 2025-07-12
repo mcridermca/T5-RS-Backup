@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Group
-'$ GenerateDate: 06/27/2025 20:11:04
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -270,15 +270,15 @@ Option Infer On
       End Get
       End Property
     
-      Public ReadOnly Property [Children]() As Rulestream.Kernel.Connection
-      Get
-      Return Connections("Children")
-      End Get
-      End Property
-    
       Public ReadOnly Property [ParentItem]() As Rulestream.Kernel.Connection
       Get
       Return Connections("ParentItem")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [PlantViewNodes]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("PlantViewNodes")
       End Get
       End Property
     
@@ -314,7 +314,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Group", <a><![CDATA[Group]]></a>.Value, 13, "HBS",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "06/19/2025 19:41:00")
+    InitPart("Group", <a><![CDATA[Group]]></a>.Value, 13, "HBS",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/09/2025 12:51:22")
     AddProperty("444", "CanAddChild", <a><![CDATA[Can Add Child]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("448", "CanAddSystem", <a><![CDATA[Can Add System]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("430", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -333,17 +333,19 @@ Option Infer On
       
         oConnection.AddVPF(17, "HBSSystem")
       
-      oConnection = AddConnection("Children", <a><![CDATA[Children]]></a>.Value, "", "29", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-      
-        oConnection.AddVPF(13, "Group")
-      
-      oConnection = AddConnection("ParentItem", <a><![CDATA[Parent Item]]></a>.Value, "", "34", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+      oConnection = AddConnection("ParentItem", <a><![CDATA[Parent Item]]></a>.Value, "", "34", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/5/2025 4:19:27 AM")
       
         oConnection.AddVPF(13, "Group")
       
         oConnection.AddVPF(24, "PlantModel")
       
-      oConnection = AddConnection("Systems", <a><![CDATA[Systems]]></a>.Value, "", "30", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+      oConnection = AddConnection("PlantViewNodes", <a><![CDATA[Plant View Nodes]]></a>.Value, "", "73", "MM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/5/2025 3:12:54 AM")
+      
+        oConnection.AddVPF(13, "Group")
+      
+        oConnection.AddVPF(17, "HBSSystem")
+      
+      oConnection = AddConnection("Systems", <a><![CDATA[Systems]]></a>.Value, "", "30", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/5/2025 4:26:27 AM")
       
         oConnection.AddVPF(17, "HBSSystem")
       
@@ -460,19 +462,13 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("Children", "26", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/25/2025 4:42:15 AM", "", "In Development", "Y",48)
+        InitConnection("ParentItem", "31", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/5/2025 4:19:27 AM", "", "In Development", "N",130)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("ParentItem", "31", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "5/7/2025 4:16:41 AM", "", "In Development", "N",96)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitConnection("Systems", "27", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/25/2025 4:42:24 AM", "", "In Development", "Y",49)
+        InitConnection("Systems", "27", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/5/2025 4:26:27 AM", "", "In Development", "Y",131)
         
           End If
         
@@ -535,28 +531,6 @@ CollectSystems(Result, Me)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Children_PARTS() as Rulestream.Kernel.rsCollection
-      
-      Dim Result as Object = Nothing
-      Dim ctx as Object
-      Try
-      ctx = this
-        '   BEGIN FORMULA; CON ID:26; TYPE:PF
-        Result = Nothing
-        '   END FORMULA; CON ID:26; TYPE:PF
-      
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Group.Formula_Children_PARTS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return ConvertToCollection(Result)
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_ParentItem_PARTS() as Rulestream.Kernel.rsCollection
       
       Dim Result as Object = Nothing
@@ -570,7 +544,7 @@ Dim _plantViewRoot As Object = RootPart.PlantView(1)
 
 For Each _group As Object In _plantViewRoot.Groups 'check if a group is my parent
 	If _group IsNot Me Then
-		For Each _subGroup As Object In _group.Children
+		For Each _subGroup As Object In _group.PlantViewNodes
 			If _subGroup Is Me Then Result = _group : Exit For
 		Next
 	End If
@@ -600,7 +574,11 @@ If Result Is Nothing Then Result = _plantViewRoot
       Try
       ctx = this
         '   BEGIN FORMULA; CON ID:27; TYPE:PF
-        Result = Nothing
+        Result = New rsCollection
+
+For Each _node As Object In PlantViewNodes
+	If _node.PartFamily = "HBSSystem" Then Result.Add(_node)
+Next
         '   END FORMULA; CON ID:27; TYPE:PF
       
       Catch ex As Exception

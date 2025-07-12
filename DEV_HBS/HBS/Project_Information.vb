@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Project_Information
-'$ GenerateDate: 06/27/2025 20:11:14
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -327,15 +327,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Honeywell_Designer_EID]() As String
-      Get
-      Return Properties("Honeywell_Designer_EID").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Honeywell_Designer_EID").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Honeywell_Office]() As String
       Get
       Return Properties("Honeywell_Office").Value
@@ -462,6 +453,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Honeywell_Designer_EID]() As String
+      Get
+      Return Properties("Honeywell_Designer_EID").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Honeywell_Designer_EID").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -485,7 +485,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Project_Information", <a><![CDATA[Project_Information]]></a>.Value, 47, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "06/19/2025 19:41:00")
+    InitPart("Project_Information", <a><![CDATA[Project_Information]]></a>.Value, 47, "HBS",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/09/2025 02:39:13")
     AddProperty("648", "Architect_Address", <a><![CDATA[Architect Address]]></a>.Value, "The address, city/state, and PIN of the architect.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("651", "Architect_Email", <a><![CDATA[Architect Email]]></a>.Value, "The email of the architect.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("650", "Architect_Fax", <a><![CDATA[Architect Fax]]></a>.Value, "The fax of the architect.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -505,8 +505,7 @@ Option Infer On
     AddProperty("658", "Contractor_Type", <a><![CDATA[Contractor Type]]></a>.Value, "The title of the contractor. Default is Contractor.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("665", "Design_Inputs", <a><![CDATA[Design Inputs]]></a>.Value, "The name, revision number, and date of the Design Inputs document.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("640", "Engineering_Units", <a><![CDATA[Engineering Units]]></a>.Value, "The engineering units (Metric/Imperial/Mixed) used in the project.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("638", "Honeywell_Designer", <a><![CDATA[Honeywell Designer]]></a>.Value, "The name of the Honeywell designer for this project.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("639", "Honeywell_Designer_EID", <a><![CDATA[Honeywell Designer EID]]></a>.Value, "The EID of the Honeywell designer for this project.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("638", "Honeywell_Designer", <a><![CDATA[Honeywell Designer]]></a>.Value, "The name of the Honeywell designer for this project.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601422", "7/9/2025 2:39:02 AM")
     AddProperty("632", "Honeywell_Office", <a><![CDATA[Honeywell Office]]></a>.Value, "The address, city/state, and PIN of the Honeywell Office for the project.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("635", "Honeywell_Office_Email", <a><![CDATA[Honeywell Office - Email]]></a>.Value, "The email address of the Honeywell office.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("634", "Honeywell_Office_Fax", <a><![CDATA[Honeywell Office - Fax]]></a>.Value, "The fax of the Honeywell office.", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -521,6 +520,7 @@ Option Infer On
     AddProperty("641", "Unit_Temperature", <a><![CDATA[Unit_Temperature]]></a>.Value, "Choose the unit of temperature: Metric (°C) or Imperial (°F)", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("644", "Unit_Volume", <a><![CDATA[Unit_Volume]]></a>.Value, "Choose the unit of volume: Metric (l) or Imperial (g)", "String","","General","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("646", "Unit_Weight", <a><![CDATA[Unit_Weight]]></a>.Value, "Choose the unit of weight: Metric (kg) or Imperial (lb)", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("639", "Honeywell_Designer_EID", <a><![CDATA[Honeywell Designer EID]]></a>.Value, "The EID of the Honeywell designer for this project.", "String","","RSXLI_Control","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601422", "7/9/2025 2:39:13 AM")
     AddProperty("630", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601423", "5/6/2025 5:32:12 PM")
     
       AddPropertyExtended(651,"Architect_Email", "606", "EXTHINT ", "Hint", "Email", "GLOBAL\H601423", "5/6/2025 7:28:17 PM")
@@ -650,9 +650,6 @@ Option Infer On
           InitProperty("Honeywell_Designer", "593", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601423", "5/6/2025 6:11:02 PM", "", "In Development",  0,1420)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Honeywell_Designer_EID", "594", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601423", "5/6/2025 6:11:46 PM", "", "In Development",  0,1421)
-        End If
-            If Incontext("-1", ctx) Then
           InitProperty("Honeywell_Office", "587", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601423", "5/6/2025 6:02:34 PM", "", "In Development",  0,1414)
         End If
             If Incontext("-1", ctx) Then
@@ -693,6 +690,9 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Unit_Weight", "601", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601423", "5/6/2025 10:55:40 PM", "", "In Development",  0,1439)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Honeywell_Designer_EID", "594", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601423", "5/6/2025 6:11:46 PM", "", "In Development",  0,1421)
         End If
     End Sub
 
@@ -1278,31 +1278,6 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Honeywell_Designer_EID() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Honeywell_Designer_EID").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:594; TYPE:PF
-      result = ""
-      '   END FORMULA; PROP ID:594; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Project_Information.Formula_Honeywell_Designer_EID", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Honeywell_Office() As String
           
           Dim Result as String = String.Empty
@@ -1666,6 +1641,31 @@ End If
       Return Result
       End Function
     
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Honeywell_Designer_EID() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Honeywell_Designer_EID").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:594; TYPE:PF
+      result = ""
+      '   END FORMULA; PROP ID:594; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Project_Information.Formula_Honeywell_Designer_EID", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
       '
@@ -1851,15 +1851,6 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Honeywell_Designer_EID_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Honeywell_Office_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1978,6 +1969,15 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Unit_Weight_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Honeywell_Designer_EID_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -2158,15 +2158,6 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Honeywell_Designer_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Honeywell_Designer_EID_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -2420,6 +2411,15 @@ End If
               End Try
               Return Result
             
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Honeywell_Designer_EID_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************

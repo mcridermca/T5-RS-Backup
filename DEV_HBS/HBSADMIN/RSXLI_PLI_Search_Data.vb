@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: RSXLI_PLI_Search_Data
-'$ GenerateDate: 07/01/2025 01:42:37
+'$ GenerateDate: 07/12/2025 14:08:17
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -361,8 +361,8 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("RSXLI_PLI_Search_Data", <a><![CDATA[RSXLI_PLI_Search_Data]]></a>.Value, 98, "HBSADMIN",  "N", "N", True, True, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/01/2025 01:36:51")
-    AddProperty("1228", "Row_DBKeys", <a><![CDATA[Row_DBKeys]]></a>.Value, "DataBase Extract of Key Values for Lines", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:51 AM")
+    InitPart("RSXLI_PLI_Search_Data", <a><![CDATA[RSXLI_PLI_Search_Data]]></a>.Value, 98, "HBSADMIN",  "N", "N", True, True, "In Development", "", "", "", "", "",  "GLOBAL\H599123", "07/09/2025 06:53:39")
+    AddProperty("1228", "Row_DBKeys", <a><![CDATA[Row_DBKeys]]></a>.Value, "DataBase Extract of Key Values for Lines", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/1/2025 1:59:15 AM")
     AddProperty("1229", "Selected_Row", <a><![CDATA[Selected_Row]]></a>.Value, "Selected Row Identifier", "Long","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:51 AM")
     AddProperty("1226", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:28:42 AM")
     
@@ -419,7 +419,7 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("Row_DBKeys", "1131", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/1/2025 1:33:51 AM", "DataBase Extract of Key Values for Lines", "In Development",  0,2154)
+          InitProperty("Row_DBKeys", "1131", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/1/2025 1:59:15 AM", "DataBase Extract of Key Values for Lines", "In Development",  0,2154)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Selected_Row", "1132", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/1/2025 1:33:51 AM", "Selected Row Identifier", "In Development",  0,2156)
@@ -437,7 +437,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitValidValue("Row_DBKeys_ValidValues", "1131", "-1", 2155)
+        InitValidValue("Row_DBKeys_ValidValues", "1131", "-1", 2200)
         End If
     End Sub
 
@@ -615,7 +615,7 @@ Option Infer On
       Dim TableName As String = Me.Name.Split(":")(0).Trim()
 Dim PK_Name As String = TableName & "_ID"
 
-Result = MakeValidValueKeyFromDatabase($"[{TableName}]", $"[{PK_Name}]", $"[{PK_Name}]", $"WHERE [{PK_Name}] > " & FormatCriteria(0) & $" ORDER BY [{PK_Name}]")
+Result = MakeValidValueKeyFromDatabase($"[{TableName}]", $"[{PK_Name}]", $"[{PK_Name}]", $"WHERE 1 = 1 ORDER BY [{PK_Name}]")
       '   END FORMULA; PROP ID:1131; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " RSXLI_PLI_Search_Data.Formula_Row_DBKeys_ValidValues", ex.Message)

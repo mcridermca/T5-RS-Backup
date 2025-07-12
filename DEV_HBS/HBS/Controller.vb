@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Controller
-'$ GenerateDate: 06/27/2025 20:11:04
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -129,9 +129,6 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Select Case specName & "_" & context
     
-      Case "SelectedForPowerSupply_"
-      Formula_SelectedForPowerSupply_WHENCHANGED(Value, OldValue)
-    
     End Select
     End Sub
 
@@ -140,10 +137,6 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Dim Status as Boolean = False
     Select Case specName & "_" & context
-    
-      Case "SelectedForPowerSupply_"
-      'Formula_SelectedForPowerSupply_WHENCHANGED(Value, OldValue)
-      Status = True
     Case Else
     Status = False
     End Select
@@ -316,15 +309,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [ElementName]() As String
-      Get
-      Return Properties("ElementName").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("ElementName").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [FacilityDisplayName]() As String
       Get
       Return Properties("FacilityDisplayName").Value
@@ -394,24 +378,6 @@ Option Infer On
       End Get
       Set(ByVal Value As String)
       Properties("PowerSupply").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [SelectedForPowerSupply]() As Boolean
-      Get
-      Return Properties("SelectedForPowerSupply").Value
-      End Get
-      Set(ByVal Value As Boolean)
-      Properties("SelectedForPowerSupply").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Tag]() As String
-      Get
-      Return Properties("Tag").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Tag").CalculatedValue = Value
       End Set
       End Property
     
@@ -505,6 +471,12 @@ Option Infer On
       End Set
       End Property
     
+      Public ReadOnly Property [Physical]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("Physical")
+      End Get
+      End Property
+    
       Public ReadOnly Property [Devices]() As Rulestream.Kernel.Connection
       Get
       Return Connections("Devices")
@@ -525,7 +497,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Controller", <a><![CDATA[Controller]]></a>.Value, 6, "HBS",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "06/26/2025 20:13:41")
+    InitPart("Controller", <a><![CDATA[Controller]]></a>.Value, 6, "HBS",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/10/2025 04:35:28")
     AddProperty("329", "AI_UI_Capacity", <a><![CDATA[AI_UI Capacity]]></a>.Value, "The Controller AI_UI Capacity", "Long","","Database Lookup","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:07 AM")
     AddProperty("330", "AO_Capacity", <a><![CDATA[AO Capacity]]></a>.Value, "The Controller AO Capacity", "Long","","Database Lookup","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:14 AM")
     AddProperty("331", "DI_Capacity", <a><![CDATA[DI Capacity]]></a>.Value, "The Controller DI Capacity", "Long","","Database Lookup","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:27 AM")
@@ -544,7 +516,6 @@ Option Infer On
     AddProperty("402", "CurrentRating", <a><![CDATA[Current Rating]]></a>.Value, "milliAmps", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("46", "DefaultQuantity", <a><![CDATA[Default Quantity]]></a>.Value, "The default quantity for this controller.", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("334", "DynamicSQLQuery", <a><![CDATA[Dynamic SQL Query]]></a>.Value, "The options for the configurable port(s) on this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("814", "ElementName", <a><![CDATA[Element Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/26/2025 5:14:07 AM")
     AddProperty("595", "FacilityDisplayName", <a><![CDATA[Facility Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("42", "Family", <a><![CDATA[Family]]></a>.Value, "The family this controller belongs to.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("47", "Mnemonic", <a><![CDATA[Mnemonic]]></a>.Value, "The mnemonic for this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -553,8 +524,6 @@ Option Infer On
     AddProperty("44", "Pole", <a><![CDATA[Pole]]></a>.Value, "The super-region or collection of regions this controller belongs to.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("377", "PowerConsumption", <a><![CDATA[Power Consumption]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("375", "PowerSupply", <a><![CDATA[Power Supply]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("379", "SelectedForPowerSupply", <a><![CDATA[Selected For Power Supply]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/25/2025 5:07:03 AM")
-    AddProperty("813", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/26/2025 5:13:23 AM")
     AddProperty("51", "UplinkPortQuantity", <a><![CDATA[Uplink Port Quantity]]></a>.Value, "The quantity of uplink ports for this controller.", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("50", "UplinkPortType", <a><![CDATA[Uplink Port Type]]></a>.Value, "The type of uplink port for this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("160", "UplinkPortTypeLimits", <a><![CDATA[Uplink Port Type Limits]]></a>.Value, "The names of the uplink ports of this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -570,6 +539,10 @@ Option Infer On
     
       AddPropertyExtended(334,"DynamicSQLQuery", "313", "EXTLABEL", "Label", "Options for Configurable Ports", "GLOBAL\H601421", "4/7/2025 1:03:29 AM")
     
+      oSubpart = AddSubpart(135,"Physical", <a><![CDATA[Physical]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601421", "7/10/2025 4:09:35 AM")
+      
+        oSubpart.AddVPF (123, "ControllerPhysical", "Controller Physical")
+      
       oConnection = AddConnection("Devices", <a><![CDATA[Devices]]></a>.Value, "", "27", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
       
         oConnection.AddVPF(5, "Device")
@@ -659,9 +632,6 @@ Option Infer On
           InitProperty("DynamicSQLQuery", "313", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/7/2025 1:03:29 AM", "", "In Development",  0,909)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ElementName", "754", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/26/2025 5:14:07 AM", "", "In Development",  0,1724)
-        End If
-            If Incontext("-1", ctx) Then
           InitProperty("FacilityDisplayName", "551", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/26/2025 4:06:05 AM", "", "In Development",  0,1299)
         End If
             If Incontext("-1", ctx) Then
@@ -684,12 +654,6 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PowerSupply", "354", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/7/2025 12:53:52 AM", "", "In Development",  0,906)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("SelectedForPowerSupply", "358", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/25/2025 5:07:03 AM", "", "In Development",  0,1694)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Tag", "753", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/26/2025 5:13:23 AM", "", "In Development",  0,1723)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("UplinkPortQuantity", "44", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 2:32:54 AM", "", "In Development",  0,768)
@@ -743,6 +707,12 @@ Option Infer On
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("Physical", 115, "", "", "Y", 0, "-1", "", "GLOBAL\H601421", "7/10/2025 4:09:35 AM", "", "In Development", "N",0,261,260)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -1277,31 +1247,6 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_ElementName() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("ElementName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:754; TYPE:PF
-      Result = Tag
-      '   END FORMULA; PROP ID:754; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_ElementName", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_FacilityDisplayName() As String
           
           Dim Result as String = String.Empty
@@ -1490,56 +1435,6 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '   END FORMULA; PROP ID:354; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_PowerSupply", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_SelectedForPowerSupply() As Boolean
-          Dim Result as Boolean
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("SelectedForPowerSupply").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:358; TYPE:PF
-      Dim _ckt As Object = If(IsConnected(RootPart.PowerSupplyView(1).SelectedCircuit), RootPart.PowerSupplyView(1).SelectedCircuit(1), Nothing)
-
-Result = _ckt IsNot Nothing AndAlso (_ckt.Tag = AssignedPowerSupply)
-      '   END FORMULA; PROP ID:358; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_SelectedForPowerSupply", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Tag() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Tag").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:753; TYPE:PF
-      Result = ControllerPartNumber
-      '   END FORMULA; PROP ID:753; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Tag", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1961,15 +1856,6 @@ Result = _ckt IsNot Nothing AndAlso (_ckt.Tag = AssignedPowerSupply)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_ElementName_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_FacilityDisplayName_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -2034,24 +1920,6 @@ Result = _ckt IsNot Nothing AndAlso (_ckt.Tag = AssignedPowerSupply)
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_PowerSupply_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_SelectedForPowerSupply_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Tag_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -2312,15 +2180,6 @@ Result = _ckt IsNot Nothing AndAlso (_ckt.Tag = AssignedPowerSupply)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_ElementName_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_FacilityDisplayName_USERCHANGE() as Boolean
       Return False
       End Function
@@ -2386,48 +2245,6 @@ Result = _ckt IsNot Nothing AndAlso (_ckt.Tag = AssignedPowerSupply)
       '*****************************************************************************
       Public Function Formula_PowerSupply_USERCHANGE() as Boolean
       Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_SelectedForPowerSupply_USERCHANGE() as Boolean
-      
-              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
-              Dim Result as Boolean = False
-              Dim ctx as Object
-              Try
-              ctx = this
-              If Me.Properties("SelectedForPowerSupply").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
-              Stop
-              End If
-              '   BEGIN FORMULA; PROP ID:358; TYPE:UC
-              Dim _ps As Object = PowerSupply.ToUpper().Trim()
-
-If _ps = "N/A" Then
-	Result = False
-Else
-	Dim _poweredBy As String = AssignedPowerSupply
-	Result = (_poweredBy.Length = 0) OrElse (IsConnected(RootPart.PowerSupplyView(1).SelectedCircuit) AndAlso (RootPart.PowerSupplyView(1).SelectedCircuit(1).Tag = _poweredBy))
-End If
-              '   END FORMULA; PROP ID:358; TYPE:UC
-              Catch ex As Exception
-              ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_SelectedForPowerSupply_USERCHANGE", ex.Message)
-              If ObjectManager.DebugMode Then Stop
-              End Try
-              Return Result
-            
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Tag_USERCHANGE() as Boolean
-      Return True
       End Function
     
       '*****************************************************************************
@@ -2525,34 +2342,69 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Sub Formula_SelectedForPowerSupply_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      Public Function Formula_Physical_PARTNAMES() as String
       
+      Dim Result as String = ""
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("SelectedForPowerSupply").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:358; TYPE:WC
-      Dim _me As Object = Properties("SelectedForPowerSupply")
-
-If Not _me.UseCalculatedValue Then
-	If Value Then
-		If IsConnected(RootPart.PowerSupplyView(1).SelectedCircuit) Then
-			Properties("AssignedPowerSupply").InputValue = RootPart.PowerSupplyView(1).SelectedCircuit(1).Tag
-		End If
-	Else
-		Properties("AssignedPowerSupply").RevertToCalc()
-	End If
-
-	_me.RevertToCalc()
-End If
-      '   END FORMULA; PROP ID:358; TYPE:WC
+      '   BEGIN FORMULA; SUB ID:115; TYPE:PN
+      
+      '   END FORMULA; SUB ID:115; TYPE:PN
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_SelectedForPowerSupply_WHENCHANGED", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Physical_PARTNAMES", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
-      End Sub
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Physical_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Physical").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:115; TYPE:QF
+      Result = DefaultQuantity
+      '   END FORMULA; SUB ID:115; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Physical_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Physical_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Physical").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:115; TYPE:OP
+      Result = "ControllerPhysical"
+      '   END FORMULA; SUB ID:115; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Physical_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
     
 
     '*****************************************************************************

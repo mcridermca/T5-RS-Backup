@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Pole_Master_Row
-'$ GenerateDate: 07/01/2025 01:42:37
+'$ GenerateDate: 07/12/2025 14:08:17
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -284,7 +284,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Pole_Master_Row", <a><![CDATA[ADM_Pole_Master_Row]]></a>.Value, 49, "HBSADMIN",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "06/25/2025 19:38:53")
+    InitPart("ADM_Pole_Master_Row", <a><![CDATA[ADM_Pole_Master_Row]]></a>.Value, 49, "HBSADMIN",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/10/2025 15:42:02")
     AddProperty("693", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/20/2025 5:35:15 PM")
     AddProperty("694", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/20/2025 5:35:28 PM")
     AddProperty("742", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/20/2025 6:31:43 PM")
@@ -294,7 +294,7 @@ Option Infer On
     AddProperty("697", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 7:38:53 PM")
     AddProperty("692", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolete)", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 2:10:01 AM")
     AddProperty("691", "Pole_Name", <a><![CDATA[Pole_Name]]></a>.Value, "Pole Name", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/20/2025 5:34:06 PM")
-    AddProperty("690", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/20/2025 7:28:23 PM")
+    AddProperty("690", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/10/2025 3:42:02 PM")
     AddProperty("698", "Pole_Master_Id", <a><![CDATA[Pole_Master_Id]]></a>.Value, "Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/20/2025 5:32:59 PM")
     AddProperty("699", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 8:13:03 PM")
     AddProperty("688", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:26:23 PM")
@@ -359,7 +359,7 @@ Option Infer On
           InitProperty("Pole_Name", "644", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/20/2025 5:34:06 PM", "Pole Name", "In Development",  0,1608)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Sort_Order", "643", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/20/2025 7:28:23 PM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,1624)
+          InitProperty("Sort_Order", "643", "1", "999", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/9/2025 3:16:33 PM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,1624)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Pole_Master_Id", "651", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/20/2025 5:32:59 PM", "Primary Key", "In Development",  0,1606)

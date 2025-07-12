@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Engg_Units_Master_Row_dbInfo
-'$ GenerateDate: 07/01/2025 01:42:37
+'$ GenerateDate: 07/12/2025 14:08:17
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -174,6 +174,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Engg_Units_Standard_Ref]() As String
+      Get
+      Return Properties("Engg_Units_Standard_Ref").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Engg_Units_Standard_Ref").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Is_Active]() As Boolean
       Get
       Return Properties("Is_Active").Value
@@ -278,10 +287,11 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Engg_Units_Master_Row_dbInfo", <a><![CDATA[ADM_Engg_Units_Master_Row_dbInfo]]></a>.Value, 95, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601423", "06/30/2025 13:49:01")
+    InitPart("ADM_Engg_Units_Master_Row_dbInfo", <a><![CDATA[ADM_Engg_Units_Master_Row_dbInfo]]></a>.Value, 95, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/07/2025 15:39:56")
     AddProperty("1216", "Base_Unit_Name", <a><![CDATA[Base_Unit_Name]]></a>.Value, "Name for the Base Unit", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:13:06 PM")
     AddProperty("1217", "Base_Unit_Symbol", <a><![CDATA[Base_Unit_Symbol]]></a>.Value, "Symbol of the Base Unit", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:13:44 PM")
     AddProperty("1210", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:10:56 PM")
+    AddProperty("1286", "Engg_Units_Standard_Ref", <a><![CDATA[Engg_Units_Standard_Ref]]></a>.Value, "Which Units Standard Ref is this row for?", "String","","Master Data","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601422", "7/7/2025 3:39:26 PM")
     AddProperty("1211", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolute)", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:11:14 PM")
     AddProperty("1218", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:14:17 PM")
     AddProperty("1215", "Unit_Of_Measure", <a><![CDATA[Unit_Of_Measure]]></a>.Value, "What the Unit Measures", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:12:42 PM")
@@ -331,6 +341,9 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Deleted", "1117", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/30/2025 12:10:56 PM", "Deleted Flag", "In Development",  0,2140)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Engg_Units_Standard_Ref", "1187", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/7/2025 3:39:26 PM", "Symbol of the Base Unit", "In Development",  0,2250)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Is_Active", "1118", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/30/2025 12:11:14 PM", "Is Record Active (Not Obsolute)", "In Development",  0,2141)
@@ -416,6 +429,8 @@ Option Infer On
           InitDBproperty("dbInfo", "Created_On",33, "Created_On", "Engg_Units_Master")
         
           InitDBproperty("dbInfo", "Deleted",33, "Deleted", "Engg_Units_Master")
+        
+          InitDBproperty("dbInfo", "Engg_Units_Standard_Ref",33, "Engg_Units_Standard_Ref", "Engg_Units_Master")
         
           InitDBproperty("dbInfo", "Is_Active",33, "Is_Active", "Engg_Units_Master")
         
@@ -504,6 +519,31 @@ Option Infer On
       '   END FORMULA; PROP ID:1117; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " ADM_Engg_Units_Master_Row_dbInfo.Formula_Deleted", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Engg_Units_Standard_Ref() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Engg_Units_Standard_Ref").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1187; TYPE:PF
+      Result = ""
+      '   END FORMULA; PROP ID:1187; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Engg_Units_Master_Row_dbInfo.Formula_Engg_Units_Standard_Ref", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -766,6 +806,15 @@ Next P
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Engg_Units_Standard_Ref_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Is_Active_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -866,6 +915,15 @@ Next P
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Deleted_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Engg_Units_Standard_Ref_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -993,6 +1051,8 @@ Next P
               strSelectList = strSelectList & leftDelimiter & "Created_On" & rightDelimiter & ", "
             
               strSelectList = strSelectList & leftDelimiter & "Deleted" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Engg_Units_Standard_Ref" & rightDelimiter & ", "
             
               strSelectList = strSelectList & leftDelimiter & "Is_Active" & rightDelimiter & ", "
             

@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{3774846c-3a7c-49f0-9336-169b91952061}</ProjectGuid>
+		<ProjectGuid>{4b73d29b-5bb6-48c1-aea4-4d8581ef66ea}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>SharedHW</RootNamespace>
 		<AssemblyName>SharedHW</AssemblyName>
@@ -36,31 +36,31 @@
 	<ItemGroup>
 		<Reference Include="log4net">
 			<Name>log4net</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\log4net.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\log4net.dll</HintPath>
 		</Reference>
 		<Reference Include="RuleStream">
 			<Name>RuleStream</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.dll</HintPath>
 		</Reference>
 		<Reference Include="RuleStream.DataService">
 			<Name>RuleStream.DataService</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.DataService.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.DataService.dll</HintPath>
 		</Reference>
 		<Reference Include="RuleStream.Kernel">
 			<Name>RuleStream.Kernel</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RuleStream.Kernel.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RuleStream.Kernel.dll</HintPath>
 		</Reference>
 		<Reference Include="Aspose.Cells">
 			<Name>Aspose.Cells</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Aspose.Cells.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\Aspose.Cells.dll</HintPath>
 		</Reference>
 		<Reference Include="Microsoft.Data.SqlClient">
 			<Name>Microsoft.Data.SqlClient</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\Microsoft.Data.SqlClient.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\Microsoft.Data.SqlClient.dll</HintPath>
 		</Reference>
 		<Reference Include="RulestreamTCUtilities">
 			<Name>RulestreamTCUtilities</Name>
-			<HintPath>D:\Rulestream 2412\rsroot\RuleStream 2412.0000\RulestreamTCUtilities.dll</HintPath>
+			<HintPath>C:\Program Files\RuleStream 2412.0000\RulestreamTCUtilities.dll</HintPath>
 		</Reference>
 		<Reference Include="System">
 			<Name>System</Name>
@@ -95,6 +95,9 @@
 	</ItemGroup>
 	<ItemGroup>
 		<Compile Include="cora_project_information.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="rsxli_pli_project_information.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="shared_tlp.vb">

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Floor
-'$ GenerateDate: 06/27/2025 20:11:14
+'$ GenerateDate: 07/12/2025 14:09:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -129,6 +129,9 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Select Case specName & "_" & context
     
+      Case "FacilityItemName_"
+      Formula_FacilityItemName_WHENCHANGED(Value, OldValue)
+    
     End Select
     End Sub
 
@@ -137,6 +140,10 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Dim Status as Boolean = False
     Select Case specName & "_" & context
+    
+      Case "FacilityItemName_"
+      'Formula_FacilityItemName_WHENCHANGED(Value, OldValue)
+      Status = True
     Case Else
     Status = False
     End Select
@@ -227,10 +234,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Floor", <a><![CDATA[Floor]]></a>.Value, 46, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "06/19/2025 19:41:00")
+    InitPart("Floor", <a><![CDATA[Floor]]></a>.Value, 46, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/11/2025 05:52:50")
     AddProperty("576", "FacilityDisplayName", <a><![CDATA[Facility Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("591", "FacilityItemName", <a><![CDATA[Facility Item Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("575", "FloorIndex", <a><![CDATA[Floor Index]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("591", "FacilityItemName", <a><![CDATA[Facility Item Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/11/2025 5:52:50 AM")
+    AddProperty("575", "FloorIndex", <a><![CDATA[Floor Index]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/11/2025 5:20:49 AM")
     AddProperty("578", "FloorName", <a><![CDATA[Floor Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("601", "Selected", <a><![CDATA[Selected]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("570", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601421", "4/25/2025 3:55:47 AM")
@@ -275,10 +282,10 @@ Option Infer On
           InitProperty("FacilityDisplayName", "532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 4:53:28 AM", "", "In Development",  0,1263)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("FacilityItemName", "547", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 8:48:45 PM", "", "In Development",  0,1292)
+          InitProperty("FacilityItemName", "547", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/11/2025 5:52:50 AM", "", "In Development",  0,1292)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("FloorIndex", "531", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 4:37:34 AM", "", "In Development",  0,1258)
+          InitProperty("FloorIndex", "531", "", "", "N", "","", 3, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/11/2025 5:20:49 AM", "", "In Development",  0,1258)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("FloorName", "534", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 8:49:15 PM", "", "In Development",  0,1293)
@@ -617,6 +624,42 @@ End If
       Public Function Formula_Selected_USERCHANGE() as Boolean
       Return True
       End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_FacilityItemName_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FacilityItemName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:547; TYPE:WC
+      If Properties("FacilityItemName").UseCalculatedValue Then
+	Dim _newName As String = Value
+
+	For Each _floor As Object In Owner
+		If _floor IsNot Me Then
+			If _floor.FacilityName = _newName Then
+				MessageBox.Show("Floor Name Already Exists!", "Rename Floor", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+				Value = OldValue
+
+				Exit For
+			End If
+		End If
+	Next
+End If
+      '   END FORMULA; PROP ID:547; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Floor.Formula_FacilityItemName_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
     
 
     '*****************************************************************************
