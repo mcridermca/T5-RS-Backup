@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: FrtEst01
 '$ PartFamily: Freight_Estimate_Head
-'$ GenerateDate: 07/12/2025 13:20:28
+'$ GenerateDate: 07/12/2025 14:40:53
 
     Imports Microsoft.VisualBasic
     Imports System

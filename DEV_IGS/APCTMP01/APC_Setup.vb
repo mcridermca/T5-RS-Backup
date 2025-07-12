@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Setup
-'$ GenerateDate: 07/12/2025 13:20:28
+'$ GenerateDate: 07/12/2025 14:40:53
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -959,7 +959,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", False, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H621516", "07/11/2025 01:44:50")
+    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", False, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H601424", "07/12/2025 14:40:08")
     AddProperty("3778", "Belt_InclineDecline_Max_Deg", <a><![CDATA[Belt InclineDecline Max Deg (Degrees)]]></a>.Value, "Max. Belt Incline/Decline Angle for Stable Product (in Degrees)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 6:37:40 PM")
     AddProperty("3170", "BoxSize_Height_Avg_IN", <a><![CDATA[BoxSize Height Avg IN]]></a>.Value, "BoxSize Height Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:37:24 PM")
     AddProperty("3158", "BoxSize_Height_Avg_User", <a><![CDATA[BoxSize Height Avg User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:21:15 PM")
@@ -1047,7 +1047,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     AddProperty("4532", "Totes_Plastic_Type", <a><![CDATA[Totes Plastic Type]]></a>.Value, "Type of Plastic Tote Used", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:38:54 PM")
     AddProperty("3172", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:10:22 PM")
     AddProperty("9795", "Valid", <a><![CDATA[Valid]]></a>.Value, "Are Plastic Totes Used?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/10/2025 2:33:56 PM")
-    AddProperty("9794", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/11/2025 1:44:50 AM")
+    AddProperty("9794", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/12/2025 2:40:08 PM")
     AddProperty("715", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/24/2025 5:32:55 PM")
     
       AddValidValue("BoxSize_Height_Avg_User_UOM")
@@ -1386,7 +1386,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Valid", "9381", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 2:33:56 PM", "Are Plastic Totes Used?", "In Development",  0,16048)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Valid_Message", "9380", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/11/2025 1:44:50 AM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,16317)
+          InitProperty("Valid_Message", "9380", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 2:40:08 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,16317)
         End If
     End Sub
 
@@ -3787,14 +3787,22 @@ End If
 If Selected_Sortation_Controls = "BOSS" Or Selected_Sortation_Controls = "ICW" Then
     EList.Add(1, "WARNING: THE BOSS AND ICW CONTROLS PLATFORMS ARE IN SUNSET STATUS AND SHOULD ONLY BE USED FOR RETROFITS OF EXISTING SYSTEMS!", "APC005", Source)
 End If
-'=IF(OR($I$33="Yes",AND($I$30="Yes",$I$32<0.75)),"WARNING: PRODUCT STABILITY TESTING/PROTOTYPING IS STRONGLY RECOMMENDED!","")
 
-If BoxSize_Other_Known_Issues = "True" Or(BoxSize_Height_GRTR_Len_Possible = "True" And BoxSize_Worst_Case_HL_Ratio < 0.75) Then
-    EList.Add(1, "WARNING: PRODUCT STABILITY TESTING/PROTOTYPING IS STRONGLY RECOMMENDED!", "APC0025", Source)
-End If
-'=IF(OR($I$33="Yes",AND($I$30="Yes",$I$32<0.75)),"REDUCED INCLINE/DECLINE BELT ANGLES AND/OR VFD's MAY BE REQUIRED!'","")
-If BoxSize_Other_Known_Issues = "Yes" Or (BoxSize_Height_GRTR_Len_Possible = "Yes" And BoxSize_Worst_Case_HL_Ratio < 0.75) Then
-   EList.Add(1, "REDUCED INCLINE/DECLINE BELT ANGLES AND/OR VFD's MAY BE REQUIRED!'", "APC0026", Source)
+
+'MPC - 20250712 - Did a different check for BoxSize_Worst_Case_HL_Ratio to capture a string "Error" Error. 
+					' The Original Spreadsheet had BoxSize_Worst_Case_HL_Ratio evaluating to a string
+If Not isnumeric( BoxSize_Worst_Case_HL_Ratio) Then
+	EList.Add(2, "ERROR: PRODUCT STABILITY TESTING/PROTOTYPING IS STRONGLY RECOMMENDED!", "APC0027", Source)
+Else
+	'=IF(OR($I$33="Yes",AND($I$30="Yes",$I$32<0.75)),"WARNING: PRODUCT STABILITY TESTING/PROTOTYPING IS STRONGLY RECOMMENDED!","")
+	If BoxSize_Other_Known_Issues = True Or(BoxSize_Height_GRTR_Len_Possible = True And Double.parse(BoxSize_Worst_Case_HL_Ratio) < 0.75) Then
+    	EList.Add(1, "WARNING:BoxSize_Worst_Case_HL_Ratio Evaluation has an error!", "APC0025", Source)
+	End If
+	'=IF(OR($I$33="Yes",AND($I$30="Yes",$I$32<0.75)),"REDUCED INCLINE/DECLINE BELT ANGLES AND/OR VFD's MAY BE REQUIRED!'","")
+	If BoxSize_Other_Known_Issues = True Or (BoxSize_Height_GRTR_Len_Possible = True And Double.parse(BoxSize_Worst_Case_HL_Ratio) < 0.75) Then
+  	 	EList.Add(1, "REDUCED INCLINE/DECLINE BELT ANGLES AND/OR VFD's MAY BE REQUIRED!'", "APC0026", Source)
+	End If
+
 End If
 
 '=IF($I$40="Metric","WARNING: METRIC PERFORMANCE VALUES ARE ESTIMATES UNTIL TESTING CAN BE DONE BY PRODUCT ENGINEERING","")

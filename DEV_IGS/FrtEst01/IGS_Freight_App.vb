@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: FrtEst01
 '$ PartFamily: IGS_Freight_App
-'$ GenerateDate: 07/12/2025 13:20:28
+'$ GenerateDate: 07/12/2025 14:40:53
 
     Imports Microsoft.VisualBasic
     Imports System

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_App_Calc_Print_And_Apply
-'$ GenerateDate: 07/12/2025 13:20:28
+'$ GenerateDate: 07/12/2025 14:40:53
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -723,6 +723,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [MDR_RAT_Swivel_Rate]() As Double
+      Get
+      Return Properties("MDR_RAT_Swivel_Rate").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("MDR_RAT_Swivel_Rate").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [MTBH_Height_Average_IN]() As Double
       Get
       Return Properties("MTBH_Height_Average_IN").Value
@@ -1164,6 +1173,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN]() As Double
+      Get
+      Return Properties("Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_UOM]() As String
       Get
       Return Properties("Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_UOM").Value
@@ -1218,6 +1236,51 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Transnorm_TS4800_Control_Reaction_Time_Distance_IN]() As Double
+      Get
+      Return Properties("Transnorm_TS4800_Control_Reaction_Time_Distance_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Transnorm_TS4800_Control_Reaction_Time_Distance_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Transnorm_TS4800_Divert_Angle]() As Double
+      Get
+      Return Properties("Transnorm_TS4800_Divert_Angle").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Transnorm_TS4800_Divert_Angle").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Transnorm_TS4800_Divert_Shifting_Distance_IN]() As Double
+      Get
+      Return Properties("Transnorm_TS4800_Divert_Shifting_Distance_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Transnorm_TS4800_Divert_Shifting_Distance_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Transnorm_TS4800_Encoder_Resolution_IN]() As Double
+      Get
+      Return Properties("Transnorm_TS4800_Encoder_Resolution_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Transnorm_TS4800_Encoder_Resolution_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Transnorm_TS4800_Required_Gap_Max_Box]() As Double
+      Get
+      Return Properties("Transnorm_TS4800_Required_Gap_Max_Box").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Transnorm_TS4800_Required_Gap_Max_Box").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -1241,7 +1304,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_App_Calc_Print_And_Apply", <a><![CDATA[CAE_App_Calc_Print_And_Apply]]></a>.Value, 416, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/12/2025 13:20:15")
+    InitPart("CAE_App_Calc_Print_And_Apply", <a><![CDATA[CAE_App_Calc_Print_And_Apply]]></a>.Value, 416, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/12/2025 14:32:46")
     AddProperty("9808", "User_UOM_System", <a><![CDATA[User_UOM_System]]></a>.Value, "", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 6:08:33 PM")
     AddProperty("9951", "Acq_Label_Data_Acquisition_Method", <a><![CDATA[Acq_Label_Data_Acquisition_Method]]></a>.Value, "AppCalc^'Belted PandA'!74", "String","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:15:41 PM")
     AddProperty("9956", "Acq_Label_Data_Acquisition_Travel_IN", <a><![CDATA[Acq_Label_Data_Acquisition_Travel_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:47:28 PM")
@@ -1306,6 +1369,7 @@ Option Infer On
     AddProperty("9948", "Ind_Scan_Tracking_Photocell_Distance_User_Max_Val", <a><![CDATA[Ind_Scan_Tracking_Photocell_Distance_User_Max_Val]]></a>.Value, "", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:00:57 PM")
     AddProperty("9949", "Ind_Scan_Tracking_Photocell_Distance_User_Min_Val", <a><![CDATA[Ind_Scan_Tracking_Photocell_Distance_User_Min_Val]]></a>.Value, "", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:01:03 PM")
     AddProperty("9937", "Ind_Scan_Tracking_Photocell_Distance_User_UOM", <a><![CDATA[Ind_Scan_Tracking_Photocell_Distance_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:39:42 PM")
+    AddProperty("9998", "MDR_RAT_Swivel_Rate", <a><![CDATA[MDR_RAT_Swivel_Rate]]></a>.Value, "AppCalc^'MDR Sort'!S39", "Double","","AppCalc_PandA_MDR","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:46:12 PM")
     AddProperty("9875", "MTBH_Height_Average_IN", <a><![CDATA[MTBH_Height_Average_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:50:50 PM")
     AddProperty("9858", "MTBH_Height_Average_User", <a><![CDATA[MTBH_Height_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!H49", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:29:39 PM")
     AddProperty("9852", "MTBH_Height_Average_User_UOM", <a><![CDATA[MTBH_Height_Average_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:28:36 PM")
@@ -1352,15 +1416,21 @@ Option Infer On
     AddProperty("9910", "MTBH_Width_Minimum_User_Min_Value", <a><![CDATA[MTBH_Width_Minimum_User_Min_Value]]></a>.Value, "", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:19:35 PM")
     AddProperty("9841", "MTBH_Width_Minimum_User_UOM", <a><![CDATA[MTBH_Width_Minimum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:54:47 PM")
     AddProperty("9985", "Reject_Diverter_Min_Gap_Required_IN", <a><![CDATA[Reject_Diverter_Min_Gap_Required_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:16:25 PM")
-    AddProperty("9973", "Reject_Diverter_Min_Gap_Required_User", <a><![CDATA[Reject_Diverter_Min_Gap_Required_User]]></a>.Value, "AppCalc^'Belted PandA'!J125", "Double","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:07:41 PM")
+    AddProperty("9973", "Reject_Diverter_Min_Gap_Required_User", <a><![CDATA[Reject_Diverter_Min_Gap_Required_User]]></a>.Value, "AppCalc^'Belted PandA'!J125", "Double","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 2:32:46 PM")
     AddProperty("9970", "Reject_Diverter_Min_Gap_Required_User_UOM", <a><![CDATA[Reject_Diverter_Min_Gap_Required_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:06:31 PM")
     AddProperty("9968", "Reject_Diverter_Required", <a><![CDATA[Reject_Diverter_Required]]></a>.Value, "AppCalc^'Belted PandA'!J123", "String","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:58:01 PM")
+    AddProperty("9990", "Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN", <a><![CDATA[Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:20:46 PM")
     AddProperty("9972", "Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_UOM", <a><![CDATA[Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:06:53 PM")
-    AddProperty("9989", "Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User", <a><![CDATA[Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User]]></a>.Value, "AppCalc^'Belted PandA'!J127", "Double","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:17:42 PM")
+    AddProperty("9989", "Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User", <a><![CDATA[Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User]]></a>.Value, "AppCalc^'Belted PandA'!J127", "Double","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:57:30 PM")
     AddProperty("9987", "Reject_Diverter_Spacing_Cont_Flow_Max_Carton_IN", <a><![CDATA[Reject_Diverter_Spacing_Cont_Flow_Max_Carton_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:20:15 PM")
     AddProperty("9971", "Reject_Diverter_Spacing_Cont_Flow_Max_Carton_UOM", <a><![CDATA[Reject_Diverter_Spacing_Cont_Flow_Max_Carton_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:06:40 PM")
-    AddProperty("9988", "Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User", <a><![CDATA[Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User]]></a>.Value, "AppCalc^'Belted PandA'!J126", "Double","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:17:13 PM")
+    AddProperty("9988", "Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User", <a><![CDATA[Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User]]></a>.Value, "AppCalc^'Belted PandA'!J126", "Double","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:57:39 PM")
     AddProperty("9969", "Reject_Diverter_Type", <a><![CDATA[Reject_Diverter_Type]]></a>.Value, "AppCalc^'Belted PandA'!J124", "String","","AppCalc_PandA_Reject_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:01:04 PM")
+    AddProperty("9994", "Transnorm_TS4800_Control_Reaction_Time_Distance_IN", <a><![CDATA[Transnorm_TS4800_Control_Reaction_Time_Distance_IN]]></a>.Value, "AppCalc^'Belted PandA'!T127", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:36:54 PM")
+    AddProperty("9992", "Transnorm_TS4800_Divert_Angle", <a><![CDATA[Transnorm_TS4800_Divert_Angle]]></a>.Value, "AppCalc^'Belted PandA'!T124", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:36:58 PM")
+    AddProperty("9993", "Transnorm_TS4800_Divert_Shifting_Distance_IN", <a><![CDATA[Transnorm_TS4800_Divert_Shifting_Distance_IN]]></a>.Value, "AppCalc^'Belted PandA'!T125", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:37:03 PM")
+    AddProperty("9995", "Transnorm_TS4800_Encoder_Resolution_IN", <a><![CDATA[Transnorm_TS4800_Encoder_Resolution_IN]]></a>.Value, "AppCalc^'Belted PandA'!T128", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:37:32 PM")
+    AddProperty("9996", "Transnorm_TS4800_Required_Gap_Max_Box", <a><![CDATA[Transnorm_TS4800_Required_Gap_Max_Box]]></a>.Value, "AppCalc^'Belted PandA'!T128", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:38:48 PM")
     AddProperty("9805", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 4:45:56 PM")
     
       AddPropertyExtended(9830,"Gen_Accumulation_Zone_Quantity", "9414", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/11/2025 3:37:39 PM")
@@ -1678,6 +1748,9 @@ Option Infer On
           InitProperty("Ind_Scan_Tracking_Photocell_Distance_User_UOM", "9521", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:16:09 PM", "", "In Development",  0,16514)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("MDR_RAT_Swivel_Rate", "9580", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:46:12 PM", "", "In Development",  0,16713)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("MTBH_Height_Average_IN", "9459", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:50:50 PM", "", "In Development",  0,16635)
         End If
             If Incontext("-1", ctx) Then
@@ -1816,7 +1889,7 @@ Option Infer On
           InitProperty("Reject_Diverter_Min_Gap_Required_IN", "9567", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:16:25 PM", "", "In Development",  0,16677)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Reject_Diverter_Min_Gap_Required_User", "9555", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:07:41 PM", "", "In Development",  0,16664)
+          InitProperty("Reject_Diverter_Min_Gap_Required_User", "9555", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 2:32:46 PM", "", "In Development",  0,16718)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Reject_Diverter_Min_Gap_Required_User_UOM", "9552", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:06:24 PM", "", "In Development",  0,16658)
@@ -1825,10 +1898,13 @@ Option Infer On
           InitProperty("Reject_Diverter_Required", "9550", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:58:01 PM", "", "In Development",  0,16651)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN", "9572", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:20:46 PM", "", "In Development",  0,16686)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_UOM", "9554", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:06:53 PM", "", "In Development",  0,16662)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User", "9571", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:17:42 PM", "", "In Development",  0,16681)
+          InitProperty("Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User", "9571", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:57:30 PM", "", "In Development",  0,16715)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Reject_Diverter_Spacing_Cont_Flow_Max_Carton_IN", "9569", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:20:15 PM", "", "In Development",  0,16684)
@@ -1837,10 +1913,25 @@ Option Infer On
           InitProperty("Reject_Diverter_Spacing_Cont_Flow_Max_Carton_UOM", "9553", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:06:40 PM", "", "In Development",  0,16660)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User", "9570", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:17:13 PM", "", "In Development",  0,16680)
+          InitProperty("Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User", "9570", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:57:39 PM", "", "In Development",  0,16717)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Reject_Diverter_Type", "9551", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:01:04 PM", "", "In Development",  0,16655)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Transnorm_TS4800_Control_Reaction_Time_Distance_IN", "9576", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:36:05 PM", "", "In Development",  0,16701)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Transnorm_TS4800_Divert_Angle", "9574", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:32:51 PM", "", "In Development",  0,16694)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Transnorm_TS4800_Divert_Shifting_Distance_IN", "9575", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:35:21 PM", "", "In Development",  0,16699)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Transnorm_TS4800_Encoder_Resolution_IN", "9577", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:37:32 PM", "", "In Development",  0,16704)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Transnorm_TS4800_Required_Gap_Max_Box", "9578", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:38:48 PM", "", "In Development",  0,16707)
         End If
     End Sub
 
@@ -3739,6 +3830,29 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_MDR_RAT_Swivel_Rate() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_RAT_Swivel_Rate").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9580; TYPE:PF
+      Result = 35.69
+      '   END FORMULA; PROP ID:9580; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MDR_RAT_Swivel_Rate", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_MTBH_Height_Average_IN() As Double
           Dim Result as Double
       Dim ctx as Object
@@ -4912,7 +5026,23 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9555; TYPE:PF
-      result = 0.0
+      Select Case Me.Reject_Diverter_Required
+	Case "Yes"
+		Select Case Me.Reject_Diverter_Type
+			Case "WD Pop-Up Wheel"
+				Result = 18
+			Case "Transnorm TS4800 30deg"
+				Result = Me.Transnorm_TS4800_Required_Gap_Max_Box
+			Case Else
+				Result = Me.Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN - Me.MTBH_Length_Average_IN
+		End Select
+	Case Else
+		Result = 0
+End Select
+
+If Me.Reject_Diverter_Min_Gap_Required_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", Me.Reject_Diverter_Min_Gap_Required_User_UOM)
+End If
       '   END FORMULA; PROP ID:9555; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Reject_Diverter_Min_Gap_Required_User", ex.Message)
@@ -4976,6 +5106,29 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9572; TYPE:PF
+      Result = Units.Convert(Me.Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User, Me.Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_UOM,"IN")
+      '   END FORMULA; PROP ID:9572; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_UOM() As String
           
           Dim Result as String = String.Empty
@@ -5010,7 +5163,23 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9571; TYPE:PF
-      result = 0.0
+      Select Case Me.Reject_Diverter_Required
+	Case "Yes"
+		Select Case Me.Reject_Diverter_Type
+			Case "WD Pop-Up Wheel", "Transnorm TS4800 30deg"
+				Result = Me.Reject_Diverter_Min_Gap_Required_IN + Me.MTBH_Length_Average_IN
+			Case "MDR RAT"
+				Result = 0 '''Needs MDR info
+			Case Else
+				Result = 0 '''Needs MDR info
+		End Select
+	Case Else
+		Result = 0
+End Select
+
+If Me.Reject_Diverter_Min_Gap_Required_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
       '   END FORMULA; PROP ID:9571; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User", ex.Message)
@@ -5081,7 +5250,23 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9570; TYPE:PF
-      result = 0.0
+      Select Case Me.Reject_Diverter_Required
+	Case "Yes"
+		Select Case Me.Reject_Diverter_Type
+			Case "WD Pop-Up Wheel", "Transnorm TS4800 30deg"
+				Result = Me.Reject_Diverter_Min_Gap_Required_IN + Me.MTBH_Length_Maximum_IN
+			Case "MDR RAT"
+				Result = 0 '''Needs MDR info
+			Case Else
+				Result = 0 '''Needs MDR info
+		End Select
+	Case Else
+		Result = 0
+End Select
+
+If Me.Reject_Diverter_Min_Gap_Required_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
       '   END FORMULA; PROP ID:9570; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User", ex.Message)
@@ -5115,6 +5300,123 @@ End Select
       '   END FORMULA; PROP ID:9551; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Reject_Diverter_Type", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Transnorm_TS4800_Control_Reaction_Time_Distance_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Transnorm_TS4800_Control_Reaction_Time_Distance_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9576; TYPE:PF
+      Result = ((Me.Gen_Belt_Speed_IN * 12) / 60) * (0.025 * 2)
+      '   END FORMULA; PROP ID:9576; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Transnorm_TS4800_Control_Reaction_Time_Distance_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Transnorm_TS4800_Divert_Angle() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Transnorm_TS4800_Divert_Angle").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9574; TYPE:PF
+      Result = 30
+      '   END FORMULA; PROP ID:9574; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Transnorm_TS4800_Divert_Angle", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Transnorm_TS4800_Divert_Shifting_Distance_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Transnorm_TS4800_Divert_Shifting_Distance_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9575; TYPE:PF
+      Result = ((Me.Gen_Belt_Speed_IN * 12) / 60) * 0.15
+      '   END FORMULA; PROP ID:9575; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Transnorm_TS4800_Divert_Shifting_Distance_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Transnorm_TS4800_Encoder_Resolution_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Transnorm_TS4800_Encoder_Resolution_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9577; TYPE:PF
+      Result = 1.5
+      '   END FORMULA; PROP ID:9577; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Transnorm_TS4800_Encoder_Resolution_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Transnorm_TS4800_Required_Gap_Max_Box() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Transnorm_TS4800_Required_Gap_Max_Box").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9578; TYPE:PF
+      Result = Me.Transnorm_TS4800_Divert_Shifting_Distance_IN _
+	+ Me.Transnorm_TS4800_Control_Reaction_Time_Distance_IN _
+	+ me.Transnorm_TS4800_Encoder_Resolution_IN
+      '   END FORMULA; PROP ID:9578; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Transnorm_TS4800_Required_Gap_Max_Box", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -5836,6 +6138,15 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_MDR_RAT_Swivel_Rate_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_MTBH_Height_Average_IN_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -6277,6 +6588,15 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_UOM_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -6323,6 +6643,51 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Reject_Diverter_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Control_Reaction_Time_Distance_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Divert_Angle_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Divert_Shifting_Distance_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Encoder_Resolution_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Required_Gap_Max_Box_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -7061,6 +7426,15 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_MDR_RAT_Swivel_Rate_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_MTBH_Height_Average_IN_USERCHANGE() as Boolean
       Return True
       End Function
@@ -7476,7 +7850,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Reject_Diverter_Min_Gap_Required_User_USERCHANGE() as Boolean
-      Return False
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Reject_Diverter_Min_Gap_Required_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9555; TYPE:UC
+              Select Case Me.Reject_Diverter_Required
+	Case "Yes"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9555; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Reject_Diverter_Min_Gap_Required_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -7502,6 +7898,15 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_UOM_USERCHANGE() as Boolean
       Return False
       End Function
@@ -7512,7 +7917,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User_USERCHANGE() as Boolean
-      Return False
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9571; TYPE:UC
+              Select Case Me.Reject_Diverter_Required
+	Case "Yes"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9571; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Reject_Diverter_Spacing_Cont_Flow_Avg_Carton_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -7539,7 +7966,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User_USERCHANGE() as Boolean
-      Return False
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9570; TYPE:UC
+              Select Case Me.Reject_Diverter_Required
+	Case "Yes"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9570; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Reject_Diverter_Spacing_Cont_Flow_Max_Carton_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -7571,6 +8020,51 @@ End Select
               End Try
               Return Result
             
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Control_Reaction_Time_Distance_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Divert_Angle_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Divert_Shifting_Distance_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Encoder_Resolution_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Transnorm_TS4800_Required_Gap_Max_Box_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
