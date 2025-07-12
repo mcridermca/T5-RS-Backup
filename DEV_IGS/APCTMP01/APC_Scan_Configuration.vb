@@ -4,6 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Configuration
+'$ GenerateDate: 07/12/2025 22:40:03
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -182,6 +183,33 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [GapControlMethod]() As String
+      Get
+      Return Properties("GapControlMethod").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("GapControlMethod").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [LaserOmniSideApp]() As Boolean
+      Get
+      Return Properties("LaserOmniSideApp").Value
+      End Get
+      Set(ByVal Value As Boolean)
+      Properties("LaserOmniSideApp").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MinGapForScan_IN]() As Double
+      Get
+      Return Properties("MinGapForScan_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("MinGapForScan_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [MinGapOverride_Vendor_Provider_IN]() As Double
       Get
       Return Properties("MinGapOverride_Vendor_Provider_IN").Value
@@ -299,11 +327,11 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [ShadowingStatus]() As Boolean
+          Public Property [ShadowingStatus]() As String
       Get
       Return Properties("ShadowingStatus").Value
       End Get
-      Set(ByVal Value As Boolean)
+      Set(ByVal Value As String)
       Properties("ShadowingStatus").CalculatedValue = Value
       End Set
       End Property
@@ -403,30 +431,37 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/12/2025 13:43:42")
-    AddProperty("9964", "AppType", <a><![CDATA[AppType]]></a>.Value, "Primary Application Type", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:11:01 PM")
+    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/12/2025 22:38:57")
+    AddProperty("9964", "AppType", <a><![CDATA[AppType]]></a>.Value, "Primary Application Type", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:20:26 PM")
     AddProperty("9963", "BoxPanelsScanned", <a><![CDATA[BoxPanelsScanned]]></a>.Value, "Count of Box Panels Scanned", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:38:15 PM")
     AddProperty("9962", "CartonPresentation", <a><![CDATA[CartonPresentation]]></a>.Value, "Carton Presentation?", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:36:38 PM")
     AddProperty("9991", "FrontBack_Scanner_Count", <a><![CDATA[FrontBack_Scanner_Count]]></a>.Value, "Count of Front & Back Scanner Positions in Use", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:31:57 PM")
+    AddProperty("10011", "GapControlMethod", <a><![CDATA[GapControlMethod]]></a>.Value, "Active or Passive Gap Control Method? (From Soration Configuration)", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 6:33:28 PM")
+    AddProperty("10020", "LaserOmniSideApp", <a><![CDATA[Laser OmniSide App]]></a>.Value, "If Left Scan or Right Scan has Omni Directional Laser, then True, Otherwise False", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:08:51 PM")
+    AddProperty("10010", "MinGapForScan_IN", <a><![CDATA[MinGapForScan_IN]]></a>.Value, "Min. Gap Allowed for all scans", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 5:41:51 PM")
     AddProperty("9976", "MinGapOverride_Vendor_Provider_IN", <a><![CDATA[MinGapOverride (Inches)]]></a>.Value, "Min. Gap for Scanner Application  (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:12:36 PM")
     AddProperty("9977", "MinGapOverride_Vendor_Provider_MM", <a><![CDATA[MinGapOverride (mm)]]></a>.Value, "Min. Gap for Scanner Application  (mm)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:13:16 PM")
-    AddProperty("9978", "MinGapOverride_Vendor_Provider_User", <a><![CDATA[MinGapOverride_User]]></a>.Value, "Scanner Gap Requirement Override (if vendor supplied)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:13:39 PM")
-    AddProperty("9965", "MinGapRequired_IN", <a><![CDATA[MinGapRequired]]></a>.Value, "Min. Gap Required for Scanner Application  (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:11:18 PM")
+    AddProperty("9978", "MinGapOverride_Vendor_Provider_User", <a><![CDATA[MinGapOverride_User]]></a>.Value, "Scanner Gap Requirement Override (if vendor supplied)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 5:59:49 PM")
+    AddProperty("9965", "MinGapRequired_IN", <a><![CDATA[MinGapRequired]]></a>.Value, "Min. Gap Required for Scanner Application  (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:28:20 PM")
     AddProperty("9966", "MinGapRequired_User", <a><![CDATA[MinGapRequired_User]]></a>.Value, "Min. Gap Required for Scanner Application  (mm)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:11:57 PM")
     AddProperty("9967", "MinGapRequired_User_UOM", <a><![CDATA[MinGapRequired_User_UOM]]></a>.Value, "Scanner Gap Unit Of Measure", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:12:23 PM")
-    AddProperty("9979", "ReadWindowSize_IN", <a><![CDATA[ReadWindowSize_IN]]></a>.Value, "Estimated Scanner Read Window Size (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:14:17 PM")
+    AddProperty("9979", "ReadWindowSize_IN", <a><![CDATA[ReadWindowSize_IN]]></a>.Value, "Estimated Scanner Read Window Size (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:38:57 PM")
     AddProperty("9980", "ReadWindowSize_MM", <a><![CDATA[ReadWindowSize_MM]]></a>.Value, "Estimated Scanner Read Window Size (mm)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:14:59 PM")
     AddProperty("9981", "ReadWindowSize_USER", <a><![CDATA[ReadWindowSize_USER]]></a>.Value, "Estimated Scanner Read Window Size (User UOM)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:15:16 PM")
     AddProperty("9982", "ReadWindowSize_Vendor_Supplied_IN", <a><![CDATA[ReadWindowSize_Vendor_Supplied_IN]]></a>.Value, "Scanner Read Window Size Override (if vendor supplied) (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:15:40 PM")
     AddProperty("9984", "ReadWindowSize_Vendor_Supplied_MM", <a><![CDATA[ReadWindowSize_Vendor_Supplied_MM]]></a>.Value, "Scanner Read Window Size Override (if vendor supplied) (mm)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:15:57 PM")
-    AddProperty("9986", "ReadWindowSize_Vendor_Supplied_USER", <a><![CDATA[ReadWindowSize_Vendor_Supplied_USER]]></a>.Value, "Scanner Read Window Size Override (if vendor supplied) (User UOM)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:16:27 PM")
+    AddProperty("9986", "ReadWindowSize_Vendor_Supplied_USER", <a><![CDATA[ReadWindowSize_Vendor_Supplied_USER]]></a>.Value, "Scanner Read Window Size Override (if vendor supplied) (User UOM)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 5:59:24 PM")
     AddProperty("9960", "ShadowingPotential", <a><![CDATA[ShadowingPotential]]></a>.Value, "Shadowing Issues Possible?", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:34:50 PM")
-    AddProperty("9961", "ShadowingStatus", <a><![CDATA[ShadowingStatus]]></a>.Value, "Shadowing Allowed?", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:34:17 PM")
+    AddProperty("10012", "ShadowingStatus", <a><![CDATA[Shadowing Status]]></a>.Value, "Shadowing Allowed?", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/12/2025 7:43:53 PM")
     AddProperty("9959", "UsePandAMTBH", <a><![CDATA[UsePandAMTBH]]></a>.Value, "Use PandA MTBH Parameters (Required for PandA Use!)", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:35:03 PM")
     AddProperty("9997", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/12/2025 1:43:37 PM")
     AddProperty("9940", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 5:59:25 PM")
     
       AddValidValue("CartonPresentation")
+    
+      AddValidValue("GapControlMethod")
+    
+      AddValidValue("ShadowingStatus")
     
       AddValidValue("User_UOM_System")
     
@@ -495,7 +530,7 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("AppType", "9546", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:11:01 PM", "Primary Application Type", "In Development",  0,16643)
+          InitProperty("AppType", "9546", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 10:20:26 PM", "Primary Application Type", "In Development",  0,16830)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxPanelsScanned", "9545", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:38:14 PM", "Number of Box Panels Scanned", "In Development",  0,16706)
@@ -507,16 +542,25 @@ Option Infer On
           InitProperty("FrontBack_Scanner_Count", "9573", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:31:57 PM", "Count of Front & Back Scanner Positions in Use", "In Development",  0,16692)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("GapControlMethod", "9593", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/12/2025 6:23:33 PM", "Carton Presentation?", "In Development",  0,16773)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("LaserOmniSideApp", "9602", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 10:08:51 PM", "", "In Development",  0,16829)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MinGapForScan_IN", "9592", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 5:41:45 PM", "Min. Gap Required for Scanner Application  (Inch)", "In Development",  0,16767)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("MinGapOverride_Vendor_Provider_IN", "9558", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:12:36 PM", "Min. Gap for Scanner Application  (Inch)", "In Development",  0,16667)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MinGapOverride_Vendor_Provider_MM", "9559", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:13:16 PM", "Min. Gap for Scanner Application  (mm)", "In Development",  0,16668)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MinGapOverride_Vendor_Provider_User", "9560", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:13:39 PM", "Scanner Gap Requirement Override (if vendor supplied)", "In Development",  0,16669)
+          InitProperty("MinGapOverride_Vendor_Provider_User", "9560", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 5:59:49 PM", "Scanner Gap Requirement Override (if vendor supplied)", "In Development",  0,16669)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MinGapRequired_IN", "9547", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:11:18 PM", "Min. Gap Required for Scanner Application  (Inch)", "In Development",  0,16647)
+          InitProperty("MinGapRequired_IN", "9547", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 10:28:20 PM", "Min. Gap Required for Scanner Application  (Inch)", "In Development",  0,16834)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MinGapRequired_User", "9548", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:11:57 PM", "Min. Gap Required for Scanner Application  (mm)", "In Development",  0,16649)
@@ -525,7 +569,7 @@ Option Infer On
           InitProperty("MinGapRequired_User_UOM", "9549", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:12:23 PM", "Scanner Gap Unit Of Measure", "In Development",  0,16650)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ReadWindowSize_IN", "9561", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:14:17 PM", "Estimated Scanner Read Window Size (Inch)", "In Development",  0,16670)
+          InitProperty("ReadWindowSize_IN", "9561", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 10:38:57 PM", "Estimated Scanner Read Window Size (Inch)", "In Development",  0,16843)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ReadWindowSize_MM", "9562", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:14:59 PM", "Estimated Scanner Read Window Size (mm)", "In Development",  0,16671)
@@ -540,13 +584,13 @@ Option Infer On
           InitProperty("ReadWindowSize_Vendor_Supplied_MM", "9566", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:15:57 PM", "Scanner Read Window Size Override (if vendor supplied) (mm)", "In Development",  0,16675)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ReadWindowSize_Vendor_Supplied_USER", "9568", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:16:27 PM", "Scanner Read Window Size Override (if vendor supplied) (User UOM)", "In Development",  0,16678)
+          InitProperty("ReadWindowSize_Vendor_Supplied_USER", "9568", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 5:59:24 PM", "Scanner Read Window Size Override (if vendor supplied) (User UOM)", "In Development",  0,16678)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ShadowingPotential", "9542", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:34:31 PM", "Shadowing Issues Possible?", "In Development",  0,16698)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ShadowingStatus", "9543", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:34:17 PM", "Shadowing Allowed?", "In Development",  0,16697)
+          InitProperty("ShadowingStatus", "9594", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/12/2025 7:43:19 PM", "Carton Presentation?", "In Development",  0,16788)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("UsePandAMTBH", "9541", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 12:36:21 PM", "Use PandA MTBH Parameters (Required for PandA Use!)", "In Development",  0,16615)
@@ -568,6 +612,14 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitValidValue("CartonPresentation_ValidValues", "9544", "-1", 16703)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("GapControlMethod_ValidValues", "9593", "-1", 16774)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("ShadowingStatus_ValidValues", "9594", "-1", 16789)
         End If
             If Incontext("-1", ctx) Then
           
@@ -859,7 +911,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9546; TYPE:PF
-      result = "" '=IF(K102>0,IF(OR(EXACT("O",G89:G94)),"Omni-Directional","Uni-Directional"),"")
+      Result = "Uni-Directiona" '=IF(K102>0,IF(OR(EXACT("O",G89:G94)),"Omni-Directional","Uni-Directional"),"")
+Dim Is_Omni As Boolean = False
+If BoxPanelsScanned > 0 Then
+	For Each p As part In Me.Panel_Configs
+		If p.properties("Scan_Type").Value.Trim().Lower() = "O" Then
+			Is_Omni = True
+			Result = "Omni-Directional"
+		End If
+	Next p
+End If
       '   END FORMULA; PROP ID:9546; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_AppType", ex.Message)
@@ -955,6 +1016,91 @@ If Me.Panel_Config_Back(1).Is_Scanned Then
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_GapControlMethod() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("GapControlMethod").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9593; TYPE:PF
+      Result = "Passive"
+      '   END FORMULA; PROP ID:9593; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_GapControlMethod", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_LaserOmniSideApp() As Boolean
+          Dim Result as Boolean
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("LaserOmniSideApp").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9602; TYPE:PF
+      Result = False
+
+'=IF(
+	'Or(
+		' And($C91="Yes",$D91="Laser Omni-Directional"),
+		' And($C92="Yes",$D92="Laser Omni-Directional")),
+   '"Yes","No")
+ ' Evaluation : If Left Scan or Right Scan has Omni Directional Laser, then True, Otherwise False
+
+Dim Left_Scanner_Is_Omni_Laser As Boolean = (Me.Panel_Config_Left(1).Is_Scanned AndAlso Me.Panel_Config_Left(1).Scanner_Selected = "Laser Omni-Directional")
+Dim Right_Scanner_Is_Omni_Laser As Boolean = (Me.Panel_Config_Right(1).Is_Scanned AndAlso Me.Panel_Config_Right(1).Scanner_Selected = "Laser Omni-Directional")
+
+If Left_Scanner_Is_Omni_Laser Or Right_Scanner_Is_Omni_Laser Then
+	Result = True
+End If
+      '   END FORMULA; PROP ID:9602; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_LaserOmniSideApp", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MinGapForScan_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MinGapForScan_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9592; TYPE:PF
+      Result = 6
+      '   END FORMULA; PROP ID:9592; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_MinGapForScan_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_MinGapOverride_Vendor_Provider_IN() As Double
           Dim Result as Double
       Dim ctx as Object
@@ -1033,7 +1179,21 @@ If Me.Panel_Config_Back(1).Is_Scanned Then
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9547; TYPE:PF
-      result = 0.0
+      Result = 0.0
+
+	'=IF(K105>0,K105,MAX(L89:L94))
+
+For Each p As part In Me.Panel_Configs
+	If P.Properties("Is_Scanned").Value = True Then
+		If P.Properties("Min_Gap_Required").Value > Result Then
+			Result = P.Properties("Min_Gap_Required").Value
+		End If
+	End If
+Next p
+
+If MinGapOverride_Vendor_Provider_IN > Result Then
+	Result = MinGapOverRide_Vendor_Provider_IN
+End If
       '   END FORMULA; PROP ID:9547; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_MinGapRequired_IN", ex.Message)
@@ -1105,6 +1265,19 @@ If Me.Panel_Config_Back(1).Is_Scanned Then
       End If
       '   BEGIN FORMULA; PROP ID:9561; TYPE:PF
       result = 0.0
+'=IF(K107>0,K107,IF(AND(COUNTIF(C89:C92,"Yes")>0,COUNTIF(C93:C94,"Yes")>1),MAX(T89:T94)+MAX(L93:L94),MAX(T89:T94)))
+
+For Each p As part In Me.Panel_Configs
+	If P.Properties("Is_Scanned").Value = True Then
+		If P.Properties("Read_Window_Size").Value > Result Then
+			Result = P.Properties("Read_Window_Size").Value
+		End If
+	End If
+Next p
+
+If ReadWindowSize_Vendor_Supplied_IN > Result Then
+	Result = ReadWindowSize_Vendor_Supplied_IN
+End If
       '   END FORMULA; PROP ID:9561; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_ReadWindowSize_IN", ex.Message)
@@ -1260,17 +1433,19 @@ End If
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_ShadowingStatus() As Boolean
-          Dim Result as Boolean
+          Public Function Formula_ShadowingStatus() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
       If Me.Properties("ShadowingStatus").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:9543; TYPE:PF
-      result = false
-      '   END FORMULA; PROP ID:9543; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9594; TYPE:PF
+      Result = "No"
+      '   END FORMULA; PROP ID:9594; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_ShadowingStatus", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
@@ -1359,6 +1534,33 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_FrontBack_Scanner_Count_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_GapControlMethod_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_LaserOmniSideApp_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MinGapForScan_IN_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1547,6 +1749,33 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_GapControlMethod_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_LaserOmniSideApp_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MinGapForScan_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_MinGapOverride_Vendor_Provider_IN_USERCHANGE() as Boolean
       Return False
       End Function
@@ -1566,7 +1795,7 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MinGapOverride_Vendor_Provider_User_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************
@@ -1647,7 +1876,7 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_ReadWindowSize_Vendor_Supplied_USER_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************
@@ -1705,6 +1934,54 @@ End If
       '   END FORMULA; PROP ID:9544; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_CartonPresentation_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_GapControlMethod_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("GapControlMethod").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9593; TYPE:VV
+      Result = MakeValidValues(Array("Active", "Passive"))
+      '   END FORMULA; PROP ID:9593; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_GapControlMethod_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_ShadowingStatus_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("ShadowingStatus").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9594; TYPE:VV
+      Result = MakeValidValues(Array("No", "Parial", "Full"))
+      '   END FORMULA; PROP ID:9594; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_ShadowingStatus_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

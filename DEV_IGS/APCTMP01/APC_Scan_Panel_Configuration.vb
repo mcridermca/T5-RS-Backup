@@ -4,6 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Panel_Configuration
+'$ GenerateDate: 07/12/2025 22:40:03
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -164,6 +165,51 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [PandAAvgBoxHeight]() As Double
+      Get
+      Return Properties("PandAAvgBoxHeight").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PandAAvgBoxHeight").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PandAAvgBoxWidth]() As Double
+      Get
+      Return Properties("PandAAvgBoxWidth").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PandAAvgBoxWidth").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PandAMaxBoxHeight]() As Double
+      Get
+      Return Properties("PandAMaxBoxHeight").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PandAMaxBoxHeight").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PandaMaxBoxWidth]() As Double
+      Get
+      Return Properties("PandaMaxBoxWidth").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PandaMaxBoxWidth").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PandaMinBoxLength]() As Double
+      Get
+      Return Properties("PandaMinBoxLength").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PandaMinBoxLength").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Panel_ID]() As String
       Get
       Return Properties("Panel_ID").Value
@@ -182,6 +228,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Read_Window_Size]() As Double
+      Get
+      Return Properties("Read_Window_Size").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Read_Window_Size").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Scan_Angle_Degrees]() As Double
       Get
       Return Properties("Scan_Angle_Degrees").Value
@@ -191,11 +246,11 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Scan_Head_Location]() As Double
+          Public Property [Scan_Head_Location]() As String
       Get
       Return Properties("Scan_Head_Location").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As String)
       Properties("Scan_Head_Location").CalculatedValue = Value
       End Set
       End Property
@@ -250,15 +305,21 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Panel_Configuration", <a><![CDATA[APC_Scan_Panel_Configuration]]></a>.Value, 418, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/12/2025 13:19:00")
+    InitPart("APC_Scan_Panel_Configuration", <a><![CDATA[APC_Scan_Panel_Configuration]]></a>.Value, 418, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/12/2025 22:39:40")
     AddProperty("9943", "Is_Scanned", <a><![CDATA[Is_Scanned]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:28:07 PM")
-    AddProperty("9983", "Min_Gap_Required", <a><![CDATA[Min_Gap_Required]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:15:49 PM")
+    AddProperty("9983", "Min_Gap_Required", <a><![CDATA[Min_Gap_Required]]></a>.Value, "Calculation of Minimum Gap Required, either from the Global MTBF or the refereced PandA MTBF", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:53:44 PM")
+    AddProperty("10016", "PandAAvgBoxHeight", <a><![CDATA[PandAAvgBoxHeight]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:24:53 PM")
+    AddProperty("10015", "PandAAvgBoxWidth", <a><![CDATA[PandAAvgBoxWidth]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:25:26 PM")
+    AddProperty("10017", "PandAMaxBoxHeight", <a><![CDATA[PandAMaxBoxHeight]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:23:50 PM")
+    AddProperty("10018", "PandaMaxBoxWidth", <a><![CDATA[PandaMaxBoxWidth]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:24:08 PM")
+    AddProperty("10013", "PandaMinBoxLength", <a><![CDATA[PandaMinBoxLength]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:08:54 PM")
     AddProperty("9942", "Panel_ID", <a><![CDATA[Panel_ID]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:26:55 PM")
-    AddProperty("9957", "Product_Spacing_Category", <a><![CDATA[Product_Spacing_Category]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 12:05:35 PM")
+    AddProperty("9957", "Product_Spacing_Category", <a><![CDATA[Product_Spacing_Category]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:49:05 PM")
+    AddProperty("10021", "Read_Window_Size", <a><![CDATA[Read_Window_Size]]></a>.Value, "Calculation of Read Window Size", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:39:40 PM")
     AddProperty("9950", "Scan_Angle_Degrees", <a><![CDATA[Scan_Angle_Degrees]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 12:05:01 PM")
-    AddProperty("9958", "Scan_Head_Location", <a><![CDATA[Scan_Head_Location]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 12:16:51 PM")
+    AddProperty("10008", "Scan_Head_Location", <a><![CDATA[Scan_Head_Location]]></a>.Value, "Scanner CCD Position", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:18:22 PM")
     AddProperty("9945", "Scan_Type", <a><![CDATA[Scan_Type]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:38:33 PM")
-    AddProperty("9946", "Scanner_CCD_Position", <a><![CDATA[Scanner_CCD_Position]]></a>.Value, "Scanner CCD Position", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:19:00 PM")
+    AddProperty("9946", "Scanner_CCD_Position", <a><![CDATA[Scanner_CCD_Position]]></a>.Value, "Scanner CCD Position", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 6:07:09 PM")
     AddProperty("9944", "Scanner_Selected", <a><![CDATA[Scanner_Selected]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:32:38 PM")
     AddProperty("9941", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:02:49 PM")
     
@@ -298,25 +359,43 @@ Option Infer On
           InitProperty("Is_Scanned", "9525", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/11/2025 6:28:07 PM", "", "In Development",  0,16541)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Min_Gap_Required", "9565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:15:49 PM", "", "In Development",  0,16674)
+          InitProperty("Min_Gap_Required", "9565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 9:53:44 PM", "", "In Development",  0,16825)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PandAAvgBoxHeight", "9598", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 8:24:53 PM", "", "In Development",  0,16814)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PandAAvgBoxWidth", "9597", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 8:23:35 PM", "", "In Development",  0,16811)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PandAMaxBoxHeight", "9599", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 8:23:50 PM", "", "In Development",  0,16812)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PandaMaxBoxWidth", "9600", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 8:24:08 PM", "", "In Development",  0,16813)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PandaMinBoxLength", "9595", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 9:08:54 PM", "", "In Development",  0,16821)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Panel_ID", "9524", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/11/2025 6:26:55 PM", "", "In Development",  0,16540)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Product_Spacing_Category", "9539", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 12:05:35 PM", "", "In Development",  0,16612)
+          InitProperty("Product_Spacing_Category", "9539", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 9:49:05 PM", "", "In Development",  0,16824)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Read_Window_Size", "9603", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 10:39:14 PM", "", "In Development",  0,16844)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Scan_Angle_Degrees", "9532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 12:05:01 PM", "", "In Development",  0,16611)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Scan_Head_Location", "9540", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 12:16:51 PM", "", "In Development",  0,16614)
+          InitProperty("Scan_Head_Location", "9590", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 6:16:38 PM", "", "In Development",  0,16770)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Scan_Type", "9527", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/11/2025 6:38:29 PM", "", "In Development",  0,16550)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Scanner_CCD_Position", "9528", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:18:42 PM", "", "In Development",  0,16682)
+          InitProperty("Scanner_CCD_Position", "9528", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/12/2025 6:07:09 PM", "", "In Development",  0,16682)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Scanner_Selected", "9526", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/11/2025 6:32:38 PM", "", "In Development",  0,16543)
@@ -334,7 +413,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitValidValue("Scanner_CCD_Position_ValidValues", "9528", "-1", 16565)
+        InitValidValue("Scanner_CCD_Position_ValidValues", "9528", "-1", 16769)
         End If
             If Incontext("-1", ctx) Then
           
@@ -419,44 +498,318 @@ Option Infer On
       '   BEGIN FORMULA; PROP ID:9565; TYPE:PF
       Result = 0.0
 
-If Me.Is_Scanned Then
-	Dim FrontScanned As Boolean = Me.Parent.Panel_Config_Front(1).Is_Scanned
-	Dim BackScanned As Boolean = Me.Parent.Panel_Config_Back(1).Is_Scanned
-	Dim FrontScanned_Overhead As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "Overhead")
-	Dim FrontScanned_1Side As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "1 Side")
-	Dim FrontScanned_2Side As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "2 Sides")
-	
-	Select Case Me.Panel_ID
-		Case  "Top"
-			' =IF(AND(OR(C93="YES",C94="Yes"),H93="Overhead"),45,90)
-				'C93 = Front Scanded
-				'C94 = Back Scanned
-			If (FrontScanned OrElse BackScanned ) AndAlso FrontScanned_Overhead Then
-            	Return 45  ' Condition is true
-        	Else
-            	Return 90  ' Condition is false
-        	End If
-		Case  "Bottom"
-			Result = 45
-		Case "Left","Right"
-			'=IF(OR(AND(C93="YES",OR(H93="1 Side",H93="2 Sides")),AND(C94="Yes",OR(H93="1 Side",H93="2 Sides"))),45,90)
-			'=IF(OR(AND(FrontScanned=TRUE, OR(FrontScanned_1Side ,FrontScanned_2Side)),AND(BackScanned,OR(FrontScanned_1Side,FrontScanned_2Side))),45,90)
-			 If ((FrontScanned AndAlso (FrontScanned_1Side Or FrontScanned_2Side)) OrElse _
-            	(BackScanned AndAlso (FrontScanned_1Side Or FrontScanned_2Side))) Then
-            	
-            	Return 45  ' At least one condition is true
-        	Else
-            	Return 90  ' Both conditions are false
-        	End If
-		Case "Front", "Back"
-					
-			Result = 45
-	 End Select
+'All the same
+'T =If(C89="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K89,$W$99:$X$103,2,False),VLOOKUP(K89,$T$99:$U$103,2,False)),"")
+'BT =If(C90="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K90,$W$99:$X$103,2,False),VLOOKUP(K90,$T$99:$U$103,2,False)),"")
+'L =If(C91="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K91,$W$99:$X$103,2,False),VLOOKUP(K91,$T$99:$U$103,2,False)),"")
+'R =If(C92="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K92,$W$99:$X$103,2,False),VLOOKUP(K92,$T$99:$U$103,2,False)),"")
+'F =If(C93="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K93,$W$99:$X$103,2,False),VLOOKUP(K93,$T$99:$U$103,2,False)),"")
+'BK =If(C94="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K94,$W$99:$X$103,2,False),VLOOKUP(K94,$T$99:$U$103,2,False)),"")
 
+If Me.Is_Scanned Then
+	If Me.Parent.UsePandAMTBH Then
+		Select Case Me.Product_Spacing_Category 
+			Case 1, 2
+				'1 = PandaMinBoxLength
+				'2 = PandaMinBoxLength
+				Result = Me.PandaMinBoxLength
+			Case 3
+				'3 = If($K99="No",PandAMaxBoxHeight,If($K99="Partial",MAX(PandAAvgBoxHeight,PandaMinBoxLength),PandaMinBoxLength))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = Me.PandAMaxBoxHeight
+					Case "Partial"
+						If Me.PandAAvgBoxHeight >= Me.PandaMinBoxLength Then
+							Result = Me.PandAAvgBoxHeight
+						Else
+							Result = Me.PandaMinBoxLength
+						End If
+					Case "Full"
+						Result = PandaMinBoxLength 'Todo: Unhandled / Incorrectly (MPC 20250712)
+				End Select
+			Case 4
+				'4 = If($K99="No",PandaMaxBoxWidth+1,If($K99="Partial",MAX(PandAAvgBoxWidth+1,PandaMinBoxLength),PandaMinBoxLength))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = Me.PandaMaxBoxWidth+1
+					Case "Partial"
+						If Me.PandAAvgBoxWidth+1 >= Me.PandaMinBoxLength Then
+							Result = Me.PandAAvgBoxWidth+1
+						Else
+							Result = Me.PandaMinBoxLength
+						End If
+					Case "Full"
+						Result = PandaMinBoxLength
+				End Select
+			Case 5
+				'5 = If($K99="No",MAX((PandaMaxBoxWidth/2)+3,PandaMinBoxLength),If($K99="Partial",MAX((PandAAvgBoxWidth/2)+3,PandaMinBoxLength),PandaMinBoxLength))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						If (Me.PandaMaxBoxWidth/2)+3 >= Me.PandaMinBoxLength Then
+							Result = Me.PandAAvgBoxWidth+1
+						Else
+							Result = Me.PandaMinBoxLength
+						End If
+					Case "Partial"
+						If (PandAAvgBoxWidth/2)+3 > Me.PandaMinBoxLength Then
+							Result = (PandAAvgBoxWidth/2)+3
+						Else
+							Result = Me.PandaMinBoxLength
+						End If
+						
+					Case "Full"
+						Result = PandaMinBoxLength
+				End Select
+		End Select
+	Else
+		Dim BoxSize_Height_Min_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Min_IN
+		Dim BoxSize_Length_Min_IN As Double = Me.Parent.MySetup(1).BoxSize_Length_Min_IN
+		Dim BoxSize_Height_Avg_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Avg_IN
+		Dim BoxSize_Width_Avg_IN As Double = Me.Parent.MySetup(1).BoxSize_Width_Avg_IN
+		Dim BoxSize_Height_Max_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Max_IN
+		Dim BoxSize_Width_Max_IN As Double = Me.Parent.MySetup(1).BoxSize_Width_Max_IN
+		Dim MinGapForScan As Double = Me.Parent.MinGapForScan_IN
+		
+		'Please Note: Case Else was used below in many cases as the excel spreadsheet did not have formulas that specifically called out "Full" ShadowingStatus. (20250712)
+		Select Case Me.Product_Spacing_Category 
+			Case 1
+				'1 = MinGapForScan
+				Result = MinGapForScan
+			Case 2
+				'2 = If(K99<>"Full",If(BoxSize_Height_Min_IN<BoxSize_Length_Min_IN,MAX(BoxSize_Height_Min_IN,BoxSize_Length_Min_IN,MinGapForScan),BoxSize_Length_Min_IN),MinGapForScan)
+		
+				Select Case Parent.ShadowingStatus
+					Case "Full"
+						Result = MinGapForScan
+						Case Else
+						If  BoxSize_Height_Min_IN  < BoxSize_Length_Min_IN Then
+							Result = MAX(BoxSize_Height_Min_IN, BoxSize_Length_Min_IN)
+							Result = MAX(Result,MinGapForScan)
+						Else
+							Result = BoxSize_Length_Min_IN
+						End If
+				End Select
+			Case 3
+				'3 = If(K99="No",BoxSize_Height_Max_IN,If(K99="Partial",BoxSize_Height_Avg_IN,MinGapForScan))			
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = BoxSize_Height_Max_IN
+					Case "Partial"
+						Result = BoxSize_Height_Avg_IN				
+					Case Else
+						Result = MinGapForScan
+				End Select
+			Case 4
+				'4 = If(K99="No",BoxSize_Width_Max_IN+1,If(K99="Partial",BoxSize_Width_Avg_IN+1,MinGapForScan))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = BoxSize_Width_Max_IN + 1
+					Case "Partial"
+						Result = BoxSize_Width_Avg_IN + 1					
+					Case  Else
+						Result = MinGapForScan
+				End Select
+			Case 5
+				'5 = If(K99="No",(BoxSize_Width_Max_IN/2)+3,If(K99="Partial",(BoxSize_Width_Avg_IN/2)+3,MinGapForScan))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = (BoxSize_Width_Max_IN/2) + 3
+					Case "Partial"
+						Result = (BoxSize_Width_Avg_IN/2)+3						
+					Case Else
+						Result = MinGapForScan
+				End Select
+		End Select
+	End If
 End If
       '   END FORMULA; PROP ID:9565; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_Min_Gap_Required", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PandAAvgBoxHeight() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PandAAvgBoxHeight").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9598; TYPE:PF
+      Result = 0
+
+'All the same
+'T =If(C89="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K89,$W$99:$X$103,2,False),VLOOKUP(K89,$T$99:$U$103,2,False)),"")
+'BT =If(C90="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K90,$W$99:$X$103,2,False),VLOOKUP(K90,$T$99:$U$103,2,False)),"")
+'L =If(C91="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K91,$W$99:$X$103,2,False),VLOOKUP(K91,$T$99:$U$103,2,False)),"")
+'R =If(C92="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K92,$W$99:$X$103,2,False),VLOOKUP(K92,$T$99:$U$103,2,False)),"")
+'F =If(C93="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K93,$W$99:$X$103,2,False),VLOOKUP(K93,$T$99:$U$103,2,False)),"")
+'BK =If(C94="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K94,$W$99:$X$103,2,False),VLOOKUP(K94,$T$99:$U$103,2,False)),"")
+
+If Me.Is_Scanned Then
+	If Me.Parent.UsePandAMTBH Then
+		Result = 12 ' Todo : Pull from Panda PF
+	End If
+End If
+      '   END FORMULA; PROP ID:9598; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_PandAAvgBoxHeight", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PandAAvgBoxWidth() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PandAAvgBoxWidth").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9597; TYPE:PF
+      Result = 0
+
+'All the same
+'T =If(C89="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K89,$W$99:$X$103,2,False),VLOOKUP(K89,$T$99:$U$103,2,False)),"")
+'BT =If(C90="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K90,$W$99:$X$103,2,False),VLOOKUP(K90,$T$99:$U$103,2,False)),"")
+'L =If(C91="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K91,$W$99:$X$103,2,False),VLOOKUP(K91,$T$99:$U$103,2,False)),"")
+'R =If(C92="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K92,$W$99:$X$103,2,False),VLOOKUP(K92,$T$99:$U$103,2,False)),"")
+'F =If(C93="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K93,$W$99:$X$103,2,False),VLOOKUP(K93,$T$99:$U$103,2,False)),"")
+'BK =If(C94="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K94,$W$99:$X$103,2,False),VLOOKUP(K94,$T$99:$U$103,2,False)),"")
+
+If Me.Is_Scanned Then
+	If Me.Parent.UsePandAMTBH Then
+		Result = 12 ' Todo : Pull from Panda PF
+	End If
+End If
+      '   END FORMULA; PROP ID:9597; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_PandAAvgBoxWidth", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PandAMaxBoxHeight() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PandAMaxBoxHeight").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9599; TYPE:PF
+      Result = 0
+
+'All the same
+'T =If(C89="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K89,$W$99:$X$103,2,False),VLOOKUP(K89,$T$99:$U$103,2,False)),"")
+'BT =If(C90="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K90,$W$99:$X$103,2,False),VLOOKUP(K90,$T$99:$U$103,2,False)),"")
+'L =If(C91="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K91,$W$99:$X$103,2,False),VLOOKUP(K91,$T$99:$U$103,2,False)),"")
+'R =If(C92="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K92,$W$99:$X$103,2,False),VLOOKUP(K92,$T$99:$U$103,2,False)),"")
+'F =If(C93="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K93,$W$99:$X$103,2,False),VLOOKUP(K93,$T$99:$U$103,2,False)),"")
+'BK =If(C94="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K94,$W$99:$X$103,2,False),VLOOKUP(K94,$T$99:$U$103,2,False)),"")
+
+If Me.Is_Scanned Then
+	If Me.Parent.UsePandAMTBH Then
+		Result = 30 ' Todo : Pull from Panda PF
+	End If
+End If
+      '   END FORMULA; PROP ID:9599; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_PandAMaxBoxHeight", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PandaMaxBoxWidth() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PandaMaxBoxWidth").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9600; TYPE:PF
+      Result = 0
+
+'All the same
+'T =If(C89="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K89,$W$99:$X$103,2,False),VLOOKUP(K89,$T$99:$U$103,2,False)),"")
+'BT =If(C90="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K90,$W$99:$X$103,2,False),VLOOKUP(K90,$T$99:$U$103,2,False)),"")
+'L =If(C91="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K91,$W$99:$X$103,2,False),VLOOKUP(K91,$T$99:$U$103,2,False)),"")
+'R =If(C92="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K92,$W$99:$X$103,2,False),VLOOKUP(K92,$T$99:$U$103,2,False)),"")
+'F =If(C93="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K93,$W$99:$X$103,2,False),VLOOKUP(K93,$T$99:$U$103,2,False)),"")
+'BK =If(C94="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K94,$W$99:$X$103,2,False),VLOOKUP(K94,$T$99:$U$103,2,False)),"")
+
+If Me.Is_Scanned Then
+	If Me.Parent.UsePandAMTBH Then
+		Result = 24 ' Todo : Pull from Panda PF
+	End If
+End If
+      '   END FORMULA; PROP ID:9600; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_PandaMaxBoxWidth", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PandaMinBoxLength() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PandaMinBoxLength").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9595; TYPE:PF
+      Result = 0
+
+'All the same
+'T =If(C89="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K89,$W$99:$X$103,2,False),VLOOKUP(K89,$T$99:$U$103,2,False)),"")
+'BT =If(C90="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K90,$W$99:$X$103,2,False),VLOOKUP(K90,$T$99:$U$103,2,False)),"")
+'L =If(C91="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K91,$W$99:$X$103,2,False),VLOOKUP(K91,$T$99:$U$103,2,False)),"")
+'R =If(C92="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K92,$W$99:$X$103,2,False),VLOOKUP(K92,$T$99:$U$103,2,False)),"")
+'F =If(C93="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K93,$W$99:$X$103,2,False),VLOOKUP(K93,$T$99:$U$103,2,False)),"")
+'BK =If(C94="Yes",If(ScanConfigAUsePandAMTBH="Yes",VLOOKUP(K94,$W$99:$X$103,2,False),VLOOKUP(K94,$T$99:$U$103,2,False)),"")
+
+If Me.Is_Scanned Then
+	If Me.Parent.UsePandAMTBH Then
+		Result = 6 ' Todo : Pull from Panda PF
+	End If
+End If
+      '   END FORMULA; PROP ID:9595; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_PandaMinBoxLength", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -523,40 +876,239 @@ If Me.Is_Scanned Then
 	Dim FrontScanned As Boolean = Me.Parent.Panel_Config_Front(1).Is_Scanned
 	Dim BackScanned As Boolean = Me.Parent.Panel_Config_Back(1).Is_Scanned
 	Dim FrontScanned_Overhead As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "Overhead")
+	Dim FrontScanned_Underside As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "Underside")
 	Dim FrontScanned_1Side As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "1 Side")
-	Dim FrontScanned_2Side As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "2 Sides")
 	
 	Select Case Me.Panel_ID
-		Case  "Top"
-			' =IF(AND(OR(C93="YES",C94="Yes"),H93="Overhead"),45,90)
-				'C93 = Front Scanded
-				'C94 = Back Scanned
-			If (FrontScanned OrElse BackScanned ) AndAlso FrontScanned_Overhead Then
-            	Return 45  ' Condition is true
-        	Else
-            	Return 90  ' Condition is false
-        	End If
-		Case  "Bottom"
-			Result = 45
-		Case "Left","Right"
-			'=IF(OR(AND(C93="YES",OR(H93="1 Side",H93="2 Sides")),AND(C94="Yes",OR(H93="1 Side",H93="2 Sides"))),45,90)
-			'=IF(OR(AND(FrontScanned=TRUE, OR(FrontScanned_1Side ,FrontScanned_2Side)),AND(BackScanned,OR(FrontScanned_1Side,FrontScanned_2Side))),45,90)
-			 If ((FrontScanned AndAlso (FrontScanned_1Side Or FrontScanned_2Side)) OrElse _
-            	(BackScanned AndAlso (FrontScanned_1Side Or FrontScanned_2Side))) Then
-            	
-            	Return 45  ' At least one condition is true
-        	Else
-            	Return 90  ' Both conditions are false
-        	End If
-		Case "Front", "Back"
-					
-			Result = 45
-	 End Select
+		Case "Top"
+			'T =If(C89="Yes",If(And(I89=45,C94="Yes",H93="Overhead"),3,If(I89=90,1,If(And(GapControlMethod="Passive",ScanConfigAUsePandAMTBH="No"),2,3))),"")
+			If Me.Scan_Angle_Degrees = 45 And FrontScanned And FrontScanned_Overhead Then
+				Result = 3
+			Else
+				If Me.Scan_Angle_Degrees = 90 Then
+					Result = 1
+				Else
+					If Me.Parent.UsePandAMTBH = False AndAlso Me.Parent.GapControlMethod = "Passive" Then
+						Result = 2
+					Else
+						Result = 3
+					End If
+				End If
+			End If
+			
+		Case "Bottom"
+			'BT =If(C90="Yes",If(And(Or(C93="Yes",C94="Yes"),H93="Underside"),3,1),"")
+			If FrontScanned_Underside And (FrontScanned Or BackScanned) Then
+				Result = 3
+			Else
+				Result = 1
+			End If
 
+		Case "Left", "Right"
+			'L =If(C91="Yes",If(I91=45,If(H93="1 Side",4,5),1),"")
+			'R =If(C92="Yes",If(I92=45,If(H93="1 Side",4,5),1),"")
+			If Me.Scan_Angle_Degrees = 45 Then
+				If FrontScanned_1Side Then
+					Result = 4
+				Else
+					Result = 5
+				End If
+			Else
+				Result = 1	
+			End If
+
+		Case "Front"
+			'F =If(C93="Yes",If(And(H93="Overhead",GapControlMethod="Passive",ScanConfigAUsePandAMTBH="No"),2,If(Or(H93="Underside",And(H93="Overhead",Or(GapControlMethod="Active",ScanConfigAUsePandAMTBH="Yes"))),3,If(H93="1 Side",4,5))),"")
+			If FrontScanned_Overhead AndAlso Me.Parent.GapControlMethod = "Passive" And Me.Parent.UsePandAMTBH = False Then
+				Result = 2
+			Else
+				If FrontScanned_Underside = True OrElse (FrontScanned_Overhead = True AndAlso (Me.Parent.GapControlMethod = "Active"Or  Me.Parent.UsePandAMTBH = True)) Then
+        			Return 3
+    			ElseIf FrontScanned_Overhead = True Then
+        			Return 4
+    			Else
+        			Return 5
+    			End If
+			End If
+			
+		Case "Back"
+			'BK =If(C94="Yes",If(H93="Overhead",3,If(H93="Underside",3,If(H93="1 Side",4,5))),"")
+			If  FrontScanned_Overhead Then 
+				Result = 3
+			Else
+				If FrontScanned_1Side Then
+					Result = 4
+				Else
+					Result = 5
+				End If
+			End If	
+	End Select
 End If
       '   END FORMULA; PROP ID:9539; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_Product_Spacing_Category", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Read_Window_Size() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Read_Window_Size").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9603; TYPE:PF
+      Result = 0.0
+
+'TODO: This needs completed (MPC - 20250712) ' Currently faked to support tyler dev.
+
+If Me.Is_Scanned Then
+	Dim FrontScanned As Boolean = Me.Parent.Panel_Config_Front(1).Is_Scanned
+	Dim BackScanned As Boolean = Me.Parent.Panel_Config_Back(1).Is_Scanned
+	Dim FrontScanned_Overhead As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "Overhead")
+	Dim FrontScanned_Underside As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "Underside")
+	Dim FrontScanned_1Side As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "1 Side")
+	
+	If Me.Parent.UsePandAMTBH Then
+		'=IF($C89="Yes",IF(AND($G89="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,IF(AND($G89="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
+		'=If($C90="Yes",If(And($G90="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(And($G90="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
+		'=If($C91="Yes",If($G91="O",PandAMaxBoxHeightWidthDim+6,5),"")
+		'=If($C92="Yes",If($G92="O",PandAMaxBoxHeightWidthDim+6,5),"")
+		'=If($C93="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L93+6),"")
+		'=If($C94="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L94+6),"")
+
+		Select Case Me.Product_Spacing_Category 
+			Case 1, 2
+				'1 = PandaMinBoxLength
+				'2 = PandaMinBoxLength
+				Result = Me.PandaMinBoxLength
+			Case 3
+				'3 = If($K99="No",PandAMaxBoxHeight,If($K99="Partial",MAX(PandAAvgBoxHeight,PandaMinBoxLength),PandaMinBoxLength))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = Me.PandAMaxBoxHeight
+					Case "Partial"
+						If Me.PandAAvgBoxHeight >= Me.PandaMinBoxLength Then
+							Result = Me.PandAAvgBoxHeight
+						Else
+							Result = Me.PandaMinBoxLength
+						End If
+					Case "Full"
+						Result = PandaMinBoxLength 'Todo: Unhandled / Incorrectly (MPC 20250712)
+				End Select
+			Case 4
+				'4 = If($K99="No",PandaMaxBoxWidth+1,If($K99="Partial",MAX(PandAAvgBoxWidth+1,PandaMinBoxLength),PandaMinBoxLength))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = Me.PandaMaxBoxWidth+1
+					Case "Partial"
+						If Me.PandAAvgBoxWidth+1 >= Me.PandaMinBoxLength Then
+							Result = Me.PandAAvgBoxWidth+1
+						Else
+							Result = Me.PandaMinBoxLength
+						End If
+					Case "Full"
+						Result = PandaMinBoxLength
+				End Select
+			Case 5
+				'5 = If($K99="No",MAX((PandaMaxBoxWidth/2)+3,PandaMinBoxLength),If($K99="Partial",MAX((PandAAvgBoxWidth/2)+3,PandaMinBoxLength),PandaMinBoxLength))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						If (Me.PandaMaxBoxWidth/2)+3 >= Me.PandaMinBoxLength Then
+							Result = Me.PandAAvgBoxWidth+1
+						Else
+							Result = Me.PandaMinBoxLength
+						End If
+					Case "Partial"
+						If (PandAAvgBoxWidth/2)+3 > Me.PandaMinBoxLength Then
+							Result = (PandAAvgBoxWidth/2)+3
+						Else
+							Result = Me.PandaMinBoxLength
+						End If
+						
+					Case "Full"
+						Result = PandaMinBoxLength
+				End Select
+		End Select
+	Else
+		Dim BoxSize_Height_Min_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Min_IN
+		Dim BoxSize_Length_Min_IN As Double = Me.Parent.MySetup(1).BoxSize_Length_Min_IN
+		Dim BoxSize_Height_Avg_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Avg_IN
+		Dim BoxSize_Width_Avg_IN As Double = Me.Parent.MySetup(1).BoxSize_Width_Avg_IN
+		Dim BoxSize_Height_Max_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Max_IN
+		Dim BoxSize_Width_Max_IN As Double = Me.Parent.MySetup(1).BoxSize_Width_Max_IN
+		Dim MinGapForScan As Double = Me.Parent.MinGapForScan_IN
+		
+		'=If($C89="Yes",If(And($G89="O",ScanConfigACartonPresentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(And($G89="O",ScanConfigACartonPresentation="Random"),SorterWidth+6,5)),"")
+		'=If($C90="Yes",If(And($G90="O",ScanConfigACartonPresentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(And($G90="O",ScanConfigACartonPresentation="Random"),SorterWidth+6,5)),"")
+		'=If($C91="Yes",If($G91="O",MaxBoxHeightWidthDim+6,5),"")
+		'=If($C92="Yes",If($G92="O",MaxBoxHeightWidthDim+6,5),"")
+		'=If($C93="Yes",If(Or($H93="Overhead",$H93="Underside"),MaxBoxHeightWidthDim+6,$L93+6),"")
+		'=If($C94="Yes",If(Or($H93="Overhead",$H93="Underside"),MaxBoxHeightWidthDim+6,$L94+6),"")
+
+		'Please Note: Case Else was used below in many cases as the excel spreadsheet did not have formulas that specifically called out "Full" ShadowingStatus. (20250712)
+		Select Case Me.Product_Spacing_Category 
+			Case 1
+				'1 = MinGapForScan
+				Result = MinGapForScan
+			Case 2
+				'2 = If(K99<>"Full",If(BoxSize_Height_Min_IN<BoxSize_Length_Min_IN,MAX(BoxSize_Height_Min_IN,BoxSize_Length_Min_IN,MinGapForScan),BoxSize_Length_Min_IN),MinGapForScan)
+		
+				Select Case Parent.ShadowingStatus
+					Case "Full"
+						Result = MinGapForScan
+						Case Else
+						If  BoxSize_Height_Min_IN  < BoxSize_Length_Min_IN Then
+							Result = MAX(BoxSize_Height_Min_IN, BoxSize_Length_Min_IN)
+							Result = MAX(Result,MinGapForScan)
+						Else
+							Result = BoxSize_Length_Min_IN
+						End If
+				End Select
+			Case 3
+				'3 = If(K99="No",BoxSize_Height_Max_IN,If(K99="Partial",BoxSize_Height_Avg_IN,MinGapForScan))			
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = BoxSize_Height_Max_IN
+					Case "Partial"
+						Result = BoxSize_Height_Avg_IN				
+					Case Else
+						Result = MinGapForScan
+				End Select
+			Case 4
+				'4 = If(K99="No",BoxSize_Width_Max_IN+1,If(K99="Partial",BoxSize_Width_Avg_IN+1,MinGapForScan))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = BoxSize_Width_Max_IN + 1
+					Case "Partial"
+						Result = BoxSize_Width_Avg_IN + 1					
+					Case  Else
+						Result = MinGapForScan
+				End Select
+			Case 5
+				'5 = If(K99="No",(BoxSize_Width_Max_IN/2)+3,If(K99="Partial",(BoxSize_Width_Avg_IN/2)+3,MinGapForScan))
+				Select Case Parent.ShadowingStatus
+					Case "No"
+						Result = (BoxSize_Width_Max_IN/2) + 3
+					Case "Partial"
+						Result = (BoxSize_Width_Avg_IN/2)+3						
+					Case Else
+						Result = MinGapForScan
+				End Select
+		End Select
+	End If
+End If
+      '   END FORMULA; PROP ID:9603; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_Read_Window_Size", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -626,55 +1178,143 @@ End If
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Scan_Head_Location() As Double
-          Dim Result as Double
+          Public Function Formula_Scan_Head_Location() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
       If Me.Properties("Scan_Head_Location").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:9540; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9590; TYPE:PF
       Result = 0.0
 
 If Me.Is_Scanned Then
-	Dim FrontScanned As Boolean = Me.Parent.Panel_Config_Front(1).Is_Scanned
 	Dim BackScanned As Boolean = Me.Parent.Panel_Config_Back(1).Is_Scanned
+	Dim LeftScanned As Boolean = Me.Parent.Panel_Config_Left(1).Is_Scanned
+	Dim RightScanned As Boolean = Me.Parent.Panel_Config_Right(1).Is_Scanned
+	Dim FrontScanned As Boolean = Me.Parent.Panel_Config_Front(1).Is_Scanned
+	Dim BottomScanned As Boolean = Me.Parent.Panel_Config_Bottom(1).Is_Scanned
+	 
 	Dim FrontScanned_Overhead As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "Overhead")
+	Dim FrontScanned_Underside As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "Underside")
 	Dim FrontScanned_1Side As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "1 Side")
 	Dim FrontScanned_2Side As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "2 Sides")
+	
+	Dim LeftAngle  As Double = Me.Parent.Panel_Config_Left(1).Scan_Angle_Degrees
+	Dim RightAngle As Double = Me.Parent.Panel_Config_Right(1).Scan_Angle_Degrees
 	
 	Select Case Me.Panel_ID
 		Case  "Top"
 			'=IF(Scan_Angle_Degrees_Top=90,"O2",IF(AND(FrontScanned="Yes",BackScanned="Yes"),"O1 & O3",IF(FrontScanned="Yes","O1","O3")))
-			If Me.Scan_Angle_Degrees = 90 And FrontScanned And BackScanned Then
-				Result = "O1 & O3"
-        	Else
-            	If FrontScanned Then
-					Result = "O1"
+			If Me.Scan_Angle_Degrees = 90 Then
+				Result = "O2"
+			Else
+				If FrontScanned And BackScanned   Then
+					Result = "O1 & O3"
 				Else
-					Result = "O3"
+					If FrontScanned Then
+					Result = "O1"
+					Else
+						Result = "O3"
+					End If
 				End If
-        	End If
+			End If
 		Case  "Bottom"
-			Result = 45
-		Case "Left","Right"
-			'=IF(OR(AND(C93="YES",OR(H93="1 Side",H93="2 Sides")),AND(C94="Yes",OR(H93="1 Side",H93="2 Sides"))),45,90)
-			'=IF(OR(AND(FrontScanned=TRUE, OR(FrontScanned_1Side ,FrontScanned_2Side)),AND(BackScanned,OR(FrontScanned_1Side,FrontScanned_2Side))),45,90)
-			 If ((FrontScanned AndAlso (FrontScanned_1Side Or FrontScanned_2Side)) OrElse _
-            	(BackScanned AndAlso (FrontScanned_1Side Or FrontScanned_2Side))) Then
-            	
-            	Return 45  ' At least one condition is true
+			' LEFT  =IF(AND(FrontScanned="Yes",BackScanned="Yes",H93="Underside"),"U1 & U2",IF(AND(BackScanned="Yes",H93="Underside"),"U1","U2"))
+			' RIGHT =IF(AND(FrontScanned="Yes",BackScanned="Yes",FrontScanned_Underside="Underside"),"U1 & U2",IF(AND(BackScanned="Yes",FrontScanned_Underside="Underside"),"U1","U2")) 
+			If FrontScanned = True And BackScanned = True And FrontScanned_Underside = True
+				Result = "U1 & U2"
+			Else
+				If FrontScanned_Underside Then 
+					Result = "U1"
+				Else
+					Result = "U2"
+				End If
+			End If 
+		Case "Left"
+			'I91 = LeftAngle
+			'I92 = RightAngle
+			' LEFT  =IF(AND(FrontScanned="Yes",BackScanned="Yes",H93="Underside"),"U1 & U2",IF(AND(BackScanned="Yes",H93="Underside"),"U1","U2"))
+			' RIGHT =IF(AND(FrontScanned="Yes",BackScanned="Yes",FrontScanned_Underside="Underside"),"U1 & U2",IF(AND(BackScanned="Yes",FrontScanned_Underside="Underside"),"U1","U2"))
+			If LeftAngle = 90 Then
+				Result = "L2"
+			Else
+				If FrontScanned And BackScanned And FrontScanned_2Side Then
+					Result = "L1 & L3"
+				Else
+				 	If	FrontScanned And BackScanned And FrontScanned_1Side	Then
+						Result = "L1 or L3"
+					Else
+						If FrontScanned Then
+							Result = "L3"
+						Else
+							Result = "L1"
+						End If 
+					End If
+				End If
+			End If
+		Case "Right"
+			'I91 = LeftAngle
+			'I92 = RightAngle
+			'=IF(I91=90,"L2",If(And(C93="Yes",C94="Yes",H93="2 Sides"),"L1 & L3",If(And(C93="Yes",C94="Yes",H93="1 Side"),"L1 or L3",If(C93="Yes","L3","L1"))))
+			'=IF(I92=90,"R2",IF(AND(C93="Yes",C94="Yes",H93="2 Sides"),"R1 & R3",IF(AND(C93="Yes",C94="Yes",H93="1 Side"),"R1 or R3",IF(C94="Yes","R1","R3"))))
+			If RightAngle = 90 Then
+				Result = "R2"
+			Else
+				If FrontScanned And BackScanned And FrontScanned_2Side Then
+					Result = "R1 & R3"
+				Else
+				 	If	FrontScanned And BackScanned And FrontScanned_1Side	Then
+						Result = "R1 or R3"
+					Else
+						If FrontScanned Then
+							Result = "R3"
+						Else
+							Result = "R1"
+						End If 
+					End If
+				End If
+			End If
+		Case "Front"
+			'FRONT = IF(H93="Overhead","O3",         IF(H93="Underside",         "U3",IF(AND(H93="1 Side",        OR(AND(C91="No",           C92="No"),                 AND(C91="Yes",           C92="Yes"))),            "R3 or L3", IF(AND(H93="1 Side",C91="Yes",C92="No"),                                "L3",IF(AND(H93="1 Side",C91="No",C92="Yes"),"R3","R3 & L3")))))
+			'BACK  = IF(H93="Overhead","O1",IF(H93="Underside","U1",IF(AND(H93="1 Side",OR(AND(C91="No",$C$92="No"),AND(C91="Yes",C92="Yes"))),"R1 or L1",IF(AND(H93="1 Side",C91="Yes",C92="No"),"L1",IF(AND(H93="1 Side",C91="No",C92="Yes"),"R1","R1 & L1"))))) 
+			'FRONT = IF(FrontSide_Overhead=True,"O3",IF(FrontSide_Underside=true,"U3",IF(AND(FrontSide_1Side=True,OR(AND(LeftSideScanned=False,RightSideScannede=False),AND(LeftSideScanned=True,RightSideScanned=True))),"R3 or L3", IF(AND(FrontSide_1Side=True,LeftSideScanned=True,RightSideScanned=False),"L3",IF(AND(FrontSide_1Side=True,LeftSideScanned=False,RighSideScanned=True),"R3","R3 & L3")))))
+			If FrontScanned_Overhead Then
+            	Return "O3"
+        	ElseIf FrontScanned_Underside Then
+            	Return "U3"
+        	ElseIf FrontScanned_1Side AndAlso ((Not LeftScanned AndAlso Not RightScanned) OrElse (LeftScanned AndAlso RightScanned)) Then
+            	Return "R3 or L3"
+        	ElseIf FrontScanned_1Side AndAlso LeftScanned AndAlso Not RightScanned Then
+            	Return "L3"
+        	ElseIf FrontScanned_1Side AndAlso Not LeftScanned AndAlso RightScanned Then
+            	Return "R3"
         	Else
-            	Return 90  ' Both conditions are false
+            	Return "R3 & L3"
         	End If
-		Case "Front", "Back"
-					
-			Result = 45
-	 End Select
-
+		Case "Back"
+			'FRONT = IF(H93="Overhead","O3",IF(H93="Underside","U3",IF(AND(H93="1 Side",OR(AND(C91="No",C92="No"),AND(C91="Yes",C92="Yes"))),"R3 or L3",IF(AND(H93="1 Side",C91="Yes",C92="No"),  "L3",IF(AND(H93="1 Side",C91="No",C92="Yes"),"R3","R3 & L3")))))
+			'BACK  = IF(H93="Overhead","O1",IF(H93="Underside","U1",IF(AND(H93="1 Side",OR(AND(C91="No",$C$92="No"),AND(C91="Yes",C92="Yes"))),"R1 or L1",IF(AND(H93="1 Side",C91="Yes",C92="No"),"L1",IF(AND(H93="1 Side",C91="No",C92="Yes"),"R1","R1 & L1"))))) 
+			'FRONT = IF(FrontSide_Overhead=True,"O3",IF(FrontSide_Underside=true,"U3",IF(AND(FrontSide_1Side=True,OR(AND(LeftSideScanned=False,RightSideScannede=False),AND(LeftSideScanned=True,RightSideScanned=True))),"R3 or L3", IF(AND(FrontSide_1Side=True,LeftSideScanned=True,RightSideScanned=False),"L3",IF(AND(FrontSide_1Side=True,LeftSideScanned=False,RighSideScanned=True),"R3","R3 & L3")))))
+			If FrontScanned_Overhead Then
+            	Return "O1"
+        	ElseIf FrontScanned_Underside Then
+            	Return "U1"
+        	ElseIf FrontScanned_1Side AndAlso ((Not LeftScanned AndAlso Not RightScanned) OrElse (LeftScanned AndAlso RightScanned)) Then
+            	Return "R1 or L1"
+        	ElseIf FrontScanned_1Side AndAlso LeftScanned AndAlso Not RightScanned Then
+            	Return "L1"
+        	ElseIf FrontScanned_1Side AndAlso Not LeftScanned AndAlso RightScanned Then
+            	Return "R1"
+        	Else
+            	Return "R1 & L1"
+        	End If
+		End Select
 End If
-      '   END FORMULA; PROP ID:9540; TYPE:PF
+      '   END FORMULA; PROP ID:9590; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_Scan_Head_Location", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
@@ -811,6 +1451,51 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_PandAAvgBoxHeight_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandAAvgBoxWidth_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandAMaxBoxHeight_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandaMaxBoxWidth_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandaMinBoxLength_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Panel_ID_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -821,6 +1506,15 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Product_Spacing_Category_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Read_Window_Size_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -892,6 +1586,51 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_PandAAvgBoxHeight_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandAAvgBoxWidth_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandAMaxBoxHeight_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandaMaxBoxWidth_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandaMinBoxLength_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Panel_ID_USERCHANGE() as Boolean
       Return True
       End Function
@@ -902,6 +1641,15 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Product_Spacing_Category_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Read_Window_Size_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -949,8 +1697,9 @@ End If
               End If
               '   BEGIN FORMULA; PROP ID:9528; TYPE:UC
               Result = False
-If Me.Is_Scanned Then Result = True
-	If Me.SubPartID = 6 Then Result = False '(Back Follows Front)
+If Me.Is_Scanned And Me.SubPartID = 5 Then 
+ 	Result = True '(Back Follows Front)
+End If
               '   END FORMULA; PROP ID:9528; TYPE:UC
               Catch ex As Exception
               ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_Scanner_CCD_Position_USERCHANGE", ex.Message)
@@ -1012,7 +1761,7 @@ If Me.Is_Scanned Then Result = True
 		Case 4
 			 Result = MakeValidValues(Array("1 Side")) ' "1 Side"
 		 Case 5
-			 Result = MakeValidValues(Array("Overhead")) ' "Please Select"
+			 Result = MakeValidValues(Array("Overhead", "Underside", "1 Side", "2 Sides"))
 		 Case 6
 			 Result = MakeValidValues(Array("Overhead", "Underside", "1 Side", "2 Sides")) '"Please Select"
 		 Case Else
