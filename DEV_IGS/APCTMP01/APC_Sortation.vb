@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Sortation
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/14/2025 17:00:12
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -147,6 +147,15 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
+          Public Property [Sorter_Selected_Width_IN]() As Double
+      Get
+      Return Properties("Sorter_Selected_Width_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Sorter_Selected_Width_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -170,8 +179,11 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Sortation", <a><![CDATA[APC_Sortation]]></a>.Value, 120, "APCTMP01",  "N", "N", False, False, "In Development", "", "Basic Sortation Input", "", "", "",  "GLOBAL\H601424", "03/26/2025 01:58:22")
+    InitPart("APC_Sortation", <a><![CDATA[APC_Sortation]]></a>.Value, 120, "APCTMP01",  "N", "N", False, False, "In Development", "", "Basic Sortation Input", "", "", "",  "GLOBAL\H601424", "07/14/2025 16:42:56")
+    AddProperty("10123", "Sorter_Selected_Width_IN", <a><![CDATA[Sorter_Selected_Width_IN]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 4:42:56 PM")
     AddProperty("716", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/24/2025 5:32:55 PM")
+    
+      AddValidValue("Sorter_Selected_Width_IN")
     
     End Sub
 
@@ -201,6 +213,9 @@ Option Infer On
     Dim ctx as String
     ctx = ContextId
     
+            If Incontext("-1", ctx) Then
+          InitProperty("Sorter_Selected_Width_IN", "9704", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/14/2025 4:40:44 PM", "", "In Development",  0,17098)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -212,6 +227,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Sorter_Selected_Width_IN_ValidValues", "9704", "-1", 17097)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -251,6 +270,71 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sorter_Selected_Width_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sorter_Selected_Width_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9704; TYPE:PF
+      Result = 0
+      '   END FORMULA; PROP ID:9704; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Sortation.Formula_Sorter_Selected_Width_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sorter_Selected_Width_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sorter_Selected_Width_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sorter_Selected_Width_IN_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sorter_Selected_Width_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9704; TYPE:VV
+      Result = MakeValidValues(Array(22, 28, 34, 38))
+      '   END FORMULA; PROP ID:9704; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Sortation.Formula_Sorter_Selected_Width_IN_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
     
 
     '*****************************************************************************

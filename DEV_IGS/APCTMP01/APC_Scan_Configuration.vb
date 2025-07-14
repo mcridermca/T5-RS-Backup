@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Configuration
-'$ GenerateDate: 07/12/2025 22:40:03
+'$ GenerateDate: 07/14/2025 12:41:18
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -431,8 +431,8 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/12/2025 22:38:57")
-    AddProperty("9964", "AppType", <a><![CDATA[AppType]]></a>.Value, "Primary Application Type", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:20:26 PM")
+    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/14/2025 12:41:05")
+    AddProperty("9964", "AppType", <a><![CDATA[AppType]]></a>.Value, "Primary Application Type", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 12:41:05 PM")
     AddProperty("9963", "BoxPanelsScanned", <a><![CDATA[BoxPanelsScanned]]></a>.Value, "Count of Box Panels Scanned", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:38:15 PM")
     AddProperty("9962", "CartonPresentation", <a><![CDATA[CartonPresentation]]></a>.Value, "Carton Presentation?", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:36:38 PM")
     AddProperty("9991", "FrontBack_Scanner_Count", <a><![CDATA[FrontBack_Scanner_Count]]></a>.Value, "Count of Front & Back Scanner Positions in Use", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:31:57 PM")
@@ -530,7 +530,7 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("AppType", "9546", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 10:20:26 PM", "Primary Application Type", "In Development",  0,16830)
+          InitProperty("AppType", "9546", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 12:41:05 PM", "Primary Application Type", "In Development",  0,16877)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxPanelsScanned", "9545", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:38:14 PM", "Number of Box Panels Scanned", "In Development",  0,16706)
@@ -915,7 +915,7 @@ Option Infer On
 Dim Is_Omni As Boolean = False
 If BoxPanelsScanned > 0 Then
 	For Each p As part In Me.Panel_Configs
-		If p.properties("Scan_Type").Value.Trim().Lower() = "O" Then
+		If p.properties("Scan_Type").Value.Trim().ToLower() = "O" Then
 			Is_Omni = True
 			Result = "Omni-Directional"
 		End If

@@ -1902,6 +1902,10 @@ Module Custom
                     result = InputValue * 0.00508
                 Case "m/sec->ft/min"
                     result = InputValue / 0.00508
+                Case "in/sec->mm/sec"
+                    result = InputValue * 25.4
+                Case "mm/sec->in/sec"
+                    result = InputValue / 25.4
 
                     ' Acceleration Conversions
                 Case "in/sec/sec->m/sec/sec"

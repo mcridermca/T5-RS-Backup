@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Config
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/14/2025 17:00:12
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -162,6 +162,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [Sortation_Master_Config]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Sortation_Master_Config")
+      End Get
+      End Property
+    
     #End Region
 
     #Region " Initialization "
@@ -176,12 +182,16 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Config", <a><![CDATA[APC_Scan_Config]]></a>.Value, 121, "APCTMP01",  "N", "N", False, False, "In Development", "", "Basic Scanner Configuration Input", "", "", "",  "GLOBAL\H601424", "07/11/2025 17:59:43")
+    InitPart("APC_Scan_Config", <a><![CDATA[APC_Scan_Config]]></a>.Value, 121, "APCTMP01",  "N", "N", True, False, "In Development", "", "Basic Scanner Configuration Input", "", "", "",  "GLOBAL\H601424", "07/14/2025 16:49:59")
     AddProperty("717", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/24/2025 5:32:55 PM")
     
       oSubpart = AddSubpart(331,"Scan_Configurations", <a><![CDATA[Scan_Configurations]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/11/2025 5:59:43 PM")
       
         oSubpart.AddVPF (417, "APC_Scan_Configuration", "APC_Scan_Configuration")
+      
+      oConnection = AddConnection("Sortation_Master_Config", <a><![CDATA[Sortation_Master_Config]]></a>.Value, "Connection / Reference to the Sortation Configuration Object", "167", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 4:46:29 PM")
+      
+        oConnection.AddVPF(120, "APC_Sortation")
       
     End Sub
 
@@ -250,6 +260,12 @@ Option Infer On
     Private Sub NewContextInit_Connections()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("Sortation_Master_Config", "147", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 4:46:29 PM", "", "In Development", "N",270)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -267,6 +283,28 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sortation_Master_Config_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:147; TYPE:PF
+        Result = Me.Parent.Sortation(1)
+        '   END FORMULA; CON ID:147; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Config.Formula_Sortation_Master_Config_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
     
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
