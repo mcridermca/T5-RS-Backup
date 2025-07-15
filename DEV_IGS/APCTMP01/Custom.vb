@@ -1968,6 +1968,27 @@ Module Custom
     End Class
 #End Region
 
+#Region "Excel Helper Functions"
+    Public Function XlsAND(Value1 As Boolean, Value2 As Boolean, Optional Value3 As Boolean = True, Optional Value4 As Boolean = True, Optional Value5 As Boolean = True) As Boolean
+        'Emulates Excel "AND" Function, but is limited to 5 input values, where Excel can use N
+        Return (Value1 And Value2 And Value3 And Value4 And Value5)
+    End Function
+    Public Function XlsOR(Value1 As Boolean, Value2 As Boolean, Optional Value3 As Boolean = False, Optional Value4 As Boolean = False, Optional Value5 As Boolean = False) As Boolean
+        'Emulates Excel "OR" Function, but is limited to 5 input values, where Excel can use N
+        Return (Value1 Or Value2 Or Value3 Or Value4 And Value5)
+    End Function
+    Public Function XlsMax(Value1 As Double, Value2 As Double, Optional Value3 As Double = -9999999, Optional Value4 As Double = -9999999, Optional Value5 As Boolean = -999999) As Double
+        Dim result As Double = -9999999
+        If Value1 > result Then result = Value1
+        If Value2 > result Then result = Value2
+        If Value3 > result Then result = Value3
+        If Value4 > result Then result = Value4
+        If Value5 > result Then result = Value5
+
+        Return result
+    End Function
+
+#End Region
 #Region "Error Summary"
 
 

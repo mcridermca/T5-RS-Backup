@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Panel_Configuration
-'$ GenerateDate: 07/14/2025 17:00:12
+'$ GenerateDate: 07/15/2025 16:24:26
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -146,6 +146,24 @@ Option Infer On
     #End Region
 
     #Region " Properties, Subparts, Connections "
+    
+          Public Property [BP_ConvWidth]() As Double
+      Get
+      Return Properties("BP_ConvWidth").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("BP_ConvWidth").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Carton_Presentation]() As String
+      Get
+      Return Properties("Carton_Presentation").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Carton_Presentation").CalculatedValue = Value
+      End Set
+      End Property
     
           Public Property [Is_Scanned]() As Boolean
       Get
@@ -300,6 +318,12 @@ Option Infer On
       End Set
       End Property
     
+      Public ReadOnly Property [Belted_Panda]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Belted_Panda")
+      End Get
+      End Property
+    
       Public ReadOnly Property [Sortation_Master_Config]() As Rulestream.Kernel.Connection
       Get
       Return Connections("Sortation_Master_Config")
@@ -320,9 +344,11 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Panel_Configuration", <a><![CDATA[APC_Scan_Panel_Configuration]]></a>.Value, 418, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/14/2025 16:56:20")
+    InitPart("APC_Scan_Panel_Configuration", <a><![CDATA[APC_Scan_Panel_Configuration]]></a>.Value, 418, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/15/2025 16:24:11")
+    AddProperty("10151", "BP_ConvWidth", <a><![CDATA[Belt Panda  Conveyor Width]]></a>.Value, "Belt Panda  Conveyor Width from (Belt Panda Object)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 10:31:35 PM")
+    AddProperty("10202", "Carton_Presentation", <a><![CDATA[Carton_Presentation]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:24:11 PM")
     AddProperty("9943", "Is_Scanned", <a><![CDATA[Is_Scanned]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:28:07 PM")
-    AddProperty("9983", "Min_Gap_Required", <a><![CDATA[Min_Gap_Required]]></a>.Value, "Calculation of Minimum Gap Required, either from the Global MTBF or the refereced PandA MTBF", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:53:44 PM")
+    AddProperty("9983", "Min_Gap_Required", <a><![CDATA[Min_Gap_Required]]></a>.Value, "Calculation of Minimum Gap Required, either from the Global MTBF or the refereced PandA MTBF", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 7:45:56 PM")
     AddProperty("10016", "PandAAvgBoxHeight", <a><![CDATA[PandAAvgBoxHeight]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:24:53 PM")
     AddProperty("10015", "PandAAvgBoxWidth", <a><![CDATA[PandAAvgBoxWidth]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:25:26 PM")
     AddProperty("10017", "PandAMaxBoxHeight", <a><![CDATA[PandAMaxBoxHeight]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:23:50 PM")
@@ -330,7 +356,7 @@ Option Infer On
     AddProperty("10013", "PandaMinBoxLength", <a><![CDATA[PandaMinBoxLength]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:08:54 PM")
     AddProperty("9942", "Panel_ID", <a><![CDATA[Panel_ID]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:26:55 PM")
     AddProperty("9957", "Product_Spacing_Category", <a><![CDATA[Product_Spacing_Category]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:49:05 PM")
-    AddProperty("10021", "Read_Window_Size", <a><![CDATA[Read_Window_Size]]></a>.Value, "Calculation of Read Window Size", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:39:40 PM")
+    AddProperty("10021", "Read_Window_Size", <a><![CDATA[Read_Window_Size]]></a>.Value, "Calculation of Read Window Size", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:17:26 PM")
     AddProperty("9950", "Scan_Angle_Degrees", <a><![CDATA[Scan_Angle_Degrees]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 12:05:01 PM")
     AddProperty("10008", "Scan_Head_Location", <a><![CDATA[Scan_Head_Location]]></a>.Value, "Scanner CCD Position", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:18:22 PM")
     AddProperty("9945", "Scan_Type", <a><![CDATA[Scan_Type]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:38:33 PM")
@@ -345,7 +371,11 @@ Option Infer On
     
       AddValidValue("Sorter_Selected_Width_IN")
     
-      oConnection = AddConnection("Sortation_Master_Config", <a><![CDATA[Sortation_Master_Config]]></a>.Value, "Connection / Reference to the Sortation Configuration Object", "168", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 4:50:16 PM")
+      oConnection = AddConnection("Belted_Panda", <a><![CDATA[Belted_Panda]]></a>.Value, "", "180", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/15/2025 12:08:47 PM")
+      
+        oConnection.AddVPF(412, "CAE_Print_And_Apply")
+      
+      oConnection = AddConnection("Sortation_Master_Config", <a><![CDATA[Sortation_Master_Config]]></a>.Value, "Connection / Reference to the Sortation Configuration Object", "168", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:08:43 PM")
       
         oConnection.AddVPF(120, "APC_Sortation")
       
@@ -378,10 +408,16 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
+          InitProperty("BP_ConvWidth", "9732", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 10:31:35 PM", "", "In Development",  0,17188)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Carton_Presentation", "9783", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:24:11 PM", "", "In Development",  0,17484)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Is_Scanned", "9525", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/11/2025 6:28:07 PM", "", "In Development",  0,16541)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Min_Gap_Required", "9565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 9:53:44 PM", "", "In Development",  0,16825)
+          InitProperty("Min_Gap_Required", "9565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 7:45:56 PM", "", "In Development",  0,17135)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PandAAvgBoxHeight", "9598", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 8:24:53 PM", "", "In Development",  0,16814)
@@ -405,7 +441,7 @@ Option Infer On
           InitProperty("Product_Spacing_Category", "9539", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 9:49:05 PM", "", "In Development",  0,16824)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Read_Window_Size", "9603", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 10:39:14 PM", "", "In Development",  0,16844)
+          InitProperty("Read_Window_Size", "9603", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:17:26 PM", "", "In Development",  0,17480)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Scan_Angle_Degrees", "9532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 12:05:01 PM", "", "In Development",  0,16611)
@@ -472,7 +508,13 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("Sortation_Master_Config", "148", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 4:50:16 PM", "", "In Development", "N",272)
+        InitConnection("Belted_Panda", "160", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/15/2025 12:08:41 PM", "", "In Development", "N",293)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("Sortation_Master_Config", "148", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:08:43 PM", "", "In Development", "N",285)
         
           End If
         
@@ -499,6 +541,28 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Belted_Panda_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:160; TYPE:PF
+        Result = Me.Parent.CAE_App_Calc_Print_And_Apply(1)
+        '   END FORMULA; CON ID:160; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_Belted_Panda_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Sortation_Master_Config_PARTS() as Rulestream.Kernel.rsCollection
       
       Dim Result as Object = Nothing
@@ -506,7 +570,7 @@ Option Infer On
       Try
       ctx = this
         '   BEGIN FORMULA; CON ID:148; TYPE:PF
-        Result = Me.Parent.Parent.Sortation(1)
+        Result = Me.Parent.Sortation_Master_Config
         '   END FORMULA; CON ID:148; TYPE:PF
       
       Catch ex As Exception
@@ -514,6 +578,54 @@ Option Infer On
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_BP_ConvWidth() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("BP_ConvWidth").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9732; TYPE:PF
+      Result = 28 'Todo: MPC Pull from Belt Panda. Talk to Tyler ' BP_ConvWidth Cell $S$24
+      '   END FORMULA; PROP ID:9732; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_BP_ConvWidth", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Carton_Presentation() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Carton_Presentation").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9783; TYPE:PF
+      Result = Me.Parent.CartonPresentation
+      '   END FORMULA; PROP ID:9783; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Panel_Configuration.Formula_Carton_Presentation", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
           '*****************************************************************************
@@ -619,12 +731,12 @@ If Me.Is_Scanned Then
 				End Select
 		End Select
 	Else
-		Dim BoxSize_Height_Min_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Min_IN
-		Dim BoxSize_Length_Min_IN As Double = Me.Parent.MySetup(1).BoxSize_Length_Min_IN
-		Dim BoxSize_Height_Avg_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Avg_IN
-		Dim BoxSize_Width_Avg_IN As Double = Me.Parent.MySetup(1).BoxSize_Width_Avg_IN
-		Dim BoxSize_Height_Max_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Max_IN
-		Dim BoxSize_Width_Max_IN As Double = Me.Parent.MySetup(1).BoxSize_Width_Max_IN
+		Dim BoxSize_Height_Min_IN As Double = Me.Parent.My_Setup(1).BoxSize_Height_Min_IN
+		Dim BoxSize_Length_Min_IN As Double = Me.Parent.My_Setup(1).BoxSize_Length_Min_IN
+		Dim BoxSize_Height_Avg_IN As Double = Me.Parent.My_Setup(1).BoxSize_Height_Avg_IN
+		Dim BoxSize_Width_Avg_IN As Double = Me.Parent.My_Setup(1).BoxSize_Width_Avg_IN
+		Dim BoxSize_Height_Max_IN As Double = Me.Parent.My_Setup(1).BoxSize_Height_Max_IN
+		Dim BoxSize_Width_Max_IN As Double = Me.Parent.My_Setup(1).BoxSize_Width_Max_IN
 		Dim MinGapForScan As Double = Me.Parent.MinGapForScan_IN
 		
 		'Please Note: Case Else was used below in many cases as the excel spreadsheet did not have formulas that specifically called out "Full" ShadowingStatus. (20250712)
@@ -1025,6 +1137,7 @@ End If
       '   BEGIN FORMULA; PROP ID:9603; TYPE:PF
       Result = 0.0
 
+'Dim x As Boolean = If(And(1,2),1,2)
 'TODO: This needs completed (MPC - 20250712) ' Currently faked to support tyler dev.
 
 If Me.Is_Scanned Then
@@ -1033,20 +1146,23 @@ If Me.Is_Scanned Then
 	Dim FrontScanned_Overhead As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "Overhead")
 	Dim FrontScanned_Underside As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "Underside")
 	Dim FrontScanned_1Side As Boolean = (Me.Parent.Panel_Config_Front(1).Scanner_CCD_Position = "1 Side")
+	Dim PandAMaxBoxHeightWidthDim As Double = MAX(PandAMaxBoxHeight,PandaMaxBoxWidth)
+	'Dim BP_ConvWidth
 	
 	If Me.Parent.UsePandAMTBH Then
-		'=IF($C89="Yes",IF(AND($G89="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,IF(AND($G89="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
-		'=If($C90="Yes",If(And($G90="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(And($G90="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
-		'=If($C91="Yes",If($G91="O",PandAMaxBoxHeightWidthDim+6,5),"")
-		'=If($C92="Yes",If($G92="O",PandAMaxBoxHeightWidthDim+6,5),"")
-		'=If($C93="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L93+6),"")
-		'=If($C94="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L94+6),"")
+		'T = If($C89="Yes",If(And($G89="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(And($G89="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
+		'BT = If($C90="Yes",If(And($G90="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(And($G90="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
+		'L = If($C91="Yes",If($G91="O",PandAMaxBoxHeightWidthDim+6,5),"")
+		'R = If($C92="Yes",If($G92="O",PandAMaxBoxHeightWidthDim+6,5),"")
+		'F = If($C93="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L93+6),"")
+		'B = If($C94="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L94+6),"")
 
 		Select Case Me.Product_Spacing_Category 
-			Case 1, 2
-				'1 = PandaMinBoxLength
-				'2 = PandaMinBoxLength
-				Result = Me.PandaMinBoxLength
+			Case 1
+				'If($C89="Yes",If                 And($G89="O",       ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(   And($G89="O", ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
+				  Result = If(Me.Is_Scanned,If(XlsAnd(Me.Scan_Type="O",      Me.Carton_Presentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(XlsAnd(Me.Scan_Type="O",Me.Carton_Presentation="Random"),BP_ConvWidth+6,5  )), 0)
+			Case 2
+			
 			Case 3
 				'3 = If($K99="No",PandAMaxBoxHeight,If($K99="Partial",MAX(PandAAvgBoxHeight,PandaMinBoxLength),PandaMinBoxLength))
 				Select Case Parent.ShadowingStatus
@@ -1096,70 +1212,38 @@ If Me.Is_Scanned Then
 				End Select
 		End Select
 	Else
-		Dim BoxSize_Height_Min_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Min_IN
-		Dim BoxSize_Length_Min_IN As Double = Me.Parent.MySetup(1).BoxSize_Length_Min_IN
-		Dim BoxSize_Height_Avg_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Avg_IN
-		Dim BoxSize_Width_Avg_IN As Double = Me.Parent.MySetup(1).BoxSize_Width_Avg_IN
-		Dim BoxSize_Height_Max_IN As Double = Me.Parent.MySetup(1).BoxSize_Height_Max_IN
-		Dim BoxSize_Width_Max_IN As Double = Me.Parent.MySetup(1).BoxSize_Width_Max_IN
+		Dim BoxSize_Height_Min_IN As Double = Me.Parent.My_Setup(1).BoxSize_Height_Min_IN
+		Dim BoxSize_Length_Min_IN As Double = Me.Parent.My_Setup(1).BoxSize_Length_Min_IN
+		Dim BoxSize_Height_Avg_IN As Double = Me.Parent.My_Setup(1).BoxSize_Height_Avg_IN
+		Dim BoxSize_Width_Avg_IN As Double = Me.Parent.My_Setup(1).BoxSize_Width_Avg_IN
+		Dim BoxSize_Height_Max_IN As Double = Me.Parent.My_Setup(1).BoxSize_Height_Max_IN
+		Dim BoxSize_Width_Max_IN As Double = Me.Parent.My_Setup(1).BoxSize_Width_Max_IN
 		Dim MinGapForScan As Double = Me.Parent.MinGapForScan_IN
 		
-		'=If($C89="Yes",If(And($G89="O",ScanConfigACartonPresentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(And($G89="O",ScanConfigACartonPresentation="Random"),SorterWidth+6,5)),"")
-		'=If($C90="Yes",If(And($G90="O",ScanConfigACartonPresentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(And($G90="O",ScanConfigACartonPresentation="Random"),SorterWidth+6,5)),"")
-		'=If($C91="Yes",If($G91="O",MaxBoxHeightWidthDim+6,5),"")
-		'=If($C92="Yes",If($G92="O",MaxBoxHeightWidthDim+6,5),"")
-		'=If($C93="Yes",If(Or($H93="Overhead",$H93="Underside"),MaxBoxHeightWidthDim+6,$L93+6),"")
-		'=If($C94="Yes",If(Or($H93="Overhead",$H93="Underside"),MaxBoxHeightWidthDim+6,$L94+6),"")
+		Dim MaxBoxHeightWidthDim As Integer = Me.Parent.My_Seup(1).MaxBoxHeightWidthDim
+		
+		
+		
 
 		'Please Note: Case Else was used below in many cases as the excel spreadsheet did not have formulas that specifically called out "Full" ShadowingStatus. (20250712)
-		Select Case Me.Product_Spacing_Category 
-			Case 1
-				'1 = MinGapForScan
-				Result = MinGapForScan
-			Case 2
-				'2 = If(K99<>"Full",If(BoxSize_Height_Min_IN<BoxSize_Length_Min_IN,MAX(BoxSize_Height_Min_IN,BoxSize_Length_Min_IN,MinGapForScan),BoxSize_Length_Min_IN),MinGapForScan)
-		
-				Select Case Parent.ShadowingStatus
-					Case "Full"
-						Result = MinGapForScan
-						Case Else
-						If  BoxSize_Height_Min_IN  < BoxSize_Length_Min_IN Then
-							Result = MAX(BoxSize_Height_Min_IN, BoxSize_Length_Min_IN)
-							Result = MAX(Result,MinGapForScan)
-						Else
-							Result = BoxSize_Length_Min_IN
-						End If
-				End Select
-			Case 3
-				'3 = If(K99="No",BoxSize_Height_Max_IN,If(K99="Partial",BoxSize_Height_Avg_IN,MinGapForScan))			
-				Select Case Parent.ShadowingStatus
-					Case "No"
-						Result = BoxSize_Height_Max_IN
-					Case "Partial"
-						Result = BoxSize_Height_Avg_IN				
-					Case Else
-						Result = MinGapForScan
-				End Select
-			Case 4
-				'4 = If(K99="No",BoxSize_Width_Max_IN+1,If(K99="Partial",BoxSize_Width_Avg_IN+1,MinGapForScan))
-				Select Case Parent.ShadowingStatus
-					Case "No"
-						Result = BoxSize_Width_Max_IN + 1
-					Case "Partial"
-						Result = BoxSize_Width_Avg_IN + 1					
-					Case  Else
-						Result = MinGapForScan
-				End Select
-			Case 5
-				'5 = If(K99="No",(BoxSize_Width_Max_IN/2)+3,If(K99="Partial",(BoxSize_Width_Avg_IN/2)+3,MinGapForScan))
-				Select Case Parent.ShadowingStatus
-					Case "No"
-						Result = (BoxSize_Width_Max_IN/2) + 3
-					Case "Partial"
-						Result = (BoxSize_Width_Avg_IN/2)+3						
-					Case Else
-						Result = MinGapForScan
-				End Select
+		Select Case Me.Panel_ID 
+			Case "Top"
+				'T = If($C89="Yes",If(And($G89="O",ScanConfigACartonPresentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(And($G89="O",ScanConfigACartonPresentation="Random"),SorterWidth+6,5)),"")
+				Result = If(Me.Is_Scanned,If(XlsAnd(Me.Scan_Type="O",Me.Parent.Carton_Presentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(XlsAnd(Me.Scan_Type="O",Me.Parent.ACartonPresentation="Random"),Sorter_Selected_Width_In+6,5)),0)
+			Case "Bottom"
+				'BT = If($C90="Yes",If(And($G90="O",ScanConfigACartonPresentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(And($G90="O",ScanConfigACartonPresentation="Random"),SorterWidth+6,5)),"")
+				Result = If(Me.Is_Scanned,If(XlsAnd(Me.Scan_Type="O",Me.Parent.Carton_Presentation="Edge Aligned"),MaxBoxHeightWidthDim + 6,If(XlsAnd(Me.Scan_Type="O",Me.Parent.ACartonPresentation="Random"),Me.Sorter_Selected_Width_In+6,5)),0)
+				
+			Case "Left", "Right"
+				'L = If($C91="Yes",If($G91="O",MaxBoxHeightWidthDim+6,5),"")
+				'R = If($C92="Yes",If($G92="O",MaxBoxHeightWidthDim+6,5),"")
+				 Result = If(Me.Is_Scanned,If(Me.Scan_Type="O",MaxBoxHeightWidthDim +6 ,5),0)
+			Case "Front", "Back"
+				'F = If($C93="Yes",If(Or($H93="Overhead",$H93="Underside"),MaxBoxHeightWidthDim+6,$L93+6),"")
+				'BK = If($C94="Yes",If(Or($H93="Overhead",$H93="Underside"),MaxBoxHeightWidthDim+6,$L94+6),"")
+				Result = If(Me.Is_Scanned,If( XlsOR(FrontScanned_OverHead,FrontScanned_Underside), MaxBoxHeightWidthDim + 6,Me.Min_Gap_Required + 6),0)
+				
+			
 		End Select
 	End If
 End If
@@ -1513,6 +1597,24 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_BP_ConvWidth_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Carton_Presentation_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Is_Scanned_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1649,6 +1751,24 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Sorter_Selected_Width_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_BP_ConvWidth_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Carton_Presentation_USERCHANGE() as Boolean
       Return False
       End Function
     

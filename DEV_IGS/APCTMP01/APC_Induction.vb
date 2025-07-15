@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Induction
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/15/2025 13:30:18
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -147,6 +147,15 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
+          Public Property [MaxBoxHeightWidthDim]() As Double
+      Get
+      Return Properties("MaxBoxHeightWidthDim").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("MaxBoxHeightWidthDim").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -154,6 +163,18 @@ Option Infer On
       Set(ByVal Value As String)
       Properties("PartNumber").CalculatedValue = Value
       End Set
+      End Property
+    
+      Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_PRD")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [My_Setup]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_Setup")
+      End Get
       End Property
     
     #End Region
@@ -170,9 +191,18 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Induction", <a><![CDATA[APC_Induction]]></a>.Value, 122, "APCTMP01",  "N", "N", False, False, "In Development", "", "Basic Induction Configuration Input", "", "", "",  "GLOBAL\H601424", "03/26/2025 01:58:22")
+    InitPart("APC_Induction", <a><![CDATA[APC_Induction]]></a>.Value, 122, "APCTMP01",  "N", "N", False, False, "In Development", "", "Basic Induction Configuration Input", "", "", "",  "GLOBAL\H601424", "07/14/2025 22:41:22")
+    AddProperty("10152", "MaxBoxHeightWidthDim", <a><![CDATA[MaxBoxHeightWidthDim]]></a>.Value, "Max of Global BoxSize_Height_Max and BoxSize_Width_Max from Setup Object", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 10:41:22 PM")
     AddProperty("718", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/24/2025 5:32:55 PM")
     
+      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "178", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:37:30 PM")
+      
+        oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
+      
+      oConnection = AddConnection("My_Setup", <a><![CDATA[My_Setup]]></a>.Value, "My App Calc Setup Object", "179", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:37:30 PM")
+      
+        oConnection.AddVPF(119, "APC_Setup")
+      
     End Sub
 
     '*****************************************************************************
@@ -201,6 +231,9 @@ Option Infer On
     Dim ctx as String
     ctx = ContextId
     
+            If Incontext("-1", ctx) Then
+          InitProperty("MaxBoxHeightWidthDim", "9733", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 10:40:35 PM", "", "In Development",  0,17190)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -234,6 +267,18 @@ Option Infer On
     Private Sub NewContextInit_Connections()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_PRD", "158", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:37:30 PM", "", "In Development", "N",289)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_Setup", "159", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:37:30 PM", "", "In Development", "N",290)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -251,6 +296,92 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_PRD_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:158; TYPE:PF
+        Result = Me.Parent.My_Prd(1)
+        '   END FORMULA; CON ID:158; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Induction.Formula_My_PRD_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_Setup_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:159; TYPE:PF
+        Result = Me.Parent.My_Setup(1)
+        '   END FORMULA; CON ID:159; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Induction.Formula_My_Setup_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MaxBoxHeightWidthDim() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MaxBoxHeightWidthDim").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9733; TYPE:PF
+      result = 0.0
+Result = MAX( Me.My_Setup(1).BoxSize_Height_Max_IN, Me.My_Setup(1).BoxSize_Width_Max_IN)
+      '   END FORMULA; PROP ID:9733; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Induction.Formula_MaxBoxHeightWidthDim", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MaxBoxHeightWidthDim_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MaxBoxHeightWidthDim_USERCHANGE() as Boolean
+      Return True
+      End Function
     
 
     '*****************************************************************************

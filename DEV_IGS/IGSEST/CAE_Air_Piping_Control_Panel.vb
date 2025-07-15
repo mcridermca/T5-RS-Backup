@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Air_Piping_Control_Panel
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/15/2025 16:14:05
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -1884,6 +1884,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [MEI_AP_Supplier_Discount]() As Double
+      Get
+      Return Properties("MEI_AP_Supplier_Discount").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("MEI_AP_Supplier_Discount").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [MEI_AP_TotalCosts]() As Double
       Get
       Return Properties("MEI_AP_TotalCosts").Value
@@ -2513,11 +2522,11 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Air_Piping_Control_Panel", <a><![CDATA[CAE_Air_Piping_Control_Panel]]></a>.Value, 392, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/10/2025 16:17:39")
+    InitPart("CAE_Air_Piping_Control_Panel", <a><![CDATA[CAE_Air_Piping_Control_Panel]]></a>.Value, 392, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/15/2025 11:52:52")
     AddProperty("9496", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 4:17:39 PM")
     AddProperty("6026", "CP_Name", <a><![CDATA[CP_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 6:19:50 PM")
     AddProperty("8949", "MEI_AP_Air_Subsystem", <a><![CDATA[MEI_AP_Air_Subsystem]]></a>.Value, "Mech Install^'Air Piping'!M4", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:07 AM")
-    AddProperty("8951", "MEI_AP_Ceiling_Height_Feet", <a><![CDATA[MEI_AP_Ceiling_Height_Feet]]></a>.Value, "Mech Install^'Air Piping'!M8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:11 AM")
+    AddProperty("8951", "MEI_AP_Ceiling_Height_Feet", <a><![CDATA[MEI_AP_Ceiling_Height_Feet]]></a>.Value, "Mech Install^'Air Piping'!M8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 11:52:52 AM")
     AddProperty("8955", "MEI_AP_Compressor_Required", <a><![CDATA[MEI_AP_Compressor_Required]]></a>.Value, "Mech Install^'Air Piping'!M16", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:19 AM")
     AddProperty("9091", "MEI_AP_Delta_1_2_inch_16_5mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Delta_1_2_inch_16_5mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!Q26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:52:53 AM")
     AddProperty("9089", "MEI_AP_Delta_1_and_1_2_IN_40mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Delta_1_and_1_2_IN_40mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!Q24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:46 AM")
@@ -2707,6 +2716,7 @@ Option Infer On
     AddProperty("8895", "MEI_AP_SS1_Total_Order_Filter_Reg", <a><![CDATA[MEI_AP_SS1_Total_Order_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!B12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:24 AM")
     AddProperty("8897", "MEI_AP_SS1_Total_Order_Red_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_Red_AC]]></a>.Value, "Mech Install^'Air Piping'!B14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:28 AM")
     AddProperty("8894", "MEI_AP_SS1_Total_Order_Tubing", <a><![CDATA[MEI_AP_SS1_Total_Order_Tubing]]></a>.Value, "Mech Install^'Air Piping'!B11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:22 AM")
+    AddProperty("10023", "MEI_AP_Supplier_Discount", <a><![CDATA[MEI_AP_Supplier_Discount]]></a>.Value, "Mech Install^'Air Piping'!T40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/14/2025 10:46:39 AM")
     AddProperty("9021", "MEI_AP_TotalCosts", <a><![CDATA[MEI_AP_TotalCosts]]></a>.Value, "Mech Install^'Air Piping'!B34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:11:36 AM")
     AddProperty("9022", "MEI_AP_TotalHours", <a><![CDATA[MEI_AP_TotalHours]]></a>.Value, "Mech Install^'Air Piping'!B35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:11:46 AM")
     AddProperty("8954", "MEI_AP_Trunkline_Length_Feet", <a><![CDATA[MEI_AP_Trunkline_Length_Feet]]></a>.Value, "Mech Install^'Air Piping'!M14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:17 AM")
@@ -2821,7 +2831,7 @@ Option Infer On
           InitProperty("MEI_AP_Air_Subsystem", "8530", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:07 AM", "", "In Development",  0,13847)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_Ceiling_Height_Feet", "8532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:11 AM", "", "In Development",  0,13851)
+          InitProperty("MEI_AP_Ceiling_Height_Feet", "8532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 11:52:52 AM", "", "In Development",  0,17258)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_Compressor_Required", "8536", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:19 AM", "", "In Development",  0,13859)
@@ -3389,6 +3399,9 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_SS1_Total_Order_Tubing", "8475", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:22 AM", "", "In Development",  0,13737)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MEI_AP_Supplier_Discount", "9605", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/14/2025 10:46:39 AM", "", "In Development",  0,16876)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_TotalCosts", "8602", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:31 AM", "", "In Development",  0,13991)
@@ -8151,6 +8164,29 @@ End Select
       '   END FORMULA; PROP ID:8475; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Total_Order_Tubing", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MEI_AP_Supplier_Discount() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MEI_AP_Supplier_Discount").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9605; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9605; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_Supplier_Discount", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -20668,6 +20704,15 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_MEI_AP_Supplier_Discount_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_MEI_AP_TotalCosts_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -22991,6 +23036,15 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MEI_AP_SS1_Total_Order_Tubing_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MEI_AP_Supplier_Discount_USERCHANGE() as Boolean
       Return True
       End Function
     

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Chutes
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/15/2025 16:14:05
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -1355,10 +1355,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Chutes", <a><![CDATA[CAE_Chutes]]></a>.Value, 409, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H581955", "07/09/2025 06:01:07")
+    InitPart("CAE_Chutes", <a><![CDATA[CAE_Chutes]]></a>.Value, 409, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H582667", "07/15/2025 15:03:41")
     AddProperty("9512", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 6:31:23 PM")
-    AddProperty("9580", "MEI_Chutes_Style_1_Angle_hrs", <a><![CDATA[MEI_Chutes_Style_1_Angle_hrs]]></a>.Value, "Mech Install^'Chutes'!J7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:56:30 AM")
-    AddProperty("9649", "MEI_Chutes_Style_1_Angle_of_Curve", <a><![CDATA[MEI_Chutes_Style_1_Angle_of_Curve]]></a>.Value, "Mech Install^'Chutes'!B7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:58:51 AM")
+    AddProperty("9580", "MEI_Chutes_Style_1_Angle_hrs", <a><![CDATA[MEI_Chutes_Style_1_Angle_hrs]]></a>.Value, "Mech Install^'Chutes'!J7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/15/2025 3:03:41 PM")
+    AddProperty("9649", "MEI_Chutes_Style_1_Angle_of_Curve", <a><![CDATA[MEI_Chutes_Style_1_Angle_of_Curve]]></a>.Value, "Mech Install^'Chutes'!B7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/15/2025 2:42:03 PM")
     AddProperty("9679", "MEI_Chutes_Style_1_Infeed_Conveyor_Type", <a><![CDATA[MEI_Chutes_Style_1_Infeed_Conveyor_Type]]></a>.Value, "Mech Install^'Chutes'!E7", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:59:54 AM")
     AddProperty("9583", "MEI_Chutes_Style_1_Infeed_hrs", <a><![CDATA[MEI_Chutes_Style_1_Infeed_hrs]]></a>.Value, "Mech Install^'Chutes'!M7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:56:37 AM")
     AddProperty("9581", "MEI_Chutes_Style_1_Length_hrs", <a><![CDATA[MEI_Chutes_Style_1_Length_hrs]]></a>.Value, "Mech Install^'Chutes'!K7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:56:32 AM")
@@ -1371,7 +1371,7 @@ Option Infer On
     AddProperty("9579", "MEI_Chutes_Style_1_Total_Hours_per_Chute", <a><![CDATA[MEI_Chutes_Style_1_Total_Hours_per_Chute]]></a>.Value, "Mech Install^'Chutes'!H7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:56:28 AM")
     AddProperty("9669", "MEI_Chutes_Style_1_Type_of_Material", <a><![CDATA[MEI_Chutes_Style_1_Type_of_Material]]></a>.Value, "Mech Install^'Chutes'!D7", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:59:34 AM")
     AddProperty("9643", "MEI_Chutes_Style_10_Angle_hrs", <a><![CDATA[MEI_Chutes_Style_10_Angle_hrs]]></a>.Value, "Mech Install^'Chutes'!J16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:58:38 AM")
-    AddProperty("9658", "MEI_Chutes_Style_10_Angle_of_Curve", <a><![CDATA[MEI_Chutes_Style_10_Angle_of_Curve]]></a>.Value, "Mech Install^'Chutes'!B16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:59:10 AM")
+    AddProperty("9658", "MEI_Chutes_Style_10_Angle_of_Curve", <a><![CDATA[MEI_Chutes_Style_10_Angle_of_Curve]]></a>.Value, "Mech Install^'Chutes'!B16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/15/2025 2:43:03 PM")
     AddProperty("9688", "MEI_Chutes_Style_10_Infeed_Conveyor_Type", <a><![CDATA[MEI_Chutes_Style_10_Infeed_Conveyor_Type]]></a>.Value, "Mech Install^'Chutes'!E16", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 6:00:13 AM")
     AddProperty("9646", "MEI_Chutes_Style_10_Infeed_hrs", <a><![CDATA[MEI_Chutes_Style_10_Infeed_hrs]]></a>.Value, "Mech Install^'Chutes'!M16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:58:45 AM")
     AddProperty("9644", "MEI_Chutes_Style_10_Length_hrs", <a><![CDATA[MEI_Chutes_Style_10_Length_hrs]]></a>.Value, "Mech Install^'Chutes'!K16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:58:41 AM")
@@ -1489,10 +1489,16 @@ Option Infer On
     AddProperty("9677", "MEI_Chutes_Style_9_Type_of_Material", <a><![CDATA[MEI_Chutes_Style_9_Type_of_Material]]></a>.Value, "Mech Install^'Chutes'!D15", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/9/2025 5:59:50 AM")
     AddProperty("9491", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 3:52:07 PM")
     
+      AddValidValue("MEI_Chutes_Style_1_Angle_of_Curve")
+    
+      AddValidValue("MEI_Chutes_Style_10_Angle_of_Curve")
+    
       oConnection = AddConnection("My_Subsystem", <a><![CDATA[My_Subsystem]]></a>.Value, "", "126", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/8/2025 6:31:23 PM")
       
         oConnection.AddVPF(399, "CAE_Mech_Install_CP_Comp")
       
+      AddDBConstraint(12, "MEI_Chutes_Curve_Angles_Hours", <a><![CDATA[MEI_Chutes_Curve_Angles_Hours]]></a>.Value,"Mech Install", 9999)
+    
     End Sub
 
     '*****************************************************************************
@@ -1525,10 +1531,10 @@ Option Infer On
           InitProperty("DisplayName", "9092", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 6:31:23 PM", "", "In Development",  0,15187)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Chutes_Style_1_Angle_hrs", "9160", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/9/2025 5:56:30 AM", "", "In Development",  0,15323)
+          InitProperty("MEI_Chutes_Style_1_Angle_hrs", "9160", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/15/2025 3:03:41 PM", "", "In Development",  0,17392)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Chutes_Style_1_Angle_of_Curve", "9229", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/9/2025 5:58:51 AM", "", "In Development",  0,15461)
+          InitProperty("MEI_Chutes_Style_1_Angle_of_Curve", "9229", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/15/2025 2:42:03 PM", "", "In Development",  0,15461)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Chutes_Style_1_Infeed_Conveyor_Type", "9259", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/9/2025 5:59:54 AM", "", "In Development",  0,15522)
@@ -1567,7 +1573,7 @@ Option Infer On
           InitProperty("MEI_Chutes_Style_10_Angle_hrs", "9223", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/9/2025 5:58:38 AM", "", "In Development",  0,15449)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Chutes_Style_10_Angle_of_Curve", "9238", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/9/2025 5:59:10 AM", "", "In Development",  0,15479)
+          InitProperty("MEI_Chutes_Style_10_Angle_of_Curve", "9238", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/15/2025 2:43:00 PM", "", "In Development",  0,15479)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Chutes_Style_10_Infeed_Conveyor_Type", "9268", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/9/2025 6:00:13 AM", "", "In Development",  0,15540)
@@ -1925,6 +1931,14 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MEI_Chutes_Style_1_Angle_of_Curve_ValidValues", "9229", "-1", 17342)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MEI_Chutes_Style_10_Angle_of_Curve_ValidValues", "9238", "-1", 17348)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -1964,6 +1978,30 @@ Option Infer On
     Private Sub NewContextInit_DB()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitDBConstraint("MEI_Chutes_Curve_Angles_Hours", 12,"", "Y","", "", "CAE_MEI_Chutes_Curve_Angles")
+        
+          InitDBproperty("MEI_Chutes_Curve_Angles_Hours", "MEI_Chutes_Style_10_Angle_hrs",12, "Hours", "CAE_MEI_Chutes_Curve_Angles")
+        
+          InitDBproperty("MEI_Chutes_Curve_Angles_Hours", "MEI_Chutes_Style_2_Angle_hrs",12, "Hours", "CAE_MEI_Chutes_Curve_Angles")
+        
+          InitDBproperty("MEI_Chutes_Curve_Angles_Hours", "MEI_Chutes_Style_3_Angle_hrs",12, "Hours", "CAE_MEI_Chutes_Curve_Angles")
+        
+          InitDBproperty("MEI_Chutes_Curve_Angles_Hours", "MEI_Chutes_Style_4_Angle_hrs",12, "Hours", "CAE_MEI_Chutes_Curve_Angles")
+        
+          InitDBproperty("MEI_Chutes_Curve_Angles_Hours", "MEI_Chutes_Style_5_Angle_hrs",12, "Hours", "CAE_MEI_Chutes_Curve_Angles")
+        
+          InitDBproperty("MEI_Chutes_Curve_Angles_Hours", "MEI_Chutes_Style_6_Angle_hrs",12, "Hours", "CAE_MEI_Chutes_Curve_Angles")
+        
+          InitDBproperty("MEI_Chutes_Curve_Angles_Hours", "MEI_Chutes_Style_7_Angle_hrs",12, "Hours", "CAE_MEI_Chutes_Curve_Angles")
+        
+          InitDBproperty("MEI_Chutes_Curve_Angles_Hours", "MEI_Chutes_Style_8_Angle_hrs",12, "Hours", "CAE_MEI_Chutes_Curve_Angles")
+        
+          InitDBproperty("MEI_Chutes_Curve_Angles_Hours", "MEI_Chutes_Style_9_Angle_hrs",12, "Hours", "CAE_MEI_Chutes_Curve_Angles")
+        
+          End If
+        
     End Sub
 
     #End Region
@@ -2032,7 +2070,26 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9160; TYPE:PF
-      Result = 0.0
+      'If in future, Hours Values will get changed then result needs to updates as per leatest hours values below.
+
+Select Case Me.MEI_Chutes_Style_1_Angle_of_Curve
+ Case 30
+Result = 5
+ Case 45
+Result = 10
+ Case 90
+Result = 15
+ Case 180
+Result = 20
+ Case 360
+Result = 25
+ Case 540
+Result = 30
+Case 720
+	Result = 35
+Case 900
+	Result = 40
+End Select
       '   END FORMULA; PROP ID:9160; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Chutes.Formula_MEI_Chutes_Style_1_Angle_hrs", ex.Message)
@@ -12106,6 +12163,54 @@ Option Infer On
       Return True
       End Function
     
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MEI_Chutes_Style_1_Angle_of_Curve_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MEI_Chutes_Style_1_Angle_of_Curve").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9229; TYPE:VV
+      Result = MakeValidValueKeyFromDatabase("[CAE_MEI_Chutes_Curve_Angles]", "[Chutes_Curve_Angles]", "[Chutes_Curve_Angles]", " ORDER BY [CAE_MEI_Chutes_Curve_Angles_ID]")
+      '   END FORMULA; PROP ID:9229; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Chutes.Formula_MEI_Chutes_Style_1_Angle_of_Curve_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MEI_Chutes_Style_10_Angle_of_Curve_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MEI_Chutes_Style_10_Angle_of_Curve").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9238; TYPE:VV
+      Result = MakeValidValueKeyFromDatabase("[CAE_MEI_Chutes_Curve_Angles]", "[Chutes_Curve_Angles]", "[Chutes_Curve_Angles]", " ORDER BY [CAE_MEI_Chutes_Curve_Angles_ID]")
+      '   END FORMULA; PROP ID:9238; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Chutes.Formula_MEI_Chutes_Style_10_Angle_of_Curve_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
 
     '*****************************************************************************
     '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -12115,6 +12220,64 @@ Option Infer On
     '*****************************************************************************
     Public Function GetRecordsetSQL(ByVal lngDBConID as Long) as String Implements RuleStream.IRsPartFormulas.GetRecordsetSQL
     Dim strSelectStmt As String = ""
+    
+      Dim strWhereClause as String = ""
+      Dim strSelectList as String = ""
+      Dim varPropSpecVal As Object
+      Dim ctx As Object
+      Dim leftDelimiter As String = String.Empty
+      Dim rightDelimiter As String = String.Empty
+      Try
+      Select Case g_rsUser.UserSettings.ActiveProfile.ComponentsDatabaseType
+      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.MSAccess, RuleStream.DataService.PublicEnumerations.DatabaseTypes.SQLServer
+      leftDelimiter = "["
+      rightDelimiter = "]"
+      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.Oracle
+      leftDelimiter = """"
+      rightDelimiter = """"
+      End Select
+      ObjectManager.UnitConversion = False
+      'Used to set the parameters results
+      Select Case lngDBConID
+      
+        Case 12
+        ctx = this
+            strWhereClause = ""
+            strSelectList = ""
+            
+              strSelectList = strSelectList & leftDelimiter & "Hours" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Hours" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Hours" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Hours" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Hours" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Hours" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Hours" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Hours" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Hours" & rightDelimiter & ", "
+            
+            'Build the WHERE clause
+            
+            strSelectStmt = BuildSQLStatement(strSelectList, DelimitTableName("CAE_MEI_Chutes_Curve_Angles"), strWhereClause, leftDelimiter & "CAE_MEI_Chutes_Curve_Angles_ID" & rightDelimiter, "ASC")
+          
+      End Select
+      Catch ex as Exception
+      Dim strError As String = ex.Message
+      If strSelectStmt <> "" Then
+      strError = strError & vbCrLf & vbCrLf & strSelectStmt
+      strSelectStmt = ""
+      End If
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Chutes.GetRecordset", strError)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      ObjectManager.UnitConversion = True
     Return strSelectStmt
     End Function
     #End Region

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_EHS350_Data
-'$ GenerateDate: 07/14/2025 17:00:12
+'$ GenerateDate: 07/15/2025 13:30:18
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -401,21 +401,21 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_EHS350_Data", <a><![CDATA[CAE_EHS350_Data]]></a>.Value, 419, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/14/2025 16:59:44")
+    InitPart("CAE_EHS350_Data", <a><![CDATA[CAE_EHS350_Data]]></a>.Value, 419, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/15/2025 12:03:03")
     AddProperty("10099", "EHS350_Tamp_Data_Ad", <a><![CDATA[EHS350_Tamp_Data_Ad]]></a>.Value, "AppCalc^'EHS350 Data'!M9", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
     AddProperty("10100", "EHS350_Tamp_Data_Ar", <a><![CDATA[EHS350_Tamp_Data_Ar]]></a>.Value, "AppCalc^'EHS350 Data'!M11", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
     AddProperty("10101", "EHS350_Tamp_Data_Au", <a><![CDATA[EHS350_Tamp_Data_Au]]></a>.Value, "AppCalc^'EHS350 Data'!M10", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
-    AddProperty("10102", "EHS350_Tamp_Data_Avg_Height_Stroke_Prepos_Mv_Time", <a><![CDATA[EHS350_Tamp_Data_Avg_Height_Stroke_Prepos_Mv_Time]]></a>.Value, "AppCalc^'EHS350 Data'!M32", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:59:44 PM")
+    AddProperty("10102", "EHS350_Tamp_Data_Avg_Height_Stroke_Prepos_Mv_Time", <a><![CDATA[EHS350_Tamp_Data_Avg_Height_Stroke_Prepos_Mv_Time]]></a>.Value, "AppCalc^'EHS350 Data'!M32", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 5:21:45 PM")
     AddProperty("10103", "EHS350_Tamp_Data_Dd", <a><![CDATA[EHS350_Tamp_Data_Dd]]></a>.Value, "AppCalc^'EHS350 Data'!M12", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
     AddProperty("10104", "EHS350_Tamp_Data_Dr", <a><![CDATA[EHS350_Tamp_Data_Dr]]></a>.Value, "AppCalc^'EHS350 Data'!M14", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
     AddProperty("10105", "EHS350_Tamp_Data_Du", <a><![CDATA[EHS350_Tamp_Data_Du]]></a>.Value, "AppCalc^'EHS350 Data'!M13", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
     AddProperty("10106", "EHS350_Tamp_Data_Full_Stroke_Preposition_Move_Time", <a><![CDATA[EHS350_Tamp_Data_Full_Stroke_Preposition_Move_Time]]></a>.Value, "AppCalc^'EHS350 Data'!M22", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
-    AddProperty("10107", "EHS350_Tamp_Data_Full_Stroke_Run_Home_Time", <a><![CDATA[4]]></a>.Value, "AppCalc^'EHS350 Data'!M24", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
+    AddProperty("10107", "EHS350_Tamp_Data_Full_Stroke_Run_Home_Time", <a><![CDATA[EHS350_Tamp_Data_Full_Stroke_Run_Home_Time]]></a>.Value, "AppCalc^'EHS350 Data'!M24", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 5:23:24 PM")
     AddProperty("10108", "EHS350_Tamp_Data_Home_variable", <a><![CDATA[EHS350_Tamp_Data_Home_variable]]></a>.Value, "AppCalc^'EHS350 Data'!M29", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
-    AddProperty("10109", "EHS350_Tamp_Data_Prepos_variable", <a><![CDATA[EHS350_Tamp_Data_Prepos_variable]]></a>.Value, "AppCalc^'EHS350 Data'!M28", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
+    AddProperty("10109", "EHS350_Tamp_Data_Prepos_variable", <a><![CDATA[EHS350_Tamp_Data_Prepos_variable]]></a>.Value, "AppCalc^'EHS350 Data'!M28", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 5:02:16 PM")
     AddProperty("10110", "EHS350_Tamp_Data_Preposition_A_D_Time_Constant", <a><![CDATA[EHS350_Tamp_Data_Preposition_A_D_Time_Constant]]></a>.Value, "AppCalc^'EHS350 Data'!M25", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
     AddProperty("10111", "EHS350_Tamp_Data_Print_Time", <a><![CDATA[EHS350_Tamp_Data_Print_Time]]></a>.Value, "AppCalc^'EHS350 Data'!M21", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
-    AddProperty("10112", "EHS350_Tamp_Data_Reg_Move_Time", <a><![CDATA[EHS350_Tamp_Data_Reg_Move_Time]]></a>.Value, "AppCalc^'EHS350 Data'!M23", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
+    AddProperty("10112", "EHS350_Tamp_Data_Reg_Move_Time", <a><![CDATA[EHS350_Tamp_Data_Reg_Move_Time]]></a>.Value, "AppCalc^'EHS350 Data'!M23", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 5:13:59 PM")
     AddProperty("10113", "EHS350_Tamp_Data_Run_Home_A_D_Time_Constant", <a><![CDATA[EHS350_Tamp_Data_Run_Home_A_D_Time_Constant]]></a>.Value, "AppCalc^'EHS350 Data'!M26", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
     AddProperty("10114", "EHS350_Tamp_Data_Static_Blast_Wait_Time", <a><![CDATA[EHS350_Tamp_Data_Static_Blast_Wait_Time]]></a>.Value, "AppCalc^'EHS350 Data'!M17", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
     AddProperty("10115", "EHS350_Tamp_Data_Vf", <a><![CDATA[EHS350_Tamp_Data_Vf]]></a>.Value, "AppCalc^'EHS350 Data'!M7", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:20:47 PM")
@@ -429,7 +429,7 @@ Option Infer On
     AddProperty("10098", "App_Tamp_Home_Height_Above_Conveyor_IN", <a><![CDATA[App_Tamp_Home_Height_Above_Conveyor_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Printer_Applicator","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:22:33 PM")
     AddProperty("10097", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:18:56 PM")
     
-      oConnection = AddConnection("My_Print_And_Apply", <a><![CDATA[My_Print_And_Apply]]></a>.Value, "", "166", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/14/2025 4:21:37 PM")
+      oConnection = AddConnection("My_Print_And_Apply", <a><![CDATA[My_Print_And_Apply]]></a>.Value, "", "166", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/15/2025 12:03:03 PM")
       
         oConnection.AddVPF(416, "CAE_App_Calc_Print_And_Apply")
       
@@ -471,7 +471,7 @@ Option Infer On
           InitProperty("EHS350_Tamp_Data_Au", "9682", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17069)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EHS350_Tamp_Data_Avg_Height_Stroke_Prepos_Mv_Time", "9683", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:59:44 PM", "", "In Development",  0,17103)
+          InitProperty("EHS350_Tamp_Data_Avg_Height_Stroke_Prepos_Mv_Time", "9683", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 5:21:45 PM", "", "In Development",  0,17109)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EHS350_Tamp_Data_Dd", "9684", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17071)
@@ -486,13 +486,13 @@ Option Infer On
           InitProperty("EHS350_Tamp_Data_Full_Stroke_Preposition_Move_Time", "9687", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17074)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EHS350_Tamp_Data_Full_Stroke_Run_Home_Time", "9688", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17075)
+          InitProperty("EHS350_Tamp_Data_Full_Stroke_Run_Home_Time", "9688", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 5:23:24 PM", "", "In Development",  0,17110)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EHS350_Tamp_Data_Home_variable", "9689", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17076)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EHS350_Tamp_Data_Prepos_variable", "9690", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17077)
+          InitProperty("EHS350_Tamp_Data_Prepos_variable", "9690", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 5:02:16 PM", "", "In Development",  0,17104)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EHS350_Tamp_Data_Preposition_A_D_Time_Constant", "9691", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17078)
@@ -501,7 +501,7 @@ Option Infer On
           InitProperty("EHS350_Tamp_Data_Print_Time", "9692", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17079)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EHS350_Tamp_Data_Reg_Move_Time", "9693", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17080)
+          InitProperty("EHS350_Tamp_Data_Reg_Move_Time", "9693", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 5:13:59 PM", "", "In Development",  0,17107)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EHS350_Tamp_Data_Run_Home_A_D_Time_Constant", "9694", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:20:48 PM", "", "In Development",  0,17081)
@@ -571,7 +571,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("My_Print_And_Apply", "146", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/14/2025 4:21:37 PM", "", "In Development", "N",269)
+        InitConnection("My_Print_And_Apply", "146", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/15/2025 12:03:03 PM", "", "In Development", "N",292)
         
           End If
         
@@ -605,7 +605,7 @@ Option Infer On
       Try
       ctx = this
         '   BEGIN FORMULA; CON ID:146; TYPE:PF
-        Result = me.Parent.Print_And_Apply(1)
+        Result = Me.Parent.Print_And_Apply(Me.subpartid)
         '   END FORMULA; CON ID:146; TYPE:PF
       
       Catch ex As Exception
@@ -698,9 +698,14 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9683; TYPE:PF
-      Result = (Me.EHS350_Tamp_Data_Vf / Me.EHS350_Tamp_Data_Ad) _
-		+ (Me.EHS350_Tamp_Data_Vf / Me.EHS350_Tamp_Data_Dd) _
-		+ ((Me.App_Tamp_Home_Height_Above_Conveyor_IN - Me.EHS350_Tamp_Data_Xpp + Me.MTBH_Height_Average_IN - (((Me.EHS350_Tamp_Data_Vf * Me.EHS350_Tamp_Data_Vf) / (2 * Me.EHS350_Tamp_Data_Ad) - ((Me.EHS350_Tamp_Data_Vf * Me.EHS350_Tamp_Data_Vf))) / (2* Me.EHS350_Tamp_Data_Dd)))/ Me.EHS350_Tamp_Data_Vf)
+      Dim Vf = Me.EHS350_Tamp_Data_Vf
+Dim Ad = Me.EHS350_Tamp_Data_Ad
+Dim Dd = Me.EHS350_Tamp_Data_Dd
+Dim Home_Height_in = Me.App_Tamp_Home_Height_Above_Conveyor_IN
+Dim Xpp = Me.EHS350_Tamp_Data_Xpp
+Dim PandAAvgBoxHeight = me.MTBH_Height_Average_IN
+
+Result = Vf/Ad+Vf/Dd+(((Home_Height_in-(Xpp+PandAAvgBoxHeight))-(Vf^2/(2*Ad)+Vf^2/(2*Dd)))/Vf)
       '   END FORMULA; PROP ID:9683; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_EHS350_Data.Formula_EHS350_Tamp_Data_Avg_Height_Stroke_Prepos_Mv_Time", ex.Message)
@@ -815,7 +820,14 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9688; TYPE:PF
-      Result = (Me.EHS350_Tamp_Data_Vf / Me.EHS350_Tamp_Data_Au) + (Me.EHS350_Tamp_Data_Vf / Me.EHS350_Tamp_Data_Du) + (((Me.App_Tamp_Home_Height_Above_Conveyor_IN - Me.EHS350_Tamp_Data_Xpp + Me.EHS350_Tamp_Data_Xreg) - ((Me.EHS350_Tamp_Data_Vf * Me.EHS350_Tamp_Data_Vf) / (2 * Me.EHS350_Tamp_Data_Au)) + ((Me.EHS350_Tamp_Data_Vf * Me.EHS350_Tamp_Data_Vf) / (2 * Me.EHS350_Tamp_Data_Du)))) / Me.EHS350_Tamp_Data_Vf
+      Dim Vf = Me.EHS350_Tamp_Data_Vf
+Dim Au = Me.EHS350_Tamp_Data_Au
+Dim Du = Me.EHS350_Tamp_Data_Du
+Dim Home_Height_in = Me.App_Tamp_Home_Height_Above_Conveyor_IN
+Dim Xpp = Me.EHS350_Tamp_Data_Xpp
+Dim Xreg = Me.EHS350_Tamp_Data_Xreg
+
+Result = Vf/Au+Vf/Du+(((Home_Height_in-Xpp+Xreg)-(Vf^2/(2*Au)+Vf^2/(2*Du)))/Vf)
       '   END FORMULA; PROP ID:9688; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_EHS350_Data.Formula_EHS350_Tamp_Data_Full_Stroke_Run_Home_Time", ex.Message)
@@ -861,7 +873,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9690; TYPE:PF
-      Result = (Me.App_Tamp_Home_Height_Above_Conveyor_IN - me.MTBH_Height_Minimum_IN) / Me.EHS350_Tamp_Data_Vf
+      Result = (Me.App_Tamp_Home_Height_Above_Conveyor_IN - Me.EHS350_Tamp_Data_Xpp - Me.MTBH_Height_Minimum_IN) / Me.EHS350_Tamp_Data_Vf
       '   END FORMULA; PROP ID:9690; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_EHS350_Data.Formula_EHS350_Tamp_Data_Prepos_variable", ex.Message)
@@ -930,7 +942,12 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9693; TYPE:PF
-      Result = (Me.EHS350_Tamp_Data_Vr / Me.EHS350_Tamp_Data_Ar) + (Me.EHS350_Tamp_Data_Vr / Me.EHS350_Tamp_Data_Dr) + (((Me.EHS350_Tamp_Data_Xreg) - ((Me.EHS350_Tamp_Data_Vr * Me.EHS350_Tamp_Data_Vr) / (2 * Me.EHS350_Tamp_Data_Ar)) + ((Me.EHS350_Tamp_Data_Vr * Me.EHS350_Tamp_Data_Vr) / (2 * Me.EHS350_Tamp_Data_Dr)))) / Me.EHS350_Tamp_Data_Vr
+      Dim Vr = Me.EHS350_Tamp_Data_Vr
+Dim Ar = Me.EHS350_Tamp_Data_Ar
+Dim Dr = Me.EHS350_Tamp_Data_Dr
+Dim Xreg = Me.EHS350_Tamp_Data_Xreg
+
+Result = Vr/Ar+Vr/Dr+(((Xreg)-(Vr^2/(2*Ar)+Vr^2/(2*Dr)))/Vr)
       '   END FORMULA; PROP ID:9693; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_EHS350_Data.Formula_EHS350_Tamp_Data_Reg_Move_Time", ex.Message)

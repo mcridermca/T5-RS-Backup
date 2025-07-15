@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Configuration
-'$ GenerateDate: 07/14/2025 12:41:18
+'$ GenerateDate: 07/15/2025 16:24:26
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -174,6 +174,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Configuration_Name]() As String
+      Get
+      Return Properties("Configuration_Name").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Configuration_Name").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [FrontBack_Scanner_Count]() As Long
       Get
       Return Properties("FrontBack_Scanner_Count").Value
@@ -336,6 +345,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Sorter_Selected_Width_IN]() As Double
+      Get
+      Return Properties("Sorter_Selected_Width_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Sorter_Selected_Width_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [UsePandAMTBH]() As Boolean
       Get
       Return Properties("UsePandAMTBH").Value
@@ -351,6 +369,42 @@ Option Infer On
       End Get
       Set(ByVal Value As String)
       Properties("User_UOM_System").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Valid]() As Boolean
+      Get
+      Return Properties("Valid").Value
+      End Get
+      Set(ByVal Value As Boolean)
+      Properties("Valid").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Valid_Message]() As String
+      Get
+      Return Properties("Valid_Message").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Valid_Message").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Tool_Name]() As String
+      Get
+      Return Properties("Tool_Name").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Tool_Name").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Tool_Status]() As String
+      Get
+      Return Properties("Tool_Status").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Tool_Status").CalculatedValue = Value
       End Set
       End Property
     
@@ -375,9 +429,9 @@ Option Infer On
       End Get
       End Property
     
-      Public ReadOnly Property [MySetup]() As Rulestream.Kernel.Connection
+      Public ReadOnly Property [My_Setup]() As Rulestream.Kernel.Connection
       Get
-      Return Connections("MySetup")
+      Return Connections("My_Setup")
       End Get
       End Property
     
@@ -417,6 +471,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [Sortation_Master_Config]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Sortation_Master_Config")
+      End Get
+      End Property
+    
     #End Region
 
     #Region " Initialization "
@@ -431,10 +491,11 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/14/2025 12:41:05")
+    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/15/2025 16:24:03")
     AddProperty("9964", "AppType", <a><![CDATA[AppType]]></a>.Value, "Primary Application Type", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 12:41:05 PM")
     AddProperty("9963", "BoxPanelsScanned", <a><![CDATA[BoxPanelsScanned]]></a>.Value, "Count of Box Panels Scanned", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:38:15 PM")
     AddProperty("9962", "CartonPresentation", <a><![CDATA[CartonPresentation]]></a>.Value, "Carton Presentation?", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:36:38 PM")
+    AddProperty("10134", "Configuration_Name", <a><![CDATA[Configuration_Name]]></a>.Value, "Config_Letter", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 7:33:55 PM")
     AddProperty("9991", "FrontBack_Scanner_Count", <a><![CDATA[FrontBack_Scanner_Count]]></a>.Value, "Count of Front & Back Scanner Positions in Use", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:31:57 PM")
     AddProperty("10011", "GapControlMethod", <a><![CDATA[GapControlMethod]]></a>.Value, "Active or Passive Gap Control Method? (From Soration Configuration)", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 6:33:28 PM")
     AddProperty("10020", "LaserOmniSideApp", <a><![CDATA[Laser OmniSide App]]></a>.Value, "If Left Scan or Right Scan has Omni Directional Laser, then True, Otherwise False", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:08:51 PM")
@@ -453,8 +514,13 @@ Option Infer On
     AddProperty("9986", "ReadWindowSize_Vendor_Supplied_USER", <a><![CDATA[ReadWindowSize_Vendor_Supplied_USER]]></a>.Value, "Scanner Read Window Size Override (if vendor supplied) (User UOM)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 5:59:24 PM")
     AddProperty("9960", "ShadowingPotential", <a><![CDATA[ShadowingPotential]]></a>.Value, "Shadowing Issues Possible?", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:34:50 PM")
     AddProperty("10012", "ShadowingStatus", <a><![CDATA[Shadowing Status]]></a>.Value, "Shadowing Allowed?", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/12/2025 7:43:53 PM")
+    AddProperty("10150", "Sorter_Selected_Width_IN", <a><![CDATA[Sorter_Selected_Width_IN]]></a>.Value, "Master Sorter Width (From Sortation Object)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:24:03 PM")
     AddProperty("9959", "UsePandAMTBH", <a><![CDATA[UsePandAMTBH]]></a>.Value, "Use PandA MTBH Parameters (Required for PandA Use!)", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:35:03 PM")
     AddProperty("9997", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/12/2025 1:43:37 PM")
+    AddProperty("10271", "Valid", <a><![CDATA[Valid]]></a>.Value, "Are Plastic Totes Used?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/15/2025 4:09:53 PM")
+    AddProperty("10272", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/15/2025 4:11:36 PM")
+    AddProperty("10269", "Tool_Name", <a><![CDATA[Tool_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:22:07 PM")
+    AddProperty("10270", "Tool_Status", <a><![CDATA[Tool_Status]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:09:53 PM")
     AddProperty("9940", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 5:59:25 PM")
     
       AddValidValue("CartonPresentation")
@@ -463,17 +529,21 @@ Option Infer On
     
       AddValidValue("ShadowingStatus")
     
+      AddValidValue("Sorter_Selected_Width_IN")
+    
       AddValidValue("User_UOM_System")
+    
+      AddValidValue("Tool_Status")
     
       oSubpart = AddSubpart(333,"Panel_Configs", <a><![CDATA[Panel_Configs]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/11/2025 6:03:53 PM")
       
         oSubpart.AddVPF (418, "APC_Scan_Panel_Configuration", "APC_Scan_Panel_Configuration")
       
-      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "165", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/12/2025 1:43:37 PM")
+      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "165", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 6:11:48 PM")
       
         oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
       
-      oConnection = AddConnection("MySetup", <a><![CDATA[MySetup]]></a>.Value, "Connection to Primary AppCalc Setup Object", "164", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/12/2025 1:41:30 PM")
+      oConnection = AddConnection("My_Setup", <a><![CDATA[My_Setup]]></a>.Value, "My App Calc Setup Object", "170", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 6:12:33 PM")
       
         oConnection.AddVPF(119, "APC_Setup")
       
@@ -500,6 +570,10 @@ Option Infer On
       oConnection = AddConnection("Panel_Config_Top", <a><![CDATA[Panel_Config_Top]]></a>.Value, "", "158", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/11/2025 7:10:58 PM")
       
         oConnection.AddVPF(418, "APC_Scan_Panel_Configuration")
+      
+      oConnection = AddConnection("Sortation_Master_Config", <a><![CDATA[Sortation_Master_Config]]></a>.Value, "Connection / Reference to the Sortation Configuration Object", "176", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:09:00 PM")
+      
+        oConnection.AddVPF(120, "APC_Sortation")
       
     End Sub
 
@@ -537,6 +611,9 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("CartonPresentation", "9544", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:36:38 PM", "Carton Presentation?", "In Development",  0,16690)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Configuration_Name", "9715", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 7:33:50 PM", "Primary Application Type", "In Development",  0,17132)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("FrontBack_Scanner_Count", "9573", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:31:57 PM", "Count of Front & Back Scanner Positions in Use", "In Development",  0,16692)
@@ -593,10 +670,25 @@ Option Infer On
           InitProperty("ShadowingStatus", "9594", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/12/2025 7:43:19 PM", "Carton Presentation?", "In Development",  0,16788)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Sorter_Selected_Width_IN", "9731", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:24:03 PM", "", "In Development",  0,17483)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("UsePandAMTBH", "9541", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 12:36:21 PM", "Use PandA MTBH Parameters (Required for PandA Use!)", "In Development",  0,16615)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("User_UOM_System", "9579", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:43:37 PM", "Default UOM System", "In Development",  0,16710)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Valid", "9850", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:09:53 PM", "Are Plastic Totes Used?", "In Development",  0,17474)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Valid_Message", "9851", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:11:36 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,17477)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Tool_Name", "9848", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:22:07 PM", "", "In Development",  0,17482)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Tool_Status", "9849", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:09:53 PM", "", "In Development",  0,17472)
         End If
     End Sub
 
@@ -623,7 +715,15 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           
+        InitValidValue("Sorter_Selected_Width_IN_ValidValues", "9731", "-1", 17183)
+        End If
+            If Incontext("-1", ctx) Then
+          
         InitValidValue("User_UOM_System_ValidValues", "9579", "-1", 16711)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Tool_Status_ValidValues", "9849", "-1", 17473)
         End If
     End Sub
 
@@ -655,13 +755,13 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("My_PRD", "145", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/12/2025 1:43:37 PM", "", "In Development", "N",268)
+        InitConnection("My_PRD", "145", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 6:11:48 PM", "", "In Development", "N",268)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("MySetup", "144", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/12/2025 1:41:12 PM", "", "In Development", "N",267)
+        InitConnection("My_Setup", "150", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 6:09:34 PM", "", "In Development", "N",276)
         
           End If
         
@@ -698,6 +798,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitConnection("Panel_Config_Top", "138", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/11/2025 7:10:58 PM", "", "In Development", "N",262)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("Sortation_Master_Config", "156", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:09:00 PM", "", "In Development", "N",286)
         
           End If
         
@@ -746,18 +852,18 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_MySetup_PARTS() as Rulestream.Kernel.rsCollection
+      Public Function Formula_My_Setup_PARTS() as Rulestream.Kernel.rsCollection
       
       Dim Result as Object = Nothing
       Dim ctx as Object
       Try
       ctx = this
-        '   BEGIN FORMULA; CON ID:144; TYPE:PF
-        Result = Me.Parent.Setup(1)
-        '   END FORMULA; CON ID:144; TYPE:PF
+        '   BEGIN FORMULA; CON ID:150; TYPE:PF
+        Result = Me.Parent.My_Setup(1)
+        '   END FORMULA; CON ID:150; TYPE:PF
       
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_MySetup_PARTS", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_My_Setup_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -895,6 +1001,28 @@ Option Infer On
       Return ConvertToCollection(Result)
       End Function
     
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sortation_Master_Config_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:156; TYPE:PF
+        Result = Me.Parent.Sortation(1)
+        '   END FORMULA; CON ID:156; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Sortation_Master_Config_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
           '*****************************************************************************
           '   Copyright (C) 2024 Siemens. All rights reserved.
           '
@@ -977,6 +1105,46 @@ Next P
       '   END FORMULA; PROP ID:9544; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_CartonPresentation", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Configuration_Name() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Configuration_Name").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9715; TYPE:PF
+      Dim Config_Letter As String = ""
+Select Case  Me.SubpartID
+	Case 1
+		Config_Letter = "A"
+	Case 2
+		Config_Letter = "B"
+	Case 3
+		Config_Letter = "C"
+	Case 4
+		Config_Letter = "D"
+	Case Else
+		Config_Letter = Me.SubPartId
+End Select
+
+
+Result = $"Configuration : {Config_Letter}"
+      '   END FORMULA; PROP ID:9715; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Configuration_Name", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1458,6 +1626,29 @@ End If
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Sorter_Selected_Width_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sorter_Selected_Width_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9731; TYPE:PF
+      Result = Me.Parent.Sortation(1).Sorter_Selected_Width_IN
+      '   END FORMULA; PROP ID:9731; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Sorter_Selected_Width_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_UsePandAMTBH() As Boolean
           Dim Result as Boolean
       Dim ctx as Object
@@ -1501,6 +1692,162 @@ End If
       Return Result
       End Function
     
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Valid() As Boolean
+          Dim Result as Boolean
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("Valid").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9850; TYPE:PF
+      Result = True
+' !!!Attention !!! : This will need to be broken from subscription and reworked for the Part Family in Scope
+
+'Error Levels 
+'	0 = Info
+'	1 = Warning
+'	2 = Error
+'	3 = Critical (Critical Means Nothing beyond associated process step should be allowed until this is fixed
+
+Dim InValidity_Trigger_Level As Integer = 2 ' Set to Error
+Dim Source As String = Me.Name ' Set To Current Property's name, Override If neccessary for more detailed source log info
+
+'This Section should be a duplicate Of Valid Message
+
+ Dim EList As New Custom.HWErrorList
+
+ EList.Add(0, "Warning Message", "ERR000", Source)
+ EList.Add(1, "Warning Message", "ERR001", Source)
+ EList.Add(2, "Errror Message", "ERR002", Source)
+ EList.Add(3, "Critcal Message", "ERR003", Source)
+
+ ' End Duplicate Section
+EList.Add(3, "Critical, Not Impleented - Warnings and Errors Need Implemented", "ERR003", Me.Name)
+
+Result = EList.IsValid(InValidity_Trigger_Level)
+      '   END FORMULA; PROP ID:9850; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Valid", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Valid_Message() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Valid_Message").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9851; TYPE:PF
+      Result = ""
+
+' !!!Attention !!! : This will need to be broken from subscription and implemented specically for the Part Family in Scope
+
+'Error Levels 
+'	0 = Info
+'	1 = Warning
+'	2 = Error
+'	3 = Critical (Critical Means Nothing beyond associated process step should be allowed until this is fixed
+
+Dim Show_Errors_Level As Integer = 2 ' Set to Error
+Dim Source As String = Me.Name ' Set To Current Property's name, Override If neccessary for more detailed source log info
+Dim EList As New Custom.HWErrorList
+
+'Add Error Evaluations in this section
+
+ EList.Add(0, "Warning Message", "ERR000", Source)
+ EList.Add(1, "Warning Message", "ERR001", Source)
+ EList.Add(2, "Errror Message", "ERR002", Source)
+ EList.Add(3, "Critcal Message", "ERR003", Source)
+
+ 
+EList.Add(3, "Critical, Not Impleented - Warnings and Errors Need Implemented", "ERR003", Me.Name)
+
+Result = EList.ErrorSummary(Show_Errors_Level)
+      '   END FORMULA; PROP ID:9851; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Valid_Message", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Tool_Name() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Name").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9848; TYPE:PF
+      Result = "Scanner Configuration" ' Implement this name
+
+'Delete this Section section after implementing Tool Name Above
+If Result = "Tool Name Not Implented" Then
+	MsgBox ("Error in {Me.Name}. Tool_Name Property Not Implemented")
+End If
+'End Delete Section
+      '   END FORMULA; PROP ID:9848; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Tool_Name", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Tool_Status() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("Tool_Status").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9849; TYPE:PF
+      Result = "New"
+      '   END FORMULA; PROP ID:9849; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Tool_Status", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
       '
@@ -1525,6 +1872,15 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_CartonPresentation_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Configuration_Name_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1695,6 +2051,15 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Sorter_Selected_Width_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_UsePandAMTBH_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1705,6 +2070,42 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_User_UOM_System_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Valid_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Valid_Message_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Name_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1733,6 +2134,15 @@ End If
       '*****************************************************************************
       Public Function Formula_CartonPresentation_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Configuration_Name_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1902,6 +2312,15 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Sorter_Selected_Width_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_UsePandAMTBH_USERCHANGE() as Boolean
       Return True
       End Function
@@ -1912,6 +2331,42 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_User_UOM_System_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Valid_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Valid_Message_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Name_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -1992,6 +2447,30 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Sorter_Selected_Width_IN_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sorter_Selected_Width_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9731; TYPE:VV
+      Result = MakeValidValues(Array(22, 28, 34, 38))
+      '   END FORMULA; PROP ID:9731; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Sorter_Selected_Width_IN_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_User_UOM_System_ValidValues() as Rulestream.Kernel.ValidValues
       
       Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
@@ -2006,6 +2485,32 @@ End If
       '   END FORMULA; PROP ID:9579; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_User_UOM_System_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("Tool_Status").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9849; TYPE:VV
+      Result = MakeValidValues(Array("New", "Work In Progress", "Approved", "As Sold"))
+      '   END FORMULA; PROP ID:9849; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Tool_Status_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

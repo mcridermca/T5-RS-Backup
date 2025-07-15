@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Mech_Install_CP_Comp
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/15/2025 16:14:05
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -9659,35 +9659,35 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Mech_Install_CP_Comp", <a><![CDATA[CAE_Mech_Install_CP_Comp]]></a>.Value, 399, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/11/2025 13:54:20")
+    InitPart("CAE_Mech_Install_CP_Comp", <a><![CDATA[CAE_Mech_Install_CP_Comp]]></a>.Value, 399, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H617242", "07/15/2025 16:13:17")
     AddProperty("6174", "a_Sample_Cnvy_Hrs_MDR_Bed_Size", <a><![CDATA[a_Sample_Cnvy_Hrs_MDR_Bed_Size]]></a>.Value, "Retrieves hours from a cached set of Component DB (Conveyor Hours) Table.", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6199", "bool_Include_In_Subsystem", <a><![CDATA[bool_Include_In_Subsystem]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6219", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 4:46:16 PM")
     AddProperty("6175", "Add_Hours_Dollars_Anchors_Dollars", <a><![CDATA[Add_Hours_Dollars_Anchors_Dollars]]></a>.Value, "Mech Install^'Hours'!P298", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6176", "Add_Hours_Dollars_Anchors_Hours", <a><![CDATA[Add_Hours_Dollars_Anchors_Hours]]></a>.Value, "Mech Install^'Hours'!R294", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:08:09 PM")
-    AddProperty("6177", "Add_Hours_Dollars_Anchors_Qty", <a><![CDATA[Add_Hours_Dollars_Anchors_Qty]]></a>.Value, "Mech Install^'Hours'!Q298", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
+    AddProperty("6177", "Add_Hours_Dollars_Anchors_Qty", <a><![CDATA[Add_Hours_Dollars_Anchors_Qty]]></a>.Value, "Mech Install^'Hours'!Q298", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 4:25:40 AM")
     AddProperty("6178", "Add_Hours_Dollars_Subsystem_Efficiency_Dollars", <a><![CDATA[Add_Hours_Dollars_Subsystem_Efficiency_Dollars]]></a>.Value, "Mech Install^'Hours'!P297", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
-    AddProperty("6179", "Add_Hours_Dollars_Subsystem_Efficiency_Hours", <a><![CDATA[Add_Hours_Dollars_Subsystem_Efficiency_Hours]]></a>.Value, "Mech Install^'Hours'!R297", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
-    AddProperty("6180", "Add_Hours_Dollars_Subsystem_Efficiency_Qty", <a><![CDATA[Add_Hours_Dollars_Subsystem_Efficiency_Qty]]></a>.Value, "Mech Install^'Hours'!Q297", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
-    AddProperty("6181", "Add_Hours_Dollars_Total_Dollars", <a><![CDATA[Add_Hours_Dollars_Total_Dollars]]></a>.Value, "Mech Install^'Hours'!P299", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
-    AddProperty("6182", "Add_Hours_Dollars_Total_Hours", <a><![CDATA[Add_Hours_Dollars_Total_Hours]]></a>.Value, "Mech Install^'Hours'!R299", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
+    AddProperty("6179", "Add_Hours_Dollars_Subsystem_Efficiency_Hours", <a><![CDATA[Add_Hours_Dollars_Subsystem_Efficiency_Hours]]></a>.Value, "Mech Install^'Hours'!R297", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 4:56:03 AM")
+    AddProperty("6180", "Add_Hours_Dollars_Subsystem_Efficiency_Qty", <a><![CDATA[Add_Hours_Dollars_Subsystem_Efficiency_Qty]]></a>.Value, "Mech Install^'Hours'!Q297", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 5:14:41 AM")
+    AddProperty("6181", "Add_Hours_Dollars_Total_Dollars", <a><![CDATA[Add_Hours_Dollars_Total_Dollars]]></a>.Value, "Mech Install^'Hours'!P299", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 8:57:39 AM")
+    AddProperty("6182", "Add_Hours_Dollars_Total_Hours", <a><![CDATA[Add_Hours_Dollars_Total_Hours]]></a>.Value, "Mech Install^'Hours'!R299", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 8:58:59 AM")
     AddProperty("6183", "Add_Hours_Dollars_Total_Qty", <a><![CDATA[Add_Hours_Dollars_Total_Qty]]></a>.Value, "Mech Install^'Hours'!Q299", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
-    AddProperty("6184", "Air_Piping_112_inches_pipe", <a><![CDATA[Air_Piping_1 1/2_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O213", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:18:23 PM")
-    AddProperty("6185", "Air_Piping_12_inches_pipe", <a><![CDATA[Air_Piping_1/2_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O215", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:19:12 PM")
-    AddProperty("6186", "Air_Piping_212_inches_pipe", <a><![CDATA[Air_Piping_2 1/2_inches_ pipe]]></a>.Value, "Mech Install^'Hours'!O212", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:18:04 PM")
-    AddProperty("6187", "Air_Piping_3pipe", <a><![CDATA[Air_Piping_3_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O211", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:17:36 PM")
-    AddProperty("6188", "Air_Piping_78_inches_pipe", <a><![CDATA[Air_Piping_7/8_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O214", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:18:54 PM")
-    AddProperty("6189", "Air_Piping_AC", <a><![CDATA[Air_Piping_A/C]]></a>.Value, "Mech Install^'Hours'!O218", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:20:52 PM")
+    AddProperty("6184", "Air_Piping_112_inches_pipe", <a><![CDATA[Air_Piping_1 1/2_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O213", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:18:15 AM")
+    AddProperty("6185", "Air_Piping_12_inches_pipe", <a><![CDATA[Air_Piping_1/2_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O215", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:20:02 AM")
+    AddProperty("6186", "Air_Piping_212_inches_pipe", <a><![CDATA[Air_Piping_2 1/2_inches_ pipe]]></a>.Value, "Mech Install^'Hours'!O212", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:21:05 AM")
+    AddProperty("6187", "Air_Piping_3pipe", <a><![CDATA[Air_Piping_3_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O211", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:22:38 AM")
+    AddProperty("6188", "Air_Piping_78_inches_pipe", <a><![CDATA[Air_Piping_7/8_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O214", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:27:47 AM")
+    AddProperty("6189", "Air_Piping_AC", <a><![CDATA[Air_Piping_A/C]]></a>.Value, "Mech Install^'Hours'!O218", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:28:40 AM")
     AddProperty("6190", "Air_Piping_CHAINLUB", <a><![CDATA[Air_Piping_CHAIN/LUB]]></a>.Value, "Mech Install^'Hours'!O220", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
-    AddProperty("6191", "Air_Piping_Dryer", <a><![CDATA[Air_Piping_Dryer]]></a>.Value, "Mech Install^'Hours'!O220", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:21:34 PM")
+    AddProperty("6191", "Air_Piping_Dryer", <a><![CDATA[Air_Piping_Dryer]]></a>.Value, "Mech Install^'Hours'!O220", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:29:37 AM")
     AddProperty("8057", "Air_Piping_Factor", <a><![CDATA[Air_Piping_Factor]]></a>.Value, "Mech Install^'Hours'!T221", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 6:50:45 PM")
-    AddProperty("6192", "Air_Piping_FILTERREG", <a><![CDATA[Air_Piping_FILTER_REG]]></a>.Value, "Mech Install^'Hours'!O217", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 10:52:46 AM")
-    AddProperty("6193", "Air_Piping_RedAC", <a><![CDATA[Air_Piping_Red A/C]]></a>.Value, "Mech Install^'Hours'!O219", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:21:08 PM")
-    AddProperty("6194", "Air_Piping_SUBTOTAL", <a><![CDATA[Air_Piping_SUBTOTAL]]></a>.Value, "Mech Install^'Hours'!Q221", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:21:59 PM")
-    AddProperty("6195", "Air_Piping_SUBTOTAL_Hours", <a><![CDATA[Air_Piping_SUBTOTAL_Hours]]></a>.Value, "Mech Install^'Hours'!S225", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
+    AddProperty("6192", "Air_Piping_FILTERREG", <a><![CDATA[Air_Piping_FILTER_REG]]></a>.Value, "Mech Install^'Hours'!O217", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:30:55 AM")
+    AddProperty("6193", "Air_Piping_RedAC", <a><![CDATA[Air_Piping_Red A/C]]></a>.Value, "Mech Install^'Hours'!O219", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:31:58 AM")
+    AddProperty("6194", "Air_Piping_SUBTOTAL", <a><![CDATA[Air_Piping_SUBTOTAL]]></a>.Value, "Mech Install^'Hours'!Q221", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:41:10 AM")
+    AddProperty("6195", "Air_Piping_SUBTOTAL_Hours", <a><![CDATA[Air_Piping_SUBTOTAL_Hours]]></a>.Value, "Mech Install^'Hours'!S225", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:43:55 AM")
     AddProperty("6196", "Air_Piping_SUBTOTAL_Units", <a><![CDATA[Air_Piping_SUBTOTAL_Units]]></a>.Value, "Mech Install^'Hours'!Q225", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6197", "Air_Piping_Total_Hours", <a><![CDATA[Air_Piping_Total_Hours]]></a>.Value, "Mech Install^'Hours'!S221", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:22:18 PM")
-    AddProperty("6198", "Air_Piping_Tubing", <a><![CDATA[Air_Piping_Tubing]]></a>.Value, "Mech Install^'Hours'!O216", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:19:49 PM")
+    AddProperty("6198", "Air_Piping_Tubing", <a><![CDATA[Air_Piping_Tubing]]></a>.Value, "Mech Install^'Hours'!O216", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:33:00 AM")
     AddProperty("6200", "Bulk_Flow_Bottom_Guards_HRS", <a><![CDATA[Bulk_Flow_Bottom_Guards_HRS]]></a>.Value, "Mech Install^'Hours'!R312", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:39:14 AM")
     AddProperty("6201", "Bulk_Flow_Bottom_Guards_Metrics", <a><![CDATA[Bulk_Flow_Bottom_Guards_Metrics]]></a>.Value, "Mech Install^'Hours'!Q312", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/10/2025 2:44:01 PM")
     AddProperty("6202", "Bulk_Flow_Bottom_Guards_QTY_FT", <a><![CDATA[Bulk_Flow_Bottom_Guards_QTY_FT]]></a>.Value, "Mech Install^'Hours'!P312", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:40:05 AM")
@@ -9700,12 +9700,12 @@ Option Infer On
     AddProperty("6209", "Bulk_Flow_Mount_Motors_Drives_HRS", <a><![CDATA[Bulk_Flow_Mount_Motors_Drives_HRS]]></a>.Value, "Mech Install^'Hours'!R311", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:43:42 AM")
     AddProperty("6210", "Bulk_Flow_Mount_Motors_Drives_Metrics", <a><![CDATA[Bulk_Flow_Mount_Motors_Drives_Metrics]]></a>.Value, "Mech Install^'Hours'!Q311", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/10/2025 2:42:44 PM")
     AddProperty("6211", "Bulk_Flow_Mount_Motors_Drives_QTY_FT", <a><![CDATA[Bulk_Flow_Mount_Motors_Drives_QTY_FT]]></a>.Value, "Mech Install^'Hours'!P311", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:44:22 AM")
-    AddProperty("6212", "Bulk_Flow_Total_HRS", <a><![CDATA[Bulk_Flow_Total_HRS]]></a>.Value, "Mech Install^'Hours'!R319", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
+    AddProperty("6212", "Bulk_Flow_Total_HRS", <a><![CDATA[Bulk_Flow_Total_HRS]]></a>.Value, "Mech Install^'Hours'!R319", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:53:49 AM")
     AddProperty("6213", "Cost_of_Air_per_Linear_Foot", <a><![CDATA[Cost_of_Air_per_Linear_Foot]]></a>.Value, "Mech Install^'Hours'!U214", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6214", "DATA_CPNumber", <a><![CDATA[DATA_CP Number]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/3/2025 3:15:25 PM")
     AddProperty("6215", "DATA_Raw", <a><![CDATA[DATA_Raw]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/2/2025 7:26:39 PM")
     AddProperty("6216", "Demo_Removed_existing_Ft", <a><![CDATA[Demo_Removed_existing_Ft]]></a>.Value, "Mech Install^'Hours'!Q309", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
-    AddProperty("6217", "Demo_Removed_existing_Hours", <a><![CDATA[Demo_Removed_existing_Hours]]></a>.Value, "Mech Install^'Hours'!R309", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
+    AddProperty("6217", "Demo_Removed_existing_Hours", <a><![CDATA[Demo_Removed_existing_Hours]]></a>.Value, "Mech Install^'Hours'!R309", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 10:02:11 AM")
     AddProperty("6218", "Demo_Removed_existing_Scrap_1_or_Keep_2", <a><![CDATA[Demo_Removed_existing_Scrap_1_or_Keep_2]]></a>.Value, "Mech Install^'Hours'!P309", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6220", "Extra_Filter_Regulators", <a><![CDATA[Extra_Filter_Regulators]]></a>.Value, "Mech Install^'Hours'!T221", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6221", "HCAD_BeltBrakeMeter_Air_Devices", <a><![CDATA[HCAD_Belt Brake Meter_Air_Devices]]></a>.Value, "Mech Install^'Hours'!S31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
@@ -9785,7 +9785,7 @@ Option Infer On
     AddProperty("6295", "HCAD_BeltStaging_Total_Units", <a><![CDATA[HCAD_Belt Staging_Total_Units]]></a>.Value, "Mech Install^'Hours'!Q49", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/3/2025 3:46:10 PM")
     AddProperty("6296", "HCAD_BeltStaging_Unloading_Hours", <a><![CDATA[HCAD_Belt Staging_Unloading_Hours]]></a>.Value, "Mech Install^'Hours'!P54", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/4/2025 12:23:10 PM")
     AddProperty("6297", "HCAD_BeltStaging_Unloading_Units", <a><![CDATA[HCAD_Belt Staging_Unloading_Units]]></a>.Value, "Mech Install^'Hours'!Q53", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/8/2025 9:53:09 AM")
-    AddProperty("6298", "HCAD_Buyout_Footage", <a><![CDATA[HCAD_Buyout_Footage]]></a>.Value, "Mech Install^'Hours'!O197", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
+    AddProperty("6298", "HCAD_Buyout_Footage", <a><![CDATA[HCAD_Buyout_Footage]]></a>.Value, "Mech Install^'Hours'!O197", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 10:07:54 AM")
     AddProperty("6299", "HCAD_Buyout_Total_Footage", <a><![CDATA[HCAD_Buyout_Total_Footage]]></a>.Value, "Mech Install^'Hours'!O197", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6300", "HCAD_Chutes_Beds_Avg_Height", <a><![CDATA[HCAD_Chutes_Beds_Avg_Height]]></a>.Value, "Mech Install^'Hours'!T144", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6301", "HCAD_Chutes_Beds_Hours", <a><![CDATA[HCAD_Chutes_Beds_Hours]]></a>.Value, "Mech Install^'Hours'!P144", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/4/2025 12:45:06 PM")
@@ -9895,7 +9895,7 @@ Option Infer On
     AddProperty("6402", "HCAD_GravityTrailerLoader_Total_Units", <a><![CDATA[HCAD_Gravity Trailer Loader_Total_Units]]></a>.Value, "Mech Install^'Hours'!Q125", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:08 PM")
     AddProperty("6403", "HCAD_GravityTrailerLoader_Unloading_Hours", <a><![CDATA[HCAD_Gravity Trailer Loader_Unloading_Hours]]></a>.Value, "Mech Install^'Hours'!130", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/7/2025 3:56:48 AM")
     AddProperty("6404", "HCAD_GravityTrailerLoader_Unloading_Units", <a><![CDATA[HCAD_Gravity Trailer Loader_Unloading_Units]]></a>.Value, "Mech Install^'Hours'!Q130", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/8/2025 8:35:11 AM")
-    AddProperty("6405", "HCAD_Hanger_Seismic_Factor", <a><![CDATA[HCAD_Hanger_Seismic_Factor]]></a>.Value, "Mech Install^'Hours'!Q198", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:08 PM")
+    AddProperty("6405", "HCAD_Hanger_Seismic_Factor", <a><![CDATA[HCAD_Hanger_Seismic_Factor]]></a>.Value, "Mech Install^'Hours'!Q198", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 10:16:46 AM")
     AddProperty("6406", "HCAD_Hanger_Total_Hours", <a><![CDATA[HCAD_Hanger_Total_Hours]]></a>.Value, "Mech Install^'Hours'!X207", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 12:00:42 PM")
     AddProperty("6407", "HCAD_Hanger_Total_Qty", <a><![CDATA[HCAD_Hanger_Total_Qty]]></a>.Value, "Mech Install^'Hours'!W207", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 11:59:29 AM")
     AddProperty("6408", "HCAD_Hanger_Type_A_Hours", <a><![CDATA[HCAD_Hanger_Type_A_Hours]]></a>.Value, "Mech Install^'Hours'!X195", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 11:46:55 AM")
@@ -9934,7 +9934,7 @@ Option Infer On
     AddProperty("6430", "HCAD_Hanger_Type_R_Hours", <a><![CDATA[HCAD_Hanger_Type_R_Hours]]></a>.Value, "Mech Install^'Hours'!X206", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 11:55:34 AM")
     AddProperty("6431", "HCAD_Hanger_Type_R_Qty", <a><![CDATA[HCAD_Hanger_Type_R_Qty]]></a>.Value, "Mech Install^'Hours'!W206", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 11:05:01 AM")
     AddProperty("8638", "HCAD_Hanger_Type_R_Rate_per_HGR", <a><![CDATA[HCAD_Hanger_Type_R_Rate_per_HGR]]></a>.Value, "Mech Install^'Hours'!V206", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 11:45:51 AM")
-    AddProperty("6432", "HCAD_Header_Steel_and_Hangers_Ea_Total_Hours", <a><![CDATA[HCAD_Header_Steel_and_Hangers_Ea_Total_Hours]]></a>.Value, "Mech Install^'Hours'!P196", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 9:15:55 AM")
+    AddProperty("6432", "HCAD_Header_Steel_and_Hangers_Ea_Total_Hours", <a><![CDATA[HCAD_Header_Steel_and_Hangers_Ea_Total_Hours]]></a>.Value, "Mech Install^'Hours'!P196", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 8:16:01 AM")
     AddProperty("6433", "HCAD_Header_Steel_Hangers_Ea_Total_Units", <a><![CDATA[HCAD_Header_Steel_Hangers_Ea_Total_Units]]></a>.Value, "Mech Install^'Hours'!Q198", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:08 PM")
     AddProperty("6434", "HCAD_IntelliFlow_Beds_Hours", <a><![CDATA[HCAD_IntelliFlow_Beds_Hours]]></a>.Value, "Mech Install^'Hours'!P97", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/6/2025 1:24:17 PM")
     AddProperty("6435", "HCAD_IntelliFlow_Beds_Units", <a><![CDATA[HCAD_IntelliFlow_Beds_Units]]></a>.Value, "Mech Install^'Hours'!Q97", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/8/2025 10:19:43 AM")
@@ -10016,7 +10016,7 @@ Option Infer On
     AddProperty("6510", "HCAD_MDR_Transfers", <a><![CDATA[HCAD_MDR_Transfers]]></a>.Value, "Mech Install^'Hours'!R116", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:08 PM")
     AddProperty("6511", "HCAD_MDR_Unloading_Hours", <a><![CDATA[HCAD_MDR_Unloading_Hours]]></a>.Value, "Mech Install^'Hours'!P121", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/6/2025 1:41:03 PM")
     AddProperty("6512", "HCAD_MDR_Unloading_Units", <a><![CDATA[HCAD_MDR_Unloading_Units]]></a>.Value, "Mech Install^'Hours'!Q121", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/8/2025 10:25:22 AM")
-    AddProperty("8600", "HCAD_Misc_Hours", <a><![CDATA[HCAD_Misc_Hours]]></a>.Value, "Mech Install^'Hours'!P202", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 7:20:30 AM")
+    AddProperty("8600", "HCAD_Misc_Hours", <a><![CDATA[HCAD_Misc_Hours]]></a>.Value, "Mech Install^'Hours'!P202", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 8:22:05 AM")
     AddProperty("8596", "HCAD_Percent_of_Complete_System_Hrs", <a><![CDATA[HCAD_Percent_of_Complete_System_Hrs]]></a>.Value, "Mech Install^'Hours'!P203  This is a percentage value", "Boolean","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 7:06:50 AM")
     AddProperty("6513", "HCAD_PoweredTrailerLoader_Beds_Avg_Height", <a><![CDATA[HCAD_Powered Trailer Loader_Beds_Avg_Height]]></a>.Value, "Mech Install^'Hours'!T135", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:08 PM")
     AddProperty("6514", "HCAD_PoweredTrailerLoader_Beds_Hours", <a><![CDATA[HCAD_Powered Trailer Loader_Beds_Hours]]></a>.Value, "Mech Install^'Hours'!P135", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/7/2025 4:03:43 AM")
@@ -10107,8 +10107,8 @@ Option Infer On
     AddProperty("6597", "HCAD_SpiralCurvessets_Total_Units", <a><![CDATA[HCAD_Spiral Curves sets_Total_Units]]></a>.Value, "Mech Install^'Hours'!Q179", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/3/2025 3:56:10 PM")
     AddProperty("6598", "HCAD_SpiralCurvessets_Unloading_Hours", <a><![CDATA[HCAD_Spiral Curves sets_Unloading_Hours]]></a>.Value, "Mech Install^'Hours'!P184", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/7/2025 4:53:37 AM")
     AddProperty("6599", "HCAD_SpiralCurvessets_Unloading_Units", <a><![CDATA[HCAD_Spiral Curves sets_Unloading_Units]]></a>.Value, "Mech Install^'Hours'!Q184", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/8/2025 6:41:27 AM")
-    AddProperty("8599", "HCAD_Total_Conveyor_Hrs", <a><![CDATA[HCAD_Total_Conveyor_Hrs]]></a>.Value, "Mech Install^'Hours'!P201", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 7:19:41 AM")
-    AddProperty("8601", "HCAD_Total_Subsystem_Hours", <a><![CDATA[HCAD_Total_Subsystem_Hours]]></a>.Value, "Mech Install^'Hours'!P207", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 7:24:29 AM")
+    AddProperty("8599", "HCAD_Total_Conveyor_Hrs", <a><![CDATA[HCAD_Total_Conveyor_Hrs]]></a>.Value, "Mech Install^'Hours'!P201", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 10:49:42 AM")
+    AddProperty("8601", "HCAD_Total_Subsystem_Hours", <a><![CDATA[HCAD_Total_Subsystem_Hours]]></a>.Value, "Mech Install^'Hours'!P207", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 10:51:14 AM")
     AddProperty("6600", "HCAD_VBelt_Beds_Avg_Height", <a><![CDATA[HCAD_V Belt_Beds_Avg_Height]]></a>.Value, "Mech Install^'Hours'!T59", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:08 PM")
     AddProperty("6601", "HCAD_VBelt_Beds_Hours", <a><![CDATA[HCAD_V Belt_Beds_Hours]]></a>.Value, "Mech Install^'Hours'!P59", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/4/2025 12:55:45 PM")
     AddProperty("6602", "HCAD_VBelt_Beds_Units", <a><![CDATA[HCAD_V Belt_Beds_Units]]></a>.Value, "Mech Install^'Hours'!Q59", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/8/2025 9:58:09 AM")
@@ -10151,20 +10151,20 @@ Option Infer On
     AddProperty("6638", "Hours_Misc_Chute_Style_1_Air", <a><![CDATA[Hours_Misc_Chute_Style_1_Air]]></a>.Value, "Mech Install^'Hours'!S288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:29:51 PM")
     AddProperty("6639", "Hours_Misc_Chute_Style_1_Dollars", <a><![CDATA[Hours_Misc_Chute_Style_1_Dollars]]></a>.Value, "Mech Install^'Hours'!P288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:30:08 PM")
     AddProperty("6640", "Hours_Misc_Chute_Style_1_Hours", <a><![CDATA[Hours_Misc_Chute_Style_1_Hours]]></a>.Value, "Mech Install^'Hours'!R288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:28:23 PM")
-    AddProperty("6641", "Hours_Misc_Chute_Style_1_Metric", <a><![CDATA[Hours_Misc_Chute_Style_1_Metric]]></a>.Value, "Mech Install^'Hours'!T288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:30:50 PM")
+    AddProperty("6641", "Hours_Misc_Chute_Style_1_Metric", <a><![CDATA[Hours_Misc_Chute_Style_1_Metric]]></a>.Value, "Mech Install^'Hours'!T288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:01:36 AM")
     AddProperty("6642", "Hours_Misc_Chute_Style_1_Qty", <a><![CDATA[Hours_Misc_Chute_Style_1_Qty]]></a>.Value, "Mech Install^'Hours'!Q288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:31:10 PM")
     AddProperty("6643", "Hours_Misc_Chute_Style_2_Air", <a><![CDATA[Hours_Misc_Chute_Style_2_Air]]></a>.Value, "Mech Install^'Hours'!S289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:31:35 PM")
     AddProperty("6644", "Hours_Misc_Chute_Style_2_Dollars", <a><![CDATA[Hours_Misc_Chute_Style_2_Dollars]]></a>.Value, "Mech Install^'Hours'!P289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:31:52 PM")
     AddProperty("6645", "Hours_Misc_Chute_Style_2_Hours", <a><![CDATA[Hours_Misc_Chute_Style_2_Hours]]></a>.Value, "Mech Install^'Hours'!R289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:28:57 PM")
-    AddProperty("6646", "Hours_Misc_Chute_Style_2_Metric", <a><![CDATA[Hours_Misc_Chute_Style_2_Metric]]></a>.Value, "Mech Install^'Hours'!T289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:32:19 PM")
+    AddProperty("6646", "Hours_Misc_Chute_Style_2_Metric", <a><![CDATA[Hours_Misc_Chute_Style_2_Metric]]></a>.Value, "Mech Install^'Hours'!T289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:03:48 AM")
     AddProperty("6647", "Hours_Misc_Chute_Style_2_Qty", <a><![CDATA[Hours_Misc_Chute_Style_2_Qty]]></a>.Value, "Mech Install^'Hours'!Q289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:32:37 PM")
     AddProperty("6648", "Hours_Misc_Chute_Style_3_Air", <a><![CDATA[Hours_Misc_Chute_Style_3_Air]]></a>.Value, "Mech Install^'Hours'!S290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:32:57 PM")
     AddProperty("6649", "Hours_Misc_Chute_Style_3_Dollars", <a><![CDATA[Hours_Misc_Chute_Style_3_Dollars]]></a>.Value, "Mech Install^'Hours'!P290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:33:17 PM")
     AddProperty("6650", "Hours_Misc_Chute_Style_3_Hours", <a><![CDATA[Hours_Misc_Chute_Style_3_Hours]]></a>.Value, "Mech Install^'Hours'!R290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:29:30 PM")
-    AddProperty("6651", "Hours_Misc_Chute_Style_3_Metric", <a><![CDATA[Hours_Misc_Chute_Style_3_Metric]]></a>.Value, "Mech Install^'Hours'!T290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:33:45 PM")
+    AddProperty("6651", "Hours_Misc_Chute_Style_3_Metric", <a><![CDATA[Hours_Misc_Chute_Style_3_Metric]]></a>.Value, "Mech Install^'Hours'!T290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:04:09 AM")
     AddProperty("6652", "Hours_Misc_Chute_Style_3_Qty", <a><![CDATA[Hours_Misc_Chute_Style_3_Qty]]></a>.Value, "Mech Install^'Hours'!Q290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:34:03 PM")
-    AddProperty("6653", "Hours_Misc_Chute_Total_Air", <a><![CDATA[Hours_Misc_Chute_Total_Air]]></a>.Value, "Mech Install^'Hours'!S295", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:08 PM")
-    AddProperty("6654", "Hours_Misc_Chute_Total_Hours", <a><![CDATA[Hours_Misc_Chute_Total_Hours]]></a>.Value, "Mech Install^'Hours'!R295", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:08 PM")
+    AddProperty("6653", "Hours_Misc_Chute_Total_Air", <a><![CDATA[Hours_Misc_Chute_Total_Air]]></a>.Value, "Mech Install^'Hours'!S295", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:11:04 AM")
+    AddProperty("6654", "Hours_Misc_Chute_Total_Hours", <a><![CDATA[Hours_Misc_Chute_Total_Hours]]></a>.Value, "Mech Install^'Hours'!R295", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:17:21 AM")
     AddProperty("6655", "Hrs_Misc_80_20_Guards_Air", <a><![CDATA[Hrs_Misc_80_20_Guards_Air]]></a>.Value, "Mech Install^'Hours'!S225", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:45:56 PM")
     AddProperty("6656", "Hrs_Misc_80_20_Guards_Dollars", <a><![CDATA[Hrs_Misc_80_20_Guards_Dollars]]></a>.Value, "Mech Install^'Hours'!P225", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:46:14 PM")
     AddProperty("6657", "Hrs_Misc_80_20_Guards_Hours", <a><![CDATA[Hrs_Misc_80_20_Guards_Hours]]></a>.Value, "Mech Install^'Hours'!R225", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 11:34:16 AM")
@@ -10444,8 +10444,8 @@ Option Infer On
     AddProperty("6923", "Misc_Parcel_Items_Dual_crows_nest_HRS", <a><![CDATA[Misc_Parcel_Items_Dual_crows_nest_HRS]]></a>.Value, "Mech Install^'Hours'!R330", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:49:58 AM")
     AddProperty("6924", "Misc_Parcel_Items_Dual_crows_nest_Metrics", <a><![CDATA[Misc_Parcel_Items_Dual_crows_nest_Metrics]]></a>.Value, "Mech Install^'Hours'!Q330", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/10/2025 3:03:50 PM")
     AddProperty("6925", "Misc_Parcel_Items_Dual_crows_nest_QTY", <a><![CDATA[Misc_Parcel_Items_Dual_crows_nest_QTY]]></a>.Value, "Mech Install^'Hours'!P330", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:50:49 AM")
-    AddProperty("6926", "Misc_Parcel_Items_FT_TOTAL_FOR_AREA", <a><![CDATA[Misc_Parcel_Items_FT_TOTAL_FOR_AREA]]></a>.Value, "Mech Install^'Hours'!R340", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
-    AddProperty("6927", "Misc_Parcel_Items_HRS_TOTAL_FOR_AREA", <a><![CDATA[Misc_Parcel_Items_HRS_TOTAL_FOR_AREA]]></a>.Value, "Mech Install^'Hours'!R339", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
+    AddProperty("6926", "Misc_Parcel_Items_FT_TOTAL_FOR_AREA", <a><![CDATA[Misc_Parcel_Items_FT_TOTAL_FOR_AREA]]></a>.Value, "Mech Install^'Hours'!R340", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:20:35 AM")
+    AddProperty("6927", "Misc_Parcel_Items_HRS_TOTAL_FOR_AREA", <a><![CDATA[Misc_Parcel_Items_HRS_TOTAL_FOR_AREA]]></a>.Value, "Mech Install^'Hours'!R339", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:22:39 AM")
     AddProperty("6928", "Misc_Parcel_Items_PBC_HRS", <a><![CDATA[Misc_Parcel_Items_PBC_HRS]]></a>.Value, "Mech Install^'Hours'!R324", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:51:40 AM")
     AddProperty("6929", "Misc_Parcel_Items_PBC_Metrics", <a><![CDATA[Misc_Parcel_Items_PBC_Metrics]]></a>.Value, "Mech Install^'Hours'!Q324", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/10/2025 2:54:04 PM")
     AddProperty("6930", "Misc_Parcel_Items_PBC_QTY", <a><![CDATA[Misc_Parcel_Items_PBC_QTY]]></a>.Value, "Mech Install^'Hours'!P324", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:52:21 AM")
@@ -10461,7 +10461,7 @@ Option Infer On
     AddProperty("6940", "Misc_Parcel_Items_Straight_Chute_HRS", <a><![CDATA[Misc_Parcel_Items_Straight_Chute_HRS]]></a>.Value, "Mech Install^'Hours'!R328", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:57:23 AM")
     AddProperty("6941", "Misc_Parcel_Items_Straight_Chute_Metrics", <a><![CDATA[Misc_Parcel_Items_Straight_Chute_Metrics]]></a>.Value, "Mech Install^'Hours'!Q328", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/10/2025 3:01:58 PM")
     AddProperty("6942", "Misc_Parcel_Items_Straight_Chute_QTY", <a><![CDATA[Misc_Parcel_Items_Straight_Chute_QTY]]></a>.Value, "Mech Install^'Hours'!P328", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:57:46 AM")
-    AddProperty("6943", "Misc_Parcel_Items_Total_HRS", <a><![CDATA[Misc_Parcel_Items_Total_HRS]]></a>.Value, "Mech Install^'Hours'!R338", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
+    AddProperty("6943", "Misc_Parcel_Items_Total_HRS", <a><![CDATA[Misc_Parcel_Items_Total_HRS]]></a>.Value, "Mech Install^'Hours'!R338", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:25:34 AM")
     AddProperty("6944", "Misc_Parcel_Items_Transition_plates_HRS", <a><![CDATA[Misc_Parcel_Items_Transition_plates_HRS]]></a>.Value, "Mech Install^'Hours'!R325", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:58:45 AM")
     AddProperty("6945", "Misc_Parcel_Items_Transition_plates_Metrics", <a><![CDATA[Misc_Parcel_Items_Transition_plates_Metrics]]></a>.Value, "Mech Install^'Hours'!Q325", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/10/2025 2:56:49 PM")
     AddProperty("6946", "Misc_Parcel_Items_Transition_plates_QTY", <a><![CDATA[Misc_Parcel_Items_Transition_plates_QTY]]></a>.Value, "Mech Install^'Hours'!P325", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:59:13 AM")
@@ -10602,10 +10602,10 @@ Option Infer On
     AddProperty("7060", "Plt_Cnvyr_T5_Chain_Chain_Install_Hours", <a><![CDATA[Plt_Cnvyr_T5_Chain_Chain_Install_Hours]]></a>.Value, "Mech Install^'Hours'!Q353", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 8:56:16 AM")
     AddProperty("7061", "Plt_Cnvyr_T5_Chain_Chain_Install_Hrs_Ea", <a><![CDATA[Plt_Cnvyr_T5_Chain_Chain_Install_Hrs_Ea]]></a>.Value, "Mech Install^'Hours'!P353", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 11:24:25 AM")
     AddProperty("7062", "Plt_Cnvyr_T5_Chain_Chain_Install_QTY", <a><![CDATA[Plt_Cnvyr_T5_Chain_Chain_Install_QTY]]></a>.Value, "Mech Install^'Hours'!O353", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 8:57:36 AM")
-    AddProperty("7063", "Plt_Cnvyr_Total_Air", <a><![CDATA[Plt_Cnvyr_Total_Air]]></a>.Value, "Mech Install^'Hours'!R385", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
-    AddProperty("7064", "Plt_Cnvyr_Total_Footage", <a><![CDATA[Plt_Cnvyr_Total_Footage]]></a>.Value, "Mech Install^'Hours'!S385", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
-    AddProperty("7065", "Plt_Cnvyr_Total_Hours", <a><![CDATA[Plt_Cnvyr_Total_Hours]]></a>.Value, "Mech Install^'Hours'!Q385", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
-    AddProperty("7066", "Plt_Cnvyr_Unloading", <a><![CDATA[Plt_Cnvyr_Unloading]]></a>.Value, "Mech Install^'Hours'!Q341", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 9:16:36 AM")
+    AddProperty("7063", "Plt_Cnvyr_Total_Air", <a><![CDATA[Plt_Cnvyr_Total_Air]]></a>.Value, "Mech Install^'Hours'!R385", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:39:34 AM")
+    AddProperty("7064", "Plt_Cnvyr_Total_Footage", <a><![CDATA[Plt_Cnvyr_Total_Footage]]></a>.Value, "Mech Install^'Hours'!S385", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:43:42 AM")
+    AddProperty("7065", "Plt_Cnvyr_Total_Hours", <a><![CDATA[Plt_Cnvyr_Total_Hours]]></a>.Value, "Mech Install^'Hours'!Q385", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:46:58 AM")
+    AddProperty("7066", "Plt_Cnvyr_Unloading", <a><![CDATA[Plt_Cnvyr_Unloading]]></a>.Value, "Mech Install^'Hours'!Q341", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:50:59 PM")
     AddProperty("9727", "PRD_Conv_Lead_Men_COST", <a><![CDATA[PRD_Conv_Lead_Men_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:21:14 PM")
     AddProperty("9717", "PRD_Conv_Lead_Men_HRS", <a><![CDATA[PRD_Conv_Lead_Men_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:21:05 PM")
     AddProperty("9723", "PRD_Conv_Lead_Men_RATE", <a><![CDATA[PRD_Conv_Lead_Men_RATE]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!J6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:04:12 PM")
@@ -10675,40 +10675,40 @@ Option Infer On
     AddProperty("7076", "Singulated_Flow_SINGULATED_FLOW_FOOTAGE_HRS", <a><![CDATA[Singulated_Flow_SINGULATED_FLOW_FOOTAGE_HRS]]></a>.Value, "Mech Install^'Hours'!R317", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 10:05:40 AM")
     AddProperty("7077", "Singulated_Flow_SINGULATED_FLOW_FOOTAGE_Metrics", <a><![CDATA[Singulated_Flow_SINGULATED_FLOW_FOOTAGE_Metrics]]></a>.Value, "Mech Install^'Hours'!Q317", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/10/2025 2:51:12 PM")
     AddProperty("7078", "Singulated_Flow_SINGULATED_FLOW_FOOTAGE_QTY_FT", <a><![CDATA[Singulated_Flow_SINGULATED_FLOW_FOOTAGE_QTY_FT]]></a>.Value, "Mech Install^'Hours'!P317", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 10:06:23 AM")
-    AddProperty("7079", "Singulated_Flow_Total_HRS", <a><![CDATA[Singulated_Flow_Total_HRS]]></a>.Value, "Mech Install^'Hours'!R326", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
-    AddProperty("7080", "Struct_Catwalk_Bar_Grating_Hours", <a><![CDATA[Struct_Catwalk_Bar_Grating_Hours]]></a>.Value, "Mech Install^'Hours'!Q303", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
-    AddProperty("7081", "Struct_Catwalk_Bar_Grating_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_Bar_Grating_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P303", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
-    AddProperty("7082", "Struct_Catwalk_CATWALK_Hours", <a><![CDATA[Struct_Catwalk_CATWALK_Hours]]></a>.Value, "Mech Install^'Hours'!Q307", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
-    AddProperty("7083", "Struct_Catwalk_CATWALK_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_CATWALK_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P307", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7084", "Struct_Catwalk_GRID_STRUCTURE_Hours", <a><![CDATA[Struct_Catwalk_GRID_STRUCTURE_Hours]]></a>.Value, "Mech Install^'Hours'!Q302", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7085", "Struct_Catwalk_GRID_STRUCTURE_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_GRID_STRUCTURE_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P302", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7086", "Struct_Catwalk_Resin_Deck_Hours", <a><![CDATA[Struct_Catwalk_Resin_Deck_Hours]]></a>.Value, "Mech Install^'Hours'!Q304", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7087", "Struct_Catwalk_Resin_Deck_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_Resin_Deck_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P304", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7088", "Struct_Catwalk_Ship_Ladders_Hours", <a><![CDATA[Struct_Catwalk_Ship_Ladders_Hours]]></a>.Value, "Mech Install^'Hours'!Q306", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("7079", "Singulated_Flow_Total_HRS", <a><![CDATA[Singulated_Flow_Total_HRS]]></a>.Value, "Mech Install^'Hours'!R326", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:51:35 PM")
+    AddProperty("7080", "Struct_Catwalk_Bar_Grating_Hours", <a><![CDATA[Struct_Catwalk_Bar_Grating_Hours]]></a>.Value, "Mech Install^'Hours'!Q303", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:49:31 PM")
+    AddProperty("7081", "Struct_Catwalk_Bar_Grating_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_Bar_Grating_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P303", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:52:52 PM")
+    AddProperty("7082", "Struct_Catwalk_CATWALK_Hours", <a><![CDATA[Struct_Catwalk_CATWALK_Hours]]></a>.Value, "Mech Install^'Hours'!Q303", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:55:49 PM")
+    AddProperty("7083", "Struct_Catwalk_CATWALK_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_CATWALK_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P307", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:56:55 PM")
+    AddProperty("7084", "Struct_Catwalk_GRID_STRUCTURE_Hours", <a><![CDATA[Struct_Catwalk_GRID_STRUCTURE_Hours]]></a>.Value, "Mech Install^'Hours'!Q302", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:58:15 PM")
+    AddProperty("7085", "Struct_Catwalk_GRID_STRUCTURE_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_GRID_STRUCTURE_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P302", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:58:39 PM")
+    AddProperty("7086", "Struct_Catwalk_Resin_Deck_Hours", <a><![CDATA[Struct_Catwalk_Resin_Deck_Hours]]></a>.Value, "Mech Install^'Hours'!Q304", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:59:29 PM")
+    AddProperty("7087", "Struct_Catwalk_Resin_Deck_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_Resin_Deck_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P304", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:00:04 PM")
+    AddProperty("7088", "Struct_Catwalk_Ship_Ladders_Hours", <a><![CDATA[Struct_Catwalk_Ship_Ladders_Hours]]></a>.Value, "Mech Install^'Hours'!Q306", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:01:45 PM")
     AddProperty("7089", "Struct_Catwalk_Ship_Ladders_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_Ship_Ladders_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P306", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7090", "Struct_Catwalk_Stair_Landing_Hours", <a><![CDATA[Struct_Catwalk_Stair_Landing_Hours]]></a>.Value, "Mech Install^'Hours'!Q305", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("7090", "Struct_Catwalk_Stair_Landing_Hours", <a><![CDATA[Struct_Catwalk_Stair_Landing_Hours]]></a>.Value, "Mech Install^'Hours'!Q305", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:02:40 PM")
     AddProperty("7091", "Struct_Catwalk_Stair_Landing_Total_Ft_SqFt", <a><![CDATA[Struct_Catwalk_Stair_Landing_Total_Ft_SqFt]]></a>.Value, "Mech Install^'Hours'!P305", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
     AddProperty("7092", "Total_Subsystem_Hours", <a><![CDATA[Total_Subsystem_Hours]]></a>.Value, "Mech Install^'Hours'!P210", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
     AddProperty("7093", "ZFA_Retrofit_Bed_Footage", <a><![CDATA[ZFA_Retrofit_Bed_Footage]]></a>.Value, "Mech Install^'Hours'!S391", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
     AddProperty("7094", "ZFA_Retrofit_Intelliq", <a><![CDATA[ZFA_Retrofit_Intelliq]]></a>.Value, "Mech Install^'Hours'!S395", "Boolean","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7095", "ZFA_Retrofit_Remove_Guard_Rail_Hours", <a><![CDATA[ZFA_Retrofit_Remove_Guard_Rail_Hours]]></a>.Value, "Mech Install^'Hours'!P391", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("7095", "ZFA_Retrofit_Remove_Guard_Rail_Hours", <a><![CDATA[ZFA_Retrofit_Remove_Guard_Rail_Hours]]></a>.Value, "Mech Install^'Hours'!P391", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:08:58 PM")
     AddProperty("7096", "ZFA_Retrofit_Remove_Guard_Rail_QTY", <a><![CDATA[ZFA_Retrofit_Remove_Guard_Rail_QTY]]></a>.Value, "Mech Install^'Hours'!O387", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:09:39 PM")
     AddProperty("7097", "ZFA_Retrofit_Remove_Rollers_Hours", <a><![CDATA[ZFA_Retrofit_Remove_Rollers_Hours]]></a>.Value, "Mech Install^'Hours'!P388", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:10:41 PM")
     AddProperty("7098", "ZFA_Retrofit_Remove_Rollers_QTY", <a><![CDATA[ZFA_Retrofit_Remove_Rollers_QTY]]></a>.Value, "Mech Install^'Hours'!O388", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:11:41 PM")
-    AddProperty("7099", "ZFA_Retrofit_Replace_Guard_Railing_Hours", <a><![CDATA[ZFA_Retrofit_Replace_Guard_Railing_Hours]]></a>.Value, "Mech Install^'Hours'!P397", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("7099", "ZFA_Retrofit_Replace_Guard_Railing_Hours", <a><![CDATA[ZFA_Retrofit_Replace_Guard_Railing_Hours]]></a>.Value, "Mech Install^'Hours'!P397", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:09:20 PM")
     AddProperty("7100", "ZFA_Retrofit_Replace_Guard_Railing_QTY", <a><![CDATA[ZFA_Retrofit_Replace_Guard_Railing_QTY]]></a>.Value, "Mech Install^'Hours'!O393", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:12:47 PM")
     AddProperty("7101", "ZFA_Retrofit_Replace_Modules_Hours", <a><![CDATA[ZFA_Retrofit_Replace_Modules_Hours]]></a>.Value, "Mech Install^'Hours'!P391", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:14:01 PM")
     AddProperty("7102", "ZFA_Retrofit_Replace_Modules_QTY", <a><![CDATA[ZFA_Retrofit_Replace_Modules_QTY]]></a>.Value, "Mech Install^'Hours'!O391", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:14:56 PM")
     AddProperty("7103", "ZFA_Retrofit_Replace_Puck_Sets_Hours", <a><![CDATA[ZFA_Retrofit_Replace_Puck_Sets_Hours]]></a>.Value, "Mech Install^'Hours'!P391", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:16:04 PM")
-    AddProperty("7104", "ZFA_Retrofit_Replace_Puck_Sets_QTY", <a><![CDATA[ZFA_Retrofit_Replace_Puck_Sets_QTY]]></a>.Value, "Mech Install^'Hours'!O394", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("7104", "ZFA_Retrofit_Replace_Puck_Sets_QTY", <a><![CDATA[ZFA_Retrofit_Replace_Puck_Sets_QTY]]></a>.Value, "Mech Install^'Hours'!O394", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:09:43 PM")
     AddProperty("7105", "ZFA_Retrofit_Replace_Rollers", <a><![CDATA[ZFA_Retrofit_Replace_Rollers]]></a>.Value, "Mech Install^'Hours'!S394", "Boolean","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
     AddProperty("7106", "ZFA_Retrofit_Replace_Rollers_Hours", <a><![CDATA[ZFA_Retrofit_Replace_Rollers_Hours]]></a>.Value, "Mech Install^'Hours'!P392", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:17:04 PM")
     AddProperty("7107", "ZFA_Retrofit_Replace_Rollers_QTY", <a><![CDATA[ZFA_Retrofit_Replace_Rollers_QTY]]></a>.Value, "Mech Install^'Hours'!O392", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:18:01 PM")
     AddProperty("7108", "ZFA_Retrofit_Roller_Centers", <a><![CDATA[ZFA_Retrofit_Roller_Centers]]></a>.Value, "Mech Install^'Hours'!S392", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
     AddProperty("7109", "ZFA_Retrofit_Roller_Count", <a><![CDATA[ZFA_Retrofit_Roller_Count]]></a>.Value, "Mech Install^'Hours'!S396", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7110", "ZFA_Retrofit_Run_Air_Tubing_Hours", <a><![CDATA[ZFA_Retrofit_Run_Air_Tubing_Hours]]></a>.Value, "Mech Install^'Hours'!P393", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("7110", "ZFA_Retrofit_Run_Air_Tubing_Hours", <a><![CDATA[ZFA_Retrofit_Run_Air_Tubing_Hours]]></a>.Value, "Mech Install^'Hours'!P393", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:10:27 PM")
     AddProperty("7111", "ZFA_Retrofit_Run_Air_Tubing_QTY", <a><![CDATA[ZFA_Retrofit_Run_Air_Tubing_QTY]]></a>.Value, "Mech Install^'Hours'!O389", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:20:28 PM")
-    AddProperty("7112", "ZFA_Retrofit_Total_hours_Hours", <a><![CDATA[ZFA_Retrofit_Total_hours_Hours]]></a>.Value, "Mech Install^'Hours'!P398", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("7112", "ZFA_Retrofit_Total_hours_Hours", <a><![CDATA[ZFA_Retrofit_Total_hours_Hours]]></a>.Value, "Mech Install^'Hours'!P398", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:13:17 PM")
     AddProperty("7113", "ZFA_Retrofit_Total_hours_per_12_ft_Bed", <a><![CDATA[ZFA_Retrofit_Total_hours_per_12_ft_Bed]]></a>.Value, "Mech Install^'Hours'!Q398", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
     AddProperty("7114", "ZFA_Retrofit_Zone_Length", <a><![CDATA[ZFA_Retrofit_Zone_Length]]></a>.Value, "Mech Install^'Hours'!S393", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
     AddProperty("6173", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
@@ -10781,64 +10781,64 @@ Option Infer On
           InitProperty("Add_Hours_Dollars_Anchors_Hours", "5777", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/11/2025 1:06:54 PM", "", "In Development",  0,16419)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Add_Hours_Dollars_Anchors_Qty", "5778", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9043)
+          InitProperty("Add_Hours_Dollars_Anchors_Qty", "5778", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 4:25:40 AM", "", "In Development",  0,16847)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Add_Hours_Dollars_Subsystem_Efficiency_Dollars", "5779", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9045)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Add_Hours_Dollars_Subsystem_Efficiency_Hours", "5780", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9047)
+          InitProperty("Add_Hours_Dollars_Subsystem_Efficiency_Hours", "5780", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 4:56:03 AM", "", "In Development",  0,16849)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Add_Hours_Dollars_Subsystem_Efficiency_Qty", "5781", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9049)
+          InitProperty("Add_Hours_Dollars_Subsystem_Efficiency_Qty", "5781", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 5:14:41 AM", "", "In Development",  0,16853)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Add_Hours_Dollars_Total_Dollars", "5782", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9051)
+          InitProperty("Add_Hours_Dollars_Total_Dollars", "5782", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 8:57:39 AM", "", "In Development",  0,16857)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Add_Hours_Dollars_Total_Hours", "5783", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9052)
+          InitProperty("Add_Hours_Dollars_Total_Hours", "5783", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 8:58:59 AM", "", "In Development",  0,16858)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Add_Hours_Dollars_Total_Qty", "5784", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9053)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_112_inches_pipe", "5785", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9054)
+          InitProperty("Air_Piping_112_inches_pipe", "5785", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:18:15 AM", "", "In Development",  0,16859)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_12_inches_pipe", "5786", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9055)
+          InitProperty("Air_Piping_12_inches_pipe", "5786", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:20:02 AM", "", "In Development",  0,16860)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_212_inches_pipe", "5787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9056)
+          InitProperty("Air_Piping_212_inches_pipe", "5787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:21:05 AM", "", "In Development",  0,16861)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_3pipe", "5788", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9057)
+          InitProperty("Air_Piping_3pipe", "5788", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:22:38 AM", "", "In Development",  0,16862)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_78_inches_pipe", "5789", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9058)
+          InitProperty("Air_Piping_78_inches_pipe", "5789", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:27:47 AM", "", "In Development",  0,16863)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_AC", "5790", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9059)
+          InitProperty("Air_Piping_AC", "5790", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:28:40 AM", "", "In Development",  0,16864)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Air_Piping_CHAINLUB", "5791", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9060)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_Dryer", "5792", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9061)
+          InitProperty("Air_Piping_Dryer", "5792", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:29:37 AM", "", "In Development",  0,16865)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Air_Piping_Factor", "7657", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 6:50:45 PM", "", "In Development",  0,15191)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_FILTERREG", "5793", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9062)
+          InitProperty("Air_Piping_FILTERREG", "5793", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:30:55 AM", "", "In Development",  0,16866)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_RedAC", "5794", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9063)
+          InitProperty("Air_Piping_RedAC", "5794", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:31:58 AM", "", "In Development",  0,16867)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_SUBTOTAL", "5795", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9064)
+          InitProperty("Air_Piping_SUBTOTAL", "5795", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:41:10 AM", "", "In Development",  0,16869)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_SUBTOTAL_Hours", "5796", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9065)
+          InitProperty("Air_Piping_SUBTOTAL_Hours", "5796", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:43:55 AM", "", "In Development",  0,16870)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Air_Piping_SUBTOTAL_Units", "5797", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9066)
@@ -10847,7 +10847,7 @@ Option Infer On
           InitProperty("Air_Piping_Total_Hours", "5798", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9067)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_Tubing", "5799", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9068)
+          InitProperty("Air_Piping_Tubing", "5799", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:33:00 AM", "", "In Development",  0,16868)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Bulk_Flow_Bottom_Guards_HRS", "5801", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/9/2025 9:39:14 AM", "", "In Development",  0,15618)
@@ -10886,7 +10886,7 @@ Option Infer On
           InitProperty("Bulk_Flow_Mount_Motors_Drives_QTY_FT", "5812", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:11 PM", "", "In Development",  0,9092)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Bulk_Flow_Total_HRS", "5813", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:11 PM", "", "In Development",  0,9094)
+          InitProperty("Bulk_Flow_Total_HRS", "5813", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:53:49 AM", "", "In Development",  0,16871)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Cost_of_Air_per_Linear_Foot", "5814", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:11 PM", "", "In Development",  0,9095)
@@ -10901,7 +10901,7 @@ Option Infer On
           InitProperty("Demo_Removed_existing_Ft", "5817", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:11 PM", "", "In Development",  0,9098)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Demo_Removed_existing_Hours", "5818", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:11 PM", "", "In Development",  0,9100)
+          InitProperty("Demo_Removed_existing_Hours", "5818", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 10:02:11 AM", "", "In Development",  0,16873)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Demo_Removed_existing_Scrap_1_or_Keep_2", "5819", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:11 PM", "", "In Development",  0,9102)
@@ -11141,7 +11141,7 @@ Option Infer On
           InitProperty("HCAD_BeltStaging_Unloading_Units", "5898", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/8/2025 9:53:09 AM", "", "In Development",  0,14360)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HCAD_Buyout_Footage", "5899", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:14 PM", "", "In Development",  0,9183)
+          InitProperty("HCAD_Buyout_Footage", "5899", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 10:07:54 AM", "", "In Development",  0,16874)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HCAD_Buyout_Total_Footage", "5900", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:14 PM", "", "In Development",  0,9184)
@@ -11471,7 +11471,7 @@ Option Infer On
           InitProperty("HCAD_GravityTrailerLoader_Unloading_Units", "6005", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/8/2025 8:35:11 AM", "", "In Development",  0,14289)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HCAD_Hanger_Seismic_Factor", "6006", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:19 PM", "", "In Development",  0,9290)
+          InitProperty("HCAD_Hanger_Seismic_Factor", "6006", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 10:16:46 AM", "", "In Development",  0,16875)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HCAD_Hanger_Total_Hours", "6007", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/7/2025 12:00:42 PM", "", "In Development",  0,13260)
@@ -11588,7 +11588,7 @@ Option Infer On
           InitProperty("HCAD_Hanger_Type_R_Rate_per_HGR", "8223", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/7/2025 11:45:51 AM", "", "In Development",  0,13246)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HCAD_Header_Steel_and_Hangers_Ea_Total_Hours", "6033", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:20 PM", "", "In Development",  0,9317)
+          InitProperty("HCAD_Header_Steel_and_Hangers_Ea_Total_Hours", "6033", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 8:16:01 AM", "", "In Development",  0,17191)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HCAD_Header_Steel_Hangers_Ea_Total_Units", "6034", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:20 PM", "", "In Development",  0,9318)
@@ -11834,7 +11834,7 @@ Option Infer On
           InitProperty("HCAD_MDR_Unloading_Units", "6113", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/8/2025 10:25:22 AM", "", "In Development",  0,14404)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HCAD_Misc_Hours", "8185", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/7/2025 7:20:30 AM", "", "In Development",  0,13206)
+          InitProperty("HCAD_Misc_Hours", "8185", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 8:22:05 AM", "", "In Development",  0,17193)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HCAD_Percent_of_Complete_System_Hrs", "8181", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/7/2025 7:06:50 AM", "", "In Development",  0,13202)
@@ -12107,10 +12107,10 @@ Option Infer On
           InitProperty("HCAD_SpiralCurvessets_Unloading_Units", "6200", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/8/2025 6:41:27 AM", "", "In Development",  0,14273)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HCAD_Total_Conveyor_Hrs", "8184", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/7/2025 7:19:41 AM", "", "In Development",  0,13205)
+          InitProperty("HCAD_Total_Conveyor_Hrs", "8184", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 10:49:42 AM", "", "In Development",  0,17244)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HCAD_Total_Subsystem_Hours", "8186", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/7/2025 7:24:29 AM", "", "In Development",  0,13207)
+          InitProperty("HCAD_Total_Subsystem_Hours", "8186", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 10:51:14 AM", "", "In Development",  0,17245)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HCAD_VBelt_Beds_Avg_Height", "6201", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:28 PM", "", "In Development",  0,9485)
@@ -12239,7 +12239,7 @@ Option Infer On
           InitProperty("Hours_Misc_Chute_Style_1_Hours", "6241", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/8/2025 1:28:13 PM", "", "In Development",  0,14459)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Hours_Misc_Chute_Style_1_Metric", "6242", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:29 PM", "", "In Development",  0,9526)
+          InitProperty("Hours_Misc_Chute_Style_1_Metric", "6242", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:01:36 AM", "", "In Development",  0,17246)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Hours_Misc_Chute_Style_1_Qty", "6243", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9527)
@@ -12254,7 +12254,7 @@ Option Infer On
           InitProperty("Hours_Misc_Chute_Style_2_Hours", "6246", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/8/2025 1:28:57 PM", "", "In Development",  0,14460)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Hours_Misc_Chute_Style_2_Metric", "6247", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9531)
+          InitProperty("Hours_Misc_Chute_Style_2_Metric", "6247", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:03:48 AM", "", "In Development",  0,17247)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Hours_Misc_Chute_Style_2_Qty", "6248", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9532)
@@ -12269,16 +12269,16 @@ Option Infer On
           InitProperty("Hours_Misc_Chute_Style_3_Hours", "6251", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/8/2025 1:29:30 PM", "", "In Development",  0,14461)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Hours_Misc_Chute_Style_3_Metric", "6252", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9536)
+          InitProperty("Hours_Misc_Chute_Style_3_Metric", "6252", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:04:09 AM", "", "In Development",  0,17248)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Hours_Misc_Chute_Style_3_Qty", "6253", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9537)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Hours_Misc_Chute_Total_Air", "6254", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9538)
+          InitProperty("Hours_Misc_Chute_Total_Air", "6254", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:11:04 AM", "", "In Development",  0,17249)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Hours_Misc_Chute_Total_Hours", "6255", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9539)
+          InitProperty("Hours_Misc_Chute_Total_Hours", "6255", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:17:21 AM", "", "In Development",  0,17250)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Hrs_Misc_80_20_Guards_Air", "6256", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9540)
@@ -13118,10 +13118,10 @@ Option Infer On
           InitProperty("Misc_Parcel_Items_Dual_crows_nest_QTY", "6526", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:46 PM", "", "In Development",  0,10073)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Misc_Parcel_Items_FT_TOTAL_FOR_AREA", "6527", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:46 PM", "", "In Development",  0,10075)
+          InitProperty("Misc_Parcel_Items_FT_TOTAL_FOR_AREA", "6527", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:20:35 AM", "", "In Development",  0,17251)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Misc_Parcel_Items_HRS_TOTAL_FOR_AREA", "6528", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:46 PM", "", "In Development",  0,10076)
+          InitProperty("Misc_Parcel_Items_HRS_TOTAL_FOR_AREA", "6528", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:22:39 AM", "", "In Development",  0,17252)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Misc_Parcel_Items_PBC_HRS", "6529", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/9/2025 9:51:40 AM", "", "In Development",  0,15625)
@@ -13169,7 +13169,7 @@ Option Infer On
           InitProperty("Misc_Parcel_Items_Straight_Chute_QTY", "6543", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:47 PM", "", "In Development",  0,10105)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Misc_Parcel_Items_Total_HRS", "6544", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:47 PM", "", "In Development",  0,10107)
+          InitProperty("Misc_Parcel_Items_Total_HRS", "6544", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:25:34 AM", "", "In Development",  0,17253)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Misc_Parcel_Items_Transition_plates_HRS", "6545", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/9/2025 9:58:45 AM", "", "In Development",  0,15630)
@@ -13592,16 +13592,16 @@ Option Infer On
           InitProperty("Plt_Cnvyr_T5_Chain_Chain_Install_QTY", "6663", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:54 PM", "", "In Development",  0,10342)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Plt_Cnvyr_Total_Air", "6664", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:54 PM", "", "In Development",  0,10344)
+          InitProperty("Plt_Cnvyr_Total_Air", "6664", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:39:34 AM", "", "In Development",  0,17254)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Plt_Cnvyr_Total_Footage", "6665", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:54 PM", "", "In Development",  0,10345)
+          InitProperty("Plt_Cnvyr_Total_Footage", "6665", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:43:42 AM", "", "In Development",  0,17255)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Plt_Cnvyr_Total_Hours", "6666", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:55 PM", "", "In Development",  0,10346)
+          InitProperty("Plt_Cnvyr_Total_Hours", "6666", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:46:58 AM", "", "In Development",  0,17256)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Plt_Cnvyr_Unloading", "6667", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:55 PM", "", "In Development",  0,10347)
+          InitProperty("Plt_Cnvyr_Unloading", "6667", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:50:59 PM", "", "In Development",  0,17434)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PRD_Conv_Lead_Men_COST", "9306", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:21:14 PM", "", "In Development",  0,16017)
@@ -13811,40 +13811,40 @@ Option Infer On
           InitProperty("Singulated_Flow_SINGULATED_FLOW_FOOTAGE_QTY_FT", "6679", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:55 PM", "", "In Development",  0,10370)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Singulated_Flow_Total_HRS", "6680", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:55 PM", "", "In Development",  0,10372)
+          InitProperty("Singulated_Flow_Total_HRS", "6680", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:51:35 PM", "", "In Development",  0,17435)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_Bar_Grating_Hours", "6681", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10373)
+          InitProperty("Struct_Catwalk_Bar_Grating_Hours", "6681", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:49:31 PM", "", "In Development",  0,17431)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_Bar_Grating_Total_Ft_SqFt", "6682", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10375)
+          InitProperty("Struct_Catwalk_Bar_Grating_Total_Ft_SqFt", "6682", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:52:52 PM", "", "In Development",  0,17438)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_CATWALK_Hours", "6683", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10377)
+          InitProperty("Struct_Catwalk_CATWALK_Hours", "6683", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:54:01 PM", "", "In Development",  0,17439)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_CATWALK_Total_Ft_SqFt", "6684", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10379)
+          InitProperty("Struct_Catwalk_CATWALK_Total_Ft_SqFt", "6684", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:56:55 PM", "", "In Development",  0,17446)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_GRID_STRUCTURE_Hours", "6685", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10381)
+          InitProperty("Struct_Catwalk_GRID_STRUCTURE_Hours", "6685", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:58:15 PM", "", "In Development",  0,17447)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_GRID_STRUCTURE_Total_Ft_SqFt", "6686", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10383)
+          InitProperty("Struct_Catwalk_GRID_STRUCTURE_Total_Ft_SqFt", "6686", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:58:39 PM", "", "In Development",  0,17448)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_Resin_Deck_Hours", "6687", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10385)
+          InitProperty("Struct_Catwalk_Resin_Deck_Hours", "6687", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:59:29 PM", "", "In Development",  0,17449)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_Resin_Deck_Total_Ft_SqFt", "6688", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10387)
+          InitProperty("Struct_Catwalk_Resin_Deck_Total_Ft_SqFt", "6688", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:00:04 PM", "", "In Development",  0,17450)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_Ship_Ladders_Hours", "6689", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10389)
+          InitProperty("Struct_Catwalk_Ship_Ladders_Hours", "6689", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:01:45 PM", "", "In Development",  0,17455)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Struct_Catwalk_Ship_Ladders_Total_Ft_SqFt", "6690", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10391)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Struct_Catwalk_Stair_Landing_Hours", "6691", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10393)
+          InitProperty("Struct_Catwalk_Stair_Landing_Hours", "6691", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:02:40 PM", "", "In Development",  0,17459)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Struct_Catwalk_Stair_Landing_Total_Ft_SqFt", "6692", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10395)
@@ -13859,7 +13859,7 @@ Option Infer On
           InitProperty("ZFA_Retrofit_Intelliq", "6695", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:56 PM", "", "In Development",  0,10399)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ZFA_Retrofit_Remove_Guard_Rail_Hours", "6696", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:57 PM", "", "In Development",  0,10400)
+          InitProperty("ZFA_Retrofit_Remove_Guard_Rail_Hours", "6696", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:08:58 PM", "", "In Development",  0,17468)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ZFA_Retrofit_Remove_Guard_Rail_QTY", "6697", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/11/2025 1:09:39 PM", "", "In Development",  0,16420)
@@ -13871,7 +13871,7 @@ Option Infer On
           InitProperty("ZFA_Retrofit_Remove_Rollers_QTY", "6699", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/11/2025 1:11:41 PM", "", "In Development",  0,16422)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ZFA_Retrofit_Replace_Guard_Railing_Hours", "6700", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:57 PM", "", "In Development",  0,10408)
+          InitProperty("ZFA_Retrofit_Replace_Guard_Railing_Hours", "6700", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:09:20 PM", "", "In Development",  0,17469)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ZFA_Retrofit_Replace_Guard_Railing_QTY", "6701", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/11/2025 1:12:47 PM", "", "In Development",  0,16423)
@@ -13886,7 +13886,7 @@ Option Infer On
           InitProperty("ZFA_Retrofit_Replace_Puck_Sets_Hours", "6704", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/11/2025 1:16:04 PM", "", "In Development",  0,16426)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ZFA_Retrofit_Replace_Puck_Sets_QTY", "6705", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:57 PM", "", "In Development",  0,10418)
+          InitProperty("ZFA_Retrofit_Replace_Puck_Sets_QTY", "6705", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:09:43 PM", "", "In Development",  0,17470)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ZFA_Retrofit_Replace_Rollers", "6706", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:57 PM", "", "In Development",  0,10420)
@@ -13904,13 +13904,13 @@ Option Infer On
           InitProperty("ZFA_Retrofit_Roller_Count", "6710", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:58 PM", "", "In Development",  0,10426)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ZFA_Retrofit_Run_Air_Tubing_Hours", "6711", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:58 PM", "", "In Development",  0,10427)
+          InitProperty("ZFA_Retrofit_Run_Air_Tubing_Hours", "6711", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:10:27 PM", "", "In Development",  0,17476)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ZFA_Retrofit_Run_Air_Tubing_QTY", "6712", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/11/2025 1:19:45 PM", "", "In Development",  0,16429)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ZFA_Retrofit_Total_hours_Hours", "6713", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:58 PM", "", "In Development",  0,10431)
+          InitProperty("ZFA_Retrofit_Total_hours_Hours", "6713", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:13:17 PM", "", "In Development",  0,17478)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ZFA_Retrofit_Total_hours_per_12_ft_Bed", "6714", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:58 PM", "", "In Development",  0,10433)
@@ -14310,7 +14310,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5778; TYPE:PF
-      Result = 0.0
+      Result = (((Me.HCAD_Linear_Footage_of_Conveyor/12)*2.5*Me.HCAD_Hanger_Seismic_Factor) - (Me.HCAD_Hanger_Total_Qty*2))+
+Me.Plt_Cnvyr_Anchors + (Me.Hrs_Misc_Work_Stations_Qty*8)
       '   END FORMULA; PROP ID:5778; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Add_Hours_Dollars_Anchors_Qty", ex.Message)
@@ -14356,7 +14357,19 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5780; TYPE:PF
-      Result = 0.0
+      Dim Sum As Double
+Sum = Me.HCAD_Total_Conveyor_Hrs+
+Me.Hours_Misc_Chute_Total_Hours+
+Me.Add_Hours_Dollars_Anchors_Hours+
+Me.Struct_Catwalk_Bar_Grating_Hours+
+Me.Struct_Catwalk_GRID_STRUCTURE_Hours+
+Me.Struct_Catwalk_CATWALK_Hours+
+Me.Struct_Catwalk_Resin_Deck_Hours+
+Me.Struct_Catwalk_Ship_Ladders_Hours+
+Me.Struct_Catwalk_Stair_Landing_Hours+
+Me.Demo_Removed_existing_Ft
+
+Result = (1-Me.Add_Hours_Dollars_Subsystem_Efficiency_Qty)*Sum
       '   END FORMULA; PROP ID:5780; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Add_Hours_Dollars_Subsystem_Efficiency_Hours", ex.Message)
@@ -14379,7 +14392,9 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5781; TYPE:PF
-      Result = 0.0
+      Dim ConveyorCostingK50 As Double
+ConveyorCostingK50 = Me.My_Conveyor(1).Miscellaneous_System_Efficiency_Percentage
+Result = ConveyorCostingK50
       '   END FORMULA; PROP ID:5781; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Add_Hours_Dollars_Subsystem_Efficiency_Qty", ex.Message)
@@ -14402,7 +14417,58 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5782; TYPE:PF
-      result = 0.0
+      Result = Me.Hrs_Misc_Powered_Spirals_Less_than_20_ft_Hours+
+Me.Hrs_Misc_Powered_Spirals_More_than_20_ft_Hours+
+Me.Hrs_Misc_80_20_Guards_Hours+
+Me.Hrs_Misc_Angle_Guarding_ft_Hours+
+Me.Hrs_Misc_AR_Induct_Chute_Hours+
+Me.Hrs_Misc_ARSAW_ARSTOWS_Hours+
+Me.Hrs_Misc_Autobag_850_Hours+
+Me.Hrs_Misc_Baffled_Shipping_Chutes_Hours+
+Me.Hrs_Misc_Ball_Transfer_Tables_Hours+
+Me.Hrs_Misc_BangerBarsHtProte_Hours+
+Me.Hrs_Misc_Bottom_Pans_Hours+
+Me.Hrs_Misc_Carton_Erector_Hours+
+Me.Hrs_Misc_Conveyor_Wipe_Down_Hours+
+Me.Hrs_Misc_CVG9_Style_Chute_Hours+
+Me.Hrs_Misc_Deflector_Plows_Hours+
+Me.Hrs_Misc_Dehnco_Work_Tables_Hours+
+Me.Hrs_Misc_Descrambler_Hours+
+Me.Hrs_Misc_Dual_Inlet_Spiral_Chute_Hours+
+Me.Hrs_Misc_Gates_Hours+
+Me.Hrs_Misc_Gaylord_Tipper_Hours+
+Me.Hrs_Misc_GMT_Auto_Unloader_Hours+
+Me.Hrs_Misc_Gravity_Spurs_Hours+
+Me.Hrs_Misc_HC_Spiral_Chute_Hours+
+Me.Hrs_Misc_Highway_Guarding_P_R_Hours+
+Me.Hrs_Misc_Intralox_Sorter_Hours+
+Me.Hrs_Misc_Merging_Spirals_Hours+
+Me.Hrs_Misc_Mesh_Ugaurd_per_linear_ft_Hours+
+Me.Hrs_Misc_Netting_linear_ft_Hours+
+Me.Hrs_Misc_PandA_Hours+
+Me.Hrs_Misc_Personnel_Fencing_Temp_Hours+
+Me.Hrs_Misc_Pick_Mod_Trash_Chutes_Hours+
+Me.Hrs_Misc_Powered_Swing_Arm_Divert_Hours+
+Me.Hrs_Misc_Proos_Chute_Hours+
+Me.Hrs_Misc_Proos_PUT_Walls_Hours+
+Me.Hrs_Misc_QA_Chute_Hours+
+Me.Hrs_Misc_Semi_Auto_Taper_Hours+
+Me.Hrs_Misc_Singulator_Hours+
+Me.Hrs_Misc_SLAMS_Hours+
+Me.Hrs_Misc_SmartPac_Machines_Hours+
+Me.Hrs_Misc_Snowplow_Chute_Hours+
+Me.Hrs_Misc_Sound_Abatement_Hood_Hours+
+Me.Hrs_Misc_Spiral_Chutes_Hours+
+Me.Hrs_Misc_Spiral_Netting_Hours+
+Me.Hrs_Misc_Stuff_It_De_Stuff_It_Hours+
+Me.Hrs_Misc_Tie_Ins_Hours+
+Me.Hrs_Misc_Tote_Plows_Hours+
+Me.Hrs_Misc_Tote_Shelves_per_linear_ft_Hours+
+Me.Hrs_Misc_UPS_90_Curve_Chute_Hours+
+Me.Hrs_Misc_USS_Tote_Stacker_Hours+
+Me.Hrs_Misc_USS_VICS_Hours+
+Me.Hrs_Misc_Vertical_Lifts_Hours+
+Me.Hrs_Misc_Work_Stations_Hours
       '   END FORMULA; PROP ID:5782; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Add_Hours_Dollars_Total_Dollars", ex.Message)
@@ -14425,7 +14491,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5783; TYPE:PF
-      result = 0.0
+      Result = Me.Add_Hours_Dollars_Anchors_Hours + Me.Add_Hours_Dollars_Subsystem_Efficiency_Hours
       '   END FORMULA; PROP ID:5783; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Add_Hours_Dollars_Total_Hours", ex.Message)
@@ -14471,7 +14537,19 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5785; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB7 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB7 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB7
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5785; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_112_inches_pipe", ex.Message)
@@ -14494,7 +14572,19 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5786; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB9 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB9 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB9
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5786; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_12_inches_pipe", ex.Message)
@@ -14517,7 +14607,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5787; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB6 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB6 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB6
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5787; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_212_inches_pipe", ex.Message)
@@ -14540,7 +14643,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5788; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB5 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB5 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB5
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5788; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_3pipe", ex.Message)
@@ -14563,7 +14679,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5789; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB8 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB8 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB8
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5789; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_78_inches_pipe", ex.Message)
@@ -14586,7 +14715,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5790; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB13 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB13 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_AC
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB13
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5790; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_AC", ex.Message)
@@ -14632,7 +14774,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5792; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB15 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB15 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Dryer
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB15
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5792; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_Dryer", ex.Message)
@@ -14678,7 +14833,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5793; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB12 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB12 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Filter_Reg
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB12
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5793; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_FILTERREG", ex.Message)
@@ -14701,7 +14869,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5794; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB14 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB14 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Red_AC
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB14
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5794; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_RedAC", ex.Message)
@@ -14724,7 +14905,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5795; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB17 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB17 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Costs
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB17
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5795; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_SUBTOTAL", ex.Message)
@@ -14747,7 +14941,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5796; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB18 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB18 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Hours
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB18
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5796; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_SUBTOTAL_Hours", ex.Message)
@@ -14816,7 +15023,20 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5799; TYPE:PF
-      result = 0.0
+      Dim AirPipingM4 As Double
+Dim AirPipingB11 As Double
+Dim Y2 As Double
+
+AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+AirPipingB11 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Tubing
+
+Y2 = 1
+
+If(AirPipingM4=Y2)
+	Result = AirPipingB11
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:5799; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_Tubing", ex.Message)
@@ -15163,7 +15383,10 @@ Result = MetricsC119
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5813; TYPE:PF
-      result = 0.0
+      Result = Me.Bulk_Flow_Bulk_FLOW_FOOTAGE_HRS+
+Me.Bulk_Flow_Hand_rail_and_cable_HRS+
+Me.Bulk_Flow_Mount_Motors_Drives_HRS+
+Me.Bulk_Flow_Bottom_Guards_HRS
       '   END FORMULA; PROP ID:5813; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Bulk_Flow_Total_HRS", ex.Message)
@@ -15317,7 +15540,11 @@ Next
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5818; TYPE:PF
-      Result = 0.0
+      Dim MetricsM114 As Double
+
+MetricsM114 = 0.25'TODO: check later if there is any property required for this?
+
+Result = Math.Ceiling(Me.Demo_Removed_existing_Scrap_1_or_Keep_2 * Me.Demo_Removed_existing_Ft * MetricsM114)
       '   END FORMULA; PROP ID:5818; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Demo_Removed_existing_Hours", ex.Message)
@@ -17913,7 +18140,14 @@ Result = Me.HCAD_BeltStaging_Total_Footage/MetricsL10
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5899; TYPE:PF
-      result = 0.0
+      Result = Me.HCAD_Chutes_Total_Footage+
+Me.HCAD_ServoInductUnits_Total_Units+
+Me.HCAD_FlatBeltCurves_Total_Footage+
+Me.HCAD_FlatBeltCurves_Total_Units+
+Me.HCAD_SpiralCurvessets_Total_Footage+
+Me.HCAD_SpiralCurvessets_Total_Units+
+Me.HCAD_PoweredTrailerLoader_Total_Footage+
+Me.HCAD_GravityTrailerLoader_Total_Footage
       '   END FORMULA; PROP ID:5899; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_HCAD_Buyout_Footage", ex.Message)
@@ -21316,7 +21550,11 @@ Result = Me.HCAD_GravityTrailerLoader_Unloading_Units*MetricsI18
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6006; TYPE:PF
-      result = 0.0
+      Dim ConveyorCostingI17 As Double
+
+ConveyorCostingI17 = Me.My_Conveyor(1).Factors_Seismic
+
+Result = ConveyorCostingI17
       '   END FORMULA; PROP ID:6006; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_HCAD_Hanger_Seismic_Factor", ex.Message)
@@ -22235,7 +22473,7 @@ Me.HCAD_Hanger_Type_R_Qty
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6033; TYPE:PF
-      result = 0.0
+      Result = Me.HCAD_Hanger_Total_Hours
       '   END FORMULA; PROP ID:6033; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_HCAD_Header_Steel_and_Hangers_Ea_Total_Hours", ex.Message)
@@ -24917,7 +25155,15 @@ Result = Me.HCAD_MDR_Total_Footage/MetricsL17
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8185; TYPE:PF
-      result = 0.0
+      Result = Me.Hours_Misc_Chute_Total_Hours+
+Me.Add_Hours_Dollars_Total_Hours+
+Me.Struct_Catwalk_GRID_STRUCTURE_Hours+
+Me.Struct_Catwalk_Bar_Grating_Hours+
+Me.Struct_Catwalk_CATWALK_Hours+
+Me.Struct_Catwalk_Resin_Deck_Hours+
+Me.Struct_Catwalk_Ship_Ladders_Hours+
+Me.Struct_Catwalk_Stair_Landing_Hours+
+Me.Demo_Removed_existing_Hours
       '   END FORMULA; PROP ID:8185; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_HCAD_Misc_Hours", ex.Message)
@@ -27633,7 +27879,33 @@ Result = Me.HCAD_SpiralCurvessets_Unloading_Units*MetricsI24
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8184; TYPE:PF
-      result = 0.0
+      Result = Me.HCAD_Gravity_Total_Hours+
+Me.HCAD_BeltonSlider_Total_Hours+
+Me.HCAD_BeltonRoller_Total_Hours+
+Me.HCAD_BeltBrakeMeter_Total_Hours+
+Me.HCAD_ECCTrashBelt_Total_Hours+
+Me.HCAD_BeltStaging_Total_Hours+
+Me.HCAD_VBelt_Total_PHours+
+Me.HCAD_IntelliMerge_Total_Hours+
+Me.HCAD_IntelliQAccuglide_Total_Hours+
+Me.HCAD_WheelDivert_Total_Hours+
+Me.HCAD_IntelliFlow_Total_Hours+
+Me.HCAD_ShoeSorter_Total_Hours+
+Me.HCAD_MDR_Total_Hours+
+Me.HCAD_GravityTrailerLoader_Total_Hours+
+Me.HCAD_PoweredTrailerLoader_Total_Hours+
+Me.HCAD_Chutes_Total_Hours+
+Me.HCAD_ScalesSealersStrappersTotal_Hours+
+Me.HCAD_ServoInductunits_Total_Hours+
+Me.HCAD_FlatBeltCurves_Total_Hours+
+Me.HCAD_SpiralCurvessets_Total_Hours+
+Me.HCAD_Crossovers_Total_Hours+
+Me.HCAD_Header_Steel_and_Hangers_Ea_Total_Hours+
+Me.Air_Piping_Total_Hours+
+Me.Misc_Parcel_Items_HRS_TOTAL_FOR_AREA+
+Me.Plt_Cnvyr_Unloading+
+Me.Plt_Cnvyr_Total_Hours+
+Me.ZFA_Retrofit_Total_hours_Hours
       '   END FORMULA; PROP ID:8184; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_HCAD_Total_Conveyor_Hrs", ex.Message)
@@ -27656,7 +27928,7 @@ Result = Me.HCAD_SpiralCurvessets_Unloading_Units*MetricsI24
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8186; TYPE:PF
-      result = 0.0
+      Result = Me.HCAD_Total_Conveyor_Hrs + Me.HCAD_Misc_Hours
       '   END FORMULA; PROP ID:8186; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_HCAD_Total_Subsystem_Hours", ex.Message)
@@ -29031,7 +29303,7 @@ Result = Me.HCAD_WheelDivert_Total_Footage/MetricsL14
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6242; TYPE:PF
-      result = 0.0
+      Result = Me.Parent.My_Chute(1).MEI_Chutes_Style_1_Total_Hours_per_Chute
       '   END FORMULA; PROP ID:6242; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Hours_Misc_Chute_Style_1_Metric", ex.Message)
@@ -29146,7 +29418,7 @@ Result = Me.HCAD_WheelDivert_Total_Footage/MetricsL14
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6247; TYPE:PF
-      result = 0.0
+      Result = Me.Parent.My_Chute(1).MEI_Chutes_Style_2_Total_Hours_per_Chute
       '   END FORMULA; PROP ID:6247; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Hours_Misc_Chute_Style_2_Metric", ex.Message)
@@ -29261,7 +29533,7 @@ Result = Me.HCAD_WheelDivert_Total_Footage/MetricsL14
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6252; TYPE:PF
-      result = 0.0
+      Result = Me.Parent.My_Chute(1).MEI_Chutes_Style_3_Total_Hours_per_Chute
       '   END FORMULA; PROP ID:6252; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Hours_Misc_Chute_Style_3_Metric", ex.Message)
@@ -29307,7 +29579,12 @@ Result = Me.HCAD_WheelDivert_Total_Footage/MetricsL14
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6254; TYPE:PF
-      result = 0.0
+      Result = Me.Hrs_Misc_Autobag_850_Air+
+Me.Hrs_Misc_Baffled_Shipping_Chutes_Air+
+Me.Hrs_Misc_Ball_Transfer_Tables_Air+
+Me.Hrs_Misc_CVG9_Style_Chute_Air+
+Me.Hrs_Misc_Dual_Inlet_Spiral_Chute_Air+
+Me.Hrs_Misc_Gates_Air
       '   END FORMULA; PROP ID:6254; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Hours_Misc_Chute_Total_Air", ex.Message)
@@ -29330,7 +29607,61 @@ Result = Me.HCAD_WheelDivert_Total_Footage/MetricsL14
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6255; TYPE:PF
-      result = 0.0
+      Result = Me.Hrs_Misc_Powered_Spirals_Less_than_20_ft_Hours+
+Me.Hrs_Misc_Powered_Spirals_More_than_20_ft_Hours+
+Me.Hours_Misc_Chute_Style_1_Hours+
+Me.Hours_Misc_Chute_Style_2_Hours+
+Me.Hours_Misc_Chute_Style_3_Hours+
+Me.Hrs_Misc_80_20_Guards_Hours+
+Me.Hrs_Misc_Angle_Guarding_ft_Hours+
+Me.Hrs_Misc_AR_Induct_Chute_Hours+
+Me.Hrs_Misc_ARSAW_ARSTOWS_Hours+
+Me.Hrs_Misc_Autobag_850_Hours+
+Me.Hrs_Misc_Baffled_Shipping_Chutes_Hours+
+Me.Hrs_Misc_Ball_Transfer_Tables_Hours+
+Me.Hrs_Misc_BangerBarsHtProte_Hours+
+Me.Hrs_Misc_Bottom_Pans_Hours+
+Me.Hrs_Misc_Carton_Erector_Hours+
+Me.Hrs_Misc_Conveyor_Wipe_Down_Hours+
+Me.Hrs_Misc_CVG9_Style_Chute_Hours+
+Me.Hrs_Misc_Deflector_Plows_Hours+
+Me.Hrs_Misc_Dehnco_Work_Tables_Hours+
+Me.Hrs_Misc_Descrambler_Hours+
+Me.Hrs_Misc_Dual_Inlet_Spiral_Chute_Hours+
+Me.Hrs_Misc_Gates_Hours+
+Me.Hrs_Misc_Gaylord_Tipper_Hours+
+Me.Hrs_Misc_GMT_Auto_Unloader_Hours+
+Me.Hrs_Misc_Gravity_Spurs_Hours+
+Me.Hrs_Misc_HC_Spiral_Chute_Hours+
+Me.Hrs_Misc_Highway_Guarding_P_R_Hours+
+Me.Hrs_Misc_Intralox_Sorter_Hours+
+Me.Hrs_Misc_Merging_Spirals_Hours+
+Me.Hrs_Misc_Mesh_Ugaurd_per_linear_ft_Hours+
+Me.Hrs_Misc_Netting_linear_ft_Hours+
+Me.Hrs_Misc_PandA_Hours+
+Me.Hrs_Misc_Personnel_Fencing_Temp_Hours+
+Me.Hrs_Misc_Pick_Mod_Trash_Chutes_Hours+
+Me.Hrs_Misc_Powered_Swing_Arm_Divert_Hours+
+Me.Hrs_Misc_Proos_Chute_Hours+
+Me.Hrs_Misc_Proos_PUT_Walls_Hours+
+Me.Hrs_Misc_QA_Chute_Hours+
+Me.Hrs_Misc_Semi_Auto_Taper_Hours+
+Me.Hrs_Misc_Singulator_Hours+
+Me.Hrs_Misc_SLAMS_Hours+
+Me.Hrs_Misc_SmartPac_Machines_Hours+
+Me.Hrs_Misc_Snowplow_Chute_Hours+
+Me.Hrs_Misc_Sound_Abatement_Hood_Hours+
+Me.Hrs_Misc_Spiral_Chutes_Hours+
+Me.Hrs_Misc_Spiral_Netting_Hours+
+Me.Hrs_Misc_Stuff_It_De_Stuff_It_Hours+
+Me.Hrs_Misc_Tie_Ins_Hours+
+Me.Hrs_Misc_Tote_Plows_Hours+
+Me.Hrs_Misc_Tote_Shelves_per_linear_ft_Hours+
+Me.Hrs_Misc_UPS_90_Curve_Chute_Hours+
+Me.Hrs_Misc_USS_Tote_Stacker_Hours+
+Me.Hrs_Misc_USS_VICS_Hours+
+Me.Hrs_Misc_Vertical_Lifts_Hours+
+Me.Hrs_Misc_Work_Stations_Hours
       '   END FORMULA; PROP ID:6255; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Hours_Misc_Chute_Total_Hours", ex.Message)
@@ -36430,7 +36761,7 @@ Result = MetricsB136
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6527; TYPE:PF
-      result = 0.0
+      Result = Me.Bulk_Flow_BULK_FLOW_FOOTAGE_QTY_FT + Me.Singulated_Flow_SINGULATED_FLOW_FOOTAGE_QTY_FT
       '   END FORMULA; PROP ID:6527; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Misc_Parcel_Items_FT_TOTAL_FOR_AREA", ex.Message)
@@ -36453,7 +36784,7 @@ Result = MetricsB136
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6528; TYPE:PF
-      result = 0.0
+      Result = Me.Bulk_Flow_Total_HRS + Me.Singulated_Flow_Total_HRS + Me.Misc_Parcel_Items_Total_HRS
       '   END FORMULA; PROP ID:6528; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Misc_Parcel_Items_HRS_TOTAL_FOR_AREA", ex.Message)
@@ -36881,7 +37212,15 @@ Result = MetricsB134
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6544; TYPE:PF
-      result = 0.0
+      Result = Me.Misc_Parcel_Items_PBC_HRS+
+Me.Misc_Parcel_Items_Transition_plates_HRS+
+Me.Misc_Parcel_Items_Spiral_Chute_HRS+
+Me.Misc_Parcel_Items_Curve_Chute_HRS+
+Me.Misc_Parcel_Items_Straight_Chute_HRS+
+Me.Misc_Parcel_Items_Single_crows_nest_HRS+
+Me.Misc_Parcel_Items_Dual_crows_nest_HRS+
+Me.Misc_Parcel_Items_90deg_platform_for_PBC_HRS+
+Me.Misc_Parcel_Items_Singulator_HRS
       '   END FORMULA; PROP ID:6544; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Misc_Parcel_Items_Total_HRS", ex.Message)
@@ -40519,7 +40858,36 @@ Result = MetricsB153
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6664; TYPE:PF
-      result = 0.0
+      Result = Me.Plt_Cnvyr_CDLR_0_to_8_ft_Units_Air+
+Me.Plt_Cnvyr_CDLR_12_1_to_18_ft_Units_Air+
+Me.Plt_Cnvyr_CDLR_18_1_ft_and_up_Units_Air+
+Me.Plt_Cnvyr_CDLR_8_1_to_12_ft_Units_Air+
+Me.Plt_Cnvyr_T5_Chain_0_to_5_ft_Units_Air+
+Me.Plt_Cnvyr_MISC_Lift_large_Air+
+Me.Plt_Cnvyr_MISC_Lift_normal_Air+
+Me.Plt_Cnvyr_MISC_Transfer_Air+
+Me.Plt_Cnvyr_MISC_Turntable_Air+
+Me.Plt_Cnvyr_T5_Chain_10_1_to_15_ft_Units_Air+
+Me.Plt_Cnvyr_T5_Chain_15_1_ft_and_up_Units_Air+
+Me.Plt_Cnvyr_T5_Chain_5_1_to_10_ft_Units_Air+
+Me.Plt_Cnvyr_MISC_Deflector_Plows_Air+
+Me.Plt_Cnvyr_MISC_Empty_Pallet_Collector_Air+
+Me.Plt_Cnvyr_MISC_Fencing_Footage_Air+
+Me.Plt_Cnvyr_MISC_Fencing_Gates_Air+
+Me.Plt_Cnvyr_MISC_Gravity_Spurs_Air+
+Me.Plt_Cnvyr_MISC_Puller_Air+
+Me.Plt_Cnvyr_MISC_Pusher_Air+
+Me.Plt_Cnvyr_MISC_Robot_Air+
+Me.Plt_Cnvyr_MISC_Sizing_Station_Air+
+Me.Plt_Cnvyr_MISC_Transfer_Car_Air+
+Me.Plt_Cnvyr_MISC_940_Palletizer_Air+
+Me.Plt_Cnvyr_MISC_941_Palletizer_Air+
+Me.Plt_Cnvyr_MISC_Chain_Trans_Cnvyr_Air_Op_Wed_Air+
+Me.Plt_Cnvyr_MISC_Flr_Mount_Truck_Pallet_Stop_Air+
+Me.Plt_Cnvyr_MISC_Light_Curtain_Air+
+Me.Plt_Cnvyr_MISC_Pallet_Gates_Air+
+Me.Plt_Cnvyr_MISC_Plt_Flow_Rails_per_lin_foot_Air+
+Me.Plt_Cnvyr_MISC_SWR_Strchwrpr_Rota_Turntable_Air
       '   END FORMULA; PROP ID:6664; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Plt_Cnvyr_Total_Air", ex.Message)
@@ -40542,7 +40910,15 @@ Result = MetricsB153
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6665; TYPE:PF
-      result = 0.0
+      Result = Me.Plt_Cnvyr_CDLR_0_to_8_ft_Units_Footage+
+Me.Plt_Cnvyr_CDLR_12_1_to_18_ft_Units_Footage+
+Me.Plt_Cnvyr_CDLR_18_1_ft_and_up_Units_Footage+
+Me.Plt_Cnvyr_CDLR_8_1_to_12_ft_Units_Footage+
+Me.Plt_Cnvyr_T5_Chain_0_to_5_ft_Units_Footage+
+Me.Plt_Cnvyr_T5_Chain_10_1_to_15_ft_Units_Footage+
+Me.Plt_Cnvyr_T5_Chain_15_1_ft_and_up_Units_Footage+
+Me.Plt_Cnvyr_T5_Chain_5_1_to_10_ft_Units_Footage+
+Me.Plt_Cnvyr_MISC_Chain_Trans_Cnvyr_Air_Op_Wed_Footag
       '   END FORMULA; PROP ID:6665; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Plt_Cnvyr_Total_Footage", ex.Message)
@@ -40565,7 +40941,38 @@ Result = MetricsB153
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6666; TYPE:PF
-      result = 0.0
+      Result = Me.Plt_Cnvyr_CDLR_0_to_8_ft_Units_Hours+
+Me.Plt_Cnvyr_CDLR_8_1_to_12_ft_Units_Hours+
+Me.Plt_Cnvyr_CDLR_12_1_to_18_ft_Units_Hours+
+Me.Plt_Cnvyr_CDLR_18_1_ft_and_up_Units_Hours+
+Me.Plt_Cnvyr_T5_Chain_0_to_5_ft_Units_Hours+
+Me.Plt_Cnvyr_MISC_Lift_large_Hours+
+Me.Plt_Cnvyr_MISC_Lift_normal_Hours+
+Me.Plt_Cnvyr_MISC_Supports_Hours+
+Me.Plt_Cnvyr_MISC_Transfer_Hours+
+Me.Plt_Cnvyr_MISC_Turntable_Hours+
+Me.Plt_Cnvyr_T5_Chain_10_1_to_15_ft_Units_Hours+
+Me.Plt_Cnvyr_T5_Chain_15_1_ft_and_up_Units_Hours+
+Me.Plt_Cnvyr_T5_Chain_5_1_to_10_ft_Units_Hours+
+Me.Plt_Cnvyr_T5_Chain_Chain_Install_Hours+
+Me.Plt_Cnvyr_MISC_Deflector_Plows_Hours+
+Me.Plt_Cnvyr_MISC_Empty_Pallet_Collector_Hours+
+Me.Plt_Cnvyr_MISC_Fencing_Footage_Hours+
+Me.Plt_Cnvyr_MISC_Fencing_Gates_Hours+
+Me.Plt_Cnvyr_MISC_Gravity_Spurs_Hours+
+Me.Plt_Cnvyr_MISC_Puller_Hours+
+Me.Plt_Cnvyr_MISC_Pusher_Hours+
+Me.Plt_Cnvyr_MISC_Robot_Hours+
+Me.Plt_Cnvyr_MISC_Sizing_Station_Hours+
+Me.Plt_Cnvyr_MISC_Transfer_Car_Hours+
+Me.Plt_Cnvyr_MISC_940_Palletizer_Hours+
+Me.Plt_Cnvyr_MISC_941_Palletizer_Hours+
+Me.Plt_Cnvyr_MISC_SWR_Strchwrpr_Rota_Turntable_Hours+
+Me.Plt_Cnvyr_MISC_Chain_Trans_Cnvyr_Air_Op_Wed_Hours+
+Me.Plt_Cnvyr_MISC_Flr_Mount_Truck_Pallet_Stop_Hours+
+Me.Plt_Cnvyr_MISC_Light_Curtain_Hours+
+Me.Plt_Cnvyr_MISC_Pallet_Gates_Hours+
+Me.Plt_Cnvyr_MISC_Plt_Flow_Rails_per_lin_foot_Hours
       '   END FORMULA; PROP ID:6666; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Plt_Cnvyr_Total_Hours", ex.Message)
@@ -40588,7 +40995,25 @@ Result = MetricsB153
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6667; TYPE:PF
-      result = 0.0
+      Result = Me.Plt_Cnvyr_CDLR_0_to_8_ft_Units_QTY+
+Me.Plt_Cnvyr_CDLR_12_1_to_18_ft_Units_QTY+
+Me.Plt_Cnvyr_CDLR_18_1_ft_and_up_Units_QTY+
+Me.Plt_Cnvyr_CDLR_8_1_to_12_ft_Units_QTY+
+Me.Plt_Cnvyr_T5_Chain_0_to_5_ft_Units_QTY+
+Me.Plt_Cnvyr_MISC_Lift_large_QTY+
+Me.Plt_Cnvyr_MISC_Lift_normal_QTY+
+Me.Plt_Cnvyr_MISC_Supports_QTY+
+Me.Plt_Cnvyr_MISC_Transfer_QTY+
+Me.Plt_Cnvyr_MISC_Turntable_QTY+
+Me.Plt_Cnvyr_T5_Chain_10_1_to_15_ft_Units_QTY+
+Me.Plt_Cnvyr_T5_Chain_15_1_ft_and_up_Units_QTY+
+Me.Plt_Cnvyr_T5_Chain_5_1_to_10_ft_Units_QTY+
+Me.Plt_Cnvyr_MISC_Empty_Pallet_Collector_QTY+
+Me.Plt_Cnvyr_MISC_Puller_QTY+
+Me.Plt_Cnvyr_MISC_Pusher_QTY+
+Me.Plt_Cnvyr_MISC_Robot_QTY+
+Me.Plt_Cnvyr_MISC_Sizing_Station_QTY+
+Me.Plt_Cnvyr_MISC_Transfer_Car_QTY
       '   END FORMULA; PROP ID:6667; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Plt_Cnvyr_Unloading", ex.Message)
@@ -42502,7 +42927,10 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6680; TYPE:PF
-      result = 0.0
+      Result = Me.Singulated_Flow_SINGULATED_FLOW_FOOTAGE_HRS+
+Me.Singulated_Flow_Hand_rail_and_cable_HRS+
+Me.Singulated_Flow_Mount_Motors_Drives_HRS+
+Me.Singulated_Flow_Bottom_Guards_HRS
       '   END FORMULA; PROP ID:6680; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Singulated_Flow_Total_HRS", ex.Message)
@@ -42525,7 +42953,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6681; TYPE:PF
-      Result = 0.0
+      Result =  Me.My_CP_Structures_Platform(1).BarGratingHours
       '   END FORMULA; PROP ID:6681; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_Bar_Grating_Hours", ex.Message)
@@ -42548,7 +42976,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6682; TYPE:PF
-      Result = 0.0
+      Result = Me.My_CP_Structures_Platform(1).BarGratingFootage
       '   END FORMULA; PROP ID:6682; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_Bar_Grating_Total_Ft_SqFt", ex.Message)
@@ -42571,7 +42999,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6683; TYPE:PF
-      Result = 0.0
+      Result = Me.My_CP_Structures_Platform(1).CatwalkHours
       '   END FORMULA; PROP ID:6683; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_CATWALK_Hours", ex.Message)
@@ -42594,7 +43022,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6684; TYPE:PF
-      Result = 0.0
+      Result = Me.My_CP_Structures_Platform(1).CatwalkLinearFeet
       '   END FORMULA; PROP ID:6684; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_CATWALK_Total_Ft_SqFt", ex.Message)
@@ -42617,7 +43045,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6685; TYPE:PF
-      Result = 0.0
+      Result = Me.My_CP_Structures_Platform(1).GridStructureHours
       '   END FORMULA; PROP ID:6685; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_GRID_STRUCTURE_Hours", ex.Message)
@@ -42640,7 +43068,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6686; TYPE:PF
-      Result = 0.0
+      Result = Me.My_CP_Structures_Platform(1).GridStructureFootage
       '   END FORMULA; PROP ID:6686; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_GRID_STRUCTURE_Total_Ft_SqFt", ex.Message)
@@ -42663,7 +43091,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6687; TYPE:PF
-      Result = 0.0
+      Result = Me.My_CP_Structures_Platform(1).ResindeckHours
       '   END FORMULA; PROP ID:6687; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_Resin_Deck_Hours", ex.Message)
@@ -42686,7 +43114,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6688; TYPE:PF
-      Result = 0.0
+      Result = Me.My_CP_Structures_Platform(1).ResindeckFootage
       '   END FORMULA; PROP ID:6688; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_Resin_Deck_Total_Ft_SqFt", ex.Message)
@@ -42709,7 +43137,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6689; TYPE:PF
-      Result = 0.0
+      Result = Me.My_CP_Structures_Platform(1).LadderHours
       '   END FORMULA; PROP ID:6689; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_Ship_Ladders_Hours", ex.Message)
@@ -42755,7 +43183,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6691; TYPE:PF
-      Result = 0.0
+      Result = Me.My_CP_Structures_Platform(1).StairHours
       '   END FORMULA; PROP ID:6691; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Struct_Catwalk_Stair_Landing_Hours", ex.Message)
@@ -42870,7 +43298,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6696; TYPE:PF
-      Result = 0.0
+      Result = Me.ZFA_Retrofit_Remove_Guard_Rail_QTY / 12 *0.125
       '   END FORMULA; PROP ID:6696; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_ZFA_Retrofit_Remove_Guard_Rail_Hours", ex.Message)
@@ -42962,7 +43390,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6700; TYPE:PF
-      Result = 0.0
+      Result = Me.ZFA_Retrofit_Replace_Guard_Railing_QTY / 12 * 0.08333
       '   END FORMULA; PROP ID:6700; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_ZFA_Retrofit_Replace_Guard_Railing_Hours", ex.Message)
@@ -43077,7 +43505,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6705; TYPE:PF
-      Result = 0.0
+      Result = Me.ZFA_Retrofit_Bed_Footage / 12 * 4
       '   END FORMULA; PROP ID:6705; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_ZFA_Retrofit_Replace_Puck_Sets_QTY", ex.Message)
@@ -43215,7 +43643,7 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6711; TYPE:PF
-      Result = 0.0
+      Result = Me.ZFA_Retrofit_Run_Air_Tubing_QTY / 12 * 0.25
       '   END FORMULA; PROP ID:6711; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_ZFA_Retrofit_Run_Air_Tubing_Hours", ex.Message)
@@ -43261,7 +43689,13 @@ Result = MetricsB123
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6713; TYPE:PF
-      Result = 0.0
+      Result = Me.ZFA_Retrofit_Remove_Guard_Rail_Hours+
+Me.ZFA_Retrofit_Remove_Rollers_Hours+
+Me.ZFA_Retrofit_Run_Air_Tubing_Hours+
+Me.ZFA_Retrofit_Replace_Guard_Railing_Hours+
+Me.ZFA_Retrofit_Replace_Modules_Hours+
+Me.ZFA_Retrofit_Replace_Puck_Sets_Hours+
+Me.ZFA_Retrofit_Replace_Rollers_Hours
       '   END FORMULA; PROP ID:6713; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_ZFA_Retrofit_Total_hours_Hours", ex.Message)

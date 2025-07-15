@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: IGS_AppCalc_App
-'$ GenerateDate: 07/12/2025 20:30:33
+'$ GenerateDate: 07/15/2025 13:30:28
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -90,7 +90,7 @@ Option Infer On
         Result = Process_DefaultProcess______Setup_Debug_COMMENT()
         
         Case "100"
-        Result = Process_DefaultProcess_______Scanner_Config___Debug_COMMENT()
+        Result = Process_DefaultProcess______Scanner_Config_Debug_COMMENT()
         End Select
         End Select
       
@@ -118,7 +118,7 @@ Option Infer On
         Result = Process_DefaultProcess______Setup_Debug_STATUS()
         
         Case "100"
-        Result = Process_DefaultProcess_______Scanner_Config___Debug_STATUS()
+        Result = Process_DefaultProcess______Scanner_Config_Debug_STATUS()
         End Select
         End Select
       
@@ -359,12 +359,6 @@ Option Infer On
       End Get
       End Property
     
-      Public ReadOnly Property [Scan_Config]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("Scan_Config")
-      End Get
-      End Property
-    
       Public ReadOnly Property [Scan_Configurations]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Scan_Configurations")
@@ -374,12 +368,6 @@ Option Infer On
       Public ReadOnly Property [Setup]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Setup")
-      End Get
-      End Property
-    
-      Public ReadOnly Property [SFDC_PRD_Local]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("SFDC_PRD_Local")
       End Get
       End Property
     
@@ -586,7 +574,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_AppCalc_App", <a><![CDATA[IGS_AppCalc_App]]></a>.Value, 116, "APCTMP01",  "N", "N", True, True, "In Development", "", "App Calc Top Part", "", "", "",  "GLOBAL\H601424", "07/12/2025 20:30:24")
+    InitPart("IGS_AppCalc_App", <a><![CDATA[IGS_AppCalc_App]]></a>.Value, 116, "APCTMP01",  "N", "N", True, True, "In Development", "", "App Calc Top Part", "", "", "",  "GLOBAL\H601424", "07/15/2025 13:08:15")
     AddProperty("4535", "App_Calc_Name", <a><![CDATA[App_Calc_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 8:26:13 PM")
     AddProperty("1521", "Approved_By", <a><![CDATA[Approved By]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/28/2025 5:13:01 AM")
     AddProperty("1522", "Approved_Date", <a><![CDATA[Approved Date]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/28/2025 5:13:01 AM")
@@ -650,10 +638,6 @@ Option Infer On
       
         oSubpart.AddVPF (135, "APC_Scan_Belt", "APC_Scan_Belt")
       
-      oSubpart = AddSubpart(35,"Scan_Config", <a><![CDATA[Scan_Config]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "3/26/2025 1:58:22 AM")
-      
-        oSubpart.AddVPF (121, "APC_Scan_Config", "APC_Scan_Config")
-      
       oSubpart = AddSubpart(332,"Scan_Configurations", <a><![CDATA[Scan_Configurations]]></a>.Value, "MN", "", "General", 9999, "", "GLOBAL\H601424", "7/11/2025 7:12:10 PM")
       
         oSubpart.AddVPF (417, "APC_Scan_Configuration", "APC_Scan_Configuration")
@@ -661,10 +645,6 @@ Option Infer On
       oSubpart = AddSubpart(33,"Setup", <a><![CDATA[Setup]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "6/18/2025 8:58:13 PM")
       
         oSubpart.AddVPF (119, "APC_Setup", "APC_Setup")
-      
-      oSubpart = AddSubpart(298,"SFDC_PRD_Local", <a><![CDATA[SFDC_PRD_Local]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/11/2025 5:57:05 PM")
-      
-        oSubpart.AddVPF (163, "SFD_Salesforce_PRD_Header_Mock", "SFD_Salesforce_PRD_Header_Mock")
       
       oSubpart = AddSubpart(34,"Sortation", <a><![CDATA[Sortation]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "3/26/2025 1:58:22 AM")
       
@@ -686,9 +666,9 @@ Option Infer On
       
         oSubpart.AddVPF (127, "APC_Zipper_Merge", "APC_Zipper_Merge")
       
-      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "Connection to the PRD That controls this App Calc", "114", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/3/2025 4:55:12 PM")
+      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "Connection to the PRD That controls this App Calc", "114", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 5:20:47 PM")
       
-        oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
+        oConnection.AddVPF(162, "APC_Advanced_Calcs")
       
     End Sub
 
@@ -708,7 +688,7 @@ Option Infer On
         Initialize_Process_DefaultProcess_Instructions()
         Initialize_Process_DefaultProcess_Setup()
         Initialize_Process_DefaultProcess______Setup_Debug()
-        Initialize_Process_DefaultProcess_______Scanner_Config___Debug()
+        Initialize_Process_DefaultProcess______Scanner_Config_Debug()
     Case Else
     Process = "DefaultProcess"
     End Select
@@ -1014,51 +994,52 @@ Option Infer On
         '   Do not modify this procedure. Changes may render this application
         '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
         '*****************************************************************************
-        Private Sub Initialize_Process_DefaultProcess_______Scanner_Config___Debug()
+        Private Sub Initialize_Process_DefaultProcess______Scanner_Config_Debug()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(100, "_     Scanner Config   Debug", "", 1, 45, 1, 6, 50, 50)
+        oProcessStep = AddProcessStep(100, "_    Scanner Config Debug", "", 1, 45, 1, 6, 50, 50)
         oProcessStep.AddPath("IGS_AppCalc_App.Scan_Configurations/APC_Scan_Configuration")
         oProcessStep.AddLayout(1, 11, "")
-        oProcessStep.AddCustomLayout(1, 417, "1", "0", "RsTextbox", 0, "MinGapForScan_IN", 58, 180, 20, 54, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 417, "2", "0", "RsLabel", 0, "", 0, 32, 33, 294, 1, "Scanner Configuration", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "3", "0", "RsCheckbox", 0, "ShadowingPotential", 104, 180, 18, 125, 2, "Shadowing Possible", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 417, "4", "0", "RsLabel", 0, "", 304, 32, 18, 136, 3, "Minimum Gap Reqd", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "5", "0", "RsCheckbox", 0, "UsePandAMTBH", 84, 180, 18, 114, 4, "Use PandA MTBH", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 417, "6", "0", "RsLabel", 0, "", 248, 32, 18, 136, 5, "Primary Application Type", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "7", "0", "RsTextbox", 0, "BoxPanelsScanned", 222, 180, 20, 148, 6, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 417, "8", "0", "RsLabel", 0, "", 222, 60, 18, 108, 7, "Qty Panels Scanned", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "9", "0", "RsComboBox", 0, "CartonPresentation", 152, 180, 24, 153, 8, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 417, "10", "0", "RsComboBox", 0, "ShadowingStatus", 122, 180, 24, 153, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 417, "11", "0", "RsComboBox", 0, "GapControlMethod", 31, 180, 24, 153, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 417, "12", "0", "RsLabel", 0, "", 391, 32, 18, 136, 11, "Vendor Read Window Size", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "13", "0", "RsLabel", 0, "", 430, 38, 18, 136, 12, "Panel Configuratoin", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "14", "0", "RsComboBox", 0, "User_UOM_System", 274, 180, 24, 153, 13, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 417, "15", "0", "RsTextbox", 0, "AppType", 248, 180, 20, 148, 14, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 417, "16", "0", "RsTextbox", 0, "MinGapRequired_User", 304, 180, 20, 88, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 417, "17", "0", "RsTextbox", 0, "MinGapOverride_Vendor_Provider_User", 330, 180, 20, 90, 16, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 417, "18", "0", "RsLabel", 0, "", 330, 12, 18, 162, 17, "Min Gap Reqd (Vendor) Overide", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "19", "0", "RsLabel", 0, "", 58, 240, 18, 30, 18, "IN", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "20", "0", "RsTextbox", 0, "ReadWindowSize_Vendor_Supplied_USER", 391, 180, 20, 88, 19, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 417, "21", "0", "RsTextbox", 0, "ReadWindowSize_USER", 365, 180, 20, 148, 20, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 417, "22", "0", "RsGrid", 0, "", 451, 32, 172, 974, 21, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,333,Panel_Configs;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
-        oProcessStep.AddCustomLayout(1, 417, "23", "22", "RsGridColumn", 0, "Panel_ID", 0, 0, 0, 100, 0, "Panel_ID", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 417, "24", "22", "RsGridColumn", 0, "Is_Scanned", 0, 0, 0, 100, 0, "Is_Scanned", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 417, "25", "22", "RsGridColumn", 0, "Scanner_Selected", 0, 0, 0, 150, 0, "Scanner_Selected", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 417, "26", "22", "RsGridColumn", 0, "Scan_Type", 0, 0, 0, 100, 0, "Scan_Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 417, "27", "22", "RsGridColumn", 0, "Scanner_CCD_Position", 0, 0, 0, 100, 0, "Scanner_CCD_Position", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 417, "28", "22", "RsGridColumn", 0, "Scan_Angle_Degrees", 0, 0, 0, 100, 0, "Scan Angle Degrees", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 417, "29", "22", "RsGridColumn", 0, "Scan_Head_Location", 0, 0, 0, 100, 0, "Scan Head Location", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 417, "30", "22", "RsGridColumn", 0, "Product_Spacing_Category", 0, 0, 0, 100, 0, "Spacing Category", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 417, "31", "22", "RsGridColumn", 0, "Min_Gap_Required", 0, 0, 0, 100, 0, "Min_Gap_Reqd", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 417, "32", "0", "RsLabel", 0, "", 152, 60, 18, 114, 22, "Carton Presentation", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "33", "0", "RsLabel", 0, "", 122, 60, 18, 114, 23, "Shadowing Allowed?", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "34", "0", "RsLabel", 0, "", 31, 12, 18, 162, 24, "Gap Control (From Soratation)", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "35", "0", "RsLabel", 0, "", 365, -8, 18, 176, 25, "Read Window Size (Estimated)", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "36", "0", "RsLabel", 0, "", 274, 32, 18, 142, 26, "System (Global Setup)", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "37", "0", "RsLabel", 0, "MinGapRequired_User_UOM", 330, 276, 18, 31, 27, "", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "38", "0", "RsLabel", 0, "MinGapRequired_User_UOM", 393, 273, 18, 31, 28, "", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "39", "0", "RsLabel", 0, "MinGapRequired_User_UOM", 306, 274, 18, 31, 29, "", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 417, "40", "0", "RsLabel", 0, "", 58, 12, 18, 156, 30, "Min Gap Allowed", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "1", "0", "RsGroupBox", 0, "", 36, 32, 360, 432, 0, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 417, "2", "1", "RsTextbox", 0, "MinGapForScan_IN", 38, 202, 20, 78, 1, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 417, "3", "1", "RsLabel", 0, "", 245, 60, 18, 136, 2, "Minimum Gap Required:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "4", "1", "RsComboBox", 0, "GapControlMethod", 14, 202, 24, 153, 3, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 417, "5", "1", "RsLabel", 0, "", 194, 60, 18, 136, 4, "Primary Application Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "6", "1", "RsLabel", 0, "", 16, 6, 22, 190, 5, "Gap Control (From Soratation):", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "7", "1", "RsTextbox", 0, "BoxPanelsScanned", 166, 202, 20, 148, 6, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 417, "8", "1", "RsCheckbox", 0, "ShadowingPotential", 88, 202, 18, 125, 7, "Shadowing Possible", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 417, "9", "1", "RsLabel", 0, "", 168, 88, 18, 108, 8, "Qty Panels Scanned:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "10", "1", "RsCheckbox", 0, "UsePandAMTBH", 64, 202, 18, 114, 9, "Use PandA MTBH", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 417, "11", "1", "RsLabel", 0, "", 327, 60, 18, 136, 10, "Vendor Read Window Size", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "12", "1", "RsComboBox", 0, "CartonPresentation", 136, 202, 24, 153, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 417, "13", "1", "RsComboBox", 0, "ShadowingStatus", 106, 202, 24, 153, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 417, "14", "1", "RsComboBox", 0, "User_UOM_System", 218, 202, 24, 153, 13, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 417, "15", "1", "RsLabel", 0, "", 40, 296, 18, 30, 14, "IN", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "16", "1", "RsTextbox", 0, "AppType", 192, 202, 20, 148, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 417, "17", "1", "RsLabel", 0, "", 142, 82, 18, 114, 16, "Carton Presentation:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "18", "1", "RsTextbox", 0, "MinGapRequired_User", 245, 202, 20, 88, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 417, "19", "1", "RsLabel", 0, "", 112, 82, 18, 114, 18, "Shadowing Allowed?", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "20", "1", "RsTextbox", 0, "MinGapOverride_Vendor_Provider_User", 271, 202, 20, 88, 19, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 417, "21", "1", "RsLabel", 0, "", 38, 40, 18, 156, 20, "Min Gap Allowed:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "22", "1", "RsLabel", 0, "", 273, 6, 18, 190, 21, "Min Gap Required (Vendor) Overide:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "23", "1", "RsTextbox", 0, "ReadWindowSize_Vendor_Supplied_USER", 327, 202, 20, 88, 22, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 417, "24", "1", "RsTextbox", 0, "ReadWindowSize_USER", 300, 202, 20, 148, 23, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 417, "25", "1", "RsLabel", 0, "", 300, 20, 18, 176, 24, "Read Window Size (Estimated):", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "26", "1", "RsLabel", 0, "", 218, 54, 18, 142, 25, "System (Global Setup):", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "27", "1", "RsLabel", 0, "MinGapRequired_User_UOM", 273, 296, 18, 31, 26, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "28", "1", "RsLabel", 0, "MinGapRequired_User_UOM", 327, 297, 18, 31, 27, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "29", "1", "RsLabel", 0, "MinGapRequired_User_UOM", 245, 296, 18, 31, 28, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "30", "0", "RsLabel", 0, "", 9, 32, 30, 384, 29, "Scanner Config", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 417, "31", "0", "RsGroupBox", 0, "", 410, 32, 247, 672, 30, "Panel Configuration", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 417, "32", "31", "RsGrid", 0, "", 19, 4, 222, 663, 31, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,333,Panel_Configs;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
+        oProcessStep.AddCustomLayout(1, 417, "33", "32", "RsGridColumn", 0, "Panel_ID", 0, 0, 0, 100, 0, "Panel_ID", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 417, "34", "32", "RsGridColumn", 0, "Is_Scanned", 0, 0, 0, 100, 0, "Is_Scanned", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 417, "35", "32", "RsGridColumn", 0, "Scanner_Selected", 0, 0, 0, 150, 0, "Scanner_Selected", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 417, "36", "32", "RsGridColumn", 0, "Scan_Type", 0, 0, 0, 100, 0, "Scan_Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 417, "37", "32", "RsGridColumn", 0, "Scanner_CCD_Position", 0, 0, 0, 100, 0, "Scanner_CCD_Position", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 417, "38", "32", "RsGridColumn", 0, "Scan_Angle_Degrees", 0, 0, 0, 100, 0, "Scan Angle Degrees", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 417, "39", "32", "RsGridColumn", 0, "Scan_Head_Location", 0, 0, 0, 100, 0, "Scan Head Location", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 417, "40", "32", "RsGridColumn", 0, "Product_Spacing_Category", 0, 0, 0, 100, 0, "Spacing Category", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 417, "41", "32", "RsGridColumn", 0, "Min_Gap_Required", 0, 0, 0, 100, 0, "Min_Gap_Reqd", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
         
         End Sub
       
@@ -1202,12 +1183,6 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Scan_Config", 30, "N", "N", "N", 0, "-1", "", "GLOBAL\H601424", "3/26/2025 1:58:22 AM", "", "In Development", "N",0,78,79)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
         InitSubpart("Scan_Configurations", 259, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/11/2025 6:00:36 PM", "", "In Development", "N",0,709,708)
         
           End If
@@ -1215,12 +1190,6 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitSubpart("Setup", 28, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "6/18/2025 8:58:13 PM", "", "In Development", "Y",0,74,75)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("SFDC_PRD_Local", 225, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/3/2025 4:53:08 PM", "", "In Development", "N",0,608,607)
         
           End If
         
@@ -1267,7 +1236,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("My_PRD", "94", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/3/2025 4:54:51 PM", "", "In Development", "N",180)
+        InitConnection("My_PRD", "94", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 5:13:00 PM", "", "In Development", "N",273)
         
           End If
         
@@ -1303,7 +1272,7 @@ Option Infer On
         '   BEGIN FORMULA; CON ID:94; TYPE:PF
         Result = Nothing
 If Me.Parent Is Nothing Then
-	Result = Me.SFDC_PRD_Local 
+	'Result = Me.SFDC_PRD_Local 
 Else
 	Result = Me.Parent.My_Prd(1)
 End If
@@ -1501,7 +1470,7 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Process_DefaultProcess_______Scanner_Config___Debug_STATUS() as Integer 'Long
+      Public Function Process_DefaultProcess______Scanner_Config_Debug_STATUS() as Integer 'Long
       Dim Result as Integer = 0 'Long
       Try
       '   BEGIN FORMULA; PROC ID:100; TYPE:ST
@@ -1517,7 +1486,7 @@ End If
 result = STATUS_ENABLED
       '   END FORMULA; PROC ID:100; TYPE:ST
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Process_DefaultProcess_______Scanner_Config___Debug_STATUS", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Process_DefaultProcess______Scanner_Config_Debug_STATUS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1528,14 +1497,14 @@ result = STATUS_ENABLED
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Process_DefaultProcess_______Scanner_Config___Debug_COMMENT() as String
+      Public Function Process_DefaultProcess______Scanner_Config_Debug_COMMENT() as String
       Dim Result as String = ""
       Try
       '   BEGIN FORMULA; PROC ID:100; TYPE:CO
       result = String.Empty
       '   END FORMULA; PROC ID:100; TYPE:CO
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Process_DefaultProcess_______Scanner_Config___Debug_COMMENT", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Process_DefaultProcess______Scanner_Config_Debug_COMMENT", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -2828,75 +2797,6 @@ result = STATUS_ENABLED
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Scan_Config_PARTNAMES() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      '   BEGIN FORMULA; SUB ID:30; TYPE:PN
-      
-      '   END FORMULA; SUB ID:30; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Formula_Scan_Config_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Scan_Config_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Scan_Config").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:30; TYPE:QF
-      Result = 1
-      '   END FORMULA; SUB ID:30; TYPE:QF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Formula_Scan_Config_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Scan_Config_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Scan_Config").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:30; TYPE:OP
-      result = "APC_Scan_Config"
-      '   END FORMULA; SUB ID:30; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Formula_Scan_Config_OPTIMALPARTFAMILY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Scan_Configurations_PARTNAMES() as String
       
       Dim Result as String = ""
@@ -3025,76 +2925,6 @@ result = STATUS_ENABLED
       '   END FORMULA; SUB ID:28; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Formula_Setup_OPTIMALPARTFAMILY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_SFDC_PRD_Local_PARTNAMES() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      '   BEGIN FORMULA; SUB ID:225; TYPE:PN
-      
-      '   END FORMULA; SUB ID:225; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Formula_SFDC_PRD_Local_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_SFDC_PRD_Local_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("SFDC_PRD_Local").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:225; TYPE:QF
-      Result = 0
-If Me.Parent Is Nothing Then Result = 1 ' IF this is the top part, then it will have its own PRD Data.
-      '   END FORMULA; SUB ID:225; TYPE:QF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Formula_SFDC_PRD_Local_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_SFDC_PRD_Local_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("SFDC_PRD_Local").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:225; TYPE:OP
-      result = "SFD_Salesforce_PRD_Header_Mock"
-      '   END FORMULA; SUB ID:225; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Formula_SFDC_PRD_Local_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
