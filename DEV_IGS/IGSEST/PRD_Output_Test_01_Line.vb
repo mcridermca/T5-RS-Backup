@@ -2,9 +2,9 @@ Option Strict Off
 Option Explicit On 
 Option Infer On
 
-'$ Application: APCTMP01
-'$ PartFamily: SFD_sm_PRD_Base_Item
-'$ GenerateDate: 07/16/2025 15:29:13
+'$ Application: IGSEST
+'$ PartFamily: PRD_Output_Test_01_Line
+'$ GenerateDate: 07/16/2025 15:31:09
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -20,11 +20,11 @@ Option Infer On
     Imports RuleStream.Kernel
     Imports System.Collections.Generic
     Imports RulestreamTCUtilities
-    Imports APCTMP01.swMateType_e
-    Imports APCTMP01.swMateAlign_e
-    Imports APCTMP01.severity
+    Imports IGSEST.swMateType_e
+    Imports IGSEST.swMateAlign_e
+    Imports IGSEST.severity
 
-    Public Class [SFD_sm_PRD_Base_Item]
+    Public Class [PRD_Output_Test_01_Line]
     
     Inherits RuleStream.Kernel.Part
     Implements RuleStream.IRsPartFormulas
@@ -45,7 +45,7 @@ Option Infer On
     '*                                                                       *
     '*************************************************************************
 
-    Private this as SFD_sm_PRD_Base_Item = me
+    Private this as PRD_Output_Test_01_Line = me
 
     #Region " IRsPartFormulas Implementation "
 
@@ -156,21 +156,12 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [PRD_Input_Text_Tab_Formatted]() As String
+          Public Property [Debug_Mode]() As Boolean
       Get
-      Return Properties("PRD_Input_Text_Tab_Formatted").Value
+      Return Properties("Debug_Mode").Value
       End Get
-      Set(ByVal Value As String)
-      Properties("PRD_Input_Text_Tab_Formatted").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Line_Input_Data]() As String
-      Get
-      Return Properties("PRD_Line_Input_Data").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("PRD_Line_Input_Data").CalculatedValue = Value
+      Set(ByVal Value As Boolean)
+      Properties("Debug_Mode").CalculatedValue = Value
       End Set
       End Property
     
@@ -228,6 +219,33 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [XMLObjectName]() As String
+      Get
+      Return Properties("XMLObjectName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectName").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectType]() As String
+      Get
+      Return Properties("XMLObjectType").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectType").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectValue]() As String
+      Get
+      Return Properties("XMLObjectValue").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectValue").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -235,6 +253,12 @@ Option Infer On
       Set(ByVal Value As String)
       Properties("PartNumber").CalculatedValue = Value
       End Set
+      End Property
+    
+      Public ReadOnly Property [MySource]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("MySource")
+      End Get
       End Property
     
     #End Region
@@ -251,20 +275,26 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("SFD_sm_PRD_Base_Item", <a><![CDATA[SubMst PRD Base Item]]></a>.Value, 371, "APCTMP01",  "N", "N", True, False, "In Development", "", "sm PRD SubMst PRD Base Item", "", "", "",  "GLOBAL\H601424", "07/16/2025 15:24:25")
-    AddProperty("3879", "Debug", <a><![CDATA[Debug]]></a>.Value, "General Debuggery", "String","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/17/2025 8:55:22 PM")
-    AddProperty("3932", "PRD_Input_Text_Tab_Formatted", <a><![CDATA[PRD Input Text Tab Formatted]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/16/2025 5:51:29 PM")
-    AddProperty("3891", "PRD_Line_Input_Data", <a><![CDATA[PRD Line Input Data]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/17/2025 8:53:30 PM")
-    AddProperty("4482", "Product_Class", <a><![CDATA[Product Class]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 3:02:26 PM")
-    AddProperty("4484", "Product_FT", <a><![CDATA[Product_FT]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/17/2025 8:45:32 PM")
-    AddProperty("4485", "Product_Indentifier", <a><![CDATA[Product_Indentifier]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 2:49:46 PM")
-    AddProperty("4486", "Qty", <a><![CDATA[Qty]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 1:22:28 PM")
-    AddProperty("3878", "Task_ID", <a><![CDATA[Task_ID]]></a>.Value, "PRD Task ID (NOT Unique!!!)", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 12:43:36 PM")
-    AddProperty("4489", "UOM", <a><![CDATA[UOM]]></a>.Value, "Unit of Masure (UOM) Extract from the PRD for this Line", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 3:39:14 PM")
-    AddProperty("3877", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/16/2025 4:39:48 PM")
+    InitPart("PRD_Output_Test_01_Line", <a><![CDATA[PRD_Output_Test_01_Line]]></a>.Value, 426, "IGSEST",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/16/2025 15:31:01")
+    AddProperty("10417", "Debug", <a><![CDATA[Debug]]></a>.Value, "General Debuggery", "String","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 3:24:14 PM")
+    AddProperty("10396", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 2:41:31 PM")
+    AddProperty("10418", "Product_Class", <a><![CDATA[Product Class]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 3:28:21 PM")
+    AddProperty("10419", "Product_FT", <a><![CDATA[Product_FT]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 3:31:01 PM")
+    AddProperty("10420", "Product_Indentifier", <a><![CDATA[Product_Indentifier]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 3:28:38 PM")
+    AddProperty("10421", "Qty", <a><![CDATA[Qty]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 3:28:52 PM")
+    AddProperty("10422", "Task_ID", <a><![CDATA[Task_ID]]></a>.Value, "PRD Task ID (NOT Unique!!!)", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 3:29:00 PM")
+    AddProperty("10423", "UOM", <a><![CDATA[UOM]]></a>.Value, "Unit of Masure (UOM) Extract from the PRD for this Line", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 3:29:07 PM")
+    AddProperty("10397", "XMLObjectName", <a><![CDATA[XMLObjectName]]></a>.Value, "XML Export Object Name", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "7/16/2025 2:43:03 PM")
+    AddProperty("10398", "XMLObjectType", <a><![CDATA[XMLObjectType]]></a>.Value, "XML Export Object Type", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "7/16/2025 2:41:31 PM")
+    AddProperty("10399", "XMLObjectValue", <a><![CDATA[XMLObjectValue]]></a>.Value, "XML Export Object Value", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H601424", "7/16/2025 2:41:31 PM")
+    AddProperty("10395", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 2:40:09 PM")
     
       AddValidValue("Product_Class")
     
+      oConnection = AddConnection("MySource", <a><![CDATA[My Source Part Family]]></a>.Value, "Connection to the Value Provider Part Family Instance", "192", "OO", 0, "","Oracle Config XML", 9999, "Oracle Configurator Transfer", "GLOBAL\H601424", "7/16/2025 2:46:37 PM")
+      
+        oConnection.AddVPF(33, "OCT_Accessory")
+      
     End Sub
 
     '*****************************************************************************
@@ -294,31 +324,37 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("Debug", "3508", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/17/2025 8:55:22 PM", "General Debuggery", "In Development",  0,5590)
+          InitProperty("Debug", "9990", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 3:24:14 PM", "General Debuggery", "In Development",  0,18142)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("PRD_Input_Text_Tab_Formatted", "3561", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 5:51:29 PM", "", "In Development",  0,4957)
+          InitProperty("Debug_Mode", "9970", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 2:41:31 PM", "True = Debug On / False = Debug Off", "In Development",  0,18080)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("PRD_Line_Input_Data", "3520", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/17/2025 8:53:30 PM", "", "In Development",  0,5558)
+          InitProperty("Product_Class", "9991", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 3:28:21 PM", "", "In Development",  0,18151)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Product_Class", "4110", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 3:02:25 PM", "", "In Development",  0,5632)
+          InitProperty("Product_FT", "9992", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 3:31:01 PM", "", "In Development",  0,18158)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Product_FT", "4112", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/17/2025 8:45:32 PM", "", "In Development",  0,5585)
+          InitProperty("Product_Indentifier", "9993", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 3:28:38 PM", "", "In Development",  0,18153)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Product_Indentifier", "4113", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 2:49:46 PM", "", "In Development",  0,5629)
+          InitProperty("Qty", "9994", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 3:28:52 PM", "", "In Development",  0,18155)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Qty", "4114", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 1:22:28 PM", "", "In Development",  0,5621)
+          InitProperty("Task_ID", "9995", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 3:29:00 PM", "PRD Task ID (NOT Unique!!!)", "In Development",  0,18156)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Task_ID", "3507", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 12:43:36 PM", "PRD Task ID (NOT Unique!!!)", "In Development",  0,5615)
+          InitProperty("UOM", "9996", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 3:29:07 PM", "Unit of Masure (UOM) Extract from the PRD for this Line", "In Development",  0,18157)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("UOM", "4117", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 3:39:14 PM", "Unit of Masure (UOM) Extract from the PRD for this Line", "In Development",  0,5657)
+          InitProperty("XMLObjectName", "9971", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 2:42:59 PM", "XML Export Object Name", "In Development",  0,18085)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectType", "9972", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 2:41:31 PM", "XML Export Object Type", "In Development",  0,18082)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectValue", "9973", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 2:41:31 PM", "XML Export Object Value", "In Development",  0,18083)
         End If
     End Sub
 
@@ -333,7 +369,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitValidValue("Product_Class_ValidValues", "4110", "-1", 5571)
+        InitValidValue("Product_Class_ValidValues", "9991", "-1", 18144)
         End If
     End Sub
 
@@ -357,6 +393,12 @@ Option Infer On
     Private Sub NewContextInit_Connections()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("MySource", "172", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/16/2025 2:46:13 PM", "Connection to the Value Provider Part Family Instance", "In Development", "Y",314)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -375,6 +417,28 @@ Option Infer On
     #Region " Formulas "
 
     
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MySource_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:172; TYPE:PF
+        Result = Me.Parent.MySource(1).All_PRD_Product_Items(Me.SubpartID) ' Set to Object that has the data you need to report on ' Me.Parent.HHS_Output(1)
+        '   END FORMULA; CON ID:172; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_MySource_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
           '*****************************************************************************
           '   Copyright (C) 2024 Siemens. All rights reserved.
           '
@@ -390,11 +454,11 @@ Option Infer On
       If Me.Properties("Debug").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:3508; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9990; TYPE:PF
       result = ""
-      '   END FORMULA; PROP ID:3508; TYPE:PF
+      '   END FORMULA; PROP ID:9990; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_Debug", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_Debug", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -405,52 +469,24 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_PRD_Input_Text_Tab_Formatted() As String
-          
-          Dim Result as String = String.Empty
-        
+          Public Function Formula_Debug_Mode() As Boolean
+          Dim Result as Boolean
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("PRD_Input_Text_Tab_Formatted").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("Debug_Mode").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:3561; TYPE:PF
-      result = Me.Parent.PRD_Input_Text_Tab_Formatted
-      '   END FORMULA; PROP ID:3561; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_PRD_Input_Text_Tab_Formatted", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Line_Input_Data() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Line_Input_Data").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:3520; TYPE:PF
-      Result = ""
-Dim PropName As String = Me.Name.split(":")(0).Trim() & "_VV"
-
-
-If Me.Parent.ValidValues(PropName).Count > 0
-	 Result = Me.Parent.ValidValues(PropName)(Me.subpartid -1)
+      '   BEGIN FORMULA; PROP ID:9970; TYPE:PF
+      Result = False
+If Not Me.Parent Is Nothing AndAlso Me.Parent.Properties.ContainsKey("Debug_Mode") Then
+		Result = Me.Parent.Debug_Mode
 End If
-      '   END FORMULA; PROP ID:3520; TYPE:PF
+      '   END FORMULA; PROP ID:9970; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_PRD_Line_Input_Data", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_Debug_Mode", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -471,27 +507,16 @@ End If
       If Me.Properties("Product_Class").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4110; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9991; TYPE:PF
       Result = ""
-Dim MyName As String = Me.Name.split(":")(0).Trim()
+Dim MyPropertyName = Me.CurrentProperty.Name
 
-Select Case MyName.ToLower()
-	Case = "PRD_Conveyor_HCAD".ToLower()
-		Result = "HCAD"
-	Case =  "PRD_Conveyor_HCAD_Metric".ToLower()
-		Result = "HCAD"
-	Case = "PRD_Conveyor_NON_STD".ToLower()
-		Result = "Non-Standard"
-	Case = "PRD_Conveyor_ASRS".ToLower()
-		Result = "ASRS"
-	Case = "PRD_Conveyor_Electrical".ToLower()
-		Result = "Electrical"
-	Case Else
-		Result = "ERROR"
-End Select
-      '   END FORMULA; PROP ID:4110; TYPE:PF
+If Me.MySource.Quantity = 1 Then 
+	Result = Me.MySource(1).Properties(MyPropertyName).Value
+End If
+      '   END FORMULA; PROP ID:9991; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_Product_Class", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_Product_Class", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -510,20 +535,16 @@ End Select
       If Me.Properties("Product_FT").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4112; TYPE:PF
-      Result = 0.0
+      '   BEGIN FORMULA; PROP ID:9992; TYPE:PF
+      Result = 0
+Dim MyPropertyName = Me.CurrentProperty.Name
 
-Const VVSrcProperty As String = "PRD_Line_Input_Data"
-Const Index As Integer = 5
-
-'TODO: Error Handle Conversion
-Dim ItemValue As String = Me.PRD_Line_Input_Data.Split("|")(Index).Replace(",","").Replace("$","").Replace("ft(or M)","").Replace("units","").Trim()
-If Isnumeric(ItemValue) Then
-	Result = CDbl(ItemValue)
+If Me.MySource.Quantity = 1 Then 
+	Result = Me.MySource(1).Properties(MyPropertyName).Value
 End If
-      '   END FORMULA; PROP ID:4112; TYPE:PF
+      '   END FORMULA; PROP ID:9992; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_Product_FT", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_Product_FT", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -544,12 +565,16 @@ End If
       If Me.Properties("Product_Indentifier").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4113; TYPE:PF
-      result = ""
-result = Me.PRD_Line_Input_Data.Split("|")(1).Replace(",","").Replace("$","").Replace("ft(or M)","").Replace("units","").Trim()
-      '   END FORMULA; PROP ID:4113; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9993; TYPE:PF
+      Result = ""
+Dim MyPropertyName = Me.CurrentProperty.Name
+
+If Me.MySource.Quantity = 1 Then 
+	Result = Me.MySource(1).Properties(MyPropertyName).Value
+End If
+      '   END FORMULA; PROP ID:9993; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_Product_Indentifier", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_Product_Indentifier", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -568,26 +593,16 @@ result = Me.PRD_Line_Input_Data.Split("|")(1).Replace(",","").Replace("$","").Re
       If Me.Properties("Qty").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4114; TYPE:PF
-      Result = 0.0
+      '   BEGIN FORMULA; PROP ID:9994; TYPE:PF
+      Result = 0
+Dim MyPropertyName = Me.CurrentProperty.Name
 
-Const Index As Integer = 5
-
-'TODO: Error Handle Conversion
-Dim ItemValue As String = Me.PRD_Line_Input_Data.Split("|")(Index).Replace(",","").Replace("$","").Replace("ft(or M)","").Replace("units","").Trim()
-If Isnumeric(ItemValue) Then
-	Result = CDbl(ItemValue)
-Else If Me.UOM = "ON/OFF"
-	If ItemValue.Trim() = "ON" Then
-		Result = 1
-	Else
-		Result = 0
-	End If
-	
+If Me.MySource.Quantity = 1 Then 
+	Result = Me.MySource(1).Properties(MyPropertyName).Value
 End If
-      '   END FORMULA; PROP ID:4114; TYPE:PF
+      '   END FORMULA; PROP ID:9994; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_Qty", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_Qty", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -608,19 +623,16 @@ End If
       If Me.Properties("Task_ID").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:3507; TYPE:PF
-      Result = 0.0
+      '   BEGIN FORMULA; PROP ID:9995; TYPE:PF
+      Result = ""
+Dim MyPropertyName = Me.CurrentProperty.Name
 
-Const Index As Integer = 2
-
-'TODO: Error Handle Conversion
-Result  = Me.PRD_Line_Input_Data.Split("|")(Index).Replace(",","").Replace("$","").Replace("ft(or M)","").Replace("units","").Trim()
-If right(Result.Trim(),1) = "/" Then 
-	Result = Result.replace("/","").Trim()
+If Me.MySource.Quantity = 1 Then 
+	Result = Me.MySource(1).Properties(MyPropertyName).Value
 End If
-      '   END FORMULA; PROP ID:3507; TYPE:PF
+      '   END FORMULA; PROP ID:9995; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_Task_ID", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_Task_ID", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -641,32 +653,96 @@ End If
       If Me.Properties("UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4117; TYPE:PF
-      Result = 0.0
-Dim MyName As String = Me.Name.split(":")(0).Trim()
-Const Index As Integer = 5
+      '   BEGIN FORMULA; PROP ID:9996; TYPE:PF
+      Result = ""
+Dim MyPropertyName = Me.CurrentProperty.Name
 
-'TODO: Error Handle Conversion
-Dim ItemValue As String = Me.PRD_Line_Input_Data.Split("|")(Index)
-If ItemValue.Contains("ft(or M)") Then
-	Select Case MyName.ToLower()
-	Case = "PRD_Conveyor_HCAD".ToLower()
-		Result = "ft"
- 	Case = "PRD_Conveyor_ASRS".ToLower()
-		Result = "ft"
-	Case = "PRD_Conveyor_HCAD_Metric".ToLower()
-		Result = "M"
-	Case Else
-		Result = "ERROR"
-	End Select
-Else If ItemValue.Contains("units")
-	Result = "Unit(s)"
-Else If ItemValue.Contains("ON") Or ItemValue.Contains("OFF") Then
-	Result = "ON/OFF"
+If Me.MySource.Quantity = 1 Then 
+	Result = Me.MySource(1).Properties(MyPropertyName).Value
 End If
-      '   END FORMULA; PROP ID:4117; TYPE:PF
+      '   END FORMULA; PROP ID:9996; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_UOM", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("XMLObjectName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9971; TYPE:PF
+      Result = "PRD_Output_Test_Line"
+      '   END FORMULA; PROP ID:9971; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_XMLObjectName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectType() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("XMLObjectType").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9972; TYPE:PF
+      result = "Element"
+      '   END FORMULA; PROP ID:9972; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_XMLObjectType", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectValue() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("XMLObjectValue").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9973; TYPE:PF
+      Dim Prop As PropertySF = Me.CurrentProperty
+Result = Custom.GetPFXMLRepresentation(Prop) 'Generate XML For this and Children Classes
+      '   END FORMULA; PROP ID:9973; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_XMLObjectValue", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -686,16 +762,7 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_PRD_Input_Text_Tab_Formatted_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Line_Input_Data_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Debug_Mode_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -758,6 +825,33 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_XMLObjectName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectType_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectValue_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Debug_USERCHANGE() as Boolean
       Return False
       End Function
@@ -767,17 +861,8 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_PRD_Input_Text_Tab_Formatted_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Line_Input_Data_USERCHANGE() as Boolean
-      Return False
+      Public Function Formula_Debug_Mode_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************
@@ -839,6 +924,33 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_XMLObjectName_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectType_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectValue_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Product_Class_ValidValues() as Rulestream.Kernel.ValidValues
       
       Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
@@ -848,12 +960,12 @@ End If
       If Me.Properties("Product_Class").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4110; TYPE:VV
+      '   BEGIN FORMULA; PROP ID:9991; TYPE:VV
       'Result = MakeValidValueKeyFromDatabase("[vw_Freight_Product_Generic_List]", "[Lookup_Type]", "[Lookup_Type]", "WHERE [Product_Name] = " & FormatCriteria(Me.Product_Indentifier) & " ORDER BY [Priority] desc")
 Result = Nothing
-      '   END FORMULA; PROP ID:4110; TYPE:VV
+      '   END FORMULA; PROP ID:9991; TYPE:VV
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " SFD_sm_PRD_Base_Item.Formula_Product_Class_ValidValues", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PRD_Output_Test_01_Line.Formula_Product_Class_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: SFD_Salesforce_PRD_Header_Mock
-'$ GenerateDate: 07/14/2025 18:02:17
+'$ GenerateDate: 07/16/2025 14:57:54
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -146,6 +146,15 @@ Option Infer On
     #End Region
 
     #Region " Properties, Subparts, Connections "
+    
+          Public Property [Debug_Mode]() As Boolean
+      Get
+      Return Properties("Debug_Mode").Value
+      End Get
+      Set(ByVal Value As Boolean)
+      Properties("Debug_Mode").CalculatedValue = Value
+      End Set
+      End Property
     
           Public Property [Debug_1]() As String
       Get
@@ -390,6 +399,12 @@ Option Infer On
       End Set
       End Property
     
+      Public ReadOnly Property [Output_Report_Test_01]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("Output_Report_Test_01")
+      End Get
+      End Property
+    
       Public ReadOnly Property [PRD_Conveyor_ASRS]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("PRD_Conveyor_ASRS")
@@ -438,6 +453,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [All_PRD_Product_Items]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("All_PRD_Product_Items")
+      End Get
+      End Property
+    
     #End Region
 
     #Region " Initialization "
@@ -452,7 +473,8 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("SFD_Salesforce_PRD_Header_Mock", <a><![CDATA[SFD_Salesforce_PRD_Header_Mock]]></a>.Value, 163, "APCTMP01",  "N", "N", False, False, "In Development", "", "Salesforce PRD Document Mockup", "", "", "",  "GLOBAL\H601424", "06/27/2025 18:02:23")
+    InitPart("SFD_Salesforce_PRD_Header_Mock", <a><![CDATA[SFD_Salesforce_PRD_Header_Mock]]></a>.Value, 163, "APCTMP01",  "N", "N", True, False, "In Development", "", "Salesforce PRD Document Mockup", "", "", "",  "GLOBAL\H601424", "07/16/2025 14:49:22")
+    AddProperty("10386", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 1:15:05 PM")
     AddProperty("1442", "Debug_1", <a><![CDATA[Debug_1]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/27/2025 12:04:45 AM")
     AddProperty("1529", "Opportunity_Data_Source_Type", <a><![CDATA[Opportunity_Data_Source_Type]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "CORA Data", "", "GLOBAL\H601424", "3/28/2025 11:26:09 AM")
     AddProperty("4493", "PRD_Conveyor_ASRS_VV", <a><![CDATA[PRD Conveyor ASRS VV]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 3:15:21 PM")
@@ -460,24 +482,24 @@ Option Infer On
     AddProperty("4492", "PRD_Conveyor_HCAD_Metric_VV", <a><![CDATA[PRD Conveyor HCAD Metric VV]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 2:58:11 PM")
     AddProperty("4388", "PRD_Conveyor_HCAD_VV", <a><![CDATA[PRD Conveyor HCAD VV]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/17/2025 5:17:27 PM")
     AddProperty("4387", "PRD_Conveyor_NON_STD_VV", <a><![CDATA[PRD Conveyor NON STD VV]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/17/2025 5:17:12 PM")
-    AddProperty("1447", "PRD_Data_Entered", <a><![CDATA[PRD_Data_Entered]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/27/2025 9:56:29 PM")
+    AddProperty("1447", "PRD_Data_Entered", <a><![CDATA[PRD_Data_Entered]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:25:27 PM")
     AddProperty("5590", "PRD_Date_Contract_Award", <a><![CDATA[PRD Date Contract Award]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 6:02:23 PM")
     AddProperty("5589", "PRD_Date_Eng_InHouse_Start", <a><![CDATA[PRD Date Eng InHouse Start]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 5:59:00 PM")
     AddProperty("3934", "PRD_Generic_KeyValue_List_Distinct_VV", <a><![CDATA[PRD Generic KeyValue List Distinct VV]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/17/2025 1:34:00 PM")
     AddProperty("1440", "PRD_Generic_Product_List_Distinct_VV", <a><![CDATA[PRD_Generic_Product_List_Distinct_VV]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/26/2025 11:33:32 AM")
     AddProperty("1368", "PRD_Input_Text_Tab_Formatted", <a><![CDATA[PRD_Input_Text_Tab_Formatted]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/27/2025 2:55:41 PM")
     AddProperty("1439", "PRD_Lines_Distinct_VV", <a><![CDATA[PRD_Lines_Distinct_VV]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/16/2025 5:05:29 PM")
-    AddProperty("4825", "PRD_Name", <a><![CDATA[PRD_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/24/2025 5:47:10 PM")
+    AddProperty("4825", "PRD_Name", <a><![CDATA[PRD_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:25:51 PM")
     AddProperty("1435", "PRD_TOTAL_DEBUG", <a><![CDATA[PRD_TOTAL_DEBUG]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/26/2025 11:26:09 AM")
     AddProperty("1369", "Project_Code", <a><![CDATA[Project_Code]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/26/2025 11:25:30 AM")
     AddProperty("1371", "Project_Identifier", <a><![CDATA[Project_Identifier]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/26/2025 11:25:30 AM")
     AddProperty("1370", "Project_Name", <a><![CDATA[Project_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/26/2025 11:25:30 AM")
-    AddProperty("3937", "Proposal_City_State", <a><![CDATA[Proposal City State]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 9:45:21 PM")
-    AddProperty("3939", "Proposal_Customer_Name", <a><![CDATA[Proposal Customer Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 9:43:48 PM")
+    AddProperty("3937", "Proposal_City_State", <a><![CDATA[Proposal City State]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:26:18 PM")
+    AddProperty("3939", "Proposal_Customer_Name", <a><![CDATA[Proposal Customer Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:26:25 PM")
     AddProperty("3940", "Proposal_Customer_Number", <a><![CDATA[Proposal Customer Number]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/16/2025 7:59:09 PM")
-    AddProperty("3938", "Proposal_Description", <a><![CDATA[Proposal Description]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 9:44:34 PM")
-    AddProperty("3935", "Proposal_ID", <a><![CDATA[Proposal ID]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 9:44:25 PM")
-    AddProperty("3936", "Proposal_Name", <a><![CDATA[Proposal Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 9:44:42 PM")
+    AddProperty("3938", "Proposal_Description", <a><![CDATA[Proposal Description]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:26:35 PM")
+    AddProperty("3935", "Proposal_ID", <a><![CDATA[Proposal ID]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:26:42 PM")
+    AddProperty("3936", "Proposal_Name", <a><![CDATA[Proposal Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:26:53 PM")
     AddProperty("1436", "Use_PRD_Total_Text", <a><![CDATA[Use_PRD_Total_Text]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/26/2025 11:25:31 AM")
     AddProperty("927", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/25/2025 9:02:46 PM")
     
@@ -503,6 +525,10 @@ Option Infer On
     
       AddValidValue("PRD_TOTAL_DEBUG")
     
+      oSubpart = AddSubpart(342,"Output_Report_Test_01", <a><![CDATA[Output_Report_Test_01]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/16/2025 2:49:22 PM")
+      
+        oSubpart.AddVPF (425, "PRD_Output_Test_01", "PRD_Output_Test_01")
+      
       oSubpart = AddSubpart(251,"PRD_Conveyor_ASRS", <a><![CDATA[PRD Conveyor ASRS]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "6/18/2025 3:17:59 PM")
       
         oSubpart.AddVPF (371, "SFD_sm_PRD_Base_Item", "SubMst PRD Base Item")
@@ -535,6 +561,10 @@ Option Infer On
       
         oSubpart.AddVPF (371, "SFD_sm_PRD_Base_Item", "SubMst PRD Base Item")
       
+      oConnection = AddConnection("All_PRD_Product_Items", <a><![CDATA[All_PRD_Product_Items]]></a>.Value, "", "191", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/16/2025 1:54:10 PM")
+      
+        oConnection.AddVPF(371, "SFD_sm_PRD_Base_Item")
+      
     End Sub
 
     '*****************************************************************************
@@ -564,6 +594,9 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
+          InitProperty("Debug_Mode", "9961", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 1:15:05 PM", "True = Debug On / False = Debug Off", "In Development",  0,18060)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Debug_1", "1141", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "3/27/2025 12:04:45 AM", "", "In Development",  0,1214)
         End If
             If Incontext("-1", ctx) Then
@@ -585,7 +618,7 @@ Option Infer On
           InitProperty("PRD_Conveyor_NON_STD_VV", "4015", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/17/2025 5:17:12 PM", "", "In Development",  0,5448)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("PRD_Data_Entered", "1146", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "3/27/2025 9:56:25 PM", "", "In Development",  0,1231)
+          InitProperty("PRD_Data_Entered", "1146", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:25:27 PM", "", "In Development",  0,1231)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PRD_Date_Contract_Award", "5202", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 6:02:20 PM", "", "In Development",  0,8183)
@@ -606,7 +639,7 @@ Option Infer On
           InitProperty("PRD_Lines_Distinct_VV", "1138", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 5:03:53 PM", "", "In Development",  0,1164)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("PRD_Name", "4448", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "6/24/2025 5:47:10 PM", "", "In Development",  0,6539)
+          InitProperty("PRD_Name", "4448", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:25:51 PM", "", "In Development",  0,6539)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PRD_TOTAL_DEBUG", "1134", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "3/26/2025 11:26:09 AM", "", "In Development",  0,1156)
@@ -621,22 +654,22 @@ Option Infer On
           InitProperty("Project_Name", "1069", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "3/26/2025 11:25:30 AM", "", "In Development",  0,1073)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_City_State", "3566", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 9:45:21 PM", "", "In Development",  0,4997)
+          InitProperty("Proposal_City_State", "3566", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:26:18 PM", "", "In Development",  0,4997)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Customer_Name", "3568", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 9:43:48 PM", "", "In Development",  0,4999)
+          InitProperty("Proposal_Customer_Name", "3568", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:26:25 PM", "", "In Development",  0,4999)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Proposal_Customer_Number", "3569", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 7:59:09 PM", "", "In Development",  0,4988)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Description", "3567", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 9:44:34 PM", "", "In Development",  0,4998)
+          InitProperty("Proposal_Description", "3567", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:26:35 PM", "", "In Development",  0,4998)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_ID", "3564", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 9:44:25 PM", "", "In Development",  0,4995)
+          InitProperty("Proposal_ID", "3564", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:26:42 PM", "", "In Development",  0,4995)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Name", "3565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 9:44:42 PM", "", "In Development",  0,4996)
+          InitProperty("Proposal_Name", "3565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:26:53 PM", "", "In Development",  0,4996)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Use_PRD_Total_Text", "1135", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "3/26/2025 11:25:31 AM", "", "In Development",  0,1151)
@@ -709,6 +742,12 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
+        InitSubpart("Output_Report_Test_01", 269, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/16/2025 2:49:22 PM", "", "In Development", "N",0,737,733)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
         InitSubpart("PRD_Conveyor_ASRS", 187, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "6/18/2025 3:17:59 PM", "", "In Development", "N",0,518,520)
         
           End If
@@ -766,6 +805,12 @@ Option Infer On
     Private Sub NewContextInit_Connections()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("All_PRD_Product_Items", "171", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/16/2025 1:50:48 PM", "", "In Development", "N",310)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -783,6 +828,72 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_All_PRD_Product_Items_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:171; TYPE:PF
+        Result = New rscollection()
+
+For Each p As part In PRD_Conveyor_ASRS 
+	Result.add(p)
+Next p
+
+For Each p As part In PRD_Conveyor_HCAD 
+	Result.add(p)
+Next p
+
+For Each p As part In PRD_Conveyor_Electrical 
+	Result.add(p)
+Next p
+
+For Each p As part In PRD_Conveyor_Non_Std 
+	Result.add(p)
+Next p
+        '   END FORMULA; CON ID:171; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_All_PRD_Product_Items_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Debug_Mode() As Boolean
+          Dim Result as Boolean
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("Debug_Mode").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9961; TYPE:PF
+      Result = False
+If Not Me.Parent Is Nothing AndAlso Me.Parent.Properties.ContainsKey("Debug_Mode") Then
+		Result = Me.Parent.Debug_Mode
+End If
+      '   END FORMULA; PROP ID:9961; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Debug_Mode", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
     
           '*****************************************************************************
           '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -1529,6 +1640,15 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Debug_Mode_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Debug_1_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1763,6 +1883,15 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Debug_Mode_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Debug_1_USERCHANGE() as Boolean
       Return True
       End Function
@@ -1907,7 +2036,7 @@ Next
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_PRD_Name_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1952,7 +2081,7 @@ Next
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_City_State_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1961,7 +2090,7 @@ Next
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_Customer_Name_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1979,7 +2108,7 @@ Next
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_Description_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1988,7 +2117,7 @@ Next
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_ID_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1997,7 +2126,7 @@ Next
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_Name_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -2475,6 +2604,75 @@ End If
       '   END FORMULA; PROP ID:1134; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_PRD_TOTAL_DEBUG_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Report_Test_01_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:269; TYPE:PN
+      
+      '   END FORMULA; SUB ID:269; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Output_Report_Test_01_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Report_Test_01_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Output_Report_Test_01").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:269; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:269; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Output_Report_Test_01_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Report_Test_01_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Output_Report_Test_01").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:269; TYPE:OP
+      Result = "PRD_Output_Test_01"
+      '   END FORMULA; SUB ID:269; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Output_Report_Test_01_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
