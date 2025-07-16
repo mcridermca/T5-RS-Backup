@@ -1176,6 +1176,10 @@ Module Custom
                 mechCompareAirPipingDelta(_PF)
                 g_ObjectManager.RSEngineer.RefreshModelViews(-1)
 
+            Case "PandA_Save_Theoretical_Max_Report"
+                Dim PF As Rulestream.Kernel.Part = sender.SelectedPart
+                Call PandA_Save_Theoretical_Max_Report(PF.Properties("XMLObjectValue").Value)
+
             Case Else
 
         End Select
@@ -1308,6 +1312,136 @@ Module Custom
 
         Catch ex As Exception  ' Broad catch for any unhandled errors in the function
             RsMessage("HHS.BOM.Report", "Critical error in HHS_Save_BOM_Report: " + ex.Message)
+            Console.WriteLine("Unhandled Error: " + ex.ToString())  ' Log for debugging
+            Return False
+        End Try
+    End Function
+
+
+    Public Function PandA_Save_Theoretical_Max_Report(XML As String) As Boolean
+        Try
+            ' Input validation
+            If String.IsNullOrEmpty(XML) Then
+                RsMessage("PandA.Theoretical_Max.Report", "Error: XML input is empty or null.")
+                Return False
+            End If
+
+            Dim TemplateFile As String = Path.Combine(g_DocAccess.MasterDocumentsFolder, "Templates", "PandA.TheoreticalMaxReport.TMPL.V1.xlsx")
+            Dim OutputFile As String = Path.Combine(g_DocAccess.WorkingFolder, "PandA.Theoretical_Max_Report.xlsx")
+            Dim dataSet As New DataSet()
+
+            ' Read XML into DataSet
+            Using reader As New StringReader(XML)
+                Try
+                    dataSet.ReadXml(reader)
+                Catch ex As XmlException
+                    RsMessage("PandA.Theoretical_Max.Report", "Error reading XML: " + ex.Message)
+                    Console.WriteLine("XML Error Details: " + ex.ToString())  ' Log for debugging
+                    Return False
+                Catch ex As Exception
+                    RsMessage("PandA.Theoretical_Max.Report", "Unexpected error reading XML.")
+                    Console.WriteLine("General XML Error: " + ex.ToString())
+                    Return False
+                End Try
+            End Using
+
+            ' Validate DataSet
+            If dataSet.Tables.Count < 2 Then
+                RsMessage("PandA.Theoretical_Max.Report", "Error: DataSet does not contain the required tables.")
+                Return False
+            End If
+
+            ' Load the Excel template
+            If Not File.Exists(TemplateFile) Then
+                RsMessage("PandA.Theoretical_Max.Report", "Error: Template file not found at " + TemplateFile)
+                Return False
+            End If
+
+            Dim report As New XLTemplate(TemplateFile)
+
+            ' Add the data source(s)
+            Try
+                report.AddVariable("Theoretical_Max", dataSet.Tables(1))
+            Catch ex As Exception
+                RsMessage("PandA.Theoretical_Max.Report", "Error adding data to report: " + ex.Message)
+                Console.WriteLine("Report Data Error: " + ex.ToString())
+                Return False
+            End Try
+
+            ' Check if the output file already exists
+            If File.Exists(OutputFile) Then
+                ' Prompt the user
+                Dim result As DialogResult = MessageBox.Show(
+                "The file already exists. Do you want to open the existing file?" + Environment.NewLine +
+                "Yes: Open existing file" + Environment.NewLine +
+                "No: Generate a new file (this will overwrite the existing one)",
+                "File Exists", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
+                If result = DialogResult.Yes Then
+                    ' Open the existing file
+                    Try
+                        Process.Start(New ProcessStartInfo(OutputFile))
+                        Return True  ' Success, even though we're not generating a new file
+                    Catch ex As Exception
+                        RsMessage("PandA.Theoretical_Max.Report", "Error opening existing file: " + ex.Message)
+                        Console.WriteLine("File Open Error: " + ex.ToString())
+                        Return False
+                    End Try
+                Else
+                    ' User wants to generate a new file - Confirm overwrite for safety
+                    Dim overwriteResult As DialogResult = MessageBox.Show(
+                    "Are you sure you want to overwrite the existing file?",
+                    "Confirm Overwrite", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+                    If overwriteResult = DialogResult.Yes Then
+                        Try
+                            report.Generate()
+                            report.SaveAs(OutputFile)
+                            Process.Start(New ProcessStartInfo(OutputFile))
+                            Return True  ' Success
+                        Catch ex As IOException
+                            RsMessage("PandA.Theoretical_Max.Report", "Error: Could not save file (e.g., file is in use). " + ex.Message)
+                            Console.WriteLine("IO Error Details: " + ex.ToString())
+                            Return False
+                        Catch ex As UnauthorizedAccessException
+                            RsMessage("PandA.Theoretical_Max.Report", "Error: Access denied to save file. " + ex.Message)
+                            Console.WriteLine("Access Error Details: " + ex.ToString())
+                            Return False
+                        Catch ex As Exception
+                            RsMessage("PandA.Theoretical_Max.Report", "Unexpected error generating/saving report: " + ex.Message)
+                            Console.WriteLine("General Report Error: " + ex.ToString())
+                            Return False
+                        End Try
+                    Else
+                        ' User cancelled overwrite
+                        RsMessage("PandA.Theoretical_Max.Report", "Operation cancelled. No changes were made.")
+                        Return False
+                    End If
+                End If
+            Else
+                ' File does not exist, proceed to generate and save
+                Try
+                    report.Generate()
+                    report.SaveAs(OutputFile)
+                    Process.Start(New ProcessStartInfo(OutputFile))
+                    Return True  ' Success
+                Catch ex As IOException
+                    RsMessage("PandA.Theoretical_Max.Report", "Error: Could not save file (e.g., file is in use). " + ex.Message)
+                    Console.WriteLine("IO Error Details: " + ex.ToString())
+                    Return False
+                Catch ex As UnauthorizedAccessException
+                    RsMessage("PandA.Theoretical_Max.Report", "Error: Access denied to save file. " + ex.Message)
+                    Console.WriteLine("Access Error Details: " + ex.ToString())
+                    Return False
+                Catch ex As Exception
+                    RsMessage("PandA.Theoretical_Max.Report", "Unexpected error generating/saving report: " + ex.Message)
+                    Console.WriteLine("General Report Error: " + ex.ToString())
+                    Return False
+                End Try
+            End If
+
+        Catch ex As Exception  ' Broad catch for any unhandled errors in the function
+            RsMessage("PandA.Theoretical_Max.Report", "Critical error in HHS_Save_BOM_Report: " + ex.Message)
             Console.WriteLine("Unhandled Error: " + ex.ToString())  ' Log for debugging
             Return False
         End Try
@@ -1878,6 +2012,10 @@ Module Custom
                     result = InputValue * 15.8503
                 Case "gpm->l/s"
                     result = InputValue / 15.8503
+                Case "cfpm->cmpm"
+                    result = InputValue * 0.028317
+                Case "cmpm->cfpm"
+                    result = InputValue / 0.028317
 
                 ' Weight Conversions
                 Case "kg->lb"
