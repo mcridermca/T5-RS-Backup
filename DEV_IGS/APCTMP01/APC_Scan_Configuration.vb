@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Configuration
-'$ GenerateDate: 07/15/2025 16:24:26
+'$ GenerateDate: 07/16/2025 20:14:50
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -390,6 +390,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [ScannerConfig_Image]() As String
+      Get
+      Return Properties("ScannerConfig_Image").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("ScannerConfig_Image").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Tool_Name]() As String
       Get
       Return Properties("Tool_Name").Value
@@ -491,7 +500,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/15/2025 16:24:03")
+    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/16/2025 20:06:05")
     AddProperty("9964", "AppType", <a><![CDATA[AppType]]></a>.Value, "Primary Application Type", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 12:41:05 PM")
     AddProperty("9963", "BoxPanelsScanned", <a><![CDATA[BoxPanelsScanned]]></a>.Value, "Count of Box Panels Scanned", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:38:15 PM")
     AddProperty("9962", "CartonPresentation", <a><![CDATA[CartonPresentation]]></a>.Value, "Carton Presentation?", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:36:38 PM")
@@ -506,7 +515,7 @@ Option Infer On
     AddProperty("9965", "MinGapRequired_IN", <a><![CDATA[MinGapRequired]]></a>.Value, "Min. Gap Required for Scanner Application  (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:28:20 PM")
     AddProperty("9966", "MinGapRequired_User", <a><![CDATA[MinGapRequired_User]]></a>.Value, "Min. Gap Required for Scanner Application  (mm)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:11:57 PM")
     AddProperty("9967", "MinGapRequired_User_UOM", <a><![CDATA[MinGapRequired_User_UOM]]></a>.Value, "Scanner Gap Unit Of Measure", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:12:23 PM")
-    AddProperty("9979", "ReadWindowSize_IN", <a><![CDATA[ReadWindowSize_IN]]></a>.Value, "Estimated Scanner Read Window Size (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:38:57 PM")
+    AddProperty("9979", "ReadWindowSize_IN", <a><![CDATA[ReadWindowSize_IN]]></a>.Value, "Estimated Scanner Read Window Size (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 7:56:35 PM")
     AddProperty("9980", "ReadWindowSize_MM", <a><![CDATA[ReadWindowSize_MM]]></a>.Value, "Estimated Scanner Read Window Size (mm)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:14:59 PM")
     AddProperty("9981", "ReadWindowSize_USER", <a><![CDATA[ReadWindowSize_USER]]></a>.Value, "Estimated Scanner Read Window Size (User UOM)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:15:16 PM")
     AddProperty("9982", "ReadWindowSize_Vendor_Supplied_IN", <a><![CDATA[ReadWindowSize_Vendor_Supplied_IN]]></a>.Value, "Scanner Read Window Size Override (if vendor supplied) (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:15:40 PM")
@@ -516,10 +525,11 @@ Option Infer On
     AddProperty("10012", "ShadowingStatus", <a><![CDATA[Shadowing Status]]></a>.Value, "Shadowing Allowed?", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/12/2025 7:43:53 PM")
     AddProperty("10150", "Sorter_Selected_Width_IN", <a><![CDATA[Sorter_Selected_Width_IN]]></a>.Value, "Master Sorter Width (From Sortation Object)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:24:03 PM")
     AddProperty("9959", "UsePandAMTBH", <a><![CDATA[UsePandAMTBH]]></a>.Value, "Use PandA MTBH Parameters (Required for PandA Use!)", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:35:03 PM")
-    AddProperty("9997", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/12/2025 1:43:37 PM")
+    AddProperty("9997", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 8:06:05 PM")
     AddProperty("10271", "Valid", <a><![CDATA[Valid]]></a>.Value, "Are Plastic Totes Used?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/15/2025 4:09:53 PM")
     AddProperty("10272", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/15/2025 4:11:36 PM")
-    AddProperty("10269", "Tool_Name", <a><![CDATA[Tool_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:22:07 PM")
+    AddProperty("10298", "ScannerConfig_Image", <a><![CDATA[ScannerConfig_Image]]></a>.Value, "Image for Scanner config", "String","","Image","FD", 9999, "", 0,0, "", "", "GLOBAL\H621516", "7/15/2025 8:18:57 PM")
+    AddProperty("10269", "Tool_Name", <a><![CDATA[Tool_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:25:52 PM")
     AddProperty("10270", "Tool_Status", <a><![CDATA[Tool_Status]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:09:53 PM")
     AddProperty("9940", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 5:59:25 PM")
     
@@ -646,7 +656,7 @@ Option Infer On
           InitProperty("MinGapRequired_User_UOM", "9549", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:12:23 PM", "Scanner Gap Unit Of Measure", "In Development",  0,16650)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ReadWindowSize_IN", "9561", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 10:38:57 PM", "Estimated Scanner Read Window Size (Inch)", "In Development",  0,16843)
+          InitProperty("ReadWindowSize_IN", "9561", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 7:56:35 PM", "Estimated Scanner Read Window Size (Inch)", "In Development",  0,18216)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ReadWindowSize_MM", "9562", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:14:59 PM", "Estimated Scanner Read Window Size (mm)", "In Development",  0,16671)
@@ -676,7 +686,7 @@ Option Infer On
           InitProperty("UsePandAMTBH", "9541", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 12:36:21 PM", "Use PandA MTBH Parameters (Required for PandA Use!)", "In Development",  0,16615)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("User_UOM_System", "9579", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 1:43:37 PM", "Default UOM System", "In Development",  0,16710)
+          InitProperty("User_UOM_System", "9579", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 8:06:01 PM", "Default UOM System", "In Development",  0,16710)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Valid", "9850", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:09:53 PM", "Are Plastic Totes Used?", "In Development",  0,17474)
@@ -685,7 +695,10 @@ Option Infer On
           InitProperty("Valid_Message", "9851", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:11:36 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,17477)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Tool_Name", "9848", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:22:07 PM", "", "In Development",  0,17482)
+          InitProperty("ScannerConfig_Image", "9876", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/15/2025 8:17:56 PM", "", "In Development",  0,17607)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Tool_Name", "9848", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:25:52 PM", "", "In Development",  0,17487)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Tool_Status", "9849", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:09:53 PM", "", "In Development",  0,17472)
@@ -1434,7 +1447,7 @@ End If
       '   BEGIN FORMULA; PROP ID:9561; TYPE:PF
       result = 0.0
 '=IF(K107>0,K107,IF(AND(COUNTIF(C89:C92,"Yes")>0,COUNTIF(C93:C94,"Yes")>1),MAX(T89:T94)+MAX(L93:L94),MAX(T89:T94)))
-
+'=IF(K107>0,K107,IF(AND(COUNTIF(C89:C92,"Yes")>0,COUNTIF(C93:C94,"Yes")>1),MAX(T89:T94)+MAX(L93:L94),MAX(T89:T94)))
 For Each p As part In Me.Panel_Configs
 	If P.Properties("Is_Scanned").Value = True Then
 		If P.Properties("Read_Window_Size").Value > Result Then
@@ -1442,6 +1455,8 @@ For Each p As part In Me.Panel_Configs
 		End If
 	End If
 Next p
+
+Result = Result + Me.MinGapRequired_IN
 
 If ReadWindowSize_Vendor_Supplied_IN > Result Then
 	Result = ReadWindowSize_Vendor_Supplied_IN
@@ -1795,6 +1810,31 @@ Result = EList.ErrorSummary(Show_Errors_Level)
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_ScannerConfig_Image() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("ScannerConfig_Image").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9876; TYPE:PF
+      Result = "Scanner_Config.jpg"
+      '   END FORMULA; PROP ID:9876; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_ScannerConfig_Image", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Tool_Name() As String
           
           Dim Result as String = String.Empty
@@ -1807,12 +1847,6 @@ Result = EList.ErrorSummary(Show_Errors_Level)
       End If
       '   BEGIN FORMULA; PROP ID:9848; TYPE:PF
       Result = "Scanner Configuration" ' Implement this name
-
-'Delete this Section section after implementing Tool Name Above
-If Result = "Tool Name Not Implented" Then
-	MsgBox ("Error in {Me.Name}. Tool_Name Property Not Implemented")
-End If
-'End Delete Section
       '   END FORMULA; PROP ID:9848; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Scan_Configuration.Formula_Tool_Name", ex.Message)
@@ -2096,6 +2130,15 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_ScannerConfig_Image_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Tool_Name_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -2331,7 +2374,7 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_User_UOM_System_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -2349,6 +2392,15 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Valid_Message_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_ScannerConfig_Image_USERCHANGE() as Boolean
       Return True
       End Function
     

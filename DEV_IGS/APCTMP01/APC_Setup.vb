@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Setup
-'$ GenerateDate: 07/14/2025 18:02:17
+'$ GenerateDate: 07/16/2025 19:18:25
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -959,7 +959,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", False, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H601424", "07/12/2025 14:40:08")
+    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", True, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H601424", "07/16/2025 19:17:39")
     AddProperty("3778", "Belt_InclineDecline_Max_Deg", <a><![CDATA[Belt InclineDecline Max Deg (Degrees)]]></a>.Value, "Max. Belt Incline/Decline Angle for Stable Product (in Degrees)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 6:37:40 PM")
     AddProperty("3170", "BoxSize_Height_Avg_IN", <a><![CDATA[BoxSize Height Avg IN]]></a>.Value, "BoxSize Height Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:37:24 PM")
     AddProperty("3158", "BoxSize_Height_Avg_User", <a><![CDATA[BoxSize Height Avg User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:21:15 PM")
@@ -1022,8 +1022,8 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     AddProperty("4526", "Conveyor_Skew_Bed_Length_MTBH_Width_IN", <a><![CDATA[Conveyor Skew Bed Length MTBH Width IN]]></a>.Value, "Minimum Required Skew Bed Length for Selected MTBH Width and BF", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 11:59:57 AM")
     AddProperty("4525", "Conveyor_Skew_Total_Length_MTBH_Width_IN", <a><![CDATA[Conveyor Skew Total Length MTBH Width IN]]></a>.Value, "Total Skew Length Required for Selected MTBH Width and BF", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 11:53:07 AM")
     AddProperty("4517", "Conveyor_Width_Min_IN", <a><![CDATA[Conveyor Width Min IN]]></a>.Value, "Min. Allowable Straight Conveyor Width  ' =VLOOKUP(BoxSize_Width_Max_IN+1.99,$S$55:$U$60,2,TRUE)  'B/F (Imperial)  IR '0 16 30 '16 22 40 '22 28 50 '28 34 60 '34 40 60 '40 40 60", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/23/2025 4:26:26 PM")
-    AddProperty("3154", "Customer_Location_CityState", <a><![CDATA[Customer Location CityState]]></a>.Value, "Customer's Site Location (City, St)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 9:37:09 PM")
-    AddProperty("3153", "Customer_Name", <a><![CDATA[Customer Name]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 9:37:44 PM")
+    AddProperty("3154", "Customer_Location_CityState", <a><![CDATA[Customer Location CityState]]></a>.Value, "Customer's Site Location (City, St)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 7:17:39 PM")
+    AddProperty("3153", "Customer_Name", <a><![CDATA[Customer Name]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 7:16:14 PM")
     AddProperty("3774", "Live_Load_Avg_KGM", <a><![CDATA[Live Load Avg KGM]]></a>.Value, "Live Load", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:16:35 PM")
     AddProperty("3773", "Live_Load_Avg_LBSFT", <a><![CDATA[Live Load Avg LBSFT]]></a>.Value, "Live Load", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 2:14:19 PM")
     AddProperty("3308", "Live_Load_Avg_User", <a><![CDATA[Live Load Avg User]]></a>.Value, "Live Load (Average)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 2:11:18 PM")
@@ -1032,8 +1032,8 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     AddProperty("4530", "Material_Gap_Override_MM", <a><![CDATA[Material Gap Override MM]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:29:13 PM")
     AddProperty("4528", "Material_Gap_Override_User", <a><![CDATA[Material Gap Override User]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:38:22 PM")
     AddProperty("4531", "Material_Gap_Override_User_UOM", <a><![CDATA[Material Gap Override User UOM]]></a>.Value, "Global Design Gap Override  (UOM)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:38:36 PM")
-    AddProperty("3156", "Proposal_Date", <a><![CDATA[Proposal_Date]]></a>.Value, "Salesface Proposal Date", "Date","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 4:26:33 PM")
-    AddProperty("3155", "Proposal_No", <a><![CDATA[Proposal_No]]></a>.Value, "IGS Proposal Number", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 9:38:40 PM")
+    AddProperty("3156", "Proposal_Date", <a><![CDATA[Proposal_Date]]></a>.Value, "Salesface Proposal Date", "Date","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 7:16:31 PM")
+    AddProperty("3155", "Proposal_No", <a><![CDATA[Proposal_No]]></a>.Value, "IGS Proposal Number", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 7:16:42 PM")
     AddProperty("3307", "Selected_Sortation_Controls", <a><![CDATA[Selected Sortation Controls]]></a>.Value, "Control system used for Primary Merge/Sortation? ICW & Boss Control platforms are now in ""sunset"" status and should not used for new projects moving forward.", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:36:08 PM")
     AddProperty("3770", "Sort_Dual_Sided", <a><![CDATA[Sort Dual Sided]]></a>.Value, "Dual Sided Sort Application?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:31:09 PM")
     AddProperty("3771", "Sort_Rate_Required_CPM", <a><![CDATA[Sort_Rate_Required_CPM]]></a>.Value, "Target Sortation Rate (CPM)  This is the maximum expected throughput the sortation system is to be designed to convey with the carton parameters input above. Allowable input range for this parameter is 5 to 400 CPM.", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 2:19:48 PM")
@@ -1047,7 +1047,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     AddProperty("4532", "Totes_Plastic_Type", <a><![CDATA[Totes Plastic Type]]></a>.Value, "Type of Plastic Tote Used", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:38:54 PM")
     AddProperty("3172", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:10:22 PM")
     AddProperty("9795", "Valid", <a><![CDATA[Valid]]></a>.Value, "Are Plastic Totes Used?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/10/2025 2:33:56 PM")
-    AddProperty("9794", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/12/2025 2:40:08 PM")
+    AddProperty("9794", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/16/2025 2:03:18 PM")
     AddProperty("715", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/24/2025 5:32:55 PM")
     
       AddValidValue("BoxSize_Height_Avg_User_UOM")
@@ -1311,10 +1311,10 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Conveyor_Width_Min_IN", "4145", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/23/2025 4:26:26 PM", "Min. Allowable Straight Conveyor Width", "In Development",  0,6385)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Customer_Location_CityState", "2788", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 9:37:09 PM", "Customer's Site Location (City, St)", "In Development",  0,5730)
+          InitProperty("Customer_Location_CityState", "2788", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 7:17:39 PM", "Customer's Site Location (City, St)", "In Development",  0,5730)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Customer_Name", "2787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 9:37:44 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,5732)
+          InitProperty("Customer_Name", "2787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 7:16:14 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,5732)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Live_Load_Avg_KGM", "3404", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 2:14:32 PM", "Live Load", "In Development",  0,4823)
@@ -1341,10 +1341,10 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Material_Gap_Override_User_UOM", "4159", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 5:38:36 PM", "Global Design Gap Override  (UOM)", "In Development",  0,5678)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Date", "2790", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 4:26:33 PM", "Salesface Proposal Date", "In Development",  0,4291)
+          InitProperty("Proposal_Date", "2790", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 7:16:31 PM", "Salesface Proposal Date", "In Development",  0,4291)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_No", "2789", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 9:38:40 PM", "IGS Proposal Number", "In Development",  0,5733)
+          InitProperty("Proposal_No", "2789", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 7:16:42 PM", "IGS Proposal Number", "In Development",  0,5733)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Selected_Sortation_Controls", "2937", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 12:36:08 PM", "Control system used for Primary Merge/Sortation? ICW & Boss Control platforms are now in ""sunset"" status and should not used for new projects moving forward.", "In Development",  0,4304)
@@ -1386,7 +1386,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Valid", "9381", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 2:33:56 PM", "Are Plastic Totes Used?", "In Development",  0,16048)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Valid_Message", "9380", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 2:40:08 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,16317)
+          InitProperty("Valid_Message", "9380", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/16/2025 2:03:18 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,17492)
         End If
     End Sub
 
@@ -3738,87 +3738,105 @@ If BoxSize_Length_Max_IN > 48 Then
 	EList.Add(1, "WARNING: LENGTHS IN EXCESS OF 48 INCH MAXIMUM MAY RESTRICT MAXIMUM WIDTHS POSSIBLE FOR A GIVEN B/F DIMENSION!", "APC001", Source)
 End If
 
+' TODO: VV  7/15/2025  Complete this error , ref Setup Cell L20 - SorterWidthMetric
 '=IF(Conveyor_Product_Line_Used="Metric",IF(BoxSize_Width_Max_MM>(SorterWidthMetric-50),"ERROR: MAX WIDTH CARTON EXCEEDS LIMIT FOR SELECTED SORTER/CONVEYOR B/F!",""),IF(BoxSize_Width_Max_IN>(SorterWidth-2),"ERROR: MAX WIDTH CARTON EXCEEDS LIMIT FOR SELECTED SORTER/CONVEYOR B/F!",""))
 'If Conveyor_Product_Line_Used = "Metric" Then
     'If BoxSize_Width_Max_MM > (SorterWidthMetric - 50) Then
-     '   EList.Add(1, "ERROR: MAX WIDTH CARTON EXCEEDS LIMIT FOR SELECTED SORTER/CONVEYOR B/F!", "APC0020", Source)
+        'EList.Add(2, "ERROR: MAX WIDTH CARTON EXCEEDS LIMIT FOR SELECTED SORTER/CONVEYOR B/F!", "APC002", Source)
     'End If
 'Else
-    'If BoxSize_Width_Max_IN > (SorterWidth - 2) Then
-     '   EList.Add(1, "ERROR: MAX WIDTH CARTON EXCEEDS LIMIT FOR SELECTED SORTER/CONVEYOR B/F!", "APC0021", Source)
-    'End If
+ '   If BoxSize_Width_Max_IN > (SorterWidth - 2) Then
+  '      EList.Add(2, "ERROR: MAX WIDTH CARTON EXCEEDS LIMIT FOR SELECTED SORTER/CONVEYOR B/F!", "APC003", Source)
+   ' End If
 'End If
 
 '=IF(BoxSize_Height_Min_IN<1,"WARNING: SUB 1 INCH MIN. PRODUCT HEIGHT REQUIRES SPECIAL PHOTOCELL CONDSIDERATIONS TO CONVEY AND DETECT PRODUCT PROPERLY","")
 If BoxSize_Height_Min_IN < 1 Then
-	EList.Add(1,"WARNING: SUB 1 INCH MIN. PRODUCT HEIGHT REQUIRES SPECIAL PHOTOCELL CONDSIDERATIONS TO CONVEY AND DETECT PRODUCT PROPERLY!", "APC002", Source)
+	EList.Add(1,"WARNING: SUB 1 INCH MIN. PRODUCT HEIGHT REQUIRES SPECIAL PHOTOCELL CONDSIDERATIONS TO CONVEY AND DETECT PRODUCT PROPERLY!", "APC004", Source)
 End If 
 
 'IF(BoxSize_Length_Min_IN<9,IF(BoxSize_Length_Min_IN<6,"WARNING: SUB 6 INCH MINIMUM PRODUCT LENGTHS REQUIRE SPECIAL DESIGN CONSIDERATIONS SYSTEM WIDE!","WARNING: SUB 9 INCH MINIMUM PRODUCT LENGTHS WILL REQUIRE 2 INCH ROLLER CENTER SPACING TO CONVEY PROPERLY!"),"")
 If BoxSize_Length_Min_IN < 9 Then
-    If BoxSize_Length_Min_IN < 6 Then
-        EList.Add(1, "WARNING: SUB 6 INCH MINIMUM PRODUCT LENGTHS REQUIRE SPECIAL DESIGN CONSIDERATIONS SYSTEM WIDE!", "APC0022", Source)
+   If BoxSize_Length_Min_IN < 6 Then
+        EList.Add(1, "WARNING: SUB 6 INCH MINIMUM PRODUCT LENGTHS REQUIRE SPECIAL DESIGN CONSIDERATIONS SYSTEM WIDE!", "APC005", Source)
     Else
-        EList.Add(1, "WARNING: SUB 9 INCH MINIMUM PRODUCT LENGTHS WILL REQUIRE 2 INCH ROLLER CENTER SPACING TO CONVEY PROPERLY!", "APC0023", Source)
+        EList.Add(1, "WARNING: SUB 9 INCH MINIMUM PRODUCT LENGTHS WILL REQUIRE 2 INCH ROLLER CENTER SPACING TO CONVEY PROPERLY!", "APC006", Source)
     End If
 End If
 
 '=IF(OR(BoxSize_Length_Min_IN<9,BoxSize_Length_Max_IN>48,BoxSize_Height_Min_IN<1,BoxSize_Weight_Max_LBS>70),"**REFER TO THE LINK AT THE BOTTOM OF SHEET FOR MASTER OUT-OF-SPEC PRODUCT GUIDELINES**","")
+'Check information or refer message 
 If BoxSize_Length_Min_IN < 9 OrElse BoxSize_Length_Max_IN > 48 OrElse BoxSize_Height_Min_IN < 1 OrElse BoxSize_Weight_Max_LBS > 70 Then
-     EList.Add(1, "**REFER TO THE LINK AT THE BOTTOM OF SHEET FOR MASTER OUT-OF-SPEC PRODUCT GUIDELINES**", "APC0030", Source)
-End If
-'IF(OR(BoxSize_Width_Min_IN>BoxSize_Length_Min_IN,BoxSize_Width_Max_IN>BoxSize_Length_Max_IN,BoxSize_Width_Avg_IN>BoxSize_Length_Avg),"ERROR - WIDTH CANNOT EXCEED LENGTH","")
-If BoxSize_Width_Min_IN > BoxSize_Length_Min_IN OrElse BoxSize_Width_Max_IN > BoxSize_Length_Max_IN OrElse BoxSize_Width_Avg_IN > BoxSize_Length_Avg_IN Then
-    EList.Add(1, "ERROR - WIDTH CANNOT EXCEED LENGTH", "APC0031", Source)
+     EList.Add(0, "**REFER TO THE LINK AT THE BOTTOM OF SHEET FOR MASTER OUT-OF-SPEC PRODUCT GUIDELINES**", "APC007", Source)
 End If
 
-'=IF(BoxSize_Weight_Max_LBS>70,"WARNING: CONVEYED PRODUCT WEIGHTS IN EXCESS OF 70 LBS MAY REQUIRE SPECIAL CONSIDERATION FOR SOME EQUIPMENT!","")
+'IF(OR(BoxSize_Width_Min_IN>BoxSize_Length_Min_IN,BoxSize_Width_Max_IN>BoxSize_Length_Max_IN,BoxSize_Width_Avg_IN>BoxSize_Length_Avg),"ERROR - WIDTH CANNOT EXCEED LENGTH","")
+If BoxSize_Width_Min_IN > BoxSize_Length_Min_IN OrElse BoxSize_Width_Max_IN > BoxSize_Length_Max_IN OrElse BoxSize_Width_Avg_IN > BoxSize_Length_Avg_IN Then
+    EList.Add(2, "ERROR - WIDTH CANNOT EXCEED LENGTH", "APC008", Source)
+End If
+
+'=IF(;BoxSize_Weight_Max_LBS>70,"WARNING: CONVEYED PRODUCT WEIGHTS IN EXCESS OF 70 LBS MAY REQUIRE SPECIAL CONSIDERATION FOR SOME EQUIPMENT!","")
 If BoxSize_Weight_Max_LBS > 70 Then
-    EList.Add(1, "WARNING: CONVEYED PRODUCT WEIGHTS IN EXCESS OF 70 LBS MAY REQUIRE SPECIAL CONSIDERATION FOR SOME EQUIPMENT!", "APC003", Source)
+   EList.Add(1, "WARNING: CONVEYED PRODUCT WEIGHTS IN EXCESS OF 70 LBS MAY REQUIRE SPECIAL CONSIDERATION FOR SOME EQUIPMENT!", "APC009", Source)
 End If
 
 '=IF(AND(Live_Load_Avg_LBS>50,Live_Load_Avg_LBS<100),"WARNING: LIVE LOAD IS ABOVE THE TYPICAL RANGE FOR MOST EQUIPMENT TYPES","")
 If Live_Load_Avg_LBSFT > 50 And Live_Load_Avg_LBSFT < 100 Then
-      EList.Add(1,"WARNING: LIVE LOAD IS ABOVE THE TYPICAL RANGE FOR MOST EQUIPMENT TYPES", "APC004", Source)
+      EList.Add(1,"WARNING: LIVE LOAD IS ABOVE THE TYPICAL RANGE FOR MOST EQUIPMENT TYPES", "APC010", Source)
 End If
+'Below both warnings are similar
+' TODO: VV  7/15/2025  Complete this error , ref Setup Cell M33 Check property BoxSize_Worst_Case_HL_Ratio
+'=IF(OR($I$33="Yes",AND($I$30="Yes",$I$32<0.75)),"WARNING: PRODUCT STABILITY TESTING/PROTOTYPING IS STRONGLY RECOMMENDED!","")
+'If BoxSize_Other_Known_Issues = True Or (BoxSize_Height_GRTR_Len_Possible = True And BoxSize_Worst_Case_HL_Ratio < 0.75) Then
+    'EList.Add(1, "WARNING: PRODUCT STABILITY TESTING/PROTOTYPING IS STRONGLY RECOMMENDED!", "APC011", Source)
+'End If
+
+' TODO: VV  7/15/2025  Complete this error , ref Setup Cell N34 Check property BoxSize_Worst_Case_HL_Ratio
+'=IF(OR($I$33="Yes",AND($I$30="Yes",$I$32<0.75)),"REDUCED INCLINE/DECLINE BELT ANGLES AND/OR VFD's MAY BE REQUIRED!'","")
+'If BoxSize_Other_Known_Issues = True Or (BoxSize_Height_GRTR_Len_Possible = True And BoxSize_Worst_Case_HL_Ratio < 0.75) Then
+    'EList.Add(1, "WARNING: REDUCED INCLINE/DECLINE BELT ANGLES AND/OR VFD's MAY BE REQUIRED!'", "APC012", Source)
+'End If
 
 '=IF(OR(Selected_Sortation_Controls="BOSS",Selected_Sortation_Controls="ICW"),"WARNING: THE BOSS AND ICW CONTROLS PLATFORMS ARE IN SUNSET STATUS AND SHOULD ONLY BE USED FOR RETROFITS OF EXISTING SYSTEMS!","")
-
 If Selected_Sortation_Controls = "BOSS" Or Selected_Sortation_Controls = "ICW" Then
-    EList.Add(1, "WARNING: THE BOSS AND ICW CONTROLS PLATFORMS ARE IN SUNSET STATUS AND SHOULD ONLY BE USED FOR RETROFITS OF EXISTING SYSTEMS!", "APC005", Source)
-End If
-
-
-'MPC - 20250712 - Did a different check for BoxSize_Worst_Case_HL_Ratio to capture a string "Error" Error. 
-					' The Original Spreadsheet had BoxSize_Worst_Case_HL_Ratio evaluating to a string
-If Not isnumeric( BoxSize_Worst_Case_HL_Ratio) Then
-	EList.Add(2, "ERROR: PRODUCT STABILITY TESTING/PROTOTYPING IS STRONGLY RECOMMENDED!", "APC0027", Source)
-Else
-	'=IF(OR($I$33="Yes",AND($I$30="Yes",$I$32<0.75)),"WARNING: PRODUCT STABILITY TESTING/PROTOTYPING IS STRONGLY RECOMMENDED!","")
-	If BoxSize_Other_Known_Issues = True Or(BoxSize_Height_GRTR_Len_Possible = True And Double.parse(BoxSize_Worst_Case_HL_Ratio) < 0.75) Then
-    	EList.Add(1, "WARNING:BoxSize_Worst_Case_HL_Ratio Evaluation has an error!", "APC0025", Source)
-	End If
-	'=IF(OR($I$33="Yes",AND($I$30="Yes",$I$32<0.75)),"REDUCED INCLINE/DECLINE BELT ANGLES AND/OR VFD's MAY BE REQUIRED!'","")
-	If BoxSize_Other_Known_Issues = True Or (BoxSize_Height_GRTR_Len_Possible = True And Double.parse(BoxSize_Worst_Case_HL_Ratio) < 0.75) Then
-  	 	EList.Add(1, "REDUCED INCLINE/DECLINE BELT ANGLES AND/OR VFD's MAY BE REQUIRED!'", "APC0026", Source)
-	End If
-
+    EList.Add(1, "WARNING: THE BOSS AND ICW CONTROLS PLATFORMS ARE IN SUNSET STATUS AND SHOULD ONLY BE USED FOR RETROFITS OF EXISTING SYSTEMS!", "APC013", Source)
 End If
 
 '=IF($I$40="Metric","WARNING: METRIC PERFORMANCE VALUES ARE ESTIMATES UNTIL TESTING CAN BE DONE BY PRODUCT ENGINEERING","")
 If Conveyor_Product_Line_Used = "Metric" Then
-    EList.Add(1, "WARNING: METRIC PERFORMANCE VALUES ARE ESTIMATES UNTIL TESTING CAN BE DONE BY PRODUCT ENGINEERING", "APC0024", Source)
+    EList.Add(1, "WARNING: METRIC PERFORMANCE VALUES ARE ESTIMATES UNTIL TESTING CAN BE DONE BY PRODUCT ENGINEERING", "APC014", Source)
 End If
 
+'MPC - 20250712 - Did a different check for BoxSize_Worst_Case_HL_Ratio to capture a string "Error" Error. 
+					' The Original Spreadsheet had BoxSize_Worst_Case_HL_Ratio evaluating to a string
+'If Not isnumeric( BoxSize_Worst_Case_HL_Ratio) Then
+'	EList.Add(2, "ERROR: PRODUCT STABILITY TESTING/PROTOTYPING IS STRONGLY RECOMMENDED!", "APC0027", Source)
+
+
+'TODO: VV  7/15/2025  Verify this error , ref Setup Cell L43
+'=If(Or(And($I$43="N/A",Conveyor_Product_Line_Used="Imperial"),And($J$43="N/A",Conveyor_Product_Line_Used="Metric")),"ERROR: PRODUCT DIMENSIONS EXCEEDS KNOW CONVEYABLE LIMITS FOR STANDARD CASE CONVEYOR! CONSIDER PALLET EQUIPMENT","")
+	
+''TODO: VV  7/15/2025  Verify this error , ref Setup Cell L44
+'=If(Or(And(Or(Conveyor_BF_Selected_Min_IN<I41,(Conveyor_BF_Selected_Min_IN+2)<I42),Conveyor_Product_Line_Used="Imperial"),And(Or(SelectedMinConvBFMetric<J41,(SelectedMinConvBFMetric+50)<J42),Conveyor_Product_Line_Used="Metric")),"ERROR: SELECTED MINIMUM B/F IS TOO NARROW FOR DEFINED MTBH","")
+	
+'TODO: VV  7/15/2025  Verify this error , ref Setup Cell M45
+'=IF(OR(AND($I$44="Yes",Conveyor_BF_Selected_Min_IN<=I43,Conveyor_BF_Selected_Min_IN=I41,Conveyor_Product_Line_Used="Imperial"),AND($I$44="Yes",SelectedMinConvBFMetric<=J43,SelectedMinConvBFMetric=J41,Conveyor_Product_Line_Used="Metric")),"WARNING: APPLICATION WILL REQUIRE THE USE OF OFFSET GUIDES ON ALL CURVE CONVEYORS AT SELECTED B/F","")
+
+'TODO: VV  7/15/2025  Verify this error , ref Setup Cell L50
+'=IFERROR(If(And(Sort_Dual_Sided="Yes",VLOOKUP(SorterType,'Lists-1'!D4:N15,11,FALSE)="SS"),"ERROR: A 2-SIDED SORTER IS NOT SELECTED ON THE SORTATION WORKSHEET!",IF(AND(Sort_Dual_Sided="No",VLOOKUP(SorterType,'Lists-1'!D4:N15,11,FALSE)="DS"),"CHOOSE A 1-SIDED SORTER!","")),"")
+
+'TODO: VV  7/15/2025  Verify this error , ref Setup Cell N51
+'Case_Length_Per_Ft_Minute_Target - Variable remains constantin engineer
 '=IF(Case_Length_Per_Ft_Minute_Target>216,IF(Case_Length_Per_Ft_Minute_Target>400,"SEEK PAE/ENGINEERING ASSISTANCE ON ANY APPLICATION EXCEEDING 400 CFPM","APPLICATIONS EXCEEDING 216 CFPM WILL LIKELY REQUIRE SOME FORM OF ACTIVE GAPPING INDUCTION TECHOLOGY"),"")
 If Case_Length_Per_Minute_Target_FT > 216 Then
     If Case_Length_Per_Minute_Target_FT > 400 Then
-      EList.Add(1, "SEEK PAE/ENGINEERING ASSISTANCE ON ANY APPLICATION EXCEEDING 400 CFPM", "APC006", Source)
+      EList.Add(1, "Warning - SEEK PAE/ENGINEERING ASSISTANCE ON ANY APPLICATION EXCEEDING 400 CFPM", "APC006", Source)
     Else
-      EList.Add(1, "APPLICATIONS EXCEEDING 216 CFPM WILL LIKELY REQUIRE SOME FORM OF ACTIVE GAPPING INDUCTION TECHOLOGY", "APC007", Source)
+      EList.Add(1, "Warning - APPLICATIONS EXCEEDING 216 CFPM WILL LIKELY REQUIRE SOME FORM OF ACTIVE GAPPING INDUCTION TECHOLOGY", "APC007", Source)
     End If
 End If
 
+'TODO: VV  7/15/2025  Verify this error , ref Setup Cell M53 - finish code
 '=IF(OverrideGap<>"","WARNING: GAP OVERRIDE IS ENABLED!","")
 'If OverrideGap <> "" Then
  '   EList.Add(1, "WARNING: GAP OVERRIDE IS ENABLED!", "APC003", Source)
@@ -5171,7 +5189,7 @@ Result = EList.ErrorSummary(1)
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Customer_Location_CityState_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -5180,7 +5198,7 @@ Result = EList.ErrorSummary(1)
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Customer_Name_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -5261,7 +5279,7 @@ Result = EList.ErrorSummary(1)
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_Date_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -5270,7 +5288,7 @@ Result = EList.ErrorSummary(1)
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_No_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Panel_Configuration
-'$ GenerateDate: 07/15/2025 16:24:26
+'$ GenerateDate: 07/16/2025 19:07:43
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -344,11 +344,11 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Panel_Configuration", <a><![CDATA[APC_Scan_Panel_Configuration]]></a>.Value, 418, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/15/2025 16:24:11")
+    InitPart("APC_Scan_Panel_Configuration", <a><![CDATA[APC_Scan_Panel_Configuration]]></a>.Value, 418, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/16/2025 19:06:35")
     AddProperty("10151", "BP_ConvWidth", <a><![CDATA[Belt Panda  Conveyor Width]]></a>.Value, "Belt Panda  Conveyor Width from (Belt Panda Object)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 10:31:35 PM")
     AddProperty("10202", "Carton_Presentation", <a><![CDATA[Carton_Presentation]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:24:11 PM")
     AddProperty("9943", "Is_Scanned", <a><![CDATA[Is_Scanned]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:28:07 PM")
-    AddProperty("9983", "Min_Gap_Required", <a><![CDATA[Min_Gap_Required]]></a>.Value, "Calculation of Minimum Gap Required, either from the Global MTBF or the refereced PandA MTBF", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 7:45:56 PM")
+    AddProperty("9983", "Min_Gap_Required", <a><![CDATA[Min_Gap_Required]]></a>.Value, "Calculation of Minimum Gap Required, either from the Global MTBF or the refereced PandA MTBF", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 7:06:35 PM")
     AddProperty("10016", "PandAAvgBoxHeight", <a><![CDATA[PandAAvgBoxHeight]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:24:53 PM")
     AddProperty("10015", "PandAAvgBoxWidth", <a><![CDATA[PandAAvgBoxWidth]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:25:26 PM")
     AddProperty("10017", "PandAMaxBoxHeight", <a><![CDATA[PandAMaxBoxHeight]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 8:23:50 PM")
@@ -356,7 +356,7 @@ Option Infer On
     AddProperty("10013", "PandaMinBoxLength", <a><![CDATA[PandaMinBoxLength]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:08:54 PM")
     AddProperty("9942", "Panel_ID", <a><![CDATA[Panel_ID]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:26:55 PM")
     AddProperty("9957", "Product_Spacing_Category", <a><![CDATA[Product_Spacing_Category]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:49:05 PM")
-    AddProperty("10021", "Read_Window_Size", <a><![CDATA[Read_Window_Size]]></a>.Value, "Calculation of Read Window Size", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:17:26 PM")
+    AddProperty("10021", "Read_Window_Size", <a><![CDATA[Read_Window_Size]]></a>.Value, "Calculation of Read Window Size", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 6:43:49 PM")
     AddProperty("9950", "Scan_Angle_Degrees", <a><![CDATA[Scan_Angle_Degrees]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 12:05:01 PM")
     AddProperty("10008", "Scan_Head_Location", <a><![CDATA[Scan_Head_Location]]></a>.Value, "Scanner CCD Position", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 9:18:22 PM")
     AddProperty("9945", "Scan_Type", <a><![CDATA[Scan_Type]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:38:33 PM")
@@ -417,7 +417,7 @@ Option Infer On
           InitProperty("Is_Scanned", "9525", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/11/2025 6:28:07 PM", "", "In Development",  0,16541)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Min_Gap_Required", "9565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 7:45:56 PM", "", "In Development",  0,17135)
+          InitProperty("Min_Gap_Required", "9565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 7:06:35 PM", "", "In Development",  0,18186)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PandAAvgBoxHeight", "9598", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 8:24:53 PM", "", "In Development",  0,16814)
@@ -441,7 +441,7 @@ Option Infer On
           InitProperty("Product_Spacing_Category", "9539", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 9:49:05 PM", "", "In Development",  0,16824)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Read_Window_Size", "9603", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 4:17:26 PM", "", "In Development",  0,17480)
+          InitProperty("Read_Window_Size", "9603", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 6:43:49 PM", "", "In Development",  0,18185)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Scan_Angle_Degrees", "9532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/12/2025 12:05:01 PM", "", "In Development",  0,16611)
@@ -746,7 +746,7 @@ If Me.Is_Scanned Then
 				Result = MinGapForScan
 			Case 2
 				'2 = If(K99<>"Full",If(BoxSize_Height_Min_IN<BoxSize_Length_Min_IN,MAX(BoxSize_Height_Min_IN,BoxSize_Length_Min_IN,MinGapForScan),BoxSize_Length_Min_IN),MinGapForScan)
-		
+				Result =  If(Me.Parent.ShadowingStatus="Full",If(BoxSize_Height_Min_IN<BoxSize_Length_Min_IN,XlsMAX(BoxSize_Height_Min_IN,BoxSize_Length_Min_IN,MinGapForScan),BoxSize_Length_Min_IN),MinGapForScan)
 				Select Case Parent.ShadowingStatus
 					Case "Full"
 						Result = MinGapForScan
@@ -758,6 +758,7 @@ If Me.Is_Scanned Then
 							Result = BoxSize_Length_Min_IN
 						End If
 				End Select
+				Result =  If(Me.Parent.ShadowingStatus="Full",If(BoxSize_Height_Min_IN<BoxSize_Length_Min_IN,XlsMAX(BoxSize_Height_Min_IN,BoxSize_Length_Min_IN,MinGapForScan),BoxSize_Length_Min_IN),MinGapForScan)
 			Case 3
 				'3 = If(K99="No",BoxSize_Height_Max_IN,If(K99="Partial",BoxSize_Height_Avg_IN,MinGapForScan))			
 				Select Case Parent.ShadowingStatus
@@ -1150,66 +1151,27 @@ If Me.Is_Scanned Then
 	'Dim BP_ConvWidth
 	
 	If Me.Parent.UsePandAMTBH Then
-		'T = If($C89="Yes",If(And($G89="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(And($G89="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
+		'T =  If($C89="Yes",If(And($G89="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(And($G89="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
 		'BT = If($C90="Yes",If(And($G90="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(And($G90="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
 		'L = If($C91="Yes",If($G91="O",PandAMaxBoxHeightWidthDim+6,5),"")
-		'R = If($C92="Yes",If($G92="O",PandAMaxBoxHeightWidthDim+6,5),"")
+		'R = If($C92="Yes",	If($G92="O",PandAMaxBoxHeightWidthDim+6,5),"")
 		'F = If($C93="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L93+6),"")
 		'B = If($C94="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L94+6),"")
 
-		Select Case Me.Product_Spacing_Category 
-			Case 1
-				'If($C89="Yes",If                 And($G89="O",       ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(   And($G89="O", ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
-				  Result = If(Me.Is_Scanned,If(XlsAnd(Me.Scan_Type="O",      Me.Carton_Presentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(XlsAnd(Me.Scan_Type="O",Me.Carton_Presentation="Random"),BP_ConvWidth+6,5  )), 0)
-			Case 2
-			
-			Case 3
-				'3 = If($K99="No",PandAMaxBoxHeight,If($K99="Partial",MAX(PandAAvgBoxHeight,PandaMinBoxLength),PandaMinBoxLength))
-				Select Case Parent.ShadowingStatus
-					Case "No"
-						Result = Me.PandAMaxBoxHeight
-					Case "Partial"
-						If Me.PandAAvgBoxHeight >= Me.PandaMinBoxLength Then
-							Result = Me.PandAAvgBoxHeight
-						Else
-							Result = Me.PandaMinBoxLength
-						End If
-					Case "Full"
-						Result = PandaMinBoxLength 'Todo: Unhandled / Incorrectly (MPC 20250712)
-				End Select
-			Case 4
-				'4 = If($K99="No",PandaMaxBoxWidth+1,If($K99="Partial",MAX(PandAAvgBoxWidth+1,PandaMinBoxLength),PandaMinBoxLength))
-				Select Case Parent.ShadowingStatus
-					Case "No"
-						Result = Me.PandaMaxBoxWidth+1
-					Case "Partial"
-						If Me.PandAAvgBoxWidth+1 >= Me.PandaMinBoxLength Then
-							Result = Me.PandAAvgBoxWidth+1
-						Else
-							Result = Me.PandaMinBoxLength
-						End If
-					Case "Full"
-						Result = PandaMinBoxLength
-				End Select
-			Case 5
-				'5 = If($K99="No",MAX((PandaMaxBoxWidth/2)+3,PandaMinBoxLength),If($K99="Partial",MAX((PandAAvgBoxWidth/2)+3,PandaMinBoxLength),PandaMinBoxLength))
-				Select Case Parent.ShadowingStatus
-					Case "No"
-						If (Me.PandaMaxBoxWidth/2)+3 >= Me.PandaMinBoxLength Then
-							Result = Me.PandAAvgBoxWidth+1
-						Else
-							Result = Me.PandaMinBoxLength
-						End If
-					Case "Partial"
-						If (PandAAvgBoxWidth/2)+3 > Me.PandaMinBoxLength Then
-							Result = (PandAAvgBoxWidth/2)+3
-						Else
-							Result = Me.PandaMinBoxLength
-						End If
-						
-					Case "Full"
-						Result = PandaMinBoxLength
-				End Select
+		Select Case Me.Panel_ID 
+			Case "Top", "Bottom"
+				'T = If($C89="Yes",If                 And($G89="O",       ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(   And($G89       ="O", ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"")
+				'BT = If($C90="Yes",If(And($G90="O",ScanConfigACartonPresentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(And($G90="O",ScanConfigACartonPresentation="Random"),BP_ConvWidth+6,5)),"") 
+				Result = If(Me.Is_Scanned,If(XlsAnd(Me.Scan_Type="O",      Me.Carton_Presentation="Edge Aligned"),PandAMaxBoxHeightWidthDim+6,If(XlsAnd(Me.Scan_Type="O",Me.Carton_Presentation       ="Random"),BP_ConvWidth+6,5  )), 0)
+			Case "Left", "Right"
+				'L = If($C91="Yes",If($G91="O",PandAMaxBoxHeightWidthDim+6,5),"")
+				'R = If($C92="Yes",If($G92="O",PandAMaxBoxHeightWidthDim+6,5),"")
+				 Result = If(Me.Is_Scanned,If(Me.Scan_Type="O",PandAMaxBoxHeightWidthDim +6 ,5),0)
+				
+			Case "Front", "Back"
+				'F = If($C93="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L93+6),"")
+				'B = If($C94="Yes",If(Or($H93="Overhead",$H93="Underside"),PandAMaxBoxHeightWidthDim+6,$L94+6),"")
+				Result = If(Me.Is_Scanned,If(XlsOR(FrontScanned_Overhead,FrontScanned_Underside),PandAMaxBoxHeightWidthDim +6,Me.Min_Gap_Required +6),0)
 		End Select
 	Else
 		Dim BoxSize_Height_Min_IN As Double = Me.Parent.My_Setup(1).BoxSize_Height_Min_IN
@@ -1220,19 +1182,17 @@ If Me.Is_Scanned Then
 		Dim BoxSize_Width_Max_IN As Double = Me.Parent.My_Setup(1).BoxSize_Width_Max_IN
 		Dim MinGapForScan As Double = Me.Parent.MinGapForScan_IN
 		
-		Dim MaxBoxHeightWidthDim As Integer = Me.Parent.My_Seup(1).MaxBoxHeightWidthDim
+		'Dim MaxBoxHeightWidthDim As Integer = Me.Parent.My_Setup(1).MaxBoxHeightWidthDim
+		Dim MaxBoxHeightWidthDim As Double =  MAX(Me.Parent.My_Setup(1).BoxSize_Height_Max_IN,Me.Parent.My_Setup(1).BoxSize_Width_Max_IN)
 		
-		
-		
-
 		'Please Note: Case Else was used below in many cases as the excel spreadsheet did not have formulas that specifically called out "Full" ShadowingStatus. (20250712)
 		Select Case Me.Panel_ID 
 			Case "Top"
 				'T = If($C89="Yes",If(And($G89="O",ScanConfigACartonPresentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(And($G89="O",ScanConfigACartonPresentation="Random"),SorterWidth+6,5)),"")
-				Result = If(Me.Is_Scanned,If(XlsAnd(Me.Scan_Type="O",Me.Parent.Carton_Presentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(XlsAnd(Me.Scan_Type="O",Me.Parent.ACartonPresentation="Random"),Sorter_Selected_Width_In+6,5)),0)
+				Result = If(Me.Is_Scanned,If(XlsAnd(Me.Scan_Type="O",Me.Carton_Presentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(XlsAnd(Me.Scan_Type="O",Me.Carton_Presentation="Random"),Sorter_Selected_Width_In+6,5)),0)
 			Case "Bottom"
 				'BT = If($C90="Yes",If(And($G90="O",ScanConfigACartonPresentation="Edge Aligned"),MaxBoxHeightWidthDim+6,If(And($G90="O",ScanConfigACartonPresentation="Random"),SorterWidth+6,5)),"")
-				Result = If(Me.Is_Scanned,If(XlsAnd(Me.Scan_Type="O",Me.Parent.Carton_Presentation="Edge Aligned"),MaxBoxHeightWidthDim + 6,If(XlsAnd(Me.Scan_Type="O",Me.Parent.ACartonPresentation="Random"),Me.Sorter_Selected_Width_In+6,5)),0)
+				Result = If(Me.Is_Scanned,If(XlsAnd(Me.Scan_Type="O",Me.Carton_Presentation="Edge Aligned"),MaxBoxHeightWidthDim + 6,If(XlsAnd(Me.Scan_Type="O",Me.Carton_Presentation="Random"),Me.Sorter_Selected_Width_In+6,5)),0)
 				
 			Case "Left", "Right"
 				'L = If($C91="Yes",If($G91="O",MaxBoxHeightWidthDim+6,5),"")
@@ -1242,8 +1202,6 @@ If Me.Is_Scanned Then
 				'F = If($C93="Yes",If(Or($H93="Overhead",$H93="Underside"),MaxBoxHeightWidthDim+6,$L93+6),"")
 				'BK = If($C94="Yes",If(Or($H93="Overhead",$H93="Underside"),MaxBoxHeightWidthDim+6,$L94+6),"")
 				Result = If(Me.Is_Scanned,If( XlsOR(FrontScanned_OverHead,FrontScanned_Underside), MaxBoxHeightWidthDim + 6,Me.Min_Gap_Required + 6),0)
-				
-			
 		End Select
 	End If
 End If
