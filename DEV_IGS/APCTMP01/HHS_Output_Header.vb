@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: HHS_Output_Header
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/15/2025 19:31:01
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -372,6 +372,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_PRD")
+      End Get
+      End Property
+    
     #End Region
 
     #Region " Initialization "
@@ -386,7 +392,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("HHS_Output_Header", <a><![CDATA[HHS Output Header]]></a>.Value, 336, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/11/2025 12:27:29")
+    InitPart("HHS_Output_Header", <a><![CDATA[HHS Output Header]]></a>.Value, 336, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/15/2025 19:25:04")
     AddProperty("2480", "BOM_PartNo_Unique_Keys", <a><![CDATA[BOM PartNo Unique Keys]]></a>.Value, "Count / VV List of Unique Part Numbers in Solution", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 5:50:15 PM")
     AddProperty("9901", "Cost_Per_Hanger", <a><![CDATA[Cost Per Hanger]]></a>.Value, "Total Cost Rollup", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 12:27:29 PM")
     AddProperty("2465", "Display_Zero_Qty_Items", <a><![CDATA[Display Zero Qty Items]]></a>.Value, "Include Non-Zero Items in Connections / Grids", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/29/2025 5:08:07 PM")
@@ -398,12 +404,12 @@ Option Infer On
     AddProperty("8112", "Project_Code", <a><![CDATA[Project_Code]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 10:42:04 AM")
     AddProperty("8113", "Project_Identifier", <a><![CDATA[Project_Identifier]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 11:21:48 AM")
     AddProperty("8114", "Project_Name", <a><![CDATA[Project_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 11:21:54 AM")
-    AddProperty("8115", "Proposal_City_State", <a><![CDATA[Proposal City State]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 11:22:01 AM")
-    AddProperty("8116", "Proposal_Customer_Name", <a><![CDATA[Proposal Customer Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 11:22:07 AM")
-    AddProperty("8117", "Proposal_Customer_Number", <a><![CDATA[Proposal Customer Number]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 11:22:14 AM")
-    AddProperty("8118", "Proposal_Description", <a><![CDATA[Proposal Description]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 11:22:20 AM")
-    AddProperty("8119", "Proposal_ID", <a><![CDATA[Proposal ID]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 11:22:25 AM")
-    AddProperty("8120", "Proposal_Name", <a><![CDATA[Proposal Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 11:22:32 AM")
+    AddProperty("8115", "Proposal_City_State", <a><![CDATA[Proposal City State]]></a>.Value, "Proposal City, State From Salesforce ePRD", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 6:57:41 PM")
+    AddProperty("8116", "Proposal_Customer_Name", <a><![CDATA[Proposal Customer Name]]></a>.Value, "Proposal Customer Name From Salesforce ePRD", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 6:58:40 PM")
+    AddProperty("8117", "Proposal_Customer_Number", <a><![CDATA[Proposal Customer Number]]></a>.Value, "Customer Number from Salesforce ePRD", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:25:04 PM")
+    AddProperty("8118", "Proposal_Description", <a><![CDATA[Proposal Description]]></a>.Value, "Proposal Description From Salesforce ePRD", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 6:57:57 PM")
+    AddProperty("8119", "Proposal_ID", <a><![CDATA[Proposal ID]]></a>.Value, "Propsal ID From Salesforce ePRD", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 6:57:04 PM")
+    AddProperty("8120", "Proposal_Name", <a><![CDATA[Proposal Name]]></a>.Value, "Proposal Name From Salesforce ePRD", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 6:55:57 PM")
     AddProperty("2321", "Seismic_Requirement", <a><![CDATA[Seismic Requirement]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/25/2025 11:46:14 AM")
     AddProperty("9807", "Total_Cost", <a><![CDATA[Total_Cost]]></a>.Value, "Total Cost Rollup", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/10/2025 5:42:17 PM")
     AddProperty("9515", "Total_Hanger_Qty", <a><![CDATA[Total Hanger Qty]]></a>.Value, "Total Hanger Quantity", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 7:12:40 PM")
@@ -442,6 +448,10 @@ Option Infer On
       oConnection = AddConnection("HHS_Import_App", <a><![CDATA[HHS Import App]]></a>.Value, "", "86", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "4/25/2025 11:46:14 AM")
       
         oConnection.AddVPF(334, "HHS_DWGXLSX_Importer")
+      
+      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "184", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/15/2025 6:43:36 PM")
+      
+        oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
       
     End Sub
 
@@ -505,22 +515,22 @@ Option Infer On
           InitProperty("Project_Name", "9379", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 11:21:54 AM", "", "In Development",  0,15998)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_City_State", "9370", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 11:22:01 AM", "", "In Development",  0,15987)
+          InitProperty("Proposal_City_State", "9370", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 6:57:41 PM", "", "In Development",  0,17587)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Customer_Name", "9371", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 11:22:07 AM", "", "In Development",  0,15988)
+          InitProperty("Proposal_Customer_Name", "9371", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 6:58:40 PM", "", "In Development",  0,17589)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Customer_Number", "9372", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 11:22:14 AM", "", "In Development",  0,15989)
+          InitProperty("Proposal_Customer_Number", "9372", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 6:59:26 PM", "", "In Development",  0,17591)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Description", "9376", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 11:22:20 AM", "", "In Development",  0,15993)
+          InitProperty("Proposal_Description", "9376", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 6:56:09 PM", "", "In Development",  0,17586)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_ID", "9377", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 11:22:25 AM", "", "In Development",  0,15994)
+          InitProperty("Proposal_ID", "9377", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 6:57:04 PM", "", "In Development",  0,17584)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Name", "9378", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 11:22:32 AM", "", "In Development",  0,15995)
+          InitProperty("Proposal_Name", "9378", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 6:55:57 PM", "", "In Development",  0,17585)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Seismic_Requirement", "1969", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "4/25/2025 11:46:14 AM", "", "In Development",  0,2734)
@@ -609,6 +619,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitConnection("HHS_Import_App", "66", "N","N", "N", 0, "-1", "", "GLOBAL\H601424", "4/25/2025 11:46:14 AM", "", "In Development", "Y",97)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_PRD", "164", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/15/2025 6:43:36 PM", "", "In Development", "N",297)
         
           End If
         
@@ -738,6 +754,28 @@ Result = SortObjectsByProperty(Result,"Sort_Order_1", False)
       
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HHS_Output_Header.Formula_HHS_Import_App_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_PRD_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:164; TYPE:PF
+        Result = Me.Parent.My_Prd(1)
+        '   END FORMULA; CON ID:164; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HHS_Output_Header.Formula_My_PRD_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -1022,7 +1060,7 @@ Result = SortObjectsByProperty(Result,"Sort_Order_1", False)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9370; TYPE:PF
-      Result = ""
+      Result = Me.My_PRD(1).Proposal_City_State
       '   END FORMULA; PROP ID:9370; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HHS_Output_Header.Formula_Proposal_City_State", ex.Message)
@@ -1047,7 +1085,7 @@ Result = SortObjectsByProperty(Result,"Sort_Order_1", False)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9371; TYPE:PF
-      Result = ""
+      Result = Me.My_PRD(1).Proposal_Customer_Name
       '   END FORMULA; PROP ID:9371; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HHS_Output_Header.Formula_Proposal_Customer_Name", ex.Message)
@@ -1072,7 +1110,7 @@ Result = SortObjectsByProperty(Result,"Sort_Order_1", False)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9372; TYPE:PF
-      Result = ""
+      Result = Me.My_PRD(1).Proposal_Customer_Number
       '   END FORMULA; PROP ID:9372; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HHS_Output_Header.Formula_Proposal_Customer_Number", ex.Message)
@@ -1097,7 +1135,7 @@ Result = SortObjectsByProperty(Result,"Sort_Order_1", False)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9376; TYPE:PF
-      Result = ""
+      Result = Me.My_PRD(1).Proposal_Description
       '   END FORMULA; PROP ID:9376; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HHS_Output_Header.Formula_Proposal_Description", ex.Message)
@@ -1122,7 +1160,7 @@ Result = SortObjectsByProperty(Result,"Sort_Order_1", False)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9377; TYPE:PF
-      Result = ""
+      Result = Me.My_PRD(1).Proposal_ID
       '   END FORMULA; PROP ID:9377; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HHS_Output_Header.Formula_Proposal_ID", ex.Message)
@@ -1147,7 +1185,7 @@ Result = SortObjectsByProperty(Result,"Sort_Order_1", False)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9378; TYPE:PF
-      Result = ""
+      Result = Me.My_PRD(1).Proposal_Name
       '   END FORMULA; PROP ID:9378; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HHS_Output_Header.Formula_Proposal_Name", ex.Message)
@@ -1517,7 +1555,7 @@ Next p
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_City_State_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1526,7 +1564,7 @@ Next p
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_Customer_Name_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1535,7 +1573,7 @@ Next p
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_Customer_Number_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1544,7 +1582,7 @@ Next p
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_Description_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1553,7 +1591,7 @@ Next p
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_ID_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1562,7 +1600,7 @@ Next p
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Proposal_Name_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************

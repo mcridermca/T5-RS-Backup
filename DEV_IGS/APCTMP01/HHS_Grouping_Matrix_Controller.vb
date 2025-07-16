@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: HHS_Grouping_Matrix_Controller
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/15/2025 17:51:36
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -224,8 +224,8 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("HHS_Grouping_Matrix_Controller", <a><![CDATA[HHS Grouping Matrix Controller]]></a>.Value, 339, "APCTMP01",  "N", "N", False, False, "In Development", "", "Controller for Calculation Groups", "", "", "",  "GLOBAL\H601424", "04/23/2025 18:21:50")
-    AddProperty("2236", "Group_Keys", <a><![CDATA[Group Keys]]></a>.Value, "List of all the Group Keys to Build Matrix", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/23/2025 11:54:28 AM")
+    InitPart("HHS_Grouping_Matrix_Controller", <a><![CDATA[HHS Grouping Matrix Controller]]></a>.Value, 339, "APCTMP01",  "N", "N", False, False, "In Development", "", "Controller for Calculation Groups", "", "", "",  "GLOBAL\H601424", "07/15/2025 17:50:47")
+    AddProperty("2236", "Group_Keys", <a><![CDATA[Group Keys]]></a>.Value, "List of all the Group Keys to Build Matrix", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 5:50:44 PM")
     AddProperty("2352", "Hanger_Spacing", <a><![CDATA[Hanger Spacing]]></a>.Value, "Hanger Spacing in Feet", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/23/2025 6:21:50 PM")
     AddProperty("2322", "Is_Seismic", <a><![CDATA[Is Seismic]]></a>.Value, "Does this application require siesmic standards", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/23/2025 6:21:50 PM")
     AddProperty("2323", "Seismic_Requirement", <a><![CDATA[Seismic Requirement]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/23/2025 6:21:50 PM")
@@ -235,7 +235,7 @@ Option Infer On
     
       AddValidValue("Seismic_Requirement")
     
-      oSubpart = AddSubpart(204,"Group_Calculators", <a><![CDATA[Group Calculators]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "4/23/2025 12:29:34 PM")
+      oSubpart = AddSubpart(204,"Group_Calculators", <a><![CDATA[Group Calculators]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/15/2025 5:50:47 PM")
       
         oSubpart.AddVPF (340, "sm_HHS_Group_Calculator", "sm HHS Group Calculator")
       
@@ -319,7 +319,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Group_Calculators", 142, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "4/23/2025 12:29:34 PM", "", "In Development", "Y",0,338,331)
+        InitSubpart("Group_Calculators", 142, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/15/2025 5:49:35 PM", "", "In Development", "Y",0,731,331)
         
           End If
         
@@ -695,10 +695,13 @@ Result = MakeValidValues(Array("A","B","C","D","E","F","G","K","M","N","P","R"))
 
 'Loop Through an create a calculator for every type of Steel (A - R) 
 For Each v As String In Me.ValidValues("Group_Keys").Keys
-	Result = Result & "HHS_Group_Calculator_" & v & ","
+	Result = Result & "HHS_Group_Calculator_" & v.ToUpper() & ","
 Next v
 
 Result = left(Result,len(Result)-1)
+
+' Above not currently used
+Result = "sm_HHS_Group_Calculator"
       '   END FORMULA; SUB ID:142; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HHS_Grouping_Matrix_Controller.Formula_Group_Calculators_OPTIMALPARTFAMILY", ex.Message)

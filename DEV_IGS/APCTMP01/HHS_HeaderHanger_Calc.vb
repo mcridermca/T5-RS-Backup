@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: HHS_HeaderHanger_Calc
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/15/2025 18:44:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -224,6 +224,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_PRD")
+      End Get
+      End Property
+    
       Public ReadOnly Property CreationDate() As Date
       Get
       If Properties.ContainsKey("CreationDate") Then
@@ -391,7 +397,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("HHS_HeaderHanger_Calc", <a><![CDATA[Header Hanger Calculator]]></a>.Value, 333, "APCTMP01",  "", "", True, True, "In Development", "", "Header Hanger Calculator", "", "", "",  "GLOBAL\H621516", "07/11/2025 16:49:12")
+    InitPart("HHS_HeaderHanger_Calc", <a><![CDATA[Header Hanger Calculator]]></a>.Value, 333, "APCTMP01",  "", "", True, True, "In Development", "", "Header Hanger Calculator", "", "", "",  "GLOBAL\H601424", "07/15/2025 18:44:03")
     AddProperty("9797", "Valid", <a><![CDATA[Valid]]></a>.Value, "Are Plastic Totes Used?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/10/2025 2:34:37 PM")
     AddProperty("9796", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/10/2025 2:26:45 PM")
     AddProperty("2199", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/21/2025 3:45:13 PM")
@@ -407,6 +413,10 @@ Option Infer On
       oSubpart = AddSubpart(200,"HHS_Output", <a><![CDATA[Output Application]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "4/22/2025 12:19:45 AM")
       
         oSubpart.AddVPF (336, "HHS_Output_Header", "HHS Output Header")
+      
+      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "182", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/15/2025 6:42:09 PM")
+      
+        oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
       
     End Sub
 
@@ -613,6 +623,12 @@ Option Infer On
     Private Sub NewContextInit_Connections()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_PRD", "162", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/15/2025 6:42:09 PM", "", "In Development", "N",295)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -630,6 +646,28 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_PRD_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:162; TYPE:PF
+        Result = Me.Parent.Parent
+        '   END FORMULA; CON ID:162; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HHS_HeaderHanger_Calc.Formula_My_PRD_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
     
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
