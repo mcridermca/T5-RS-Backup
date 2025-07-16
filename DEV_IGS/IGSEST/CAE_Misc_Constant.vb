@@ -2,9 +2,9 @@ Option Strict Off
 Option Explicit On 
 Option Infer On
 
-'$ Application: APCTMP01
-'$ PartFamily: APC_Induction
-'$ GenerateDate: 07/16/2025 13:16:42
+'$ Application: IGSEST
+'$ PartFamily: CAE_Misc_Constant
+'$ GenerateDate: 07/16/2025 15:10:16
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -20,11 +20,11 @@ Option Infer On
     Imports RuleStream.Kernel
     Imports System.Collections.Generic
     Imports RulestreamTCUtilities
-    Imports APCTMP01.swMateType_e
-    Imports APCTMP01.swMateAlign_e
-    Imports APCTMP01.severity
+    Imports IGSEST.swMateType_e
+    Imports IGSEST.swMateAlign_e
+    Imports IGSEST.severity
 
-    Public Class [APC_Induction]
+    Public Class [CAE_Misc_Constant]
     
     Inherits RuleStream.Kernel.Part
     Implements RuleStream.IRsPartFormulas
@@ -45,7 +45,7 @@ Option Infer On
     '*                                                                       *
     '*************************************************************************
 
-    Private this as APC_Induction = me
+    Private this as CAE_Misc_Constant = me
 
     #Region " IRsPartFormulas Implementation "
 
@@ -147,12 +147,30 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
-          Public Property [MaxBoxHeightWidthDim]() As Double
+          Public Property [CAE_MEI_Misc_Constants_ID]() As Long
       Get
-      Return Properties("MaxBoxHeightWidthDim").Value
+      Return Properties("CAE_MEI_Misc_Constants_ID").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("CAE_MEI_Misc_Constants_ID").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Misc_Description]() As String
+      Get
+      Return Properties("Misc_Description").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Misc_Description").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Misc_Factor]() As Double
+      Get
+      Return Properties("Misc_Factor").Value
       End Get
       Set(ByVal Value As Double)
-      Properties("MaxBoxHeightWidthDim").CalculatedValue = Value
+      Properties("Misc_Factor").CalculatedValue = Value
       End Set
       End Property
     
@@ -163,18 +181,6 @@ Option Infer On
       Set(ByVal Value As String)
       Properties("PartNumber").CalculatedValue = Value
       End Set
-      End Property
-    
-      Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
-      Get
-      Return Connections("My_PRD")
-      End Get
-      End Property
-    
-      Public ReadOnly Property [My_Setup]() As Rulestream.Kernel.Connection
-      Get
-      Return Connections("My_Setup")
-      End Get
       End Property
     
     #End Region
@@ -191,18 +197,16 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Induction", <a><![CDATA[APC_Induction]]></a>.Value, 122, "APCTMP01",  "N", "N", False, False, "In Development", "", "Basic Induction Configuration Input", "", "", "",  "GLOBAL\H601424", "07/14/2025 22:41:22")
-    AddProperty("10152", "MaxBoxHeightWidthDim", <a><![CDATA[MaxBoxHeightWidthDim]]></a>.Value, "Max of Global BoxSize_Height_Max and BoxSize_Width_Max from Setup Object", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 10:41:22 PM")
-    AddProperty("718", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/24/2025 5:32:55 PM")
+    InitPart("CAE_Misc_Constant", <a><![CDATA[CAE_Misc_Constant]]></a>.Value, 427, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/16/2025 15:03:35")
+    AddProperty("10414", "CAE_MEI_Misc_Constants_ID", <a><![CDATA[CAE_MEI_Misc_Constants_ID]]></a>.Value, "Primary key for Misc Constants DB", "Long","","Mech Install Metrics","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 3:03:35 PM")
+    AddProperty("10415", "Misc_Description", <a><![CDATA[Misc_Description]]></a>.Value, "Miscellaneous constants DB table column", "String","","Mech Install Metrics","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 3:03:35 PM")
+    AddProperty("10416", "Misc_Factor", <a><![CDATA[Misc_Factor]]></a>.Value, "Miscellaneous constant factor", "Double","","Mech Install Metrics","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 3:03:35 PM")
+    AddProperty("10413", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 3:03:35 PM")
     
-      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "178", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:37:30 PM")
-      
-        oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
-      
-      oConnection = AddConnection("My_Setup", <a><![CDATA[My_Setup]]></a>.Value, "My App Calc Setup Object", "179", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:37:30 PM")
-      
-        oConnection.AddVPF(119, "APC_Setup")
-      
+      AddValidValue("Misc_Factor")
+    
+      AddDBConstraint(13, "Misc_Constants_DbInfo", <a><![CDATA[Misc_Constants_DbInfo]]></a>.Value,"Mech Install Metrics", 9999)
+    
     End Sub
 
     '*****************************************************************************
@@ -232,7 +236,13 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("MaxBoxHeightWidthDim", "9733", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 10:40:35 PM", "", "In Development",  0,17190)
+          InitProperty("CAE_MEI_Misc_Constants_ID", "9987", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 3:03:35 PM", "", "In Development",  0,18112)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Misc_Description", "9988", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 3:03:35 PM", "", "In Development",  0,18113)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Misc_Factor", "9989", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 3:03:35 PM", "", "In Development",  0,18114)
         End If
     End Sub
 
@@ -245,6 +255,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Misc_Factor_ValidValues", "9989", "-1", 18115)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -267,18 +281,6 @@ Option Infer On
     Private Sub NewContextInit_Connections()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitConnection("My_PRD", "158", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:37:30 PM", "", "In Development", "N",289)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitConnection("My_Setup", "159", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:37:30 PM", "", "In Development", "N",290)
-        
-          End If
-        
     End Sub
 
     '*****************************************************************************
@@ -290,6 +292,16 @@ Option Infer On
     Private Sub NewContextInit_DB()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitDBConstraint("Misc_Constants_DbInfo", 13,"", "Y","", "", "CAE_MEI_Misc_Constants")
+        
+          InitDBproperty("Misc_Constants_DbInfo", "Misc_Description",13, "Misc_Description", "CAE_MEI_Misc_Constants")
+        
+          InitDBproperty("Misc_Constants_DbInfo", "Misc_Factor",13, "Factor", "CAE_MEI_Misc_Constants")
+        
+          End If
+        
     End Sub
 
     #End Region
@@ -297,48 +309,27 @@ Option Infer On
     #Region " Formulas "
 
     
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_My_PRD_PARTS() as Rulestream.Kernel.rsCollection
-      
-      Dim Result as Object = Nothing
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_CAE_MEI_Misc_Constants_ID() As Long
+          Dim Result as Long
       Dim ctx as Object
       Try
       ctx = this
-        '   BEGIN FORMULA; CON ID:158; TYPE:PF
-        Result = Me.Parent.My_Prd(1)
-        '   END FORMULA; CON ID:158; TYPE:PF
-      
+      If Me.Properties("CAE_MEI_Misc_Constants_ID").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9987; TYPE:PF
+      Result = Me.Parent.ValidValues("Misc_Constants_Row_DBKeys")(Me.SubpartID-1)
+      '   END FORMULA; PROP ID:9987; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " APC_Induction.Formula_My_PRD_PARTS", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.Formula_CAE_MEI_Misc_Constants_ID", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
-      Return ConvertToCollection(Result)
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_My_Setup_PARTS() as Rulestream.Kernel.rsCollection
-      
-      Dim Result as Object = Nothing
-      Dim ctx as Object
-      Try
-      ctx = this
-        '   BEGIN FORMULA; CON ID:159; TYPE:PF
-        Result = Me.Parent.My_Setup(1)
-        '   END FORMULA; CON ID:159; TYPE:PF
-      
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " APC_Induction.Formula_My_Setup_PARTS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return ConvertToCollection(Result)
+      Return Result
       End Function
     
           '*****************************************************************************
@@ -346,20 +337,44 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_MaxBoxHeightWidthDim() As Double
+          Public Function Formula_Misc_Description() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Misc_Description").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9988; TYPE:PF
+      Result = "80/20 Guards"
+      '   END FORMULA; PROP ID:9988; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.Formula_Misc_Description", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Misc_Factor() As Double
           Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("MaxBoxHeightWidthDim").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Misc_Factor").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:9733; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9989; TYPE:PF
       result = 0.0
-Result = MAX( Me.My_Setup(1).BoxSize_Height_Max_IN, Me.My_Setup(1).BoxSize_Width_Max_IN)
-      '   END FORMULA; PROP ID:9733; TYPE:PF
+      '   END FORMULA; PROP ID:9989; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " APC_Induction.Formula_MaxBoxHeightWidthDim", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.Formula_Misc_Factor", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -370,7 +385,7 @@ Result = MAX( Me.My_Setup(1).BoxSize_Height_Max_IN, Me.My_Setup(1).BoxSize_Width
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_MaxBoxHeightWidthDim_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_CAE_MEI_Misc_Constants_ID_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -379,8 +394,68 @@ Result = MAX( Me.My_Setup(1).BoxSize_Height_Max_IN, Me.My_Setup(1).BoxSize_Width
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_MaxBoxHeightWidthDim_USERCHANGE() as Boolean
+      Public Function Formula_Misc_Description_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Misc_Factor_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_CAE_MEI_Misc_Constants_ID_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Misc_Description_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Misc_Factor_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Misc_Factor_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Misc_Factor").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9989; TYPE:VV
+      Result = MakeValidValuesFromDatabase("[CAE_MEI_Misc_Constants]", "[Factor]", "WHERE [Misc_Description] = " & FormatCriteria(Me.Misc_Description) & "", " ORDER BY [Misc_Description]")
+      '   END FORMULA; PROP ID:9989; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.Formula_Misc_Factor_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
 
@@ -392,6 +467,53 @@ Result = MAX( Me.My_Setup(1).BoxSize_Height_Max_IN, Me.My_Setup(1).BoxSize_Width
     '*****************************************************************************
     Public Function GetRecordsetSQL(ByVal lngDBConID as Long) as String Implements RuleStream.IRsPartFormulas.GetRecordsetSQL
     Dim strSelectStmt As String = ""
+    
+      Dim strWhereClause as String = ""
+      Dim strSelectList as String = ""
+      Dim varPropSpecVal As Object
+      Dim ctx As Object
+      Dim leftDelimiter As String = String.Empty
+      Dim rightDelimiter As String = String.Empty
+      Try
+      Select Case g_rsUser.UserSettings.ActiveProfile.ComponentsDatabaseType
+      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.MSAccess, RuleStream.DataService.PublicEnumerations.DatabaseTypes.SQLServer
+      leftDelimiter = "["
+      rightDelimiter = "]"
+      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.Oracle
+      leftDelimiter = """"
+      rightDelimiter = """"
+      End Select
+      ObjectManager.UnitConversion = False
+      'Used to set the parameters results
+      Select Case lngDBConID
+      
+        Case 13
+        ctx = this
+            strWhereClause = ""
+            strSelectList = ""
+            
+              strSelectList = strSelectList & leftDelimiter & "Misc_Description" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Factor" & rightDelimiter & ", "
+            
+            'Build the WHERE clause
+            
+                  varPropSpecVal = me.CAE_MEI_Misc_Constants_ID
+              BuildWhereClause(strWhereClause, "0", "0", "  ", "[CAE_MEI_Misc_Constants_ID]", "=", varPropSpecVal, "")
+            
+            strSelectStmt = BuildSQLStatement(strSelectList, DelimitTableName("CAE_MEI_Misc_Constants"), strWhereClause, leftDelimiter & "Misc_Description" & rightDelimiter, "ASC")
+          
+      End Select
+      Catch ex as Exception
+      Dim strError As String = ex.Message
+      If strSelectStmt <> "" Then
+      strError = strError & vbCrLf & vbCrLf & strSelectStmt
+      strSelectStmt = ""
+      End If
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.GetRecordset", strError)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      ObjectManager.UnitConversion = True
     Return strSelectStmt
     End Function
     #End Region

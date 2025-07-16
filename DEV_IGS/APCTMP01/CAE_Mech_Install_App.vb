@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: CAE_Mech_Install_App
-'$ GenerateDate: 07/15/2025 13:30:18
+'$ GenerateDate: 07/16/2025 13:16:42
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -625,7 +625,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Mech_Install_App", <a><![CDATA[CAE Mech Install App]]></a>.Value, 360, "APCTMP01",  "N", "N", True, True, "In Development", "", "C&E Mechanical Install Estimator App", "", "", "",  "GLOBAL\H582667", "07/15/2025 06:19:07")
+    InitPart("CAE_Mech_Install_App", <a><![CDATA[CAE Mech Install App]]></a>.Value, 360, "APCTMP01",  "N", "N", True, True, "In Development", "", "C&E Mechanical Install Estimator App", "", "", "",  "GLOBAL\H602502", "07/16/2025 12:36:23")
     AddProperty("4540", "HCAD_Import_QuantityOfCPs", <a><![CDATA[HCAD_Import_Quantity Of CPs]]></a>.Value, "", "Long","","HCAD Pricing Sheet Import","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/19/2025 7:22:50 PM")
     AddProperty("4539", "HCAD_Import_RawData", <a><![CDATA[HCAD_Import_Raw Data]]></a>.Value, "", "String","","HCAD Pricing Sheet Import","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/18/2025 9:03:56 PM")
     AddProperty("9513", "AirPipingFactor", <a><![CDATA[Air Piping Factor]]></a>.Value, "", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 7:07:53 PM")
@@ -672,7 +672,7 @@ Option Infer On
       
         oSubpart.AddVPF (399, "CAE_Mech_Install_CP_Comp", "CAE_Mech_Install_CP_Comp")
       
-      oSubpart = AddSubpart(307,"Chutes", <a><![CDATA[Chutes]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H582667", "7/15/2025 6:19:07 AM")
+      oSubpart = AddSubpart(307,"Chutes", <a><![CDATA[Chutes]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/16/2025 12:36:23 PM")
       
         oSubpart.AddVPF (409, "CAE_Chutes", "CAE_Chutes")
       
@@ -700,7 +700,7 @@ Option Infer On
       
         oSubpart.AddVPF (386, "CAE_Structures_Platforms", "CAE_Structures_Platforms")
       
-      oSubpart = AddSubpart(296,"TTCB_Costing_Mech", <a><![CDATA[TTCB_Costing_Mech]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/7/2025 1:09:58 PM")
+      oSubpart = AddSubpart(296,"TTCB_Costing_Mech", <a><![CDATA[TTCB_Costing_Mech]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H582667", "7/16/2025 6:45:41 AM")
       
         oSubpart.AddVPF (401, "CAE_TTCB_Costing_Mech", "CAE_TTCB_Costing_Mech")
       
@@ -1300,10 +1300,55 @@ Option Infer On
         oProcessStep.AddPath("CAE_Mech_Install_App.Chutes/CAE_Chutes")
         oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_1_Angle_hrs", 1)
         oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_1_Angle_of_Curve", 2)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_1_Infeed_Conveyor_Type", 21)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_1_Infeed_hrs", 22)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_1_Length_hrs", 24)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_1_Length_in_Feet", 23)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_1_Material_hrs", 26)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_1_Merge_hrs", 27)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_1_Type_of_Material", 25)
         oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_10_Angle_hrs", 3)
-        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_10_Angle_of_Curve", 6)
-        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Angle_hrs", 4)
-        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Angle_of_Curve", 5)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_10_Angle_of_Curve", 4)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_10_Infeed_Conveyor_Type", 28)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_10_Infeed_hrs", 29)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_10_Length_hrs", 31)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_10_Length_in_Feet", 30)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_10_Material_hrs", 33)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_10_Type_of_Material", 32)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Angle_hrs", 5)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Angle_of_Curve", 6)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Infeed_Conveyor_Type", 34)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Infeed_hrs", 35)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Length_hrs", 37)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Length_in_Feet", 36)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Material_hrs", 39)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_2_Type_of_Material", 38)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_3_Angle_hrs", 8)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_3_Angle_of_Curve", 7)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_3_Infeed_Conveyor_Type", 40)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_3_Infeed_hrs", 41)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_3_Length_hrs", 43)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_3_Length_in_Feet", 42)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_3_Material_hrs", 45)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_3_Type_of_Material", 44)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_4_Angle_hrs", 10)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_4_Angle_of_Curve", 9)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_4_Infeed_Conveyor_Type", 46)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_4_Infeed_hrs", 47)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_4_Length_hrs", 49)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_4_Length_in_Feet", 48)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_4_Material_hrs", 51)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_4_Type_of_Material", 50)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_5_Angle_hrs", 12)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_5_Angle_of_Curve", 11)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_6_Angle_hrs", 14)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_6_Angle_of_Curve", 13)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_7_Angle_hrs", 16)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_7_Angle_of_Curve", 15)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_8_Angle_hrs", 18)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_8_Angle_of_Curve", 17)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_9_Angle_hrs", 20)
+        oProcessStep.AddFilter(1, 409, "Mech Install", 1, "MEI_Chutes_Style_9_Angle_of_Curve", 19)
         oProcessStep.AddLayout(1, 1, "1;2;0")
         
         End Sub
@@ -1433,7 +1478,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Chutes", 234, "", "", "Y", 0, "-1", "", "GLOBAL\H582667", "7/15/2025 6:19:07 AM", "", "In Development", "N",0,633,725)
+        InitSubpart("Chutes", 234, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 12:36:23 PM", "", "In Development", "N",0,633,732)
         
           End If
         
@@ -1475,7 +1520,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("TTCB_Costing_Mech", 223, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/7/2025 1:09:58 PM", "", "In Development", "N",0,604,619)
+        InitSubpart("TTCB_Costing_Mech", 223, "", "", "Y", 0, "-1", "", "GLOBAL\H582667", "7/16/2025 6:45:41 AM", "", "In Development", "Y",0,604,619)
         
           End If
         
@@ -3195,8 +3240,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; SUB ID:234; TYPE:QF
-      Result = 1
-'Result = me.Base_Options_Alternates.Quantity
+      Result = Me.Base_Options_Alternates.Quantity
       '   END FORMULA; SUB ID:234; TYPE:QF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Chutes_QUANTITY", ex.Message)

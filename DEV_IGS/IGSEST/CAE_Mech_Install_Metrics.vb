@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Mech_Install_Metrics
-'$ GenerateDate: 07/14/2025 18:02:17
+'$ GenerateDate: 07/16/2025 15:12:37
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -216,12 +216,6 @@ Option Infer On
       End Get
       End Property
     
-      Public ReadOnly Property [Ceiling_Hangers_Types]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("Ceiling_Hangers_Types")
-      End Get
-      End Property
-    
       Public ReadOnly Property [Misc_Constants]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Misc_Constants")
@@ -260,7 +254,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Mech_Install_Metrics", <a><![CDATA[CAE_Mech_Install_Metrics]]></a>.Value, 382, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H617242", "07/11/2025 10:49:26")
+    InitPart("CAE_Mech_Install_Metrics", <a><![CDATA[CAE_Mech_Install_Metrics]]></a>.Value, 382, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/16/2025 15:03:44")
     AddProperty("5585", "Conveyor_Hours_Row_DBKeys", <a><![CDATA[Conveyor_Hours_Row_DBKeys]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 4:39:59 PM")
     AddProperty("8357", "Misc_Constants_Row_DBKeys", <a><![CDATA[Misc_Constants_Row_DBKeys]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/7/2025 6:17:58 AM")
     AddProperty("9713", "Package_Flow_Rates_Row_DBKeys", <a><![CDATA[Package_Flow_Rates_Row_DBKeys]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/9/2025 11:08:52 AM")
@@ -283,13 +277,9 @@ Option Infer On
       
         oSubpart.AddVPF (384, "CAE_Mech_Install_Conveyor_Hours", "CAE Mech Install Conveyor Hours")
       
-      oSubpart = AddSubpart(300,"Ceiling_Hangers_Types", <a><![CDATA[Ceiling_Hangers_Types]]></a>.Value, "FD", "", "Mech Install Metrics", 9999, "", "GLOBAL\H617242", "7/7/2025 5:28:33 AM")
+      oSubpart = AddSubpart(301,"Misc_Constants", <a><![CDATA[Misc_Constants]]></a>.Value, "FD", "", "Mech Install Metrics", 9999, "", "GLOBAL\H602502", "7/16/2025 3:03:44 PM")
       
-        oSubpart.AddVPF (404, "Hanger_Type", "Hanger_Type")
-      
-      oSubpart = AddSubpart(301,"Misc_Constants", <a><![CDATA[Misc_Constants]]></a>.Value, "FD", "", "Mech Install Metrics", 9999, "", "GLOBAL\H617242", "7/7/2025 6:18:27 AM")
-      
-        oSubpart.AddVPF (405, "Misc_Constant", "Misc_Constant")
+        oSubpart.AddVPF (427, "CAE_Misc_Constant", "CAE_Misc_Constant")
       
       oSubpart = AddSubpart(313,"Package_Flow_Rates", <a><![CDATA[Package_Flow_Rates]]></a>.Value, "FD", "Package Flow Rates from Mech install Metrics tab.", "Mech Install Metrics", 9999, "", "GLOBAL\H617242", "7/9/2025 11:14:22 AM")
       
@@ -399,13 +389,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Ceiling_Hangers_Types", 227, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/7/2025 5:28:33 AM", "", "In Development", "N",0,612,611)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("Misc_Constants", 228, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/7/2025 6:18:27 AM", "", "In Development", "N",0,614,615)
+        InitSubpart("Misc_Constants", 228, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 3:03:07 PM", "", "In Development", "N",0,739,615)
         
           End If
         
@@ -942,75 +926,6 @@ Result = MakeValidValueKeyFromDatabase($"[{TableName}]", $"[{PK_Name}]", $"[{PK_
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Ceiling_Hangers_Types_PARTNAMES() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      '   BEGIN FORMULA; SUB ID:227; TYPE:PN
-      
-      '   END FORMULA; SUB ID:227; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Ceiling_Hangers_Types_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Ceiling_Hangers_Types_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Ceiling_Hangers_Types").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:227; TYPE:QF
-      result = 1
-      '   END FORMULA; SUB ID:227; TYPE:QF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Ceiling_Hangers_Types_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Ceiling_Hangers_Types_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Ceiling_Hangers_Types").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:227; TYPE:OP
-      result = "Hanger_Type"
-      '   END FORMULA; SUB ID:227; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Ceiling_Hangers_Types_OPTIMALPARTFAMILY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Misc_Constants_PARTNAMES() as String
       
       Dim Result as String = ""
@@ -1066,7 +981,7 @@ Result = MakeValidValueKeyFromDatabase($"[{TableName}]", $"[{PK_Name}]", $"[{PK_
       Stop
       End If
       '   BEGIN FORMULA; SUB ID:228; TYPE:OP
-      result = "Misc_Constant"
+      Result = "CAE_Misc_Constant"
       '   END FORMULA; SUB ID:228; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Misc_Constants_OPTIMALPARTFAMILY", ex.Message)

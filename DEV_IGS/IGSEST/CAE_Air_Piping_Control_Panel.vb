@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Air_Piping_Control_Panel
-'$ GenerateDate: 07/15/2025 16:14:05
+'$ GenerateDate: 07/16/2025 13:16:42
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -2037,12 +2037,12 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe]() As Double
+          Public Property [MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe]() As Double
       Get
-      Return Properties("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe").Value
+      Return Properties("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe").Value
       End Get
       Set(ByVal Value As Double)
-      Properties("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe").CalculatedValue = Value
+      Properties("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe").CalculatedValue = Value
       End Set
       End Property
     
@@ -2508,6 +2508,18 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [My_System]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_System")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [MEI_Connect_AirPiping_to_TTCB]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("MEI_Connect_AirPiping_to_TTCB")
+      End Get
+      End Property
+    
     #End Region
 
     #Region " Initialization "
@@ -2522,12 +2534,12 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Air_Piping_Control_Panel", <a><![CDATA[CAE_Air_Piping_Control_Panel]]></a>.Value, 392, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/15/2025 11:52:52")
+    InitPart("CAE_Air_Piping_Control_Panel", <a><![CDATA[CAE_Air_Piping_Control_Panel]]></a>.Value, 392, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/16/2025 13:14:15")
     AddProperty("9496", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 4:17:39 PM")
     AddProperty("6026", "CP_Name", <a><![CDATA[CP_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 6:19:50 PM")
-    AddProperty("8949", "MEI_AP_Air_Subsystem", <a><![CDATA[MEI_AP_Air_Subsystem]]></a>.Value, "Mech Install^'Air Piping'!M4", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:07 AM")
-    AddProperty("8951", "MEI_AP_Ceiling_Height_Feet", <a><![CDATA[MEI_AP_Ceiling_Height_Feet]]></a>.Value, "Mech Install^'Air Piping'!M8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 11:52:52 AM")
-    AddProperty("8955", "MEI_AP_Compressor_Required", <a><![CDATA[MEI_AP_Compressor_Required]]></a>.Value, "Mech Install^'Air Piping'!M16", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:19 AM")
+    AddProperty("8949", "MEI_AP_Air_Subsystem", <a><![CDATA[MEI_AP_Air_Subsystem]]></a>.Value, "Mech Install^'Air Piping'!M4", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:47:46 PM")
+    AddProperty("8951", "MEI_AP_Ceiling_Height_Feet", <a><![CDATA[MEI_AP_Ceiling_Height_Feet]]></a>.Value, "Mech Install^'Air Piping'!M8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:49:58 PM")
+    AddProperty("8955", "MEI_AP_Compressor_Required", <a><![CDATA[MEI_AP_Compressor_Required]]></a>.Value, "Mech Install^'Air Piping'!M16", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:54:33 PM")
     AddProperty("9091", "MEI_AP_Delta_1_2_inch_16_5mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Delta_1_2_inch_16_5mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!Q26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:52:53 AM")
     AddProperty("9089", "MEI_AP_Delta_1_and_1_2_IN_40mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Delta_1_and_1_2_IN_40mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!Q24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:46 AM")
     AddProperty("9088", "MEI_AP_Delta_2_and_1_2_IN_63mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Delta_2_and_1_2_IN_63mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!Q23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:44 AM")
@@ -2543,7 +2555,7 @@ Option Infer On
     AddProperty("9093", "MEI_AP_Delta_Tubing_Total_Order", <a><![CDATA[MEI_AP_Delta_Tubing_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!Q28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:54 AM")
     AddProperty("8952", "MEI_AP_Distance_Header_Loop_Air_Compressor", <a><![CDATA[MEI_AP_Distance_Header_Loop_Air_Compressor]]></a>.Value, "Mech Install^'Air Piping'!M10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:13 AM")
     AddProperty("8953", "MEI_AP_Header_Loop_Perimeter_Feet", <a><![CDATA[MEI_AP_Header_Loop_Perimeter_Feet]]></a>.Value, "Mech Install^'Air Piping'!M12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:15 AM")
-    AddProperty("8950", "MEI_AP_Number_of_Drops", <a><![CDATA[MEI_AP_Number_of_Drops]]></a>.Value, "Mech Install^'Air Piping'!M6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:09 AM")
+    AddProperty("8950", "MEI_AP_Number_of_Drops", <a><![CDATA[MEI_AP_Number_of_Drops]]></a>.Value, "Mech Install^'Air Piping'!M6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 1:04:10 PM")
     AddProperty("9078", "MEI_AP_Original_1_2_inch_16_5mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Original_1_2_inch_16_5mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!N26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:53:50 AM")
     AddProperty("9076", "MEI_AP_Original_1_and_1_2_IN_40mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Original_1_and_1_2_IN_40mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!N24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:21 AM")
     AddProperty("9075", "MEI_AP_Original_2_and_1_2_IN_63mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Original_2_and_1_2_IN_63mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!N23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:19 AM")
@@ -2557,233 +2569,235 @@ Option Infer On
     AddProperty("9085", "MEI_AP_Original_TotalCosts", <a><![CDATA[MEI_AP_Original_TotalCosts]]></a>.Value, "Mech Install^'Air Piping'!N34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:09:32 AM")
     AddProperty("9086", "MEI_AP_Original_TotalHours", <a><![CDATA[MEI_AP_Original_TotalHours]]></a>.Value, "Mech Install^'Air Piping'!N35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:09:39 AM")
     AddProperty("9080", "MEI_AP_Original_Tubing_Total_Order", <a><![CDATA[MEI_AP_Original_Tubing_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!N28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:29 AM")
-    AddProperty("8993", "MEI_AP_P_T_All_Thread_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:54:50 AM")
-    AddProperty("8991", "MEI_AP_P_T_All_Thread_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:27 AM")
-    AddProperty("8990", "MEI_AP_P_T_All_Thread_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:25 AM")
-    AddProperty("8989", "MEI_AP_P_T_All_Thread_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:24 AM")
-    AddProperty("8992", "MEI_AP_P_T_All_Thread_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:29 AM")
-    AddProperty("8998", "MEI_AP_P_T_All_Thread_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:28:58 AM")
-    AddProperty("8996", "MEI_AP_P_T_All_Thread_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:37 AM")
-    AddProperty("8995", "MEI_AP_P_T_All_Thread_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:35 AM")
-    AddProperty("8994", "MEI_AP_P_T_All_Thread_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:33 AM")
-    AddProperty("8997", "MEI_AP_P_T_All_Thread_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:39 AM")
+    AddProperty("8993", "MEI_AP_P_T_All_Thread_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:11:40 AM")
+    AddProperty("8991", "MEI_AP_P_T_All_Thread_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:10:28 AM")
+    AddProperty("8990", "MEI_AP_P_T_All_Thread_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:09:57 AM")
+    AddProperty("8989", "MEI_AP_P_T_All_Thread_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:09:23 AM")
+    AddProperty("8992", "MEI_AP_P_T_All_Thread_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:11:07 AM")
+    AddProperty("8998", "MEI_AP_P_T_All_Thread_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:31:03 AM")
+    AddProperty("8996", "MEI_AP_P_T_All_Thread_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:30:27 AM")
+    AddProperty("8995", "MEI_AP_P_T_All_Thread_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:30:11 AM")
+    AddProperty("8994", "MEI_AP_P_T_All_Thread_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:29:53 AM")
+    AddProperty("8997", "MEI_AP_P_T_All_Thread_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_All_Thread_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:30:47 AM")
     AddProperty("8983", "MEI_AP_P_T_Beam_Clamps_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:55:40 AM")
-    AddProperty("8981", "MEI_AP_P_T_Beam_Clamps_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:08 AM")
-    AddProperty("8980", "MEI_AP_P_T_Beam_Clamps_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:06 AM")
-    AddProperty("8979", "MEI_AP_P_T_Beam_Clamps_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:04 AM")
-    AddProperty("8982", "MEI_AP_P_T_Beam_Clamps_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:10 AM")
+    AddProperty("8981", "MEI_AP_P_T_Beam_Clamps_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:08:13 AM")
+    AddProperty("8980", "MEI_AP_P_T_Beam_Clamps_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:07:59 AM")
+    AddProperty("8979", "MEI_AP_P_T_Beam_Clamps_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:07:24 AM")
+    AddProperty("8982", "MEI_AP_P_T_Beam_Clamps_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:08:29 AM")
     AddProperty("8988", "MEI_AP_P_T_Beam_Clamps_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:56:03 AM")
-    AddProperty("8986", "MEI_AP_P_T_Beam_Clamps_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:18 AM")
-    AddProperty("8985", "MEI_AP_P_T_Beam_Clamps_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:16 AM")
-    AddProperty("8984", "MEI_AP_P_T_Beam_Clamps_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:14 AM")
-    AddProperty("8987", "MEI_AP_P_T_Beam_Clamps_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:20 AM")
-    AddProperty("8963", "MEI_AP_P_T_Pipe_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:52:41 AM")
-    AddProperty("8961", "MEI_AP_P_T_Pipe_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:30 AM")
-    AddProperty("8960", "MEI_AP_P_T_Pipe_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:28 AM")
-    AddProperty("8959", "MEI_AP_P_T_Pipe_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:26 AM")
-    AddProperty("8962", "MEI_AP_P_T_Pipe_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:32 AM")
-    AddProperty("8968", "MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:56:37 AM")
-    AddProperty("8966", "MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:40 AM")
-    AddProperty("8965", "MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:38 AM")
-    AddProperty("8964", "MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:36 AM")
-    AddProperty("8967", "MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:42 AM")
-    AddProperty("8973", "MEI_AP_P_T_Pipe_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:57:26 AM")
-    AddProperty("8971", "MEI_AP_P_T_Pipe_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:49 AM")
-    AddProperty("8970", "MEI_AP_P_T_Pipe_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:47 AM")
-    AddProperty("8969", "MEI_AP_P_T_Pipe_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:45 AM")
-    AddProperty("8972", "MEI_AP_P_T_Pipe_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:51 AM")
-    AddProperty("9003", "MEI_AP_P_T_Pipe_Straps_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:58:07 AM")
-    AddProperty("9001", "MEI_AP_P_T_Pipe_Straps_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:53 AM")
-    AddProperty("9000", "MEI_AP_P_T_Pipe_Straps_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:51 AM")
-    AddProperty("8999", "MEI_AP_P_T_Pipe_Straps_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:42 AM")
-    AddProperty("9002", "MEI_AP_P_T_Pipe_Straps_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:55 AM")
-    AddProperty("9008", "MEI_AP_P_T_Pipe_Straps_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:58:21 AM")
-    AddProperty("9006", "MEI_AP_P_T_Pipe_Straps_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:03 AM")
-    AddProperty("9005", "MEI_AP_P_T_Pipe_Straps_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:01 AM")
-    AddProperty("9004", "MEI_AP_P_T_Pipe_Straps_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:59 AM")
-    AddProperty("9007", "MEI_AP_P_T_Pipe_Straps_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:05 AM")
-    AddProperty("8978", "MEI_AP_P_T_Pipe_USD_LF_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:58:53 AM")
-    AddProperty("8976", "MEI_AP_P_T_Pipe_USD_LF_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:59 AM")
-    AddProperty("8975", "MEI_AP_P_T_Pipe_USD_LF_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:57 AM")
-    AddProperty("8974", "MEI_AP_P_T_Pipe_USD_LF_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:55 AM")
-    AddProperty("8977", "MEI_AP_P_T_Pipe_USD_LF_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:03:01 AM")
-    AddProperty("9144", "MEI_AP_PT_Coup_Union_A_U_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:59:15 AM")
-    AddProperty("9142", "MEI_AP_PT_Coup_Union_A_U_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:28 AM")
-    AddProperty("9141", "MEI_AP_PT_Coup_Union_A_U_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:26 AM")
-    AddProperty("9140", "MEI_AP_PT_Coup_Union_A_U_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:24 AM")
-    AddProperty("9143", "MEI_AP_PT_Coup_Union_A_U_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:30 AM")
-    AddProperty("9134", "MEI_AP_PT_Coup_Union_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:59:29 AM")
-    AddProperty("9132", "MEI_AP_PT_Coup_Union_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:08 AM")
-    AddProperty("9131", "MEI_AP_PT_Coup_Union_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:06 AM")
-    AddProperty("9130", "MEI_AP_PT_Coup_Union_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:05 AM")
-    AddProperty("9133", "MEI_AP_PT_Coup_Union_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:10 AM")
-    AddProperty("9139", "MEI_AP_PT_Coup_Union_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:59:43 AM")
-    AddProperty("9137", "MEI_AP_PT_Coup_Union_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:18 AM")
-    AddProperty("9136", "MEI_AP_PT_Coup_Union_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:16 AM")
-    AddProperty("9135", "MEI_AP_PT_Coup_Union_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:14 AM")
-    AddProperty("9138", "MEI_AP_PT_Coup_Union_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:20 AM")
-    AddProperty("9104", "MEI_AP_PT_Elbows_90_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:00:01 AM")
-    AddProperty("9102", "MEI_AP_PT_Elbows_90_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:11 AM")
-    AddProperty("9101", "MEI_AP_PT_Elbows_90_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:09 AM")
-    AddProperty("9100", "MEI_AP_PT_Elbows_90_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:07 AM")
-    AddProperty("9103", "MEI_AP_PT_Elbows_90_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:13 AM")
-    AddProperty("9109", "MEI_AP_PT_Elbows_90_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:50:58 AM")
-    AddProperty("9107", "MEI_AP_PT_Elbows_90_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:20 AM")
-    AddProperty("9106", "MEI_AP_PT_Elbows_90_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:19 AM")
-    AddProperty("9105", "MEI_AP_PT_Elbows_90_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:17 AM")
-    AddProperty("9108", "MEI_AP_PT_Elbows_90_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:22 AM")
-    AddProperty("9114", "MEI_AP_PT_T_Coupler_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:00:20 AM")
-    AddProperty("9112", "MEI_AP_PT_T_Coupler_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:30 AM")
-    AddProperty("9111", "MEI_AP_PT_T_Coupler_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:29 AM")
-    AddProperty("9110", "MEI_AP_PT_T_Coupler_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:27 AM")
-    AddProperty("9113", "MEI_AP_PT_T_Coupler_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:32 AM")
-    AddProperty("9119", "MEI_AP_PT_T_Coupler_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:00:59 AM")
-    AddProperty("9117", "MEI_AP_PT_T_Coupler_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:40 AM")
-    AddProperty("9116", "MEI_AP_PT_T_Coupler_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:38 AM")
-    AddProperty("9115", "MEI_AP_PT_T_Coupler_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:36 AM")
-    AddProperty("9118", "MEI_AP_PT_T_Coupler_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:42 AM")
+    AddProperty("8986", "MEI_AP_P_T_Beam_Clamps_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:28:32 AM")
+    AddProperty("8985", "MEI_AP_P_T_Beam_Clamps_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:28:19 AM")
+    AddProperty("8984", "MEI_AP_P_T_Beam_Clamps_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:27:57 AM")
+    AddProperty("8987", "MEI_AP_P_T_Beam_Clamps_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Beam_Clamps_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:28:50 AM")
+    AddProperty("8963", "MEI_AP_P_T_Pipe_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:03:28 AM")
+    AddProperty("8961", "MEI_AP_P_T_Pipe_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:01:56 AM")
+    AddProperty("8960", "MEI_AP_P_T_Pipe_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:01:05 AM")
+    AddProperty("8959", "MEI_AP_P_T_Pipe_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:00:27 AM")
+    AddProperty("8962", "MEI_AP_P_T_Pipe_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:02:57 AM")
+    AddProperty("8968", "MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:05:02 AM")
+    AddProperty("8966", "MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:04:46 AM")
+    AddProperty("8965", "MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:04:33 AM")
+    AddProperty("8964", "MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:04:14 AM")
+    AddProperty("8967", "MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!C46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:05:19 AM")
+    AddProperty("8973", "MEI_AP_P_T_Pipe_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:23:27 AM")
+    AddProperty("8971", "MEI_AP_P_T_Pipe_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:22:50 AM")
+    AddProperty("8970", "MEI_AP_P_T_Pipe_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:22:32 AM")
+    AddProperty("8969", "MEI_AP_P_T_Pipe_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:22:12 AM")
+    AddProperty("8972", "MEI_AP_P_T_Pipe_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:23:09 AM")
+    AddProperty("9003", "MEI_AP_P_T_Pipe_Straps_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:17:11 AM")
+    AddProperty("9001", "MEI_AP_P_T_Pipe_Straps_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:16:12 AM")
+    AddProperty("9000", "MEI_AP_P_T_Pipe_Straps_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:15:43 AM")
+    AddProperty("8999", "MEI_AP_P_T_Pipe_Straps_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:15:22 AM")
+    AddProperty("9002", "MEI_AP_P_T_Pipe_Straps_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!J46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:16:43 AM")
+    AddProperty("9008", "MEI_AP_P_T_Pipe_Straps_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:33:17 AM")
+    AddProperty("9006", "MEI_AP_P_T_Pipe_Straps_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:32:45 AM")
+    AddProperty("9005", "MEI_AP_P_T_Pipe_Straps_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:32:29 AM")
+    AddProperty("9004", "MEI_AP_P_T_Pipe_Straps_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:31:26 AM")
+    AddProperty("9007", "MEI_AP_P_T_Pipe_Straps_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_Straps_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:33:01 AM")
+    AddProperty("8978", "MEI_AP_P_T_Pipe_USD_LF_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:26:34 AM")
+    AddProperty("8976", "MEI_AP_P_T_Pipe_USD_LF_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:25:38 AM")
+    AddProperty("8975", "MEI_AP_P_T_Pipe_USD_LF_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:25:06 AM")
+    AddProperty("8974", "MEI_AP_P_T_Pipe_USD_LF_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:24:30 AM")
+    AddProperty("8977", "MEI_AP_P_T_Pipe_USD_LF_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_P_T_Pipe_USD_LF_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:26:10 AM")
+    AddProperty("9144", "MEI_AP_PT_Coup_Union_A_U_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:32:34 AM")
+    AddProperty("9142", "MEI_AP_PT_Coup_Union_A_U_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:31:52 AM")
+    AddProperty("9141", "MEI_AP_PT_Coup_Union_A_U_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:31:38 AM")
+    AddProperty("9140", "MEI_AP_PT_Coup_Union_A_U_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:31:16 AM")
+    AddProperty("9143", "MEI_AP_PT_Coup_Union_A_U_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_A_U_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!T46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:32:17 AM")
+    AddProperty("9134", "MEI_AP_PT_Coup_Union_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:29:04 AM")
+    AddProperty("9132", "MEI_AP_PT_Coup_Union_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:28:05 AM")
+    AddProperty("9131", "MEI_AP_PT_Coup_Union_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:27:35 AM")
+    AddProperty("9130", "MEI_AP_PT_Coup_Union_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:26:59 AM")
+    AddProperty("9133", "MEI_AP_PT_Coup_Union_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!R46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:28:40 AM")
+    AddProperty("9139", "MEI_AP_PT_Coup_Union_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:30:45 AM")
+    AddProperty("9137", "MEI_AP_PT_Coup_Union_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:30:15 AM")
+    AddProperty("9136", "MEI_AP_PT_Coup_Union_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:29:59 AM")
+    AddProperty("9135", "MEI_AP_PT_Coup_Union_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:29:44 AM")
+    AddProperty("9138", "MEI_AP_PT_Coup_Union_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Coup_Union_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!S46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:30:30 AM")
+    AddProperty("9104", "MEI_AP_PT_Elbows_90_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:21:34 AM")
+    AddProperty("9102", "MEI_AP_PT_Elbows_90_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:20:41 AM")
+    AddProperty("9101", "MEI_AP_PT_Elbows_90_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:19:59 AM")
+    AddProperty("9100", "MEI_AP_PT_Elbows_90_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:19:20 AM")
+    AddProperty("9103", "MEI_AP_PT_Elbows_90_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!L46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:21:08 AM")
+    AddProperty("9109", "MEI_AP_PT_Elbows_90_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:20:50 AM")
+    AddProperty("9107", "MEI_AP_PT_Elbows_90_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:20:13 AM")
+    AddProperty("9106", "MEI_AP_PT_Elbows_90_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:19:58 AM")
+    AddProperty("9105", "MEI_AP_PT_Elbows_90_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:19:29 AM")
+    AddProperty("9108", "MEI_AP_PT_Elbows_90_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Elbows_90_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!M46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:20:34 AM")
+    AddProperty("9114", "MEI_AP_PT_T_Coupler_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:24:03 AM")
+    AddProperty("9112", "MEI_AP_PT_T_Coupler_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:23:08 AM")
+    AddProperty("9111", "MEI_AP_PT_T_Coupler_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:22:41 AM")
+    AddProperty("9110", "MEI_AP_PT_T_Coupler_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:22:10 AM")
+    AddProperty("9113", "MEI_AP_PT_T_Coupler_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!N46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:23:33 AM")
+    AddProperty("9119", "MEI_AP_PT_T_Coupler_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:27:13 AM")
+    AddProperty("9117", "MEI_AP_PT_T_Coupler_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:26:42 AM")
+    AddProperty("9116", "MEI_AP_PT_T_Coupler_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:26:27 AM")
+    AddProperty("9115", "MEI_AP_PT_T_Coupler_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:24:32 AM")
+    AddProperty("9118", "MEI_AP_PT_T_Coupler_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_T_Coupler_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!O46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:26:57 AM")
     AddProperty("9124", "MEI_AP_PT_Valve_L_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_L_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!P47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:01:26 AM")
-    AddProperty("9122", "MEI_AP_PT_Valve_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!P45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:49 AM")
-    AddProperty("9121", "MEI_AP_PT_Valve_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!P44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:48 AM")
-    AddProperty("9120", "MEI_AP_PT_Valve_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!P43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:46 AM")
-    AddProperty("9123", "MEI_AP_PT_Valve_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!P46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:51 AM")
+    AddProperty("9122", "MEI_AP_PT_Valve_L_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_L_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!P45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:25:33 AM")
+    AddProperty("9121", "MEI_AP_PT_Valve_L_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_L_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!P44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:25:07 AM")
+    AddProperty("9120", "MEI_AP_PT_Valve_L_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_L_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!P43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:24:35 AM")
+    AddProperty("9123", "MEI_AP_PT_Valve_L_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_L_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!P46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 9:26:00 AM")
     AddProperty("9129", "MEI_AP_PT_Valve_O_P_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_O_P_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!Q47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:01:39 AM")
-    AddProperty("9127", "MEI_AP_PT_Valve_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!Q45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:59 AM")
-    AddProperty("9126", "MEI_AP_PT_Valve_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!Q44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:57 AM")
-    AddProperty("9125", "MEI_AP_PT_Valve_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!Q43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:07:55 AM")
-    AddProperty("9128", "MEI_AP_PT_Valve_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!Q46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:08:01 AM")
-    AddProperty("8958", "MEI_AP_SS1_Air_Piping_Factor", <a><![CDATA[MEI_AP_SS1_Air_Piping_Factor]]></a>.Value, "Mech Install^'Air Piping'!D18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:24 AM")
-    AddProperty("8923", "MEI_AP_SS1_Cost_of_Elbows_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:18 AM")
-    AddProperty("8922", "MEI_AP_SS1_Cost_of_Elbows_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:16 AM")
-    AddProperty("8921", "MEI_AP_SS1_Cost_of_Elbows_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:14 AM")
-    AddProperty("8924", "MEI_AP_SS1_Cost_of_Elbows_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:20 AM")
-    AddProperty("8925", "MEI_AP_SS1_Cost_of_Elbows_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:21 AM")
-    AddProperty("8926", "MEI_AP_SS1_Cost_of_Elbows_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!G10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:23 AM")
-    AddProperty("8917", "MEI_AP_SS1_Cost_of_Hanger_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:06 AM")
-    AddProperty("8916", "MEI_AP_SS1_Cost_of_Hanger_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:04 AM")
-    AddProperty("8915", "MEI_AP_SS1_Cost_of_Hanger_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:02 AM")
-    AddProperty("8918", "MEI_AP_SS1_Cost_of_Hanger_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:08 AM")
-    AddProperty("8919", "MEI_AP_SS1_Cost_of_Hanger_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:10 AM")
-    AddProperty("8920", "MEI_AP_SS1_Cost_of_Hanger_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!F10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:12 AM")
-    AddProperty("8912", "MEI_AP_SS1_Cost_of_Hanger_TU_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:56 AM")
-    AddProperty("8911", "MEI_AP_SS1_Cost_of_Hanger_TU_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:54 AM")
-    AddProperty("8910", "MEI_AP_SS1_Cost_of_Hanger_TU_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:53 AM")
-    AddProperty("8913", "MEI_AP_SS1_Cost_of_Hanger_TU_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:58 AM")
-    AddProperty("8914", "MEI_AP_SS1_Cost_of_Hanger_TU_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:00 AM")
-    AddProperty("8929", "MEI_AP_SS1_Cost_of_Tees_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:29 AM")
-    AddProperty("8928", "MEI_AP_SS1_Cost_of_Tees_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:27 AM")
-    AddProperty("8927", "MEI_AP_SS1_Cost_of_Tees_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:25 AM")
-    AddProperty("8930", "MEI_AP_SS1_Cost_of_Tees_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:31 AM")
-    AddProperty("8931", "MEI_AP_SS1_Cost_of_Tees_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:33 AM")
-    AddProperty("8932", "MEI_AP_SS1_Cost_of_Tees_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!H10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:35 AM")
-    AddProperty("8935", "MEI_AP_SS1_Cost_of_Valves_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!I7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:40 AM")
-    AddProperty("8934", "MEI_AP_SS1_Cost_of_Valves_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!I6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:38 AM")
-    AddProperty("8933", "MEI_AP_SS1_Cost_of_Valves_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!I5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:36 AM")
-    AddProperty("8936", "MEI_AP_SS1_Cost_of_Valves_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!I8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:42 AM")
+    AddProperty("9127", "MEI_AP_PT_Valve_O_P_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_O_P_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!Q45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:28:54 AM")
+    AddProperty("9126", "MEI_AP_PT_Valve_O_P_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_O_P_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!Q44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:28:40 AM")
+    AddProperty("9125", "MEI_AP_PT_Valve_O_P_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_O_P_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!Q43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:28:21 AM")
+    AddProperty("9128", "MEI_AP_PT_Valve_O_P_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_PT_Valve_O_P_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!Q46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:29:10 AM")
+    AddProperty("8958", "MEI_AP_SS1_Air_Piping_Factor", <a><![CDATA[MEI_AP_SS1_Air_Piping_Factor]]></a>.Value, "Mech Install^'Air Piping'!D18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 1:06:15 PM")
+    AddProperty("8923", "MEI_AP_SS1_Cost_of_Elbows_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:23:00 PM")
+    AddProperty("8922", "MEI_AP_SS1_Cost_of_Elbows_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:22:39 PM")
+    AddProperty("8921", "MEI_AP_SS1_Cost_of_Elbows_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:22:15 PM")
+    AddProperty("8924", "MEI_AP_SS1_Cost_of_Elbows_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:23:18 PM")
+    AddProperty("8925", "MEI_AP_SS1_Cost_of_Elbows_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!G9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:23:38 PM")
+    AddProperty("8926", "MEI_AP_SS1_Cost_of_Elbows_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_of_Elbows_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!G10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:23:57 PM")
+    AddProperty("8917", "MEI_AP_SS1_Cost_of_Hanger_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:18:26 PM")
+    AddProperty("8916", "MEI_AP_SS1_Cost_of_Hanger_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:18:00 PM")
+    AddProperty("8915", "MEI_AP_SS1_Cost_of_Hanger_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:17:43 PM")
+    AddProperty("8918", "MEI_AP_SS1_Cost_of_Hanger_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:18:50 PM")
+    AddProperty("8919", "MEI_AP_SS1_Cost_of_Hanger_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!F9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:19:12 PM")
+    AddProperty("8920", "MEI_AP_SS1_Cost_of_Hanger_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!F10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:20:52 PM")
+    AddProperty("8912", "MEI_AP_SS1_Cost_of_Hanger_TU_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:16:04 PM")
+    AddProperty("8911", "MEI_AP_SS1_Cost_of_Hanger_TU_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:15:38 PM")
+    AddProperty("8910", "MEI_AP_SS1_Cost_of_Hanger_TU_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:15:13 PM")
+    AddProperty("8913", "MEI_AP_SS1_Cost_of_Hanger_TU_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:16:21 PM")
+    AddProperty("8914", "MEI_AP_SS1_Cost_of_Hanger_TU_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Hanger_TU_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!E9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:16:40 PM")
+    AddProperty("8929", "MEI_AP_SS1_Cost_of_Tees_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:26:27 PM")
+    AddProperty("8928", "MEI_AP_SS1_Cost_of_Tees_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:26:03 PM")
+    AddProperty("8927", "MEI_AP_SS1_Cost_of_Tees_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:24:55 PM")
+    AddProperty("8930", "MEI_AP_SS1_Cost_of_Tees_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:26:51 PM")
+    AddProperty("8931", "MEI_AP_SS1_Cost_of_Tees_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!H9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:27:18 PM")
+    AddProperty("8932", "MEI_AP_SS1_Cost_of_Tees_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_of_Tees_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!H10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:33:28 PM")
+    AddProperty("8935", "MEI_AP_SS1_Cost_of_Valves_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!I7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:34:52 PM")
+    AddProperty("8934", "MEI_AP_SS1_Cost_of_Valves_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!I6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:34:30 PM")
+    AddProperty("8933", "MEI_AP_SS1_Cost_of_Valves_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!I5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:34:07 PM")
+    AddProperty("8936", "MEI_AP_SS1_Cost_of_Valves_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!I8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:35:20 PM")
     AddProperty("8937", "MEI_AP_SS1_Cost_of_Valves_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!I9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:44 AM")
-    AddProperty("8938", "MEI_AP_SS1_Cost_of_Valves_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!I10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:46 AM")
-    AddProperty("8906", "MEI_AP_SS1_Cost_Pipe_n_Coupling_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:45 AM")
-    AddProperty("8905", "MEI_AP_SS1_Cost_Pipe_n_Coupling_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:43 AM")
-    AddProperty("8904", "MEI_AP_SS1_Cost_Pipe_n_Coupling_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:41 AM")
-    AddProperty("8907", "MEI_AP_SS1_Cost_Pipe_n_Coupling_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:47 AM")
-    AddProperty("8908", "MEI_AP_SS1_Cost_Pipe_n_Coupling_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:49 AM")
-    AddProperty("8909", "MEI_AP_SS1_Cost_Pipe_n_Coupling_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!D10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:51 AM")
-    AddProperty("8901", "MEI_AP_SS1_Hookup_Costs_AC", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_AC]]></a>.Value, "Mech Install^'Air Piping'!C13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:36 AM")
-    AddProperty("8903", "MEI_AP_SS1_Hookup_Costs_Dryer", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_Dryer]]></a>.Value, "Mech Install^'Air Piping'!C15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:39 AM")
-    AddProperty("8900", "MEI_AP_SS1_Hookup_Costs_Filter_Reg", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!C12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:34 AM")
-    AddProperty("8902", "MEI_AP_SS1_Hookup_Costs_Red_AC", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_Red_AC]]></a>.Value, "Mech Install^'Air Piping'!C14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:38 AM")
-    AddProperty("8899", "MEI_AP_SS1_Hookup_Costs_Tubing", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_Tubing]]></a>.Value, "Mech Install^'Air Piping'!C11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:32 AM")
-    AddProperty("8943", "MEI_AP_SS1_IR_0_125_HR_FT_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_125_HR_FT_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:56 AM")
-    AddProperty("8942", "MEI_AP_SS1_IR_0_150_HR_FT_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_150_HR_FT_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:54 AM")
-    AddProperty("8941", "MEI_AP_SS1_IR_0_200_HR_FT_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_200_HR_FT_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:52 AM")
-    AddProperty("8940", "MEI_AP_SS1_IR_0_350_HR_FT_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_350_HR_FT_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:50 AM")
-    AddProperty("8939", "MEI_AP_SS1_IR_0_450_HR_FT_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_450_HR_FT_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:48 AM")
-    AddProperty("8944", "MEI_AP_SS1_IR_1_HR_100FT_Tubing", <a><![CDATA[MEI_AP_SS1_IR_1_HR_100FT_Tubing]]></a>.Value, "Mech Install^'Air Piping'!K11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:01:58 AM")
-    AddProperty("8947", "MEI_AP_SS1_IR_2HRS_EA_Red_AC", <a><![CDATA[MEI_AP_SS1_IR_2HRS_EA_Red_AC]]></a>.Value, "Mech Install^'Air Piping'!K14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:03 AM")
-    AddProperty("8945", "MEI_AP_SS1_IR_3HRS_EA_Filter_Reg", <a><![CDATA[MEI_AP_SS1_IR_3HRS_EA_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!K12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:00 AM")
-    AddProperty("8948", "MEI_AP_SS1_IR_4HRS_EA_Dryer", <a><![CDATA[MEI_AP_SS1_IR_4HRS_EA_Dryer]]></a>.Value, "Mech Install^'Air Piping'!K15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:05 AM")
-    AddProperty("8946", "MEI_AP_SS1_IR_8HRS_EA_AC", <a><![CDATA[MEI_AP_SS1_IR_8HRS_EA_AC]]></a>.Value, "Mech Install^'Air Piping'!K13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:01 AM")
-    AddProperty("8890", "MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!B7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:14 AM")
-    AddProperty("8889", "MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!B6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:12 AM")
+    AddProperty("8938", "MEI_AP_SS1_Cost_of_Valves_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_of_Valves_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!I10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:35:50 PM")
+    AddProperty("8906", "MEI_AP_SS1_Cost_Pipe_n_Coupling_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:13:13 PM")
+    AddProperty("8905", "MEI_AP_SS1_Cost_Pipe_n_Coupling_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:12:55 PM")
+    AddProperty("8904", "MEI_AP_SS1_Cost_Pipe_n_Coupling_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:12:35 PM")
+    AddProperty("8907", "MEI_AP_SS1_Cost_Pipe_n_Coupling_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:13:32 PM")
+    AddProperty("8908", "MEI_AP_SS1_Cost_Pipe_n_Coupling_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!D9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:13:54 PM")
+    AddProperty("8909", "MEI_AP_SS1_Cost_Pipe_n_Coupling_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Cost_Pipe_n_Coupling_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!D10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:14:18 PM")
+    AddProperty("8901", "MEI_AP_SS1_Hookup_Costs_AC", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_AC]]></a>.Value, "Mech Install^'Air Piping'!C13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:10:38 PM")
+    AddProperty("8903", "MEI_AP_SS1_Hookup_Costs_Dryer", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_Dryer]]></a>.Value, "Mech Install^'Air Piping'!C15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:11:44 PM")
+    AddProperty("8900", "MEI_AP_SS1_Hookup_Costs_Filter_Reg", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!C12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:10:20 PM")
+    AddProperty("8902", "MEI_AP_SS1_Hookup_Costs_Red_AC", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_Red_AC]]></a>.Value, "Mech Install^'Air Piping'!C14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:10:56 PM")
+    AddProperty("8899", "MEI_AP_SS1_Hookup_Costs_Tubing", <a><![CDATA[MEI_AP_SS1_Hookup_Costs_Tubing]]></a>.Value, "Mech Install^'Air Piping'!C11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:09:38 PM")
+    AddProperty("8943", "MEI_AP_SS1_IR_0_125_HR_FT_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_125_HR_FT_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:41:59 PM")
+    AddProperty("8942", "MEI_AP_SS1_IR_0_150_HR_FT_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_150_HR_FT_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:41:40 PM")
+    AddProperty("8941", "MEI_AP_SS1_IR_0_200_HR_FT_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_200_HR_FT_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:41:20 PM")
+    AddProperty("8940", "MEI_AP_SS1_IR_0_350_HR_FT_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_350_HR_FT_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:41:02 PM")
+    AddProperty("8939", "MEI_AP_SS1_IR_0_450_HR_FT_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_IR_0_450_HR_FT_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!K5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:40:40 PM")
+    AddProperty("8944", "MEI_AP_SS1_IR_1_HR_100FT_Tubing", <a><![CDATA[MEI_AP_SS1_IR_1_HR_100FT_Tubing]]></a>.Value, "Mech Install^'Air Piping'!K11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:42:15 PM")
+    AddProperty("8947", "MEI_AP_SS1_IR_2HRS_EA_Red_AC", <a><![CDATA[MEI_AP_SS1_IR_2HRS_EA_Red_AC]]></a>.Value, "Mech Install^'Air Piping'!K14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:43:15 PM")
+    AddProperty("8945", "MEI_AP_SS1_IR_3HRS_EA_Filter_Reg", <a><![CDATA[MEI_AP_SS1_IR_3HRS_EA_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!K12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:42:41 PM")
+    AddProperty("8948", "MEI_AP_SS1_IR_4HRS_EA_Dryer", <a><![CDATA[MEI_AP_SS1_IR_4HRS_EA_Dryer]]></a>.Value, "Mech Install^'Air Piping'!K15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:43:31 PM")
+    AddProperty("8946", "MEI_AP_SS1_IR_8HRS_EA_AC", <a><![CDATA[MEI_AP_SS1_IR_8HRS_EA_AC]]></a>.Value, "Mech Install^'Air Piping'!K13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:42:58 PM")
+    AddProperty("8890", "MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!B7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:03:00 PM")
+    AddProperty("8889", "MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!B6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 1:14:15 PM")
     AddProperty("8888", "MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!B5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:10 AM")
-    AddProperty("8891", "MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!B8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:16 AM")
-    AddProperty("8892", "MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!B9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:18 AM")
+    AddProperty("8891", "MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe]]></a>.Value, "Mech Install^'Air Piping'!B8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:03:37 PM")
+    AddProperty("8892", "MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe]]></a>.Value, "Mech Install^'Air Piping'!B9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 12:46:21 PM")
     AddProperty("8893", "MEI_AP_SS1_Pipe_Type_Total_Order_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!B10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:20 AM")
-    AddProperty("8956", "MEI_AP_SS1_Total_Costs", <a><![CDATA[MEI_AP_SS1_Total_Costs]]></a>.Value, "Mech Install^'Air Piping'!B17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:21 AM")
-    AddProperty("8957", "MEI_AP_SS1_Total_Hours", <a><![CDATA[MEI_AP_SS1_Total_Hours]]></a>.Value, "Mech Install^'Air Piping'!B18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:23 AM")
-    AddProperty("8896", "MEI_AP_SS1_Total_Order_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_AC]]></a>.Value, "Mech Install^'Air Piping'!B13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:26 AM")
-    AddProperty("8898", "MEI_AP_SS1_Total_Order_Dryer", <a><![CDATA[MEI_AP_SS1_Total_Order_Dryer]]></a>.Value, "Mech Install^'Air Piping'!B15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:30 AM")
-    AddProperty("8895", "MEI_AP_SS1_Total_Order_Filter_Reg", <a><![CDATA[MEI_AP_SS1_Total_Order_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!B12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:24 AM")
-    AddProperty("8897", "MEI_AP_SS1_Total_Order_Red_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_Red_AC]]></a>.Value, "Mech Install^'Air Piping'!B14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:28 AM")
-    AddProperty("8894", "MEI_AP_SS1_Total_Order_Tubing", <a><![CDATA[MEI_AP_SS1_Total_Order_Tubing]]></a>.Value, "Mech Install^'Air Piping'!B11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:22 AM")
-    AddProperty("10023", "MEI_AP_Supplier_Discount", <a><![CDATA[MEI_AP_Supplier_Discount]]></a>.Value, "Mech Install^'Air Piping'!T40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/14/2025 10:46:39 AM")
-    AddProperty("9021", "MEI_AP_TotalCosts", <a><![CDATA[MEI_AP_TotalCosts]]></a>.Value, "Mech Install^'Air Piping'!B34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:11:36 AM")
-    AddProperty("9022", "MEI_AP_TotalHours", <a><![CDATA[MEI_AP_TotalHours]]></a>.Value, "Mech Install^'Air Piping'!B35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:11:46 AM")
+    AddProperty("8956", "MEI_AP_SS1_Total_Costs", <a><![CDATA[MEI_AP_SS1_Total_Costs]]></a>.Value, "Mech Install^'Air Piping'!B17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:55:52 PM")
+    AddProperty("8957", "MEI_AP_SS1_Total_Hours", <a><![CDATA[MEI_AP_SS1_Total_Hours]]></a>.Value, "Mech Install^'Air Piping'!B18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:57:59 PM")
+    AddProperty("8896", "MEI_AP_SS1_Total_Order_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_AC]]></a>.Value, "Mech Install^'Air Piping'!B13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:06:16 PM")
+    AddProperty("8898", "MEI_AP_SS1_Total_Order_Dryer", <a><![CDATA[MEI_AP_SS1_Total_Order_Dryer]]></a>.Value, "Mech Install^'Air Piping'!B15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:08:06 PM")
+    AddProperty("8895", "MEI_AP_SS1_Total_Order_Filter_Reg", <a><![CDATA[MEI_AP_SS1_Total_Order_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!B12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 12:57:22 PM")
+    AddProperty("8897", "MEI_AP_SS1_Total_Order_Red_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_Red_AC]]></a>.Value, "Mech Install^'Air Piping'!B14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:07:21 PM")
+    AddProperty("8894", "MEI_AP_SS1_Total_Order_Tubing", <a><![CDATA[MEI_AP_SS1_Total_Order_Tubing]]></a>.Value, "Mech Install^'Air Piping'!B11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 12:49:52 PM")
+    AddProperty("10023", "MEI_AP_Supplier_Discount", <a><![CDATA[MEI_AP_Supplier_Discount]]></a>.Value, "Mech Install^'Air Piping'!T40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:54:28 AM")
+    AddProperty("9021", "MEI_AP_TotalCosts", <a><![CDATA[MEI_AP_TotalCosts]]></a>.Value, "Mech Install^'Air Piping'!B34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:05:07 AM")
+    AddProperty("9022", "MEI_AP_TotalHours", <a><![CDATA[MEI_AP_TotalHours]]></a>.Value, "Mech Install^'Air Piping'!B35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:06:02 AM")
     AddProperty("8954", "MEI_AP_Trunkline_Length_Feet", <a><![CDATA[MEI_AP_Trunkline_Length_Feet]]></a>.Value, "Mech Install^'Air Piping'!M14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:17 AM")
-    AddProperty("9023", "MEI_AP_TTCB_Air_Piping_Factor", <a><![CDATA[MEI_AP_TTCB_Air_Piping_Factor]]></a>.Value, "Mech Install^'Air Piping'!D35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:35 AM")
-    AddProperty("9050", "MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:02:46 AM")
-    AddProperty("9048", "MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:24 AM")
-    AddProperty("9047", "MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:22 AM")
-    AddProperty("9046", "MEI_AP_TTCB_Elbows_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:20 AM")
-    AddProperty("9049", "MEI_AP_TTCB_Elbows_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:26 AM")
-    AddProperty("9051", "MEI_AP_TTCB_Elbows_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!G27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:30 AM")
-    AddProperty("9044", "MEI_AP_TTCB_H_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:03:16 AM")
-    AddProperty("9042", "MEI_AP_TTCB_H_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:12 AM")
-    AddProperty("9041", "MEI_AP_TTCB_H_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:10 AM")
-    AddProperty("9040", "MEI_AP_TTCB_H_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:08 AM")
-    AddProperty("9043", "MEI_AP_TTCB_H_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:14 AM")
-    AddProperty("9045", "MEI_AP_TTCB_H_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_H_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!F27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:18 AM")
-    AddProperty("9039", "MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16.5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:03:36 AM")
-    AddProperty("9037", "MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:03 AM")
-    AddProperty("9036", "MEI_AP_TTCB_H_Cost_T_U_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:01 AM")
-    AddProperty("9035", "MEI_AP_TTCB_H_Cost_T_U_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:59 AM")
-    AddProperty("9038", "MEI_AP_TTCB_H_Cost_T_U_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:05 AM")
-    AddProperty("9026", "MEI_AP_TTCB_Hookup_Costs_A_C", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_A_C]]></a>.Value, "Mech Install^'Air Piping'!C30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:41 AM")
-    AddProperty("9028", "MEI_AP_TTCB_Hookup_Costs_Dryer", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_Dryer]]></a>.Value, "Mech Install^'Air Piping'!C32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:45 AM")
-    AddProperty("9025", "MEI_AP_TTCB_Hookup_Costs_FILTER_REG", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_FILTER_REG]]></a>.Value, "Mech Install^'Air Piping'!C29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:39 AM")
-    AddProperty("9027", "MEI_AP_TTCB_Hookup_Costs_Red_A_C", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_Red_A_C]]></a>.Value, "Mech Install^'Air Piping'!C31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:43 AM")
-    AddProperty("9024", "MEI_AP_TTCB_Hookup_Costs_Tubing", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_Tubing]]></a>.Value, "Mech Install^'Air Piping'!C28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:37 AM")
-    AddProperty("9068", "MEI_AP_TTCB_I_R0_125_HR_FT_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_125_HR_FT_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:03:59 AM")
-    AddProperty("9067", "MEI_AP_TTCB_I_R0_150_HR_FT_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_150_HR_FT_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:02 AM")
-    AddProperty("9066", "MEI_AP_TTCB_I_R0_200_HR_FT_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_200_HR_FT_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:00 AM")
-    AddProperty("9065", "MEI_AP_TTCB_I_R0_350_HR_FT_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_350_HR_FT_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:58 AM")
-    AddProperty("9064", "MEI_AP_TTCB_I_R0_450_HR_FT_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_450_HR_FT_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:56 AM")
-    AddProperty("9069", "MEI_AP_TTCB_I_R1_HR_100_Tubing", <a><![CDATA[MEI_AP_TTCB_I_R1_HR_100_Tubing]]></a>.Value, "Mech Install^'Air Piping'!K28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:07 AM")
-    AddProperty("9072", "MEI_AP_TTCB_I_R2_HR_EA_Red_A_C", <a><![CDATA[MEI_AP_TTCB_I_R2_HR_EA_Red_A_C]]></a>.Value, "Mech Install^'Air Piping'!K31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:13 AM")
-    AddProperty("9070", "MEI_AP_TTCB_I_R3_HR_EA_FILTER_REG", <a><![CDATA[MEI_AP_TTCB_I_R3_HR_EA_FILTER_REG]]></a>.Value, "Mech Install^'Air Piping'!K29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:09 AM")
-    AddProperty("9073", "MEI_AP_TTCB_I_R4_HR_EA_Dryer", <a><![CDATA[MEI_AP_TTCB_I_R4_HR_EA_Dryer]]></a>.Value, "Mech Install^'Air Piping'!K32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:15 AM")
-    AddProperty("9071", "MEI_AP_TTCB_I_R8_HR_EA_A_C", <a><![CDATA[MEI_AP_TTCB_I_R8_HR_EA_A_C]]></a>.Value, "Mech Install^'Air Piping'!K30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:11 AM")
-    AddProperty("9033", "MEI_AP_TTCB_P_C_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:04:30 AM")
-    AddProperty("9031", "MEI_AP_TTCB_P_C_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:51 AM")
-    AddProperty("9030", "MEI_AP_TTCB_P_C_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:49 AM")
-    AddProperty("9029", "MEI_AP_TTCB_P_C_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:47 AM")
-    AddProperty("9032", "MEI_AP_TTCB_P_C_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:53 AM")
-    AddProperty("9034", "MEI_AP_TTCB_P_C_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!D27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:57 AM")
-    AddProperty("9056", "MEI_AP_TTCB_Tee_s_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:04:46 AM")
-    AddProperty("9054", "MEI_AP_TTCB_Tee_s_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:36 AM")
-    AddProperty("9053", "MEI_AP_TTCB_Tee_s_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:34 AM")
-    AddProperty("9052", "MEI_AP_TTCB_Tee_s_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:32 AM")
-    AddProperty("9055", "MEI_AP_TTCB_Tee_s_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:38 AM")
-    AddProperty("9057", "MEI_AP_TTCB_Tee_s_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!H27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:42 AM")
-    AddProperty("9014", "MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:05:08 AM")
-    AddProperty("9012", "MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:14 AM")
-    AddProperty("9011", "MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:12 AM")
-    AddProperty("9010", "MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:10 AM")
-    AddProperty("9013", "MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:16 AM")
-    AddProperty("9018", "MEI_AP_TTCB_Total_Order_A_C", <a><![CDATA[MEI_AP_TTCB_Total_Order_A_C]]></a>.Value, "Mech Install^'Air Piping'!B30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:26 AM")
-    AddProperty("9020", "MEI_AP_TTCB_Total_Order_Dryer", <a><![CDATA[MEI_AP_TTCB_Total_Order_Dryer]]></a>.Value, "Mech Install^'Air Piping'!B32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:29 AM")
-    AddProperty("9017", "MEI_AP_TTCB_Total_Order_FILTER_REG", <a><![CDATA[MEI_AP_TTCB_Total_Order_FILTER_REG]]></a>.Value, "Mech Install^'Air Piping'!B29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:24 AM")
+    AddProperty("9023", "MEI_AP_TTCB_Air_Piping_Factor", <a><![CDATA[MEI_AP_TTCB_Air_Piping_Factor]]></a>.Value, "Mech Install^'Air Piping'!D35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 1:07:14 PM")
+    AddProperty("9050", "MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:55:52 AM")
+    AddProperty("9048", "MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:55:11 AM")
+    AddProperty("9047", "MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:54:51 AM")
+    AddProperty("9046", "MEI_AP_TTCB_Elbows_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:54:34 AM")
+    AddProperty("9049", "MEI_AP_TTCB_Elbows_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:55:30 AM")
+    AddProperty("9051", "MEI_AP_TTCB_Elbows_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!G27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:56:12 AM")
+    AddProperty("9044", "MEI_AP_TTCB_H_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:53:20 AM")
+    AddProperty("9042", "MEI_AP_TTCB_H_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:44:29 AM")
+    AddProperty("9041", "MEI_AP_TTCB_H_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:44:02 AM")
+    AddProperty("9040", "MEI_AP_TTCB_H_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:43:34 AM")
+    AddProperty("9043", "MEI_AP_TTCB_H_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!F25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:44:54 AM")
+    AddProperty("9045", "MEI_AP_TTCB_H_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_H_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!F27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:53:42 AM")
+    AddProperty("10338", "MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:51:00 AM")
+    AddProperty("9037", "MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:15:59 AM")
+    AddProperty("9036", "MEI_AP_TTCB_H_Cost_T_U_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:15:31 AM")
+    AddProperty("9035", "MEI_AP_TTCB_H_Cost_T_U_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:10:25 AM")
+    AddProperty("9038", "MEI_AP_TTCB_H_Cost_T_U_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_H_Cost_T_U_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!E25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:16:36 AM")
+    AddProperty("9026", "MEI_AP_TTCB_Hookup_Costs_A_C", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_A_C]]></a>.Value, "Mech Install^'Air Piping'!C30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:07:02 AM")
+    AddProperty("9028", "MEI_AP_TTCB_Hookup_Costs_Dryer", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_Dryer]]></a>.Value, "Mech Install^'Air Piping'!C32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:07:31 AM")
+    AddProperty("9025", "MEI_AP_TTCB_Hookup_Costs_FILTER_REG", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_FILTER_REG]]></a>.Value, "Mech Install^'Air Piping'!C29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:06:46 AM")
+    AddProperty("9027", "MEI_AP_TTCB_Hookup_Costs_Red_A_C", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_Red_A_C]]></a>.Value, "Mech Install^'Air Piping'!C31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:07:16 AM")
+    AddProperty("9024", "MEI_AP_TTCB_Hookup_Costs_Tubing", <a><![CDATA[MEI_AP_TTCB_Hookup_Costs_Tubing]]></a>.Value, "Mech Install^'Air Piping'!C28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:06:29 AM")
+    AddProperty("9068", "MEI_AP_TTCB_I_R0_125_HR_FT_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_125_HR_FT_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:03:03 AM")
+    AddProperty("9067", "MEI_AP_TTCB_I_R0_150_HR_FT_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_150_HR_FT_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:02:49 AM")
+    AddProperty("9066", "MEI_AP_TTCB_I_R0_200_HR_FT_1_and_1_2_IN_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_200_HR_FT_1_and_1_2_IN_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:02:32 AM")
+    AddProperty("9065", "MEI_AP_TTCB_I_R0_350_HR_FT_2_and_1_2_IN_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_350_HR_FT_2_and_1_2_IN_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:02:14 AM")
+    AddProperty("9064", "MEI_AP_TTCB_I_R0_450_HR_FT_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_I_R0_450_HR_FT_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!K22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:01:55 AM")
+    AddProperty("9069", "MEI_AP_TTCB_I_R1_HR_100_Tubing", <a><![CDATA[MEI_AP_TTCB_I_R1_HR_100_Tubing]]></a>.Value, "Mech Install^'Air Piping'!K28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:03:29 AM")
+    AddProperty("9072", "MEI_AP_TTCB_I_R2_HR_EA_Red_A_C", <a><![CDATA[MEI_AP_TTCB_I_R2_HR_EA_Red_A_C]]></a>.Value, "Mech Install^'Air Piping'!K31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:04:16 AM")
+    AddProperty("9070", "MEI_AP_TTCB_I_R3_HR_EA_FILTER_REG", <a><![CDATA[MEI_AP_TTCB_I_R3_HR_EA_FILTER_REG]]></a>.Value, "Mech Install^'Air Piping'!K29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:03:46 AM")
+    AddProperty("9073", "MEI_AP_TTCB_I_R4_HR_EA_Dryer", <a><![CDATA[MEI_AP_TTCB_I_R4_HR_EA_Dryer]]></a>.Value, "Mech Install^'Air Piping'!K32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:04:36 AM")
+    AddProperty("9071", "MEI_AP_TTCB_I_R8_HR_EA_A_C", <a><![CDATA[MEI_AP_TTCB_I_R8_HR_EA_A_C]]></a>.Value, "Mech Install^'Air Piping'!K30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:04:02 AM")
+    AddProperty("9033", "MEI_AP_TTCB_P_C_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:09:28 AM")
+    AddProperty("9031", "MEI_AP_TTCB_P_C_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:08:56 AM")
+    AddProperty("9030", "MEI_AP_TTCB_P_C_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:08:25 AM")
+    AddProperty("9029", "MEI_AP_TTCB_P_C_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:08:06 AM")
+    AddProperty("9032", "MEI_AP_TTCB_P_C_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!D25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:09:14 AM")
+    AddProperty("9034", "MEI_AP_TTCB_P_C_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_P_C_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!D27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:09:45 AM")
+    AddProperty("9056", "MEI_AP_TTCB_Tee_s_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:58:34 AM")
+    AddProperty("9054", "MEI_AP_TTCB_Tee_s_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:57:52 AM")
+    AddProperty("9053", "MEI_AP_TTCB_Tee_s_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:57:25 AM")
+    AddProperty("9052", "MEI_AP_TTCB_Tee_s_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:57:08 AM")
+    AddProperty("9055", "MEI_AP_TTCB_Tee_s_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!H25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:58:16 AM")
+    AddProperty("9057", "MEI_AP_TTCB_Tee_s_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_Tee_s_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!H27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:58:51 AM")
+    AddProperty("9014", "MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:00:20 AM")
+    AddProperty("9012", "MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:58:57 AM")
+    AddProperty("9011", "MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:58:13 AM")
+    AddProperty("9010", "MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/16/2025 6:53:57 AM")
+    AddProperty("9013", "MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!B25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 6:59:36 AM")
+    AddProperty("9018", "MEI_AP_TTCB_Total_Order_A_C", <a><![CDATA[MEI_AP_TTCB_Total_Order_A_C]]></a>.Value, "Mech Install^'Air Piping'!B30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:02:52 AM")
+    AddProperty("9020", "MEI_AP_TTCB_Total_Order_Dryer", <a><![CDATA[MEI_AP_TTCB_Total_Order_Dryer]]></a>.Value, "Mech Install^'Air Piping'!B32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:03:50 AM")
+    AddProperty("9017", "MEI_AP_TTCB_Total_Order_FILTER_REG", <a><![CDATA[MEI_AP_TTCB_Total_Order_FILTER_REG]]></a>.Value, "Mech Install^'Air Piping'!B29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:02:13 AM")
     AddProperty("9009", "MEI_AP_TTCB_Total_Order_Pipe_Type", <a><![CDATA[MEI_AP_TTCB_Total_Order_Pipe_Type]]></a>.Value, "Mech Install^'Air Piping'!B21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:08 AM")
-    AddProperty("9019", "MEI_AP_TTCB_Total_Order_Red_A_C", <a><![CDATA[MEI_AP_TTCB_Total_Order_Red_A_C]]></a>.Value, "Mech Install^'Air Piping'!B31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:28 AM")
+    AddProperty("9019", "MEI_AP_TTCB_Total_Order_Red_A_C", <a><![CDATA[MEI_AP_TTCB_Total_Order_Red_A_C]]></a>.Value, "Mech Install^'Air Piping'!B31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:03:17 AM")
     AddProperty("9015", "MEI_AP_TTCB_Total_Order_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_Total_Order_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!B27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:20 AM")
-    AddProperty("9016", "MEI_AP_TTCB_Total_Order_Tubing", <a><![CDATA[MEI_AP_TTCB_Total_Order_Tubing]]></a>.Value, "Mech Install^'Air Piping'!B28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:04:22 AM")
-    AddProperty("9062", "MEI_AP_TTCB_Valves_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 6:05:31 AM")
-    AddProperty("9060", "MEI_AP_TTCB_Valves_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:48 AM")
-    AddProperty("9059", "MEI_AP_TTCB_Valves_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:46 AM")
-    AddProperty("9058", "MEI_AP_TTCB_Valves_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:44 AM")
-    AddProperty("9061", "MEI_AP_TTCB_Valves_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:50 AM")
-    AddProperty("9063", "MEI_AP_TTCB_Valves_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!I27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:05:54 AM")
+    AddProperty("9016", "MEI_AP_TTCB_Total_Order_Tubing", <a><![CDATA[MEI_AP_TTCB_Total_Order_Tubing]]></a>.Value, "Mech Install^'Air Piping'!B28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:01:30 AM")
+    AddProperty("9062", "MEI_AP_TTCB_Valves_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:00:53 AM")
+    AddProperty("9060", "MEI_AP_TTCB_Valves_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:00:17 AM")
+    AddProperty("9059", "MEI_AP_TTCB_Valves_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:00:03 AM")
+    AddProperty("9058", "MEI_AP_TTCB_Valves_Cost_3_Inch_76mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_3_Inch_76mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:59:38 AM")
+    AddProperty("9061", "MEI_AP_TTCB_Valves_Cost_7_8_Inch_25mm_pipe", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_7_8_Inch_25mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!I25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:00:36 AM")
+    AddProperty("9063", "MEI_AP_TTCB_Valves_Cost_SUBTOTALS", <a><![CDATA[MEI_AP_TTCB_Valves_Cost_SUBTOTALS]]></a>.Value, "Mech Install^'Air Piping'!I27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:01:18 AM")
     AddProperty("6024", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 4:11:39 PM")
+    
+      AddValidValue("MEI_AP_Compressor_Required")
     
       oConnection = AddConnection("My_Control_Panel", <a><![CDATA[My_Control_Panel]]></a>.Value, "", "125", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/8/2025 4:46:45 PM")
       
@@ -2792,6 +2806,14 @@ Option Infer On
       oConnection = AddConnection("My_Subsystem", <a><![CDATA[My_Subsystem]]></a>.Value, "", "141", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/10/2025 3:50:09 PM")
       
         oConnection.AddVPF(399, "CAE_Mech_Install_CP_Comp")
+      
+      oConnection = AddConnection("My_System", <a><![CDATA[My_System]]></a>.Value, "", "186", "OO", 0, "","General", 9999, "", "GLOBAL\H611896", "7/16/2025 12:41:42 PM")
+      
+        oConnection.AddVPF(399, "CAE_Mech_Install_CP_Comp")
+      
+      oConnection = AddConnection("MEI_Connect_AirPiping_to_TTCB", <a><![CDATA[MEI_Connect_AirPiping_to_TTCB]]></a>.Value, "", "185", "OO", 0, "","Mech Install", 9999, "", "GLOBAL\H582667", "7/16/2025 6:50:58 AM")
+      
+        oConnection.AddVPF(401, "CAE_TTCB_Costing_Mech")
       
     End Sub
 
@@ -2828,13 +2850,13 @@ Option Infer On
           InitProperty("CP_Name", "5634", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "6/30/2025 6:19:50 PM", "", "In Development",  0,8871)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_Air_Subsystem", "8530", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:07 AM", "", "In Development",  0,13847)
+          InitProperty("MEI_AP_Air_Subsystem", "8530", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:47:46 PM", "", "In Development",  0,17546)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_Ceiling_Height_Feet", "8532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 11:52:52 AM", "", "In Development",  0,17258)
+          InitProperty("MEI_AP_Ceiling_Height_Feet", "8532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:49:58 PM", "", "In Development",  0,17548)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_Compressor_Required", "8536", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:19 AM", "", "In Development",  0,13859)
+          InitProperty("MEI_AP_Compressor_Required", "8536", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:54:33 PM", "", "In Development",  0,13859)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_Delta_1_2_inch_16_5mm_pipe_Total_Order", "8672", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:50 AM", "", "In Development",  0,14131)
@@ -2882,7 +2904,7 @@ Option Infer On
           InitProperty("MEI_AP_Header_Loop_Perimeter_Feet", "8534", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:15 AM", "", "In Development",  0,13855)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_Number_of_Drops", "8531", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:09 AM", "", "In Development",  0,13849)
+          InitProperty("MEI_AP_Number_of_Drops", "8531", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 1:04:10 PM", "", "In Development",  0,18049)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_Original_1_2_inch_16_5mm_pipe_Total_Order", "8659", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:25 AM", "", "In Development",  0,14105)
@@ -2924,448 +2946,448 @@ Option Infer On
           InitProperty("MEI_AP_Original_Tubing_Total_Order", "8661", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:29 AM", "", "In Development",  0,14109)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_L_P_1_2_inch_16_5mm_pipe", "8574", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:31 AM", "", "In Development",  0,13935)
+          InitProperty("MEI_AP_P_T_All_Thread_L_P_1_2_inch_16_5mm_pipe", "8574", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:11:40 AM", "", "In Development",  0,17875)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_L_P_1_and_1_2_IN_40mm_pipe", "8572", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:27 AM", "", "In Development",  0,13931)
+          InitProperty("MEI_AP_P_T_All_Thread_L_P_1_and_1_2_IN_40mm_pipe", "8572", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:10:28 AM", "", "In Development",  0,17872)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_L_P_2_and_1_2_IN_63mm_pipe", "8571", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:25 AM", "", "In Development",  0,13929)
+          InitProperty("MEI_AP_P_T_All_Thread_L_P_2_and_1_2_IN_63mm_pipe", "8571", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:09:57 AM", "", "In Development",  0,17870)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_L_P_3_Inch_76mm_pipe", "8570", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:24 AM", "", "In Development",  0,13927)
+          InitProperty("MEI_AP_P_T_All_Thread_L_P_3_Inch_76mm_pipe", "8570", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:09:23 AM", "", "In Development",  0,17869)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_L_P_7_8_Inch_25mm_pipe", "8573", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:29 AM", "", "In Development",  0,13933)
+          InitProperty("MEI_AP_P_T_All_Thread_L_P_7_8_Inch_25mm_pipe", "8573", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:11:07 AM", "", "In Development",  0,17873)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_O_P_1_2_inch_16_5mm_pipe", "8579", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:40 AM", "", "In Development",  0,13945)
+          InitProperty("MEI_AP_P_T_All_Thread_O_P_1_2_inch_16_5mm_pipe", "8579", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:31:03 AM", "", "In Development",  0,17701)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_O_P_1_and_1_2_IN_40mm_pipe", "8577", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:37 AM", "", "In Development",  0,13941)
+          InitProperty("MEI_AP_P_T_All_Thread_O_P_1_and_1_2_IN_40mm_pipe", "8577", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:30:27 AM", "", "In Development",  0,17699)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_O_P_2_and_1_2_IN_63mm_pipe", "8576", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:35 AM", "", "In Development",  0,13939)
+          InitProperty("MEI_AP_P_T_All_Thread_O_P_2_and_1_2_IN_63mm_pipe", "8576", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:30:11 AM", "", "In Development",  0,17698)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_O_P_3_Inch_76mm_pipe", "8575", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:33 AM", "", "In Development",  0,13937)
+          InitProperty("MEI_AP_P_T_All_Thread_O_P_3_Inch_76mm_pipe", "8575", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:29:53 AM", "", "In Development",  0,17697)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_All_Thread_O_P_7_8_Inch_25mm_pipe", "8578", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:39 AM", "", "In Development",  0,13943)
+          InitProperty("MEI_AP_P_T_All_Thread_O_P_7_8_Inch_25mm_pipe", "8578", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:30:47 AM", "", "In Development",  0,17700)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_P_T_Beam_Clamps_L_P_1_2_inch_16_5mm_pipe", "8564", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:12 AM", "", "In Development",  0,13915)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Beam_Clamps_L_P_1_and_1_2_IN_40mm_pipe", "8562", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:08 AM", "", "In Development",  0,13911)
+          InitProperty("MEI_AP_P_T_Beam_Clamps_L_P_1_and_1_2_IN_40mm_pipe", "8562", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:08:13 AM", "", "In Development",  0,17867)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Beam_Clamps_L_P_2_and_1_2_IN_63mm_pipe", "8561", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:06 AM", "", "In Development",  0,13909)
+          InitProperty("MEI_AP_P_T_Beam_Clamps_L_P_2_and_1_2_IN_63mm_pipe", "8561", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:07:59 AM", "", "In Development",  0,17866)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Beam_Clamps_L_P_3_Inch_76mm_pipe", "8560", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:04 AM", "", "In Development",  0,13907)
+          InitProperty("MEI_AP_P_T_Beam_Clamps_L_P_3_Inch_76mm_pipe", "8560", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:07:24 AM", "", "In Development",  0,17865)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Beam_Clamps_L_P_7_8_Inch_25mm_pipe", "8563", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:10 AM", "", "In Development",  0,13913)
+          InitProperty("MEI_AP_P_T_Beam_Clamps_L_P_7_8_Inch_25mm_pipe", "8563", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:08:29 AM", "", "In Development",  0,17868)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_P_T_Beam_Clamps_O_P_1_2_inch_16_5mm_pipe", "8569", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:22 AM", "", "In Development",  0,13925)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Beam_Clamps_O_P_1_and_1_2_IN_40mm_pipe", "8567", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:18 AM", "", "In Development",  0,13921)
+          InitProperty("MEI_AP_P_T_Beam_Clamps_O_P_1_and_1_2_IN_40mm_pipe", "8567", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:28:32 AM", "", "In Development",  0,17695)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Beam_Clamps_O_P_2_and_1_2_IN_63mm_pipe", "8566", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:16 AM", "", "In Development",  0,13919)
+          InitProperty("MEI_AP_P_T_Beam_Clamps_O_P_2_and_1_2_IN_63mm_pipe", "8566", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:28:19 AM", "", "In Development",  0,17694)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Beam_Clamps_O_P_3_Inch_76mm_pipe", "8565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:14 AM", "", "In Development",  0,13917)
+          InitProperty("MEI_AP_P_T_Beam_Clamps_O_P_3_Inch_76mm_pipe", "8565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:27:57 AM", "", "In Development",  0,17693)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Beam_Clamps_O_P_7_8_Inch_25mm_pipe", "8568", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:20 AM", "", "In Development",  0,13923)
+          InitProperty("MEI_AP_P_T_Beam_Clamps_O_P_7_8_Inch_25mm_pipe", "8568", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:28:50 AM", "", "In Development",  0,17696)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_L_P_1_2_inch_16_5mm_pipe", "8544", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:34 AM", "", "In Development",  0,13875)
+          InitProperty("MEI_AP_P_T_Pipe_L_P_1_2_inch_16_5mm_pipe", "8544", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:03:28 AM", "", "In Development",  0,17849)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_L_P_1_and_1_2_IN_40mm_pipe", "8542", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:30 AM", "", "In Development",  0,13871)
+          InitProperty("MEI_AP_P_T_Pipe_L_P_1_and_1_2_IN_40mm_pipe", "8542", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:01:56 AM", "", "In Development",  0,17839)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_L_P_2_and_1_2_IN_63mm_pipe", "8541", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:28 AM", "", "In Development",  0,13869)
+          InitProperty("MEI_AP_P_T_Pipe_L_P_2_and_1_2_IN_63mm_pipe", "8541", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:01:05 AM", "", "In Development",  0,17834)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_L_P_3_Inch_76mm_pipe", "8540", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:26 AM", "", "In Development",  0,13867)
+          InitProperty("MEI_AP_P_T_Pipe_L_P_3_Inch_76mm_pipe", "8540", "", "", "Y", "","", 1, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:00:27 AM", "", "In Development",  0,17827)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_L_P_7_8_Inch_25mm_pipe", "8543", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:32 AM", "", "In Development",  0,13873)
+          InitProperty("MEI_AP_P_T_Pipe_L_P_7_8_Inch_25mm_pipe", "8543", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:02:57 AM", "", "In Development",  0,17848)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe", "8549", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:44 AM", "", "In Development",  0,13885)
+          InitProperty("MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe", "8549", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:05:02 AM", "", "In Development",  0,17854)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe", "8547", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:40 AM", "", "In Development",  0,13881)
+          InitProperty("MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe", "8547", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:04:46 AM", "", "In Development",  0,17852)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe", "8546", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:38 AM", "", "In Development",  0,13879)
+          InitProperty("MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe", "8546", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:04:33 AM", "", "In Development",  0,17851)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe", "8545", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:36 AM", "", "In Development",  0,13877)
+          InitProperty("MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe", "8545", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:04:14 AM", "", "In Development",  0,17850)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe", "8548", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:42 AM", "", "In Development",  0,13883)
+          InitProperty("MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe", "8548", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:05:19 AM", "", "In Development",  0,17855)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_O_P_1_2_inch_16_5mm_pipe", "8554", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:53 AM", "", "In Development",  0,13895)
+          InitProperty("MEI_AP_P_T_Pipe_O_P_1_2_inch_16_5mm_pipe", "8554", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:23:27 AM", "", "In Development",  0,17687)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_O_P_1_and_1_2_IN_40mm_pipe", "8552", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:49 AM", "", "In Development",  0,13891)
+          InitProperty("MEI_AP_P_T_Pipe_O_P_1_and_1_2_IN_40mm_pipe", "8552", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:22:50 AM", "", "In Development",  0,17685)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_O_P_2_and_1_2_IN_63mm_pipe", "8551", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:47 AM", "", "In Development",  0,13889)
+          InitProperty("MEI_AP_P_T_Pipe_O_P_2_and_1_2_IN_63mm_pipe", "8551", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:22:32 AM", "", "In Development",  0,17684)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_O_P_3_Inch_76mm_pipe", "8550", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:45 AM", "", "In Development",  0,13887)
+          InitProperty("MEI_AP_P_T_Pipe_O_P_3_Inch_76mm_pipe", "8550", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:22:12 AM", "", "In Development",  0,17683)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_O_P_7_8_Inch_25mm_pipe", "8553", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:51 AM", "", "In Development",  0,13893)
+          InitProperty("MEI_AP_P_T_Pipe_O_P_7_8_Inch_25mm_pipe", "8553", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:23:09 AM", "", "In Development",  0,17686)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_1_2_inch_16_5mm_pipe", "8584", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:57 AM", "", "In Development",  0,13955)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_1_2_inch_16_5mm_pipe", "8584", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:17:11 AM", "", "In Development",  0,17894)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_1_and_1_2_IN_40mm_pipe", "8582", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:53 AM", "", "In Development",  0,13951)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_1_and_1_2_IN_40mm_pipe", "8582", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:16:12 AM", "", "In Development",  0,17888)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_2_and_1_2_IN_63mm_pipe", "8581", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:51 AM", "", "In Development",  0,13949)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_2_and_1_2_IN_63mm_pipe", "8581", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:15:43 AM", "", "In Development",  0,17885)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_3_Inch_76mm_pipe", "8580", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:42 AM", "", "In Development",  0,13947)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_3_Inch_76mm_pipe", "8580", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:15:22 AM", "", "In Development",  0,17882)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_7_8_Inch_25mm_pipe", "8583", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:55 AM", "", "In Development",  0,13953)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_L_P_7_8_Inch_25mm_pipe", "8583", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:16:43 AM", "", "In Development",  0,17891)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_1_2_inch_16_5mm_pipe", "8589", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:07 AM", "", "In Development",  0,13965)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_1_2_inch_16_5mm_pipe", "8589", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:33:17 AM", "", "In Development",  0,17706)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_1_and_1_2_IN_40mm_pipe", "8587", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:03 AM", "", "In Development",  0,13961)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_1_and_1_2_IN_40mm_pipe", "8587", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:32:45 AM", "", "In Development",  0,17704)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_2_and_1_2_IN_63mm_pipe", "8586", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:01 AM", "", "In Development",  0,13959)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_2_and_1_2_IN_63mm_pipe", "8586", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:32:29 AM", "", "In Development",  0,17703)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_3_Inch_76mm_pipe", "8585", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:59 AM", "", "In Development",  0,13957)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_3_Inch_76mm_pipe", "8585", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:31:26 AM", "", "In Development",  0,17702)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_7_8_Inch_25mm_pipe", "8588", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:05 AM", "", "In Development",  0,13963)
+          InitProperty("MEI_AP_P_T_Pipe_Straps_O_P_7_8_Inch_25mm_pipe", "8588", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:33:01 AM", "", "In Development",  0,17705)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_USD_LF_1_2_inch_16_5mm_pipe", "8559", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:02 AM", "", "In Development",  0,13905)
+          InitProperty("MEI_AP_P_T_Pipe_USD_LF_1_2_inch_16_5mm_pipe", "8559", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:26:34 AM", "", "In Development",  0,17692)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_USD_LF_1_and_1_2_IN_40mm_pipe", "8557", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:59 AM", "", "In Development",  0,13901)
+          InitProperty("MEI_AP_P_T_Pipe_USD_LF_1_and_1_2_IN_40mm_pipe", "8557", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:25:38 AM", "", "In Development",  0,17690)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_USD_LF_2_and_1_2_IN_63mm_pipe", "8556", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:57 AM", "", "In Development",  0,13899)
+          InitProperty("MEI_AP_P_T_Pipe_USD_LF_2_and_1_2_IN_63mm_pipe", "8556", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:25:06 AM", "", "In Development",  0,17689)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_USD_LF_3_Inch_76mm_pipe", "8555", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:55 AM", "", "In Development",  0,13897)
+          InitProperty("MEI_AP_P_T_Pipe_USD_LF_3_Inch_76mm_pipe", "8555", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:24:30 AM", "", "In Development",  0,17688)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_P_T_Pipe_USD_LF_7_8_Inch_25mm_pipe", "8558", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:03:00 AM", "", "In Development",  0,13903)
+          InitProperty("MEI_AP_P_T_Pipe_USD_LF_7_8_Inch_25mm_pipe", "8558", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:26:10 AM", "", "In Development",  0,17691)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_A_U_1_2_inch_16_5mm_pipe", "8725", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:32 AM", "", "In Development",  0,14237)
+          InitProperty("MEI_AP_PT_Coup_Union_A_U_1_2_inch_16_5mm_pipe", "8725", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:32:34 AM", "", "In Development",  0,17758)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_A_U_1_and_1_2_IN_40mm_pipe", "8723", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:28 AM", "", "In Development",  0,14233)
+          InitProperty("MEI_AP_PT_Coup_Union_A_U_1_and_1_2_IN_40mm_pipe", "8723", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:31:52 AM", "", "In Development",  0,17756)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_A_U_2_and_1_2_IN_63mm_pipe", "8722", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:26 AM", "", "In Development",  0,14231)
+          InitProperty("MEI_AP_PT_Coup_Union_A_U_2_and_1_2_IN_63mm_pipe", "8722", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:31:38 AM", "", "In Development",  0,17755)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_A_U_3_Inch_76mm_pipe", "8721", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:24 AM", "", "In Development",  0,14229)
+          InitProperty("MEI_AP_PT_Coup_Union_A_U_3_Inch_76mm_pipe", "8721", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:31:16 AM", "", "In Development",  0,17754)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_A_U_7_8_Inch_25mm_pipe", "8724", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:30 AM", "", "In Development",  0,14235)
+          InitProperty("MEI_AP_PT_Coup_Union_A_U_7_8_Inch_25mm_pipe", "8724", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:32:17 AM", "", "In Development",  0,17757)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_L_P_1_2_inch_16_5mm_pipe", "8715", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:12 AM", "", "In Development",  0,14217)
+          InitProperty("MEI_AP_PT_Coup_Union_L_P_1_2_inch_16_5mm_pipe", "8715", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:29:04 AM", "", "In Development",  0,17932)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_L_P_1_and_1_2_IN_40mm_pipe", "8713", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:08 AM", "", "In Development",  0,14213)
+          InitProperty("MEI_AP_PT_Coup_Union_L_P_1_and_1_2_IN_40mm_pipe", "8713", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:28:05 AM", "", "In Development",  0,17930)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_L_P_2_and_1_2_IN_63mm_pipe", "8712", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:06 AM", "", "In Development",  0,14211)
+          InitProperty("MEI_AP_PT_Coup_Union_L_P_2_and_1_2_IN_63mm_pipe", "8712", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:27:35 AM", "", "In Development",  0,17929)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_L_P_3_Inch_76mm_pipe", "8711", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:05 AM", "", "In Development",  0,14209)
+          InitProperty("MEI_AP_PT_Coup_Union_L_P_3_Inch_76mm_pipe", "8711", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:26:59 AM", "", "In Development",  0,17928)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_L_P_7_8_Inch_25mm_pipe", "8714", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:10 AM", "", "In Development",  0,14215)
+          InitProperty("MEI_AP_PT_Coup_Union_L_P_7_8_Inch_25mm_pipe", "8714", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:28:40 AM", "", "In Development",  0,17931)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_O_P_1_2_inch_16_5mm_pipe", "8720", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:22 AM", "", "In Development",  0,14227)
+          InitProperty("MEI_AP_PT_Coup_Union_O_P_1_2_inch_16_5mm_pipe", "8720", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:30:45 AM", "", "In Development",  0,17753)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_O_P_1_and_1_2_IN_40mm_pipe", "8718", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:18 AM", "", "In Development",  0,14223)
+          InitProperty("MEI_AP_PT_Coup_Union_O_P_1_and_1_2_IN_40mm_pipe", "8718", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:30:15 AM", "", "In Development",  0,17751)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_O_P_2_and_1_2_IN_63mm_pipe", "8717", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:16 AM", "", "In Development",  0,14221)
+          InitProperty("MEI_AP_PT_Coup_Union_O_P_2_and_1_2_IN_63mm_pipe", "8717", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:29:59 AM", "", "In Development",  0,17750)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_O_P_3_Inch_76mm_pipe", "8716", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:14 AM", "", "In Development",  0,14219)
+          InitProperty("MEI_AP_PT_Coup_Union_O_P_3_Inch_76mm_pipe", "8716", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:29:44 AM", "", "In Development",  0,17749)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Coup_Union_O_P_7_8_Inch_25mm_pipe", "8719", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:20 AM", "", "In Development",  0,14225)
+          InitProperty("MEI_AP_PT_Coup_Union_O_P_7_8_Inch_25mm_pipe", "8719", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:30:30 AM", "", "In Development",  0,17752)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_L_P_1_2_inch_16_5mm_pipe", "8685", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:15 AM", "", "In Development",  0,14157)
+          InitProperty("MEI_AP_PT_Elbows_90_L_P_1_2_inch_16_5mm_pipe", "8685", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:21:34 AM", "", "In Development",  0,17910)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_L_P_1_and_1_2_IN_40mm_pipe", "8683", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:11 AM", "", "In Development",  0,14153)
+          InitProperty("MEI_AP_PT_Elbows_90_L_P_1_and_1_2_IN_40mm_pipe", "8683", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:20:41 AM", "", "In Development",  0,17906)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_L_P_2_and_1_2_IN_63mm_pipe", "8682", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:09 AM", "", "In Development",  0,14151)
+          InitProperty("MEI_AP_PT_Elbows_90_L_P_2_and_1_2_IN_63mm_pipe", "8682", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:19:59 AM", "", "In Development",  0,17904)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_L_P_3_Inch_76mm_pipe", "8681", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:07 AM", "", "In Development",  0,14149)
+          InitProperty("MEI_AP_PT_Elbows_90_L_P_3_Inch_76mm_pipe", "8681", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:19:20 AM", "", "In Development",  0,17903)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_L_P_7_8_Inch_25mm_pipe", "8684", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:13 AM", "", "In Development",  0,14155)
+          InitProperty("MEI_AP_PT_Elbows_90_L_P_7_8_Inch_25mm_pipe", "8684", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:21:08 AM", "", "In Development",  0,17907)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_O_P_1_2_inch_16_5mm_pipe", "8690", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:25 AM", "", "In Development",  0,14167)
+          InitProperty("MEI_AP_PT_Elbows_90_O_P_1_2_inch_16_5mm_pipe", "8690", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:20:50 AM", "", "In Development",  0,17739)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_O_P_1_and_1_2_IN_40mm_pipe", "8688", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:20 AM", "", "In Development",  0,14163)
+          InitProperty("MEI_AP_PT_Elbows_90_O_P_1_and_1_2_IN_40mm_pipe", "8688", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:20:13 AM", "", "In Development",  0,17737)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_O_P_2_and_1_2_IN_63mm_pipe", "8687", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:19 AM", "", "In Development",  0,14161)
+          InitProperty("MEI_AP_PT_Elbows_90_O_P_2_and_1_2_IN_63mm_pipe", "8687", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:19:58 AM", "", "In Development",  0,17736)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_O_P_3_Inch_76mm_pipe", "8686", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:17 AM", "", "In Development",  0,14159)
+          InitProperty("MEI_AP_PT_Elbows_90_O_P_3_Inch_76mm_pipe", "8686", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:19:29 AM", "", "In Development",  0,17735)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Elbows_90_O_P_7_8_Inch_25mm_pipe", "8689", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:22 AM", "", "In Development",  0,14165)
+          InitProperty("MEI_AP_PT_Elbows_90_O_P_7_8_Inch_25mm_pipe", "8689", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:20:34 AM", "", "In Development",  0,17738)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_L_P_1_2_inch_16_5mm_pipe", "8695", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:34 AM", "", "In Development",  0,14177)
+          InitProperty("MEI_AP_PT_T_Coupler_L_P_1_2_inch_16_5mm_pipe", "8695", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:24:03 AM", "", "In Development",  0,17923)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_L_P_1_and_1_2_IN_40mm_pipe", "8693", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:30 AM", "", "In Development",  0,14173)
+          InitProperty("MEI_AP_PT_T_Coupler_L_P_1_and_1_2_IN_40mm_pipe", "8693", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:23:08 AM", "", "In Development",  0,17921)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_L_P_2_and_1_2_IN_63mm_pipe", "8692", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:29 AM", "", "In Development",  0,14171)
+          InitProperty("MEI_AP_PT_T_Coupler_L_P_2_and_1_2_IN_63mm_pipe", "8692", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:22:41 AM", "", "In Development",  0,17917)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_L_P_3_Inch_76mm_pipe", "8691", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:27 AM", "", "In Development",  0,14169)
+          InitProperty("MEI_AP_PT_T_Coupler_L_P_3_Inch_76mm_pipe", "8691", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:22:10 AM", "", "In Development",  0,17914)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_L_P_7_8_Inch_25mm_pipe", "8694", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:32 AM", "", "In Development",  0,14175)
+          InitProperty("MEI_AP_PT_T_Coupler_L_P_7_8_Inch_25mm_pipe", "8694", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:23:33 AM", "", "In Development",  0,17922)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_O_P_1_2_inch_16_5mm_pipe", "8700", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:44 AM", "", "In Development",  0,14187)
+          InitProperty("MEI_AP_PT_T_Coupler_O_P_1_2_inch_16_5mm_pipe", "8700", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:27:13 AM", "", "In Development",  0,17744)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_O_P_1_and_1_2_IN_40mm_pipe", "8698", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:40 AM", "", "In Development",  0,14183)
+          InitProperty("MEI_AP_PT_T_Coupler_O_P_1_and_1_2_IN_40mm_pipe", "8698", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:26:42 AM", "", "In Development",  0,17742)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_O_P_2_and_1_2_IN_63mm_pipe", "8697", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:38 AM", "", "In Development",  0,14181)
+          InitProperty("MEI_AP_PT_T_Coupler_O_P_2_and_1_2_IN_63mm_pipe", "8697", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:26:27 AM", "", "In Development",  0,17741)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_O_P_3_Inch_76mm_pipe", "8696", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:36 AM", "", "In Development",  0,14179)
+          InitProperty("MEI_AP_PT_T_Coupler_O_P_3_Inch_76mm_pipe", "8696", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:24:32 AM", "", "In Development",  0,17740)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_T_Coupler_O_P_7_8_Inch_25mm_pipe", "8699", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:42 AM", "", "In Development",  0,14185)
+          InitProperty("MEI_AP_PT_T_Coupler_O_P_7_8_Inch_25mm_pipe", "8699", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:26:57 AM", "", "In Development",  0,17743)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_PT_Valve_L_P_1_2_inch_16_5mm_pipe", "8705", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:53 AM", "", "In Development",  0,14197)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Valve_L_P_1_and_1_2_IN_40mm_pipe", "8703", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:49 AM", "", "In Development",  0,14193)
+          InitProperty("MEI_AP_PT_Valve_L_P_1_and_1_2_IN_40mm_pipe", "8703", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:25:33 AM", "", "In Development",  0,17926)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Valve_L_P_2_and_1_2_IN_63mm_pipe", "8702", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:48 AM", "", "In Development",  0,14191)
+          InitProperty("MEI_AP_PT_Valve_L_P_2_and_1_2_IN_63mm_pipe", "8702", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:25:07 AM", "", "In Development",  0,17925)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Valve_L_P_3_Inch_76mm_pipe", "8701", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:46 AM", "", "In Development",  0,14189)
+          InitProperty("MEI_AP_PT_Valve_L_P_3_Inch_76mm_pipe", "8701", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:24:35 AM", "", "In Development",  0,17924)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Valve_L_P_7_8_Inch_25mm_pipe", "8704", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:51 AM", "", "In Development",  0,14195)
+          InitProperty("MEI_AP_PT_Valve_L_P_7_8_Inch_25mm_pipe", "8704", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 9:26:00 AM", "", "In Development",  0,17927)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_PT_Valve_O_P_1_2_inch_16_5mm_pipe", "8710", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:03 AM", "", "In Development",  0,14207)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Valve_O_P_1_and_1_2_IN_40mm_pipe", "8708", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:59 AM", "", "In Development",  0,14203)
+          InitProperty("MEI_AP_PT_Valve_O_P_1_and_1_2_IN_40mm_pipe", "8708", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:28:54 AM", "", "In Development",  0,17747)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Valve_O_P_2_and_1_2_IN_63mm_pipe", "8707", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:57 AM", "", "In Development",  0,14201)
+          InitProperty("MEI_AP_PT_Valve_O_P_2_and_1_2_IN_63mm_pipe", "8707", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:28:40 AM", "", "In Development",  0,17746)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Valve_O_P_3_Inch_76mm_pipe", "8706", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:07:55 AM", "", "In Development",  0,14199)
+          InitProperty("MEI_AP_PT_Valve_O_P_3_Inch_76mm_pipe", "8706", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:28:21 AM", "", "In Development",  0,17745)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_PT_Valve_O_P_7_8_Inch_25mm_pipe", "8709", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:08:01 AM", "", "In Development",  0,14205)
+          InitProperty("MEI_AP_PT_Valve_O_P_7_8_Inch_25mm_pipe", "8709", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:29:10 AM", "", "In Development",  0,17748)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Air_Piping_Factor", "8539", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:24 AM", "", "In Development",  0,13865)
+          InitProperty("MEI_AP_SS1_Air_Piping_Factor", "8539", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 1:06:15 PM", "", "In Development",  0,18054)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Elbows_1Half_In_Pipe", "8504", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:18 AM", "", "In Development",  0,13795)
+          InitProperty("MEI_AP_SS1_Cost_of_Elbows_1Half_In_Pipe", "8504", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:23:00 PM", "", "In Development",  0,17520)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Elbows_2Half_In_Pipe", "8503", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:16 AM", "", "In Development",  0,13793)
+          InitProperty("MEI_AP_SS1_Cost_of_Elbows_2Half_In_Pipe", "8503", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:22:39 PM", "", "In Development",  0,17519)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Elbows_3Inch_Pipe", "8502", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:14 AM", "", "In Development",  0,13791)
+          InitProperty("MEI_AP_SS1_Cost_of_Elbows_3Inch_Pipe", "8502", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:22:15 PM", "", "In Development",  0,17518)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Elbows_7_8Inch_Pipe", "8505", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:20 AM", "", "In Development",  0,13797)
+          InitProperty("MEI_AP_SS1_Cost_of_Elbows_7_8Inch_Pipe", "8505", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:23:18 PM", "", "In Development",  0,17521)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Elbows_Half_In_Pipe", "8506", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:21 AM", "", "In Development",  0,13799)
+          InitProperty("MEI_AP_SS1_Cost_of_Elbows_Half_In_Pipe", "8506", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:23:38 PM", "", "In Development",  0,17522)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Elbows_Sub_Totals", "8507", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:23 AM", "", "In Development",  0,13801)
+          InitProperty("MEI_AP_SS1_Cost_of_Elbows_Sub_Totals", "8507", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:23:57 PM", "", "In Development",  0,17523)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_1Half_In_Pipe", "8498", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:06 AM", "", "In Development",  0,13783)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_1Half_In_Pipe", "8498", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:18:26 PM", "", "In Development",  0,17514)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_2Half_In_Pipe", "8497", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:04 AM", "", "In Development",  0,13781)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_2Half_In_Pipe", "8497", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:18:00 PM", "", "In Development",  0,17513)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_3Inch_Pipe", "8496", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:02 AM", "", "In Development",  0,13779)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_3Inch_Pipe", "8496", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:17:43 PM", "", "In Development",  0,17512)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_7_8Inch_Pipe", "8499", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:08 AM", "", "In Development",  0,13785)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_7_8Inch_Pipe", "8499", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:18:50 PM", "", "In Development",  0,17515)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_Half_In_Pipe", "8500", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:10 AM", "", "In Development",  0,13787)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_Half_In_Pipe", "8500", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:19:12 PM", "", "In Development",  0,17516)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_Sub_Totals", "8501", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:12 AM", "", "In Development",  0,13789)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_Sub_Totals", "8501", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:20:52 PM", "", "In Development",  0,17517)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_1Half_In_Pipe", "8493", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:56 AM", "", "In Development",  0,13773)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_1Half_In_Pipe", "8493", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:16:04 PM", "", "In Development",  0,17509)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_2Half_In_Pipe", "8492", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:54 AM", "", "In Development",  0,13771)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_2Half_In_Pipe", "8492", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:15:38 PM", "", "In Development",  0,17508)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_3Inch_Pipe", "8491", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:53 AM", "", "In Development",  0,13769)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_3Inch_Pipe", "8491", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:15:13 PM", "", "In Development",  0,17507)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_7_8Inch_Pipe", "8494", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:58 AM", "", "In Development",  0,13775)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_7_8Inch_Pipe", "8494", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:16:21 PM", "", "In Development",  0,17510)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_Half_In_Pipe", "8495", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:00 AM", "", "In Development",  0,13777)
+          InitProperty("MEI_AP_SS1_Cost_of_Hanger_TU_Half_In_Pipe", "8495", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:16:40 PM", "", "In Development",  0,17511)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Tees_1Half_In_Pipe", "8510", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:29 AM", "", "In Development",  0,13807)
+          InitProperty("MEI_AP_SS1_Cost_of_Tees_1Half_In_Pipe", "8510", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:26:27 PM", "", "In Development",  0,17526)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Tees_2Half_In_Pipe", "8509", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:27 AM", "", "In Development",  0,13805)
+          InitProperty("MEI_AP_SS1_Cost_of_Tees_2Half_In_Pipe", "8509", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:26:03 PM", "", "In Development",  0,17525)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Tees_3Inch_Pipe", "8508", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:25 AM", "", "In Development",  0,13803)
+          InitProperty("MEI_AP_SS1_Cost_of_Tees_3Inch_Pipe", "8508", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:24:55 PM", "", "In Development",  0,17524)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Tees_7_8Inch_Pipe", "8511", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:31 AM", "", "In Development",  0,13809)
+          InitProperty("MEI_AP_SS1_Cost_of_Tees_7_8Inch_Pipe", "8511", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:26:51 PM", "", "In Development",  0,17527)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Tees_Half_In_Pipe", "8512", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:33 AM", "", "In Development",  0,13811)
+          InitProperty("MEI_AP_SS1_Cost_of_Tees_Half_In_Pipe", "8512", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:27:18 PM", "", "In Development",  0,17528)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Tees_Sub_Totals", "8513", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:35 AM", "", "In Development",  0,13813)
+          InitProperty("MEI_AP_SS1_Cost_of_Tees_Sub_Totals", "8513", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:33:28 PM", "", "In Development",  0,17529)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Valves_1Half_In_Pipe", "8516", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:40 AM", "", "In Development",  0,13819)
+          InitProperty("MEI_AP_SS1_Cost_of_Valves_1Half_In_Pipe", "8516", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:34:52 PM", "", "In Development",  0,17532)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Valves_2Half_In_Pipe", "8515", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:38 AM", "", "In Development",  0,13817)
+          InitProperty("MEI_AP_SS1_Cost_of_Valves_2Half_In_Pipe", "8515", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:34:30 PM", "", "In Development",  0,17531)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Valves_3Inch_Pipe", "8514", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:36 AM", "", "In Development",  0,13815)
+          InitProperty("MEI_AP_SS1_Cost_of_Valves_3Inch_Pipe", "8514", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:34:07 PM", "", "In Development",  0,17530)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Valves_7_8Inch_Pipe", "8517", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:42 AM", "", "In Development",  0,13821)
+          InitProperty("MEI_AP_SS1_Cost_of_Valves_7_8Inch_Pipe", "8517", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:35:20 PM", "", "In Development",  0,17533)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_SS1_Cost_of_Valves_Half_In_Pipe", "8518", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:44 AM", "", "In Development",  0,13823)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_of_Valves_Sub_Totals", "8519", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:46 AM", "", "In Development",  0,13825)
+          InitProperty("MEI_AP_SS1_Cost_of_Valves_Sub_Totals", "8519", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:35:50 PM", "", "In Development",  0,17534)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_1Half_In_Pipe", "8487", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:45 AM", "", "In Development",  0,13761)
+          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_1Half_In_Pipe", "8487", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:13:13 PM", "", "In Development",  0,17503)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_2Half_In_Pipe", "8486", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:43 AM", "", "In Development",  0,13759)
+          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_2Half_In_Pipe", "8486", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:12:55 PM", "", "In Development",  0,17502)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_3Inch_Pipe", "8485", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:41 AM", "", "In Development",  0,13757)
+          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_3Inch_Pipe", "8485", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:12:35 PM", "", "In Development",  0,17501)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_7_8Inch_Pipe", "8488", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:47 AM", "", "In Development",  0,13763)
+          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_7_8Inch_Pipe", "8488", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:13:32 PM", "", "In Development",  0,17504)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_Half_In_Pipe", "8489", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:49 AM", "", "In Development",  0,13765)
+          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_Half_In_Pipe", "8489", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:13:54 PM", "", "In Development",  0,17505)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_Sub_Totals", "8490", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:51 AM", "", "In Development",  0,13767)
+          InitProperty("MEI_AP_SS1_Cost_Pipe_n_Coupling_Sub_Totals", "8490", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:14:18 PM", "", "In Development",  0,17506)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Hookup_Costs_AC", "8482", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:36 AM", "", "In Development",  0,13751)
+          InitProperty("MEI_AP_SS1_Hookup_Costs_AC", "8482", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:10:38 PM", "", "In Development",  0,17498)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Hookup_Costs_Dryer", "8484", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:39 AM", "", "In Development",  0,13755)
+          InitProperty("MEI_AP_SS1_Hookup_Costs_Dryer", "8484", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:11:44 PM", "", "In Development",  0,17500)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Hookup_Costs_Filter_Reg", "8481", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:34 AM", "", "In Development",  0,13749)
+          InitProperty("MEI_AP_SS1_Hookup_Costs_Filter_Reg", "8481", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:10:20 PM", "", "In Development",  0,17497)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Hookup_Costs_Red_AC", "8483", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:38 AM", "", "In Development",  0,13753)
+          InitProperty("MEI_AP_SS1_Hookup_Costs_Red_AC", "8483", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:10:56 PM", "", "In Development",  0,17499)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Hookup_Costs_Tubing", "8480", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:32 AM", "", "In Development",  0,13747)
+          InitProperty("MEI_AP_SS1_Hookup_Costs_Tubing", "8480", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:09:38 PM", "", "In Development",  0,17496)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_0_125_HR_FT_Half_In_Pipe", "8524", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:56 AM", "", "In Development",  0,13835)
+          InitProperty("MEI_AP_SS1_IR_0_125_HR_FT_Half_In_Pipe", "8524", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:41:59 PM", "", "In Development",  0,17539)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_0_150_HR_FT_7_8Inch_Pipe", "8523", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:54 AM", "", "In Development",  0,13833)
+          InitProperty("MEI_AP_SS1_IR_0_150_HR_FT_7_8Inch_Pipe", "8523", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:41:40 PM", "", "In Development",  0,17538)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_0_200_HR_FT_1Half_In_Pipe", "8522", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:52 AM", "", "In Development",  0,13831)
+          InitProperty("MEI_AP_SS1_IR_0_200_HR_FT_1Half_In_Pipe", "8522", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:41:20 PM", "", "In Development",  0,17537)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_0_350_HR_FT_2Half_In_Pipe", "8521", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:50 AM", "", "In Development",  0,13829)
+          InitProperty("MEI_AP_SS1_IR_0_350_HR_FT_2Half_In_Pipe", "8521", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:41:02 PM", "", "In Development",  0,17536)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_0_450_HR_FT_3Inch_Pipe", "8520", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:48 AM", "", "In Development",  0,13827)
+          InitProperty("MEI_AP_SS1_IR_0_450_HR_FT_3Inch_Pipe", "8520", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:40:40 PM", "", "In Development",  0,17535)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_1_HR_100FT_Tubing", "8525", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:01:58 AM", "", "In Development",  0,13837)
+          InitProperty("MEI_AP_SS1_IR_1_HR_100FT_Tubing", "8525", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:42:15 PM", "", "In Development",  0,17540)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_2HRS_EA_Red_AC", "8528", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:03 AM", "", "In Development",  0,13843)
+          InitProperty("MEI_AP_SS1_IR_2HRS_EA_Red_AC", "8528", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:43:15 PM", "", "In Development",  0,17543)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_3HRS_EA_Filter_Reg", "8526", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:00 AM", "", "In Development",  0,13839)
+          InitProperty("MEI_AP_SS1_IR_3HRS_EA_Filter_Reg", "8526", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:42:41 PM", "", "In Development",  0,17541)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_4HRS_EA_Dryer", "8529", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:05 AM", "", "In Development",  0,13845)
+          InitProperty("MEI_AP_SS1_IR_4HRS_EA_Dryer", "8529", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:43:31 PM", "", "In Development",  0,17544)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_IR_8HRS_EA_AC", "8527", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:01 AM", "", "In Development",  0,13841)
+          InitProperty("MEI_AP_SS1_IR_8HRS_EA_AC", "8527", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:42:58 PM", "", "In Development",  0,17542)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe", "8471", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:14 AM", "", "In Development",  0,13729)
+          InitProperty("MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe", "8471", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:00:08 PM", "", "In Development",  0,17491)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe", "8470", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:12 AM", "", "In Development",  0,13727)
+          InitProperty("MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe", "8470", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 1:14:15 PM", "", "In Development",  0,18059)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe", "8469", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:10 AM", "", "In Development",  0,13725)
@@ -3374,232 +3396,232 @@ Option Infer On
           InitProperty("MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe", "8472", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:16 AM", "", "In Development",  0,13731)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe", "8473", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:18 AM", "", "In Development",  0,13733)
+          InitProperty("MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe", "8473", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 12:45:03 PM", "", "In Development",  0,18024)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_SS1_Pipe_Type_Total_Order_Sub_Totals", "8474", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:20 AM", "", "In Development",  0,13735)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Costs", "8537", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:21 AM", "", "In Development",  0,13861)
+          InitProperty("MEI_AP_SS1_Total_Costs", "8537", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:55:52 PM", "", "In Development",  0,17550)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Hours", "8538", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:23 AM", "", "In Development",  0,13863)
+          InitProperty("MEI_AP_SS1_Total_Hours", "8538", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:57:59 PM", "", "In Development",  0,17551)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Order_AC", "8477", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:26 AM", "", "In Development",  0,13741)
+          InitProperty("MEI_AP_SS1_Total_Order_AC", "8477", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:06:16 PM", "", "In Development",  0,17493)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Order_Dryer", "8479", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:30 AM", "", "In Development",  0,13745)
+          InitProperty("MEI_AP_SS1_Total_Order_Dryer", "8479", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:08:06 PM", "", "In Development",  0,17495)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Order_Filter_Reg", "8476", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:24 AM", "", "In Development",  0,13739)
+          InitProperty("MEI_AP_SS1_Total_Order_Filter_Reg", "8476", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 12:57:22 PM", "", "In Development",  0,18044)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Order_Red_AC", "8478", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:28 AM", "", "In Development",  0,13743)
+          InitProperty("MEI_AP_SS1_Total_Order_Red_AC", "8478", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:07:21 PM", "", "In Development",  0,17494)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Order_Tubing", "8475", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:00:22 AM", "", "In Development",  0,13737)
+          InitProperty("MEI_AP_SS1_Total_Order_Tubing", "8475", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 12:49:52 PM", "", "In Development",  0,18030)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_Supplier_Discount", "9605", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/14/2025 10:46:39 AM", "", "In Development",  0,16876)
+          InitProperty("MEI_AP_Supplier_Discount", "9605", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:53:48 AM", "", "In Development",  0,17809)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TotalCosts", "8602", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:31 AM", "", "In Development",  0,13991)
+          InitProperty("MEI_AP_TotalCosts", "8602", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:05:07 AM", "", "In Development",  0,17717)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TotalHours", "8603", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:33 AM", "", "In Development",  0,13993)
+          InitProperty("MEI_AP_TotalHours", "8603", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:06:02 AM", "", "In Development",  0,17718)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_Trunkline_Length_Feet", "8535", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:02:17 AM", "", "In Development",  0,13857)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Air_Piping_Factor", "8604", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:35 AM", "", "In Development",  0,13995)
+          InitProperty("MEI_AP_TTCB_Air_Piping_Factor", "8604", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 1:07:14 PM", "", "In Development",  0,18057)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe", "8631", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:28 AM", "", "In Development",  0,14049)
+          InitProperty("MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe", "8631", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:55:52 AM", "", "In Development",  0,17771)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe", "8629", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:24 AM", "", "In Development",  0,14045)
+          InitProperty("MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe", "8629", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:55:11 AM", "", "In Development",  0,17769)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe", "8628", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:22 AM", "", "In Development",  0,14043)
+          InitProperty("MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe", "8628", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:54:51 AM", "", "In Development",  0,17768)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Elbows_Cost_3_Inch_76mm_pipe", "8627", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:20 AM", "", "In Development",  0,14041)
+          InitProperty("MEI_AP_TTCB_Elbows_Cost_3_Inch_76mm_pipe", "8627", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:54:34 AM", "", "In Development",  0,17767)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Elbows_Cost_7_8_Inch_25mm_pipe", "8630", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:26 AM", "", "In Development",  0,14047)
+          InitProperty("MEI_AP_TTCB_Elbows_Cost_7_8_Inch_25mm_pipe", "8630", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:55:30 AM", "", "In Development",  0,17770)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Elbows_Cost_SUBTOTALS", "8632", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:30 AM", "", "In Development",  0,14051)
+          InitProperty("MEI_AP_TTCB_Elbows_Cost_SUBTOTALS", "8632", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:56:12 AM", "", "In Development",  0,17772)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_1_2_inch_16_5mm_pipe", "8625", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:16 AM", "", "In Development",  0,14037)
+          InitProperty("MEI_AP_TTCB_H_Cost_1_2_inch_16_5mm_pipe", "8625", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:53:20 AM", "", "In Development",  0,17765)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_1_and_1_2_Inch_40mm_pipe", "8623", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:12 AM", "", "In Development",  0,14033)
+          InitProperty("MEI_AP_TTCB_H_Cost_1_and_1_2_Inch_40mm_pipe", "8623", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:44:29 AM", "", "In Development",  0,17762)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_2_and_1_2_Inch_63mm_pipe", "8622", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:10 AM", "", "In Development",  0,14031)
+          InitProperty("MEI_AP_TTCB_H_Cost_2_and_1_2_Inch_63mm_pipe", "8622", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:44:02 AM", "", "In Development",  0,17761)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_3_Inch_76mm_pipe", "8621", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:08 AM", "", "In Development",  0,14029)
+          InitProperty("MEI_AP_TTCB_H_Cost_3_Inch_76mm_pipe", "8621", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:43:24 AM", "", "In Development",  0,17760)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_7_8_Inch_25mm_pipe", "8624", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:14 AM", "", "In Development",  0,14035)
+          InitProperty("MEI_AP_TTCB_H_Cost_7_8_Inch_25mm_pipe", "8624", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:44:54 AM", "", "In Development",  0,17763)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_SUBTOTALS", "8626", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:18 AM", "", "In Development",  0,14039)
+          InitProperty("MEI_AP_TTCB_H_Cost_SUBTOTALS", "8626", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:53:42 AM", "", "In Development",  0,17766)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe", "8620", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:07 AM", "", "In Development",  0,14027)
+          InitProperty("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe", "9916", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:51:00 AM", "", "In Development",  0,17764)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe", "8618", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:03 AM", "", "In Development",  0,14023)
+          InitProperty("MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe", "8618", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:15:59 AM", "", "In Development",  0,17732)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_T_U_2_and_1_2_Inch_63mm_pipe", "8617", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:01 AM", "", "In Development",  0,14021)
+          InitProperty("MEI_AP_TTCB_H_Cost_T_U_2_and_1_2_Inch_63mm_pipe", "8617", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:15:31 AM", "", "In Development",  0,17731)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_T_U_3_Inch_76mm_pipe", "8616", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:59 AM", "", "In Development",  0,14019)
+          InitProperty("MEI_AP_TTCB_H_Cost_T_U_3_Inch_76mm_pipe", "8616", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:10:25 AM", "", "In Development",  0,17730)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_H_Cost_T_U_7_8_Inch_25mm_pipe", "8619", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:05 AM", "", "In Development",  0,14025)
+          InitProperty("MEI_AP_TTCB_H_Cost_T_U_7_8_Inch_25mm_pipe", "8619", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:16:36 AM", "", "In Development",  0,17733)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Hookup_Costs_A_C", "8607", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:41 AM", "", "In Development",  0,14001)
+          InitProperty("MEI_AP_TTCB_Hookup_Costs_A_C", "8607", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:07:02 AM", "", "In Development",  0,17721)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Hookup_Costs_Dryer", "8609", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:45 AM", "", "In Development",  0,14005)
+          InitProperty("MEI_AP_TTCB_Hookup_Costs_Dryer", "8609", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:07:31 AM", "", "In Development",  0,17723)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Hookup_Costs_FILTER_REG", "8606", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:39 AM", "", "In Development",  0,13999)
+          InitProperty("MEI_AP_TTCB_Hookup_Costs_FILTER_REG", "8606", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:06:46 AM", "", "In Development",  0,17720)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Hookup_Costs_Red_A_C", "8608", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:43 AM", "", "In Development",  0,14003)
+          InitProperty("MEI_AP_TTCB_Hookup_Costs_Red_A_C", "8608", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:07:16 AM", "", "In Development",  0,17722)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Hookup_Costs_Tubing", "8605", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:37 AM", "", "In Development",  0,13997)
+          InitProperty("MEI_AP_TTCB_Hookup_Costs_Tubing", "8605", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:06:29 AM", "", "In Development",  0,17719)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R0_125_HR_FT_1_2_inch_16_5mm_pipe", "8649", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:05 AM", "", "In Development",  0,14085)
+          InitProperty("MEI_AP_TTCB_I_R0_125_HR_FT_1_2_inch_16_5mm_pipe", "8649", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:03:03 AM", "", "In Development",  0,17791)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R0_150_HR_FT_7_8_Inch_25mm_pipe", "8648", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:02 AM", "", "In Development",  0,14083)
+          InitProperty("MEI_AP_TTCB_I_R0_150_HR_FT_7_8_Inch_25mm_pipe", "8648", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:02:49 AM", "", "In Development",  0,17790)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R0_200_HR_FT_1_and_1_2_IN_40mm_pipe", "8647", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:00 AM", "", "In Development",  0,14081)
+          InitProperty("MEI_AP_TTCB_I_R0_200_HR_FT_1_and_1_2_IN_40mm_pipe", "8647", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:02:32 AM", "", "In Development",  0,17789)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R0_350_HR_FT_2_and_1_2_IN_63mm_pipe", "8646", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:58 AM", "", "In Development",  0,14079)
+          InitProperty("MEI_AP_TTCB_I_R0_350_HR_FT_2_and_1_2_IN_63mm_pipe", "8646", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:02:14 AM", "", "In Development",  0,17788)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R0_450_HR_FT_3_Inch_76mm_pipe", "8645", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:56 AM", "", "In Development",  0,14077)
+          InitProperty("MEI_AP_TTCB_I_R0_450_HR_FT_3_Inch_76mm_pipe", "8645", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:01:55 AM", "", "In Development",  0,17787)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R1_HR_100_Tubing", "8650", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:07 AM", "", "In Development",  0,14087)
+          InitProperty("MEI_AP_TTCB_I_R1_HR_100_Tubing", "8650", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:03:29 AM", "", "In Development",  0,17792)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R2_HR_EA_Red_A_C", "8653", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:13 AM", "", "In Development",  0,14093)
+          InitProperty("MEI_AP_TTCB_I_R2_HR_EA_Red_A_C", "8653", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:04:16 AM", "", "In Development",  0,17795)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R3_HR_EA_FILTER_REG", "8651", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:09 AM", "", "In Development",  0,14089)
+          InitProperty("MEI_AP_TTCB_I_R3_HR_EA_FILTER_REG", "8651", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:03:46 AM", "", "In Development",  0,17793)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R4_HR_EA_Dryer", "8654", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:15 AM", "", "In Development",  0,14095)
+          InitProperty("MEI_AP_TTCB_I_R4_HR_EA_Dryer", "8654", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:04:36 AM", "", "In Development",  0,17796)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_I_R8_HR_EA_A_C", "8652", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:11 AM", "", "In Development",  0,14091)
+          InitProperty("MEI_AP_TTCB_I_R8_HR_EA_A_C", "8652", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:04:02 AM", "", "In Development",  0,17794)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_P_C_Cost_1_2_inch_16_5mm_pipe", "8614", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:55 AM", "", "In Development",  0,14015)
+          InitProperty("MEI_AP_TTCB_P_C_Cost_1_2_inch_16_5mm_pipe", "8614", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:09:28 AM", "", "In Development",  0,17728)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_P_C_Cost_1_and_1_2_Inch_40mm_pipe", "8612", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:51 AM", "", "In Development",  0,14011)
+          InitProperty("MEI_AP_TTCB_P_C_Cost_1_and_1_2_Inch_40mm_pipe", "8612", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:08:56 AM", "", "In Development",  0,17726)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_P_C_Cost_2_and_1_2_Inch_63mm_pipe", "8611", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:49 AM", "", "In Development",  0,14009)
+          InitProperty("MEI_AP_TTCB_P_C_Cost_2_and_1_2_Inch_63mm_pipe", "8611", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:08:25 AM", "", "In Development",  0,17725)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_P_C_Cost_3_Inch_76mm_pipe", "8610", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:47 AM", "", "In Development",  0,14007)
+          InitProperty("MEI_AP_TTCB_P_C_Cost_3_Inch_76mm_pipe", "8610", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:08:06 AM", "", "In Development",  0,17724)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_P_C_Cost_7_8_Inch_25mm_pipe", "8613", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:53 AM", "", "In Development",  0,14013)
+          InitProperty("MEI_AP_TTCB_P_C_Cost_7_8_Inch_25mm_pipe", "8613", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:09:14 AM", "", "In Development",  0,17727)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_P_C_Cost_SUBTOTALS", "8615", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:57 AM", "", "In Development",  0,14017)
+          InitProperty("MEI_AP_TTCB_P_C_Cost_SUBTOTALS", "8615", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:09:45 AM", "", "In Development",  0,17729)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Tee_s_Cost_1_2_inch_16_5mm_pipe", "8637", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:40 AM", "", "In Development",  0,14061)
+          InitProperty("MEI_AP_TTCB_Tee_s_Cost_1_2_inch_16_5mm_pipe", "8637", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:58:34 AM", "", "In Development",  0,17779)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Tee_s_Cost_1_and_1_2_Inch_40mm_pipe", "8635", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:36 AM", "", "In Development",  0,14057)
+          InitProperty("MEI_AP_TTCB_Tee_s_Cost_1_and_1_2_Inch_40mm_pipe", "8635", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:57:52 AM", "", "In Development",  0,17777)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Tee_s_Cost_2_and_1_2_Inch_63mm_pipe", "8634", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:34 AM", "", "In Development",  0,14055)
+          InitProperty("MEI_AP_TTCB_Tee_s_Cost_2_and_1_2_Inch_63mm_pipe", "8634", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:57:25 AM", "", "In Development",  0,17775)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Tee_s_Cost_3_Inch_76mm_pipe", "8633", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:32 AM", "", "In Development",  0,14053)
+          InitProperty("MEI_AP_TTCB_Tee_s_Cost_3_Inch_76mm_pipe", "8633", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:57:08 AM", "", "In Development",  0,17774)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Tee_s_Cost_7_8_Inch_25mm_pipe", "8636", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:38 AM", "", "In Development",  0,14059)
+          InitProperty("MEI_AP_TTCB_Tee_s_Cost_7_8_Inch_25mm_pipe", "8636", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:58:16 AM", "", "In Development",  0,17778)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Tee_s_Cost_SUBTOTALS", "8638", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:42 AM", "", "In Development",  0,14063)
+          InitProperty("MEI_AP_TTCB_Tee_s_Cost_SUBTOTALS", "8638", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:58:51 AM", "", "In Development",  0,17780)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe", "8595", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:18 AM", "", "In Development",  0,13977)
+          InitProperty("MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe", "8595", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:00:20 AM", "", "In Development",  0,17711)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe", "8593", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:14 AM", "", "In Development",  0,13973)
+          InitProperty("MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe", "8593", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:58:57 AM", "", "In Development",  0,17709)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe", "8592", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:12 AM", "", "In Development",  0,13971)
+          InitProperty("MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe", "8592", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:58:13 AM", "", "In Development",  0,17708)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe", "8591", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:10 AM", "", "In Development",  0,13969)
+          InitProperty("MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe", "8591", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/16/2025 6:52:29 AM", "", "In Development",  0,17707)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe", "8594", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:16 AM", "", "In Development",  0,13975)
+          InitProperty("MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe", "8594", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 6:59:36 AM", "", "In Development",  0,17710)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_A_C", "8599", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:26 AM", "", "In Development",  0,13985)
+          InitProperty("MEI_AP_TTCB_Total_Order_A_C", "8599", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:02:52 AM", "", "In Development",  0,17714)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_Dryer", "8601", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:29 AM", "", "In Development",  0,13989)
+          InitProperty("MEI_AP_TTCB_Total_Order_Dryer", "8601", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:03:50 AM", "", "In Development",  0,17716)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_FILTER_REG", "8598", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:24 AM", "", "In Development",  0,13983)
+          InitProperty("MEI_AP_TTCB_Total_Order_FILTER_REG", "8598", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:02:02 AM", "", "In Development",  0,17713)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_TTCB_Total_Order_Pipe_Type", "8590", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:08 AM", "", "In Development",  0,13967)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_Red_A_C", "8600", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:28 AM", "", "In Development",  0,13987)
+          InitProperty("MEI_AP_TTCB_Total_Order_Red_A_C", "8600", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:03:17 AM", "", "In Development",  0,17715)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_TTCB_Total_Order_SUBTOTALS", "8596", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:20 AM", "", "In Development",  0,13979)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Total_Order_Tubing", "8597", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:04:22 AM", "", "In Development",  0,13981)
+          InitProperty("MEI_AP_TTCB_Total_Order_Tubing", "8597", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:01:30 AM", "", "In Development",  0,17712)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Valves_Cost_1_2_inch_16_5mm_pipe", "8643", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:52 AM", "", "In Development",  0,14073)
+          InitProperty("MEI_AP_TTCB_Valves_Cost_1_2_inch_16_5mm_pipe", "8643", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:00:53 AM", "", "In Development",  0,17785)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Valves_Cost_1_and_1_2_Inch_40mm_pipe", "8641", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:48 AM", "", "In Development",  0,14069)
+          InitProperty("MEI_AP_TTCB_Valves_Cost_1_and_1_2_Inch_40mm_pipe", "8641", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:00:17 AM", "", "In Development",  0,17783)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Valves_Cost_2_and_1_2_Inch_63mm_pipe", "8640", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:46 AM", "", "In Development",  0,14067)
+          InitProperty("MEI_AP_TTCB_Valves_Cost_2_and_1_2_Inch_63mm_pipe", "8640", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:00:03 AM", "", "In Development",  0,17782)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Valves_Cost_3_Inch_76mm_pipe", "8639", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:44 AM", "", "In Development",  0,14065)
+          InitProperty("MEI_AP_TTCB_Valves_Cost_3_Inch_76mm_pipe", "8639", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 7:59:38 AM", "", "In Development",  0,17781)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Valves_Cost_7_8_Inch_25mm_pipe", "8642", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:50 AM", "", "In Development",  0,14071)
+          InitProperty("MEI_AP_TTCB_Valves_Cost_7_8_Inch_25mm_pipe", "8642", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:00:36 AM", "", "In Development",  0,17784)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_TTCB_Valves_Cost_SUBTOTALS", "8644", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:05:54 AM", "", "In Development",  0,14075)
+          InitProperty("MEI_AP_TTCB_Valves_Cost_SUBTOTALS", "8644", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 8:01:18 AM", "", "In Development",  0,17786)
         End If
     End Sub
 
@@ -3612,6 +3634,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MEI_AP_Compressor_Required_ValidValues", "8536", "-1", 17549)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -3643,6 +3669,18 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitConnection("My_Subsystem", "121", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/10/2025 3:50:09 PM", "", "In Development", "N",228)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_System", "166", "","", "Y", 0, "-1", "", "GLOBAL\H611896", "7/16/2025 12:41:42 PM", "", "In Development", "N",299)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("MEI_Connect_AirPiping_to_TTCB", "165", "","", "Y", 0, "-1", "", "GLOBAL\H582667", "7/16/2025 6:50:58 AM", "", "In Development", "N",298)
         
           End If
         
@@ -3703,6 +3741,50 @@ Option Infer On
       
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_My_Subsystem_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_System_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:166; TYPE:PF
+        Result = Me.Parent.Base_Options_Alternates(Me.SubpartID)
+        '   END FORMULA; CON ID:166; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_My_System_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MEI_Connect_AirPiping_to_TTCB_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:165; TYPE:PF
+        Result = me.Parent.TTCB_Costing_Mech
+        '   END FORMULA; CON ID:165; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_Connect_AirPiping_to_TTCB_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -3788,7 +3870,9 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8530; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Selection of subsystem number - If needed or not - MPC 07/15/2025
+
+Result = 0.0
       '   END FORMULA; PROP ID:8530; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_Air_Subsystem", ex.Message)
@@ -3811,7 +3895,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8532; TYPE:PF
-      Result = 0.0
+      'Assumed 50 ft unless called out in PQI
+Result = 50
       '   END FORMULA; PROP ID:8532; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_Ceiling_Height_Feet", ex.Message)
@@ -4204,7 +4289,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8531; TYPE:PF
-      Result = 0.0
+      Result = Me.My_System(1).HCAD_IntelliQAccuglide_Total_Units +  Me.My_System(1).HCAD_WheelDivert_Total_Units + Me.My_System(1).HCAD_ShoeSorter_Total_Units + Me.My_System(1).HCAD_MDR_Pneumatic_Transfers + Me.My_System(1).HCAD_MDR_Pneumatic_Diverts + Me.My_System(1).Hrs_Misc_Intralox_Sorter_Qty + Me.My_System(1).Hrs_Misc_PandA_Qty + Me.My_System(1).Hrs_Misc_QA_Chute_Qty + Me.My_System(1).Hrs_Misc_Semi_Auto_Taper_Qty + Me.My_System(1).Hrs_Misc_SLAMS_Qty + Me.My_System(1).Hrs_Misc_UPS_90_Curve_Chute_Qty + Me.My_System(1).Hrs_Misc_USS_Tote_Stacker_Qty + Me.My_System(1).Hrs_Misc_USS_VICS_Qty + Me.My_System(1).Hrs_Misc_Work_Stations_Qty + Me.My_System(1).Plt_Cnvyr_Air_Devices
       '   END FORMULA; PROP ID:8531; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_Number_of_Drops", ex.Message)
@@ -4526,7 +4611,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8574; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 5.08
       '   END FORMULA; PROP ID:8574; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_L_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -4549,7 +4635,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8572; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 15.38
       '   END FORMULA; PROP ID:8572; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_L_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -4572,7 +4659,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8571; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 32.78
       '   END FORMULA; PROP ID:8571; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_L_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -4595,7 +4683,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8570; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 45.27
       '   END FORMULA; PROP ID:8570; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_L_P_3_Inch_76mm_pipe", ex.Message)
@@ -4618,7 +4707,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8573; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 7.89
       '   END FORMULA; PROP ID:8573; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_L_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -4641,7 +4731,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8579; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_All_Thread_L_P_1_2_inch_16_5mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8579; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_O_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -4664,7 +4754,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8577; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_All_Thread_L_P_1_and_1_2_IN_40mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8577; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_O_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -4687,7 +4777,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8576; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_All_Thread_L_P_2_and_1_2_IN_63mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8576; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_O_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -4710,7 +4800,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8575; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_All_Thread_L_P_3_Inch_76mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8575; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_O_P_3_Inch_76mm_pipe", ex.Message)
@@ -4733,7 +4823,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8578; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_All_Thread_L_P_7_8_Inch_25mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8578; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_All_Thread_O_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -4779,7 +4869,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8562; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 4.53
       '   END FORMULA; PROP ID:8562; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Beam_Clamps_L_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -4802,7 +4893,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8561; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 4.53
       '   END FORMULA; PROP ID:8561; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Beam_Clamps_L_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -4825,7 +4917,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8560; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 4.53
       '   END FORMULA; PROP ID:8560; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Beam_Clamps_L_P_3_Inch_76mm_pipe", ex.Message)
@@ -4848,7 +4941,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8563; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 4.53
       '   END FORMULA; PROP ID:8563; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Beam_Clamps_L_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -4894,7 +4988,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8567; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Beam_Clamps_L_P_1_and_1_2_IN_40mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8567; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Beam_Clamps_O_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -4917,7 +5011,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8566; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Beam_Clamps_L_P_2_and_1_2_IN_63mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8566; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Beam_Clamps_O_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -4940,7 +5034,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8565; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Beam_Clamps_L_P_3_Inch_76mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8565; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Beam_Clamps_O_P_3_Inch_76mm_pipe", ex.Message)
@@ -4963,7 +5057,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8568; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Beam_Clamps_L_P_7_8_Inch_25mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8568; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Beam_Clamps_O_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -4986,7 +5080,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8544; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 181.04
       '   END FORMULA; PROP ID:8544; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_L_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -5009,7 +5104,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8542; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 266.92
       '   END FORMULA; PROP ID:8542; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_L_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -5032,7 +5128,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8541; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 411.34
       '   END FORMULA; PROP ID:8541; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_L_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -5055,7 +5152,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8540; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 547.59
       '   END FORMULA; PROP ID:8540; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_L_P_3_Inch_76mm_pipe", ex.Message)
@@ -5078,7 +5176,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8543; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 195.71
       '   END FORMULA; PROP ID:8543; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_L_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -5101,7 +5200,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8549; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the length change - MPC 07/16/2025
+Result = 6
       '   END FORMULA; PROP ID:8549; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe", ex.Message)
@@ -5124,7 +5224,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8547; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the length change - MPC 07/16/2025
+Result = 6
       '   END FORMULA; PROP ID:8547; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -5147,7 +5248,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8546; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the length change - MPC 07/16/2025
+Result = 6
       '   END FORMULA; PROP ID:8546; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -5170,7 +5272,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8545; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the length change - MPC 07/16/2025
+Result = 6
       '   END FORMULA; PROP ID:8545; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe", ex.Message)
@@ -5193,7 +5296,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8548; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the length change - MPC 07/16/2025
+Result = 6
       '   END FORMULA; PROP ID:8548; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe", ex.Message)
@@ -5216,7 +5320,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8554; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_L_P_1_2_inch_16_5mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8554; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_O_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -5239,7 +5343,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8552; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_L_P_1_and_1_2_IN_40mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8552; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_O_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -5262,7 +5366,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8551; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_L_P_2_and_1_2_IN_63mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8551; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_O_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -5285,7 +5389,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8550; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_L_P_3_Inch_76mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8550; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_O_P_3_Inch_76mm_pipe", ex.Message)
@@ -5308,7 +5412,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8553; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_L_P_7_8_Inch_25mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8553; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_O_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -5331,7 +5435,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8584; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 2.66
       '   END FORMULA; PROP ID:8584; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_L_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -5354,7 +5459,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8582; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 3.79
       '   END FORMULA; PROP ID:8582; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_L_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -5377,7 +5483,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8581; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 6.03
       '   END FORMULA; PROP ID:8581; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_L_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -5400,7 +5507,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8580; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 6.50
       '   END FORMULA; PROP ID:8580; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_L_P_3_Inch_76mm_pipe", ex.Message)
@@ -5423,7 +5531,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8583; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 2.80
       '   END FORMULA; PROP ID:8583; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_L_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -5446,7 +5555,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8589; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_Straps_L_P_1_2_inch_16_5mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8589; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_O_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -5469,7 +5578,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8587; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_Straps_L_P_1_and_1_2_IN_40mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8587; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_O_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -5492,7 +5601,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8586; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_Straps_L_P_2_and_1_2_IN_63mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8586; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_O_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -5515,7 +5624,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8585; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_Straps_L_P_3_Inch_76mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8585; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_O_P_3_Inch_76mm_pipe", ex.Message)
@@ -5538,7 +5647,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8588; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_P_T_Pipe_Straps_L_P_7_8_Inch_25mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8588; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_Straps_O_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -5561,7 +5670,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8559; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe <> 0)
+Result = Me.MEI_AP_P_T_Pipe_O_P_1_2_inch_16_5mm_pipe/Me.MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8559; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_USD_LF_1_2_inch_16_5mm_pipe", ex.Message)
@@ -5584,7 +5697,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8557; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe <> 0)
+Result = Me.MEI_AP_P_T_Pipe_O_P_1_and_1_2_IN_40mm_pipe/Me.MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8557; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_USD_LF_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -5607,7 +5724,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8556; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe <> 0)
+Result = Me.MEI_AP_P_T_Pipe_O_P_2_and_1_2_IN_63mm_pipe/Me.MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8556; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_USD_LF_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -5630,7 +5751,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8555; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe <> 0)
+Result = Me.MEI_AP_P_T_Pipe_O_P_3_Inch_76mm_pipe/Me.MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8555; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_USD_LF_3_Inch_76mm_pipe", ex.Message)
@@ -5653,7 +5778,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8558; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe <> 0)
+Result = Me.MEI_AP_P_T_Pipe_O_P_7_8_Inch_25mm_pipe/Me.MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8558; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_P_T_Pipe_USD_LF_7_8_Inch_25mm_pipe", ex.Message)
@@ -5676,7 +5805,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8725; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe/20)*Me.MEI_AP_PT_Coup_Union_O_P_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8725; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_A_U_1_2_inch_16_5mm_pipe", ex.Message)
@@ -5699,7 +5828,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8723; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe/20)*Me.MEI_AP_PT_Coup_Union_O_P_1_and_1_2_IN_40mm_pipe
       '   END FORMULA; PROP ID:8723; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_A_U_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -5722,7 +5851,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8722; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe/20)*Me.MEI_AP_PT_Coup_Union_O_P_2_and_1_2_IN_63mm_pipe
       '   END FORMULA; PROP ID:8722; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_A_U_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -5745,7 +5874,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8721; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe > 1)
+Result = ((Me.MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe/Me.MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe)*Me.MEI_AP_PT_Coup_Union_O_P_3_Inch_76mm_pipe)+101.76
+Else 
+Result = 0
+End If
       '   END FORMULA; PROP ID:8721; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_A_U_3_Inch_76mm_pipe", ex.Message)
@@ -5768,7 +5901,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8724; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe/20)*Me.MEI_AP_PT_Coup_Union_O_P_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8724; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_A_U_7_8_Inch_25mm_pipe", ex.Message)
@@ -5791,7 +5924,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8715; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 22.33
       '   END FORMULA; PROP ID:8715; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_L_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -5814,7 +5948,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8713; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 48.88
       '   END FORMULA; PROP ID:8713; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_L_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -5837,7 +5972,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8712; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 134.23
       '   END FORMULA; PROP ID:8712; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_L_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -5860,7 +5996,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8711; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 199.24
       '   END FORMULA; PROP ID:8711; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_L_P_3_Inch_76mm_pipe", ex.Message)
@@ -5883,7 +6020,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8714; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 28.48
       '   END FORMULA; PROP ID:8714; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_L_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -5906,7 +6044,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8720; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Coup_Union_L_P_1_2_inch_16_5mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8720; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_O_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -5929,7 +6067,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8718; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Coup_Union_L_P_1_and_1_2_IN_40mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8718; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_O_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -5952,7 +6090,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8717; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Coup_Union_L_P_2_and_1_2_IN_63mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8717; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_O_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -5975,7 +6113,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8716; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Coup_Union_L_P_3_Inch_76mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8716; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_O_P_3_Inch_76mm_pipe", ex.Message)
@@ -5998,7 +6136,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8719; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Coup_Union_L_P_7_8_Inch_25mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8719; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Coup_Union_O_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -6021,7 +6159,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8685; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 11.16
       '   END FORMULA; PROP ID:8685; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_L_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -6044,7 +6183,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8683; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 46.22
       '   END FORMULA; PROP ID:8683; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_L_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -6067,7 +6207,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8682; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 71.93
       '   END FORMULA; PROP ID:8682; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_L_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -6090,7 +6231,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8681; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 92.67
       '   END FORMULA; PROP ID:8681; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_L_P_3_Inch_76mm_pipe", ex.Message)
@@ -6113,7 +6255,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8684; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 21.32
       '   END FORMULA; PROP ID:8684; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_L_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -6136,7 +6279,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8690; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Elbows_90_L_P_1_2_inch_16_5mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8690; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_O_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -6159,7 +6302,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8688; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Elbows_90_L_P_1_and_1_2_IN_40mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8688; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_O_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -6182,7 +6325,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8687; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Elbows_90_L_P_2_and_1_2_IN_63mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8687; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_O_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -6205,7 +6348,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8686; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Elbows_90_L_P_3_Inch_76mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8686; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_O_P_3_Inch_76mm_pipe", ex.Message)
@@ -6228,7 +6371,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8689; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Elbows_90_L_P_7_8_Inch_25mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8689; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Elbows_90_O_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -6251,7 +6394,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8695; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 10.92
       '   END FORMULA; PROP ID:8695; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_L_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -6274,7 +6418,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8693; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 35.91
       '   END FORMULA; PROP ID:8693; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_L_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -6297,7 +6442,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8692; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 261.65
       '   END FORMULA; PROP ID:8692; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_L_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -6320,7 +6466,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8691; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 348.61
       '   END FORMULA; PROP ID:8691; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_L_P_3_Inch_76mm_pipe", ex.Message)
@@ -6343,7 +6490,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8694; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 20.43
       '   END FORMULA; PROP ID:8694; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_L_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -6366,7 +6514,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8700; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_T_Coupler_L_P_1_2_inch_16_5mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8700; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_O_P_1_2_inch_16_5mm_pipe", ex.Message)
@@ -6389,7 +6537,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8698; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_T_Coupler_L_P_1_and_1_2_IN_40mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8698; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_O_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -6412,7 +6560,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8697; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_T_Coupler_L_P_2_and_1_2_IN_63mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8697; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_O_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -6435,7 +6583,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8696; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_T_Coupler_L_P_3_Inch_76mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8696; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_O_P_3_Inch_76mm_pipe", ex.Message)
@@ -6458,7 +6606,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8699; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_T_Coupler_L_P_7_8_Inch_25mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8699; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_T_Coupler_O_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -6504,7 +6652,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8703; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 112.07
       '   END FORMULA; PROP ID:8703; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Valve_L_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -6527,7 +6676,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8702; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 231.56
       '   END FORMULA; PROP ID:8702; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Valve_L_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -6550,7 +6700,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8701; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 458.76
       '   END FORMULA; PROP ID:8701; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Valve_L_P_3_Inch_76mm_pipe", ex.Message)
@@ -6573,7 +6724,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8704; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change - MPC 07/16/2025
+Result = 80.70
       '   END FORMULA; PROP ID:8704; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Valve_L_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -6619,7 +6771,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8708; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Valve_L_P_1_and_1_2_IN_40mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8708; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Valve_O_P_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -6642,7 +6794,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8707; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Valve_L_P_2_and_1_2_IN_63mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8707; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Valve_O_P_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -6665,7 +6817,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8706; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Valve_L_P_3_Inch_76mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8706; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Valve_O_P_3_Inch_76mm_pipe", ex.Message)
@@ -6688,7 +6840,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8709; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_PT_Valve_L_P_7_8_Inch_25mm_pipe*(1-Me.MEI_AP_Supplier_Discount)
       '   END FORMULA; PROP ID:8709; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_PT_Valve_O_P_7_8_Inch_25mm_pipe", ex.Message)
@@ -6711,7 +6863,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8539; TYPE:PF
-      Result = 0.0
+      Result = Me.My_System(1).Air_Piping_Factor
       '   END FORMULA; PROP ID:8539; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Air_Piping_Factor", ex.Message)
@@ -6734,7 +6886,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8504; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe/125)*Me.MEI_AP_PT_Elbows_90_O_P_1_and_1_2_IN_40mm_pipe
       '   END FORMULA; PROP ID:8504; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Elbows_1Half_In_Pipe", ex.Message)
@@ -6757,7 +6909,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8503; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe/150)*Me.MEI_AP_PT_Elbows_90_O_P_2_and_1_2_IN_63mm_pipe
       '   END FORMULA; PROP ID:8503; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Elbows_2Half_In_Pipe", ex.Message)
@@ -6780,7 +6932,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8502; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe/175)*Me.MEI_AP_PT_Elbows_90_O_P_3_Inch_76mm_pipe
       '   END FORMULA; PROP ID:8502; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Elbows_3Inch_Pipe", ex.Message)
@@ -6803,7 +6955,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8505; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe/100)*Me.MEI_AP_PT_Elbows_90_O_P_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8505; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Elbows_7_8Inch_Pipe", ex.Message)
@@ -6826,7 +6978,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8506; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe/100)*Me.MEI_AP_PT_Elbows_90_O_P_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8506; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Elbows_Half_In_Pipe", ex.Message)
@@ -6849,7 +7001,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8507; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Cost_of_Elbows_3Inch_Pipe + Me.MEI_AP_SS1_Cost_of_Elbows_2Half_In_Pipe + Me.MEI_AP_SS1_Cost_of_Elbows_1Half_In_Pipe + Me.MEI_AP_SS1_Cost_of_Elbows_7_8Inch_Pipe + Me.MEI_AP_SS1_Cost_of_Elbows_Half_In_Pipe
       '   END FORMULA; PROP ID:8507; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Elbows_Sub_Totals", ex.Message)
@@ -6872,7 +7024,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8498; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_1_and_1_2_IN_40mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_1_and_1_2_IN_40mm_pipe + Me.MEI_AP_P_T_Pipe_Straps_O_P_1_and_1_2_IN_40mm_pipe)*Me.MEI_AP_SS1_Cost_of_Hanger_TU_1Half_In_Pipe
       '   END FORMULA; PROP ID:8498; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_1Half_In_Pipe", ex.Message)
@@ -6895,7 +7047,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8497; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_2_and_1_2_IN_63mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_2_and_1_2_IN_63mm_pipe + Me.MEI_AP_P_T_Pipe_Straps_O_P_2_and_1_2_IN_63mm_pipe)*Me.MEI_AP_SS1_Cost_of_Hanger_TU_2Half_In_Pipe
       '   END FORMULA; PROP ID:8497; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_2Half_In_Pipe", ex.Message)
@@ -6918,7 +7070,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8496; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_3_Inch_76mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_3_Inch_76mm_pipe + Me.MEI_AP_P_T_Pipe_Straps_O_P_3_Inch_76mm_pipe)*Me.MEI_AP_SS1_Cost_of_Hanger_TU_3Inch_Pipe
       '   END FORMULA; PROP ID:8496; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_3Inch_Pipe", ex.Message)
@@ -6941,7 +7093,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8499; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_7_8_Inch_25mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_7_8_Inch_25mm_pipe + Me.MEI_AP_P_T_Pipe_Straps_O_P_7_8_Inch_25mm_pipe)*Me.MEI_AP_SS1_Cost_of_Hanger_TU_7_8Inch_Pipe
       '   END FORMULA; PROP ID:8499; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_7_8Inch_Pipe", ex.Message)
@@ -6964,7 +7116,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8500; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_1_2_inch_16_5mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_1_2_inch_16_5mm_pipe + Me.MEI_AP_P_T_Pipe_Straps_O_P_1_2_inch_16_5mm_pipe)*Me.MEI_AP_SS1_Cost_of_Hanger_TU_Half_In_Pipe
       '   END FORMULA; PROP ID:8500; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_Half_In_Pipe", ex.Message)
@@ -6987,7 +7139,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8501; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Cost_of_Hanger_3Inch_Pipe + Me.MEI_AP_SS1_Cost_of_Hanger_2Half_In_Pipe + Me.MEI_AP_SS1_Cost_of_Hanger_1Half_In_Pipe + Me.MEI_AP_SS1_Cost_of_Hanger_7_8Inch_Pipe + Me.MEI_AP_SS1_Cost_of_Hanger_Half_In_Pipe
       '   END FORMULA; PROP ID:8501; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_Sub_Totals", ex.Message)
@@ -7010,7 +7162,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8493; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe/Me.MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe)*2
       '   END FORMULA; PROP ID:8493; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_TU_1Half_In_Pipe", ex.Message)
@@ -7033,7 +7185,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8492; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe/Me.MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe)*2
       '   END FORMULA; PROP ID:8492; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_TU_2Half_In_Pipe", ex.Message)
@@ -7056,7 +7208,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8491; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe/Me.MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe)*2
       '   END FORMULA; PROP ID:8491; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_TU_3Inch_Pipe", ex.Message)
@@ -7079,7 +7231,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8494; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe/Me.MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe)*2
       '   END FORMULA; PROP ID:8494; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_TU_7_8Inch_Pipe", ex.Message)
@@ -7102,7 +7254,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8495; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe/Me.MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe)*2
       '   END FORMULA; PROP ID:8495; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Hanger_TU_Half_In_Pipe", ex.Message)
@@ -7125,7 +7277,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8510; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe/125)*Me.MEI_AP_PT_T_Coupler_O_P_1_and_1_2_IN_40mm_pipe
       '   END FORMULA; PROP ID:8510; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Tees_1Half_In_Pipe", ex.Message)
@@ -7148,7 +7300,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8509; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe/150)*Me.MEI_AP_PT_T_Coupler_O_P_2_and_1_2_IN_63mm_pipe
       '   END FORMULA; PROP ID:8509; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Tees_2Half_In_Pipe", ex.Message)
@@ -7171,7 +7323,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8508; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe/175)*Me.MEI_AP_PT_T_Coupler_O_P_3_Inch_76mm_pipe
       '   END FORMULA; PROP ID:8508; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Tees_3Inch_Pipe", ex.Message)
@@ -7194,7 +7346,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8511; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe/100)*Me.MEI_AP_PT_T_Coupler_O_P_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8511; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Tees_7_8Inch_Pipe", ex.Message)
@@ -7217,7 +7369,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8512; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe/100)*Me.MEI_AP_PT_T_Coupler_O_P_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8512; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Tees_Half_In_Pipe", ex.Message)
@@ -7240,7 +7392,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8513; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Cost_of_Tees_3Inch_Pipe + Me.MEI_AP_SS1_Cost_of_Tees_2Half_In_Pipe + Me.MEI_AP_SS1_Cost_of_Tees_1Half_In_Pipe + Me.MEI_AP_SS1_Cost_of_Tees_7_8Inch_Pipe + Me.MEI_AP_SS1_Cost_of_Tees_Half_In_Pipe
       '   END FORMULA; PROP ID:8513; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Tees_Sub_Totals", ex.Message)
@@ -7263,7 +7415,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8516; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe/200)*Me.MEI_AP_PT_Valve_O_P_1_and_1_2_IN_40mm_pipe
       '   END FORMULA; PROP ID:8516; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Valves_1Half_In_Pipe", ex.Message)
@@ -7286,7 +7438,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8515; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe/200)*Me.MEI_AP_PT_Valve_O_P_2_and_1_2_IN_63mm_pipe
       '   END FORMULA; PROP ID:8515; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Valves_2Half_In_Pipe", ex.Message)
@@ -7309,7 +7461,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8514; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe/250)*Me.MEI_AP_PT_Valve_O_P_3_Inch_76mm_pipe
       '   END FORMULA; PROP ID:8514; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Valves_3Inch_Pipe", ex.Message)
@@ -7332,7 +7484,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8517; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe/200)*Me.MEI_AP_PT_Valve_O_P_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8517; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Valves_7_8Inch_Pipe", ex.Message)
@@ -7378,7 +7530,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8519; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Cost_of_Valves_3Inch_Pipe + Me.MEI_AP_SS1_Cost_of_Valves_2Half_In_Pipe + Me.MEI_AP_SS1_Cost_of_Valves_1Half_In_Pipe + Me.MEI_AP_SS1_Cost_of_Valves_7_8Inch_Pipe + Me.MEI_AP_SS1_Cost_of_Valves_Half_In_Pipe
       '   END FORMULA; PROP ID:8519; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_of_Valves_Sub_Totals", ex.Message)
@@ -7401,7 +7553,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8487; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe*Me.MEI_AP_P_T_Pipe_USD_LF_1_and_1_2_IN_40mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_1_and_1_2_IN_40mm_pipe
       '   END FORMULA; PROP ID:8487; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_Pipe_n_Coupling_1Half_In_Pipe", ex.Message)
@@ -7424,7 +7576,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8486; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe*Me.MEI_AP_P_T_Pipe_USD_LF_2_and_1_2_IN_63mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_2_and_1_2_IN_63mm_pipe
       '   END FORMULA; PROP ID:8486; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_Pipe_n_Coupling_2Half_In_Pipe", ex.Message)
@@ -7447,7 +7599,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8485; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe*Me.MEI_AP_P_T_Pipe_USD_LF_3_Inch_76mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_3_Inch_76mm_pipe
       '   END FORMULA; PROP ID:8485; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_Pipe_n_Coupling_3Inch_Pipe", ex.Message)
@@ -7470,7 +7622,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8488; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe*Me.MEI_AP_P_T_Pipe_USD_LF_7_8_Inch_25mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8488; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_Pipe_n_Coupling_7_8Inch_Pipe", ex.Message)
@@ -7493,7 +7645,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8489; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe*Me.MEI_AP_P_T_Pipe_USD_LF_1_2_inch_16_5mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8489; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_Pipe_n_Coupling_Half_In_Pipe", ex.Message)
@@ -7516,7 +7668,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8490; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Cost_Pipe_n_Coupling_3Inch_Pipe+Me.MEI_AP_SS1_Cost_Pipe_n_Coupling_2Half_In_Pipe+Me.MEI_AP_SS1_Cost_Pipe_n_Coupling_1Half_In_Pipe+Me.MEI_AP_SS1_Cost_Pipe_n_Coupling_7_8Inch_Pipe+Me.MEI_AP_SS1_Cost_Pipe_n_Coupling_Half_In_Pipe
       '   END FORMULA; PROP ID:8490; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Cost_Pipe_n_Coupling_Sub_Totals", ex.Message)
@@ -7539,7 +7691,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8482; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Total_Order_AC*210
       '   END FORMULA; PROP ID:8482; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Hookup_Costs_AC", ex.Message)
@@ -7562,7 +7714,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8484; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Total_Order_Dryer*105
       '   END FORMULA; PROP ID:8484; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Hookup_Costs_Dryer", ex.Message)
@@ -7585,7 +7737,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8481; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Total_Order_Filter_Reg*29.84
       '   END FORMULA; PROP ID:8481; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Hookup_Costs_Filter_Reg", ex.Message)
@@ -7608,7 +7760,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8483; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Total_Order_Red_AC*105
       '   END FORMULA; PROP ID:8483; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Hookup_Costs_Red_AC", ex.Message)
@@ -7631,7 +7783,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8480; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_Total_Order_Tubing/100)*58.78
       '   END FORMULA; PROP ID:8480; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Hookup_Costs_Tubing", ex.Message)
@@ -7654,7 +7806,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8524; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe*0.125
       '   END FORMULA; PROP ID:8524; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_0_125_HR_FT_Half_In_Pipe", ex.Message)
@@ -7677,7 +7829,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8523; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe*0.15
       '   END FORMULA; PROP ID:8523; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_0_150_HR_FT_7_8Inch_Pipe", ex.Message)
@@ -7700,7 +7852,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8522; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe*0.2
       '   END FORMULA; PROP ID:8522; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_0_200_HR_FT_1Half_In_Pipe", ex.Message)
@@ -7723,7 +7875,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8521; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe*0.35
       '   END FORMULA; PROP ID:8521; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_0_350_HR_FT_2Half_In_Pipe", ex.Message)
@@ -7746,7 +7898,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8520; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe*0.45
       '   END FORMULA; PROP ID:8520; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_0_450_HR_FT_3Inch_Pipe", ex.Message)
@@ -7769,7 +7921,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8525; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Total_Order_Tubing/100
       '   END FORMULA; PROP ID:8525; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_1_HR_100FT_Tubing", ex.Message)
@@ -7792,7 +7944,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8528; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Total_Order_Red_AC*2
       '   END FORMULA; PROP ID:8528; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_2HRS_EA_Red_AC", ex.Message)
@@ -7815,7 +7967,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8526; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Total_Order_Filter_Reg*3
       '   END FORMULA; PROP ID:8526; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_3HRS_EA_Filter_Reg", ex.Message)
@@ -7838,7 +7990,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8529; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Total_Order_Dryer*4
       '   END FORMULA; PROP ID:8529; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_4HRS_EA_Dryer", ex.Message)
@@ -7861,7 +8013,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8527; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Total_Order_AC*8
       '   END FORMULA; PROP ID:8527; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_IR_8HRS_EA_AC", ex.Message)
@@ -7884,7 +8036,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8471; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_Trunkline_Length_Feet * Math.Ceiling(Me.MEI_AP_Number_of_Drops/12)
       '   END FORMULA; PROP ID:8471; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe", ex.Message)
@@ -7907,7 +8059,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8470; TYPE:PF
-      Result = 0.0
+      If (Me.Parent.Conveyor_Costing_SC_Mech_Install(1).Peak_Crew_Value <=2)
+Result = Me.MEI_AP_Distance_Header_Loop_Air_Compressor + Me.MEI_AP_Header_Loop_Perimeter_Feet
+Else 
+Result = 0
+End If
       '   END FORMULA; PROP ID:8470; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe", ex.Message)
@@ -7976,7 +8132,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8473; TYPE:PF
-      Result = 0.0
+      Result = Math.Round(Me.MEI_AP_Number_of_Drops*(Me.MEI_AP_Ceiling_Height_Feet + 10)+Me.My_System(1).HCAD_WheelDivert_Total_Footage/2, 0)
       '   END FORMULA; PROP ID:8473; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe", ex.Message)
@@ -8022,7 +8178,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8537; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_SS1_Cost_Pipe_n_Coupling_Sub_Totals + Me.MEI_AP_SS1_Cost_of_Hanger_Sub_Totals + Me.MEI_AP_SS1_Cost_of_Elbows_Sub_Totals + Me.MEI_AP_SS1_Cost_of_Tees_Sub_Totals + Me.MEI_AP_SS1_Cost_of_Valves_Sub_Totals + Me.MEI_AP_SS1_Hookup_Costs_Tubing + Me.MEI_AP_SS1_Hookup_Costs_Filter_Reg + Me.MEI_AP_SS1_Hookup_Costs_AC + Me.MEI_AP_SS1_Hookup_Costs_Red_AC + Me.MEI_AP_SS1_Hookup_Costs_Dryer
       '   END FORMULA; PROP ID:8537; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Total_Costs", ex.Message)
@@ -8045,7 +8201,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8538; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_SS1_IR_0_450_HR_FT_3Inch_Pipe + Me.MEI_AP_SS1_IR_0_350_HR_FT_2Half_In_Pipe + Me.MEI_AP_SS1_IR_0_200_HR_FT_1Half_In_Pipe + Me.MEI_AP_SS1_IR_0_150_HR_FT_7_8Inch_Pipe + Me.MEI_AP_SS1_IR_0_125_HR_FT_Half_In_Pipe + Me.MEI_AP_SS1_IR_1_HR_100FT_Tubing + Me.MEI_AP_SS1_IR_3HRS_EA_Filter_Reg + Me.MEI_AP_SS1_IR_8HRS_EA_AC + Me.MEI_AP_SS1_IR_2HRS_EA_Red_AC + Me.MEI_AP_SS1_IR_4HRS_EA_Dryer)*Me.MEI_AP_SS1_Air_Piping_Factor
       '   END FORMULA; PROP ID:8538; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Total_Hours", ex.Message)
@@ -8068,7 +8224,13 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8477; TYPE:PF
-      Result = 0.0
+      Dim VarL As String = Me.MEI_AP_Compressor_Required
+Dim VarChar As String = VarL.Substring(0, 1) 
+If(VarChar = "A")
+Result = 1
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8477; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Total_Order_AC", ex.Message)
@@ -8091,7 +8253,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8479; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_SS1_Total_Order_AC > 0)
+Result = 1
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8479; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Total_Order_Dryer", ex.Message)
@@ -8114,7 +8280,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8476; TYPE:PF
-      Result = 0.0
+      Result = Me.My_System(1).HCAD_IntelliQAccuglide_Total_Units + Me.My_System(1).HCAD_WheelDivert_Total_Units + Me.My_System(1).HCAD_ShoeSorter_Total_Units + Me.My_System(1).HCAD_MDR_Pneumatic_Transfers + Me.My_System(1).HCAD_MDR_Pneumatic_Diverts + Me.My_System(1).Plt_Cnvyr_MISC_Chain_Trans_Cnvyr_Air_Op_WedAir + Me.My_System(1).Plt_Cnvyr_MISC_Transfer_Air + Me.My_System(1).Plt_Cnvyr_MISC_Pusher_Air + Me.My_System(1).Plt_Cnvyr_MISC_Puller_Air
       '   END FORMULA; PROP ID:8476; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Total_Order_Filter_Reg", ex.Message)
@@ -8137,7 +8303,10 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8478; TYPE:PF
-      Result = 0.0
+      Dim VarR As String = Me.MEI_AP_Compressor_Required
+Dim Val As Double = If(VarR.EndsWith("r"), 1, 0)
+
+Result = Val
       '   END FORMULA; PROP ID:8478; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Total_Order_Red_AC", ex.Message)
@@ -8160,7 +8329,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8475; TYPE:PF
-      Result = 0.0
+      Result = Math.Round(Me.My_System(1).HCAD_IntelliQAccuglide_Total_Footage/2 + Me.My_System(1).HCAD_WheelDivert_Total_Footage/10, 0)
       '   END FORMULA; PROP ID:8475; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Total_Order_Tubing", ex.Message)
@@ -8183,7 +8352,8 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9605; TYPE:PF
-      result = 0.0
+      'Todo - Review: Check with business and team How often the discount change - MPC 07/16/2025
+Result = 0.15
       '   END FORMULA; PROP ID:9605; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_Supplier_Discount", ex.Message)
@@ -8206,7 +8376,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8602; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_P_C_Cost_SUBTOTALS + Me.MEI_AP_TTCB_H_Cost_SUBTOTALS + Me.MEI_AP_TTCB_Elbows_Cost_SUBTOTALS + Me.MEI_AP_TTCB_Tee_s_Cost_SUBTOTALS + Me.MEI_AP_TTCB_Valves_Cost_SUBTOTALS + Me.MEI_AP_TTCB_Hookup_Costs_Tubing + Me.MEI_AP_TTCB_Hookup_Costs_FILTER_REG + Me.MEI_AP_TTCB_Hookup_Costs_A_C + Me.MEI_AP_TTCB_Hookup_Costs_Red_A_C + Me.MEI_AP_TTCB_Hookup_Costs_Dryer
       '   END FORMULA; PROP ID:8602; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TotalCosts", ex.Message)
@@ -8229,7 +8399,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8603; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_I_R0_450_HR_FT_3_Inch_76mm_pipe + Me.MEI_AP_TTCB_I_R0_350_HR_FT_2_and_1_2_IN_63mm_pipe + Me.MEI_AP_TTCB_I_R0_200_HR_FT_1_and_1_2_IN_40mm_pipe + Me.MEI_AP_TTCB_I_R0_150_HR_FT_7_8_Inch_25mm_pipe + Me.MEI_AP_TTCB_I_R0_125_HR_FT_1_2_inch_16_5mm_pipe + Me.MEI_AP_TTCB_I_R1_HR_100_Tubing + Me.MEI_AP_TTCB_I_R3_HR_EA_FILTER_REG + Me.MEI_AP_TTCB_I_R8_HR_EA_A_C + Me.MEI_AP_TTCB_I_R2_HR_EA_Red_A_C + Me.MEI_AP_TTCB_I_R4_HR_EA_Dryer)*Me.MEI_AP_TTCB_Air_Piping_Factor
       '   END FORMULA; PROP ID:8603; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TotalHours", ex.Message)
@@ -8275,7 +8445,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8604; TYPE:PF
-      Result = 0.0
+      Result = Me.My_System(1).Air_Piping_Factor
       '   END FORMULA; PROP ID:8604; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Air_Piping_Factor", ex.Message)
@@ -8298,7 +8468,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8631; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe/175) * Me.MEI_AP_PT_Elbows_90_O_P_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8631; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe", ex.Message)
@@ -8321,7 +8491,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8629; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe/175) * Me.MEI_AP_PT_Elbows_90_O_P_1_and_1_2_IN_40mm_pipe
       '   END FORMULA; PROP ID:8629; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe", ex.Message)
@@ -8344,7 +8514,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8628; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe/175) * Me.MEI_AP_PT_Elbows_90_O_P_2_and_1_2_IN_63mm_pipe
       '   END FORMULA; PROP ID:8628; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe", ex.Message)
@@ -8367,7 +8537,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8627; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe/175) * Me.MEI_AP_PT_Elbows_90_O_P_3_Inch_76mm_pipe
       '   END FORMULA; PROP ID:8627; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Elbows_Cost_3_Inch_76mm_pipe", ex.Message)
@@ -8390,7 +8560,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8630; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe/175) * Me.MEI_AP_PT_Elbows_90_O_P_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8630; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Elbows_Cost_7_8_Inch_25mm_pipe", ex.Message)
@@ -8413,7 +8583,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8632; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Elbows_Cost_3_Inch_76mm_pipe + 
+Me.MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe +
+Me.MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe +
+Me.MEI_AP_TTCB_Elbows_Cost_7_8_Inch_25mm_pipe +
+Me.MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8632; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Elbows_Cost_SUBTOTALS", ex.Message)
@@ -8436,7 +8610,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8625; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_1_2_inch_16_5mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_1_2_inch_16_5mm_pipe + Me.MEI_AP_P_T_Pipe_Straps_O_P_1_2_inch_16_5mm_pipe) * Me.MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8625; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_1_2_inch_16_5mm_pipe", ex.Message)
@@ -8459,7 +8633,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8623; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_1_and_1_2_IN_40mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_1_and_1_2_IN_40mm_pipe + Me.MEI_AP_P_T_Pipe_Straps_O_P_1_and_1_2_IN_40mm_pipe) * Me.MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe
       '   END FORMULA; PROP ID:8623; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_1_and_1_2_Inch_40mm_pipe", ex.Message)
@@ -8482,7 +8656,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8622; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_2_and_1_2_IN_63mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_2_and_1_2_IN_63mm_pipe + MEI_AP_P_T_Pipe_Straps_O_P_2_and_1_2_IN_63mm_pipe) * Me.MEI_AP_TTCB_H_Cost_T_U_2_and_1_2_Inch_63mm_pipe
       '   END FORMULA; PROP ID:8622; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_2_and_1_2_Inch_63mm_pipe", ex.Message)
@@ -8505,7 +8679,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8621; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_3_Inch_76mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_3_Inch_76mm_pipe + Me.MEI_AP_P_T_Pipe_Straps_O_P_3_Inch_76mm_pipe) * Me.MEI_AP_TTCB_H_Cost_T_U_3_Inch_76mm_pipe
       '   END FORMULA; PROP ID:8621; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_3_Inch_76mm_pipe", ex.Message)
@@ -8528,7 +8702,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8624; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_P_T_Beam_Clamps_O_P_7_8_Inch_25mm_pipe + Me.MEI_AP_P_T_All_Thread_O_P_7_8_Inch_25mm_pipe + Me.MEI_AP_P_T_Pipe_Straps_O_P_7_8_Inch_25mm_pipe) * Me.MEI_AP_TTCB_H_Cost_T_U_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8624; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_7_8_Inch_25mm_pipe", ex.Message)
@@ -8551,7 +8725,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8626; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_H_Cost_3_Inch_76mm_pipe + 
+Me.MEI_AP_TTCB_H_Cost_2_and_1_2_Inch_63mm_pipe +
+Me.MEI_AP_TTCB_H_Cost_1_and_1_2_Inch_40mm_pipe +
+Me.MEI_AP_TTCB_H_Cost_7_8_Inch_25mm_pipe +
+Me.MEI_AP_TTCB_H_Cost_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8626; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_SUBTOTALS", ex.Message)
@@ -8565,19 +8743,23 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe() As Double
+          Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe() As Double
           Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:8620; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8620; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9916; TYPE:PF
+      If(Me.MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe <> 0)
+Result = (Me.MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe/Me.MEI_AP_P_T_Pipe_Length_1_2_inch_16_5mm_pipe)*2
+Else
+Result = 0
+End If
+      '   END FORMULA; PROP ID:9916; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -8597,7 +8779,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8618; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe <> 0)
+Result = (Me.MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe/Me.MEI_AP_P_T_Pipe_Length_1_and_1_2_IN_40mm_pipe)*2
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8618; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe", ex.Message)
@@ -8620,7 +8806,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8617; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe <> 0)
+Result = (Me.MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe/Me.MEI_AP_P_T_Pipe_Length_2_and_1_2_IN_63mm_pipe)*2
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8617; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_T_U_2_and_1_2_Inch_63mm_pipe", ex.Message)
@@ -8643,7 +8833,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8616; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe <> 0)
+Result = (Me.MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe/Me.MEI_AP_P_T_Pipe_Length_3_Inch_76mm_pipe)*2
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8616; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_T_U_3_Inch_76mm_pipe", ex.Message)
@@ -8666,7 +8860,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8619; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe <> 0)
+Result = (Me.MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe/Me.MEI_AP_P_T_Pipe_Length_7_8_Inch_25mm_pipe)*2
+Else
+Result = 0
+End If
       '   END FORMULA; PROP ID:8619; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_T_U_7_8_Inch_25mm_pipe", ex.Message)
@@ -8689,7 +8887,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8607; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_A_C*210
       '   END FORMULA; PROP ID:8607; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Hookup_Costs_A_C", ex.Message)
@@ -8712,7 +8910,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8609; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_Dryer*105
       '   END FORMULA; PROP ID:8609; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Hookup_Costs_Dryer", ex.Message)
@@ -8735,7 +8933,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8606; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_FILTER_REG*29.84
       '   END FORMULA; PROP ID:8606; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Hookup_Costs_FILTER_REG", ex.Message)
@@ -8758,7 +8956,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8608; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_Red_A_C*105
       '   END FORMULA; PROP ID:8608; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Hookup_Costs_Red_A_C", ex.Message)
@@ -8781,7 +8979,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8605; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_Tubing/100)*58.78
       '   END FORMULA; PROP ID:8605; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Hookup_Costs_Tubing", ex.Message)
@@ -8804,7 +9002,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8649; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe * 0.125
       '   END FORMULA; PROP ID:8649; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R0_125_HR_FT_1_2_inch_16_5mm_pipe", ex.Message)
@@ -8827,7 +9025,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8648; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe * 0.15
       '   END FORMULA; PROP ID:8648; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R0_150_HR_FT_7_8_Inch_25mm_pipe", ex.Message)
@@ -8850,7 +9048,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8647; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe * 0.2
       '   END FORMULA; PROP ID:8647; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R0_200_HR_FT_1_and_1_2_IN_40mm_pipe", ex.Message)
@@ -8873,7 +9071,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8646; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe * 0.35
       '   END FORMULA; PROP ID:8646; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R0_350_HR_FT_2_and_1_2_IN_63mm_pipe", ex.Message)
@@ -8896,7 +9094,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8645; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe * 0.45
       '   END FORMULA; PROP ID:8645; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R0_450_HR_FT_3_Inch_76mm_pipe", ex.Message)
@@ -8919,7 +9117,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8650; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_Tubing /100
       '   END FORMULA; PROP ID:8650; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R1_HR_100_Tubing", ex.Message)
@@ -8942,7 +9140,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8653; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_Red_A_C * 2
       '   END FORMULA; PROP ID:8653; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R2_HR_EA_Red_A_C", ex.Message)
@@ -8965,7 +9163,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8651; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_FILTER_REG * 3
       '   END FORMULA; PROP ID:8651; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R3_HR_EA_FILTER_REG", ex.Message)
@@ -8988,7 +9186,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8654; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_Dryer * 4
       '   END FORMULA; PROP ID:8654; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R4_HR_EA_Dryer", ex.Message)
@@ -9011,7 +9209,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8652; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Total_Order_A_C * 8
       '   END FORMULA; PROP ID:8652; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_I_R8_HR_EA_A_C", ex.Message)
@@ -9034,7 +9232,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8614; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe * Me.MEI_AP_P_T_Pipe_USD_LF_1_2_inch_16_5mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8614; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_P_C_Cost_1_2_inch_16_5mm_pipe", ex.Message)
@@ -9057,7 +9255,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8612; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe * Me.MEI_AP_P_T_Pipe_USD_LF_1_and_1_2_IN_40mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_1_and_1_2_IN_40mm_pipe
       '   END FORMULA; PROP ID:8612; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_P_C_Cost_1_and_1_2_Inch_40mm_pipe", ex.Message)
@@ -9080,7 +9278,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8611; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe * Me.MEI_AP_P_T_Pipe_USD_LF_2_and_1_2_IN_63mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_2_and_1_2_IN_63mm_pipe
       '   END FORMULA; PROP ID:8611; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_P_C_Cost_2_and_1_2_Inch_63mm_pipe", ex.Message)
@@ -9103,7 +9301,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8610; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe * Me.MEI_AP_P_T_Pipe_USD_LF_3_Inch_76mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_3_Inch_76mm_pipe
       '   END FORMULA; PROP ID:8610; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_P_C_Cost_3_Inch_76mm_pipe", ex.Message)
@@ -9126,7 +9324,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8613; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe * Me.MEI_AP_P_T_Pipe_USD_LF_7_8_Inch_25mm_pipe)+Me.MEI_AP_PT_Coup_Union_A_U_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8613; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_P_C_Cost_7_8_Inch_25mm_pipe", ex.Message)
@@ -9149,7 +9347,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8615; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_P_C_Cost_3_Inch_76mm_pipe + Me.MEI_AP_TTCB_P_C_Cost_2_and_1_2_Inch_63mm_pipe + Me.MEI_AP_TTCB_P_C_Cost_1_and_1_2_Inch_40mm_pipe + Me.MEI_AP_TTCB_P_C_Cost_7_8_Inch_25mm_pipe + Me.MEI_AP_TTCB_P_C_Cost_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8615; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_P_C_Cost_SUBTOTALS", ex.Message)
@@ -9172,7 +9370,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8637; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe/175) * Me.MEI_AP_PT_T_Coupler_O_P_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8637; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Tee_s_Cost_1_2_inch_16_5mm_pipe", ex.Message)
@@ -9195,7 +9393,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8635; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe/175) * Me.MEI_AP_PT_T_Coupler_O_P_1_and_1_2_IN_40mm_pipe
       '   END FORMULA; PROP ID:8635; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Tee_s_Cost_1_and_1_2_Inch_40mm_pipe", ex.Message)
@@ -9218,7 +9416,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8634; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe/175) * Me.MEI_AP_PT_T_Coupler_O_P_2_and_1_2_IN_63mm_pipe
       '   END FORMULA; PROP ID:8634; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Tee_s_Cost_2_and_1_2_Inch_63mm_pipe", ex.Message)
@@ -9241,7 +9439,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8633; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe/175) * Me.MEI_AP_PT_T_Coupler_O_P_3_Inch_76mm_pipe
       '   END FORMULA; PROP ID:8633; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Tee_s_Cost_3_Inch_76mm_pipe", ex.Message)
@@ -9264,7 +9462,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8636; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe/175) * Me.MEI_AP_PT_T_Coupler_O_P_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8636; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Tee_s_Cost_7_8_Inch_25mm_pipe", ex.Message)
@@ -9287,7 +9485,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8638; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Tee_s_Cost_3_Inch_76mm_pipe +
+Me.MEI_AP_TTCB_Tee_s_Cost_2_and_1_2_Inch_63mm_pipe +
+Me.MEI_AP_TTCB_Tee_s_Cost_1_and_1_2_Inch_40mm_pipe +
+Me.MEI_AP_TTCB_Tee_s_Cost_7_8_Inch_25mm_pipe +
+Me.MEI_AP_TTCB_Tee_s_Cost_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8638; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Tee_s_Cost_SUBTOTALS", ex.Message)
@@ -9310,7 +9512,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8595; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_1_2_Inch_pipeCost
       '   END FORMULA; PROP ID:8595; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe", ex.Message)
@@ -9333,7 +9535,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8593; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_1_And_1_2_Inch_pipe_Cost
       '   END FORMULA; PROP ID:8593; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe", ex.Message)
@@ -9356,7 +9558,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8592; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_2_and_1_2_Inch_pipe_Cost
       '   END FORMULA; PROP ID:8592; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe", ex.Message)
@@ -9379,7 +9581,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8591; TYPE:PF
-      Result = 0.0
+      Result = me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_3_Inch_pipe_Cost
       '   END FORMULA; PROP ID:8591; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe", ex.Message)
@@ -9402,7 +9604,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8594; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_7_8_Inch_pipe_Cost
       '   END FORMULA; PROP ID:8594; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe", ex.Message)
@@ -9425,7 +9627,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8599; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_A_C_Cost
       '   END FORMULA; PROP ID:8599; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_A_C", ex.Message)
@@ -9448,7 +9650,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8601; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_Dryer_Cost
       '   END FORMULA; PROP ID:8601; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_Dryer", ex.Message)
@@ -9471,7 +9673,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8598; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_FILTER_REG_Cost
       '   END FORMULA; PROP ID:8598; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_FILTER_REG", ex.Message)
@@ -9517,7 +9719,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8600; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_Red_A_C_Cost
       '   END FORMULA; PROP ID:8600; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_Red_A_C", ex.Message)
@@ -9563,7 +9765,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8597; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Connect_AirPiping_to_TTCB(1).MEI_Air_Pipe_Tubing_Cost
       '   END FORMULA; PROP ID:8597; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Total_Order_Tubing", ex.Message)
@@ -9586,7 +9788,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8643; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe/250) * Me.MEI_AP_PT_Valve_O_P_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8643; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Valves_Cost_1_2_inch_16_5mm_pipe", ex.Message)
@@ -9609,7 +9811,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8641; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_40mm_pipe/250) * Me.MEI_AP_PT_Valve_O_P_1_and_1_2_IN_40mm_pipe
       '   END FORMULA; PROP ID:8641; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Valves_Cost_1_and_1_2_Inch_40mm_pipe", ex.Message)
@@ -9632,7 +9834,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8640; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe/250) * Me.MEI_AP_PT_Valve_O_P_2_and_1_2_IN_63mm_pipe
       '   END FORMULA; PROP ID:8640; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Valves_Cost_2_and_1_2_Inch_63mm_pipe", ex.Message)
@@ -9655,7 +9857,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8639; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe/250) * Me.MEI_AP_PT_Valve_O_P_3_Inch_76mm_pipe
       '   END FORMULA; PROP ID:8639; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Valves_Cost_3_Inch_76mm_pipe", ex.Message)
@@ -9678,7 +9880,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8642; TYPE:PF
-      Result = 0.0
+      Result = ( Me.MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe/250) * Me.MEI_AP_PT_Valve_O_P_7_8_Inch_25mm_pipe
       '   END FORMULA; PROP ID:8642; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Valves_Cost_7_8_Inch_25mm_pipe", ex.Message)
@@ -9701,7 +9903,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8644; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_AP_TTCB_Valves_Cost_3_Inch_76mm_pipe + 
+Me.MEI_AP_TTCB_Valves_Cost_2_and_1_2_Inch_63mm_pipe +
+Me.MEI_AP_TTCB_Valves_Cost_1_and_1_2_Inch_40mm_pipe +
+Me.MEI_AP_TTCB_Valves_Cost_7_8_Inch_25mm_pipe +
+Me.MEI_AP_TTCB_Valves_Cost_1_2_inch_16_5mm_pipe
       '   END FORMULA; PROP ID:8644; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_Valves_Cost_SUBTOTALS", ex.Message)
@@ -15511,34 +15717,6 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe"
-          Me.Properties("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8620; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8620; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe_CustomCheck() as Object
           
           Dim Result as Object
@@ -18562,14 +18740,6 @@ End Select
           End Try
           End Function
         
-          Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
           Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_and_1_2_Inch_40mm_pipe_CustomCheckDependnacy() as Boolean
           Try
           Return True
@@ -20857,7 +21027,7 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -23197,7 +23367,7 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_165mm_pipe_USERCHANGE() as Boolean
+      Public Function Formula_MEI_AP_TTCB_H_Cost_T_U_1_2_inch_16_5mm_pipe_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -23640,6 +23810,30 @@ End Select
       '*****************************************************************************
       Public Function Formula_MEI_AP_TTCB_Valves_Cost_SUBTOTALS_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MEI_AP_Compressor_Required_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MEI_AP_Compressor_Required").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:8536; TYPE:VV
+      Result = MakeValidValues(Array("No Air Compressor Required", "Air Compressor Required", "Air Compressor Required w/ Redundant Compressor"))
+      '   END FORMULA; PROP ID:8536; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_Compressor_Required_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
 

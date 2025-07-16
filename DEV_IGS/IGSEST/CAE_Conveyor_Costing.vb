@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Conveyor_Costing
-'$ GenerateDate: 07/15/2025 13:30:18
+'$ GenerateDate: 07/16/2025 14:47:04
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -147,12 +147,12 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
-          Public Property [Additional_Subcontractor_Services_Cost]() As Double
+          Public Property [Additional_Subcontractor_Services_Total_Cost]() As Double
       Get
-      Return Properties("Additional_Subcontractor_Services_Cost").Value
+      Return Properties("Additional_Subcontractor_Services_Total_Cost").Value
       End Get
       Set(ByVal Value As Double)
-      Properties("Additional_Subcontractor_Services_Cost").CalculatedValue = Value
+      Properties("Additional_Subcontractor_Services_Total_Cost").CalculatedValue = Value
       End Set
       End Property
     
@@ -270,6 +270,42 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Crew_Lead_Man_Total_Mobilization_Cost").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Crew_Lead_Men_Headcount]() As Double
+      Get
+      Return Properties("Crew_Lead_Men_Headcount").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Crew_Lead_Men_Headcount").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Crew_Lead_Men_Mobilization_Count]() As Double
+      Get
+      Return Properties("Crew_Lead_Men_Mobilization_Count").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Crew_Lead_Men_Mobilization_Count").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Crew_Lead_Men_Total_Mobilization_Cost]() As Double
+      Get
+      Return Properties("Crew_Lead_Men_Total_Mobilization_Cost").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Crew_Lead_Men_Total_Mobilization_Cost").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Crew_Mobilization_Cost]() As Double
+      Get
+      Return Properties("Crew_Mobilization_Cost").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Crew_Mobilization_Cost").CalculatedValue = Value
       End Set
       End Property
     
@@ -804,15 +840,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Equipment_Rental_Cost]() As Double
-      Get
-      Return Properties("Equipment_Rental_Cost").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Equipment_Rental_Cost").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Equipment_Rental_Dumpsters_Cost]() As Double
       Get
       Return Properties("Equipment_Rental_Dumpsters_Cost").Value
@@ -831,12 +858,12 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Equipment_Rental_Porta_Johns_Total_Cost]() As Double
+          Public Property [Equipment_Rental_Total_Cost]() As Double
       Get
-      Return Properties("Equipment_Rental_Porta_Johns_Total_Cost").Value
+      Return Properties("Equipment_Rental_Total_Cost").Value
       End Get
       Set(ByVal Value As Double)
-      Properties("Equipment_Rental_Porta_Johns_Total_Cost").CalculatedValue = Value
+      Properties("Equipment_Rental_Total_Cost").CalculatedValue = Value
       End Set
       End Property
     
@@ -873,6 +900,69 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Factors_Seismic").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [HSE_Per_Diem_Rate]() As Double
+      Get
+      Return Properties("HSE_Per_Diem_Rate").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("HSE_Per_Diem_Rate").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [HSE_Per_Diem_Rate_Cost]() As Double
+      Get
+      Return Properties("HSE_Per_Diem_Rate_Cost").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("HSE_Per_Diem_Rate_Cost").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [HSE_Per_Diem_Rate_Headcount]() As Double
+      Get
+      Return Properties("HSE_Per_Diem_Rate_Headcount").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("HSE_Per_Diem_Rate_Headcount").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [HSE_Wages_Cost]() As Double
+      Get
+      Return Properties("HSE_Wages_Cost").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("HSE_Wages_Cost").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [HSE_Wages_Headcount]() As Double
+      Get
+      Return Properties("HSE_Wages_Headcount").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("HSE_Wages_Headcount").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [HSE_Wages_Rate]() As Double
+      Get
+      Return Properties("HSE_Wages_Rate").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("HSE_Wages_Rate").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [HSE_Wages_Total_Cost]() As Double
+      Get
+      Return Properties("HSE_Wages_Total_Cost").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("HSE_Wages_Total_Cost").CalculatedValue = Value
       End Set
       End Property
     
@@ -1434,15 +1524,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Miscellaneous_Cost]() As Double
-      Get
-      Return Properties("Miscellaneous_Cost").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Miscellaneous_Cost").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Miscellaneous_Customer_Spec_Adder]() As Double
       Get
       Return Properties("Miscellaneous_Customer_Spec_Adder").Value
@@ -1578,12 +1659,12 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Miscellaneous_System_Efficiency_Percentage]() As Double
+          Public Property [Miscellaneous_Total_Cost]() As Double
       Get
-      Return Properties("Miscellaneous_System_Efficiency_Percentage").Value
+      Return Properties("Miscellaneous_Total_Cost").Value
       End Get
       Set(ByVal Value As Double)
-      Properties("Miscellaneous_System_Efficiency_Percentage").CalculatedValue = Value
+      Properties("Miscellaneous_Total_Cost").CalculatedValue = Value
       End Set
       End Property
     
@@ -1647,6 +1728,15 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Peak_Crew").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Peak_Crew_Value]() As Double
+      Get
+      Return Properties("Peak_Crew_Value").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Peak_Crew_Value").CalculatedValue = Value
       End Set
       End Property
     
@@ -1722,12 +1812,12 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Permits_Cost]() As Double
+          Public Property [Permits_Total_Cost]() As Double
       Get
-      Return Properties("Permits_Cost").Value
+      Return Properties("Permits_Total_Cost").Value
       End Get
       Set(ByVal Value As Double)
-      Properties("Permits_Cost").CalculatedValue = Value
+      Properties("Permits_Total_Cost").CalculatedValue = Value
       End Set
       End Property
     
@@ -1818,6 +1908,15 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Project_Tier_Value").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Risk_Rating_Value]() As Double
+      Get
+      Return Properties("Risk_Rating_Value").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Risk_Rating_Value").CalculatedValue = Value
       End Set
       End Property
     
@@ -2100,15 +2199,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Supplies_Consumables_Cost]() As Double
-      Get
-      Return Properties("Supplies_Consumables_Cost").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Supplies_Consumables_Cost").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Supplies_Consumables_Hardware_Air_Piping_Cost]() As Double
       Get
       Return Properties("Supplies_Consumables_Hardware_Air_Piping_Cost").Value
@@ -2286,15 +2376,6 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Travel_Cost_Superintendent_Total_Travel_Cost").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Travel_Expense_Cost]() As Double
-      Get
-      Return Properties("Travel_Expense_Cost").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Travel_Expense_Cost").CalculatedValue = Value
       End Set
       End Property
     
@@ -2489,8 +2570,8 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Conveyor_Costing", <a><![CDATA[CAE_Conveyor_Costing]]></a>.Value, 389, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H615411", "07/15/2025 12:26:57")
-    AddProperty("8827", "Additional_Subcontractor_Services_Cost", <a><![CDATA[Additional_Subcontractor_Services_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E36", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:21 PM")
+    InitPart("CAE_Conveyor_Costing", <a><![CDATA[CAE_Conveyor_Costing]]></a>.Value, 389, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H617242", "07/16/2025 14:26:39")
+    AddProperty("10343", "Additional_Subcontractor_Services_Total_Cost", <a><![CDATA[Additional_Subcontractor_Services_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E36", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:23:55 AM")
     AddProperty("8829", "Administrative_Cost", <a><![CDATA[Administrative_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E38", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/10/2025 9:42:02 AM")
     AddProperty("8762", "Avg_Crew_Size", <a><![CDATA[Avg_Crew_Size]]></a>.Value, "Mech Install^'Conveyor Costing'!K29", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:55 PM")
     AddProperty("8698", "Conveyor_above_8_ft", <a><![CDATA[Conveyor_above_8_ft]]></a>.Value, "Mech Install^'Conveyor Costing'!Q25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:21 PM")
@@ -2504,6 +2585,10 @@ Option Infer On
     AddProperty("8776", "Crew_Lead_Man_Headcount", <a><![CDATA[Crew_Lead_Man_Headcount]]></a>.Value, "Mech Install^'Conveyor Costing'!J40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:39 PM")
     AddProperty("8773", "Crew_Lead_Man_Mobilization_Count", <a><![CDATA[Crew_Lead_Man_Mobilization_Count]]></a>.Value, "Mech Install^'Conveyor Costing'!I40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:30 PM")
     AddProperty("8779", "Crew_Lead_Man_Total_Mobilization_Cost", <a><![CDATA[Crew_Lead_Man_Total_Mobilization_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:49 PM")
+    AddProperty("10347", "Crew_Lead_Men_Headcount", <a><![CDATA[Crew_Lead_Men_Headcount]]></a>.Value, "Mech Install^'Conveyor Costing'!J90", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 12:03:52 PM")
+    AddProperty("10346", "Crew_Lead_Men_Mobilization_Count", <a><![CDATA[Crew_Lead_Men_Mobilization_Count]]></a>.Value, "Mech Install^'Conveyor Costing'!I90", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 12:02:58 PM")
+    AddProperty("10348", "Crew_Lead_Men_Total_Mobilization_Cost", <a><![CDATA[Crew_Lead_Men_Total_Mobilization_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K90", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 12:04:33 PM")
+    AddProperty("10345", "Crew_Mobilization_Cost", <a><![CDATA[Crew_Mobilization_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!I88", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 12:02:13 PM")
     AddProperty("8771", "Crew_Mobilization_Cost_per_person", <a><![CDATA[Crew_Mobilization_Cost_per_person]]></a>.Value, "Mech Install^'Conveyor Costing'!I37", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:24 PM")
     AddProperty("8760", "Crew_Peak_Crew_Multiplier", <a><![CDATA[Crew_Peak_Crew_Multiplier]]></a>.Value, "Mech Install^'Conveyor Costing'!I28", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:48 PM")
     AddProperty("8775", "Crew_Superintendent_Headcount", <a><![CDATA[Crew_Superintendent_Headcount]]></a>.Value, "Mech Install^'Conveyor Costing'!J39", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:36 PM")
@@ -2563,14 +2648,20 @@ Option Infer On
     AddProperty("8648", "EQ_Rental_Welders_Quantity", <a><![CDATA[EQ_Rental_Welders_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:43 PM")
     AddProperty("8687", "EQ_Rental_Welders_Total_Cost", <a><![CDATA[EQ_Rental_Welders_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:45 PM")
     AddProperty("8674", "EQ_Rental_Welders_Wkly_Rate", <a><![CDATA[EQ_Rental_Welders_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:05 PM")
-    AddProperty("9790", "Equipment_Rental_Cost", <a><![CDATA[Equipment_Rental_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/10/2025 9:31:05 AM")
     AddProperty("8819", "Equipment_Rental_Dumpsters_Cost", <a><![CDATA[Equipment_Rental_Dumpsters_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E26", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:55 PM")
     AddProperty("8820", "Equipment_Rental_Porta_Johns_Cost", <a><![CDATA[Equipment_Rental_Porta_Johns_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E27", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:58 PM")
-    AddProperty("10185", "Equipment_Rental_Porta_Johns_Total_Cost", <a><![CDATA[Equipment_Rental_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:00:39 AM")
+    AddProperty("10341", "Equipment_Rental_Total_Cost", <a><![CDATA[Equipment_Rental_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:17:10 AM")
     AddProperty("8749", "Factors_Air_Piping", <a><![CDATA[Factors_Air_Piping]]></a>.Value, "Mech Install^'Conveyor Costing'!I16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:13 PM")
     AddProperty("8751", "Factors_Customer_Spec_Difficulty", <a><![CDATA[Factors_Customer_Spec_Difficulty]]></a>.Value, "Mech Install^'Conveyor Costing'!I18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:20 PM")
     AddProperty("8748", "Factors_Risk_Rating", <a><![CDATA[Factors_Risk_Rating]]></a>.Value, "Mech Install^'Conveyor Costing'!I15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:10 PM")
     AddProperty("8750", "Factors_Seismic", <a><![CDATA[Factors_Seismic]]></a>.Value, "Mech Install^'Conveyor Costing'!I17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:17 PM")
+    AddProperty("10334", "HSE_Per_Diem_Rate", <a><![CDATA[HSE_Per_Diem_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!J46  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:26:23 AM")
+    AddProperty("10336", "HSE_Per_Diem_Rate_Cost", <a><![CDATA[HSE_Per_Diem_Rate_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K46  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:29:04 AM")
+    AddProperty("10332", "HSE_Per_Diem_Rate_Headcount", <a><![CDATA[HSE_Per_Diem_Rate_Headcount]]></a>.Value, "Mech Install^'Conveyor Costing'!I46  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:21:14 AM")
+    AddProperty("10335", "HSE_Wages_Cost", <a><![CDATA[HSE_Wages_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K45  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/16/2025 2:26:39 PM")
+    AddProperty("10331", "HSE_Wages_Headcount", <a><![CDATA[HSE_Wages_Headcount]]></a>.Value, "Mech Install^'Conveyor Costing'!I45  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:19:20 AM")
+    AddProperty("10333", "HSE_Wages_Rate", <a><![CDATA[HSE_Wages_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!J45  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:22:12 AM")
+    AddProperty("10337", "HSE_Wages_Total_Cost", <a><![CDATA[HSE_Wages_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K47  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:30:28 AM")
     AddProperty("8816", "Installer_Commissioning_Support_Cost", <a><![CDATA[Installer_Commissioning_Support_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E23", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:46 PM")
     AddProperty("8809", "Installer_Commissioning_Support_Hours", <a><![CDATA[Installer_Commissioning_Support_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F23", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:24 PM")
     AddProperty("8813", "Installer_Demo_Cost", <a><![CDATA[Installer_Demo_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:36 PM")
@@ -2619,7 +2710,7 @@ Option Infer On
     AddProperty("10181", "Lead_Person_Total_Cost", <a><![CDATA[Lead_Person_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E13", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:42:51 AM")
     AddProperty("10182", "Lead_Person_Total_Hours", <a><![CDATA[Lead_Person_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F13", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:43:38 AM")
     AddProperty("9786", "Mech_Convyr_Inst_Total_Hours", <a><![CDATA[Mech_Convyr_Inst_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 12:26:57 PM")
-    AddProperty("9793", "Mech_Convyr_Installation_Total_Cost", <a><![CDATA[Mech_Convyr_Installation_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 12:25:06 PM")
+    AddProperty("9793", "Mech_Convyr_Installation_Total_Cost", <a><![CDATA[Mech_Convyr_Installation_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:27:55 AM")
     AddProperty("8835", "Metrics_Air_Piping_Hours", <a><![CDATA[Metrics_Air_Piping_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!C48", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:45 PM")
     AddProperty("8836", "Metrics_Air_Piping_Hours_per_Foot", <a><![CDATA[Metrics_Air_Piping_Hours_per_Foot]]></a>.Value, "Mech Install^'Conveyor Costing'!C49", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:49 PM")
     AddProperty("8833", "Metrics_Catwalk_Hours_per_Foot", <a><![CDATA[Metrics_Catwalk_Hours_per_Foot]]></a>.Value, "Mech Install^'Conveyor Costing'!C46", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:39 PM")
@@ -2633,7 +2724,6 @@ Option Infer On
     AddProperty("8839", "Metrics_Total_Cost", <a><![CDATA[Metrics_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!F43", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:58 PM")
     AddProperty("8830", "Metrics_Total_Footage", <a><![CDATA[Metrics_Total_Footage]]></a>.Value, "Mech Install^'Conveyor Costing'!C43", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:30 PM")
     AddProperty("8831", "Metrics_Total_Hours_per_Foot", <a><![CDATA[Metrics_Total_Hours_per_Foot]]></a>.Value, "Mech Install^'Conveyor Costing'!C44", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:33 PM")
-    AddProperty("8828", "Miscellaneous_Cost", <a><![CDATA[Miscellaneous_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E37", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/10/2025 9:35:33 AM")
     AddProperty("8786", "Miscellaneous_Customer_Spec_Adder", <a><![CDATA[Miscellaneous_Customer_Spec_Adder]]></a>.Value, "Mech Install^'Conveyor Costing'!J53", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:11 PM")
     AddProperty("10172", "Miscellaneous_Customer_Spec_Adder_Cost", <a><![CDATA[Miscellaneous_Customer_Spec_Adder_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!I53", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:23:56 AM")
     AddProperty("8787", "Miscellaneous_Elevation_Adder", <a><![CDATA[Miscellaneous_Elevation_Adder]]></a>.Value, "Mech Install^'Conveyor Costing'!J54", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:14 PM")
@@ -2649,7 +2739,7 @@ Option Infer On
     AddProperty("10178", "Miscellaneous_System_Efficiency", <a><![CDATA[Miscellaneous_System_Efficiency]]></a>.Value, "Mech Install^'Conveyor Costing'!K50  This is a percentage value", "Boolean","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:40:30 AM")
     AddProperty("10169", "Miscellaneous_System_Efficiency_Cost", <a><![CDATA[Miscellaneous_System_Efficiency_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!I50", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:21:26 AM")
     AddProperty("8783", "Miscellaneous_System_Efficiency_Hours", <a><![CDATA[Miscellaneous_System_Efficiency_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!J50", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:01 PM")
-    AddProperty("10022", "Miscellaneous_System_Efficiency_Percentage", <a><![CDATA[Miscellaneous_System_Efficiency_Percentage]]></a>.Value, "Mech Install^'Conveyor Costing'!K50", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 8:59:28 AM")
+    AddProperty("10344", "Miscellaneous_Total_Cost", <a><![CDATA[Miscellaneous_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E37", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:24:57 AM")
     AddProperty("8695", "Other_Cost_Duration_Wks", <a><![CDATA[Other_Cost_Duration_Wks]]></a>.Value, "Mech Install^'Conveyor Costing'!N28", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:11 PM")
     AddProperty("8696", "Other_Cost_Hrs_Per_Week", <a><![CDATA[Other_Cost_Hrs_Per_Week]]></a>.Value, "Mech Install^'Conveyor Costing'!N29", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:14 PM")
     AddProperty("8694", "Other_Cost_Onsite_Admin", <a><![CDATA[Other_Cost_Onsite_Admin]]></a>.Value, "Mech Install^'Conveyor Costing'!N27", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:08 PM")
@@ -2657,6 +2747,7 @@ Option Infer On
     AddProperty("8692", "Other_Cost_Qty_Gang_Boxes", <a><![CDATA[Other_Cost_Qty_Gang_Boxes]]></a>.Value, "Mech Install^'Conveyor Costing'!N25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:01 PM")
     AddProperty("8691", "Other_Cost_Qty_Trucks", <a><![CDATA[Other_Cost_Qty_Trucks]]></a>.Value, "Mech Install^'Conveyor Costing'!N24", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:58 PM")
     AddProperty("8761", "Peak_Crew", <a><![CDATA[Peak_Crew]]></a>.Value, "Mech Install^'Conveyor Costing'!K27", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:51 PM")
+    AddProperty("10339", "Peak_Crew_Value", <a><![CDATA[Peak_Crew_Value]]></a>.Value, "Mech Install^'Conveyor Costing'!L26", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 9:53:40 AM")
     AddProperty("8770", "People_Needs_Lead_Men_Working_Percent", <a><![CDATA[People_Needs_Lead_Men_Working_Percent]]></a>.Value, "Mech Install^'Conveyor Costing'!K33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:21 PM")
     AddProperty("8768", "People_Needs_Num_of_Installers_Comm", <a><![CDATA[People_Needs_Num_of_Installers_Comm]]></a>.Value, "Mech Install^'Conveyor Costing'!J34", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:14 PM")
     AddProperty("8765", "People_Needs_Num_of_Installers_Install", <a><![CDATA[People_Needs_Num_of_Installers_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I34", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:04 PM")
@@ -2665,7 +2756,7 @@ Option Infer On
     AddProperty("8766", "People_Needs_Num_of_Superintendents_Comm", <a><![CDATA[People_Needs_Num_of_Superintendents_Comm]]></a>.Value, "Mech Install^'Conveyor Costing'!J32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:07 PM")
     AddProperty("8763", "People_Needs_Num_of_Superintendents_Install", <a><![CDATA[People_Needs_Num_of_Superintendents_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:58 PM")
     AddProperty("8769", "People_Needs_Superintendents_Working_Percent", <a><![CDATA[People_Needs_Superintendents_Working_Percent]]></a>.Value, "Mech Install^'Conveyor Costing'!K32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:17 PM")
-    AddProperty("8826", "Permits_Cost", <a><![CDATA[Permits_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E35", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:17 PM")
+    AddProperty("10342", "Permits_Total_Cost", <a><![CDATA[Permits_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E35", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:22:18 AM")
     AddProperty("8742", "Project_Info_Customer", <a><![CDATA[Project_Info_Customer]]></a>.Value, "Mech Install^'Conveyor Costing'!I8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:51 PM")
     AddProperty("8745", "Project_Info_Description", <a><![CDATA[Project_Info_Description]]></a>.Value, "Mech Install^'Conveyor Costing'!I11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:01 PM")
     AddProperty("8743", "Project_Info_Location", <a><![CDATA[Project_Info_Location]]></a>.Value, "Mech Install^'Conveyor Costing'!I9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:54 PM")
@@ -2676,6 +2767,7 @@ Option Infer On
     AddProperty("10198", "Project_Support_Total_Hours", <a><![CDATA[Project_Support_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F71", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:26:22 AM")
     AddProperty("8747", "Project_Tier", <a><![CDATA[Project_Tier]]></a>.Value, "Mech Install^'Conveyor Costing'!K8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:07 PM")
     AddProperty("10201", "Project_Tier_Value", <a><![CDATA[Project_Tier_Value]]></a>.Value, "Mech Install^'Conveyor Costing'!L8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:28:26 AM")
+    AddProperty("10340", "Risk_Rating_Value", <a><![CDATA[Risk_Rating_Value]]></a>.Value, "Mech Install^'Conveyor Costing'!K15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:03:55 AM")
     AddProperty("10157", "Schedule_Commissioning_Duration_Weeks", <a><![CDATA[Schedule_Commissioning_Duration_Weeks]]></a>.Value, "Mech Install^'Conveyor Costing'!J76", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 8:59:49 AM")
     AddProperty("8753", "Schedule_End_Mechanical_Install", <a><![CDATA[Schedule_End_Mechanical_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I22", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:26 PM")
     AddProperty("8754", "Schedule_End_Run_to_In_Level_5", <a><![CDATA[Schedule_End_Run_to_In_Level_5]]></a>.Value, "Mech Install^'Conveyor Costing'!I23", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:29 PM")
@@ -2707,7 +2799,6 @@ Option Infer On
     AddProperty("10180", "Superintendent_Total_Hours", <a><![CDATA[Superintendent_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:42:05 AM")
     AddProperty("8823", "Supplies_Consumables_All_Other_Cost", <a><![CDATA[Supplies_Consumables_All_Other_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E31", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:08 PM")
     AddProperty("8822", "Supplies_Consumables_Anchors_1USD_per_Cost", <a><![CDATA[Supplies_Consumables_Anchors_1USD_per_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E30", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:05 PM")
-    AddProperty("9791", "Supplies_Consumables_Cost", <a><![CDATA[Supplies_Consumables_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E28", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/10/2025 9:31:42 AM")
     AddProperty("8821", "Supplies_Consumables_Hardware_Air_Piping_Cost", <a><![CDATA[Supplies_Consumables_Hardware_Air_Piping_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E29", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:01 PM")
     AddProperty("10186", "Supplies_Consumables_Total_Cost", <a><![CDATA[Supplies_Consumables_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E28", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:01:27 AM")
     AddProperty("10160", "Support_Lead_Men_Hrs_per_Wk", <a><![CDATA[Support_Lead_Men_Hrs_per_Wk]]></a>.Value, "Mech Install^'Conveyor Costing'!I81", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:02:10 AM")
@@ -2728,7 +2819,6 @@ Option Infer On
     AddProperty("8712", "Travel_Cost_Superintendent_Total_Mobilization", <a><![CDATA[Travel_Cost_Superintendent_Total_Mobilization]]></a>.Value, "Mech Install^'Conveyor Costing'!P39", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:06 PM")
     AddProperty("8709", "Travel_Cost_Superintendent_Total_Prj_Per_Diem", <a><![CDATA[Travel_Cost_Superintendent_Total_Prj_Per_Diem]]></a>.Value, "Mech Install^'Conveyor Costing'!O39", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:56 PM")
     AddProperty("8715", "Travel_Cost_Superintendent_Total_Travel_Cost", <a><![CDATA[Travel_Cost_Superintendent_Total_Travel_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q39", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:15 PM")
-    AddProperty("9792", "Travel_Expense_Cost", <a><![CDATA[Travel_Expense_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/10/2025 9:32:23 AM")
     AddProperty("8825", "Travel_Expense_Mobilization_Cost", <a><![CDATA[Travel_Expense_Mobilization_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E34", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:14 PM")
     AddProperty("8824", "Travel_Expense_Per_Diem_Cost", <a><![CDATA[Travel_Expense_Per_Diem_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:11 PM")
     AddProperty("10187", "Travel_Expense_Total_Cost", <a><![CDATA[Travel_Expense_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:02:09 AM")
@@ -2782,7 +2872,7 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("Additional_Subcontractor_Services_Cost", "8412", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:21 PM", "", "In Development",  0,13637)
+          InitProperty("Additional_Subcontractor_Services_Total_Cost", "9921", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 10:23:55 AM", "", "In Development",  0,17981)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Administrative_Cost", "8414", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/10/2025 9:42:02 AM", "", "In Development",  0,15946)
@@ -2822,6 +2912,18 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Crew_Lead_Man_Total_Mobilization_Cost", "8364", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:11:49 PM", "", "In Development",  0,13541)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Crew_Lead_Men_Headcount", "9925", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 12:03:52 PM", "", "In Development",  0,17986)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Crew_Lead_Men_Mobilization_Count", "9924", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 12:02:58 PM", "", "In Development",  0,17985)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Crew_Lead_Men_Total_Mobilization_Cost", "9926", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 12:04:33 PM", "", "In Development",  0,17987)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Crew_Mobilization_Cost", "9923", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 12:02:13 PM", "", "In Development",  0,17984)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Crew_Mobilization_Cost_per_person", "8356", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:11:24 PM", "", "In Development",  0,13525)
@@ -3001,16 +3103,13 @@ Option Infer On
           InitProperty("EQ_Rental_Welders_Wkly_Rate", "8259", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:05 PM", "", "In Development",  0,13331)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Equipment_Rental_Cost", "9365", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/10/2025 9:31:05 AM", "", "In Development",  0,15939)
-        End If
-            If Incontext("-1", ctx) Then
           InitProperty("Equipment_Rental_Dumpsters_Cost", "8404", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:55 PM", "", "In Development",  0,13621)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Equipment_Rental_Porta_Johns_Cost", "8405", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:58 PM", "", "In Development",  0,13623)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Equipment_Rental_Porta_Johns_Total_Cost", "9766", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 9:55:05 AM", "", "In Development",  0,17227)
+          InitProperty("Equipment_Rental_Total_Cost", "9919", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 10:17:10 AM", "", "In Development",  0,17979)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Factors_Air_Piping", "8334", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:13 PM", "", "In Development",  0,13481)
@@ -3023,6 +3122,27 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Factors_Seismic", "8335", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:17 PM", "", "In Development",  0,13483)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("HSE_Per_Diem_Rate", "9912", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:25:39 AM", "", "In Development",  0,17679)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("HSE_Per_Diem_Rate_Cost", "9914", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:29:04 AM", "", "In Development",  0,17681)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("HSE_Per_Diem_Rate_Headcount", "9910", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:21:14 AM", "", "In Development",  0,17677)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("HSE_Wages_Cost", "9913", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/16/2025 2:26:15 PM", "", "In Development",  0,18078)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("HSE_Wages_Headcount", "9909", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:19:20 AM", "", "In Development",  0,17676)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("HSE_Wages_Rate", "9911", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:22:12 AM", "", "In Development",  0,17678)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("HSE_Wages_Total_Cost", "9915", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:29:44 AM", "", "In Development",  0,17682)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Installer_Commissioning_Support_Cost", "8401", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:46 PM", "", "In Development",  0,13615)
@@ -3169,7 +3289,7 @@ Option Infer On
           InitProperty("Mech_Convyr_Inst_Total_Hours", "9361", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 12:26:57 PM", "", "In Development",  0,17274)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Mech_Convyr_Installation_Total_Cost", "9368", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 12:25:06 PM", "", "In Development",  0,17269)
+          InitProperty("Mech_Convyr_Installation_Total_Cost", "9368", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 10:27:55 AM", "", "In Development",  0,17983)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Metrics_Air_Piping_Hours", "8420", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:45 PM", "", "In Development",  0,13653)
@@ -3209,9 +3329,6 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Metrics_Total_Hours_per_Foot", "8416", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:33 PM", "", "In Development",  0,13645)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Miscellaneous_Cost", "8413", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:24 PM", "", "In Development",  0,13639)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Miscellaneous_Customer_Spec_Adder", "8371", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:12:11 PM", "", "In Development",  0,13555)
@@ -3259,7 +3376,7 @@ Option Infer On
           InitProperty("Miscellaneous_System_Efficiency_Hours", "8368", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:12:01 PM", "", "In Development",  0,13549)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Miscellaneous_System_Efficiency_Percentage", "9604", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 5:13:40 AM", "", "In Development",  0,16852)
+          InitProperty("Miscellaneous_Total_Cost", "9922", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 10:24:57 AM", "", "In Development",  0,17982)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Other_Cost_Duration_Wks", "8280", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:07:11 PM", "", "In Development",  0,13373)
@@ -3281,6 +3398,9 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Peak_Crew", "8346", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:51 PM", "", "In Development",  0,13505)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Peak_Crew_Value", "9917", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 9:53:40 AM", "", "In Development",  0,17946)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("People_Needs_Lead_Men_Working_Percent", "8355", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:11:21 PM", "", "In Development",  0,13523)
@@ -3307,7 +3427,7 @@ Option Infer On
           InitProperty("People_Needs_Superintendents_Working_Percent", "8354", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:11:17 PM", "", "In Development",  0,13521)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Permits_Cost", "8411", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:17 PM", "", "In Development",  0,13635)
+          InitProperty("Permits_Total_Cost", "9920", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 10:22:18 AM", "", "In Development",  0,17980)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Project_Info_Customer", "8327", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:51 PM", "", "In Development",  0,13467)
@@ -3338,6 +3458,9 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Project_Tier_Value", "9782", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 10:28:26 AM", "", "In Development",  0,17243)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Risk_Rating_Value", "9918", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 10:03:55 AM", "", "In Development",  0,17964)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Schedule_Commissioning_Duration_Weeks", "9738", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 8:41:49 AM", "", "In Development",  0,17198)
@@ -3433,9 +3556,6 @@ Option Infer On
           InitProperty("Supplies_Consumables_Anchors_1USD_per_Cost", "8407", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:05 PM", "", "In Development",  0,13627)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Supplies_Consumables_Cost", "9366", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/10/2025 9:31:42 AM", "", "In Development",  0,15940)
-        End If
-            If Incontext("-1", ctx) Then
           InitProperty("Supplies_Consumables_Hardware_Air_Piping_Cost", "8406", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:01 PM", "", "In Development",  0,13625)
         End If
             If Incontext("-1", ctx) Then
@@ -3494,9 +3614,6 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Travel_Cost_Superintendent_Total_Travel_Cost", "8300", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:15 PM", "", "In Development",  0,13413)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Travel_Expense_Cost", "9367", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/10/2025 9:32:23 AM", "", "In Development",  0,15941)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Travel_Expense_Mobilization_Cost", "8410", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:14 PM", "", "In Development",  0,13633)
@@ -3636,19 +3753,19 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Additional_Subcontractor_Services_Cost() As Double
+          Public Function Formula_Additional_Subcontractor_Services_Total_Cost() As Double
           Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Additional_Subcontractor_Services_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Additional_Subcontractor_Services_Total_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:8412; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8412; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9921; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9921; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Additional_Subcontractor_Services_Cost", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Additional_Subcontractor_Services_Total_Cost", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -3948,6 +4065,98 @@ Option Infer On
       '   END FORMULA; PROP ID:8364; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Crew_Lead_Man_Total_Mobilization_Cost", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Crew_Lead_Men_Headcount() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Crew_Lead_Men_Headcount").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9925; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9925; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Crew_Lead_Men_Headcount", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Crew_Lead_Men_Mobilization_Count() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Crew_Lead_Men_Mobilization_Count").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9924; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9924; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Crew_Lead_Men_Mobilization_Count", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Crew_Lead_Men_Total_Mobilization_Cost() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Crew_Lead_Men_Total_Mobilization_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9926; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9926; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Crew_Lead_Men_Total_Mobilization_Cost", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Crew_Mobilization_Cost() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Crew_Mobilization_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9923; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9923; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Crew_Mobilization_Cost", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -5315,29 +5524,6 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Equipment_Rental_Cost() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Equipment_Rental_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9365; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9365; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Equipment_Rental_Cost", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Equipment_Rental_Dumpsters_Cost() As Double
           Dim Result as Double
       Dim ctx as Object
@@ -5384,19 +5570,19 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Equipment_Rental_Porta_Johns_Total_Cost() As Double
+          Public Function Formula_Equipment_Rental_Total_Cost() As Double
           Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Equipment_Rental_Porta_Johns_Total_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Equipment_Rental_Total_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:9766; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9919; TYPE:PF
       result = 0.0
-      '   END FORMULA; PROP ID:9766; TYPE:PF
+      '   END FORMULA; PROP ID:9919; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Equipment_Rental_Porta_Johns_Total_Cost", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Equipment_Rental_Total_Cost", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -5489,6 +5675,172 @@ Option Infer On
       '   END FORMULA; PROP ID:8335; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Factors_Seismic", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_HSE_Per_Diem_Rate() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("HSE_Per_Diem_Rate").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9912; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9912; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_HSE_Per_Diem_Rate", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_HSE_Per_Diem_Rate_Cost() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("HSE_Per_Diem_Rate_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9914; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9914; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_HSE_Per_Diem_Rate_Cost", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_HSE_Per_Diem_Rate_Headcount() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("HSE_Per_Diem_Rate_Headcount").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9910; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9910; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_HSE_Per_Diem_Rate_Headcount", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_HSE_Wages_Cost() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("HSE_Wages_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9913; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		Result = Math.Ceiling(Me.Crew_Average_Hours_per_wk * Me.HSE_Wages_Rate * Me.HSE_Wages_Headcount * Me.HSE_Per_Diem_Rate_Headcount)	
+	Case Else
+		Result = Math.Ceiling(Me.HSE_Per_Diem_Rate * Me.Support_Lead_Men_Hrs_per_Wk * Me.HSE_Wages_Headcount * Me.HSE_Wages_Rate)
+End Select
+      '   END FORMULA; PROP ID:9913; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_HSE_Wages_Cost", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_HSE_Wages_Headcount() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("HSE_Wages_Headcount").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9909; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9909; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_HSE_Wages_Headcount", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_HSE_Wages_Rate() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("HSE_Wages_Rate").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9911; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9911; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_HSE_Wages_Rate", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_HSE_Wages_Total_Cost() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("HSE_Wages_Total_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9915; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9915; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_HSE_Wages_Total_Cost", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -6619,12 +6971,12 @@ Me.Installer_Total_Hours
       Result = Me.Superintendent_Total_Cost+
 Me.Lead_Person_Total_Cost+
 Me.Installer_Total_Cost+
-Me.Equipment_Rental_Cost+
-Me.Supplies_Consumables_Cost+
-Me.Travel_Expense_Cost+
-Me.Permits_Cost+
-Me.Additional_Subcontractor_Services_Cost+
-Me.Miscellaneous_Cost
+Me.Equipment_Rental_Total_Cost+
+Me.Supplies_Consumables_Total_Cost+
+Me.Travel_Expense_Total_Cost+
+Me.Permits_Total_Cost+
+Me.Additional_Subcontractor_Services_Total_Cost+
+Me.Miscellaneous_Total_Cost
       '   END FORMULA; PROP ID:9368; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Mech_Convyr_Installation_Total_Cost", ex.Message)
@@ -6927,29 +7279,6 @@ Me.Miscellaneous_Cost
       '   END FORMULA; PROP ID:8416; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Metrics_Total_Hours_per_Foot", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Miscellaneous_Cost() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Miscellaneous_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:8413; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8413; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Miscellaneous_Cost", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -7305,19 +7634,19 @@ Me.Miscellaneous_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Miscellaneous_System_Efficiency_Percentage() As Double
+          Public Function Formula_Miscellaneous_Total_Cost() As Double
           Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Miscellaneous_System_Efficiency_Percentage").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Miscellaneous_Total_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:9604; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9922; TYPE:PF
       result = 0.0
-      '   END FORMULA; PROP ID:9604; TYPE:PF
+      '   END FORMULA; PROP ID:9922; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Miscellaneous_System_Efficiency_Percentage", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Miscellaneous_Total_Cost", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -7479,6 +7808,29 @@ Me.Miscellaneous_Cost
       '   END FORMULA; PROP ID:8346; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Peak_Crew", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Peak_Crew_Value() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Peak_Crew_Value").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9917; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9917; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Peak_Crew_Value", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -7673,19 +8025,19 @@ Me.Miscellaneous_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Permits_Cost() As Double
+          Public Function Formula_Permits_Total_Cost() As Double
           Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Permits_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Permits_Total_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:8411; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8411; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:9920; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9920; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Permits_Cost", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Permits_Total_Cost", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -7916,6 +8268,29 @@ Me.Miscellaneous_Cost
       '   END FORMULA; PROP ID:9782; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Tier_Value", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Risk_Rating_Value() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Risk_Rating_Value").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9918; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9918; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Risk_Rating_Value", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -8639,29 +9014,6 @@ Me.Miscellaneous_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Supplies_Consumables_Cost() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Supplies_Consumables_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9366; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9366; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Supplies_Consumables_Cost", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Supplies_Consumables_Hardware_Air_Piping_Cost() As Double
           Dim Result as Double
       Dim ctx as Object
@@ -9122,29 +9474,6 @@ Me.Miscellaneous_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Travel_Expense_Cost() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Travel_Expense_Cost").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9367; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9367; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Travel_Expense_Cost", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Travel_Expense_Mobilization_Cost() As Double
           Dim Result as Double
       Dim ctx as Object
@@ -9558,34 +9887,6 @@ Me.Miscellaneous_Cost
       Return Result
       End Function
     
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Additional_Subcontractor_Services_Cost_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Additional_Subcontractor_Services_Cost"
-          Me.Properties("Additional_Subcontractor_Services_Cost").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8412; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8412; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Additional_Subcontractor_Services_Cost_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Additional_Subcontractor_Services_Cost").ErrorReporting
-          End Function
-        
           '*****************************************************************************
           '   Copyright (C) 2024 Siemens. All rights reserved.
           '
@@ -13091,34 +13392,6 @@ Me.Miscellaneous_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Miscellaneous_Cost_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Miscellaneous_Cost"
-          Me.Properties("Miscellaneous_Cost").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8413; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8413; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Miscellaneous_Cost_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Miscellaneous_Cost").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Miscellaneous_Customer_Spec_Adder_CustomCheck() as Object
           
           Dim Result as Object
@@ -13672,34 +13945,6 @@ Me.Miscellaneous_Cost
           If ObjectManager.StopOnErrors Then Stop
           End Try
           Return Me.Properties("People_Needs_Superintendents_Working_Percent").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Permits_Cost_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Permits_Cost"
-          Me.Properties("Permits_Cost").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8411; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8411; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Permits_Cost_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Permits_Cost").ErrorReporting
           End Function
         
           '*****************************************************************************
@@ -15270,14 +15515,6 @@ Me.Miscellaneous_Cost
           Return Me.Properties("Union_Rate_Superintendent_Tot_Cost_Adj").ErrorReporting
           End Function
         
-          Public Function Formula_Additional_Subcontractor_Services_Cost_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Additional_Subcontractor_Services_Cost_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
           Public Function Formula_Administrative_Cost_CustomCheckDependnacy() as Boolean
           Try
           Return True
@@ -16278,14 +16515,6 @@ Me.Miscellaneous_Cost
           End Try
           End Function
         
-          Public Function Formula_Miscellaneous_Cost_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Miscellaneous_Cost_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
           Public Function Formula_Miscellaneous_Customer_Spec_Adder_CustomCheckDependnacy() as Boolean
           Try
           Return True
@@ -16443,14 +16672,6 @@ Me.Miscellaneous_Cost
           Return True
           Catch ex As Exception
           ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_People_Needs_Superintendents_Working_Percent_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
-          Public Function Formula_Permits_Cost_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Permits_Cost_CustomCheckDependnacy", ex.Message)
           End Try
           End Function
         
@@ -16907,7 +17128,7 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Additional_Subcontractor_Services_Cost_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Additional_Subcontractor_Services_Total_Cost_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -17025,6 +17246,42 @@ Me.Miscellaneous_Cost
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Crew_Lead_Man_Total_Mobilization_Cost_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Crew_Lead_Men_Headcount_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Crew_Lead_Men_Mobilization_Count_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Crew_Lead_Men_Total_Mobilization_Cost_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Crew_Mobilization_Cost_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -17564,15 +17821,6 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Equipment_Rental_Cost_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Equipment_Rental_Dumpsters_Cost_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -17591,7 +17839,7 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Equipment_Rental_Porta_Johns_Total_Cost_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Equipment_Rental_Total_Cost_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -17628,6 +17876,69 @@ Me.Miscellaneous_Cost
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Factors_Seismic_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Per_Diem_Rate_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Per_Diem_Rate_Cost_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Per_Diem_Rate_Headcount_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Wages_Cost_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Wages_Headcount_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Wages_Rate_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Wages_Total_Cost_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -18194,15 +18505,6 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Miscellaneous_Cost_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Miscellaneous_Customer_Spec_Adder_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -18338,7 +18640,7 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Miscellaneous_System_Efficiency_Percentage_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Miscellaneous_Total_Cost_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -18402,6 +18704,15 @@ Me.Miscellaneous_Cost
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Peak_Crew_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Peak_Crew_Value_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -18482,7 +18793,7 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Permits_Cost_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Permits_Total_Cost_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -18573,6 +18884,15 @@ Me.Miscellaneous_Cost
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Project_Tier_Value_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Risk_Rating_Value_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -18860,15 +19180,6 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Supplies_Consumables_Cost_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Supplies_Consumables_Hardware_Air_Piping_Cost_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -19049,15 +19360,6 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Travel_Expense_Cost_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Travel_Expense_Mobilization_Cost_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -19220,7 +19522,7 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Additional_Subcontractor_Services_Cost_USERCHANGE() as Boolean
+      Public Function Formula_Additional_Subcontractor_Services_Total_Cost_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -19338,6 +19640,42 @@ Me.Miscellaneous_Cost
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Crew_Lead_Man_Total_Mobilization_Cost_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Crew_Lead_Men_Headcount_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Crew_Lead_Men_Mobilization_Count_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Crew_Lead_Men_Total_Mobilization_Cost_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Crew_Mobilization_Cost_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -19877,15 +20215,6 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Equipment_Rental_Cost_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Equipment_Rental_Dumpsters_Cost_USERCHANGE() as Boolean
       Return True
       End Function
@@ -19904,7 +20233,7 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Equipment_Rental_Porta_Johns_Total_Cost_USERCHANGE() as Boolean
+      Public Function Formula_Equipment_Rental_Total_Cost_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -19941,6 +20270,69 @@ Me.Miscellaneous_Cost
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Factors_Seismic_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Per_Diem_Rate_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Per_Diem_Rate_Cost_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Per_Diem_Rate_Headcount_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Wages_Cost_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Wages_Headcount_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Wages_Rate_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_HSE_Wages_Total_Cost_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -20507,15 +20899,6 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Miscellaneous_Cost_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Miscellaneous_Customer_Spec_Adder_USERCHANGE() as Boolean
       Return True
       End Function
@@ -20651,7 +21034,7 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Miscellaneous_System_Efficiency_Percentage_USERCHANGE() as Boolean
+      Public Function Formula_Miscellaneous_Total_Cost_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -20715,6 +21098,15 @@ Me.Miscellaneous_Cost
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Peak_Crew_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Peak_Crew_Value_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -20795,7 +21187,7 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Permits_Cost_USERCHANGE() as Boolean
+      Public Function Formula_Permits_Total_Cost_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -20886,6 +21278,15 @@ Me.Miscellaneous_Cost
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Project_Tier_Value_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Risk_Rating_Value_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -21173,15 +21574,6 @@ Me.Miscellaneous_Cost
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Supplies_Consumables_Cost_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Supplies_Consumables_Hardware_Air_Piping_Cost_USERCHANGE() as Boolean
       Return True
       End Function
@@ -21354,15 +21746,6 @@ Me.Miscellaneous_Cost
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Travel_Cost_Superintendent_Total_Travel_Cost_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Travel_Expense_Cost_USERCHANGE() as Boolean
       Return True
       End Function
     

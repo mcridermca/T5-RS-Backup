@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Mech_Install_CP_Comp
-'$ GenerateDate: 07/15/2025 16:14:05
+'$ GenerateDate: 07/15/2025 16:49:01
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -9659,7 +9659,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Mech_Install_CP_Comp", <a><![CDATA[CAE_Mech_Install_CP_Comp]]></a>.Value, 399, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H617242", "07/15/2025 16:13:17")
+    InitPart("CAE_Mech_Install_CP_Comp", <a><![CDATA[CAE_Mech_Install_CP_Comp]]></a>.Value, 399, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H617242", "07/15/2025 16:20:30")
     AddProperty("6174", "a_Sample_Cnvy_Hrs_MDR_Bed_Size", <a><![CDATA[a_Sample_Cnvy_Hrs_MDR_Bed_Size]]></a>.Value, "Retrieves hours from a cached set of Component DB (Conveyor Hours) Table.", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6199", "bool_Include_In_Subsystem", <a><![CDATA[bool_Include_In_Subsystem]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6219", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 4:46:16 PM")
@@ -10705,11 +10705,11 @@ Option Infer On
     AddProperty("7106", "ZFA_Retrofit_Replace_Rollers_Hours", <a><![CDATA[ZFA_Retrofit_Replace_Rollers_Hours]]></a>.Value, "Mech Install^'Hours'!P392", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:17:04 PM")
     AddProperty("7107", "ZFA_Retrofit_Replace_Rollers_QTY", <a><![CDATA[ZFA_Retrofit_Replace_Rollers_QTY]]></a>.Value, "Mech Install^'Hours'!O392", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:18:01 PM")
     AddProperty("7108", "ZFA_Retrofit_Roller_Centers", <a><![CDATA[ZFA_Retrofit_Roller_Centers]]></a>.Value, "Mech Install^'Hours'!S392", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7109", "ZFA_Retrofit_Roller_Count", <a><![CDATA[ZFA_Retrofit_Roller_Count]]></a>.Value, "Mech Install^'Hours'!S396", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("7109", "ZFA_Retrofit_Roller_Count", <a><![CDATA[ZFA_Retrofit_Roller_Count]]></a>.Value, "Mech Install^'Hours'!S396", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:20:30 PM")
     AddProperty("7110", "ZFA_Retrofit_Run_Air_Tubing_Hours", <a><![CDATA[ZFA_Retrofit_Run_Air_Tubing_Hours]]></a>.Value, "Mech Install^'Hours'!P393", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:10:27 PM")
     AddProperty("7111", "ZFA_Retrofit_Run_Air_Tubing_QTY", <a><![CDATA[ZFA_Retrofit_Run_Air_Tubing_QTY]]></a>.Value, "Mech Install^'Hours'!O389", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:20:28 PM")
     AddProperty("7112", "ZFA_Retrofit_Total_hours_Hours", <a><![CDATA[ZFA_Retrofit_Total_hours_Hours]]></a>.Value, "Mech Install^'Hours'!P398", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:13:17 PM")
-    AddProperty("7113", "ZFA_Retrofit_Total_hours_per_12_ft_Bed", <a><![CDATA[ZFA_Retrofit_Total_hours_per_12_ft_Bed]]></a>.Value, "Mech Install^'Hours'!Q398", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("7113", "ZFA_Retrofit_Total_hours_per_12_ft_Bed", <a><![CDATA[ZFA_Retrofit_Total_hours_per_12_ft_Bed]]></a>.Value, "Mech Install^'Hours'!Q398", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:16:37 PM")
     AddProperty("7114", "ZFA_Retrofit_Zone_Length", <a><![CDATA[ZFA_Retrofit_Zone_Length]]></a>.Value, "Mech Install^'Hours'!S393", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
     AddProperty("6173", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
     
@@ -13901,7 +13901,7 @@ Option Infer On
           InitProperty("ZFA_Retrofit_Roller_Centers", "6709", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:57 PM", "", "In Development",  0,10425)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ZFA_Retrofit_Roller_Count", "6710", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:58 PM", "", "In Development",  0,10426)
+          InitProperty("ZFA_Retrofit_Roller_Count", "6710", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:20:30 PM", "", "In Development",  0,17481)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ZFA_Retrofit_Run_Air_Tubing_Hours", "6711", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:10:27 PM", "", "In Development",  0,17476)
@@ -13913,7 +13913,7 @@ Option Infer On
           InitProperty("ZFA_Retrofit_Total_hours_Hours", "6713", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:13:17 PM", "", "In Development",  0,17478)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ZFA_Retrofit_Total_hours_per_12_ft_Bed", "6714", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:58 PM", "", "In Development",  0,10433)
+          InitProperty("ZFA_Retrofit_Total_hours_per_12_ft_Bed", "6714", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:16:37 PM", "", "In Development",  0,17479)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ZFA_Retrofit_Zone_Length", "6715", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:58 PM", "", "In Development",  0,10434)
@@ -43620,7 +43620,11 @@ Me.Singulated_Flow_Bottom_Guards_HRS
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6710; TYPE:PF
-      result = 0.0
+      If(Me.ZFA_Retrofit_Replace_Rollers = "yes")
+	Result = (Me.ZFA_Retrofit_Bed_Footage*12)/Me.ZFA_Retrofit_Roller_Centers
+Else
+	Result = (Me.ZFA_Retrofit_Bed_Footage*12)/(Me.ZFA_Retrofit_Roller_Centers*0.3)
+End If
       '   END FORMULA; PROP ID:6710; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_ZFA_Retrofit_Roller_Count", ex.Message)
@@ -43718,7 +43722,11 @@ Me.ZFA_Retrofit_Replace_Rollers_Hours
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6714; TYPE:PF
-      result = 0.0
+      If(Me.ZFA_Retrofit_Bed_Footage=0)
+	Result = Me.ZFA_Retrofit_Total_hours_Hours/(Me.ZFA_Retrofit_Bed_Footage/12)
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:6714; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_ZFA_Retrofit_Total_hours_per_12_ft_Bed", ex.Message)

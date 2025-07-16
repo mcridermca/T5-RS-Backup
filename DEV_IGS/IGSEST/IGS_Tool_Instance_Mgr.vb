@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: IGS_Tool_Instance_Mgr
-'$ GenerateDate: 07/14/2025 22:16:44
+'$ GenerateDate: 07/15/2025 16:49:01
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -210,6 +210,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [Header_Hanger]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("Header_Hanger")
+      End Get
+      End Property
+    
       Public ReadOnly Property [Sortation]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Sortation")
@@ -248,7 +254,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/14/2025 22:06:44")
+    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/15/2025 16:46:19")
     AddProperty("5588", "HasAppCalc", <a><![CDATA[Has App Calc]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/27/2025 5:06:10 PM")
     AddProperty("4829", "HasElecInstall", <a><![CDATA[Has Elec Install]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 11:46:05 AM")
     AddProperty("5587", "HasHeaderHanger", <a><![CDATA[Has Header Hanger]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/27/2025 5:06:01 PM")
@@ -266,6 +272,10 @@ Option Infer On
       oSubpart = AddSubpart(259,"Elec_Install_Estimator", <a><![CDATA[Elec_Install_Estimator]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "6/23/2025 7:17:41 PM")
       
         oSubpart.AddVPF (361, "CAE_Elec_Install_App", "CAE_Elec_Install_App")
+      
+      oSubpart = AddSubpart(341,"Header_Hanger", <a><![CDATA[Header_Hanger]]></a>.Value, "FD", "Header Hanger Application", "General", 9999, "", "GLOBAL\H601424", "7/15/2025 4:46:19 PM")
+      
+        oSubpart.AddVPF (333, "HHS_HeaderHanger_Calc", "Header Hanger Calculator")
       
       oSubpart = AddSubpart(338,"Sortation", <a><![CDATA[Sortation]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:05:34 PM")
       
@@ -360,6 +370,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitSubpart("Elec_Install_Estimator", 194, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "6/23/2025 7:17:41 PM", "", "In Development", "N",0,534,537)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("Header_Hanger", 268, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/15/2025 4:46:19 PM", "", "In Development", "N",0,729,728)
         
           End If
         
@@ -907,6 +923,75 @@ End If
       '   END FORMULA; SUB ID:194; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Elec_Install_Estimator_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Header_Hanger_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:268; TYPE:PN
+      
+      '   END FORMULA; SUB ID:268; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Header_Hanger_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Header_Hanger_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Header_Hanger").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:268; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:268; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Header_Hanger_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Header_Hanger_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Header_Hanger").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:268; TYPE:OP
+      result = "HHS_HeaderHanger_Calc"
+      '   END FORMULA; SUB ID:268; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Header_Hanger_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

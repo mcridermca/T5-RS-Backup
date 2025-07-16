@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_App_Calc_Print_And_Apply
-'$ GenerateDate: 07/15/2025 16:14:05
+'$ GenerateDate: 07/16/2025 20:14:50
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -153,6 +153,42 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Brush_Length_Factor_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Customer_Date]() As String
+      Get
+      Return Properties("Customer_Date").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Customer_Date").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Customer_Location]() As String
+      Get
+      Return Properties("Customer_Location").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Customer_Location").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Customer_Name]() As String
+      Get
+      Return Properties("Customer_Name").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Customer_Name").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Customer_Proposal_Number]() As String
+      Get
+      Return Properties("Customer_Proposal_Number").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Customer_Proposal_Number").CalculatedValue = Value
       End Set
       End Property
     
@@ -1290,6 +1326,519 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Output_Carton_Stability_Length_IN]() As Double
+      Get
+      Return Properties("Output_Carton_Stability_Length_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Carton_Stability_Length_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Carton_Stability_Length_User]() As Double
+      Get
+      Return Properties("Output_Carton_Stability_Length_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Carton_Stability_Length_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Carton_Stability_Length_User_UOM]() As String
+      Get
+      Return Properties("Output_Carton_Stability_Length_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Carton_Stability_Length_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Induct_Max_Lgth_of_Carton_Scanned_IN]() As Double
+      Get
+      Return Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Induct_Max_Lgth_of_Carton_Scanned_User]() As Double
+      Get
+      Return Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM]() As String
+      Get
+      Return Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Induct_Scan_Data_Cap_Window_Lgth_IN]() As Double
+      Get
+      Return Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Induct_Scan_Data_Cap_Window_Lgth_User]() As Double
+      Get
+      Return Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM]() As String
+      Get
+      Return Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Induction_Scan_Window_Length_IN]() As Double
+      Get
+      Return Properties("Output_Induction_Scan_Window_Length_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Induction_Scan_Window_Length_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Induction_Scan_Window_Length_User]() As Double
+      Get
+      Return Properties("Output_Induction_Scan_Window_Length_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Induction_Scan_Window_Length_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Induction_Scan_Window_Length_User_UOM]() As String
+      Get
+      Return Properties("Output_Induction_Scan_Window_Length_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Induction_Scan_Window_Length_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Label_Data_Acq_Distance_App_1_IN]() As Double
+      Get
+      Return Properties("Output_Label_Data_Acq_Distance_App_1_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Label_Data_Acq_Distance_App_1_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Label_Data_Acq_Distance_App_1_User]() As Double
+      Get
+      Return Properties("Output_Label_Data_Acq_Distance_App_1_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Label_Data_Acq_Distance_App_1_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Label_Data_Acq_Distance_App_1_User_UOM]() As String
+      Get
+      Return Properties("Output_Label_Data_Acq_Distance_App_1_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Label_Data_Acq_Distance_App_1_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Label_Data_Acq_Distance_App_2_IN]() As Double
+      Get
+      Return Properties("Output_Label_Data_Acq_Distance_App_2_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Label_Data_Acq_Distance_App_2_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Label_Data_Acq_Distance_App_2_User]() As Double
+      Get
+      Return Properties("Output_Label_Data_Acq_Distance_App_2_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Label_Data_Acq_Distance_App_2_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Label_Data_Acq_Distance_App_2_User_UOM]() As String
+      Get
+      Return Properties("Output_Label_Data_Acq_Distance_App_2_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Label_Data_Acq_Distance_App_2_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN]() As Double
+      Get
+      Return Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User]() As Double
+      Get
+      Return Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM]() As String
+      Get
+      Return Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Distance_Between_Applicator_1_2_IN]() As Double
+      Get
+      Return Properties("Output_Min_Distance_Between_Applicator_1_2_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Min_Distance_Between_Applicator_1_2_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Distance_Between_Applicator_1_2_User]() As Double
+      Get
+      Return Properties("Output_Min_Distance_Between_Applicator_1_2_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Min_Distance_Between_Applicator_1_2_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Distance_Between_Applicator_1_2_User_UO]() As String
+      Get
+      Return Properties("Output_Min_Distance_Between_Applicator_1_2_User_UO").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Min_Distance_Between_Applicator_1_2_User_UO").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Distance_for_Printer_Setup_IN]() As Double
+      Get
+      Return Properties("Output_Min_Distance_for_Printer_Setup_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Min_Distance_for_Printer_Setup_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Distance_for_Printer_Setup_User]() As Double
+      Get
+      Return Properties("Output_Min_Distance_for_Printer_Setup_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Min_Distance_for_Printer_Setup_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Distance_for_Printer_Setup_User_UOM]() As String
+      Get
+      Return Properties("Output_Min_Distance_for_Printer_Setup_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Min_Distance_for_Printer_Setup_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Distance_IN]() As Double
+      Get
+      Return Properties("Output_Min_Distance_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Min_Distance_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Distance_User]() As Double
+      Get
+      Return Properties("Output_Min_Distance_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Min_Distance_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Min_Distance_User_UOM]() As String
+      Get
+      Return Properties("Output_Min_Distance_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Min_Distance_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_PandA_Belt_Exit_PE_Distance_IN]() As Double
+      Get
+      Return Properties("Output_PandA_Belt_Exit_PE_Distance_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_PandA_Belt_Exit_PE_Distance_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_PandA_Belt_Exit_PE_Distance_User]() As Double
+      Get
+      Return Properties("Output_PandA_Belt_Exit_PE_Distance_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_PandA_Belt_Exit_PE_Distance_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_PandA_Belt_Exit_PE_Distance_User_UOM]() As String
+      Get
+      Return Properties("Output_PandA_Belt_Exit_PE_Distance_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_PandA_Belt_Exit_PE_Distance_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Double_FT]() As Double
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Double_FT").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Total_Calc_Belt_Length_Double_FT").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Double_FT_User]() As Double
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Double_FT_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Total_Calc_Belt_Length_Double_FT_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Double_FT_User_UOM]() As String
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Double_FT_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Total_Calc_Belt_Length_Double_FT_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Double_IN]() As Double
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Double_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Total_Calc_Belt_Length_Double_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Double_IN_User]() As Double
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Double_IN_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Total_Calc_Belt_Length_Double_IN_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Double_IN_User_UOM]() As String
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Double_IN_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Total_Calc_Belt_Length_Double_IN_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Single_FT]() As Double
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Single_FT").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Total_Calc_Belt_Length_Single_FT").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Single_FT_User]() As Double
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Single_FT_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Total_Calc_Belt_Length_Single_FT_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Single_FT_User_UOM]() As String
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Single_FT_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Total_Calc_Belt_Length_Single_FT_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Single_IN]() As Double
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Single_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Total_Calc_Belt_Length_Single_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Single_IN_User]() As Double
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Single_IN_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Total_Calc_Belt_Length_Single_IN_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Total_Calc_Belt_Length_Single_IN_User_UOM]() As String
+      Get
+      Return Properties("Output_Total_Calc_Belt_Length_Single_IN_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Total_Calc_Belt_Length_Single_IN_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Ver_Max_Length_of_Carton_Scanned_IN]() As Double
+      Get
+      Return Properties("Output_Ver_Max_Length_of_Carton_Scanned_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Ver_Max_Length_of_Carton_Scanned_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Ver_Max_Length_of_Carton_Scanned_User]() As Double
+      Get
+      Return Properties("Output_Ver_Max_Length_of_Carton_Scanned_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Ver_Max_Length_of_Carton_Scanned_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Ver_Max_Length_of_Carton_Scanned_User_UOM]() As String
+      Get
+      Return Properties("Output_Ver_Max_Length_of_Carton_Scanned_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Ver_Max_Length_of_Carton_Scanned_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Ver_Scan_Data_Capture_Window_Length_IN]() As Double
+      Get
+      Return Properties("Output_Ver_Scan_Data_Capture_Window_Length_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Ver_Scan_Data_Capture_Window_Length_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Ver_Scan_Data_Capture_Window_Length_User]() As Double
+      Get
+      Return Properties("Output_Ver_Scan_Data_Capture_Window_Length_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Ver_Scan_Data_Capture_Window_Length_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Ver_Scan_Data_Capture_Window_Length_User_UO]() As String
+      Get
+      Return Properties("Output_Ver_Scan_Data_Capture_Window_Length_User_UO").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Ver_Scan_Data_Capture_Window_Length_User_UO").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Verify_Scanner_Distance_to_Xmit_IN]() As Double
+      Get
+      Return Properties("Output_Verify_Scanner_Distance_to_Xmit_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Verify_Scanner_Distance_to_Xmit_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Verify_Scanner_Distance_to_Xmit_User]() As Double
+      Get
+      Return Properties("Output_Verify_Scanner_Distance_to_Xmit_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Verify_Scanner_Distance_to_Xmit_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Verify_Scanner_Distance_to_Xmit_User_UOM]() As String
+      Get
+      Return Properties("Output_Verify_Scanner_Distance_to_Xmit_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Verify_Scanner_Distance_to_Xmit_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Verify_Scanner_Window_Length_IN]() As Double
+      Get
+      Return Properties("Output_Verify_Scanner_Window_Length_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Verify_Scanner_Window_Length_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Verify_Scanner_Window_Length_User]() As Double
+      Get
+      Return Properties("Output_Verify_Scanner_Window_Length_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Output_Verify_Scanner_Window_Length_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Output_Verify_Scanner_Window_Length_User_UOM]() As String
+      Get
+      Return Properties("Output_Verify_Scanner_Window_Length_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Output_Verify_Scanner_Window_Length_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [App_Down_Stroke_Tamp_Clearance_IN]() As Double
       Get
       Return Properties("App_Down_Stroke_Tamp_Clearance_IN").Value
@@ -2091,6 +2640,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Summary_Carton_Length_User]() As Double
+      Get
+      Return Properties("Summary_Carton_Length_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Summary_Carton_Length_User").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Ver_Scan_Carton_Panels_Scanned_Quantity]() As Long
       Get
       Return Properties("Ver_Scan_Carton_Panels_Scanned_Quantity").Value
@@ -2379,6 +2937,96 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Summary_Caclucation_Errors_Present]() As Long
+      Get
+      Return Properties("Summary_Caclucation_Errors_Present").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Summary_Caclucation_Errors_Present").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Summary_Caclucation_Warnings_Present]() As Long
+      Get
+      Return Properties("Summary_Caclucation_Warnings_Present").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Summary_Caclucation_Warnings_Present").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Summary_Min_H_to_H_Spacing_Limit_Set_By]() As String
+      Get
+      Return Properties("Summary_Min_H_to_H_Spacing_Limit_Set_By").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Summary_Min_H_to_H_Spacing_Limit_Set_By").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Summary_Min_H_to_H_Spacing_Req_IN]() As Double
+      Get
+      Return Properties("Summary_Min_H_to_H_Spacing_Req_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Summary_Min_H_to_H_Spacing_Req_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Summary_Min_H_to_H_Spacing_Req_User]() As Double
+      Get
+      Return Properties("Summary_Min_H_to_H_Spacing_Req_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Summary_Min_H_to_H_Spacing_Req_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Summary_Min_H_to_H_Spacing_Req_User_UOM]() As String
+      Get
+      Return Properties("Summary_Min_H_to_H_Spacing_Req_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Summary_Min_H_to_H_Spacing_Req_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Summary_Min_T_to_H_Gap_Limit_Set_By]() As String
+      Get
+      Return Properties("Summary_Min_T_to_H_Gap_Limit_Set_By").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Summary_Min_T_to_H_Gap_Limit_Set_By").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Summary_Min_T_to_H_Gap_Req_IN]() As Double
+      Get
+      Return Properties("Summary_Min_T_to_H_Gap_Req_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Summary_Min_T_to_H_Gap_Req_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Summary_Min_T_to_H_Gap_Req_User]() As Double
+      Get
+      Return Properties("Summary_Min_T_to_H_Gap_Req_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Summary_Min_T_to_H_Gap_Req_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Summary_Min_T_to_H_Gap_Req_User_UOM]() As String
+      Get
+      Return Properties("Summary_Min_T_to_H_Gap_Req_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Summary_Min_T_to_H_Gap_Req_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Transnorm_TS4800_Control_Reaction_Time_Distance_IN]() As Double
       Get
       Return Properties("Transnorm_TS4800_Control_Reaction_Time_Distance_IN").Value
@@ -2424,6 +3072,42 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Debug_Mode]() As Boolean
+      Get
+      Return Properties("Debug_Mode").Value
+      End Get
+      Set(ByVal Value As Boolean)
+      Properties("Debug_Mode").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectName]() As String
+      Get
+      Return Properties("XMLObjectName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectName").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectType]() As String
+      Get
+      Return Properties("XMLObjectType").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectType").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectValue]() As String
+      Get
+      Return Properties("XMLObjectValue").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectValue").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -2433,9 +3117,33 @@ Option Infer On
       End Set
       End Property
     
+      Public ReadOnly Property [PandA_Theoretical_Max_Throughput_Rate]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("PandA_Theoretical_Max_Throughput_Rate")
+      End Get
+      End Property
+    
       Public ReadOnly Property [My_EHS350_Data]() As Rulestream.Kernel.Connection
       Get
       Return Connections("My_EHS350_Data")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_PRD")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [My_Setup]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_Setup")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [MySource]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("MySource")
       End Get
       End Property
     
@@ -2453,8 +3161,12 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_App_Calc_Print_And_Apply", <a><![CDATA[CAE_App_Calc_Print_And_Apply]]></a>.Value, 416, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/15/2025 16:07:17")
+    InitPart("CAE_App_Calc_Print_And_Apply", <a><![CDATA[CAE_App_Calc_Print_And_Apply]]></a>.Value, 416, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/16/2025 20:02:15")
     AddProperty("10076", "Brush_Length_Factor_IN", <a><![CDATA[Brush_Length_Factor_IN]]></a>.Value, "AppCalc^'Belted PandA'!S87", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 3:27:33 PM")
+    AddProperty("10383", "Customer_Date", <a><![CDATA[Customer_Date]]></a>.Value, "AppCalc^'Belted PandA Layout'!G9", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 1:09:51 PM")
+    AddProperty("10381", "Customer_Location", <a><![CDATA[Customer_Location]]></a>.Value, "AppCalc^'Belted PandA Layout'!G7", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 1:09:59 PM")
+    AddProperty("10380", "Customer_Name", <a><![CDATA[Customer_Name]]></a>.Value, "AppCalc^'Belted PandA Layout'!G6", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 1:10:03 PM")
+    AddProperty("10382", "Customer_Proposal_Number", <a><![CDATA[Customer_Proposal_Number]]></a>.Value, "AppCalc^'Belted PandA Layout'!G8", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 1:09:55 PM")
     AddProperty("10133", "Max_Pneumatic_Stroke_IN", <a><![CDATA[Max_Pneumatic_Stroke_IN]]></a>.Value, "AppCalc^'Belted PandA'!S91", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 6:50:51 PM")
     AddProperty("10204", "Min_Gap_Req_Avg_to_Min_Box_Tamp_Clr_Pneumatic", <a><![CDATA[Min_Gap_Req_Avg_to_Min_Box_Tamp_Clr_Pneumatic]]></a>.Value, "AppCalc^'Belted PandA'!S99", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 12:22:45 PM")
     AddProperty("10203", "Min_Gap_Req_Avg_to_Min_Box_Tamp_Clr_Servo", <a><![CDATA[Min_Gap_Req_Avg_to_Min_Box_Tamp_Clr_Servo]]></a>.Value, "AppCalc^'Belted PandA'!S98", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 12:16:57 PM")
@@ -2462,7 +3174,7 @@ Option Infer On
     AddProperty("10132", "Pneumatic_Tamp_Min_Gap_IN", <a><![CDATA[Pneumatic_Tamp_Min_Gap_IN]]></a>.Value, "AppCalc^'Belted PandA'!S91", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 6:41:46 PM")
     AddProperty("10144", "Servo_Min_Head_to_Head_IN", <a><![CDATA[Servo_Min_Head_to_Head_IN]]></a>.Value, "AppCalc^'Belted PandA'!S95", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 12:08:12 PM")
     AddProperty("10130", "Servo_Tamp_Min_Gap_IN", <a><![CDATA[Servo_Tamp_Min_Gap_IN]]></a>.Value, "AppCalc^'Belted PandA'!S91", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 6:49:05 PM")
-    AddProperty("9808", "User_UOM_System", <a><![CDATA[User_UOM_System]]></a>.Value, "", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 6:08:33 PM")
+    AddProperty("9808", "User_UOM_System", <a><![CDATA[User_UOM_System]]></a>.Value, "", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:02:15 PM")
     AddProperty("9951", "Acq_Label_Data_Acquisition_Method", <a><![CDATA[Acq_Label_Data_Acquisition_Method]]></a>.Value, "AppCalc^'Belted PandA'!74", "String","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:15:41 PM")
     AddProperty("9956", "Acq_Label_Data_Acquisition_Travel_IN", <a><![CDATA[Acq_Label_Data_Acquisition_Travel_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:47:28 PM")
     AddProperty("9954", "Acq_Label_Data_Acquisition_Travel_User", <a><![CDATA[Acq_Label_Data_Acquisition_Travel_User]]></a>.Value, "AppCalc^'Belted PandA'!77", "Double","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:58:41 PM")
@@ -2470,13 +3182,13 @@ Option Infer On
     AddProperty("9952", "Acq_Max_Host_Resp_Time_Secs", <a><![CDATA[Acq_Max_Host_Resp_Time_Secs]]></a>.Value, "AppCalc^'Belted PandA'!75", "Double","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:30:55 PM")
     AddProperty("9953", "Acq_Max_Local_Lookup_Time_Secs", <a><![CDATA[Acq_Max_Local_Lookup_Time_Secs]]></a>.Value, "AppCalc^'Belted PandA'!76", "Double","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:30:43 PM")
     AddProperty("10006", "Conv_Total_App_Belt_Length_Req_FT", <a><![CDATA[Conv_Total_App_Belt_Length_Req_FT]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:06:14 PM")
-    AddProperty("10003", "Conv_Total_App_Belt_Length_Req_FT_User", <a><![CDATA[Conv_Total_App_Belt_Length_Req_FT_User]]></a>.Value, "AppCalc^'Belted PandA'!J131", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:28:30 PM")
+    AddProperty("10003", "Conv_Total_App_Belt_Length_Req_FT_User", <a><![CDATA[Conv_Total_App_Belt_Length_Req_FT_User]]></a>.Value, "AppCalc^'Belted PandA'!J131", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 6:13:14 PM")
     AddProperty("10000", "Conv_Total_App_Belt_Length_Req_FT_User_UOM", <a><![CDATA[Conv_Total_App_Belt_Length_Req_FT_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 8:03:11 PM")
     AddProperty("10005", "Conv_Total_App_Belt_Length_Req_IN", <a><![CDATA[Conv_Total_App_Belt_Length_Req_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:05:42 PM")
-    AddProperty("10002", "Conv_Total_App_Belt_Length_Req_IN_User", <a><![CDATA[Conv_Total_App_Belt_Length_Req_IN_User]]></a>.Value, "AppCalc^'Belted PandA'!J130", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:28:24 PM")
+    AddProperty("10002", "Conv_Total_App_Belt_Length_Req_IN_User", <a><![CDATA[Conv_Total_App_Belt_Length_Req_IN_User]]></a>.Value, "AppCalc^'Belted PandA'!J130", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 6:12:31 PM")
     AddProperty("9999", "Conv_Total_App_Belt_Length_Req_IN_User_UOM", <a><![CDATA[Conv_Total_App_Belt_Length_Req_IN_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:02:54 PM")
     AddProperty("10007", "Conv_Total_Solution_Length_FT", <a><![CDATA[Conv_Total_Solution_Length_FT]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 3:06:37 PM")
-    AddProperty("10004", "Conv_Total_Solution_Length_FT_User", <a><![CDATA[Conv_Total_Solution_Length_FT_User]]></a>.Value, "AppCalc^'Belted PandA'!J131", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 4:28:38 PM")
+    AddProperty("10004", "Conv_Total_Solution_Length_FT_User", <a><![CDATA[Conv_Total_Solution_Length_FT_User]]></a>.Value, "AppCalc^'Belted PandA'!J131", "Double","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 6:21:16 PM")
     AddProperty("10001", "Conv_Total_Solution_Length_FT_User_UOM", <a><![CDATA[Conv_Total_Solution_Length_FT_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Conveyor","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 8:03:23 PM")
     AddProperty("9832", "Gen_Accumulation_Convey_Type_Pre_Panda", <a><![CDATA[Gen_Accumulation_Convey_Type_Pre_Panda]]></a>.Value, "AppCalc^'Belted PandA'!J38", "String","","AppCalc_PandA_General_Input","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:37:20 PM")
     AddProperty("9825", "Gen_Accumulation_Zone_Length_IN", <a><![CDATA[Gen_Accumulation_Zone_Length_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_General_Input","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:47:42 PM")
@@ -2537,50 +3249,107 @@ Option Infer On
     AddProperty("9937", "Ind_Scan_Tracking_Photocell_Distance_User_UOM", <a><![CDATA[Ind_Scan_Tracking_Photocell_Distance_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:39:42 PM")
     AddProperty("9998", "MDR_RAT_Swivel_Rate", <a><![CDATA[MDR_RAT_Swivel_Rate]]></a>.Value, "AppCalc^'MDR Sort'!S39", "Double","","AppCalc_PandA_MDR","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:46:12 PM")
     AddProperty("9875", "MTBH_Height_Average_IN", <a><![CDATA[MTBH_Height_Average_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:50:50 PM")
-    AddProperty("9858", "MTBH_Height_Average_User", <a><![CDATA[MTBH_Height_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!H49", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 5:49:50 PM")
+    AddProperty("9858", "MTBH_Height_Average_User", <a><![CDATA[MTBH_Height_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!H49", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:57:51 PM")
     AddProperty("9852", "MTBH_Height_Average_User_UOM", <a><![CDATA[MTBH_Height_Average_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:28:36 PM")
     AddProperty("9874", "MTBH_Height_Maximum_IN", <a><![CDATA[MTBH_Height_Maximum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:50:58 PM")
-    AddProperty("9857", "MTBH_Height_Maximum_User", <a><![CDATA[MTBH_Height_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!H48", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:28:27 PM")
+    AddProperty("9857", "MTBH_Height_Maximum_User", <a><![CDATA[MTBH_Height_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!H48", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:57:45 PM")
     AddProperty("9913", "MTBH_Height_Maximum_User_Max_Value", <a><![CDATA[MTBH_Height_Maximum_User_Max_Value]]></a>.Value, "", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:28:10 PM")
     AddProperty("9851", "MTBH_Height_Maximum_User_UOM", <a><![CDATA[MTBH_Height_Maximum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:26:42 PM")
     AddProperty("9873", "MTBH_Height_Minimum_IN", <a><![CDATA[MTBH_Height_Minimum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:51:08 PM")
-    AddProperty("9856", "MTBH_Height_Minimum_User", <a><![CDATA[MTBH_Height_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!H47", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:26:32 PM")
+    AddProperty("9856", "MTBH_Height_Minimum_User", <a><![CDATA[MTBH_Height_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!H47", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:57:35 PM")
     AddProperty("9912", "MTBH_Height_Minimum_User_Min_Value", <a><![CDATA[MTBH_Height_Minimum_User_Min_Value]]></a>.Value, "", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:26:16 PM")
     AddProperty("9850", "MTBH_Height_Minimum_User_UOM", <a><![CDATA[MTBH_Height_Minimum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:25:02 PM")
     AddProperty("9868", "MTBH_Length_Average_IN", <a><![CDATA[MTBH_Length_Average_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:51:20 PM")
-    AddProperty("9846", "MTBH_Length_Average_User", <a><![CDATA[MTBH_Length_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!D49", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:54:33 PM")
+    AddProperty("9846", "MTBH_Length_Average_User", <a><![CDATA[MTBH_Length_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!D49", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:56:58 PM")
     AddProperty("9837", "MTBH_Length_Average_User_UOM", <a><![CDATA[MTBH_Length_Average_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:48:29 PM")
     AddProperty("9867", "MTBH_Length_Maximum_IN", <a><![CDATA[MTBH_Length_Maximum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:51:31 PM")
-    AddProperty("9845", "MTBH_Length_Maximum_User", <a><![CDATA[MTBH_Length_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!D48", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:56:59 PM")
+    AddProperty("9845", "MTBH_Length_Maximum_User", <a><![CDATA[MTBH_Length_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!D48", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:56:52 PM")
     AddProperty("9909", "MTBH_Length_Maximum_User_Max_Value", <a><![CDATA[MTBH_Length_Maximum_User_Max_Value]]></a>.Value, "", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:10:28 PM")
     AddProperty("9836", "MTBH_Length_Maximum_User_UOM", <a><![CDATA[MTBH_Length_Maximum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:44:22 PM")
     AddProperty("9866", "MTBH_Length_Minimum_IN", <a><![CDATA[MTBH_Length_Minimum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:51:42 PM")
-    AddProperty("9844", "MTBH_Length_Minimum_User", <a><![CDATA[MTBH_Length_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!D47", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:56:22 PM")
+    AddProperty("9844", "MTBH_Length_Minimum_User", <a><![CDATA[MTBH_Length_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!D47", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:57:08 PM")
     AddProperty("9908", "MTBH_Length_Minimum_User_Min_Value", <a><![CDATA[MTBH_Length_Minimum_User_Min_Value]]></a>.Value, "", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:42:41 PM")
     AddProperty("9835", "MTBH_Length_Minimum_User_UOM", <a><![CDATA[MTBH_Length_Minimum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:44:13 PM")
-    AddProperty("9834", "MTBH_Use_Local", <a><![CDATA[MTBH_Use_Local]]></a>.Value, "AppCalc^'Belted PandA'!J40", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:48:55 PM")
+    AddProperty("9834", "MTBH_Use_Local", <a><![CDATA[MTBH_Use_Local]]></a>.Value, "AppCalc^'Belted PandA'!J40", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:47:52 PM")
     AddProperty("9880", "MTBH_Weight_Average_LBS", <a><![CDATA[MTBH_Weight_Average_LBS]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:51:57 PM")
-    AddProperty("9861", "MTBH_Weight_Average_User", <a><![CDATA[MTBH_Weight_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!J49", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:37:08 PM")
+    AddProperty("9861", "MTBH_Weight_Average_User", <a><![CDATA[MTBH_Weight_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!J49", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:58:09 PM")
     AddProperty("9864", "MTBH_Weight_Average_User_UOM", <a><![CDATA[MTBH_Weight_Average_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:36:06 PM")
     AddProperty("9878", "MTBH_Weight_Maximum_LBS", <a><![CDATA[MTBH_Weight_Maximum_LBS]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:52:09 PM")
-    AddProperty("9860", "MTBH_Weight_Maximum_User", <a><![CDATA[MTBH_Weight_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!J48", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:35:50 PM")
+    AddProperty("9860", "MTBH_Weight_Maximum_User", <a><![CDATA[MTBH_Weight_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!J48", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:58:03 PM")
     AddProperty("9915", "MTBH_Weight_Maximum_User_Max_Value", <a><![CDATA[MTBH_Weight_Maximum_User_Max_Value]]></a>.Value, "", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:35:27 PM")
     AddProperty("9863", "MTBH_Weight_Maximum_User_UOM", <a><![CDATA[MTBH_Weight_Maximum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:33:51 PM")
     AddProperty("9877", "MTBH_Weight_Minimum_LBS", <a><![CDATA[MTBH_Weight_Minimum_LBS]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:52:21 PM")
-    AddProperty("9859", "MTBH_Weight_Minimum_User", <a><![CDATA[MTBH_Weight_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!J47", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:33:27 PM")
+    AddProperty("9859", "MTBH_Weight_Minimum_User", <a><![CDATA[MTBH_Weight_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!J47", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:57:57 PM")
     AddProperty("9914", "MTBH_Weight_Minimum_User_Min_Value", <a><![CDATA[MTBH_Weight_Minimum_User_Min_Value]]></a>.Value, "", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:32:45 PM")
     AddProperty("9862", "MTBH_Weight_Minimum_User_UOM", <a><![CDATA[MTBH_Weight_Minimum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:30:28 PM")
     AddProperty("9872", "MTBH_Width_Average_IN", <a><![CDATA[MTBH_Width_Average_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:52:31 PM")
-    AddProperty("9855", "MTBH_Width_Average_User", <a><![CDATA[MTBH_Width_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!F49", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:15:47 PM")
+    AddProperty("9855", "MTBH_Width_Average_User", <a><![CDATA[MTBH_Width_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!F49", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:57:29 PM")
     AddProperty("9843", "MTBH_Width_Average_User_UOM", <a><![CDATA[MTBH_Width_Average_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:14:54 PM")
     AddProperty("9871", "MTBH_Width_Maximum_IN", <a><![CDATA[MTBH_Width_Maximum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:52:42 PM")
-    AddProperty("9854", "MTBH_Width_Maximum_User", <a><![CDATA[MTBH_Width_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!F48", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:22:03 PM")
+    AddProperty("9854", "MTBH_Width_Maximum_User", <a><![CDATA[MTBH_Width_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!F48", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:57:22 PM")
     AddProperty("9911", "MTBH_Width_Maximum_User_Max_Value", <a><![CDATA[MTBH_Width_Maximum_User_Max_Value]]></a>.Value, "", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:19:26 PM")
     AddProperty("9842", "MTBH_Width_Maximum_User_UOM", <a><![CDATA[MTBH_Width_Maximum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:12:33 PM")
     AddProperty("9870", "MTBH_Width_Minimum_IN", <a><![CDATA[MTBH_Width_Minimum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:52:54 PM")
-    AddProperty("9853", "MTBH_Width_Minimum_User", <a><![CDATA[MTBH_Width_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!F47", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:23:42 PM")
+    AddProperty("9853", "MTBH_Width_Minimum_User", <a><![CDATA[MTBH_Width_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!F47", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:57:15 PM")
     AddProperty("9910", "MTBH_Width_Minimum_User_Min_Value", <a><![CDATA[MTBH_Width_Minimum_User_Min_Value]]></a>.Value, "", "Double","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:19:35 PM")
     AddProperty("9841", "MTBH_Width_Minimum_User_UOM", <a><![CDATA[MTBH_Width_Minimum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 2:54:47 PM")
+    AddProperty("10321", "Output_Carton_Stability_Length_IN", <a><![CDATA[Output_Carton_Stability_Length_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:30:14 PM")
+    AddProperty("10319", "Output_Carton_Stability_Length_User", <a><![CDATA[Output_Carton_Stability_Length_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!O14", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:28:41 PM")
+    AddProperty("10300", "Output_Carton_Stability_Length_User_UOM", <a><![CDATA[Output_Carton_Stability_Length_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:55:58 PM")
+    AddProperty("10318", "Output_Induct_Max_Lgth_of_Carton_Scanned_IN", <a><![CDATA[Output_Induct_Max_Lgth_of_Carton_Scanned_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:30:19 PM")
+    AddProperty("10317", "Output_Induct_Max_Lgth_of_Carton_Scanned_User", <a><![CDATA[Output_Induct_Max_Lgth_of_Carton_Scanned_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!O13", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:28:48 PM")
+    AddProperty("10299", "Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM", <a><![CDATA[Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:55:47 PM")
+    AddProperty("10324", "Output_Induct_Scan_Data_Cap_Window_Lgth_IN", <a><![CDATA[Output_Induct_Scan_Data_Cap_Window_Lgth_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:30:24 PM")
+    AddProperty("10323", "Output_Induct_Scan_Data_Cap_Window_Lgth_User", <a><![CDATA[Output_Induct_Scan_Data_Cap_Window_Lgth_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!O16", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:29:07 PM")
+    AddProperty("10302", "Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM", <a><![CDATA[Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:56:18 PM")
+    AddProperty("10322", "Output_Induction_Scan_Window_Length_IN", <a><![CDATA[Output_Induction_Scan_Window_Length_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:30:29 PM")
+    AddProperty("10320", "Output_Induction_Scan_Window_Length_User", <a><![CDATA[Output_Induction_Scan_Window_Length_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!O15", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:29:12 PM")
+    AddProperty("10301", "Output_Induction_Scan_Window_Length_User_UOM", <a><![CDATA[Output_Induction_Scan_Window_Length_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:56:10 PM")
+    AddProperty("10326", "Output_Label_Data_Acq_Distance_App_1_IN", <a><![CDATA[Output_Label_Data_Acq_Distance_App_1_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:30:34 PM")
+    AddProperty("10325", "Output_Label_Data_Acq_Distance_App_1_User", <a><![CDATA[Output_Label_Data_Acq_Distance_App_1_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!O17", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:29:25 PM")
+    AddProperty("10303", "Output_Label_Data_Acq_Distance_App_1_User_UOM", <a><![CDATA[Output_Label_Data_Acq_Distance_App_1_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:56:26 PM")
+    AddProperty("10328", "Output_Label_Data_Acq_Distance_App_2_IN", <a><![CDATA[Output_Label_Data_Acq_Distance_App_2_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:30:40 PM")
+    AddProperty("10327", "Output_Label_Data_Acq_Distance_App_2_User", <a><![CDATA[Output_Label_Data_Acq_Distance_App_2_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!O18", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:30:08 PM")
+    AddProperty("10304", "Output_Label_Data_Acq_Distance_App_2_User_UOM", <a><![CDATA[Output_Label_Data_Acq_Distance_App_2_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:56:37 PM")
+    AddProperty("10352", "Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN", <a><![CDATA[Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:09:40 PM")
+    AddProperty("10351", "Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User", <a><![CDATA[Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AB14", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:08:40 PM")
+    AddProperty("10307", "Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM", <a><![CDATA[Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:57:18 PM")
+    AddProperty("10350", "Output_Min_Distance_Between_Applicator_1_2_IN", <a><![CDATA[Output_Min_Distance_Between_Applicator_1_2_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:07:36 PM")
+    AddProperty("10349", "Output_Min_Distance_Between_Applicator_1_2_User", <a><![CDATA[Output_Min_Distance_Between_Applicator_1_2_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AB13", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:06:38 PM")
+    AddProperty("10306", "Output_Min_Distance_Between_Applicator_1_2_User_UO", <a><![CDATA[Output_Min_Distance_Between_Applicator_1_2_User_UO]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:57:07 PM")
+    AddProperty("10330", "Output_Min_Distance_for_Printer_Setup_IN", <a><![CDATA[Output_Min_Distance_for_Printer_Setup_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:30:45 PM")
+    AddProperty("10329", "Output_Min_Distance_for_Printer_Setup_User", <a><![CDATA[Output_Min_Distance_for_Printer_Setup_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!O19", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 9:29:39 PM")
+    AddProperty("10305", "Output_Min_Distance_for_Printer_Setup_User_UOM", <a><![CDATA[Output_Min_Distance_for_Printer_Setup_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:56:51 PM")
+    AddProperty("10366", "Output_Min_Distance_IN", <a><![CDATA[Output_Min_Distance_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:42:06 PM")
+    AddProperty("10365", "Output_Min_Distance_User", <a><![CDATA[Output_Min_Distance_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AO17", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:41:35 PM")
+    AddProperty("10364", "Output_Min_Distance_User_UOM", <a><![CDATA[Output_Min_Distance_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:39:34 PM")
+    AddProperty("10362", "Output_PandA_Belt_Exit_PE_Distance_IN", <a><![CDATA[Output_PandA_Belt_Exit_PE_Distance_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:22:04 PM")
+    AddProperty("10361", "Output_PandA_Belt_Exit_PE_Distance_User", <a><![CDATA[Output_PandA_Belt_Exit_PE_Distance_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AB19", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:21:26 PM")
+    AddProperty("10312", "Output_PandA_Belt_Exit_PE_Distance_User_UOM", <a><![CDATA[Output_PandA_Belt_Exit_PE_Distance_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:58:03 PM")
+    AddProperty("10379", "Output_Total_Calc_Belt_Length_Double_FT", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_FT]]></a>.Value, "Conversion to FT", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 5:49:33 PM")
+    AddProperty("10378", "Output_Total_Calc_Belt_Length_Double_FT_User", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_FT_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AJ19", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:59:34 PM")
+    AddProperty("10316", "Output_Total_Calc_Belt_Length_Double_FT_User_UOM", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_FT_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:59:01 PM")
+    AddProperty("10377", "Output_Total_Calc_Belt_Length_Double_IN", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:56:19 PM")
+    AddProperty("10370", "Output_Total_Calc_Belt_Length_Double_IN_User", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_IN_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AG19", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:55:37 PM")
+    AddProperty("10314", "Output_Total_Calc_Belt_Length_Double_IN_User_UOM", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_IN_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:58:28 PM")
+    AddProperty("10369", "Output_Total_Calc_Belt_Length_Single_FT", <a><![CDATA[Output_Total_Calc_Belt_Length_Single_FT]]></a>.Value, "Conversion to FT", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 5:49:50 PM")
+    AddProperty("10368", "Output_Total_Calc_Belt_Length_Single_FT_User", <a><![CDATA[Output_Total_Calc_Belt_Length_Single_FT_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AJ14", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:49:54 PM")
+    AddProperty("10315", "Output_Total_Calc_Belt_Length_Single_FT_User_UOM", <a><![CDATA[Output_Total_Calc_Belt_Length_Single_FT_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:58:55 PM")
+    AddProperty("10367", "Output_Total_Calc_Belt_Length_Single_IN", <a><![CDATA[Output_Total_Calc_Belt_Length_Single_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:48:56 PM")
+    AddProperty("10363", "Output_Total_Calc_Belt_Length_Single_IN_User", <a><![CDATA[Output_Total_Calc_Belt_Length_Single_IN_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AG14", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:47:47 PM")
+    AddProperty("10313", "Output_Total_Calc_Belt_Length_Single_IN_User_UOM", <a><![CDATA[Output_Total_Calc_Belt_Length_Single_IN_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:58:17 PM")
+    AddProperty("10356", "Output_Ver_Max_Length_of_Carton_Scanned_IN", <a><![CDATA[Output_Ver_Max_Length_of_Carton_Scanned_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:12:49 PM")
+    AddProperty("10355", "Output_Ver_Max_Length_of_Carton_Scanned_User", <a><![CDATA[Output_Ver_Max_Length_of_Carton_Scanned_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AB16", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:12:08 PM")
+    AddProperty("10309", "Output_Ver_Max_Length_of_Carton_Scanned_User_UOM", <a><![CDATA[Output_Ver_Max_Length_of_Carton_Scanned_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:57:34 PM")
+    AddProperty("10360", "Output_Ver_Scan_Data_Capture_Window_Length_IN", <a><![CDATA[Output_Ver_Scan_Data_Capture_Window_Length_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:18:38 PM")
+    AddProperty("10359", "Output_Ver_Scan_Data_Capture_Window_Length_User", <a><![CDATA[Output_Ver_Scan_Data_Capture_Window_Length_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AB18", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:17:47 PM")
+    AddProperty("10311", "Output_Ver_Scan_Data_Capture_Window_Length_User_UO", <a><![CDATA[Output_Ver_Scan_Data_Capture_Window_Length_User_UO]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:57:52 PM")
+    AddProperty("10358", "Output_Verify_Scanner_Distance_to_Xmit_IN", <a><![CDATA[Output_Verify_Scanner_Distance_to_Xmit_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:16:55 PM")
+    AddProperty("10357", "Output_Verify_Scanner_Distance_to_Xmit_User", <a><![CDATA[Output_Verify_Scanner_Distance_to_Xmit_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AB17", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:17:06 PM")
+    AddProperty("10310", "Output_Verify_Scanner_Distance_to_Xmit_User_UOM", <a><![CDATA[Output_Verify_Scanner_Distance_to_Xmit_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:57:45 PM")
+    AddProperty("10354", "Output_Verify_Scanner_Window_Length_IN", <a><![CDATA[Output_Verify_Scanner_Window_Length_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:11:15 PM")
+    AddProperty("10353", "Output_Verify_Scanner_Window_Length_User", <a><![CDATA[Output_Verify_Scanner_Window_Length_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AB15", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:10:46 PM")
+    AddProperty("10308", "Output_Verify_Scanner_Window_Length_User_UOM", <a><![CDATA[Output_Verify_Scanner_Window_Length_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:57:26 PM")
     AddProperty("10060", "App_Down_Stroke_Tamp_Clearance_IN", <a><![CDATA[App_Down_Stroke_Tamp_Clearance_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Printer_Applicator","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 1:53:59 PM")
     AddProperty("10057", "App_Down_Stroke_Tamp_Clearance_User", <a><![CDATA[App_Down_Stroke_Tamp_Clearance_User]]></a>.Value, "AppCalc^'Belted PandA'!J88", "Double","","AppCalc_PandA_Printer_Applicator","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 2:50:32 PM")
     AddProperty("10059", "App_Down_Stroke_Tamp_Clearance_User_Max_Value", <a><![CDATA[App_Down_Stroke_Tamp_Clearance_User_Max_Value]]></a>.Value, "", "Double","","AppCalc_PandA_Printer_Applicator","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 2:50:46 PM")
@@ -2670,6 +3439,7 @@ Option Infer On
     AddProperty("10254", "Scale_Scale_Gap_Override_User_UOM", <a><![CDATA[Scale_Scale_Gap_Override_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:46:14 PM")
     AddProperty("10251", "Scale_Scale_Type", <a><![CDATA[Scale_Scale_Type]]></a>.Value, "AppCalc^'Belted PandA'!J66", "String","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:22:54 PM")
     AddProperty("10252", "Scale_Spacing_Type", <a><![CDATA[Scale_Spacing_Type]]></a>.Value, "AppCalc^'Belted PandA'!J68", "String","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:45:28 PM")
+    AddProperty("10274", "Summary_Carton_Length_User", <a><![CDATA[Summary_Carton_Length_User]]></a>.Value, "AppCalc^'Belted PandA'!C145", "Double","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 4:27:01 PM")
     AddProperty("10211", "Ver_Scan_Carton_Panels_Scanned_Quantity", <a><![CDATA[Ver_Scan_Carton_Panels_Scanned_Quantity]]></a>.Value, "AppCalc^'Belted PandA'!J104", "Long","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 1:20:27 PM")
     AddProperty("10213", "Ver_Scan_Carton_Presentation", <a><![CDATA[Ver_Scan_Carton_Presentation]]></a>.Value, "AppCalc^'Belted PandA'!J106", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 1:31:03 PM")
     AddProperty("10241", "Ver_Scan_Distance_Last_Tamp__Scan_Window_IN", <a><![CDATA[Ver_Scan_Distance_Last_Tamp__Scan_Window_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:56:55 PM")
@@ -2687,7 +3457,7 @@ Option Infer On
     AddProperty("10249", "Ver_Scan_Min_Xmit_Point_FromScan_Window_IN", <a><![CDATA[Ver_Scan_Min_Xmit_Point_From Scan_Window_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:09:47 PM")
     AddProperty("10248", "Ver_Scan_Min_Xmit_Point_FromScan_Window_User", <a><![CDATA[Ver_Scan_Min_Xmit_Point_From Scan_Window_User]]></a>.Value, "AppCalc^'Belted PandA'!J116", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:09:03 PM")
     AddProperty("10232", "Ver_Scan_Min_Xmit_Point_FromScan_Window_User_UOM", <a><![CDATA[Ver_Scan_Min_Xmit_Point_From Scan_Window_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:45:13 PM")
-    AddProperty("10226", "Ver_Scan_Percent_Max_Carton_Length_Scanned", <a><![CDATA[Ver_Scan_Percent_Max_Carton_Length_Scanned]]></a>.Value, "AppCalc^'Belted PandA'!J113", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:42:53 PM")
+    AddProperty("10226", "Ver_Scan_Percent_Max_Carton_Length_Scanned", <a><![CDATA[Ver_Scan_Percent_Max_Carton_Length_Scanned]]></a>.Value, "AppCalc^'Belted PandA'!J113", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 7:55:39 PM")
     AddProperty("10225", "Ver_Scan_Percent_Max_Carton_Length_Scanned_User", <a><![CDATA[Ver_Scan_Percent_Max_Carton_Length_Scanned_User]]></a>.Value, "AppCalc^'Belted PandA'!J113", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:42:12 PM")
     AddProperty("10209", "Ver_Scan_Rescan_Barcode_For_Verification", <a><![CDATA[Ver_Scan_Rescan_Barcode_For_Verification]]></a>.Value, "AppCalc^'Belted PandA'!J102", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 1:18:00 PM")
     AddProperty("10236", "Ver_Scan_Scan_Window_Length_Req_IN", <a><![CDATA[Ver_Scan_Scan_Window_Length_Req_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:50:37 PM")
@@ -2702,11 +3472,25 @@ Option Infer On
     AddProperty("10244", "Ver_Scan_Tracking_Photocell_Distance_Min_Value", <a><![CDATA[Ver_Scan_Tracking_Photocell_Distance_Min_Value]]></a>.Value, "", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:00:41 PM")
     AddProperty("10242", "Ver_Scan_Tracking_Photocell_Distance_User", <a><![CDATA[Ver_Scan_Tracking_Photocell_Distance_User]]></a>.Value, "AppCalc^'Belted PandA'!J114", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:03:04 PM")
     AddProperty("10230", "Ver_Scan_Tracking_Photocell_Distance_User_UOM", <a><![CDATA[Ver_Scan_Tracking_Photocell_Distance_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:44:55 PM")
+    AddProperty("10291", "Summary_Caclucation_Errors_Present", <a><![CDATA[Summary_Caclucation_Errors_Present]]></a>.Value, "Number of errors present at runtime", "Long","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:33:02 PM")
+    AddProperty("10290", "Summary_Caclucation_Warnings_Present", <a><![CDATA[Summary_Caclucation_Warnings_Present]]></a>.Value, "Number of warnings present at runtime", "Long","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:33:08 PM")
+    AddProperty("10288", "Summary_Min_H_to_H_Spacing_Limit_Set_By", <a><![CDATA[Summary_Min_H_to_H_Spacing_Limit_Set_By]]></a>.Value, "AppCalc^'Belted PandA'!J136", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:54:48 PM")
+    AddProperty("10285", "Summary_Min_H_to_H_Spacing_Req_IN", <a><![CDATA[Summary_Min_H_to_H_Spacing_Req_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:44:30 PM")
+    AddProperty("10284", "Summary_Min_H_to_H_Spacing_Req_User", <a><![CDATA[Summary_Min_H_to_H_Spacing_Req_User]]></a>.Value, "AppCalc^'Belted PandA'!J135", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:43:44 PM")
+    AddProperty("10282", "Summary_Min_H_to_H_Spacing_Req_User_UOM", <a><![CDATA[Summary_Min_H_to_H_Spacing_Req_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:38:20 PM")
+    AddProperty("10289", "Summary_Min_T_to_H_Gap_Limit_Set_By", <a><![CDATA[Summary_Min_T_to_H_Gap_Limit_Set_By]]></a>.Value, "AppCalc^'Belted PandA'!J136", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:58:18 PM")
+    AddProperty("10287", "Summary_Min_T_to_H_Gap_Req_IN", <a><![CDATA[Summary_Min_T_to_H_Gap_Req_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:52:12 PM")
+    AddProperty("10286", "Summary_Min_T_to_H_Gap_Req_User", <a><![CDATA[Summary_Min_T_to_H_Gap_Req_User]]></a>.Value, "AppCalc^'Belted PandA'!J137", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:51:30 PM")
+    AddProperty("10283", "Summary_Min_T_to_H_Gap_Req_User_UOM", <a><![CDATA[Summary_Min_T_to_H_Gap_Req_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:38:30 PM")
     AddProperty("9994", "Transnorm_TS4800_Control_Reaction_Time_Distance_IN", <a><![CDATA[Transnorm_TS4800_Control_Reaction_Time_Distance_IN]]></a>.Value, "AppCalc^'Belted PandA'!T127", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:36:54 PM")
     AddProperty("9992", "Transnorm_TS4800_Divert_Angle", <a><![CDATA[Transnorm_TS4800_Divert_Angle]]></a>.Value, "AppCalc^'Belted PandA'!T124", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:36:58 PM")
     AddProperty("9993", "Transnorm_TS4800_Divert_Shifting_Distance_IN", <a><![CDATA[Transnorm_TS4800_Divert_Shifting_Distance_IN]]></a>.Value, "AppCalc^'Belted PandA'!T125", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:37:03 PM")
     AddProperty("9995", "Transnorm_TS4800_Encoder_Resolution_IN", <a><![CDATA[Transnorm_TS4800_Encoder_Resolution_IN]]></a>.Value, "AppCalc^'Belted PandA'!T128", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:37:32 PM")
     AddProperty("9996", "Transnorm_TS4800_Required_Gap_Max_Box", <a><![CDATA[Transnorm_TS4800_Required_Gap_Max_Box]]></a>.Value, "AppCalc^'Belted PandA'!T128", "Double","","AppCalc_PandA_Transnorm_TS4800","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 1:38:48 PM")
+    AddProperty("10424", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 4:00:43 PM")
+    AddProperty("10425", "XMLObjectName", <a><![CDATA[XMLObjectName]]></a>.Value, "XML Export Object Name", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/16/2025 4:03:44 PM")
+    AddProperty("10426", "XMLObjectType", <a><![CDATA[XMLObjectType]]></a>.Value, "XML Export Object Type", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/16/2025 4:00:43 PM")
+    AddProperty("10427", "XMLObjectValue", <a><![CDATA[XMLObjectValue]]></a>.Value, "XML Export Object Value", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/16/2025 4:00:43 PM")
     AddProperty("9805", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 4:45:56 PM")
     
       AddPropertyExtended(9830,"Gen_Accumulation_Zone_Quantity", "9414", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/11/2025 3:37:39 PM")
@@ -2717,7 +3501,29 @@ Option Infer On
     
       AddPropertyExtended(9806,"Gen_Throughput_Rate", "9390", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/11/2025 3:39:37 PM")
     
-      AddPropertyExtended(9844,"MTBH_Length_Minimum_User", "9428", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/11/2025 2:56:22 PM")
+      AddPropertyExtended(9858,"MTBH_Height_Average_User", "9442", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:57:51 PM")
+    
+      AddPropertyExtended(9857,"MTBH_Height_Maximum_User", "9441", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:57:45 PM")
+    
+      AddPropertyExtended(9856,"MTBH_Height_Minimum_User", "9440", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:57:35 PM")
+    
+      AddPropertyExtended(9846,"MTBH_Length_Average_User", "9430", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:56:58 PM")
+    
+      AddPropertyExtended(9845,"MTBH_Length_Maximum_User", "9429", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:56:52 PM")
+    
+      AddPropertyExtended(9844,"MTBH_Length_Minimum_User", "9428", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:57:08 PM")
+    
+      AddPropertyExtended(9861,"MTBH_Weight_Average_User", "9445", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:58:09 PM")
+    
+      AddPropertyExtended(9860,"MTBH_Weight_Maximum_User", "9444", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:58:03 PM")
+    
+      AddPropertyExtended(9859,"MTBH_Weight_Minimum_User", "9443", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:57:57 PM")
+    
+      AddPropertyExtended(9855,"MTBH_Width_Average_User", "9439", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:57:29 PM")
+    
+      AddPropertyExtended(9854,"MTBH_Width_Maximum_User", "9438", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:57:22 PM")
+    
+      AddPropertyExtended(9853,"MTBH_Width_Minimum_User", "9437", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:57:15 PM")
     
       AddPropertyExtended(10057,"App_Down_Stroke_Tamp_Clearance_User", "9639", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/14/2025 2:50:32 PM")
     
@@ -2761,7 +3567,7 @@ Option Infer On
     
       AddPropertyExtended(10238,"Ver_Scan_Distance_Last_Tamp__Scan_Window_User", "9817", "EXTLABEL", "Label", "FORMULA", "GLOBAL\H602502", "7/15/2025 2:56:21 PM")
     
-      AddPropertyExtended(10226,"Ver_Scan_Percent_Max_Carton_Length_Scanned", "9805", "EXTLABEL", "Label", "FORMULA", "GLOBAL\H602502", "7/15/2025 2:42:53 PM")
+      AddPropertyExtended(10226,"Ver_Scan_Percent_Max_Carton_Length_Scanned", "9805", "EXTLABEL", "Label", "FORMULA", "GLOBAL\H602502", "7/16/2025 7:55:39 PM")
     
       AddPropertyExtended(10225,"Ver_Scan_Percent_Max_Carton_Length_Scanned_User", "9804", "EXTLABEL", "Label", "FORMULA", "GLOBAL\H602502", "7/15/2025 2:42:13 PM")
     
@@ -2850,6 +3656,44 @@ Option Infer On
       AddValidValue("MTBH_Width_Maximum_User_UOM")
     
       AddValidValue("MTBH_Width_Minimum_User_UOM")
+    
+      AddValidValue("Output_Carton_Stability_Length_User_UOM")
+    
+      AddValidValue("Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM")
+    
+      AddValidValue("Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM")
+    
+      AddValidValue("Output_Induction_Scan_Window_Length_User_UOM")
+    
+      AddValidValue("Output_Label_Data_Acq_Distance_App_1_User_UOM")
+    
+      AddValidValue("Output_Label_Data_Acq_Distance_App_2_User_UOM")
+    
+      AddValidValue("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM")
+    
+      AddValidValue("Output_Min_Distance_Between_Applicator_1_2_User_UO")
+    
+      AddValidValue("Output_Min_Distance_for_Printer_Setup_User_UOM")
+    
+      AddValidValue("Output_Min_Distance_User_UOM")
+    
+      AddValidValue("Output_PandA_Belt_Exit_PE_Distance_User_UOM")
+    
+      AddValidValue("Output_Total_Calc_Belt_Length_Double_FT_User_UOM")
+    
+      AddValidValue("Output_Total_Calc_Belt_Length_Double_IN_User_UOM")
+    
+      AddValidValue("Output_Total_Calc_Belt_Length_Single_FT_User_UOM")
+    
+      AddValidValue("Output_Total_Calc_Belt_Length_Single_IN_User_UOM")
+    
+      AddValidValue("Output_Ver_Max_Length_of_Carton_Scanned_User_UOM")
+    
+      AddValidValue("Output_Ver_Scan_Data_Capture_Window_Length_User_UO")
+    
+      AddValidValue("Output_Verify_Scanner_Distance_to_Xmit_User_UOM")
+    
+      AddValidValue("Output_Verify_Scanner_Window_Length_User_UOM")
     
       AddValidValue("App_Down_Stroke_Tamp_Clearance_User_UOM")
     
@@ -2943,9 +3787,29 @@ Option Infer On
     
       AddValidValue("Ver_Scan_Tracking_Photocell_Distance_User_UOM")
     
+      AddValidValue("Summary_Min_H_to_H_Spacing_Req_User_UOM")
+    
+      AddValidValue("Summary_Min_T_to_H_Gap_Req_User_UOM")
+    
+      oSubpart = AddSubpart(340,"PandA_Theoretical_Max_Throughput_Rate", <a><![CDATA[PandA_Theoretical_Max_Throughput_Rate]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/15/2025 4:24:44 PM")
+      
+        oSubpart.AddVPF (422, "CAE_App_Calc_Print_And_Apply_Theoretical_Max", "CAE_App_Calc_Print_And_Apply_Theoretical_Max")
+      
       oConnection = AddConnection("My_EHS350_Data", <a><![CDATA[My_EHS350_Data]]></a>.Value, "", "174", "OO", 0, "","AppCalc_PandA", 9999, "", "GLOBAL\H602502", "7/15/2025 12:02:48 PM")
       
         oConnection.AddVPF(419, "CAE_EHS350_Data")
+      
+      oConnection = AddConnection("My_PRD", <a><![CDATA[My_PRD]]></a>.Value, "", "188", "OO", 0, "","AppCalc_PandA", 9999, "", "GLOBAL\H602502", "7/16/2025 1:04:12 PM")
+      
+        oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
+      
+      oConnection = AddConnection("My_Setup", <a><![CDATA[My_Setup]]></a>.Value, "", "195", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/16/2025 7:08:38 PM")
+      
+        oConnection.AddVPF(119, "APC_Setup")
+      
+      oConnection = AddConnection("MySource", <a><![CDATA[My Source Part Family]]></a>.Value, "Connection to the Value Provider Part Family Instance", "193", "OO", 0, "","Oracle Config XML", 9999, "Oracle Configurator Transfer", "GLOBAL\H602502", "7/16/2025 4:00:43 PM")
+      
+        oConnection.AddVPF(33, "OCT_Accessory")
       
     End Sub
 
@@ -2979,6 +3843,18 @@ Option Infer On
           InitProperty("Brush_Length_Factor_IN", "9658", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 3:27:33 PM", "", "In Development",  0,17024)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Customer_Date", "9960", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 1:09:51 PM", "", "In Development",  0,18058)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Customer_Location", "9958", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 1:09:59 PM", "", "In Development",  0,18052)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Customer_Name", "9957", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 1:10:03 PM", "", "In Development",  0,18050)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Customer_Proposal_Number", "9959", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 1:09:55 PM", "", "In Development",  0,18055)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Max_Pneumatic_Stroke_IN", "9714", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 6:50:51 PM", "", "In Development",  0,17130)
         End If
             If Incontext("-1", ctx) Then
@@ -3000,7 +3876,7 @@ Option Infer On
           InitProperty("Servo_Tamp_Min_Gap_IN", "9711", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 6:49:05 PM", "", "In Development",  0,17129)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("User_UOM_System", "9392", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/10/2025 6:08:33 PM", "", "In Development",  0,16115)
+          InitProperty("User_UOM_System", "9392", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:02:15 PM", "", "In Development",  0,18229)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Acq_Label_Data_Acquisition_Method", "9533", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 7:15:41 PM", "", "In Development",  0,16575)
@@ -3024,7 +3900,7 @@ Option Infer On
           InitProperty("Conv_Total_App_Belt_Length_Req_FT", "9588", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:06:14 PM", "", "In Development",  0,16732)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Conv_Total_App_Belt_Length_Req_FT_User", "9585", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:28:30 PM", "", "In Development",  0,16727)
+          InitProperty("Conv_Total_App_Belt_Length_Req_FT_User", "9585", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 6:13:14 PM", "", "In Development",  0,18180)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Conv_Total_App_Belt_Length_Req_FT_User_UOM", "9582", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/14/2025 8:03:11 PM", "", "In Development",  0,16723)
@@ -3033,7 +3909,7 @@ Option Infer On
           InitProperty("Conv_Total_App_Belt_Length_Req_IN", "9587", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:05:42 PM", "", "In Development",  0,16730)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Conv_Total_App_Belt_Length_Req_IN_User", "9584", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:28:24 PM", "", "In Development",  0,16726)
+          InitProperty("Conv_Total_App_Belt_Length_Req_IN_User", "9584", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 6:12:31 PM", "", "In Development",  0,18179)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Conv_Total_App_Belt_Length_Req_IN_User_UOM", "9581", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:02:43 PM", "", "In Development",  0,16719)
@@ -3042,7 +3918,7 @@ Option Infer On
           InitProperty("Conv_Total_Solution_Length_FT", "9589", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 3:06:37 PM", "", "In Development",  0,16734)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Conv_Total_Solution_Length_FT_User", "9586", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 4:28:38 PM", "", "In Development",  0,16728)
+          InitProperty("Conv_Total_Solution_Length_FT_User", "9586", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 6:21:16 PM", "", "In Development",  0,18182)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Conv_Total_Solution_Length_FT_User_UOM", "9583", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/14/2025 8:03:23 PM", "", "In Development",  0,16724)
@@ -3225,7 +4101,7 @@ Option Infer On
           InitProperty("MTBH_Height_Average_IN", "9459", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:50:50 PM", "", "In Development",  0,16635)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Height_Average_User", "9442", "MTBH_Height_Minimum_User", "MTBH_Height_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 5:49:50 PM", "", "In Development",  0,17118)
+          InitProperty("MTBH_Height_Average_User", "9442", "MTBH_Height_Minimum_User", "MTBH_Height_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:57:51 PM", "", "In Development",  0,18204)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Height_Average_User_UOM", "9436", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 12:48:55 PM", "", "In Development",  0,16195)
@@ -3234,7 +4110,7 @@ Option Infer On
           InitProperty("MTBH_Height_Maximum_IN", "9458", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:50:58 PM", "", "In Development",  0,16636)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Height_Maximum_User", "9441", "MTBH_Height_Minimum_User", "MTBH_Height_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:28:27 PM", "", "In Development",  0,16473)
+          InitProperty("MTBH_Height_Maximum_User", "9441", "MTBH_Height_Minimum_User", "MTBH_Height_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:57:45 PM", "", "In Development",  0,18201)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Height_Maximum_User_Max_Value", "9497", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:28:10 PM", "", "In Development",  0,16476)
@@ -3246,7 +4122,7 @@ Option Infer On
           InitProperty("MTBH_Height_Minimum_IN", "9457", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:51:08 PM", "", "In Development",  0,16637)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Height_Minimum_User", "9440", "MTBH_Height_Minimum_User_Min_Value", "MTBH_Height_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:26:32 PM", "", "In Development",  0,16470)
+          InitProperty("MTBH_Height_Minimum_User", "9440", "MTBH_Height_Minimum_User_Min_Value", "MTBH_Height_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:57:35 PM", "", "In Development",  0,18202)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Height_Minimum_User_Min_Value", "9496", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:26:16 PM", "", "In Development",  0,16472)
@@ -3258,7 +4134,7 @@ Option Infer On
           InitProperty("MTBH_Length_Average_IN", "9452", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:51:20 PM", "", "In Development",  0,16638)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Length_Average_User", "9430", "MTBH_Length_Minimum_User", "MTBH_Length_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 2:53:53 PM", "", "In Development",  0,16452)
+          InitProperty("MTBH_Length_Average_User", "9430", "MTBH_Length_Minimum_User", "MTBH_Length_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:56:58 PM", "", "In Development",  0,18191)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Length_Average_User_UOM", "9421", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 12:49:13 PM", "", "In Development",  0,16171)
@@ -3267,7 +4143,7 @@ Option Infer On
           InitProperty("MTBH_Length_Maximum_IN", "9451", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:51:31 PM", "", "In Development",  0,16639)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Length_Maximum_User", "9429", "MTBH_Length_Minimum_User", "MTBH_Length_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 2:56:59 PM", "", "In Development",  0,16453)
+          InitProperty("MTBH_Length_Maximum_User", "9429", "MTBH_Length_Minimum_User", "MTBH_Length_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:56:52 PM", "", "In Development",  0,18189)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Length_Maximum_User_Max_Value", "9493", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:10:28 PM", "", "In Development",  0,16456)
@@ -3279,7 +4155,7 @@ Option Infer On
           InitProperty("MTBH_Length_Minimum_IN", "9450", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:51:42 PM", "", "In Development",  0,16640)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Length_Minimum_User", "9428", "MTBH_Length_Minimum_User_Min_Value", "MTBH_Length_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 2:56:22 PM", "", "In Development",  0,16444)
+          InitProperty("MTBH_Length_Minimum_User", "9428", "MTBH_Length_Minimum_User_Min_Value", "MTBH_Length_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:57:08 PM", "", "In Development",  0,18188)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Length_Minimum_User_Min_Value", "9492", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 2:42:41 PM", "", "In Development",  0,16448)
@@ -3288,13 +4164,13 @@ Option Infer On
           InitProperty("MTBH_Length_Minimum_User_UOM", "9419", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 12:49:24 PM", "", "In Development",  0,16167)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Use_Local", "9418", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 1:24:34 PM", "", "In Development",  0,16430)
+          InitProperty("MTBH_Use_Local", "9418", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:47:52 PM", "", "In Development",  0,16430)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Weight_Average_LBS", "9464", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:51:57 PM", "", "In Development",  0,16641)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Weight_Average_User", "9445", "MTBH_Weight_Minimum_User", "MTBH_Weight_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:37:08 PM", "", "In Development",  0,16486)
+          InitProperty("MTBH_Weight_Average_User", "9445", "MTBH_Weight_Minimum_User", "MTBH_Weight_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:58:09 PM", "", "In Development",  0,18213)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Weight_Average_User_UOM", "9448", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 12:49:32 PM", "", "In Development",  0,16212)
@@ -3303,7 +4179,7 @@ Option Infer On
           InitProperty("MTBH_Weight_Maximum_LBS", "9462", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:52:09 PM", "", "In Development",  0,16642)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Weight_Maximum_User", "9444", "MTBH_Weight_Minimum_User", "MTBH_Weight_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:35:50 PM", "", "In Development",  0,16483)
+          InitProperty("MTBH_Weight_Maximum_User", "9444", "MTBH_Weight_Minimum_User", "MTBH_Weight_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:58:03 PM", "", "In Development",  0,18214)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Weight_Maximum_User_Max_Value", "9499", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:35:27 PM", "", "In Development",  0,16485)
@@ -3315,7 +4191,7 @@ Option Infer On
           InitProperty("MTBH_Weight_Minimum_LBS", "9461", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:52:21 PM", "", "In Development",  0,16644)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Weight_Minimum_User", "9443", "MTBH_Weight_Minimum_User_Min_Value", "MTBH_Weight_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:33:12 PM", "", "In Development",  0,16481)
+          InitProperty("MTBH_Weight_Minimum_User", "9443", "MTBH_Weight_Minimum_User_Min_Value", "MTBH_Weight_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:57:57 PM", "", "In Development",  0,18215)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Weight_Minimum_User_Min_Value", "9498", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:32:45 PM", "", "In Development",  0,16480)
@@ -3327,7 +4203,7 @@ Option Infer On
           InitProperty("MTBH_Width_Average_IN", "9456", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:52:31 PM", "", "In Development",  0,16645)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Width_Average_User", "9439", "MTBH_Width_Minimum_User", "MTBH_Width_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:15:47 PM", "", "In Development",  0,16461)
+          InitProperty("MTBH_Width_Average_User", "9439", "MTBH_Width_Minimum_User", "MTBH_Width_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:57:29 PM", "", "In Development",  0,18197)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Width_Average_User_UOM", "9427", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 12:49:55 PM", "", "In Development",  0,16183)
@@ -3336,7 +4212,7 @@ Option Infer On
           InitProperty("MTBH_Width_Maximum_IN", "9455", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:52:42 PM", "", "In Development",  0,16646)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Width_Maximum_User", "9438", "MTBH_Width_Minimum_User", "MTBH_Width_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:22:03 PM", "", "In Development",  0,16468)
+          InitProperty("MTBH_Width_Maximum_User", "9438", "MTBH_Width_Minimum_User", "MTBH_Width_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:57:22 PM", "", "In Development",  0,18195)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Width_Maximum_User_Max_Value", "9495", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:19:26 PM", "", "In Development",  0,16464)
@@ -3348,13 +4224,184 @@ Option Infer On
           InitProperty("MTBH_Width_Minimum_IN", "9454", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:52:54 PM", "", "In Development",  0,16648)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Width_Minimum_User", "9437", "MTBH_Width_Minimum_User_Min_Value", "MTBH_Width_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:23:42 PM", "", "In Development",  0,16469)
+          InitProperty("MTBH_Width_Minimum_User", "9437", "MTBH_Width_Minimum_User_Min_Value", "MTBH_Width_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:57:14 PM", "", "In Development",  0,18193)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Width_Minimum_User_Min_Value", "9494", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 3:19:35 PM", "", "In Development",  0,16465)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Width_Minimum_User_UOM", "9425", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 12:50:05 PM", "", "In Development",  0,16179)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Carton_Stability_Length_IN", "9899", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:04:57 PM", "", "In Development",  0,17657)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Carton_Stability_Length_User", "9897", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:28:41 PM", "", "In Development",  0,17655)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Carton_Stability_Length_User_UOM", "9878", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:55:58 PM", "", "In Development",  0,17612)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Induct_Max_Lgth_of_Carton_Scanned_IN", "9896", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:02:07 PM", "", "In Development",  0,17651)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Induct_Max_Lgth_of_Carton_Scanned_User", "9895", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:28:48 PM", "", "In Development",  0,17649)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM", "9877", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:55:34 PM", "", "In Development",  0,17610)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Induct_Scan_Data_Cap_Window_Lgth_IN", "9902", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:22:34 PM", "", "In Development",  0,17663)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Induct_Scan_Data_Cap_Window_Lgth_User", "9901", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:29:07 PM", "", "In Development",  0,17661)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM", "9880", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:56:18 PM", "", "In Development",  0,17616)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Induction_Scan_Window_Length_IN", "9900", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:05:30 PM", "", "In Development",  0,17659)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Induction_Scan_Window_Length_User", "9898", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:29:12 PM", "", "In Development",  0,17654)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Induction_Scan_Window_Length_User_UOM", "9879", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:56:10 PM", "", "In Development",  0,17614)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Label_Data_Acq_Distance_App_1_IN", "9904", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:24:51 PM", "", "In Development",  0,17667)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Label_Data_Acq_Distance_App_1_User", "9903", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:29:25 PM", "", "In Development",  0,17665)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Label_Data_Acq_Distance_App_1_User_UOM", "9881", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:56:26 PM", "", "In Development",  0,17618)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Label_Data_Acq_Distance_App_2_IN", "9906", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:26:28 PM", "", "In Development",  0,17671)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Label_Data_Acq_Distance_App_2_User", "9905", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:30:08 PM", "", "In Development",  0,18016)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Label_Data_Acq_Distance_App_2_User_UOM", "9882", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:56:37 PM", "", "In Development",  0,17620)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN", "9930", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:09:40 PM", "", "In Development",  0,17995)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User", "9929", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:08:40 PM", "", "In Development",  0,17993)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM", "9885", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:57:18 PM", "", "In Development",  0,17626)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Distance_Between_Applicator_1_2_IN", "9928", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:07:36 PM", "", "In Development",  0,17991)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Distance_Between_Applicator_1_2_User", "9927", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:06:38 PM", "", "In Development",  0,17989)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Distance_Between_Applicator_1_2_User_UO", "9884", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:57:07 PM", "", "In Development",  0,17624)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Distance_for_Printer_Setup_IN", "9908", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:28:14 PM", "", "In Development",  0,17675)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Distance_for_Printer_Setup_User", "9907", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 9:29:39 PM", "", "In Development",  0,17673)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Distance_for_Printer_Setup_User_UOM", "9883", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:56:51 PM", "", "In Development",  0,17622)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Distance_IN", "9944", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:42:06 PM", "", "In Development",  0,18023)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Distance_User", "9943", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:41:35 PM", "", "In Development",  0,18021)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Min_Distance_User_UOM", "9942", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:39:34 PM", "", "In Development",  0,18018)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_PandA_Belt_Exit_PE_Distance_IN", "9940", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:22:04 PM", "", "In Development",  0,18015)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_PandA_Belt_Exit_PE_Distance_User", "9939", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:21:26 PM", "", "In Development",  0,18013)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_PandA_Belt_Exit_PE_Distance_User_UOM", "9890", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:58:03 PM", "", "In Development",  0,17636)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Double_FT", "9956", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 5:49:33 PM", "", "In Development",  0,18175)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Double_FT_User", "9955", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:59:34 PM", "", "In Development",  0,18045)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Double_FT_User_UOM", "9894", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:59:01 PM", "", "In Development",  0,17646)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Double_IN", "9954", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:56:19 PM", "", "In Development",  0,18042)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Double_IN_User", "9948", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:55:37 PM", "", "In Development",  0,18040)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Double_IN_User_UOM", "9892", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:58:28 PM", "", "In Development",  0,17640)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Single_FT", "9947", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 5:49:50 PM", "", "In Development",  0,18176)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Single_FT_User", "9946", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:49:54 PM", "", "In Development",  0,18031)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Single_FT_User_UOM", "9893", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:58:55 PM", "", "In Development",  0,17644)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Single_IN", "9945", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:48:56 PM", "", "In Development",  0,18028)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Single_IN_User", "9941", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:47:47 PM", "", "In Development",  0,18026)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Total_Calc_Belt_Length_Single_IN_User_UOM", "9891", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:58:17 PM", "", "In Development",  0,17638)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Ver_Max_Length_of_Carton_Scanned_IN", "9934", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:12:49 PM", "", "In Development",  0,18003)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Ver_Max_Length_of_Carton_Scanned_User", "9933", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:12:08 PM", "", "In Development",  0,18001)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Ver_Max_Length_of_Carton_Scanned_User_UOM", "9887", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:57:34 PM", "", "In Development",  0,17630)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Ver_Scan_Data_Capture_Window_Length_IN", "9938", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:18:38 PM", "", "In Development",  0,18011)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Ver_Scan_Data_Capture_Window_Length_User", "9937", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:17:47 PM", "", "In Development",  0,18009)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Ver_Scan_Data_Capture_Window_Length_User_UO", "9889", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:57:52 PM", "", "In Development",  0,17634)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Verify_Scanner_Distance_to_Xmit_IN", "9936", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:16:55 PM", "", "In Development",  0,18007)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Verify_Scanner_Distance_to_Xmit_User", "9935", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:16:24 PM", "", "In Development",  0,18005)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Verify_Scanner_Distance_to_Xmit_User_UOM", "9888", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:57:45 PM", "", "In Development",  0,17632)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Verify_Scanner_Window_Length_IN", "9932", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:11:15 PM", "", "In Development",  0,17999)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Verify_Scanner_Window_Length_User", "9931", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:10:46 PM", "", "In Development",  0,17997)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Output_Verify_Scanner_Window_Length_User_UOM", "9886", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:57:26 PM", "", "In Development",  0,17628)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("App_Down_Stroke_Tamp_Clearance_IN", "9642", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 1:53:59 PM", "", "In Development",  0,16975)
@@ -3624,6 +4671,9 @@ Option Infer On
           InitProperty("Scale_Spacing_Type", "9831", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:45:28 PM", "", "In Development",  0,17413)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Summary_Carton_Length_User", "9852", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 4:27:01 PM", "", "In Development",  0,17488)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Ver_Scan_Carton_Panels_Scanned_Quantity", "9792", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 1:20:27 PM", "", "In Development",  0,17292)
         End If
             If Incontext("-1", ctx) Then
@@ -3675,7 +4725,7 @@ Option Infer On
           InitProperty("Ver_Scan_Min_Xmit_Point_FromScan_Window_User_UOM", "9811", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:45:13 PM", "", "In Development",  0,17359)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ver_Scan_Percent_Max_Carton_Length_Scanned", "9805", "25", "100", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:42:53 PM", "", "In Development",  0,17347)
+          InitProperty("Ver_Scan_Percent_Max_Carton_Length_Scanned", "9805", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 7:55:39 PM", "", "In Development",  0,17347)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ver_Scan_Percent_Max_Carton_Length_Scanned_User", "9804", "25", "100", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:42:12 PM", "", "In Development",  0,17341)
@@ -3720,6 +4770,36 @@ Option Infer On
           InitProperty("Ver_Scan_Tracking_Photocell_Distance_User_UOM", "9809", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:44:55 PM", "", "In Development",  0,17355)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Summary_Caclucation_Errors_Present", "9869", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:33:02 PM", "", "In Development",  0,17592)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Caclucation_Warnings_Present", "9868", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:33:08 PM", "", "In Development",  0,17590)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Min_H_to_H_Spacing_Limit_Set_By", "9866", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:54:48 PM", "", "In Development",  0,17582)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Min_H_to_H_Spacing_Req_IN", "9863", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:44:30 PM", "", "In Development",  0,17571)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Min_H_to_H_Spacing_Req_User", "9862", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:43:44 PM", "", "In Development",  0,17569)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Min_H_to_H_Spacing_Req_User_UOM", "9860", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:38:13 PM", "", "In Development",  0,17565)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Min_T_to_H_Gap_Limit_Set_By", "9867", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:58:18 PM", "", "In Development",  0,17588)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Min_T_to_H_Gap_Req_IN", "9865", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:52:12 PM", "", "In Development",  0,17577)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Min_T_to_H_Gap_Req_User", "9864", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:51:30 PM", "", "In Development",  0,17573)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Min_T_to_H_Gap_Req_User_UOM", "9861", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:38:30 PM", "", "In Development",  0,17567)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Transnorm_TS4800_Control_Reaction_Time_Distance_IN", "9576", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:36:05 PM", "", "In Development",  0,16701)
         End If
             If Incontext("-1", ctx) Then
@@ -3733,6 +4813,18 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Transnorm_TS4800_Required_Gap_Max_Box", "9578", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 1:38:48 PM", "", "In Development",  0,16707)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Debug_Mode", "9997", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 4:00:43 PM", "True = Debug On / False = Debug Off", "In Development",  0,18159)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectName", "9998", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 4:03:44 PM", "XML Export Object Name", "In Development",  0,18168)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectType", "9999", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 4:00:43 PM", "XML Export Object Type", "In Development",  0,18161)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectValue", "10000", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 4:00:43 PM", "XML Export Object Value", "In Development",  0,18162)
         End If
     End Sub
 
@@ -3904,6 +4996,82 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitValidValue("MTBH_Width_Minimum_User_UOM_ValidValues", "9425", "-1", 16180)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Carton_Stability_Length_User_UOM_ValidValues", "9878", "-1", 17613)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM_ValidValues", "9877", "-1", 17611)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM_ValidValues", "9880", "-1", 17617)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Induction_Scan_Window_Length_User_UOM_ValidValues", "9879", "-1", 17615)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Label_Data_Acq_Distance_App_1_User_UOM_ValidValues", "9881", "-1", 17619)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Label_Data_Acq_Distance_App_2_User_UOM_ValidValues", "9882", "-1", 17621)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM_ValidValues", "9885", "-1", 17627)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Min_Distance_Between_Applicator_1_2_User_UO_ValidValues", "9884", "-1", 17625)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Min_Distance_for_Printer_Setup_User_UOM_ValidValues", "9883", "-1", 17623)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Min_Distance_User_UOM_ValidValues", "9942", "-1", 18019)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_PandA_Belt_Exit_PE_Distance_User_UOM_ValidValues", "9890", "-1", 17637)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Total_Calc_Belt_Length_Double_FT_User_UOM_ValidValues", "9894", "-1", 17647)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Total_Calc_Belt_Length_Double_IN_User_UOM_ValidValues", "9892", "-1", 17641)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Total_Calc_Belt_Length_Single_FT_User_UOM_ValidValues", "9893", "-1", 17645)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Total_Calc_Belt_Length_Single_IN_User_UOM_ValidValues", "9891", "-1", 17639)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Ver_Max_Length_of_Carton_Scanned_User_UOM_ValidValues", "9887", "-1", 17631)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Ver_Scan_Data_Capture_Window_Length_User_UO_ValidValues", "9889", "-1", 17635)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Verify_Scanner_Distance_to_Xmit_User_UOM_ValidValues", "9888", "-1", 17633)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Output_Verify_Scanner_Window_Length_User_UOM_ValidValues", "9886", "-1", 17629)
         End If
             If Incontext("-1", ctx) Then
           
@@ -4089,6 +5257,14 @@ Option Infer On
           
         InitValidValue("Ver_Scan_Tracking_Photocell_Distance_User_UOM_ValidValues", "9809", "-1", 17356)
         End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Summary_Min_H_to_H_Spacing_Req_User_UOM_ValidValues", "9860", "-1", 17566)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Summary_Min_T_to_H_Gap_Req_User_UOM_ValidValues", "9861", "-1", 17568)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -4100,6 +5276,12 @@ Option Infer On
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("PandA_Theoretical_Max_Throughput_Rate", 267, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/15/2025 4:24:44 PM", "", "In Development", "N",0,727,726)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -4114,6 +5296,24 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitConnection("My_EHS350_Data", "154", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/15/2025 12:02:48 PM", "", "In Development", "N",291)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_PRD", "168", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 1:04:12 PM", "", "In Development", "N",301)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_Setup", "175", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 7:08:38 PM", "", "In Development", "N",317)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("MySource", "173", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 4:00:43 PM", "Connection to the Value Provider Part Family Instance", "In Development", "Y",315)
         
           End If
         
@@ -4157,6 +5357,74 @@ Option Infer On
       Return ConvertToCollection(Result)
       End Function
     
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_PRD_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:168; TYPE:PF
+        Result = me.Parent.Parent.Parent
+        '   END FORMULA; CON ID:168; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_My_PRD_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_Setup_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:175; TYPE:PF
+        Result = me.Parent.Setup(1)
+        '   END FORMULA; CON ID:175; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_My_Setup_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MySource_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+          '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+        
+        '   BEGIN FORMULA; CON ID:173; TYPE:PF
+        Result = Nothing ' Set to Object that has the data you need to report on ' Me.Parent.HHS_Output(1)
+        '   END FORMULA; CON ID:173; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MySource_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
           '*****************************************************************************
           '   Copyright (C) 2024 Siemens. All rights reserved.
           '
@@ -4180,6 +5448,106 @@ End Select
       '   END FORMULA; PROP ID:9658; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Brush_Length_Factor_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Customer_Date() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Customer_Date").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9960; TYPE:PF
+      Result = ""  '''ToDo - Need property - TB 16 July, 2025
+      '   END FORMULA; PROP ID:9960; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Customer_Date", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Customer_Location() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Customer_Location").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9958; TYPE:PF
+      Result = Me.My_PRD(1).Proposal_City_State
+      '   END FORMULA; PROP ID:9958; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Customer_Location", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Customer_Name() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Customer_Name").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9957; TYPE:PF
+      Result = me.My_PRD(1).Proposal_Customer_Name
+      '   END FORMULA; PROP ID:9957; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Customer_Name", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Customer_Proposal_Number() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Customer_Proposal_Number").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9959; TYPE:PF
+      Result = Me.My_PRD(1).Proposal_ID
+      '   END FORMULA; PROP ID:9959; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Customer_Proposal_Number", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -4422,7 +5790,7 @@ Result = Math.Ceiling((((PandaBeltSpeed/5)*Full_Stroke_Prepos_Move_Time)+PandAPr
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9392; TYPE:PF
-      Result = "Imperial"
+      Result = me.My_Setup(1).User_UOM_System
       '   END FORMULA; PROP ID:9392; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_User_UOM_System", ex.Message)
@@ -4629,7 +5997,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9585; TYPE:PF
-      result = 0.0
+      Result = Me.Output_Total_Calc_Belt_Length_Single_FT_User
       '   END FORMULA; PROP ID:9585; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_FT_User", ex.Message)
@@ -4700,7 +6068,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9584; TYPE:PF
-      result = 0.0
+      Result = me.Output_Total_Calc_Belt_Length_Single_IN_User
       '   END FORMULA; PROP ID:9584; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_App_Belt_Length_Req_IN_User", ex.Message)
@@ -4771,7 +6139,15 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9586; TYPE:PF
-      result = 0.0
+      If Me.Gen_Conveyor_Type = "Standard B/M Belt"
+	Result = (9+(Me.Gen_Accumulation_Zone_Quantity * Me.Gen_Accumulation_Zone_Length_IN)/12)+Me.Conv_Total_App_Belt_Length_Req_FT
+Else
+	Result = ((2*Me.Gen_Accumulation_Zone_Length_IN)/12+(Me.Gen_Accumulation_Zone_Quantity*Me.Gen_Accumulation_Zone_Length_IN)/12)+Me.Conv_Total_App_Belt_Length_Req_FT
+End If
+
+If Me.Conv_Total_Solution_Length_FT_User_UOM = "M" Then
+	Result = Units.Convert(Result, "FT", "M")
+End If
       '   END FORMULA; PROP ID:9586; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Conv_Total_Solution_Length_FT_User", ex.Message)
@@ -6354,7 +7730,12 @@ End Select
       '   BEGIN FORMULA; PROP ID:9442; TYPE:PF
       Select Case Me.MTBH_Use_Local
 	Case "No"
-		Result = 0
+		Select Case Me.MTBH_Height_Average_User_UOM
+			Case "IN"
+				Result = Me.My_Setup(1).BoxSize_Height_Avg_IN
+			Case Else
+				Result = Me.My_Setup(1).BoxSize_Height_Avg_MM
+		End Select
 	Case Else
 		Result = (Me.MTBH_Height_Minimum_User + Me.MTBH_Height_Maximum_User) / 2
 End Select
@@ -6428,11 +7809,21 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9441; TYPE:PF
-      Select Case Me.MTBH_Height_Maximum_User_UOM
-	Case "IN"
-		Result = 10
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case Me.MTBH_Height_Maximum_User_UOM
+			Case "IN"
+				Result = Me.My_Setup(1).BoxSize_Height_Max_IN
+			Case Else
+				Result = Me.My_Setup(1).BoxSize_Height_Max_MM
+		End Select
 	Case Else
-		Result = 200
+		Select Case Me.MTBH_Height_Maximum_User_UOM
+			Case "IN"
+				Result = 10
+			Case Else
+				Result = 200
+		End Select
 End Select
       '   END FORMULA; PROP ID:9441; TYPE:PF
       Catch ex As Exception
@@ -6532,11 +7923,21 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9440; TYPE:PF
-      Select Case Me.MTBH_Height_Minimum_User_UOM
-	Case "IN"
-		Result = 10
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case Me.MTBH_Height_Minimum_User_UOM
+			Case "IN"
+				Result = Me.My_Setup(1).BoxSize_Height_Min_IN
+			Case Else
+				Result = Me.My_Setup(1).BoxSize_Height_Min_MM
+		End Select
 	Case Else
-		Result = 200
+		Select Case Me.MTBH_Height_Minimum_User_UOM
+			Case "IN"
+				Result = 10
+			Case Else
+				Result = 200
+		End Select
 End Select
       '   END FORMULA; PROP ID:9440; TYPE:PF
       Catch ex As Exception
@@ -6636,7 +8037,17 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9430; TYPE:PF
-      Result = (Me.MTBH_Length_Maximum_User + Me.MTBH_Length_Minimum_User) / 2
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case MTBH_Length_Average_User_UOM
+			Case "IN"
+				Result = Me.My_Setup(1).BoxSize_Length_Avg_IN
+			Case Else
+				Result = Me.My_Setup(1).BoxSize_Length_Avg_MM
+		End Select
+	Case Else
+		Result = (Me.MTBH_Length_Maximum_User + Me.MTBH_Length_Minimum_User) / 2
+End Select
       '   END FORMULA; PROP ID:9430; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Length_Average_User", ex.Message)
@@ -6707,11 +8118,21 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9429; TYPE:PF
-      Select Case Me.MTBH_Length_Maximum_User_UOM
-	Case "IN"
-		Result = 10
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case MTBH_Length_Maximum_User_UOM
+			Case "IN"
+				Result = Me.My_Setup(1).BoxSize_Length_Max_IN
+			Case Else
+				Result = Me.My_Setup(1).BoxSize_Length_Max_MM
+		End Select
 	Case Else
-		Result = 200
+		Select Case Me.MTBH_Length_Maximum_User_UOM
+			Case "IN"
+				Result = 10
+			Case Else
+				Result = 200
+		End Select
 End Select
       '   END FORMULA; PROP ID:9429; TYPE:PF
       Catch ex As Exception
@@ -6811,11 +8232,21 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9428; TYPE:PF
-      Select Case Me.MTBH_Length_Minimum_User_UOM
-	Case "IN"
-		Result = 10
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case MTBH_Length_Minimum_User_UOM
+			Case "IN"
+				Result = Me.My_Setup(1).BoxSize_Length_Min_IN
+			Case Else
+				Result = Me.My_Setup(1).BoxSize_Length_Min_MM
+		End Select
 	Case Else
-		Result = 200
+		Select Case Me.MTBH_Length_Minimum_User_UOM
+			Case "IN"
+				Result = 10
+			Case Else
+				Result = 200
+		End Select
 End Select
       '   END FORMULA; PROP ID:9428; TYPE:PF
       Catch ex As Exception
@@ -6940,7 +8371,17 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9445; TYPE:PF
-      Result = (Me.MTBH_Weight_Maximum_User + me.MTBH_Weight_Minimum_User) / 2
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case  Me.MTBH_Weight_Average_User_UOM
+			Case "LB"
+				Result = Me.My_Setup(1).BoxSize_Weight_Avg_LBS
+			Case Else
+				Result = Units.Convert(Me.My_Setup(1).BoxSize_Weight_Avg_LBS, "LB", "KG")
+		End Select
+	Case Else
+		Result = (Me.MTBH_Weight_Maximum_User + Me.MTBH_Weight_Minimum_User) / 2
+End Select
       '   END FORMULA; PROP ID:9445; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Weight_Average_User", ex.Message)
@@ -7011,11 +8452,21 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9444; TYPE:PF
-      Select Case Me.MTBH_Weight_Maximum_User_UOM
-	Case "LB"
-		Result = 10
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case  Me.MTBH_Weight_Maximum_User_UOM
+			Case "LB"
+				Result = Me.My_Setup(1).BoxSize_Weight_Max_LBS
+			Case Else
+				Result = Units.Convert(Me.My_Setup(1).BoxSize_Weight_Max_LBS, "LB", "KG")
+		End Select
 	Case Else
-		Result = 30
+		Select Case Me.MTBH_Weight_Maximum_User_UOM
+			Case "LB"
+				Result = 10
+			Case Else
+				Result = 30
+		End Select
 End Select
       '   END FORMULA; PROP ID:9444; TYPE:PF
       Catch ex As Exception
@@ -7115,11 +8566,21 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9443; TYPE:PF
-      Select Case Me.MTBH_Weight_Minimum_User_UOM
-	Case "LB"
-		Result = 10
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case  Me.MTBH_Weight_Minimum_User_UOM
+			Case "LB"
+				Result = Me.My_Setup(1).BoxSize_Weight_Min_LBS
+			Case Else
+				Result = Units.Convert(Me.My_Setup(1).BoxSize_Weight_Min_LBS, "LB", "KG")
+		End Select
 	Case Else
-		Result = 30
+		Select Case Me.MTBH_Weight_Minimum_User_UOM
+			Case "LB"
+				Result = 10
+			Case Else
+				Result = 30
+		End Select
 End Select
       '   END FORMULA; PROP ID:9443; TYPE:PF
       Catch ex As Exception
@@ -7219,7 +8680,17 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9439; TYPE:PF
-      Result = (Me.MTBH_Width_Maximum_User + Me.MTBH_Width_Minimum_User) / 2
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case Me.MTBH_Width_Average_User_UOM
+			Case "IN"
+				Result = Me.My_Setup(1).BoxSize_Width_Avg_IN
+			Case Else
+				Result = Me.My_Setup(1).BoxSize_Width_Avg_MM
+		End Select
+	Case Else
+		Result = (Me.MTBH_Width_Maximum_User + Me.MTBH_Width_Minimum_User) / 2
+End Select
       '   END FORMULA; PROP ID:9439; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Width_Average_User", ex.Message)
@@ -7290,11 +8761,21 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9438; TYPE:PF
-      Select Case Me.MTBH_Width_Maximum_User_UOM
-	Case "IN"
-		Result = 10
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case Me.MTBH_Width_Maximum_User_UOM
+			Case "IN"
+				Result = Me.My_Setup(1).BoxSize_Width_Max_IN
+			Case Else
+				Result = Me.My_Setup(1).BoxSize_Width_Max_MM
+		End Select
 	Case Else
-		Result = 200
+		Select Case Me.MTBH_Width_Maximum_User_UOM
+			Case "IN"
+				Result = 10
+			Case Else
+				Result = 200
+		End Select
 End Select
       '   END FORMULA; PROP ID:9438; TYPE:PF
       Catch ex As Exception
@@ -7394,11 +8875,21 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9437; TYPE:PF
-      Select Case Me.MTBH_Width_Minimum_User_UOM
-	Case "IN"
-		Result = 10
+      Select Case Me.MTBH_Use_Local
+	Case "No"
+		Select Case MTBH_Width_Minimum_User_UOM
+			Case "IN"
+				Result = Me.My_Setup(1).BoxSize_Width_Min_IN
+			Case Else
+				Result = Me.My_Setup(1).BoxSize_Width_Min_MM
+		End Select
 	Case Else
-		Result = 200
+		Select Case Me.MTBH_Width_Minimum_User_UOM
+			Case "IN"
+				Result = 10
+			Case Else
+				Result = 200
+		End Select
 End Select
       '   END FORMULA; PROP ID:9437; TYPE:PF
       Catch ex As Exception
@@ -7456,6 +8947,1411 @@ End Select
       '   END FORMULA; PROP ID:9425; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Width_Minimum_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Carton_Stability_Length_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Carton_Stability_Length_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9899; TYPE:PF
+      Result = Units.Convert(Me.Output_Carton_Stability_Length_User, Me.Output_Carton_Stability_Length_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9899; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Carton_Stability_Length_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Carton_Stability_Length_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Carton_Stability_Length_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9897; TYPE:PF
+      Result = Me.Output_Induct_Max_Lgth_of_Carton_Scanned_User * (2/3)
+      '   END FORMULA; PROP ID:9897; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Carton_Stability_Length_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Carton_Stability_Length_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Carton_Stability_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9878; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9878; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Carton_Stability_Length_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9896; TYPE:PF
+      Result = Units.Convert(Me.Output_Induct_Max_Lgth_of_Carton_Scanned_User, Me.Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9896; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9895; TYPE:PF
+      Result = Me.Ind_Scan_Carton_Scanned_Max_Lin_Length_User
+      '   END FORMULA; PROP ID:9895; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9877; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9877; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9902; TYPE:PF
+      Result = Units.Convert(Me.Output_Induct_Scan_Data_Cap_Window_Lgth_User, Me.Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9902; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9901; TYPE:PF
+      Result = me.Ind_Scan_Tracking_Photocell_Distance_User
+      '   END FORMULA; PROP ID:9901; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9880; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9880; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Induction_Scan_Window_Length_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induction_Scan_Window_Length_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9900; TYPE:PF
+      Result = Units.Convert(Me.Output_Induction_Scan_Window_Length_User, Me.Output_Induction_Scan_Window_Length_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9900; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induction_Scan_Window_Length_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Induction_Scan_Window_Length_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induction_Scan_Window_Length_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9898; TYPE:PF
+      Result = me.Ind_Scan_Scan_Window_Length_Req_User
+      '   END FORMULA; PROP ID:9898; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induction_Scan_Window_Length_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Induction_Scan_Window_Length_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induction_Scan_Window_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9879; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9879; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induction_Scan_Window_Length_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Label_Data_Acq_Distance_App_1_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Label_Data_Acq_Distance_App_1_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9904; TYPE:PF
+      Result = Units.Convert(Me.Output_Label_Data_Acq_Distance_App_1_User, Me.Output_Label_Data_Acq_Distance_App_1_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9904; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Label_Data_Acq_Distance_App_1_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Label_Data_Acq_Distance_App_1_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Label_Data_Acq_Distance_App_1_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9903; TYPE:PF
+      Result = me.Acq_Label_Data_Acquisition_Travel_User
+      '   END FORMULA; PROP ID:9903; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Label_Data_Acq_Distance_App_1_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Label_Data_Acq_Distance_App_1_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Label_Data_Acq_Distance_App_1_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9881; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9881; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Label_Data_Acq_Distance_App_1_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Label_Data_Acq_Distance_App_2_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Label_Data_Acq_Distance_App_2_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9906; TYPE:PF
+      Result = Units.Convert(Me.Output_Label_Data_Acq_Distance_App_2_User, Me.Output_Label_Data_Acq_Distance_App_2_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9906; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Label_Data_Acq_Distance_App_2_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Label_Data_Acq_Distance_App_2_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Label_Data_Acq_Distance_App_2_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9905; TYPE:PF
+      If Me.App_Label_Applicator_Quantity > 1 Then
+	Result = Me.Output_Label_Data_Acq_Distance_App_1_IN + me.Output_Min_Distance_Between_Applicator_1_2_IN
+Else
+	Result = 0
+End If
+
+If Me.Output_Label_Data_Acq_Distance_App_2_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
+      '   END FORMULA; PROP ID:9905; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Label_Data_Acq_Distance_App_2_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Label_Data_Acq_Distance_App_2_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Label_Data_Acq_Distance_App_2_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9882; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9882; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Label_Data_Acq_Distance_App_2_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9930; TYPE:PF
+      Result = Units.Convert(Me.Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User, Me.Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9930; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9929; TYPE:PF
+      Result = me.Ver_Scan_Distance_Last_Tamp__Scan_Window_User
+      '   END FORMULA; PROP ID:9929; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9885; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9885; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_Between_Applicator_1_2_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9928; TYPE:PF
+      Result = Units.Convert(Me.Output_Min_Distance_Between_Applicator_1_2_User, Me.Output_Min_Distance_Between_Applicator_1_2_User_UO, "IN")
+      '   END FORMULA; PROP ID:9928; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_Between_Applicator_1_2_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_Between_Applicator_1_2_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9927; TYPE:PF
+      Result = me.App_Min_Pitch_Btw_App_User
+      '   END FORMULA; PROP ID:9927; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_Between_Applicator_1_2_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_User_UO() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_Between_Applicator_1_2_User_UO").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9884; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9884; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_Between_Applicator_1_2_User_UO", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Distance_for_Printer_Setup_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_for_Printer_Setup_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9908; TYPE:PF
+      Result = Units.Convert(Me.Output_Min_Distance_for_Printer_Setup_User, Me.Output_Min_Distance_for_Printer_Setup_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9908; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_for_Printer_Setup_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Distance_for_Printer_Setup_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_for_Printer_Setup_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9907; TYPE:PF
+      Result = math.ceiling(me.App_Min_Dist_Req_Data_Xmit_to_Tamp_Prepos_User)
+      '   END FORMULA; PROP ID:9907; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_for_Printer_Setup_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Distance_for_Printer_Setup_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_for_Printer_Setup_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9883; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9883; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_for_Printer_Setup_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Distance_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9944; TYPE:PF
+      Result = Units.Convert(Me.Output_Min_Distance_User, Me.Output_Min_Distance_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9944; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Distance_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9943; TYPE:PF
+      If Me.App_Label_Applicator_Quantity > 1 Then
+	Result = Me.Output_Min_Distance_for_Printer_Setup_IN + me.Output_Min_Distance_Between_Applicator_1_2_IN
+Else
+	Result = Me.Output_Min_Distance_for_Printer_Setup_IN
+End If
+
+If Me.Output_Label_Data_Acq_Distance_App_2_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
+      '   END FORMULA; PROP ID:9943; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Min_Distance_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9942; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9942; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_PandA_Belt_Exit_PE_Distance_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9940; TYPE:PF
+      Result = Units.Convert(Me.Output_PandA_Belt_Exit_PE_Distance_User, Me.Output_PandA_Belt_Exit_PE_Distance_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9940; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_PandA_Belt_Exit_PE_Distance_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_PandA_Belt_Exit_PE_Distance_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9939; TYPE:PF
+      Result = math.ceiling(((Me.Gen_Belt_Speed_IN / 5) / 96) * (Me.Gen_Belt_Speed_IN / 5))
+
+If Me.Output_PandA_Belt_Exit_PE_Distance_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
+      '   END FORMULA; PROP ID:9939; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_PandA_Belt_Exit_PE_Distance_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_PandA_Belt_Exit_PE_Distance_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9890; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9890; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_PandA_Belt_Exit_PE_Distance_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Double_FT").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9956; TYPE:PF
+      Result = Units.Convert(Me.Output_Total_Calc_Belt_Length_Double_FT_User, Me.Output_Total_Calc_Belt_Length_Double_FT_User_UOM, "FT")
+      '   END FORMULA; PROP ID:9956; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_FT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Double_FT_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9955; TYPE:PF
+      Result = (Me.Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN _
+		+ Me.Output_Verify_Scanner_Window_Length_IN _
+		+ Me.Output_Ver_Max_Length_of_Carton_Scanned_IN _
+		+ Me.Output_Ver_Scan_Data_Capture_Window_Length_IN _
+		+ Me.Output_PandA_Belt_Exit_PE_Distance_IN _
+		+ Me.Output_Min_Distance_IN) / 12
+
+If Me.Output_Total_Calc_Belt_Length_Double_IN_User_UOM = "M" Then
+	Result = Units.Convert(Result, "FT", "M")
+End If
+      '   END FORMULA; PROP ID:9955; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_FT_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Double_FT_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9894; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "FT" Else Result = "M"
+      '   END FORMULA; PROP ID:9894; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_FT_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Double_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9954; TYPE:PF
+      Result = Units.Convert(Me.Output_Total_Calc_Belt_Length_Double_IN_User, Me.Output_Total_Calc_Belt_Length_Double_IN_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9954; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Double_IN_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9948; TYPE:PF
+      Result = Me.Output_Induct_Max_Lgth_of_Carton_Scanned_IN _
+		+ Me.Output_Carton_Stability_Length_IN _
+		+ Me.Output_Induction_Scan_Window_Length_IN _
+		+ Me.Output_Induct_Scan_Data_Cap_Window_Lgth_IN _
+		+ Me.Output_Label_Data_Acq_Distance_App_1_IN _
+		+ me.Output_PandA_Belt_Exit_PE_Distance_IN
+
+If Me.Output_Total_Calc_Belt_Length_Double_IN_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
+      '   END FORMULA; PROP ID:9948; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_IN_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Double_IN_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9892; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9892; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_IN_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Single_FT").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9947; TYPE:PF
+      Result = Units.Convert(Me.Output_Total_Calc_Belt_Length_Single_FT_User, Me.Output_Total_Calc_Belt_Length_Single_FT_User_UOM, "FT")
+      '   END FORMULA; PROP ID:9947; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Single_FT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Single_FT_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9946; TYPE:PF
+      Result = Output_Total_Calc_Belt_Length_Single_IN / 12
+
+If Me.Output_Total_Calc_Belt_Length_Single_IN_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
+      '   END FORMULA; PROP ID:9946; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Single_FT_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Single_FT_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9893; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "FT" Else Result = "M"
+      '   END FORMULA; PROP ID:9893; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Single_FT_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Single_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9945; TYPE:PF
+      Result = Units.Convert(Me.Output_Total_Calc_Belt_Length_Single_IN_User, Me.Output_Total_Calc_Belt_Length_Single_IN_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9945; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Single_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Single_IN_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9941; TYPE:PF
+      Result = Me.Output_Carton_Stability_Length_IN _
+		+ Me.Output_Induction_Scan_Window_Length_IN _
+		+ Me.Output_Induct_Scan_Data_Cap_Window_Lgth_IN _
+		+ Me.Output_Induct_Max_Lgth_of_Carton_Scanned_IN _
+		+ Me.Output_Label_Data_Acq_Distance_App_1_IN _
+		+ Me.Output_Min_Distance_IN _
+		+ Me.Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN _
+		+ Me.Output_Verify_Scanner_Window_Length_IN _
+		+ Me.Output_Ver_Max_Length_of_Carton_Scanned_IN _
+		+ Me.Output_Ver_Scan_Data_Capture_Window_Length_IN _
+		+ Me.Output_PandA_Belt_Exit_PE_Distance_IN
+
+If Me.Output_Total_Calc_Belt_Length_Single_IN_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
+      '   END FORMULA; PROP ID:9941; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Single_IN_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Single_IN_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9891; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9891; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Single_IN_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Ver_Max_Length_of_Carton_Scanned_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9934; TYPE:PF
+      Result = Units.Convert(Me.Output_Ver_Max_Length_of_Carton_Scanned_User, Me.Output_Ver_Max_Length_of_Carton_Scanned_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9934; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Ver_Max_Length_of_Carton_Scanned_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Ver_Max_Length_of_Carton_Scanned_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9933; TYPE:PF
+      Result = me.Ver_Scan_Max_Linear_Length_Carton_Scanned_User
+      '   END FORMULA; PROP ID:9933; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Ver_Max_Length_of_Carton_Scanned_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Ver_Max_Length_of_Carton_Scanned_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9887; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9887; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Ver_Max_Length_of_Carton_Scanned_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Ver_Scan_Data_Capture_Window_Length_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9938; TYPE:PF
+      Result = Units.Convert(Me.Output_Ver_Scan_Data_Capture_Window_Length_User, Me.Output_Ver_Scan_Data_Capture_Window_Length_User_UO, "IN")
+      '   END FORMULA; PROP ID:9938; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Ver_Scan_Data_Capture_Window_Length_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Ver_Scan_Data_Capture_Window_Length_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9937; TYPE:PF
+      Result = me.Ver_Scan_Tracking_Photocell_Distance_User
+      '   END FORMULA; PROP ID:9937; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Ver_Scan_Data_Capture_Window_Length_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_User_UO() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Ver_Scan_Data_Capture_Window_Length_User_UO").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9889; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9889; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Ver_Scan_Data_Capture_Window_Length_User_UO", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Verify_Scanner_Distance_to_Xmit_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9936; TYPE:PF
+      Result = Units.Convert(Me.Output_Verify_Scanner_Distance_to_Xmit_User, Me.Output_Verify_Scanner_Distance_to_Xmit_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9936; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Verify_Scanner_Distance_to_Xmit_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Verify_Scanner_Distance_to_Xmit_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9935; TYPE:PF
+      Result = me.Ver_Scan_Min_Xmit_Point_FromScan_Window_User
+      '   END FORMULA; PROP ID:9935; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Verify_Scanner_Distance_to_Xmit_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Verify_Scanner_Distance_to_Xmit_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9888; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9888; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Verify_Scanner_Distance_to_Xmit_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Verify_Scanner_Window_Length_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Verify_Scanner_Window_Length_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9932; TYPE:PF
+      Result = Units.Convert(Me.Output_Verify_Scanner_Window_Length_User, Me.Output_Verify_Scanner_Window_Length_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9932; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Verify_Scanner_Window_Length_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Verify_Scanner_Window_Length_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Verify_Scanner_Window_Length_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9931; TYPE:PF
+      Result = me.Ver_Scan_Scan_Window_Length_Req_User
+      '   END FORMULA; PROP ID:9931; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Verify_Scanner_Window_Length_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Output_Verify_Scanner_Window_Length_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Verify_Scanner_Window_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9886; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9886; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Verify_Scanner_Window_Length_User_UOM", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -9868,6 +12764,29 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Summary_Carton_Length_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Carton_Length_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9852; TYPE:PF
+      Result = Me.MTBH_Length_Minimum_IN + Me.SubpartID - 1
+      '   END FORMULA; PROP ID:9852; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Carton_Length_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Ver_Scan_Carton_Panels_Scanned_Quantity() As Long
           Dim Result as Long
       Dim ctx as Object
@@ -10689,6 +13608,270 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Summary_Caclucation_Errors_Present() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Caclucation_Errors_Present").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9869; TYPE:PF
+      result = 0
+      '   END FORMULA; PROP ID:9869; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Caclucation_Errors_Present", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Caclucation_Warnings_Present() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Caclucation_Warnings_Present").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9868; TYPE:PF
+      result = 0
+      '   END FORMULA; PROP ID:9868; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Caclucation_Warnings_Present", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Min_H_to_H_Spacing_Limit_Set_By() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_H_to_H_Spacing_Limit_Set_By").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9866; TYPE:PF
+      If Me.Summary_Min_H_to_H_Spacing_Req_IN <= 33 Then
+	Result = "Scale"
+Else
+	Result = "Applicator"
+End If
+      '   END FORMULA; PROP ID:9866; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_H_to_H_Spacing_Limit_Set_By", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Min_H_to_H_Spacing_Req_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_H_to_H_Spacing_Req_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9863; TYPE:PF
+      Result = Units.Convert(Me.Summary_Min_H_to_H_Spacing_Req_User, Me.Summary_Min_H_to_H_Spacing_Req_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9863; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_H_to_H_Spacing_Req_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Min_H_to_H_Spacing_Req_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_H_to_H_Spacing_Req_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9862; TYPE:PF
+      If Me.App_Label_Applicator_Reason_For_Multiple = "Redundancy" OrElse Me.App_Label_Applicator_Quantity = 1 Then
+	Result = math.max(Me.Scale_Min_Head_to_Head_IN , Me.App_Min_H_to_H_Req_Compl_PandA_Cycle_IN)
+Else
+	Result = math.max(Me.Scale_Min_Head_to_Head_IN , Me.App_Min_H_to_H_Spacing_Avg_Carton_IN)
+End If
+
+If Me.Summary_Min_H_to_H_Spacing_Req_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
+      '   END FORMULA; PROP ID:9862; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_H_to_H_Spacing_Req_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Min_H_to_H_Spacing_Req_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_H_to_H_Spacing_Req_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9860; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9860; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_H_to_H_Spacing_Req_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Min_T_to_H_Gap_Limit_Set_By() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_T_to_H_Gap_Limit_Set_By").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9867; TYPE:PF
+      If me.Summary_Min_H_to_H_Spacing_Req_IN <= 6 Then
+	Result = "Induct Scan"  '''TODO - Multiple options for 6 or less (Induct Scan/Verify Scan) - TB 15 July, 2025
+ElseIf Me.Summary_Min_T_to_H_Gap_Req_IN <= 6.3 Then
+	Result = "Reject Divert"
+Else
+	Result = "Applicator"
+End If
+      '   END FORMULA; PROP ID:9867; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_T_to_H_Gap_Limit_Set_By", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Min_T_to_H_Gap_Req_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_T_to_H_Gap_Req_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9865; TYPE:PF
+      Result = Units.Convert(Me.Summary_Min_T_to_H_Gap_Req_User, Me.Summary_Min_T_to_H_Gap_Req_User_UOM, "IN")
+      '   END FORMULA; PROP ID:9865; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_T_to_H_Gap_Req_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Min_T_to_H_Gap_Req_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_T_to_H_Gap_Req_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9864; TYPE:PF
+      If Me.App_Label_Applicator_Quantity < 2 Then
+	Result = math.max(math.max(math.max(math.max(Me.Gen_MDR_Min_Gap_Throughput_Limit_IN , Me.Ind_Scan_Scan_App_Min_Gap_IN), Me.App_Min_Gap_Req_Max_Min_Box_Tamp_Clr_IN), Me.Ver_Scan_Min_Gap_Scan_Application_IN), Me.Reject_Diverter_Min_Gap_Required_IN)
+Else
+	Result = math.max(math.max(math.max(math.max(Me.Gen_MDR_Min_Gap_Throughput_Limit_IN , Me.Ind_Scan_Scan_App_Min_Gap_IN), Me.App_Min_Gap_Req_Avg_to_Min_Box_Tamp_Clr_IN), Me.Ver_Scan_Min_Gap_Scan_Application_IN), me.Reject_Diverter_Min_Gap_Required_IN)
+End If
+
+If Me.Summary_Min_H_to_H_Spacing_Req_User_UOM = "MM" Then
+	Result = Units.Convert(Result, "IN", "MM")
+End If
+      '   END FORMULA; PROP ID:9864; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_T_to_H_Gap_Req_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Min_T_to_H_Gap_Req_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_T_to_H_Gap_Req_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9861; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:9861; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_T_to_H_Gap_Req_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Transnorm_TS4800_Control_Reaction_Time_Distance_IN() As Double
           Dim Result as Double
       Dim ctx as Object
@@ -10806,6 +13989,114 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Debug_Mode() As Boolean
+          Dim Result as Boolean
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("Debug_Mode").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9997; TYPE:PF
+      Result = False
+If Not Me.Parent Is Nothing AndAlso Me.Parent.Properties.ContainsKey("Debug_Mode") Then
+		Result = Me.Parent.Debug_Mode
+End If
+      '   END FORMULA; PROP ID:9997; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Debug_Mode", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("XMLObjectName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9998; TYPE:PF
+      Result = "PandA"
+      '   END FORMULA; PROP ID:9998; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_XMLObjectName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectType() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("XMLObjectType").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9999; TYPE:PF
+      result = "Element"
+      '   END FORMULA; PROP ID:9999; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_XMLObjectType", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectValue() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("XMLObjectValue").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10000; TYPE:PF
+      Dim Prop As PropertySF = Me.CurrentProperty
+Result = Custom.GetPFXMLRepresentation(Prop) 'Generate XML For this and Children Classes
+      '   END FORMULA; PROP ID:10000; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_XMLObjectValue", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Gen_Accumulation_Zone_Quantity_TOOLTIP() as String
           
           Dim Result as String = String.Empty
@@ -10912,6 +14203,141 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_MTBH_Height_Average_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9442; TYPE:TT
+              Result = "Average Product Height" & vbcrlf & "The allowable range must fall between the defined Minimum and Maximum height values."
+              '   END FORMULA; PROP ID:9442; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Height_Average_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Height_Maximum_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9441; TYPE:TT
+              Select Case Me.MTBH_Height_Minimum_User_UOM
+	Case "IN"
+		Result = "Maximum Product Height" & vbcrlf & "The allowable input range is the defined Minimum Height to 30 inches on PandA applications.  Conveying product heights above 30 inches may be possible but require special design considerations and needs PAE/Engineering approval."
+	Case Else
+		Result = "Maximum Product Height" & vbcrlf & "The allowable input range is the defined Minimum Height to 762 mm on PandA applications.  Conveying product heights above 762 mm may be possible but require special design considerations and needs PAE/Engineering approval."
+End Select
+              '   END FORMULA; PROP ID:9441; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Height_Maximum_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Height_Minimum_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9440; TYPE:TT
+              Select Case Me.MTBH_Height_Minimum_User_UOM
+	Case "IN"
+		Result = "Minimum Product Height" & vbcrlf & "The allowable input range is 1 inch to the defined Maximum Height."
+	Case Else
+		Result = "Minimum Product Height" & vbcrlf & "The allowable input range is 25.4 mm to the defined Maximum Height."
+End Select
+              '   END FORMULA; PROP ID:9440; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Height_Minimum_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Length_Average_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9430; TYPE:TT
+              Result = "Average Product Length" & vbcrlf & "Allowable input range must be between the defined Minimum and Maximum product lengths."
+              '   END FORMULA; PROP ID:9430; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Length_Average_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Length_Maximum_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9429; TYPE:TT
+              Select Case Me.MTBH_Length_Maximum_User_UOM
+	Case "IN"
+		Result = "Maximum Product Length" & vbcrlf & "Allow input range is the defined minimum length to 60 inches.  Please understand any length grater than 48 inches requires special design considerations for the PandA Reject Divert and should be reviewed by PAE/Engineering."
+	Case Else
+		Result = "Maximum Product Length" & vbcrlf & "Allow input range is the defined minimum length to 1524 mm.  Please understand any length grater than 1219.2 mm requires special design considerations for the PandA Reject Divert and should be reviewed by PAE/Engineering."
+End Select
+              '   END FORMULA; PROP ID:9429; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Length_Maximum_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_MTBH_Length_Minimum_User_TOOLTIP() as String
           
           Dim Result as String = String.Empty
@@ -10931,6 +14357,170 @@ End Select
             
           Catch ex As Exception
           ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Length_Minimum_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Weight_Average_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9445; TYPE:TT
+              Result = "Average Carton Weight" & vbcrlf & "The allowable input range is the defined Minimum weight up to the defined Maximum weight."
+              '   END FORMULA; PROP ID:9445; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Weight_Average_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Weight_Maximum_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9444; TYPE:TT
+              Select Case Me.MTBH_Weight_Maximum_User_UOM
+	Case "IN"
+		Result = "Maximum Product Weight" & vbcrlf & "The allowable input range is the defined Minimum weight to 120 LBS.  Please Note!  The Maximum weight for MDR is 70 LBS."
+	Case Else
+		Result = "Maximum Product Weight" & vbcrlf & "The allowable input range is the defined Minimum weight to 54.43 Kg.  Please Note!  The Maximum weight for MDR is 31.75 Kg."
+End Select
+              '   END FORMULA; PROP ID:9444; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Weight_Maximum_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Weight_Minimum_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9443; TYPE:TT
+              Select Case  Me.MTBH_Weight_Minimum_User_UOM
+	Case "IN"
+		Result = "Minimum Product Weight" & vbcrlf & "The allowable input range is 0.5 LBS to the defined Maximum Weight."
+	Case Else
+		Result = "Minimum Product Weight" & vbcrlf & "The allowable input range is 0.23 Kg to the defined Maximum Weight."
+End Select
+              '   END FORMULA; PROP ID:9443; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Weight_Minimum_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Width_Average_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9439; TYPE:TT
+              Result = "Average Product Width" & vbcrlf & "The allowable input range must fall between the defined Minimum and Maximum widths."
+              '   END FORMULA; PROP ID:9439; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Width_Average_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Width_Maximum_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9438; TYPE:TT
+              Select Case Me.MTBH_Width_Maximum_User_UOM
+	Case "IN"
+		Result = "Maximum Product Width" & vbcrlf & "The allowable input range is the defined 'Average Width' to 38 inches."
+	Case Else
+		Result = "Maximum Product Width" & vbcrlf & "The allowable input range is the defined 'Average Width' to 965.2 mm."
+End Select
+              '   END FORMULA; PROP ID:9438; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Width_Maximum_User_TOOLTIP", ex.Message)
+          If ObjectManager.StopOnErrors Then Stop
+          End Try
+          Return Result
+          End Function
+        
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MTBH_Width_Minimum_User_TOOLTIP() as String
+          
+          Dim Result as String = String.Empty
+          Dim ctx as Object
+          Try
+          ctx = this
+          'formula
+          
+              '   BEGIN FORMULA; PROP ID:9437; TYPE:TT
+              Select Case MTBH_Width_Minimum_User_UOM
+	Case "IN"
+		Result = "Minimum Product Width" & vbcrlf & "Allowable rand is 4 inches to the defined Maximum Width.  Please Note!  MADR Reject Diverts require a minimum of 6 inches for a BW Diverter & 9 inches for an MDR RAT."
+	Case "IN"
+		Result = "Minimum Product Width" & vbcrlf & "Allowable rand is 101.6 mm to the defined Maximum Width.  Please Note!  MADR Reject Diverts require a minimum of 152.4 mm for a BW Diverter & 228.6 mm for an MDR RAT."
+End Select
+              '   END FORMULA; PROP ID:9437; TYPE:TT
+            
+          Catch ex As Exception
+          ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Width_Minimum_User_TOOLTIP", ex.Message)
           If ObjectManager.StopOnErrors Then Stop
           End Try
           Return Result
@@ -11646,6 +15236,42 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Brush_Length_Factor_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Customer_Date_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Customer_Location_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Customer_Name_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Customer_Proposal_Number_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -12788,6 +16414,519 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Output_Carton_Stability_Length_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Carton_Stability_Length_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Carton_Stability_Length_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induction_Scan_Window_Length_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induction_Scan_Window_Length_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induction_Scan_Window_Length_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_1_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_1_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_1_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_2_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_2_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_2_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_User_UO_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_for_Printer_Setup_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_for_Printer_Setup_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_for_Printer_Setup_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_User_UO_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Window_Length_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Window_Length_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Window_Length_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_App_Down_Stroke_Tamp_Clearance_IN_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -13589,6 +17728,15 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Summary_Carton_Length_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Ver_Scan_Carton_Panels_Scanned_Quantity_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -13877,6 +18025,96 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Summary_Caclucation_Errors_Present_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Caclucation_Warnings_Present_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_H_to_H_Spacing_Limit_Set_By_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_H_to_H_Spacing_Req_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_H_to_H_Spacing_Req_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_H_to_H_Spacing_Req_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_T_to_H_Gap_Limit_Set_By_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_T_to_H_Gap_Req_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_T_to_H_Gap_Req_User_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_T_to_H_Gap_Req_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Transnorm_TS4800_Control_Reaction_Time_Distance_IN_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -13922,7 +18160,79 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Debug_Mode_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectType_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectValue_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Brush_Length_Factor_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Customer_Date_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Customer_Location_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Customer_Name_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Customer_Proposal_Number_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -13995,7 +18305,7 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_User_UOM_System_USERCHANGE() as Boolean
-      Return True
+      Return False
       End Function
     
       '*****************************************************************************
@@ -14824,7 +19134,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Height_Average_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Height_Average_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9442; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9442; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Height_Average_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -14851,7 +19183,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Height_Maximum_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Height_Maximum_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9441; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9441; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Height_Maximum_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -14887,7 +19241,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Height_Minimum_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Height_Minimum_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9440; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9440; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Height_Minimum_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -14923,7 +19299,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Length_Average_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Length_Average_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9430; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9430; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Length_Average_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -14950,7 +19348,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Length_Maximum_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Length_Maximum_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9429; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9429; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Length_Maximum_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -14986,7 +19406,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Length_Minimum_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Length_Minimum_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9428; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9428; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Length_Minimum_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -15013,7 +19455,7 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Use_Local_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************
@@ -15031,7 +19473,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Weight_Average_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Weight_Average_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9445; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9445; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Weight_Average_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -15058,7 +19522,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Weight_Maximum_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Weight_Maximum_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9444; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9444; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Weight_Maximum_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -15094,7 +19580,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Weight_Minimum_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Weight_Minimum_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9443; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9443; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Weight_Minimum_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -15130,7 +19638,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Width_Average_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Width_Average_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9439; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9439; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Width_Average_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -15157,7 +19687,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Width_Maximum_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Width_Maximum_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9438; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9438; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Width_Maximum_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -15193,7 +19745,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Width_Minimum_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("MTBH_Width_Minimum_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9437; TYPE:UC
+              Select Case Me.MTBH_Use_Local
+	Case "No"
+		Result = False
+	Case Else
+		Result = True
+End Select
+              '   END FORMULA; PROP ID:9437; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Width_Minimum_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -15211,6 +19785,519 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_MTBH_Width_Minimum_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Carton_Stability_Length_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Carton_Stability_Length_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Carton_Stability_Length_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induction_Scan_Window_Length_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induction_Scan_Window_Length_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induction_Scan_Window_Length_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_1_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_1_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_1_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_2_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_2_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_2_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_User_UO_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_for_Printer_Setup_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_for_Printer_Setup_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_for_Printer_Setup_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_User_UO_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Window_Length_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Window_Length_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Window_Length_User_UOM_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -16284,6 +21371,15 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Summary_Carton_Length_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Ver_Scan_Carton_Panels_Scanned_Quantity_USERCHANGE() as Boolean
       Return True
       End Function
@@ -16638,6 +21734,96 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Summary_Caclucation_Errors_Present_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Caclucation_Warnings_Present_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_H_to_H_Spacing_Limit_Set_By_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_H_to_H_Spacing_Req_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_H_to_H_Spacing_Req_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_H_to_H_Spacing_Req_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_T_to_H_Gap_Limit_Set_By_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_T_to_H_Gap_Req_IN_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_T_to_H_Gap_Req_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_T_to_H_Gap_Req_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Transnorm_TS4800_Control_Reaction_Time_Distance_IN_USERCHANGE() as Boolean
       Return False
       End Function
@@ -16676,6 +21862,42 @@ End Select
       '*****************************************************************************
       Public Function Formula_Transnorm_TS4800_Required_Gap_Max_Box_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Debug_Mode_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectName_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectType_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectValue_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************
@@ -17653,6 +22875,462 @@ End Select
       '   END FORMULA; PROP ID:9425; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_MTBH_Width_Minimum_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Carton_Stability_Length_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Carton_Stability_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9878; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9878; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Carton_Stability_Length_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9877; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9877; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induct_Max_Lgth_of_Carton_Scanned_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9880; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9880; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induct_Scan_Data_Cap_Window_Lgth_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Induction_Scan_Window_Length_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Induction_Scan_Window_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9879; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9879; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Induction_Scan_Window_Length_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_1_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Label_Data_Acq_Distance_App_1_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9881; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9881; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Label_Data_Acq_Distance_App_1_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Label_Data_Acq_Distance_App_2_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Label_Data_Acq_Distance_App_2_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9882; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9882; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Label_Data_Acq_Distance_App_2_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9885; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9885; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Dist_Last_App_Tamp_Ver_Scan_PE_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_Between_Applicator_1_2_User_UO_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_Between_Applicator_1_2_User_UO").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9884; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9884; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_Between_Applicator_1_2_User_UO_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_for_Printer_Setup_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_for_Printer_Setup_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9883; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9883; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_for_Printer_Setup_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Min_Distance_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Min_Distance_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9942; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9942; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Min_Distance_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_PandA_Belt_Exit_PE_Distance_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_PandA_Belt_Exit_PE_Distance_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9890; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9890; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_PandA_Belt_Exit_PE_Distance_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_FT_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Double_FT_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9894; TYPE:VV
+      Result = MakeValidValues(Array("FT", "M"))
+      '   END FORMULA; PROP ID:9894; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_FT_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Double_IN_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Double_IN_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9892; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9892; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_IN_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_FT_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Single_FT_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9893; TYPE:VV
+      Result = MakeValidValues(Array("FT", "M"))
+      '   END FORMULA; PROP ID:9893; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Single_FT_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Total_Calc_Belt_Length_Single_IN_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Total_Calc_Belt_Length_Single_IN_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9891; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9891; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Single_IN_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Max_Length_of_Carton_Scanned_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Ver_Max_Length_of_Carton_Scanned_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9887; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9887; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Ver_Max_Length_of_Carton_Scanned_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Ver_Scan_Data_Capture_Window_Length_User_UO_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Ver_Scan_Data_Capture_Window_Length_User_UO").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9889; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9889; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Ver_Scan_Data_Capture_Window_Length_User_UO_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Distance_to_Xmit_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Verify_Scanner_Distance_to_Xmit_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9888; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9888; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Verify_Scanner_Distance_to_Xmit_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Output_Verify_Scanner_Window_Length_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Output_Verify_Scanner_Window_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9886; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9886; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Verify_Scanner_Window_Length_User_UOM_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -18772,6 +24450,132 @@ End Select
       '   END FORMULA; PROP ID:9809; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Tracking_Photocell_Distance_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_H_to_H_Spacing_Req_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_H_to_H_Spacing_Req_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9860; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9860; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_H_to_H_Spacing_Req_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Min_T_to_H_Gap_Req_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Min_T_to_H_Gap_Req_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9861; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:9861; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Min_T_to_H_Gap_Req_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandA_Theoretical_Max_Throughput_Rate_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:267; TYPE:PN
+      
+      '   END FORMULA; SUB ID:267; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_PandA_Theoretical_Max_Throughput_Rate_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandA_Theoretical_Max_Throughput_Rate_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("PandA_Theoretical_Max_Throughput_Rate").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:267; TYPE:QF
+      Dim count As Integer = 0
+Dim maxLength As Double = Me.MTBH_Length_Maximum_IN
+Dim minLength As Double = Me.MTBH_Length_Minimum_IN
+
+While minLength <= maxLength
+	count += 1
+	minLength += 1
+End While
+
+Result = count
+      '   END FORMULA; SUB ID:267; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_PandA_Theoretical_Max_Throughput_Rate_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PandA_Theoretical_Max_Throughput_Rate_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("PandA_Theoretical_Max_Throughput_Rate").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:267; TYPE:OP
+      result = "CAE_App_Calc_Print_And_Apply_Theoretical_Max"
+      '   END FORMULA; SUB ID:267; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_PandA_Theoretical_Max_Throughput_Rate_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

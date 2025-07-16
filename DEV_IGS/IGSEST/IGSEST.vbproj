@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{676cd49d-f10a-4045-aa8f-7cd450dd617f}</ProjectGuid>
+		<ProjectGuid>{a3db1f9b-4c7d-4fd7-a878-3d41c8e70b5d}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>IGSEST</RootNamespace>
 		<AssemblyName>IGSEST</AssemblyName>
@@ -94,40 +94,70 @@
 		<Import Include="Aspose.Cells" />
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Include="cae_air_piping_control_panel.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_app_calc.vb">
+		<Compile Include="igs_project_top_app.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_app_calc_print_and_apply.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_chutes.vb">
+		<Compile Include="cae_app_calc_print_and_apply_theoretical_max.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_control_panels_structures_platforms.vb">
+		<Compile Include="prd_output_test_01_line.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="prd_output_test_01.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mech_install_metrics.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_misc_constant.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_conveyor_costing.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_conveyor_costing_elec.vb">
+		<Compile Include="cae_ttcb_costing_mech.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_conveyor_installs_elec.vb">
+		<Compile Include="cae_air_piping_control_panel.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_elec_install_metrics.vb">
+		<Compile Include="cae_mei_hhs_hanger_types.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_mech_install_conveyor_hours.vb">
+		<Compile Include="cae_chutes.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_tool_instance_mgr.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_mech_install_cp_comp.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_mech_install_metrics.vb">
+		<Compile Include="cae_ehs350_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_app_calc.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mech_install_conveyor_hours.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_print_and_apply.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_shuttle_mech.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_conveyor_costing_elec.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_ttcb_costing_elec.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_shuttle_elec.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_power_feed_control_panel.vb">
@@ -136,13 +166,13 @@
 		<Compile Include="cae_power_feeds.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_print_and_apply.vb">
+		<Compile Include="cae_conveyor_installs_elec.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_shuttle_elec.vb">
+		<Compile Include="cae_control_panels_structures_platforms.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_shuttle_mech.vb">
+		<Compile Include="tmp_metrics_lookup_sample.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_structures_platform.vb">
@@ -151,25 +181,13 @@
 		<Compile Include="cae_structures_platforms.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_ttcb_costing_elec.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_ttcb_costing_mech.vb">
+		<Compile Include="cae_elec_install_metrics.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="igs_opportunity.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="igs_project_top_app.vb">
-			<SubType>Code</SubType>
-		</Compile>
 		<Compile Include="igs_proposal_data.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="igs_tool_instance_mgr.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="tmp_metrics_lookup_sample.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="ServerManager.vb">
