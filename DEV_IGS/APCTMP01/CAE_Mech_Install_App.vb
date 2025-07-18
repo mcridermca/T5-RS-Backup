@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: CAE_Mech_Install_App
-'$ GenerateDate: 07/16/2025 13:16:42
+'$ GenerateDate: 07/18/2025 11:37:15
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -82,6 +82,9 @@ Option Infer On
         
         Case "102"
         Result = Process_DefaultProcess_Chutes_Test_COMMENT()
+        
+        Case "110"
+        Result = Process_DefaultProcess_Chutes_Grid_test_COMMENT()
         End Select
         End Select
       
@@ -101,6 +104,9 @@ Option Infer On
         
         Case "102"
         Result = Process_DefaultProcess_Chutes_Test_STATUS()
+        
+        Case "110"
+        Result = Process_DefaultProcess_Chutes_Grid_test_STATUS()
         End Select
         End Select
       
@@ -254,6 +260,24 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Input_Labor_Type]() As String
+      Get
+      Return Properties("Input_Labor_Type").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Input_Labor_Type").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Input_Work_Week_Type]() As String
+      Get
+      Return Properties("Input_Work_Week_Type").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Input_Work_Week_Type").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Selection_Control_Panel]() As String
       Get
       Return Properties("Selection_Control_Panel").Value
@@ -383,6 +407,12 @@ Option Infer On
       Public ReadOnly Property [Shuttle_Mech]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Shuttle_Mech")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [Sourcing_Inputs_01]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("Sourcing_Inputs_01")
       End Get
       End Property
     
@@ -625,16 +655,18 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Mech_Install_App", <a><![CDATA[CAE Mech Install App]]></a>.Value, 360, "APCTMP01",  "N", "N", True, True, "In Development", "", "C&E Mechanical Install Estimator App", "", "", "",  "GLOBAL\H602502", "07/16/2025 12:36:23")
+    InitPart("CAE_Mech_Install_App", <a><![CDATA[CAE Mech Install App]]></a>.Value, 360, "APCTMP01",  "N", "N", True, True, "In Development", "", "C&E Mechanical Install Estimator App", "", "", "",  "GLOBAL\H617242", "07/18/2025 10:38:30")
     AddProperty("4540", "HCAD_Import_QuantityOfCPs", <a><![CDATA[HCAD_Import_Quantity Of CPs]]></a>.Value, "", "Long","","HCAD Pricing Sheet Import","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/19/2025 7:22:50 PM")
     AddProperty("4539", "HCAD_Import_RawData", <a><![CDATA[HCAD_Import_Raw Data]]></a>.Value, "", "String","","HCAD Pricing Sheet Import","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/18/2025 9:03:56 PM")
     AddProperty("9513", "AirPipingFactor", <a><![CDATA[Air Piping Factor]]></a>.Value, "", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 7:07:53 PM")
     AddProperty("6163", "Base_Option_Alternate_Name", <a><![CDATA[Base_Option_Alternate_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 12:08:29 PM")
     AddProperty("8091", "bool_Unique_System_Name", <a><![CDATA[bool_Unique_System_Name]]></a>.Value, "", "Boolean","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/2/2025 6:26:30 PM")
-    AddProperty("9518", "CAE_Customer", <a><![CDATA[CAE_Customer]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:05:19 PM")
-    AddProperty("9519", "CAE_Customer_Location", <a><![CDATA[CAE_Customer_Location]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 7:13:51 PM")
-    AddProperty("9521", "CAE_Customer_Project_Number", <a><![CDATA[CAE_Customer_Project_Number]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 7:14:29 PM")
-    AddProperty("9520", "CAE_Quote_Date", <a><![CDATA[CAE_Quote_Date]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:30:39 PM")
+    AddProperty("9518", "CAE_Customer", <a><![CDATA[CAE_Customer]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 5:24:57 PM")
+    AddProperty("9519", "CAE_Customer_Location", <a><![CDATA[CAE_Customer_Location]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 5:25:21 PM")
+    AddProperty("9521", "CAE_Customer_Project_Number", <a><![CDATA[CAE_Customer_Project_Number]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 5:26:39 PM")
+    AddProperty("9520", "CAE_Quote_Date", <a><![CDATA[CAE_Quote_Date]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 11:42:09 AM")
+    AddProperty("10624", "Input_Labor_Type", <a><![CDATA[Input_Labor_Type]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:49:49 PM")
+    AddProperty("10625", "Input_Work_Week_Type", <a><![CDATA[Input_Work_Week_Type]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:51:37 PM")
     AddProperty("9497", "Selection_Control_Panel", <a><![CDATA[Selection_Control_Panel]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 4:51:10 PM")
     AddProperty("9511", "Selection_Control_Panel_Delta", <a><![CDATA[Selection_Control_Panel_Delta]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 6:09:00 PM")
     AddProperty("8092", "Selection_System", <a><![CDATA[Selection_System]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/2/2025 7:10:05 PM")
@@ -645,6 +677,10 @@ Option Infer On
     AddProperty("4538", "HCAD_Import_FileNameAndPath", <a><![CDATA[HCAD_Import_FileNameAndPath]]></a>.Value, "", "String","","UI Control","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/18/2025 8:10:38 PM")
     
       AddValidValue("AirPipingFactor")
+    
+      AddValidValue("Input_Labor_Type")
+    
+      AddValidValue("Input_Work_Week_Type")
     
       AddValidValue("Selection_Control_Panel")
     
@@ -672,7 +708,7 @@ Option Infer On
       
         oSubpart.AddVPF (399, "CAE_Mech_Install_CP_Comp", "CAE_Mech_Install_CP_Comp")
       
-      oSubpart = AddSubpart(307,"Chutes", <a><![CDATA[Chutes]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/16/2025 12:36:23 PM")
+      oSubpart = AddSubpart(307,"Chutes", <a><![CDATA[Chutes]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H582667", "7/17/2025 9:23:58 AM")
       
         oSubpart.AddVPF (409, "CAE_Chutes", "CAE_Chutes")
       
@@ -680,21 +716,25 @@ Option Infer On
       
         oSubpart.AddVPF (399, "CAE_Mech_Install_CP_Comp", "CAE_Mech_Install_CP_Comp")
       
-      oSubpart = AddSubpart(308,"Conveyor_Costing_Intelligrated_Suppor_Mech_Install", <a><![CDATA[Conveyor_Costing_Intelligrated_Suppor_Mech_Install]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/8/2025 4:23:38 PM")
+      oSubpart = AddSubpart(308,"Conveyor_Costing_Intelligrated_Suppor_Mech_Install", <a><![CDATA[Conveyor_Costing_Intelligrated_Suppor_Mech_Install]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H617242", "7/17/2025 5:37:44 AM")
       
         oSubpart.AddVPF (389, "CAE_Conveyor_Costing", "CAE_Conveyor_Costing")
       
-      oSubpart = AddSubpart(309,"Conveyor_Costing_SC_Mech_Install", <a><![CDATA[Conveyor_Costing_SC_Mech_Install]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/8/2025 4:28:27 PM")
+      oSubpart = AddSubpart(309,"Conveyor_Costing_SC_Mech_Install", <a><![CDATA[Conveyor_Costing_SC_Mech_Install]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H617242", "7/17/2025 5:37:58 AM")
       
         oSubpart.AddVPF (389, "CAE_Conveyor_Costing", "CAE_Conveyor_Costing")
       
-      oSubpart = AddSubpart(261,"Mech_Install_Metrics", <a><![CDATA[Mech_Install_Metrics]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "6/24/2025 6:29:05 PM")
+      oSubpart = AddSubpart(261,"Mech_Install_Metrics", <a><![CDATA[Mech_Install_Metrics]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H617242", "7/18/2025 7:21:01 AM")
       
         oSubpart.AddVPF (382, "CAE_Mech_Install_Metrics", "CAE_Mech_Install_Metrics")
       
       oSubpart = AddSubpart(295,"Shuttle_Mech", <a><![CDATA[Shuttle_Mech]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/1/2025 5:54:02 PM")
       
         oSubpart.AddVPF (398, "CAE_Shuttle_Mech", "CAE_Shuttle_Mech")
+      
+      oSubpart = AddSubpart(346,"Sourcing_Inputs_01", <a><![CDATA[Sourcing_Inputs_01]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/17/2025 7:19:36 PM")
+      
+        oSubpart.AddVPF (432, "CAE_Sourcing_Inputs", "CAE_Sourcing_Inputs")
       
       oSubpart = AddSubpart(271,"Structures_Platforms", <a><![CDATA[Structures_Platforms]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "6/27/2025 11:52:19 AM")
       
@@ -728,7 +768,7 @@ Option Infer On
       
         oConnection.AddVPF(399, "CAE_Mech_Install_CP_Comp")
       
-      oConnection = AddConnection("My_Chute", <a><![CDATA[My_Chute]]></a>.Value, "", "135", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/8/2025 6:30:55 PM")
+      oConnection = AddConnection("My_Chute", <a><![CDATA[My_Chute]]></a>.Value, "", "135", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/17/2025 4:43:37 PM")
       
         oConnection.AddVPF(409, "CAE_Chutes")
       
@@ -765,6 +805,7 @@ Option Infer On
         Initialize_Process_DefaultProcess_Import()
         Initialize_Process_DefaultProcess_Metrics_Table()
         Initialize_Process_DefaultProcess_Chutes_Test()
+        Initialize_Process_DefaultProcess_Chutes_Grid_test()
     Case Else
     Process = "DefaultProcess"
     End Select
@@ -1283,8 +1324,13 @@ Option Infer On
         Dim oProcessStep As ProcessStep = Nothing
         oProcessStep = AddProcessStep(99, "Metrics Table", "", 101, 46, 1, 2, 50, 50)
         oProcessStep.AddPath("CAE_Mech_Install_App.Control_Panels/CAE_Mech_Install_CP_Comp")
-        oProcessStep.AddFilter(1, 399, "Mech Install", 1, "Plt_Cnvyr_CDLR_0_to_8_ft_Units_Metrics", 1)
-        oProcessStep.AddLayout(1, 1, "1;2;0")
+        oProcessStep.AddPath("CAE_Mech_Install_App.Conveyor_Costing_SC_Mech_Install/CAE_Conveyor_Costing")
+        oProcessStep.AddPath("CAE_Mech_Install_App.Mech_Install_Metrics/CAE_Mech_Install_Metrics")
+        oProcessStep.AddPath("CAE_Mech_Install_App.Mech_Install_Metrics/CAE_Mech_Install_Metrics.Misc_Constants/CAE_Misc_Constant")
+        oProcessStep.AddFilter(1, 0, "UI Inputs", 2, "Hours_Misc_Dollars", 1)
+        oProcessStep.AddFilter(1, 0, "Mech Install Metrics", 1, "Misc_Description", 1)
+        oProcessStep.AddFilter(1, 0, "Mech Install Metrics", 1, "Misc_Factor", 2)
+        oProcessStep.AddLayout(1, 8, "0;Misc_Constants")
         
         End Sub
       
@@ -1353,6 +1399,28 @@ Option Infer On
         
         End Sub
       
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
+        Private Sub Initialize_Process_DefaultProcess_Chutes_Grid_test()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(110, "Chutes_Grid_test", "", 101, 46, 1, 4, 50, 50)
+        oProcessStep.AddPath("CAE_Mech_Install_App")
+        oProcessStep.AddLayout(1, 11, "")
+        oProcessStep.AddCustomLayout(1, 360, "1", "0", "RsGrid", 0, "", 0, 0, 319, 697, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,307,Chutes;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
+        oProcessStep.AddCustomLayout(1, 360, "2", "1", "RsGridColumn", 0, "MEI_Chutes_Style_1_Angle_of_Curve", 0, 0, 0, 100, 0, "Angle of Curve", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 360, "3", "1", "RsGridColumn", 0, "MEI_Chutes_Style_1_Length_in_Feet", 0, 0, 0, 100, 0, "Length in Feet", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 360, "4", "1", "RsGridColumn", 0, "MEI_Chutes_Style_1_Type_of_Material", 0, 0, 0, 100, 0, "Type of Material", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 360, "5", "1", "RsGridColumn", 0, "MEI_Chutes_Style_1_Infeed_Conveyor_Type", 0, 0, 0, 100, 0, "Infeed Conveyor Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 360, "6", "1", "RsGridColumn", 0, "MEI_Chutes_Style_1_Number_of_Merging_Lanes", 0, 0, 0, 100, 0, "Number of Merging Lanes", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 360, "7", "1", "RsGridColumn", 0, "MEI_Chutes_Style_1_Number_of_Sorting_Lanes", 0, 0, 0, 100, 0, "Number of Sorting Lanes", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 360, "8", "0", "RsAddDeleteCopy", 0, "", 325, 0, 22, 158, 1, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,307,Chutes;CanDelete:;AddPrompt:False;ShowCopy:True")
+        
+        End Sub
+      
 
     '*****************************************************************************
     '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -1380,16 +1448,22 @@ Option Infer On
           InitProperty("bool_Unique_System_Name", "7689", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/2/2025 6:26:30 PM", "", "In Development",  0,11953)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("CAE_Customer", "9098", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:05:19 PM", "", "In Development",  0,16001)
+          InitProperty("CAE_Customer", "9098", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 5:24:57 PM", "", "In Development",  0,18902)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("CAE_Customer_Location", "9099", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 7:13:51 PM", "", "In Development",  0,15201)
+          InitProperty("CAE_Customer_Location", "9099", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 5:25:21 PM", "", "In Development",  0,18903)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("CAE_Customer_Project_Number", "9101", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 7:14:29 PM", "", "In Development",  0,15204)
+          InitProperty("CAE_Customer_Project_Number", "9101", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 5:26:39 PM", "", "In Development",  0,18904)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("CAE_Quote_Date", "9100", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:30:39 PM", "", "In Development",  0,15685)
+          InitProperty("CAE_Quote_Date", "9100", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 11:42:09 AM", "", "In Development",  0,18472)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Input_Labor_Type", "10192", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:49:49 PM", "", "In Development",  0,18926)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Input_Work_Week_Type", "10193", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:51:37 PM", "", "In Development",  0,18930)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Selection_Control_Panel", "9077", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/8/2025 4:51:10 PM", "", "In Development",  0,15164)
@@ -1426,6 +1500,14 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitValidValue("AirPipingFactor_ValidValues", "9093", "-1", 15190)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Input_Labor_Type_ValidValues", "10192", "-1", 18927)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Input_Work_Week_Type_ValidValues", "10193", "-1", 18931)
         End If
             If Incontext("-1", ctx) Then
           
@@ -1478,7 +1560,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Chutes", 234, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 12:36:23 PM", "", "In Development", "N",0,633,732)
+        InitSubpart("Chutes", 234, "", "", "Y", 0, "-1", "", "GLOBAL\H582667", "7/17/2025 9:23:58 AM", "", "In Development", "Y",0,633,748)
         
           End If
         
@@ -1490,25 +1572,31 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Conveyor_Costing_Intelligrated_Suppor_Mech_Install", 235, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/8/2025 4:23:38 PM", "", "In Development", "N",0,635,634)
+        InitSubpart("Conveyor_Costing_Intelligrated_Suppor_Mech_Install", 235, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/17/2025 5:37:44 AM", "", "In Development", "N",0,635,743)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Conveyor_Costing_SC_Mech_Install", 236, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/8/2025 4:28:27 PM", "", "In Development", "N",0,638,639)
+        InitSubpart("Conveyor_Costing_SC_Mech_Install", 236, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/17/2025 5:37:58 AM", "", "In Development", "N",0,638,744)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Mech_Install_Metrics", 196, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "6/24/2025 6:29:02 PM", "", "In Development", "N",0,544,539)
+        InitSubpart("Mech_Install_Metrics", 196, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/18/2025 7:21:01 AM", "", "In Development", "N",0,544,539)
         
           End If
         
             If Incontext("-1", ctx) Then
           
         InitSubpart("Shuttle_Mech", 221, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/1/2025 5:54:02 PM", "", "In Development", "N",0,598,597)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("Sourcing_Inputs_01", 273, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 7:19:36 PM", "", "In Development", "N",0,757,756)
         
           End If
         
@@ -1573,7 +1661,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("My_Chute", "115", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/8/2025 6:30:55 PM", "", "In Development", "N",211)
+        InitConnection("My_Chute", "115", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 4:43:37 PM", "", "In Development", "Y",326)
         
           End If
         
@@ -1816,7 +1904,7 @@ Dim i As Integer = 1
 
 While i <= count
 	
-	If Me.Selection_Control_Panel = Me.Chutes(i).DisplayName
+	If Me.Selection_System = Me.Chutes(i).DisplayName
 		Result = Me.Chutes(i)
 		Exit While
 	End If
@@ -2025,7 +2113,7 @@ Result = STATUS_HIDDEN
 ' STATUS_HIDDEN = 4
 ' STATUS_DISABLED = 5
 
-result = STATUS_ENABLED
+Result = STATUS_HIDDEN
       '   END FORMULA; PROC ID:102; TYPE:ST
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Process_DefaultProcess_Chutes_Test_STATUS", ex.Message)
@@ -2047,6 +2135,51 @@ result = STATUS_ENABLED
       '   END FORMULA; PROC ID:102; TYPE:CO
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Process_DefaultProcess_Chutes_Test_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Chutes_Grid_test_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:110; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+Result = STATUS_HIDDEN
+      '   END FORMULA; PROC ID:110; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Process_DefaultProcess_Chutes_Grid_test_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Chutes_Grid_test_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:110; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:110; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Process_DefaultProcess_Chutes_Grid_test_COMMENT", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -2223,7 +2356,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9098; TYPE:PF
-      Result = Me.Parent.Parent.Proposal_Customer_Name
+      Result = Me.My_PRD(1).Proposal_Customer_Name
       '   END FORMULA; PROP ID:9098; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_CAE_Customer", ex.Message)
@@ -2248,7 +2381,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9099; TYPE:PF
-      Result = me.Parent.Parent.Proposal_City_State
+      Result = Me.My_PRD(1).Proposal_City_State
       '   END FORMULA; PROP ID:9099; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_CAE_Customer_Location", ex.Message)
@@ -2273,7 +2406,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9101; TYPE:PF
-      Result = Me.Parent.Parent.Proposal_ID
+      Result = Me.My_PRD(1).Proposal_ID
       '   END FORMULA; PROP ID:9101; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_CAE_Customer_Project_Number", ex.Message)
@@ -2298,10 +2431,60 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9100; TYPE:PF
-      Result = DateTime.Now.ToString("MM/dd/yyyy")
+      Result = me.My_PRD(1).Proposal_Date
       '   END FORMULA; PROP ID:9100; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_CAE_Quote_Date", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Input_Labor_Type() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Input_Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10192; TYPE:PF
+      Result = "Non-Union"
+      '   END FORMULA; PROP ID:10192; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Input_Labor_Type", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Input_Work_Week_Type() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Input_Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10193; TYPE:PF
+      Result = "1st Shift"
+      '   END FORMULA; PROP ID:10193; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Input_Work_Week_Type", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -2588,6 +2771,24 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Input_Labor_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Input_Work_Week_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Selection_Control_Panel_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -2759,6 +2960,24 @@ Result = 2
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Input_Labor_Type_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Input_Work_Week_Type_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Selection_Control_Panel_USERCHANGE() as Boolean
       Return True
       End Function
@@ -2836,6 +3055,54 @@ Result = 2
       '   END FORMULA; PROP ID:9093; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_AirPipingFactor_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Input_Labor_Type_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Input_Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10192; TYPE:VV
+      Result = MakeValidValues(Array("Union", "Non-Union"))
+      '   END FORMULA; PROP ID:10192; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Input_Labor_Type_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Input_Work_Week_Type_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Input_Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10193; TYPE:VV
+      Result = MakeValidValues(Array("1st Shift", "2nd Shift", "3rd Shift", "24/7", "Weekend Only"))
+      '   END FORMULA; PROP ID:10193; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Input_Work_Week_Type_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -3378,7 +3645,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; SUB ID:235; TYPE:QF
-      Result = me.Base_Options_Alternates.Quantity
+      Result = Me.Base_Options_Alternates.Quantity
       '   END FORMULA; SUB ID:235; TYPE:QF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Conveyor_Costing_Intelligrated_Suppor_Mech_Install_QUANTITY", ex.Message)
@@ -3613,6 +3880,75 @@ End Select
       '   END FORMULA; SUB ID:221; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Shuttle_Mech_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Inputs_01_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:273; TYPE:PN
+      
+      '   END FORMULA; SUB ID:273; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Sourcing_Inputs_01_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Inputs_01_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Sourcing_Inputs_01").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:273; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:273; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Sourcing_Inputs_01_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Inputs_01_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Sourcing_Inputs_01").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:273; TYPE:OP
+      Result = "CAE_Sourcing_Inputs"
+      '   END FORMULA; SUB ID:273; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Sourcing_Inputs_01_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

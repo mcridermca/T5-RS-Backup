@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: HHS_HeaderHanger_Calc
-'$ GenerateDate: 07/15/2025 18:44:29
+'$ GenerateDate: 07/17/2025 11:26:16
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -194,6 +194,24 @@ Option Infer On
       End Get
       Set(ByVal Value As String)
       Properties("Valid_Message").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Tool_Name]() As String
+      Get
+      Return Properties("Tool_Name").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Tool_Name").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Tool_Status]() As String
+      Get
+      Return Properties("Tool_Status").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Tool_Status").CalculatedValue = Value
       End Set
       End Property
     
@@ -397,10 +415,14 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("HHS_HeaderHanger_Calc", <a><![CDATA[Header Hanger Calculator]]></a>.Value, 333, "APCTMP01",  "", "", True, True, "In Development", "", "Header Hanger Calculator", "", "", "",  "GLOBAL\H601424", "07/15/2025 18:44:03")
+    InitPart("HHS_HeaderHanger_Calc", <a><![CDATA[Header Hanger Calculator]]></a>.Value, 333, "APCTMP01",  "", "", True, True, "In Development", "", "Header Hanger Calculator", "", "", "",  "GLOBAL\H602502", "07/16/2025 20:35:05")
     AddProperty("9797", "Valid", <a><![CDATA[Valid]]></a>.Value, "Are Plastic Totes Used?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/10/2025 2:34:37 PM")
     AddProperty("9796", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/10/2025 2:26:45 PM")
+    AddProperty("10436", "Tool_Name", <a><![CDATA[Tool_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:35:05 PM")
+    AddProperty("10437", "Tool_Status", <a><![CDATA[Tool_Status]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:34:54 PM")
     AddProperty("2199", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "4/21/2025 3:45:13 PM")
+    
+      AddValidValue("Tool_Status")
     
       oSubpart = AddSubpart(302,"BOM_Report_01", <a><![CDATA[BOM_Report_01]]></a>.Value, "FD", "", "BOM Item", 9999, "", "GLOBAL\H601424", "7/7/2025 6:32:30 PM")
       
@@ -572,6 +594,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           InitProperty("Valid_Message", "9382", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 2:21:44 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,16043)
         End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Tool_Name", "10009", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:35:05 PM", "", "In Development",  0,18247)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Tool_Status", "10010", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:34:54 PM", "", "In Development",  0,18245)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -583,6 +611,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Tool_Status_ValidValues", "10010", "-1", 18246)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -918,6 +950,56 @@ Result = EList.ErrorSummary(1)
       Return Result
       End Function
     
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Tool_Name() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Name").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10009; TYPE:PF
+      Result = "Header Hanger"
+      '   END FORMULA; PROP ID:10009; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HHS_HeaderHanger_Calc.Formula_Tool_Name", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Tool_Status() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Status").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10010; TYPE:PF
+      Result = "New"
+      '   END FORMULA; PROP ID:10010; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HHS_HeaderHanger_Calc.Formula_Tool_Status", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
       '
@@ -941,6 +1023,24 @@ Result = EList.ErrorSummary(1)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Tool_Name_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Valid_USERCHANGE() as Boolean
       Return True
       End Function
@@ -952,6 +1052,48 @@ Result = EList.ErrorSummary(1)
       '*****************************************************************************
       Public Function Formula_Valid_Message_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Name_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Status").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10010; TYPE:VV
+      Result = MakeValidValues(Array("New", "Work In Progress", "Approved", "As Sold"))
+      '   END FORMULA; PROP ID:10010; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HHS_HeaderHanger_Calc.Formula_Tool_Status_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
       '*****************************************************************************

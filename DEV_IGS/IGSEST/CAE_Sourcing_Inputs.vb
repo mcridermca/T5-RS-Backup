@@ -3,7 +3,7 @@ Option Explicit On
 Option Infer On
 
 '$ Application: IGSEST
-'$ PartFamily: CAE_Misc_Constant
+'$ PartFamily: CAE_Sourcing_Inputs
 '$ GenerateDate: 07/18/2025 11:37:15
 
     Imports Microsoft.VisualBasic
@@ -24,7 +24,7 @@ Option Infer On
     Imports IGSEST.swMateAlign_e
     Imports IGSEST.severity
 
-    Public Class [CAE_Misc_Constant]
+    Public Class [CAE_Sourcing_Inputs]
     
     Inherits RuleStream.Kernel.Part
     Implements RuleStream.IRsPartFormulas
@@ -45,7 +45,7 @@ Option Infer On
     '*                                                                       *
     '*************************************************************************
 
-    Private this as CAE_Misc_Constant = me
+    Private this as CAE_Sourcing_Inputs = me
 
     #Region " IRsPartFormulas Implementation "
 
@@ -147,30 +147,66 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
-          Public Property [CAE_MEI_Misc_Constants_ID]() As Long
+          Public Property [Debug_Mode]() As Boolean
       Get
-      Return Properties("CAE_MEI_Misc_Constants_ID").Value
+      Return Properties("Debug_Mode").Value
       End Get
-      Set(ByVal Value As Long)
-      Properties("CAE_MEI_Misc_Constants_ID").CalculatedValue = Value
+      Set(ByVal Value As Boolean)
+      Properties("Debug_Mode").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [Misc_Description]() As String
+          Public Property [Sourcing_Labor_Type]() As String
       Get
-      Return Properties("Misc_Description").Value
+      Return Properties("Sourcing_Labor_Type").Value
       End Get
       Set(ByVal Value As String)
-      Properties("Misc_Description").CalculatedValue = Value
+      Properties("Sourcing_Labor_Type").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [Misc_Factor]() As Double
+          Public Property [Sourcing_Work_Week_Hours]() As Double
       Get
-      Return Properties("Misc_Factor").Value
+      Return Properties("Sourcing_Work_Week_Hours").Value
       End Get
       Set(ByVal Value As Double)
-      Properties("Misc_Factor").CalculatedValue = Value
+      Properties("Sourcing_Work_Week_Hours").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sourcing_Work_Week_Type]() As String
+      Get
+      Return Properties("Sourcing_Work_Week_Type").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Sourcing_Work_Week_Type").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectName]() As String
+      Get
+      Return Properties("XMLObjectName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectName").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectType]() As String
+      Get
+      Return Properties("XMLObjectType").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectType").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [XMLObjectValue]() As String
+      Get
+      Return Properties("XMLObjectValue").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("XMLObjectValue").CalculatedValue = Value
       End Set
       End Property
     
@@ -183,13 +219,16 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Hours_Misc_Dollars]() As Double
+      Public ReadOnly Property [Sourcing_Input]() As Rulestream.Kernel.Subpart
       Get
-      Return Properties("Hours_Misc_Dollars").Value
+      Return Subparts("Sourcing_Input")
       End Get
-      Set(ByVal Value As Double)
-      Properties("Hours_Misc_Dollars").CalculatedValue = Value
-      End Set
+      End Property
+    
+      Public ReadOnly Property [MySource]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("MySource")
+      End Get
       End Property
     
     #End Region
@@ -206,17 +245,24 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Misc_Constant", <a><![CDATA[CAE_Misc_Constant]]></a>.Value, 427, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H617242", "07/18/2025 06:59:35")
-    AddProperty("10414", "CAE_MEI_Misc_Constants_ID", <a><![CDATA[CAE_MEI_Misc_Constants_ID]]></a>.Value, "Primary key for Misc Constants DB", "Long","","Mech Install Metrics","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 3:03:35 PM")
-    AddProperty("10415", "Misc_Description", <a><![CDATA[Misc_Description]]></a>.Value, "Miscellaneous constants DB table column", "String","","Mech Install Metrics","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 3:03:35 PM")
-    AddProperty("10416", "Misc_Factor", <a><![CDATA[Misc_Factor]]></a>.Value, "Miscellaneous constant factor", "Double","","Mech Install Metrics","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 3:03:35 PM")
-    AddProperty("10413", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 3:03:35 PM")
-    AddProperty("10636", "Hours_Misc_Dollars", <a><![CDATA[Hours_Misc_Dollars]]></a>.Value, "", "Double","","UI Inputs","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/18/2025 6:59:35 AM")
+    InitPart("CAE_Sourcing_Inputs", <a><![CDATA[CAE_Sourcing_Inputs]]></a>.Value, 432, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/17/2025 20:25:52")
+    AddProperty("10628", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 8:00:10 PM")
+    AddProperty("10623", "Sourcing_Labor_Type", <a><![CDATA[Sourcing_Labor_Type]]></a>.Value, "Mech Install^'Sourcing Inputs'!U1", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:54:29 PM")
+    AddProperty("10627", "Sourcing_Work_Week_Hours", <a><![CDATA[Sourcing_Work_Week_Hours]]></a>.Value, "Mech Install^'Sourcing INputs'!V2", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 8:25:52 PM")
+    AddProperty("10626", "Sourcing_Work_Week_Type", <a><![CDATA[Sourcing_Work_Week_Type]]></a>.Value, "Mech Install^'Sourcing Inputs'!U2", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:54:25 PM")
+    AddProperty("10629", "XMLObjectName", <a><![CDATA[XMLObjectName]]></a>.Value, "XML Export Object Name", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/17/2025 8:00:32 PM")
+    AddProperty("10630", "XMLObjectType", <a><![CDATA[XMLObjectType]]></a>.Value, "XML Export Object Type", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/17/2025 8:00:10 PM")
+    AddProperty("10631", "XMLObjectValue", <a><![CDATA[XMLObjectValue]]></a>.Value, "XML Export Object Value", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/17/2025 8:00:10 PM")
+    AddProperty("10609", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:19:20 PM")
     
-      AddValidValue("Misc_Factor")
-    
-      AddDBConstraint(13, "Misc_Constants_DbInfo", <a><![CDATA[Misc_Constants_DbInfo]]></a>.Value,"Mech Install Metrics", 9999)
-    
+      oSubpart = AddSubpart(347,"Sourcing_Input", <a><![CDATA[Sourcing_Input]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/17/2025 7:21:02 PM")
+      
+        oSubpart.AddVPF (431, "CAE_Sourcing_Input", "CAE_Sourcing_Input")
+      
+      oConnection = AddConnection("MySource", <a><![CDATA[My Source Part Family]]></a>.Value, "Connection to the Value Provider Part Family Instance", "202", "OO", 0, "","Oracle Config XML", 9999, "Oracle Configurator Transfer", "GLOBAL\H602502", "7/17/2025 8:00:10 PM")
+      
+        oConnection.AddVPF(33, "OCT_Accessory")
+      
     End Sub
 
     '*****************************************************************************
@@ -246,16 +292,25 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("CAE_MEI_Misc_Constants_ID", "9987", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 3:03:35 PM", "", "In Development",  0,18112)
+          InitProperty("Debug_Mode", "10196", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:00:10 PM", "True = Debug On / False = Debug Off", "In Development",  0,18938)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Misc_Description", "9988", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 3:03:35 PM", "", "In Development",  0,18113)
+          InitProperty("Sourcing_Labor_Type", "10191", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:53:23 PM", "", "In Development",  0,18934)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Misc_Factor", "9989", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 3:03:35 PM", "", "In Development",  0,18114)
+          InitProperty("Sourcing_Work_Week_Hours", "10195", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:25:52 PM", "", "In Development",  0,18948)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Hours_Misc_Dollars", "10204", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/18/2025 6:59:35 AM", "", "In Development",  0,19002)
+          InitProperty("Sourcing_Work_Week_Type", "10194", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:54:25 PM", "", "In Development",  0,18936)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectName", "10197", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:00:32 PM", "XML Export Object Name", "In Development",  0,18942)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectType", "10198", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:00:10 PM", "XML Export Object Type", "In Development",  0,18940)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("XMLObjectValue", "10199", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:00:10 PM", "XML Export Object Value", "In Development",  0,18941)
         End If
     End Sub
 
@@ -268,10 +323,6 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitValidValue("Misc_Factor_ValidValues", "9989", "-1", 18115)
-        End If
     End Sub
 
     '*****************************************************************************
@@ -283,6 +334,12 @@ Option Infer On
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("Sourcing_Input", 274, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 7:21:02 PM", "", "In Development", "N",0,759,760)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -294,6 +351,12 @@ Option Infer On
     Private Sub NewContextInit_Connections()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("MySource", "182", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 8:00:10 PM", "Connection to the Value Provider Part Family Instance", "In Development", "Y",330)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -305,16 +368,6 @@ Option Infer On
     Private Sub NewContextInit_DB()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitDBConstraint("Misc_Constants_DbInfo", 13,"", "Y","", "", "CAE_MEI_Misc_Constants")
-        
-          InitDBproperty("Misc_Constants_DbInfo", "Misc_Description",13, "Misc_Description", "CAE_MEI_Misc_Constants")
-        
-          InitDBproperty("Misc_Constants_DbInfo", "Misc_Factor",13, "Factor", "CAE_MEI_Misc_Constants")
-        
-          End If
-        
     End Sub
 
     #End Region
@@ -322,24 +375,53 @@ Option Infer On
     #Region " Formulas "
 
     
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MySource_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+          '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+        
+        '   BEGIN FORMULA; CON ID:182; TYPE:PF
+        Result = Nothing ' Set to Object that has the data you need to report on ' Me.Parent.HHS_Output(1)
+        '   END FORMULA; CON ID:182; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_MySource_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
           '*****************************************************************************
           '   Copyright (C) 2024 Siemens. All rights reserved.
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_CAE_MEI_Misc_Constants_ID() As Long
-          Dim Result as Long
+          Public Function Formula_Debug_Mode() As Boolean
+          Dim Result as Boolean
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("CAE_MEI_Misc_Constants_ID").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("Debug_Mode").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:9987; TYPE:PF
-      Result = Me.Parent.ValidValues("Misc_Constants_Row_DBKeys")(Me.SubpartID-1)
-      '   END FORMULA; PROP ID:9987; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10196; TYPE:PF
+      Result = False
+If Not Me.Parent Is Nothing AndAlso Me.Parent.Properties.ContainsKey("Debug_Mode") Then
+		Result = Me.Parent.Debug_Mode
+End If
+      '   END FORMULA; PROP ID:10196; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.Formula_CAE_MEI_Misc_Constants_ID", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_Debug_Mode", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -350,21 +432,21 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Misc_Description() As String
+          Public Function Formula_Sourcing_Labor_Type() As String
           
           Dim Result as String = String.Empty
         
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Misc_Description").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Sourcing_Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:9988; TYPE:PF
-      Result = "80/20 Guards"
-      '   END FORMULA; PROP ID:9988; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10191; TYPE:PF
+      Result = me.Parent.Input_Labor_Type
+      '   END FORMULA; PROP ID:10191; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.Formula_Misc_Description", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_Sourcing_Labor_Type", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -375,19 +457,19 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Misc_Factor() As Double
+          Public Function Formula_Sourcing_Work_Week_Hours() As Double
           Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Misc_Factor").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Sourcing_Work_Week_Hours").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:9989; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9989; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10195; TYPE:PF
+      Result = 58 ''' ToDo - Connect to application - TB 17 July, 2025
+      '   END FORMULA; PROP ID:10195; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.Formula_Misc_Factor", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_Sourcing_Work_Week_Hours", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -398,115 +480,296 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Hours_Misc_Dollars() As Double
-          Dim Result as Double
+          Public Function Formula_Sourcing_Work_Week_Type() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Hours_Misc_Dollars").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Sourcing_Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10204; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:10204; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10194; TYPE:PF
+      Result = Me.Parent.Input_Work_Week_Type
+      '   END FORMULA; PROP ID:10194; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.Formula_Hours_Misc_Dollars", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_Sourcing_Work_Week_Type", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
       End Function
     
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_CAE_MEI_Misc_Constants_ID_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("XMLObjectName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10197; TYPE:PF
+      Result = "Soucing_Inputs"
+      '   END FORMULA; PROP ID:10197; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_XMLObjectName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Misc_Description_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Misc_Factor_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Hours_Misc_Dollars_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_CAE_MEI_Misc_Constants_ID_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Misc_Description_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Misc_Factor_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Hours_Misc_Dollars_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Misc_Factor_ValidValues() as Rulestream.Kernel.ValidValues
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectType() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
       
-      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      If Me.Properties("XMLObjectType").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10198; TYPE:PF
+      result = "Element"
+      '   END FORMULA; PROP ID:10198; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_XMLObjectType", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_XMLObjectValue() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Misc_Factor").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+        '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
+      
+      If Me.Properties("XMLObjectValue").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:9989; TYPE:VV
-      Result = MakeValidValuesFromDatabase("[CAE_MEI_Misc_Constants]", "[Factor]", "WHERE [Misc_Description] = " & FormatCriteria(Me.Misc_Description) & "", " ORDER BY [Misc_Description]")
-      '   END FORMULA; PROP ID:9989; TYPE:VV
+      '   BEGIN FORMULA; PROP ID:10199; TYPE:PF
+      Dim Prop As PropertySF = Me.CurrentProperty
+Result = Custom.GetPFXMLRepresentation(Prop) 'Generate XML For this and Children Classes
+      '   END FORMULA; PROP ID:10199; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.Formula_Misc_Factor_ValidValues", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_XMLObjectValue", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Debug_Mode_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Labor_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Work_Week_Hours_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Work_Week_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectType_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectValue_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Debug_Mode_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Labor_Type_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Work_Week_Hours_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Work_Week_Type_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectName_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectType_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_XMLObjectValue_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Input_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:274; TYPE:PN
+      
+      '   END FORMULA; SUB ID:274; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_Sourcing_Input_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Input_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Sourcing_Input").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:274; TYPE:QF
+      Result = me.Parent.Base_Options_Alternates.Quantity
+      '   END FORMULA; SUB ID:274; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_Sourcing_Input_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Input_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Sourcing_Input").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:274; TYPE:OP
+      result = "CAE_Sourcing_Input"
+      '   END FORMULA; SUB ID:274; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Inputs.Formula_Sourcing_Input_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -521,53 +784,6 @@ Option Infer On
     '*****************************************************************************
     Public Function GetRecordsetSQL(ByVal lngDBConID as Long) as String Implements RuleStream.IRsPartFormulas.GetRecordsetSQL
     Dim strSelectStmt As String = ""
-    
-      Dim strWhereClause as String = ""
-      Dim strSelectList as String = ""
-      Dim varPropSpecVal As Object
-      Dim ctx As Object
-      Dim leftDelimiter As String = String.Empty
-      Dim rightDelimiter As String = String.Empty
-      Try
-      Select Case g_rsUser.UserSettings.ActiveProfile.ComponentsDatabaseType
-      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.MSAccess, RuleStream.DataService.PublicEnumerations.DatabaseTypes.SQLServer
-      leftDelimiter = "["
-      rightDelimiter = "]"
-      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.Oracle
-      leftDelimiter = """"
-      rightDelimiter = """"
-      End Select
-      ObjectManager.UnitConversion = False
-      'Used to set the parameters results
-      Select Case lngDBConID
-      
-        Case 13
-        ctx = this
-            strWhereClause = ""
-            strSelectList = ""
-            
-              strSelectList = strSelectList & leftDelimiter & "Misc_Description" & rightDelimiter & ", "
-            
-              strSelectList = strSelectList & leftDelimiter & "Factor" & rightDelimiter & ", "
-            
-            'Build the WHERE clause
-            
-                  varPropSpecVal = me.CAE_MEI_Misc_Constants_ID
-              BuildWhereClause(strWhereClause, "0", "0", "  ", "[CAE_MEI_Misc_Constants_ID]", "=", varPropSpecVal, "")
-            
-            strSelectStmt = BuildSQLStatement(strSelectList, DelimitTableName("CAE_MEI_Misc_Constants"), strWhereClause, leftDelimiter & "Misc_Description" & rightDelimiter, "ASC")
-          
-      End Select
-      Catch ex as Exception
-      Dim strError As String = ex.Message
-      If strSelectStmt <> "" Then
-      strError = strError & vbCrLf & vbCrLf & strSelectStmt
-      strSelectStmt = ""
-      End If
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Misc_Constant.GetRecordset", strError)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      ObjectManager.UnitConversion = True
     Return strSelectStmt
     End Function
     #End Region

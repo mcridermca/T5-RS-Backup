@@ -3,8 +3,8 @@ Option Explicit On
 Option Infer On
 
 '$ Application: IGSEST
-'$ PartFamily: IGS_Proposal_Data
-'$ GenerateDate: 07/18/2025 13:15:19
+'$ PartFamily: CAE_MEI_Equipment_Rentals
+'$ GenerateDate: 07/17/2025 11:55:31
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -24,7 +24,7 @@ Option Infer On
     Imports IGSEST.swMateAlign_e
     Imports IGSEST.severity
 
-    Public Class [IGS_Proposal_Data]
+    Public Class [CAE_MEI_Equipment_Rentals]
     
     Inherits RuleStream.Kernel.Part
     Implements RuleStream.IRsPartFormulas
@@ -45,7 +45,7 @@ Option Infer On
     '*                                                                       *
     '*************************************************************************
 
-    Private this as IGS_Proposal_Data = me
+    Private this as CAE_MEI_Equipment_Rentals = me
 
     #Region " IRsPartFormulas Implementation "
 
@@ -147,21 +147,30 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
-          Public Shadows Property [DisplayName]() As String
+          Public Property [CAE_MEI_Equipment_Rentals]() As String
       Get
-      Return Properties("DisplayName").Value
+      Return Properties("CAE_MEI_Equipment_Rentals").Value
       End Get
       Set(ByVal Value As String)
-      Properties("DisplayName").CalculatedValue = Value
+      Properties("CAE_MEI_Equipment_Rentals").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [Proposal_Name]() As String
+          Public Property [CAE_MEI_Equipment_Rentals_ID]() As Long
       Get
-      Return Properties("Proposal_Name").Value
+      Return Properties("CAE_MEI_Equipment_Rentals_ID").Value
       End Get
-      Set(ByVal Value As String)
-      Properties("Proposal_Name").CalculatedValue = Value
+      Set(ByVal Value As Long)
+      Properties("CAE_MEI_Equipment_Rentals_ID").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Wkly_Rate_In_Dollars]() As Double
+      Get
+      Return Properties("Wkly_Rate_In_Dollars").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Wkly_Rate_In_Dollars").CalculatedValue = Value
       End Set
       End Property
     
@@ -172,12 +181,6 @@ Option Infer On
       Set(ByVal Value As String)
       Properties("PartNumber").CalculatedValue = Value
       End Set
-      End Property
-    
-      Public ReadOnly Property [PRD_Document]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("PRD_Document")
-      End Get
       End Property
     
     #End Region
@@ -194,15 +197,14 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Proposal_Data", <a><![CDATA[IGS_Proposal_Data]]></a>.Value, 375, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/18/2025 12:55:19")
-    AddProperty("10651", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 12:55:19 PM")
-    AddProperty("4824", "Proposal_Name", <a><![CDATA[Proposal_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 12:55:10 PM")
-    AddProperty("4820", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/23/2025 11:58:52 AM")
+    InitPart("CAE_MEI_Equipment_Rentals", <a><![CDATA[CAE_MEI_Equipment_Rentals]]></a>.Value, 428, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H617242", "07/17/2025 11:50:05")
+    AddProperty("10444", "CAE_MEI_Equipment_Rentals", <a><![CDATA[CAE_MEI_Equipment_Rentals]]></a>.Value, "", "String","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/17/2025 11:47:01 AM")
+    AddProperty("10443", "CAE_MEI_Equipment_Rentals_ID", <a><![CDATA[CAE_MEI_Equipment_Rentals_ID]]></a>.Value, "", "Long","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/17/2025 11:50:05 AM")
+    AddProperty("10445", "Wkly_Rate_In_Dollars", <a><![CDATA[Wkly_Rate_In_Dollars]]></a>.Value, "", "Double","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/17/2025 11:46:49 AM")
+    AddProperty("10439", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/17/2025 9:30:24 AM")
     
-      oSubpart = AddSubpart(256,"PRD_Document", <a><![CDATA[PRD_Document]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "6/23/2025 3:25:14 PM")
-      
-        oSubpart.AddVPF (163, "SFD_Salesforce_PRD_Header_Mock", "SFD_Salesforce_PRD_Header_Mock")
-      
+      AddDBConstraint(14, "Equipment_Rentals_DBInfo", <a><![CDATA[Equipment_Rentals_DBInfo]]></a>.Value,"Database Lookup", 9999)
+    
     End Sub
 
     '*****************************************************************************
@@ -232,10 +234,13 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("DisplayName", "10215", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 12:55:19 PM", "", "In Development",  0,19043)
+          InitProperty("CAE_MEI_Equipment_Rentals", "10016", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/17/2025 11:47:01 AM", "", "In Development",  0,18385)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Name", "4447", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 12:55:10 PM", "", "In Development",  0,19042)
+          InitProperty("CAE_MEI_Equipment_Rentals_ID", "10015", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/17/2025 11:50:05 AM", "", "In Development",  0,18482)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Wkly_Rate_In_Dollars", "10017", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/17/2025 11:46:49 AM", "", "In Development",  0,18386)
         End If
     End Sub
 
@@ -259,12 +264,6 @@ Option Infer On
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("PRD_Document", 191, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "6/23/2025 3:25:14 PM", "", "In Development", "Y",0,528,527)
-        
-          End If
-        
     End Sub
 
     '*****************************************************************************
@@ -287,6 +286,16 @@ Option Infer On
     Private Sub NewContextInit_DB()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitDBConstraint("Equipment_Rentals_DBInfo", 14,"", "Y","", "", "CAE_ELI_Equipment_Rental")
+        
+          InitDBproperty("Equipment_Rentals_DBInfo", "CAE_MEI_Equipment_Rentals",14, "Equipment_Rentals", "CAE_ELI_Equipment_Rental")
+        
+          InitDBproperty("Equipment_Rentals_DBInfo", "Wkly_Rate_In_Dollars",14, "Wkly_Rate_In_Usd", "CAE_ELI_Equipment_Rental")
+        
+          End If
+        
     End Sub
 
     #End Region
@@ -299,21 +308,21 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_DisplayName() As String
+          Public Function Formula_CAE_MEI_Equipment_Rentals() As String
           
           Dim Result as String = String.Empty
         
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("DisplayName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("CAE_MEI_Equipment_Rentals").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10215; TYPE:PF
-      Result = "Proposal: " & Me.SubpartID
-      '   END FORMULA; PROP ID:10215; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10016; TYPE:PF
+      result = ""
+      '   END FORMULA; PROP ID:10016; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_DisplayName", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_MEI_Equipment_Rentals.Formula_CAE_MEI_Equipment_Rentals", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -324,21 +333,42 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Proposal_Name() As String
-          
-          Dim Result as String = String.Empty
-        
+          Public Function Formula_CAE_MEI_Equipment_Rentals_ID() As Long
+          Dim Result as Long
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Proposal_Name").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("CAE_MEI_Equipment_Rentals_ID").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4447; TYPE:PF
-      Result = Me.DisplayName
-      '   END FORMULA; PROP ID:4447; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10015; TYPE:PF
+      Result =  Me.Parent.ValidValues("Equipment_Rentals_Row_DBKeys")(Me.SubpartID-1)
+      '   END FORMULA; PROP ID:10015; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_Proposal_Name", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_MEI_Equipment_Rentals.Formula_CAE_MEI_Equipment_Rentals_ID", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Wkly_Rate_In_Dollars() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Wkly_Rate_In_Dollars").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10017; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:10017; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_MEI_Equipment_Rentals.Formula_Wkly_Rate_In_Dollars", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -349,7 +379,7 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_CAE_MEI_Equipment_Rentals_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -358,7 +388,7 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Proposal_Name_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_CAE_MEI_Equipment_Rentals_ID_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -367,8 +397,8 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_DisplayName_USERCHANGE() as Boolean
-      Return True
+      Public Function Formula_Wkly_Rate_In_Dollars_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -376,8 +406,8 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Proposal_Name_USERCHANGE() as Boolean
-      Return True
+      Public Function Formula_CAE_MEI_Equipment_Rentals_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -385,68 +415,17 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_PRD_Document_PARTNAMES() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      '   BEGIN FORMULA; SUB ID:191; TYPE:PN
-      
-      '   END FORMULA; SUB ID:191; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_PRD_Document_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
+      Public Function Formula_CAE_MEI_Equipment_Rentals_ID_USERCHANGE() as Boolean
+      Return False
       End Function
-
+    
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_PRD_Document_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("PRD_Document").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:191; TYPE:QF
-      result = 1
-      '   END FORMULA; SUB ID:191; TYPE:QF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_PRD_Document_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Document_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("PRD_Document").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:191; TYPE:OP
-      result = "SFD_Salesforce_PRD_Header_Mock"
-      '   END FORMULA; SUB ID:191; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_PRD_Document_OPTIMALPARTFAMILY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
+      Public Function Formula_Wkly_Rate_In_Dollars_USERCHANGE() as Boolean
+      Return False
       End Function
     
 
@@ -458,6 +437,53 @@ Option Infer On
     '*****************************************************************************
     Public Function GetRecordsetSQL(ByVal lngDBConID as Long) as String Implements RuleStream.IRsPartFormulas.GetRecordsetSQL
     Dim strSelectStmt As String = ""
+    
+      Dim strWhereClause as String = ""
+      Dim strSelectList as String = ""
+      Dim varPropSpecVal As Object
+      Dim ctx As Object
+      Dim leftDelimiter As String = String.Empty
+      Dim rightDelimiter As String = String.Empty
+      Try
+      Select Case g_rsUser.UserSettings.ActiveProfile.ComponentsDatabaseType
+      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.MSAccess, RuleStream.DataService.PublicEnumerations.DatabaseTypes.SQLServer
+      leftDelimiter = "["
+      rightDelimiter = "]"
+      Case RuleStream.DataService.PublicEnumerations.DatabaseTypes.Oracle
+      leftDelimiter = """"
+      rightDelimiter = """"
+      End Select
+      ObjectManager.UnitConversion = False
+      'Used to set the parameters results
+      Select Case lngDBConID
+      
+        Case 14
+        ctx = this
+            strWhereClause = ""
+            strSelectList = ""
+            
+              strSelectList = strSelectList & leftDelimiter & "Equipment_Rentals" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Wkly_Rate_In_Usd" & rightDelimiter & ", "
+            
+            'Build the WHERE clause
+            
+                  varPropSpecVal = me.CAE_MEI_Equipment_Rentals_ID
+              BuildWhereClause(strWhereClause, "0", "0", "  ", "[CAE_ELI_Equipment_Rental_ID]", "=", varPropSpecVal, "")
+            
+            strSelectStmt = BuildSQLStatement(strSelectList, DelimitTableName("CAE_ELI_Equipment_Rental"), strWhereClause, leftDelimiter & "Equipment_Rentals" & rightDelimiter, "ASC")
+          
+      End Select
+      Catch ex as Exception
+      Dim strError As String = ex.Message
+      If strSelectStmt <> "" Then
+      strError = strError & vbCrLf & vbCrLf & strSelectStmt
+      strSelectStmt = ""
+      End If
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_MEI_Equipment_Rentals.GetRecordset", strError)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      ObjectManager.UnitConversion = True
     Return strSelectStmt
     End Function
     #End Region

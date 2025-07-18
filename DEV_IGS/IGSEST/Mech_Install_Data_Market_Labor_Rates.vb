@@ -3,8 +3,8 @@ Option Explicit On
 Option Infer On
 
 '$ Application: IGSEST
-'$ PartFamily: IGS_Proposal_Data
-'$ GenerateDate: 07/18/2025 13:15:19
+'$ PartFamily: Mech_Install_Data_Market_Labor_Rates
+'$ GenerateDate: 07/18/2025 11:37:15
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -24,7 +24,7 @@ Option Infer On
     Imports IGSEST.swMateAlign_e
     Imports IGSEST.severity
 
-    Public Class [IGS_Proposal_Data]
+    Public Class [Mech_Install_Data_Market_Labor_Rates]
     
     Inherits RuleStream.Kernel.Part
     Implements RuleStream.IRsPartFormulas
@@ -45,7 +45,7 @@ Option Infer On
     '*                                                                       *
     '*************************************************************************
 
-    Private this as IGS_Proposal_Data = me
+    Private this as Mech_Install_Data_Market_Labor_Rates = me
 
     #Region " IRsPartFormulas Implementation "
 
@@ -147,24 +147,6 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
-          Public Shadows Property [DisplayName]() As String
-      Get
-      Return Properties("DisplayName").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("DisplayName").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Proposal_Name]() As String
-      Get
-      Return Properties("Proposal_Name").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Proposal_Name").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -172,12 +154,6 @@ Option Infer On
       Set(ByVal Value As String)
       Properties("PartNumber").CalculatedValue = Value
       End Set
-      End Property
-    
-      Public ReadOnly Property [PRD_Document]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("PRD_Document")
-      End Get
       End Property
     
     #End Region
@@ -194,15 +170,9 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Proposal_Data", <a><![CDATA[IGS_Proposal_Data]]></a>.Value, 375, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/18/2025 12:55:19")
-    AddProperty("10651", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 12:55:19 PM")
-    AddProperty("4824", "Proposal_Name", <a><![CDATA[Proposal_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 12:55:10 PM")
-    AddProperty("4820", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/23/2025 11:58:52 AM")
+    InitPart("Mech_Install_Data_Market_Labor_Rates", <a><![CDATA[Mech_Install_Data_Market_Labor_Rates]]></a>.Value, 434, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/18/2025 08:51:13")
+    AddProperty("10638", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/18/2025 8:51:13 AM")
     
-      oSubpart = AddSubpart(256,"PRD_Document", <a><![CDATA[PRD_Document]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "6/23/2025 3:25:14 PM")
-      
-        oSubpart.AddVPF (163, "SFD_Salesforce_PRD_Header_Mock", "SFD_Salesforce_PRD_Header_Mock")
-      
     End Sub
 
     '*****************************************************************************
@@ -231,12 +201,6 @@ Option Infer On
     Dim ctx as String
     ctx = ContextId
     
-            If Incontext("-1", ctx) Then
-          InitProperty("DisplayName", "10215", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 12:55:19 PM", "", "In Development",  0,19043)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Name", "4447", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 12:55:10 PM", "", "In Development",  0,19042)
-        End If
     End Sub
 
     '*****************************************************************************
@@ -259,12 +223,6 @@ Option Infer On
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("PRD_Document", 191, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "6/23/2025 3:25:14 PM", "", "In Development", "Y",0,528,527)
-        
-          End If
-        
     End Sub
 
     '*****************************************************************************
@@ -293,161 +251,6 @@ Option Infer On
 
     #Region " Formulas "
 
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_DisplayName() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("DisplayName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:10215; TYPE:PF
-      Result = "Proposal: " & Me.SubpartID
-      '   END FORMULA; PROP ID:10215; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_DisplayName", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Proposal_Name() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Proposal_Name").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:4447; TYPE:PF
-      Result = Me.DisplayName
-      '   END FORMULA; PROP ID:4447; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_Proposal_Name", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Proposal_Name_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_DisplayName_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Proposal_Name_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Document_PARTNAMES() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      '   BEGIN FORMULA; SUB ID:191; TYPE:PN
-      
-      '   END FORMULA; SUB ID:191; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_PRD_Document_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Document_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("PRD_Document").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:191; TYPE:QF
-      result = 1
-      '   END FORMULA; SUB ID:191; TYPE:QF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_PRD_Document_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Document_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("PRD_Document").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:191; TYPE:OP
-      result = "SFD_Salesforce_PRD_Header_Mock"
-      '   END FORMULA; SUB ID:191; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_PRD_Document_OPTIMALPARTFAMILY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
     
 
     '*****************************************************************************

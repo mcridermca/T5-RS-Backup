@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_App_Calc
-'$ GenerateDate: 07/15/2025 13:30:18
+'$ GenerateDate: 07/17/2025 11:26:16
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -183,6 +183,24 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Tool_Name]() As String
+      Get
+      Return Properties("Tool_Name").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Tool_Name").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Tool_Status]() As String
+      Get
+      Return Properties("Tool_Status").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Tool_Status").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -254,12 +272,16 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_App_Calc", <a><![CDATA[CAE_App_Calc]]></a>.Value, 411, "IGSEST",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/14/2025 22:35:47")
+    InitPart("CAE_App_Calc", <a><![CDATA[CAE_App_Calc]]></a>.Value, 411, "IGSEST",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/16/2025 20:33:01")
     AddProperty("10125", "App_Calc_Name", <a><![CDATA[App_Calc_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 5:35:19 PM")
     AddProperty("10126", "Approved_By", <a><![CDATA[Approved By]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 5:35:19 PM")
     AddProperty("10127", "Approved_Date", <a><![CDATA[Approved Date]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 5:35:19 PM")
     AddProperty("10128", "Estimated_By", <a><![CDATA[Estimated By]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 5:35:19 PM")
+    AddProperty("10434", "Tool_Name", <a><![CDATA[Tool_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:33:01 PM")
+    AddProperty("10435", "Tool_Status", <a><![CDATA[Tool_Status]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:32:44 PM")
     AddProperty("9733", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:29:17 PM")
+    
+      AddValidValue("Tool_Status")
     
       oSubpart = AddSubpart(334,"EHS350_Data", <a><![CDATA[EHS350_Data]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/14/2025 4:19:04 PM")
       
@@ -333,6 +355,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           InitProperty("Estimated_By", "9709", "", "", "N", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 5:35:20 PM", "", "In Development",  0,17114)
         End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Tool_Name", "10007", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:33:01 PM", "", "In Development",  0,18242)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Tool_Status", "10008", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:32:44 PM", "", "In Development",  0,18240)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -344,6 +372,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Tool_Status_ValidValues", "10008", "-1", 18241)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -574,6 +606,56 @@ Option Infer On
       Return Result
       End Function
     
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Tool_Name() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Name").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10007; TYPE:PF
+      Result = "App Calc"
+      '   END FORMULA; PROP ID:10007; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Tool_Name", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Tool_Status() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Status").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10008; TYPE:PF
+      Result = "New"
+      '   END FORMULA; PROP ID:10008; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Tool_Status", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
       '
@@ -615,6 +697,24 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Tool_Name_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_App_Calc_Name_USERCHANGE() as Boolean
       Return True
       End Function
@@ -644,6 +744,48 @@ Option Infer On
       '*****************************************************************************
       Public Function Formula_Estimated_By_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Name_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Status").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10008; TYPE:VV
+      Result = MakeValidValues(Array("New", "Work In Progress", "Approved", "As Sold"))
+      '   END FORMULA; PROP ID:10008; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Tool_Status_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
       '*****************************************************************************

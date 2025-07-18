@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_TTCB_Costing_Mech
-'$ GenerateDate: 07/16/2025 14:47:04
+'$ GenerateDate: 07/18/2025 11:37:15
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -2276,7 +2276,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_TTCB_Costing_Mech", <a><![CDATA[CAE_TTCB_Costing_Mech]]></a>.Value, 401, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/16/2025 14:26:28")
+    InitPart("CAE_TTCB_Costing_Mech", <a><![CDATA[CAE_TTCB_Costing_Mech]]></a>.Value, 401, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/17/2025 13:33:02")
     AddProperty("8460", "MEI_Adjust_Dollar_Clean_Up", <a><![CDATA[MEI_Adjust_Dollar_Clean_Up]]></a>.Value, "Mech Install^'TTCB Costing'!I46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:59 AM")
     AddProperty("8461", "MEI_Adjust_Dollar_Fencing", <a><![CDATA[MEI_Adjust_Dollar_Fencing]]></a>.Value, "Mech Install^'TTCB Costing'!I47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:02 AM")
     AddProperty("8462", "MEI_Adjust_Dollar_Gates", <a><![CDATA[MEI_Adjust_Dollar_Gates]]></a>.Value, "Mech Install^'TTCB Costing'!I48", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:05 AM")
@@ -2284,16 +2284,16 @@ Option Infer On
     AddProperty("8464", "MEI_Adjust_Dollar_Miscellaneous_2", <a><![CDATA[MEI_Adjust_Dollar_Miscellaneous_2]]></a>.Value, "Mech Install^'TTCB Costing'!I50", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:11 AM")
     AddProperty("8465", "MEI_Adjust_Dollar_Miscellaneous_3", <a><![CDATA[MEI_Adjust_Dollar_Miscellaneous_3]]></a>.Value, "Mech Install^'TTCB Costing'!I51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:14 AM")
     AddProperty("8459", "MEI_Adjust_Dollar_System_Efficiency", <a><![CDATA[MEI_Adjust_Dollar_System_Efficiency]]></a>.Value, "Mech Install^'TTCB Costing'!I45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:57 AM")
-    AddProperty("8466", "MEI_Adjust_Dollar_Total", <a><![CDATA[MEI_Adjust_Dollar_Total]]></a>.Value, "Mech Install^'TTCB Costing'!I52", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:17 AM")
+    AddProperty("8466", "MEI_Adjust_Dollar_Total", <a><![CDATA[MEI_Adjust_Dollar_Total]]></a>.Value, "Mech Install^'TTCB Costing'!I52", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:43:52 AM")
     AddProperty("8458", "MEI_Adjust_Dollar_TTCB_Sorter", <a><![CDATA[MEI_Adjust_Dollar_TTCB_Sorter]]></a>.Value, "Mech Install^'TTCB Costing'!I44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:55 AM")
-    AddProperty("8469", "MEI_Adjust_Hours_Clean_Up", <a><![CDATA[MEI_Adjust_Hours_Clean_Up]]></a>.Value, "Mech Install^'TTCB Costing'!J46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:38 AM")
-    AddProperty("8470", "MEI_Adjust_Hours_Fencing", <a><![CDATA[MEI_Adjust_Hours_Fencing]]></a>.Value, "Mech Install^'TTCB Costing'!J47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:41 AM")
-    AddProperty("8471", "MEI_Adjust_Hours_Gates", <a><![CDATA[MEI_Adjust_Hours_Gates]]></a>.Value, "Mech Install^'TTCB Costing'!J48", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:44 AM")
+    AddProperty("8469", "MEI_Adjust_Hours_Clean_Up", <a><![CDATA[MEI_Adjust_Hours_Clean_Up]]></a>.Value, "Mech Install^'TTCB Costing'!J46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:44:53 AM")
+    AddProperty("8470", "MEI_Adjust_Hours_Fencing", <a><![CDATA[MEI_Adjust_Hours_Fencing]]></a>.Value, "Mech Install^'TTCB Costing'!J47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:45:09 AM")
+    AddProperty("8471", "MEI_Adjust_Hours_Gates", <a><![CDATA[MEI_Adjust_Hours_Gates]]></a>.Value, "Mech Install^'TTCB Costing'!J48", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:45:24 AM")
     AddProperty("8472", "MEI_Adjust_Hours_Miscellaneous_1", <a><![CDATA[MEI_Adjust_Hours_Miscellaneous_1]]></a>.Value, "Mech Install^'TTCB Costing'!J49", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:47 AM")
     AddProperty("8473", "MEI_Adjust_Hours_Miscellaneous_2", <a><![CDATA[MEI_Adjust_Hours_Miscellaneous_2]]></a>.Value, "Mech Install^'TTCB Costing'!J50", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:50 AM")
     AddProperty("8474", "MEI_Adjust_Hours_Miscellaneous_3", <a><![CDATA[MEI_Adjust_Hours_Miscellaneous_3]]></a>.Value, "Mech Install^'TTCB Costing'!J51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:53 AM")
-    AddProperty("8468", "MEI_Adjust_Hours_System_Efficiency", <a><![CDATA[MEI_Adjust_Hours_System_Efficiency]]></a>.Value, "Mech Install^'TTCB Costing'!J45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:35 AM")
-    AddProperty("8475", "MEI_Adjust_Hours_Total", <a><![CDATA[MEI_Adjust_Hours_Total]]></a>.Value, "Mech Install^'TTCB Costing'!J52", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:56 AM")
+    AddProperty("8468", "MEI_Adjust_Hours_System_Efficiency", <a><![CDATA[MEI_Adjust_Hours_System_Efficiency]]></a>.Value, "Mech Install^'TTCB Costing'!J45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:44:28 AM")
+    AddProperty("8475", "MEI_Adjust_Hours_Total", <a><![CDATA[MEI_Adjust_Hours_Total]]></a>.Value, "Mech Install^'TTCB Costing'!J52", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:45:53 AM")
     AddProperty("8467", "MEI_Adjust_Hours_TTCB_Sorter", <a><![CDATA[MEI_Adjust_Hours_TTCB_Sorter]]></a>.Value, "Mech Install^'TTCB Costing'!J44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:32 AM")
     AddProperty("9887", "MEI_Adjust_Length_TTCB_Sorter", <a><![CDATA[MEI_Adjust_Length_TTCB_Sorter]]></a>.Value, "Mech Install^'TTCB Costing'!K44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 8:37:40 PM")
     AddProperty("8476", "MEI_Adjust_TTCB_Sorter_Length_in_Meters", <a><![CDATA[MEI_Adjust_TTCB_Sorter_Length_in_Meters]]></a>.Value, "Mech Install^'TTCB Costing'!K44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:59 AM")
@@ -2313,37 +2313,37 @@ Option Infer On
     AddProperty("8433", "MEI_Crew_Average_Hrs_per_Wk", <a><![CDATA[MEI_Crew_Average_Hrs_per_Wk]]></a>.Value, "Mech Install^'TTCB Costing'!I25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:00 AM")
     AddProperty("8437", "MEI_Crew_Avg_Crew_Size_Installers", <a><![CDATA[MEI_Crew_Avg_Crew_Size_Installers]]></a>.Value, "Mech Install^'TTCB Costing'!K28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 2:19:28 PM")
     AddProperty("8434", "MEI_Crew_Comm_Sppt_Hrs_per_Wk", <a><![CDATA[MEI_Crew_Comm_Sppt_Hrs_per_Wk]]></a>.Value, "Mech Install^'TTCB Costing'!I26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:02 AM")
-    AddProperty("8452", "MEI_Crew_Head_Count_Installer", <a><![CDATA[MEI_Crew_Head_Count_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!J40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:40 AM")
-    AddProperty("8451", "MEI_Crew_Head_Count_Lead_Men", <a><![CDATA[MEI_Crew_Head_Count_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!J39", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:38 AM")
-    AddProperty("8450", "MEI_Crew_Head_Count_Superintendent", <a><![CDATA[MEI_Crew_Head_Count_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!J38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:36 AM")
-    AddProperty("8453", "MEI_Crew_Head_Count_Total", <a><![CDATA[MEI_Crew_Head_Count_Total]]></a>.Value, "Mech Install^'TTCB Costing'!J41", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:42 AM")
-    AddProperty("8446", "MEI_Crew_Mobilization_Cost_Per_Person", <a><![CDATA[MEI_Crew_Mobilization_Cost_Per_Person]]></a>.Value, "Mech Install^'TTCB Costing'!I36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:28 AM")
+    AddProperty("8452", "MEI_Crew_Head_Count_Installer", <a><![CDATA[MEI_Crew_Head_Count_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!J40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:36:50 AM")
+    AddProperty("8451", "MEI_Crew_Head_Count_Lead_Men", <a><![CDATA[MEI_Crew_Head_Count_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!J39", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:36:35 AM")
+    AddProperty("8450", "MEI_Crew_Head_Count_Superintendent", <a><![CDATA[MEI_Crew_Head_Count_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!J38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:36:17 AM")
+    AddProperty("8453", "MEI_Crew_Head_Count_Total", <a><![CDATA[MEI_Crew_Head_Count_Total]]></a>.Value, "Mech Install^'TTCB Costing'!J41", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:37:21 AM")
+    AddProperty("8446", "MEI_Crew_Mobilization_Cost_Per_Person", <a><![CDATA[MEI_Crew_Mobilization_Cost_Per_Person]]></a>.Value, "Mech Install^'TTCB Costing'!I36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:34:54 AM")
     AddProperty("8449", "MEI_Crew_Mobilization_Count_Installer", <a><![CDATA[MEI_Crew_Mobilization_Count_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!I40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:34 AM")
     AddProperty("8448", "MEI_Crew_Mobilization_Count_Lead_Men", <a><![CDATA[MEI_Crew_Mobilization_Count_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!I39", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:32 AM")
     AddProperty("8447", "MEI_Crew_Mobilization_Count_Superintendent", <a><![CDATA[MEI_Crew_Mobilization_Count_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!I38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:30 AM")
     AddProperty("8435", "MEI_Crew_Peak_Crew_Hrs_per_Wk", <a><![CDATA[MEI_Crew_Peak_Crew_Hrs_per_Wk]]></a>.Value, "Mech Install^'TTCB Costing'!I27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 2:16:41 PM")
     AddProperty("8436", "MEI_Crew_Peak_Crew_Installers", <a><![CDATA[MEI_Crew_Peak_Crew_Installers]]></a>.Value, "Mech Install^'TTCB Costing'!K26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 2:17:49 PM")
-    AddProperty("8456", "MEI_Crew_Total_Mobilization_Cost_Installer", <a><![CDATA[MEI_Crew_Total_Mobilization_Cost_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!K40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:49 AM")
-    AddProperty("8455", "MEI_Crew_Total_Mobilization_Cost_Lead_Men", <a><![CDATA[MEI_Crew_Total_Mobilization_Cost_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!K39", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:47 AM")
-    AddProperty("8454", "MEI_Crew_Total_Mobilization_Cost_Superintendent", <a><![CDATA[MEI_Crew_Total_Mobilization_Cost_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!K38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:44 AM")
-    AddProperty("8457", "MEI_Crew_Total_Mobilization_Cost_Total", <a><![CDATA[MEI_Crew_Total_Mobilization_Cost_Total]]></a>.Value, "Mech Install^'TTCB Costing'!K41", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:51 AM")
-    AddProperty("8395", "MEI_Equipment_Rental_Cost", <a><![CDATA[MEI_Equipment_Rental_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:39 AM")
-    AddProperty("8396", "MEI_Equipment_Rental_Dumpsters_Cost", <a><![CDATA[MEI_Equipment_Rental_Dumpsters_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:41 AM")
-    AddProperty("8397", "MEI_Equipment_Rental_Porta_Johns_Cost", <a><![CDATA[MEI_Equipment_Rental_Porta_Johns_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:43 AM")
+    AddProperty("8456", "MEI_Crew_Total_Mobilization_Cost_Installer", <a><![CDATA[MEI_Crew_Total_Mobilization_Cost_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!K40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:42:32 AM")
+    AddProperty("8455", "MEI_Crew_Total_Mobilization_Cost_Lead_Men", <a><![CDATA[MEI_Crew_Total_Mobilization_Cost_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!K39", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:42:02 AM")
+    AddProperty("8454", "MEI_Crew_Total_Mobilization_Cost_Superintendent", <a><![CDATA[MEI_Crew_Total_Mobilization_Cost_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!K38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:41:42 AM")
+    AddProperty("8457", "MEI_Crew_Total_Mobilization_Cost_Total", <a><![CDATA[MEI_Crew_Total_Mobilization_Cost_Total]]></a>.Value, "Mech Install^'TTCB Costing'!K41", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:42:53 AM")
+    AddProperty("8395", "MEI_Equipment_Rental_Cost", <a><![CDATA[MEI_Equipment_Rental_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:28:44 PM")
+    AddProperty("8396", "MEI_Equipment_Rental_Dumpsters_Cost", <a><![CDATA[MEI_Equipment_Rental_Dumpsters_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:22:31 PM")
+    AddProperty("8397", "MEI_Equipment_Rental_Porta_Johns_Cost", <a><![CDATA[MEI_Equipment_Rental_Porta_Johns_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:22:51 PM")
     AddProperty("8507", "MEI_EquipRent_Install_Duration_Cranes_LargeOutdoor", <a><![CDATA[MEI_EquipRent_Install_Duration_Cranes_LargeOutdoor]]></a>.Value, "Mech Install^'TTCB Costing'!O18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:04 AM")
     AddProperty("8506", "MEI_EquipRent_Install_Duration_Cranes_SmallIndoor", <a><![CDATA[MEI_EquipRent_Install_Duration_Cranes_SmallIndoor]]></a>.Value, "Mech Install^'TTCB Costing'!O17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:02 AM")
-    AddProperty("8510", "MEI_EquipRent_Install_Duration_Dumpsters", <a><![CDATA[MEI_EquipRent_Install_Duration_Dumpsters]]></a>.Value, "Mech Install^'TTCB Costing'!O21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:10 AM")
-    AddProperty("8505", "MEI_EquipRent_Install_Duration_Fork_Truck", <a><![CDATA[MEI_EquipRent_Install_Duration_Fork_Truck]]></a>.Value, "Mech Install^'TTCB Costing'!O16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:00 AM")
-    AddProperty("8502", "MEI_EquipRent_Install_Duration_Large_Boom_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Large_Boom_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:54 AM")
-    AddProperty("8500", "MEI_EquipRent_Install_Duration_Large_Scissors_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Large_Scissors_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:50 AM")
+    AddProperty("8510", "MEI_EquipRent_Install_Duration_Dumpsters", <a><![CDATA[MEI_EquipRent_Install_Duration_Dumpsters]]></a>.Value, "Mech Install^'TTCB Costing'!O21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:56:08 AM")
+    AddProperty("8505", "MEI_EquipRent_Install_Duration_Fork_Truck", <a><![CDATA[MEI_EquipRent_Install_Duration_Fork_Truck]]></a>.Value, "Mech Install^'TTCB Costing'!O16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:23:39 AM")
+    AddProperty("8502", "MEI_EquipRent_Install_Duration_Large_Boom_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Large_Boom_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:22:35 AM")
+    AddProperty("8500", "MEI_EquipRent_Install_Duration_Large_Scissors_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Large_Scissors_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:21:37 AM")
     AddProperty("8504", "MEI_EquipRent_Install_Duration_Large_Telehandler", <a><![CDATA[MEI_EquipRent_Install_Duration_Large_Telehandler]]></a>.Value, "Mech Install^'TTCB Costing'!O15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:58 AM")
-    AddProperty("8511", "MEI_EquipRent_Install_Duration_Porta_Johns", <a><![CDATA[MEI_EquipRent_Install_Duration_Porta_Johns]]></a>.Value, "Mech Install^'TTCB Costing'!O22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:13 AM")
-    AddProperty("8498", "MEI_EquipRent_Install_Duration_Single_Person_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Single_Person_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:46 AM")
-    AddProperty("8509", "MEI_EquipRent_Install_Duration_Site_Trailer", <a><![CDATA[MEI_EquipRent_Install_Duration_Site_Trailer]]></a>.Value, "Mech Install^'TTCB Costing'!O20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:08 AM")
-    AddProperty("8501", "MEI_EquipRent_Install_Duration_Small_Boom_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Small_Boom_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:52 AM")
-    AddProperty("8499", "MEI_EquipRent_Install_Duration_Small_Scissors_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Small_Scissors_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:48 AM")
+    AddProperty("8511", "MEI_EquipRent_Install_Duration_Porta_Johns", <a><![CDATA[MEI_EquipRent_Install_Duration_Porta_Johns]]></a>.Value, "Mech Install^'TTCB Costing'!O22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:56:29 AM")
+    AddProperty("8498", "MEI_EquipRent_Install_Duration_Single_Person_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Single_Person_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:18:47 AM")
+    AddProperty("8509", "MEI_EquipRent_Install_Duration_Site_Trailer", <a><![CDATA[MEI_EquipRent_Install_Duration_Site_Trailer]]></a>.Value, "Mech Install^'TTCB Costing'!O20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:55:44 AM")
+    AddProperty("8501", "MEI_EquipRent_Install_Duration_Small_Boom_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Small_Boom_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:22:04 AM")
+    AddProperty("8499", "MEI_EquipRent_Install_Duration_Small_Scissors_Lift", <a><![CDATA[MEI_EquipRent_Install_Duration_Small_Scissors_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!O10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:20:45 AM")
     AddProperty("8503", "MEI_EquipRent_Install_Duration_Small_Telehandler", <a><![CDATA[MEI_EquipRent_Install_Duration_Small_Telehandler]]></a>.Value, "Mech Install^'TTCB Costing'!O14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:56 AM")
-    AddProperty("8508", "MEI_EquipRent_Install_Duration_Welders", <a><![CDATA[MEI_EquipRent_Install_Duration_Welders]]></a>.Value, "Mech Install^'TTCB Costing'!O19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:06 AM")
+    AddProperty("8508", "MEI_EquipRent_Install_Duration_Welders", <a><![CDATA[MEI_EquipRent_Install_Duration_Welders]]></a>.Value, "Mech Install^'TTCB Costing'!O19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:55:14 AM")
     AddProperty("8493", "MEI_EquipRent_Quantity_Cranes_Large_Outdoors", <a><![CDATA[MEI_EquipRent_Quantity_Cranes_Large_Outdoors]]></a>.Value, "Mech Install^'TTCB Costing'!N18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:35 AM")
     AddProperty("8492", "MEI_EquipRent_Quantity_Cranes_Small_Indoors", <a><![CDATA[MEI_EquipRent_Quantity_Cranes_Small_Indoors]]></a>.Value, "Mech Install^'TTCB Costing'!N17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:33 AM")
     AddProperty("8496", "MEI_EquipRent_Quantity_Dumpsters", <a><![CDATA[MEI_EquipRent_Quantity_Dumpsters]]></a>.Value, "Mech Install^'TTCB Costing'!N21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:42 AM")
@@ -2358,20 +2358,20 @@ Option Infer On
     AddProperty("8485", "MEI_EquipRent_Quantity_Small_Scissors_Lift", <a><![CDATA[MEI_EquipRent_Quantity_Small_Scissors_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!N10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:19 AM")
     AddProperty("8489", "MEI_EquipRent_Quantity_Small_Telehandler", <a><![CDATA[MEI_EquipRent_Quantity_Small_Telehandler]]></a>.Value, "Mech Install^'TTCB Costing'!N14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:28 AM")
     AddProperty("8494", "MEI_EquipRent_Quantity_Welders", <a><![CDATA[MEI_EquipRent_Quantity_Welders]]></a>.Value, "Mech Install^'TTCB Costing'!N19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:37 AM")
-    AddProperty("8535", "MEI_EquipRent_Total_Cost_Cranes_Large_Outdoors", <a><![CDATA[MEI_EquipRent_Total_Cost_Cranes_Large_Outdoors]]></a>.Value, "Mech Install^'TTCB Costing'!Q18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:02 AM")
-    AddProperty("8534", "MEI_EquipRent_Total_Cost_Cranes_Small_Indoors", <a><![CDATA[MEI_EquipRent_Total_Cost_Cranes_Small_Indoors]]></a>.Value, "Mech Install^'TTCB Costing'!Q17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:00 AM")
-    AddProperty("8538", "MEI_EquipRent_Total_Cost_Dumpsters", <a><![CDATA[MEI_EquipRent_Total_Cost_Dumpsters]]></a>.Value, "Mech Install^'TTCB Costing'!Q21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:09 AM")
-    AddProperty("8533", "MEI_EquipRent_Total_Cost_Fork_Truck", <a><![CDATA[MEI_EquipRent_Total_Cost_Fork_Truck]]></a>.Value, "Mech Install^'TTCB Costing'!Q16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:58 AM")
-    AddProperty("8530", "MEI_EquipRent_Total_Cost_Large_Boom_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Large_Boom_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:52 AM")
-    AddProperty("8528", "MEI_EquipRent_Total_Cost_Large_Scissors_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Large_Scissors_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:48 AM")
-    AddProperty("8532", "MEI_EquipRent_Total_Cost_Large_Telehandler", <a><![CDATA[MEI_EquipRent_Total_Cost_Large_Telehandler]]></a>.Value, "Mech Install^'TTCB Costing'!Q15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:56 AM")
-    AddProperty("8539", "MEI_EquipRent_Total_Cost_Porta_Johns", <a><![CDATA[MEI_EquipRent_Total_Cost_Porta_Johns]]></a>.Value, "Mech Install^'TTCB Costing'!Q22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:11 AM")
-    AddProperty("8526", "MEI_EquipRent_Total_Cost_Single_Person_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Single_Person_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:44 AM")
+    AddProperty("8535", "MEI_EquipRent_Total_Cost_Cranes_Large_Outdoors", <a><![CDATA[MEI_EquipRent_Total_Cost_Cranes_Large_Outdoors]]></a>.Value, "Mech Install^'TTCB Costing'!Q18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:03:50 AM")
+    AddProperty("8534", "MEI_EquipRent_Total_Cost_Cranes_Small_Indoors", <a><![CDATA[MEI_EquipRent_Total_Cost_Cranes_Small_Indoors]]></a>.Value, "Mech Install^'TTCB Costing'!Q17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:03:22 AM")
+    AddProperty("8538", "MEI_EquipRent_Total_Cost_Dumpsters", <a><![CDATA[MEI_EquipRent_Total_Cost_Dumpsters]]></a>.Value, "Mech Install^'TTCB Costing'!Q21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:06:12 AM")
+    AddProperty("8533", "MEI_EquipRent_Total_Cost_Fork_Truck", <a><![CDATA[MEI_EquipRent_Total_Cost_Fork_Truck]]></a>.Value, "Mech Install^'TTCB Costing'!Q16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:02:52 AM")
+    AddProperty("8530", "MEI_EquipRent_Total_Cost_Large_Boom_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Large_Boom_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:59:56 AM")
+    AddProperty("8528", "MEI_EquipRent_Total_Cost_Large_Scissors_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Large_Scissors_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:58:53 AM")
+    AddProperty("8532", "MEI_EquipRent_Total_Cost_Large_Telehandler", <a><![CDATA[MEI_EquipRent_Total_Cost_Large_Telehandler]]></a>.Value, "Mech Install^'TTCB Costing'!Q15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:01:05 AM")
+    AddProperty("8539", "MEI_EquipRent_Total_Cost_Porta_Johns", <a><![CDATA[MEI_EquipRent_Total_Cost_Porta_Johns]]></a>.Value, "Mech Install^'TTCB Costing'!Q22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:06:39 AM")
+    AddProperty("8526", "MEI_EquipRent_Total_Cost_Single_Person_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Single_Person_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:57:55 AM")
     AddProperty("8537", "MEI_EquipRent_Total_Cost_Site_Trailer", <a><![CDATA[MEI_EquipRent_Total_Cost_Site_Trailer]]></a>.Value, "Mech Install^'TTCB Costing'!Q20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:07 AM")
-    AddProperty("8529", "MEI_EquipRent_Total_Cost_Small_Boom_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Small_Boom_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:50 AM")
-    AddProperty("8527", "MEI_EquipRent_Total_Cost_Small_Scissors_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Small_Scissors_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:46 AM")
-    AddProperty("8531", "MEI_EquipRent_Total_Cost_Small_Telehandler", <a><![CDATA[MEI_EquipRent_Total_Cost_Small_Telehandler]]></a>.Value, "Mech Install^'TTCB Costing'!Q14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:54 AM")
-    AddProperty("8536", "MEI_EquipRent_Total_Cost_Welders", <a><![CDATA[MEI_EquipRent_Total_Cost_Welders]]></a>.Value, "Mech Install^'TTCB Costing'!Q19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:05 AM")
+    AddProperty("8529", "MEI_EquipRent_Total_Cost_Small_Boom_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Small_Boom_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:59:31 AM")
+    AddProperty("8527", "MEI_EquipRent_Total_Cost_Small_Scissors_Lift", <a><![CDATA[MEI_EquipRent_Total_Cost_Small_Scissors_Lift]]></a>.Value, "Mech Install^'TTCB Costing'!Q10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:58:21 AM")
+    AddProperty("8531", "MEI_EquipRent_Total_Cost_Small_Telehandler", <a><![CDATA[MEI_EquipRent_Total_Cost_Small_Telehandler]]></a>.Value, "Mech Install^'TTCB Costing'!Q14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:00:27 AM")
+    AddProperty("8536", "MEI_EquipRent_Total_Cost_Welders", <a><![CDATA[MEI_EquipRent_Total_Cost_Welders]]></a>.Value, "Mech Install^'TTCB Costing'!Q19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:05:12 AM")
     AddProperty("8521", "MEI_EquipRent_Weekly_Rate_Cranes_Large_Outdoors", <a><![CDATA[MEI_EquipRent_Weekly_Rate_Cranes_Large_Outdoors]]></a>.Value, "Mech Install^'TTCB Costing'!P18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:34 AM")
     AddProperty("8520", "MEI_EquipRent_Weekly_Rate_Cranes_Small_Indoors", <a><![CDATA[MEI_EquipRent_Weekly_Rate_Cranes_Small_Indoors]]></a>.Value, "Mech Install^'TTCB Costing'!P17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:32 AM")
     AddProperty("8524", "MEI_EquipRent_Weekly_Rate_Dumpsters", <a><![CDATA[MEI_EquipRent_Weekly_Rate_Dumpsters]]></a>.Value, "Mech Install^'TTCB Costing'!P21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:45:40 AM")
@@ -2391,43 +2391,43 @@ Option Infer On
     AddProperty("8426", "MEI_Factors_Seismic", <a><![CDATA[MEI_Factors_Seismic]]></a>.Value, "Mech Install^'TTCB Costing'!I17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:41:45 AM")
     AddProperty("8427", "MEI_Factors_Value", <a><![CDATA[MEI_Factors_Value]]></a>.Value, "Mech Install^'TTCB Costing'!K15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 1:59:11 PM")
     AddProperty("8478", "MEI_Fencing_Footage", <a><![CDATA[MEI_Fencing_Footage]]></a>.Value, "Mech Install^'TTCB Costing'!I55", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:04 AM")
-    AddProperty("8480", "MEI_Fencing_Footage_Cost_per_Hours", <a><![CDATA[MEI_Fencing_Footage_Cost_per_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!J55", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:08 AM")
-    AddProperty("8482", "MEI_Fencing_Footage_Total", <a><![CDATA[MEI_Fencing_Footage_Total]]></a>.Value, "Mech Install^'TTCB Costing'!K55", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:13 AM")
+    AddProperty("8480", "MEI_Fencing_Footage_Cost_per_Hours", <a><![CDATA[MEI_Fencing_Footage_Cost_per_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!J55", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:16:06 AM")
+    AddProperty("8482", "MEI_Fencing_Footage_Total", <a><![CDATA[MEI_Fencing_Footage_Total]]></a>.Value, "Mech Install^'TTCB Costing'!K55", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:17:00 AM")
     AddProperty("8479", "MEI_Gates_QTY", <a><![CDATA[MEI_Gates_QTY]]></a>.Value, "Mech Install^'TTCB Costing'!I56", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:06 AM")
-    AddProperty("8481", "MEI_Gates_QTY_Cost_per_Hours", <a><![CDATA[MEI_Gates_QTY_Cost_per_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!J56", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:10 AM")
-    AddProperty("8483", "MEI_Gates_QTY_Total", <a><![CDATA[MEI_Gates_QTY_Total]]></a>.Value, "Mech Install^'TTCB Costing'!K56", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:44:15 AM")
+    AddProperty("8481", "MEI_Gates_QTY_Cost_per_Hours", <a><![CDATA[MEI_Gates_QTY_Cost_per_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!J56", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:16:34 AM")
+    AddProperty("8483", "MEI_Gates_QTY_Total", <a><![CDATA[MEI_Gates_QTY_Total]]></a>.Value, "Mech Install^'TTCB Costing'!K56", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 8:17:25 AM")
     AddProperty("8567", "MEI_Labor_Rate_Current_Rate_IG_Installer", <a><![CDATA[MEI_Labor_Rate_Current_Rate_IG_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!O44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:09 AM")
     AddProperty("8566", "MEI_Labor_Rate_Current_Rate_Lead_Person", <a><![CDATA[MEI_Labor_Rate_Current_Rate_Lead_Person]]></a>.Value, "Mech Install^'TTCB Costing'!O43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:07 AM")
     AddProperty("8565", "MEI_Labor_Rate_Current_Rate_Superintendent", <a><![CDATA[MEI_Labor_Rate_Current_Rate_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!O42", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:05 AM")
-    AddProperty("8570", "MEI_Labor_Rate_New_Rate_IG_Installer", <a><![CDATA[MEI_Labor_Rate_New_Rate_IG_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!P44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:15 AM")
-    AddProperty("8569", "MEI_Labor_Rate_New_Rate_Lead_Person", <a><![CDATA[MEI_Labor_Rate_New_Rate_Lead_Person]]></a>.Value, "Mech Install^'TTCB Costing'!P43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:13 AM")
-    AddProperty("8568", "MEI_Labor_Rate_New_Rate_Superintendent", <a><![CDATA[MEI_Labor_Rate_New_Rate_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!P42", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:11 AM")
+    AddProperty("8570", "MEI_Labor_Rate_New_Rate_IG_Installer", <a><![CDATA[MEI_Labor_Rate_New_Rate_IG_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!P44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:40:48 AM")
+    AddProperty("8569", "MEI_Labor_Rate_New_Rate_Lead_Person", <a><![CDATA[MEI_Labor_Rate_New_Rate_Lead_Person]]></a>.Value, "Mech Install^'TTCB Costing'!P43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:40:25 AM")
+    AddProperty("8568", "MEI_Labor_Rate_New_Rate_Superintendent", <a><![CDATA[MEI_Labor_Rate_New_Rate_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!P42", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:39:50 AM")
     AddProperty("8561", "MEI_Labor_Rate_Percent_Adjustment", <a><![CDATA[MEI_Labor_Rate_Percent_Adjustment]]></a>.Value, "Mech Install^'TTCB Costing'!N41", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:57 AM")
-    AddProperty("8564", "MEI_Labor_Rate_Percent_Adjustment_IG_Installer", <a><![CDATA[MEI_Labor_Rate_Percent_Adjustment_IG_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!N44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:03 AM")
-    AddProperty("8563", "MEI_Labor_Rate_Percent_Adjustment_Lead_Person", <a><![CDATA[MEI_Labor_Rate_Percent_Adjustment_Lead_Person]]></a>.Value, "Mech Install^'TTCB Costing'!N43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:01 AM")
-    AddProperty("8562", "MEI_Labor_Rate_Percent_Adjustment_Superintendent", <a><![CDATA[MEI_Labor_Rate_Percent_Adjustment_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!N42", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:59 AM")
-    AddProperty("8573", "MEI_Labor_Rate_Tot_Cost_Adj_Installer", <a><![CDATA[MEI_Labor_Rate_Tot_Cost_Adj_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!Q44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:21 AM")
-    AddProperty("8572", "MEI_Labor_Rate_Tot_Cost_Adj_Lead_Person", <a><![CDATA[MEI_Labor_Rate_Tot_Cost_Adj_Lead_Person]]></a>.Value, "Mech Install^'TTCB Costing'!Q43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:19 AM")
-    AddProperty("8571", "MEI_Labor_Rate_Tot_Cost_Adj_Superintendent", <a><![CDATA[MEI_Labor_Rate_Tot_Cost_Adj_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!Q42", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:17 AM")
-    AddProperty("8574", "MEI_Labor_Rate_Total_Cost_Adjustment", <a><![CDATA[MEI_Labor_Rate_Total_Cost_Adjustment]]></a>.Value, "Mech Install^'TTCB Costing'!Q45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:23 AM")
-    AddProperty("8358", "MEI_Mech_Conveyor_Installation_Cost", <a><![CDATA[MEI_Mech_Conveyor_Installation_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:21 AM")
-    AddProperty("8359", "MEI_Mech_Conveyor_Installation_Hours", <a><![CDATA[MEI_Mech_Conveyor_Installation_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:23 AM")
-    AddProperty("8404", "MEI_Miscellaneous_Administrative_Cost", <a><![CDATA[MEI_Miscellaneous_Administrative_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:58 AM")
+    AddProperty("8564", "MEI_Labor_Rate_Percent_Adjustment_IG_Installer", <a><![CDATA[MEI_Labor_Rate_Percent_Adjustment_IG_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!N44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:38:36 AM")
+    AddProperty("8563", "MEI_Labor_Rate_Percent_Adjustment_Lead_Person", <a><![CDATA[MEI_Labor_Rate_Percent_Adjustment_Lead_Person]]></a>.Value, "Mech Install^'TTCB Costing'!N43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:38:23 AM")
+    AddProperty("8562", "MEI_Labor_Rate_Percent_Adjustment_Superintendent", <a><![CDATA[MEI_Labor_Rate_Percent_Adjustment_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!N42", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:38:08 AM")
+    AddProperty("8573", "MEI_Labor_Rate_Tot_Cost_Adj_Installer", <a><![CDATA[MEI_Labor_Rate_Tot_Cost_Adj_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!Q44", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:43:22 AM")
+    AddProperty("8572", "MEI_Labor_Rate_Tot_Cost_Adj_Lead_Person", <a><![CDATA[MEI_Labor_Rate_Tot_Cost_Adj_Lead_Person]]></a>.Value, "Mech Install^'TTCB Costing'!Q43", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:43:00 AM")
+    AddProperty("8571", "MEI_Labor_Rate_Tot_Cost_Adj_Superintendent", <a><![CDATA[MEI_Labor_Rate_Tot_Cost_Adj_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!Q42", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:42:37 AM")
+    AddProperty("8574", "MEI_Labor_Rate_Total_Cost_Adjustment", <a><![CDATA[MEI_Labor_Rate_Total_Cost_Adjustment]]></a>.Value, "Mech Install^'TTCB Costing'!Q45", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:43:58 AM")
+    AddProperty("8358", "MEI_Mech_Conveyor_Installation_Cost", <a><![CDATA[MEI_Mech_Conveyor_Installation_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:16:25 AM")
+    AddProperty("8359", "MEI_Mech_Conveyor_Installation_Hours", <a><![CDATA[MEI_Mech_Conveyor_Installation_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:17:02 AM")
+    AddProperty("8404", "MEI_Miscellaneous_Administrative_Cost", <a><![CDATA[MEI_Miscellaneous_Administrative_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:33:02 PM")
     AddProperty("8403", "MEI_Miscellaneous_Cost", <a><![CDATA[MEI_Miscellaneous_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:56 AM")
-    AddProperty("8543", "MEI_Other_Cost_Onsite_Admin_Duration_Wks", <a><![CDATA[MEI_Other_Cost_Onsite_Admin_Duration_Wks]]></a>.Value, "Mech Install^'TTCB Costing'!N29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:20 AM")
-    AddProperty("8544", "MEI_Other_Cost_Onsite_Admin_Hrs_Per_Week", <a><![CDATA[MEI_Other_Cost_Onsite_Admin_Hrs_Per_Week]]></a>.Value, "Mech Install^'TTCB Costing'!N30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:22 AM")
-    AddProperty("8542", "MEI_Other_Cost_Permit_Hours", <a><![CDATA[MEI_Other_Cost_Permit_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!N27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:18 AM")
-    AddProperty("8541", "MEI_Other_Cost_Qty_Gang_Boxes", <a><![CDATA[MEI_Other_Cost_Qty_Gang_Boxes]]></a>.Value, "Mech Install^'TTCB Costing'!N26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:16 AM")
-    AddProperty("8540", "MEI_Other_Cost_Qty_Trucks", <a><![CDATA[MEI_Other_Cost_Qty_Trucks]]></a>.Value, "Mech Install^'TTCB Costing'!N25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:14 AM")
-    AddProperty("8443", "MEI_People_Needs_Comm_No_of_Installers", <a><![CDATA[MEI_People_Needs_Comm_No_of_Installers]]></a>.Value, "Mech Install^'TTCB Costing'!J33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:22 AM")
-    AddProperty("8442", "MEI_People_Needs_Comm_No_of_Lead_Men", <a><![CDATA[MEI_People_Needs_Comm_No_of_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!J32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:20 AM")
-    AddProperty("8441", "MEI_People_Needs_Comm_No_of_Superintendents", <a><![CDATA[MEI_People_Needs_Comm_No_of_Superintendents]]></a>.Value, "Mech Install^'TTCB Costing'!J31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:18 AM")
+    AddProperty("8543", "MEI_Other_Cost_Onsite_Admin_Duration_Wks", <a><![CDATA[MEI_Other_Cost_Onsite_Admin_Duration_Wks]]></a>.Value, "Mech Install^'TTCB Costing'!N29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:11:36 AM")
+    AddProperty("8544", "MEI_Other_Cost_Onsite_Admin_Hrs_Per_Week", <a><![CDATA[MEI_Other_Cost_Onsite_Admin_Hrs_Per_Week]]></a>.Value, "Mech Install^'TTCB Costing'!N30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:12:12 AM")
+    AddProperty("8542", "MEI_Other_Cost_Permit_Hours", <a><![CDATA[MEI_Other_Cost_Permit_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!N27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:10:32 AM")
+    AddProperty("8541", "MEI_Other_Cost_Qty_Gang_Boxes", <a><![CDATA[MEI_Other_Cost_Qty_Gang_Boxes]]></a>.Value, "Mech Install^'TTCB Costing'!N26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:09:38 AM")
+    AddProperty("8540", "MEI_Other_Cost_Qty_Trucks", <a><![CDATA[MEI_Other_Cost_Qty_Trucks]]></a>.Value, "Mech Install^'TTCB Costing'!N25", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:08:42 AM")
+    AddProperty("8443", "MEI_People_Needs_Comm_No_of_Installers", <a><![CDATA[MEI_People_Needs_Comm_No_of_Installers]]></a>.Value, "Mech Install^'TTCB Costing'!J33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:27:10 AM")
+    AddProperty("8442", "MEI_People_Needs_Comm_No_of_Lead_Men", <a><![CDATA[MEI_People_Needs_Comm_No_of_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!J32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:26:42 AM")
+    AddProperty("8441", "MEI_People_Needs_Comm_No_of_Superintendents", <a><![CDATA[MEI_People_Needs_Comm_No_of_Superintendents]]></a>.Value, "Mech Install^'TTCB Costing'!J31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:26:10 AM")
     AddProperty("8440", "MEI_People_Needs_Install_No_of_Installers", <a><![CDATA[MEI_People_Needs_Install_No_of_Installers]]></a>.Value, "Mech Install^'TTCB Costing'!I33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 2:26:28 PM")
     AddProperty("8439", "MEI_People_Needs_Install_No_of_Lead_Men", <a><![CDATA[MEI_People_Needs_Install_No_of_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!I32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 2:25:41 PM")
     AddProperty("8438", "MEI_People_Needs_Install_No_of_Superintendents", <a><![CDATA[MEI_People_Needs_Install_No_of_Superintendents]]></a>.Value, "Mech Install^'TTCB Costing'!I31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 2:23:08 PM")
-    AddProperty("8445", "MEI_People_Needs_Work_Percent_No_of_Lead_Men", <a><![CDATA[MEI_People_Needs_Work_Percent_No_of_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!K32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:26 AM")
-    AddProperty("8444", "MEI_People_Needs_Work_Percent_No_of_Superintendent", <a><![CDATA[MEI_People_Needs_Work_Percent_No_of_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!K31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:24 AM")
-    AddProperty("8402", "MEI_Permits_Cost", <a><![CDATA[MEI_Permits_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:54 AM")
+    AddProperty("8445", "MEI_People_Needs_Work_Percent_No_of_Lead_Men", <a><![CDATA[MEI_People_Needs_Work_Percent_No_of_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!K32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:32:52 AM")
+    AddProperty("8444", "MEI_People_Needs_Work_Percent_No_of_Superintendent", <a><![CDATA[MEI_People_Needs_Work_Percent_No_of_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!K31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:29:55 AM")
+    AddProperty("8402", "MEI_Permits_Cost", <a><![CDATA[MEI_Permits_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E32", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:25:15 PM")
     AddProperty("8417", "MEI_Project_Info_Customer", <a><![CDATA[MEI_Project_Info_Customer]]></a>.Value, "Mech Install^'TTCB Costing'!I8", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:41:26 AM")
     AddProperty("8420", "MEI_Project_Info_Description", <a><![CDATA[MEI_Project_Info_Description]]></a>.Value, "Mech Install^'TTCB Costing'!I11", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:41:33 AM")
     AddProperty("8418", "MEI_Project_Info_Location", <a><![CDATA[MEI_Project_Info_Location]]></a>.Value, "Mech Install^'TTCB Costing'!I9", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:41:28 AM")
@@ -2438,80 +2438,82 @@ Option Infer On
     AddProperty("8429", "MEI_Schedule_End_Mechanical_Installation", <a><![CDATA[MEI_Schedule_End_Mechanical_Installation]]></a>.Value, "Mech Install^'TTCB Costing'!I21", "Date","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:41:52 AM")
     AddProperty("8430", "MEI_Schedule_End_Run_In_Level_5", <a><![CDATA[MEI_Schedule_End_Run_In_Level_5]]></a>.Value, "Mech Install^'TTCB Costing'!I22", "Date","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:41:54 AM")
     AddProperty("8428", "MEI_Schedule_Start_Mechanical_Installation", <a><![CDATA[MEI_Schedule_Start_Mechanical_Installation]]></a>.Value, "Mech Install^'TTCB Costing'!I20", "Date","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:41:50 AM")
-    AddProperty("8432", "MEI_Schedule_Weeks_Comm", <a><![CDATA[MEI_Schedule_Weeks_Comm]]></a>.Value, "Mech Install^'TTCB Costing'!J22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:41:58 AM")
-    AddProperty("8431", "MEI_Schedule_Weeks_Install", <a><![CDATA[MEI_Schedule_Weeks_Install]]></a>.Value, "Mech Install^'TTCB Costing'!J21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 2:14:55 PM")
+    AddProperty("8432", "MEI_Schedule_Weeks_Comm", <a><![CDATA[MEI_Schedule_Weeks_Comm]]></a>.Value, "Mech Install^'TTCB Costing'!J22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:49:44 AM")
+    AddProperty("8431", "MEI_Schedule_Weeks_Install", <a><![CDATA[MEI_Schedule_Weeks_Install]]></a>.Value, "Mech Install^'TTCB Costing'!J21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 9:50:05 AM")
     AddProperty("8579", "MEI_Structures_Platforms_Feet_Catwalk", <a><![CDATA[MEI_Structures_Platforms_Feet_Catwalk]]></a>.Value, "Mech Install^'TTCB Costing'!N52", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:34 AM")
     AddProperty("8575", "MEI_Structures_Platforms_Feet_Demo", <a><![CDATA[MEI_Structures_Platforms_Feet_Demo]]></a>.Value, "Mech Install^'TTCB Costing'!N48", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:25 AM")
     AddProperty("8576", "MEI_Structures_Platforms_Feet_GRID_Structure", <a><![CDATA[MEI_Structures_Platforms_Feet_GRID_Structure]]></a>.Value, "Mech Install^'TTCB Costing'!N49", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:28 AM")
     AddProperty("8577", "MEI_Structures_Platforms_Feet_Platform_Bar_Grating", <a><![CDATA[MEI_Structures_Platforms_Feet_Platform_Bar_Grating]]></a>.Value, "Mech Install^'TTCB Costing'!N50", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:30 AM")
     AddProperty("8578", "MEI_Structures_Platforms_Feet_Platform_Resin_Deck", <a><![CDATA[MEI_Structures_Platforms_Feet_Platform_Resin_Deck]]></a>.Value, "Mech Install^'TTCB Costing'!N51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:32 AM")
-    AddProperty("8580", "MEI_Structures_Platforms_Feet_Total", <a><![CDATA[MEI_Structures_Platforms_Feet_Total]]></a>.Value, "Mech Install^'TTCB Costing'!N53", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:36 AM")
-    AddProperty("8585", "MEI_Structures_Platforms_Hour_Catwalk", <a><![CDATA[MEI_Structures_Platforms_Hour_Catwalk]]></a>.Value, "Mech Install^'TTCB Costing'!O52", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:47 AM")
-    AddProperty("8581", "MEI_Structures_Platforms_Hour_Demo", <a><![CDATA[MEI_Structures_Platforms_Hour_Demo]]></a>.Value, "Mech Install^'TTCB Costing'!O48", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:38 AM")
+    AddProperty("8580", "MEI_Structures_Platforms_Feet_Total", <a><![CDATA[MEI_Structures_Platforms_Feet_Total]]></a>.Value, "Mech Install^'TTCB Costing'!N53", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:46:13 AM")
+    AddProperty("8585", "MEI_Structures_Platforms_Hour_Catwalk", <a><![CDATA[MEI_Structures_Platforms_Hour_Catwalk]]></a>.Value, "Mech Install^'TTCB Costing'!O52", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:48:27 AM")
+    AddProperty("8581", "MEI_Structures_Platforms_Hour_Demo", <a><![CDATA[MEI_Structures_Platforms_Hour_Demo]]></a>.Value, "Mech Install^'TTCB Costing'!O48", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:46:34 AM")
     AddProperty("8582", "MEI_Structures_Platforms_Hour_GRID_Structure", <a><![CDATA[MEI_Structures_Platforms_Hour_GRID_Structure]]></a>.Value, "Mech Install^'TTCB Costing'!O49", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:40 AM")
     AddProperty("8583", "MEI_Structures_Platforms_Hour_Platform_Bar_Grating", <a><![CDATA[MEI_Structures_Platforms_Hour_Platform_Bar_Grating]]></a>.Value, "Mech Install^'TTCB Costing'!O50", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:43 AM")
     AddProperty("8584", "MEI_Structures_Platforms_Hour_Platform_Resin_Deck", <a><![CDATA[MEI_Structures_Platforms_Hour_Platform_Resin_Deck]]></a>.Value, "Mech Install^'TTCB Costing'!O51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:45 AM")
-    AddProperty("8586", "MEI_Structures_Platforms_Hour_Total", <a><![CDATA[MEI_Structures_Platforms_Hour_Total]]></a>.Value, "Mech Install^'TTCB Costing'!O53", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:49 AM")
+    AddProperty("8586", "MEI_Structures_Platforms_Hour_Total", <a><![CDATA[MEI_Structures_Platforms_Hour_Total]]></a>.Value, "Mech Install^'TTCB Costing'!O53", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:48:52 AM")
     AddProperty("8588", "MEI_Structures_Platforms_Per_Ft_Catwalk", <a><![CDATA[MEI_Structures_Platforms_Per_Ft_Catwalk]]></a>.Value, "Mech Install^'TTCB Costing'!P52", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:53 AM")
     AddProperty("8587", "MEI_Structures_Platforms_Per_Ft_Demo", <a><![CDATA[MEI_Structures_Platforms_Per_Ft_Demo]]></a>.Value, "Mech Install^'TTCB Costing'!P48", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:51 AM")
-    AddProperty("8589", "MEI_Structures_Platforms_Per_Ft_Total", <a><![CDATA[MEI_Structures_Platforms_Per_Ft_Total]]></a>.Value, "Mech Install^'TTCB Costing'!P53", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:47:55 AM")
-    AddProperty("8364", "MEI_Superintendent__Hours", <a><![CDATA[MEI_Superintendent__Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:34 AM")
-    AddProperty("8363", "MEI_Superintendent_Commissioning_Cost", <a><![CDATA[MEI_Superintendent_Commissioning_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:31 AM")
-    AddProperty("8367", "MEI_Superintendent_Commissioning_Hours", <a><![CDATA[MEI_Superintendent_Commissioning_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:40 AM")
-    AddProperty("8360", "MEI_Superintendent_Cost", <a><![CDATA[MEI_Superintendent_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:25 AM")
-    AddProperty("8361", "MEI_Superintendent_Install_Cost", <a><![CDATA[MEI_Superintendent_Install_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:27 AM")
-    AddProperty("8365", "MEI_Superintendent_Install_Hours", <a><![CDATA[MEI_Superintendent_Install_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:36 AM")
+    AddProperty("8589", "MEI_Structures_Platforms_Per_Ft_Total", <a><![CDATA[MEI_Structures_Platforms_Per_Ft_Total]]></a>.Value, "Mech Install^'TTCB Costing'!P53", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:59:44 AM")
+    AddProperty("8364", "MEI_Superintendent__Hours", <a><![CDATA[MEI_Superintendent__Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:20:20 AM")
+    AddProperty("8363", "MEI_Superintendent_Commissioning_Cost", <a><![CDATA[MEI_Superintendent_Commissioning_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:19:57 AM")
+    AddProperty("8367", "MEI_Superintendent_Commissioning_Hours", <a><![CDATA[MEI_Superintendent_Commissioning_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:23:01 AM")
+    AddProperty("8360", "MEI_Superintendent_Cost", <a><![CDATA[MEI_Superintendent_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:17:55 AM")
+    AddProperty("8361", "MEI_Superintendent_Install_Cost", <a><![CDATA[MEI_Superintendent_Install_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:18:25 AM")
+    AddProperty("8365", "MEI_Superintendent_Install_Hours", <a><![CDATA[MEI_Superintendent_Install_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:21:00 AM")
     AddProperty("8368", "MEI_Superintendent_Rate", <a><![CDATA[MEI_Superintendent_Rate]]></a>.Value, "Mech Install^'TTCB Costing'!D9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:42 AM")
-    AddProperty("8362", "MEI_Superintendent_Stagnant_Hours_Cost", <a><![CDATA[MEI_Superintendent_Stagnant_Hours_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:29 AM")
-    AddProperty("8366", "MEI_Superintendent_Stagnant_Hours_Hours", <a><![CDATA[MEI_Superintendent_Stagnant_Hours_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:38 AM")
-    AddProperty("8400", "MEI_Supplies_Consumables_All_Other_Cost", <a><![CDATA[MEI_Supplies_Consumables_All_Other_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:49 AM")
-    AddProperty("8398", "MEI_Supplies_Consumables_Cost", <a><![CDATA[MEI_Supplies_Consumables_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:45 AM")
-    AddProperty("8399", "MEI_Supplies_Consumables_HW_Air_Piping_Cost", <a><![CDATA[MEI_Supplies_Consumables_HW_Air_Piping_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:47 AM")
+    AddProperty("8362", "MEI_Superintendent_Stagnant_Hours_Cost", <a><![CDATA[MEI_Superintendent_Stagnant_Hours_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:19:00 AM")
+    AddProperty("8366", "MEI_Superintendent_Stagnant_Hours_Hours", <a><![CDATA[MEI_Superintendent_Stagnant_Hours_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:22:16 AM")
+    AddProperty("8400", "MEI_Supplies_Consumables_All_Other_Cost", <a><![CDATA[MEI_Supplies_Consumables_All_Other_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:24:17 PM")
+    AddProperty("8398", "MEI_Supplies_Consumables_Cost", <a><![CDATA[MEI_Supplies_Consumables_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:23:30 PM")
+    AddProperty("8399", "MEI_Supplies_Consumables_HW_Air_Piping_Cost", <a><![CDATA[MEI_Supplies_Consumables_HW_Air_Piping_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:23:55 PM")
     AddProperty("8549", "MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!N37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:33 AM")
     AddProperty("8548", "MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!N36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:30 AM")
     AddProperty("8547", "MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent", <a><![CDATA[MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!N35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:28 AM")
-    AddProperty("8555", "MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!P37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:45 AM")
-    AddProperty("8554", "MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!P36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:43 AM")
-    AddProperty("8553", "MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI]]></a>.Value, "Mech Install^'TTCB Costing'!P35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:41 AM")
-    AddProperty("8552", "MEI_Travel_Cost_Crew_Tot_Proj_Diem_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Proj_Diem_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!O37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:39 AM")
-    AddProperty("8551", "MEI_Travel_Cost_Crew_Tot_Proj_Diem_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Proj_Diem_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!O36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:37 AM")
-    AddProperty("8550", "MEI_Travel_Cost_Crew_Tot_Proj_Diem_Superintendent", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Proj_Diem_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!O35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:35 AM")
-    AddProperty("8559", "MEI_Travel_Cost_Crew_Tot_Travel_Cost_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Travel_Cost_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!Q37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:53 AM")
-    AddProperty("8558", "MEI_Travel_Cost_Crew_Tot_Travel_Cost_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Travel_Cost_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!Q36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:51 AM")
-    AddProperty("8557", "MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI]]></a>.Value, "Mech Install^'TTCB Costing'!Q35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:49 AM")
-    AddProperty("8556", "MEI_Travel_Cost_Crew_Total_Mobilization_Cost", <a><![CDATA[MEI_Travel_Cost_Crew_Total_Mobilization_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!P38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:47 AM")
-    AddProperty("8560", "MEI_Travel_Cost_Crew_Total_Travel_Cost", <a><![CDATA[MEI_Travel_Cost_Crew_Total_Travel_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!Q38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:55 AM")
-    AddProperty("8545", "MEI_Travel_Cost_Per_Diem_Range", <a><![CDATA[MEI_Travel_Cost_Per_Diem_Range]]></a>.Value, "Mech Install^'TTCB Costing'!N33", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:24 AM")
-    AddProperty("8546", "MEI_Travel_Cost_Per_Diem_Range_Link", <a><![CDATA[MEI_Travel_Cost_Per_Diem_Range_Link]]></a>.Value, "Mech Install^'TTCB Costing'!O33", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:26 AM")
+    AddProperty("8555", "MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!P37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:32:01 AM")
+    AddProperty("8554", "MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!P36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:31:45 AM")
+    AddProperty("8553", "MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI]]></a>.Value, "Mech Install^'TTCB Costing'!P35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:31:30 AM")
+    AddProperty("8552", "MEI_Travel_Cost_Crew_Tot_Proj_Diem_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Proj_Diem_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!O37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:30:52 AM")
+    AddProperty("8551", "MEI_Travel_Cost_Crew_Tot_Proj_Diem_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Proj_Diem_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!O36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:30:03 AM")
+    AddProperty("8550", "MEI_Travel_Cost_Crew_Tot_Proj_Diem_Superintendent", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Proj_Diem_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!O35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:29:21 AM")
+    AddProperty("8559", "MEI_Travel_Cost_Crew_Tot_Travel_Cost_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Travel_Cost_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!Q37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:35:15 AM")
+    AddProperty("8558", "MEI_Travel_Cost_Crew_Tot_Travel_Cost_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Travel_Cost_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!Q36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:34:53 AM")
+    AddProperty("8557", "MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI]]></a>.Value, "Mech Install^'TTCB Costing'!Q35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:34:30 AM")
+    AddProperty("8556", "MEI_Travel_Cost_Crew_Total_Mobilization_Cost", <a><![CDATA[MEI_Travel_Cost_Crew_Total_Mobilization_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!P38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:33:18 AM")
+    AddProperty("8560", "MEI_Travel_Cost_Crew_Total_Travel_Cost", <a><![CDATA[MEI_Travel_Cost_Crew_Total_Travel_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!Q38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:36:12 AM")
+    AddProperty("8545", "MEI_Travel_Cost_Per_Diem_Range", <a><![CDATA[MEI_Travel_Cost_Per_Diem_Range]]></a>.Value, "Mech Install^'TTCB Costing'!N33", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:23:53 AM")
+    AddProperty("8546", "MEI_Travel_Cost_Per_Diem_Range_Link", <a><![CDATA[MEI_Travel_Cost_Per_Diem_Range_Link]]></a>.Value, "Mech Install^'TTCB Costing'!O33", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:27:41 AM")
     AddProperty("8401", "MEI_Travel_Expense_Cost", <a><![CDATA[MEI_Travel_Expense_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:51 AM")
     AddProperty("8121", "MEI_TTCB_Costing_D9", <a><![CDATA[Superintendent Rate]]></a>.Value, "Mechanical Conveyor Installation_Superintendent_Rate", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/4/2025 3:49:41 PM")
-    AddProperty("8384", "MEI_TTCB_Installer_Commissioning_Cost", <a><![CDATA[MEI_TTCB_Installer_Commissioning_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:16 AM")
-    AddProperty("8393", "MEI_TTCB_Installer_Commissioning_Hours", <a><![CDATA[MEI_TTCB_Installer_Commissioning_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:34 AM")
-    AddProperty("8378", "MEI_TTCB_Installer_Cost", <a><![CDATA[MEI_TTCB_Installer_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:03 AM")
-    AddProperty("8381", "MEI_TTCB_Installer_Demo_Cost", <a><![CDATA[MEI_TTCB_Installer_Demo_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:09 AM")
-    AddProperty("8390", "MEI_TTCB_Installer_Demo_Hours", <a><![CDATA[MEI_TTCB_Installer_Demo_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:28 AM")
-    AddProperty("8387", "MEI_TTCB_Installer_Hours", <a><![CDATA[MEI_TTCB_Installer_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:22 AM")
-    AddProperty("8379", "MEI_TTCB_Installer_Install_Cost", <a><![CDATA[MEI_TTCB_Installer_Install_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:05 AM")
-    AddProperty("8388", "MEI_TTCB_Installer_Install_Hours", <a><![CDATA[MEI_TTCB_Installer_Install_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:24 AM")
-    AddProperty("8382", "MEI_TTCB_Installer_Miscellaneous_Cost", <a><![CDATA[MEI_TTCB_Installer_Miscellaneous_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:11 AM")
-    AddProperty("8391", "MEI_TTCB_Installer_Miscellaneous_Hours", <a><![CDATA[MEI_TTCB_Installer_Miscellaneous_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:30 AM")
-    AddProperty("8380", "MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost", <a><![CDATA[MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:07 AM")
-    AddProperty("8389", "MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours", <a><![CDATA[MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:26 AM")
+    AddProperty("8384", "MEI_TTCB_Installer_Commissioning_Cost", <a><![CDATA[MEI_TTCB_Installer_Commissioning_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 12:02:10 PM")
+    AddProperty("8393", "MEI_TTCB_Installer_Commissioning_Hours", <a><![CDATA[MEI_TTCB_Installer_Commissioning_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:14:25 PM")
+    AddProperty("8378", "MEI_TTCB_Installer_Cost", <a><![CDATA[MEI_TTCB_Installer_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:55:42 AM")
+    AddProperty("8381", "MEI_TTCB_Installer_Demo_Cost", <a><![CDATA[MEI_TTCB_Installer_Demo_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:59:56 AM")
+    AddProperty("8390", "MEI_TTCB_Installer_Demo_Hours", <a><![CDATA[MEI_TTCB_Installer_Demo_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:12:08 PM")
+    AddProperty("8387", "MEI_TTCB_Installer_Hours", <a><![CDATA[MEI_TTCB_Installer_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 12:26:11 PM")
+    AddProperty("8379", "MEI_TTCB_Installer_Install_Cost", <a><![CDATA[MEI_TTCB_Installer_Install_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:57:08 AM")
+    AddProperty("8388", "MEI_TTCB_Installer_Install_Hours", <a><![CDATA[MEI_TTCB_Installer_Install_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 12:34:10 PM")
+    AddProperty("8382", "MEI_TTCB_Installer_Miscellaneous_Cost", <a><![CDATA[MEI_TTCB_Installer_Miscellaneous_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 12:00:17 PM")
+    AddProperty("8391", "MEI_TTCB_Installer_Miscellaneous_Hours", <a><![CDATA[MEI_TTCB_Installer_Miscellaneous_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:13:02 PM")
+    AddProperty("8380", "MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost", <a><![CDATA[MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:58:00 AM")
+    AddProperty("8389", "MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours", <a><![CDATA[MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:09:22 PM")
     AddProperty("8386", "MEI_TTCB_Installer_Rate", <a><![CDATA[MEI_TTCB_Installer_Rate]]></a>.Value, "Mech Install^'TTCB Costing'!D17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:20 AM")
-    AddProperty("8383", "MEI_TTCB_Installer_Stagnant_Hours_Cost", <a><![CDATA[MEI_TTCB_Installer_Stagnant_Hours_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:14 AM")
-    AddProperty("8392", "MEI_TTCB_Installer_Stagnant_Hours_Hours", <a><![CDATA[MEI_TTCB_Installer_Stagnant_Hours_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:32 AM")
-    AddProperty("8385", "MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost", <a><![CDATA[MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:18 AM")
-    AddProperty("8394", "MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours", <a><![CDATA[MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:36 AM")
-    AddProperty("8372", "MEI_TTCB_Lead_Person_Commissioning_Cost", <a><![CDATA[MEI_TTCB_Lead_Person_Commissioning_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:51 AM")
-    AddProperty("8376", "MEI_TTCB_Lead_Person_Commissioning_Hours", <a><![CDATA[MEI_TTCB_Lead_Person_Commissioning_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:59 AM")
-    AddProperty("8369", "MEI_TTCB_Lead_Person_Cost", <a><![CDATA[MEI_TTCB_Lead_Person_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:44 AM")
-    AddProperty("8373", "MEI_TTCB_Lead_Person_Hours", <a><![CDATA[MEI_TTCB_Lead_Person_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:53 AM")
-    AddProperty("8370", "MEI_TTCB_Lead_Person_Install_Cost", <a><![CDATA[MEI_TTCB_Lead_Person_Install_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:46 AM")
-    AddProperty("8374", "MEI_TTCB_Lead_Person_Install_Hours", <a><![CDATA[MEI_TTCB_Lead_Person_Install_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:55 AM")
+    AddProperty("8383", "MEI_TTCB_Installer_Stagnant_Hours_Cost", <a><![CDATA[MEI_TTCB_Installer_Stagnant_Hours_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 12:00:48 PM")
+    AddProperty("8392", "MEI_TTCB_Installer_Stagnant_Hours_Hours", <a><![CDATA[MEI_TTCB_Installer_Stagnant_Hours_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:13:43 PM")
+    AddProperty("8385", "MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost", <a><![CDATA[MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 12:04:21 PM")
+    AddProperty("8394", "MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours", <a><![CDATA[MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:27:29 PM")
+    AddProperty("8372", "MEI_TTCB_Lead_Person_Commissioning_Cost", <a><![CDATA[MEI_TTCB_Lead_Person_Commissioning_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:36:27 AM")
+    AddProperty("8376", "MEI_TTCB_Lead_Person_Commissioning_Hours", <a><![CDATA[MEI_TTCB_Lead_Person_Commissioning_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:45:12 AM")
+    AddProperty("8369", "MEI_TTCB_Lead_Person_Cost", <a><![CDATA[MEI_TTCB_Lead_Person_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:24:25 AM")
+    AddProperty("8373", "MEI_TTCB_Lead_Person_Hours", <a><![CDATA[MEI_TTCB_Lead_Person_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:37:22 AM")
+    AddProperty("8370", "MEI_TTCB_Lead_Person_Install_Cost", <a><![CDATA[MEI_TTCB_Lead_Person_Install_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:25:35 AM")
+    AddProperty("8374", "MEI_TTCB_Lead_Person_Install_Hours", <a><![CDATA[MEI_TTCB_Lead_Person_Install_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:38:25 AM")
     AddProperty("8377", "MEI_TTCB_Lead_Person_Rate", <a><![CDATA[MEI_TTCB_Lead_Person_Rate]]></a>.Value, "Mech Install^'TTCB Costing'!D13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:40:01 AM")
-    AddProperty("8371", "MEI_TTCB_Lead_Person_Stagnant_Hours_Cost", <a><![CDATA[MEI_TTCB_Lead_Person_Stagnant_Hours_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:49 AM")
-    AddProperty("8375", "MEI_TTCB_Lead_Person_Stagnant_Hours_Hours", <a><![CDATA[MEI_TTCB_Lead_Person_Stagnant_Hours_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:39:57 AM")
+    AddProperty("8371", "MEI_TTCB_Lead_Person_Stagnant_Hours_Cost", <a><![CDATA[MEI_TTCB_Lead_Person_Stagnant_Hours_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:32:32 AM")
+    AddProperty("8375", "MEI_TTCB_Lead_Person_Stagnant_Hours_Hours", <a><![CDATA[MEI_TTCB_Lead_Person_Stagnant_Hours_Hours]]></a>.Value, "Mech Install^'TTCB Costing'!F15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 11:43:53 AM")
     AddProperty("8089", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/2/2025 5:13:26 PM")
+    
+      AddValidValue("MEI_Travel_Cost_Per_Diem_Range")
     
     End Sub
 
@@ -2563,19 +2565,19 @@ Option Infer On
           InitProperty("MEI_Adjust_Dollar_System_Efficiency", "8044", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:57 AM", "", "In Development",  0,12934)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Adjust_Dollar_Total", "8051", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:43:17 AM", "", "In Development",  0,12948)
+          InitProperty("MEI_Adjust_Dollar_Total", "8051", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:43:52 AM", "", "In Development",  0,18362)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Adjust_Dollar_TTCB_Sorter", "8043", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:55 AM", "", "In Development",  0,12932)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Adjust_Hours_Clean_Up", "8054", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:43:38 AM", "", "In Development",  0,12954)
+          InitProperty("MEI_Adjust_Hours_Clean_Up", "8054", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:44:53 AM", "", "In Development",  0,18364)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Adjust_Hours_Fencing", "8055", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:43:41 AM", "", "In Development",  0,12956)
+          InitProperty("MEI_Adjust_Hours_Fencing", "8055", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:45:09 AM", "", "In Development",  0,18365)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Adjust_Hours_Gates", "8056", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:43:44 AM", "", "In Development",  0,12958)
+          InitProperty("MEI_Adjust_Hours_Gates", "8056", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:45:24 AM", "", "In Development",  0,18366)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Adjust_Hours_Miscellaneous_1", "8057", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:43:47 AM", "", "In Development",  0,12960)
@@ -2587,10 +2589,10 @@ Option Infer On
           InitProperty("MEI_Adjust_Hours_Miscellaneous_3", "8059", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:43:53 AM", "", "In Development",  0,12964)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Adjust_Hours_System_Efficiency", "8053", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:43:35 AM", "", "In Development",  0,12952)
+          InitProperty("MEI_Adjust_Hours_System_Efficiency", "8053", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:44:28 AM", "", "In Development",  0,18363)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Adjust_Hours_Total", "8060", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:43:56 AM", "", "In Development",  0,12966)
+          InitProperty("MEI_Adjust_Hours_Total", "8060", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:45:53 AM", "", "In Development",  0,18367)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Adjust_Hours_TTCB_Sorter", "8052", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:43:32 AM", "", "In Development",  0,12950)
@@ -2650,19 +2652,19 @@ Option Infer On
           InitProperty("MEI_Crew_Comm_Sppt_Hrs_per_Wk", "8019", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:02 AM", "", "In Development",  0,12884)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Crew_Head_Count_Installer", "8037", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:40 AM", "", "In Development",  0,12920)
+          InitProperty("MEI_Crew_Head_Count_Installer", "8037", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:36:50 AM", "", "In Development",  0,18356)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Crew_Head_Count_Lead_Men", "8036", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:38 AM", "", "In Development",  0,12918)
+          InitProperty("MEI_Crew_Head_Count_Lead_Men", "8036", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:36:35 AM", "", "In Development",  0,18355)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Crew_Head_Count_Superintendent", "8035", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:36 AM", "", "In Development",  0,12916)
+          InitProperty("MEI_Crew_Head_Count_Superintendent", "8035", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:36:17 AM", "", "In Development",  0,18354)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Crew_Head_Count_Total", "8038", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:42 AM", "", "In Development",  0,12922)
+          InitProperty("MEI_Crew_Head_Count_Total", "8038", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:37:21 AM", "", "In Development",  0,18357)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Crew_Mobilization_Cost_Per_Person", "8031", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:28 AM", "", "In Development",  0,12908)
+          InitProperty("MEI_Crew_Mobilization_Cost_Per_Person", "8031", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:34:54 AM", "", "In Development",  0,18353)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Crew_Mobilization_Count_Installer", "8034", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:34 AM", "", "In Development",  0,12914)
@@ -2680,25 +2682,25 @@ Option Infer On
           InitProperty("MEI_Crew_Peak_Crew_Installers", "8021", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 2:17:49 PM", "", "In Development",  0,18073)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Crew_Total_Mobilization_Cost_Installer", "8041", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:49 AM", "", "In Development",  0,12928)
+          InitProperty("MEI_Crew_Total_Mobilization_Cost_Installer", "8041", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:42:32 AM", "", "In Development",  0,18360)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Crew_Total_Mobilization_Cost_Lead_Men", "8040", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:47 AM", "", "In Development",  0,12926)
+          InitProperty("MEI_Crew_Total_Mobilization_Cost_Lead_Men", "8040", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:42:02 AM", "", "In Development",  0,18359)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Crew_Total_Mobilization_Cost_Superintendent", "8039", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:44 AM", "", "In Development",  0,12924)
+          InitProperty("MEI_Crew_Total_Mobilization_Cost_Superintendent", "8039", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:39:28 AM", "", "In Development",  0,18358)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Crew_Total_Mobilization_Cost_Total", "8042", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:51 AM", "", "In Development",  0,12930)
+          InitProperty("MEI_Crew_Total_Mobilization_Cost_Total", "8042", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:42:53 AM", "", "In Development",  0,18361)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Equipment_Rental_Cost", "7980", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:39 AM", "", "In Development",  0,12806)
+          InitProperty("MEI_Equipment_Rental_Cost", "7980", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:28:44 PM", "", "In Development",  0,18527)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Equipment_Rental_Dumpsters_Cost", "7981", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:41 AM", "", "In Development",  0,12808)
+          InitProperty("MEI_Equipment_Rental_Dumpsters_Cost", "7981", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:22:31 PM", "", "In Development",  0,18517)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Equipment_Rental_Porta_Johns_Cost", "7982", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:43 AM", "", "In Development",  0,12810)
+          InitProperty("MEI_Equipment_Rental_Porta_Johns_Cost", "7982", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:22:51 PM", "", "In Development",  0,18518)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_EquipRent_Install_Duration_Cranes_LargeOutdoor", "8092", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:04 AM", "", "In Development",  0,13030)
@@ -2707,40 +2709,40 @@ Option Infer On
           InitProperty("MEI_EquipRent_Install_Duration_Cranes_SmallIndoor", "8091", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:02 AM", "", "In Development",  0,13028)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Dumpsters", "8095", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:10 AM", "", "In Development",  0,13036)
+          InitProperty("MEI_EquipRent_Install_Duration_Dumpsters", "8095", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:56:08 AM", "", "In Development",  0,18391)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Fork_Truck", "8090", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:00 AM", "", "In Development",  0,13026)
+          InitProperty("MEI_EquipRent_Install_Duration_Fork_Truck", "8090", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:23:39 AM", "", "In Development",  0,18377)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Large_Boom_Lift", "8087", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:54 AM", "", "In Development",  0,13020)
+          InitProperty("MEI_EquipRent_Install_Duration_Large_Boom_Lift", "8087", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:22:35 AM", "", "In Development",  0,18376)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Large_Scissors_Lift", "8085", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:50 AM", "", "In Development",  0,13016)
+          InitProperty("MEI_EquipRent_Install_Duration_Large_Scissors_Lift", "8085", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:21:13 AM", "", "In Development",  0,18374)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_EquipRent_Install_Duration_Large_Telehandler", "8089", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:58 AM", "", "In Development",  0,13024)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Porta_Johns", "8096", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:13 AM", "", "In Development",  0,13038)
+          InitProperty("MEI_EquipRent_Install_Duration_Porta_Johns", "8096", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:56:29 AM", "", "In Development",  0,18392)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Single_Person_Lift", "8083", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:46 AM", "", "In Development",  0,13012)
+          InitProperty("MEI_EquipRent_Install_Duration_Single_Person_Lift", "8083", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:18:47 AM", "", "In Development",  0,18372)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Site_Trailer", "8094", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:08 AM", "", "In Development",  0,13034)
+          InitProperty("MEI_EquipRent_Install_Duration_Site_Trailer", "8094", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:55:44 AM", "", "In Development",  0,18390)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Small_Boom_Lift", "8086", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:52 AM", "", "In Development",  0,13018)
+          InitProperty("MEI_EquipRent_Install_Duration_Small_Boom_Lift", "8086", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:22:04 AM", "", "In Development",  0,18375)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Small_Scissors_Lift", "8084", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:48 AM", "", "In Development",  0,13014)
+          InitProperty("MEI_EquipRent_Install_Duration_Small_Scissors_Lift", "8084", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:20:45 AM", "", "In Development",  0,18373)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_EquipRent_Install_Duration_Small_Telehandler", "8088", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:56 AM", "", "In Development",  0,13022)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Install_Duration_Welders", "8093", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:06 AM", "", "In Development",  0,13032)
+          InitProperty("MEI_EquipRent_Install_Duration_Welders", "8093", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:55:14 AM", "", "In Development",  0,18389)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_EquipRent_Quantity_Cranes_Large_Outdoors", "8078", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:35 AM", "", "In Development",  0,13002)
@@ -2785,46 +2787,46 @@ Option Infer On
           InitProperty("MEI_EquipRent_Quantity_Welders", "8079", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:37 AM", "", "In Development",  0,13004)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Cranes_Large_Outdoors", "8120", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:02 AM", "", "In Development",  0,13086)
+          InitProperty("MEI_EquipRent_Total_Cost_Cranes_Large_Outdoors", "8120", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:03:50 AM", "", "In Development",  0,18403)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Cranes_Small_Indoors", "8119", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:00 AM", "", "In Development",  0,13084)
+          InitProperty("MEI_EquipRent_Total_Cost_Cranes_Small_Indoors", "8119", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:03:22 AM", "", "In Development",  0,18402)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Dumpsters", "8123", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:09 AM", "", "In Development",  0,13092)
+          InitProperty("MEI_EquipRent_Total_Cost_Dumpsters", "8123", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:06:12 AM", "", "In Development",  0,18405)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Fork_Truck", "8118", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:58 AM", "", "In Development",  0,13082)
+          InitProperty("MEI_EquipRent_Total_Cost_Fork_Truck", "8118", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:02:52 AM", "", "In Development",  0,18400)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Large_Boom_Lift", "8115", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:52 AM", "", "In Development",  0,13076)
+          InitProperty("MEI_EquipRent_Total_Cost_Large_Boom_Lift", "8115", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:59:56 AM", "", "In Development",  0,18397)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Large_Scissors_Lift", "8113", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:48 AM", "", "In Development",  0,13072)
+          InitProperty("MEI_EquipRent_Total_Cost_Large_Scissors_Lift", "8113", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:58:53 AM", "", "In Development",  0,18395)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Large_Telehandler", "8117", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:56 AM", "", "In Development",  0,13080)
+          InitProperty("MEI_EquipRent_Total_Cost_Large_Telehandler", "8117", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:01:05 AM", "", "In Development",  0,18399)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Porta_Johns", "8124", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:11 AM", "", "In Development",  0,13094)
+          InitProperty("MEI_EquipRent_Total_Cost_Porta_Johns", "8124", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:06:39 AM", "", "In Development",  0,18406)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Single_Person_Lift", "8111", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:44 AM", "", "In Development",  0,13068)
+          InitProperty("MEI_EquipRent_Total_Cost_Single_Person_Lift", "8111", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:57:55 AM", "", "In Development",  0,18393)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_EquipRent_Total_Cost_Site_Trailer", "8122", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:07 AM", "", "In Development",  0,13090)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Small_Boom_Lift", "8114", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:50 AM", "", "In Development",  0,13074)
+          InitProperty("MEI_EquipRent_Total_Cost_Small_Boom_Lift", "8114", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:59:31 AM", "", "In Development",  0,18396)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Small_Scissors_Lift", "8112", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:46 AM", "", "In Development",  0,13070)
+          InitProperty("MEI_EquipRent_Total_Cost_Small_Scissors_Lift", "8112", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:58:21 AM", "", "In Development",  0,18394)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Small_Telehandler", "8116", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:54 AM", "", "In Development",  0,13078)
+          InitProperty("MEI_EquipRent_Total_Cost_Small_Telehandler", "8116", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:00:27 AM", "", "In Development",  0,18398)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_EquipRent_Total_Cost_Welders", "8121", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:05 AM", "", "In Development",  0,13088)
+          InitProperty("MEI_EquipRent_Total_Cost_Welders", "8121", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:05:12 AM", "", "In Development",  0,18404)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_EquipRent_Weekly_Rate_Cranes_Large_Outdoors", "8106", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:45:34 AM", "", "In Development",  0,13058)
@@ -2884,19 +2886,19 @@ Option Infer On
           InitProperty("MEI_Fencing_Footage", "8063", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:04 AM", "", "In Development",  0,12972)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Fencing_Footage_Cost_per_Hours", "8065", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:08 AM", "", "In Development",  0,12976)
+          InitProperty("MEI_Fencing_Footage_Cost_per_Hours", "8065", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:16:06 AM", "", "In Development",  0,18368)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Fencing_Footage_Total", "8067", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:13 AM", "", "In Development",  0,12980)
+          InitProperty("MEI_Fencing_Footage_Total", "8067", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:17:00 AM", "", "In Development",  0,18370)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Gates_QTY", "8064", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:06 AM", "", "In Development",  0,12974)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Gates_QTY_Cost_per_Hours", "8066", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:10 AM", "", "In Development",  0,12978)
+          InitProperty("MEI_Gates_QTY_Cost_per_Hours", "8066", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:16:34 AM", "", "In Development",  0,18369)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Gates_QTY_Total", "8068", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:44:15 AM", "", "In Development",  0,12982)
+          InitProperty("MEI_Gates_QTY_Total", "8068", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 8:17:25 AM", "", "In Development",  0,18371)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Labor_Rate_Current_Rate_IG_Installer", "8152", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:09 AM", "", "In Development",  0,13150)
@@ -2908,73 +2910,73 @@ Option Infer On
           InitProperty("MEI_Labor_Rate_Current_Rate_Superintendent", "8150", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:05 AM", "", "In Development",  0,13146)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_New_Rate_IG_Installer", "8155", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:15 AM", "", "In Development",  0,13156)
+          InitProperty("MEI_Labor_Rate_New_Rate_IG_Installer", "8155", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:40:48 AM", "", "In Development",  0,18432)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_New_Rate_Lead_Person", "8154", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:13 AM", "", "In Development",  0,13154)
+          InitProperty("MEI_Labor_Rate_New_Rate_Lead_Person", "8154", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:40:25 AM", "", "In Development",  0,18431)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_New_Rate_Superintendent", "8153", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:11 AM", "", "In Development",  0,13152)
+          InitProperty("MEI_Labor_Rate_New_Rate_Superintendent", "8153", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:39:50 AM", "", "In Development",  0,18430)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Labor_Rate_Percent_Adjustment", "8146", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:57 AM", "", "In Development",  0,13138)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_Percent_Adjustment_IG_Installer", "8149", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:03 AM", "", "In Development",  0,13144)
+          InitProperty("MEI_Labor_Rate_Percent_Adjustment_IG_Installer", "8149", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:38:36 AM", "", "In Development",  0,18429)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_Percent_Adjustment_Lead_Person", "8148", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:01 AM", "", "In Development",  0,13142)
+          InitProperty("MEI_Labor_Rate_Percent_Adjustment_Lead_Person", "8148", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:38:23 AM", "", "In Development",  0,18428)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_Percent_Adjustment_Superintendent", "8147", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:59 AM", "", "In Development",  0,13140)
+          InitProperty("MEI_Labor_Rate_Percent_Adjustment_Superintendent", "8147", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:38:08 AM", "", "In Development",  0,18427)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_Tot_Cost_Adj_Installer", "8158", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:21 AM", "", "In Development",  0,13162)
+          InitProperty("MEI_Labor_Rate_Tot_Cost_Adj_Installer", "8158", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:43:22 AM", "", "In Development",  0,18435)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_Tot_Cost_Adj_Lead_Person", "8157", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:19 AM", "", "In Development",  0,13160)
+          InitProperty("MEI_Labor_Rate_Tot_Cost_Adj_Lead_Person", "8157", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:43:00 AM", "", "In Development",  0,18434)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_Tot_Cost_Adj_Superintendent", "8156", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:17 AM", "", "In Development",  0,13158)
+          InitProperty("MEI_Labor_Rate_Tot_Cost_Adj_Superintendent", "8156", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:42:37 AM", "", "In Development",  0,18433)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Labor_Rate_Total_Cost_Adjustment", "8159", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:23 AM", "", "In Development",  0,13164)
+          InitProperty("MEI_Labor_Rate_Total_Cost_Adjustment", "8159", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:43:58 AM", "", "In Development",  0,18436)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Mech_Conveyor_Installation_Cost", "7943", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:21 AM", "", "In Development",  0,12732)
+          InitProperty("MEI_Mech_Conveyor_Installation_Cost", "7943", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:16:25 AM", "", "In Development",  0,18443)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Mech_Conveyor_Installation_Hours", "7944", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:23 AM", "", "In Development",  0,12734)
+          InitProperty("MEI_Mech_Conveyor_Installation_Hours", "7944", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:17:02 AM", "", "In Development",  0,18444)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Miscellaneous_Administrative_Cost", "7989", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:58 AM", "", "In Development",  0,12824)
+          InitProperty("MEI_Miscellaneous_Administrative_Cost", "7989", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:32:47 PM", "", "In Development",  0,18529)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Miscellaneous_Cost", "7988", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:56 AM", "", "In Development",  0,12822)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Other_Cost_Onsite_Admin_Duration_Wks", "8128", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:20 AM", "", "In Development",  0,13102)
+          InitProperty("MEI_Other_Cost_Onsite_Admin_Duration_Wks", "8128", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:11:36 AM", "", "In Development",  0,18410)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Other_Cost_Onsite_Admin_Hrs_Per_Week", "8129", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:22 AM", "", "In Development",  0,13104)
+          InitProperty("MEI_Other_Cost_Onsite_Admin_Hrs_Per_Week", "8129", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:12:12 AM", "", "In Development",  0,18411)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Other_Cost_Permit_Hours", "8127", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:18 AM", "", "In Development",  0,13100)
+          InitProperty("MEI_Other_Cost_Permit_Hours", "8127", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:10:32 AM", "", "In Development",  0,18409)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Other_Cost_Qty_Gang_Boxes", "8126", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:16 AM", "", "In Development",  0,13098)
+          InitProperty("MEI_Other_Cost_Qty_Gang_Boxes", "8126", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:09:38 AM", "", "In Development",  0,18408)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Other_Cost_Qty_Trucks", "8125", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:14 AM", "", "In Development",  0,13096)
+          InitProperty("MEI_Other_Cost_Qty_Trucks", "8125", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:08:42 AM", "", "In Development",  0,18407)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_People_Needs_Comm_No_of_Installers", "8028", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:22 AM", "", "In Development",  0,12902)
+          InitProperty("MEI_People_Needs_Comm_No_of_Installers", "8028", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:27:10 AM", "", "In Development",  0,18350)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_People_Needs_Comm_No_of_Lead_Men", "8027", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:20 AM", "", "In Development",  0,12900)
+          InitProperty("MEI_People_Needs_Comm_No_of_Lead_Men", "8027", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:26:42 AM", "", "In Development",  0,18349)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_People_Needs_Comm_No_of_Superintendents", "8026", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:18 AM", "", "In Development",  0,12898)
+          InitProperty("MEI_People_Needs_Comm_No_of_Superintendents", "8026", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:26:10 AM", "", "In Development",  0,18348)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_People_Needs_Install_No_of_Installers", "8025", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 2:26:28 PM", "", "In Development",  0,18079)
@@ -2986,13 +2988,13 @@ Option Infer On
           InitProperty("MEI_People_Needs_Install_No_of_Superintendents", "8023", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 2:23:08 PM", "", "In Development",  0,18076)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_People_Needs_Work_Percent_No_of_Lead_Men", "8030", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:26 AM", "", "In Development",  0,12906)
+          InitProperty("MEI_People_Needs_Work_Percent_No_of_Lead_Men", "8030", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:32:52 AM", "", "In Development",  0,18352)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_People_Needs_Work_Percent_No_of_Superintendent", "8029", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:42:24 AM", "", "In Development",  0,12904)
+          InitProperty("MEI_People_Needs_Work_Percent_No_of_Superintendent", "8029", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:29:55 AM", "", "In Development",  0,18351)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Permits_Cost", "7987", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:54 AM", "", "In Development",  0,12820)
+          InitProperty("MEI_Permits_Cost", "7987", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:25:15 PM", "", "In Development",  0,18522)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Project_Info_Customer", "8002", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:41:26 AM", "", "In Development",  0,12850)
@@ -3025,10 +3027,10 @@ Option Infer On
           InitProperty("MEI_Schedule_Start_Mechanical_Installation", "8013", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:41:50 AM", "", "In Development",  0,12872)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Schedule_Weeks_Comm", "8017", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:41:58 AM", "", "In Development",  0,12880)
+          InitProperty("MEI_Schedule_Weeks_Comm", "8017", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:49:44 AM", "", "In Development",  0,18387)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Schedule_Weeks_Install", "8016", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 2:14:55 PM", "", "In Development",  0,18071)
+          InitProperty("MEI_Schedule_Weeks_Install", "8016", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 9:50:05 AM", "", "In Development",  0,18388)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Structures_Platforms_Feet_Catwalk", "8164", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:34 AM", "", "In Development",  0,13174)
@@ -3046,13 +3048,13 @@ Option Infer On
           InitProperty("MEI_Structures_Platforms_Feet_Platform_Resin_Deck", "8163", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:32 AM", "", "In Development",  0,13172)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Structures_Platforms_Feet_Total", "8165", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:36 AM", "", "In Development",  0,13176)
+          InitProperty("MEI_Structures_Platforms_Feet_Total", "8165", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:46:13 AM", "", "In Development",  0,18437)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Structures_Platforms_Hour_Catwalk", "8170", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:47 AM", "", "In Development",  0,13186)
+          InitProperty("MEI_Structures_Platforms_Hour_Catwalk", "8170", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:48:27 AM", "", "In Development",  0,18439)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Structures_Platforms_Hour_Demo", "8166", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:38 AM", "", "In Development",  0,13178)
+          InitProperty("MEI_Structures_Platforms_Hour_Demo", "8166", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:46:34 AM", "", "In Development",  0,18438)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Structures_Platforms_Hour_GRID_Structure", "8167", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:40 AM", "", "In Development",  0,13180)
@@ -3064,7 +3066,7 @@ Option Infer On
           InitProperty("MEI_Structures_Platforms_Hour_Platform_Resin_Deck", "8169", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:45 AM", "", "In Development",  0,13184)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Structures_Platforms_Hour_Total", "8171", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:49 AM", "", "In Development",  0,13188)
+          InitProperty("MEI_Structures_Platforms_Hour_Total", "8171", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:48:52 AM", "", "In Development",  0,18440)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Structures_Platforms_Per_Ft_Catwalk", "8173", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:53 AM", "", "In Development",  0,13192)
@@ -3073,43 +3075,43 @@ Option Infer On
           InitProperty("MEI_Structures_Platforms_Per_Ft_Demo", "8172", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:51 AM", "", "In Development",  0,13190)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Structures_Platforms_Per_Ft_Total", "8174", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:47:55 AM", "", "In Development",  0,13194)
+          InitProperty("MEI_Structures_Platforms_Per_Ft_Total", "8174", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:59:44 AM", "", "In Development",  0,18442)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Superintendent__Hours", "7949", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:34 AM", "", "In Development",  0,12744)
+          InitProperty("MEI_Superintendent__Hours", "7949", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:20:20 AM", "", "In Development",  0,18449)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Superintendent_Commissioning_Cost", "7948", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:31 AM", "", "In Development",  0,12742)
+          InitProperty("MEI_Superintendent_Commissioning_Cost", "7948", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:19:57 AM", "", "In Development",  0,18448)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Superintendent_Commissioning_Hours", "7952", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:40 AM", "", "In Development",  0,12750)
+          InitProperty("MEI_Superintendent_Commissioning_Hours", "7952", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:23:01 AM", "", "In Development",  0,18452)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Superintendent_Cost", "7945", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:25 AM", "", "In Development",  0,12736)
+          InitProperty("MEI_Superintendent_Cost", "7945", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:17:55 AM", "", "In Development",  0,18445)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Superintendent_Install_Cost", "7946", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:27 AM", "", "In Development",  0,12738)
+          InitProperty("MEI_Superintendent_Install_Cost", "7946", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:18:25 AM", "", "In Development",  0,18446)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Superintendent_Install_Hours", "7950", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:36 AM", "", "In Development",  0,12746)
+          InitProperty("MEI_Superintendent_Install_Hours", "7950", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:21:00 AM", "", "In Development",  0,18450)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Superintendent_Rate", "7953", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:42 AM", "", "In Development",  0,12752)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Superintendent_Stagnant_Hours_Cost", "7947", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:29 AM", "", "In Development",  0,12740)
+          InitProperty("MEI_Superintendent_Stagnant_Hours_Cost", "7947", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:19:00 AM", "", "In Development",  0,18447)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Superintendent_Stagnant_Hours_Hours", "7951", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:38 AM", "", "In Development",  0,12748)
+          InitProperty("MEI_Superintendent_Stagnant_Hours_Hours", "7951", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:22:16 AM", "", "In Development",  0,18451)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Supplies_Consumables_All_Other_Cost", "7985", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:49 AM", "", "In Development",  0,12816)
+          InitProperty("MEI_Supplies_Consumables_All_Other_Cost", "7985", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:24:17 PM", "", "In Development",  0,18521)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Supplies_Consumables_Cost", "7983", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:45 AM", "", "In Development",  0,12812)
+          InitProperty("MEI_Supplies_Consumables_Cost", "7983", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:23:30 PM", "", "In Development",  0,18519)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Supplies_Consumables_HW_Air_Piping_Cost", "7984", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:47 AM", "", "In Development",  0,12814)
+          InitProperty("MEI_Supplies_Consumables_HW_Air_Piping_Cost", "7984", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:23:55 PM", "", "In Development",  0,18520)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer", "8134", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:33 AM", "", "In Development",  0,13114)
@@ -3121,43 +3123,43 @@ Option Infer On
           InitProperty("MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent", "8132", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:28 AM", "", "In Development",  0,13110)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer", "8140", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:45 AM", "", "In Development",  0,13126)
+          InitProperty("MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer", "8140", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:32:01 AM", "", "In Development",  0,18421)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men", "8139", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:43 AM", "", "In Development",  0,13124)
+          InitProperty("MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men", "8139", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:31:45 AM", "", "In Development",  0,18420)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI", "8138", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:41 AM", "", "In Development",  0,13122)
+          InitProperty("MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI", "8138", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:31:30 AM", "", "In Development",  0,18419)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Tot_Proj_Diem_Installer", "8137", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:39 AM", "", "In Development",  0,13120)
+          InitProperty("MEI_Travel_Cost_Crew_Tot_Proj_Diem_Installer", "8137", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:30:52 AM", "", "In Development",  0,18418)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Tot_Proj_Diem_Lead_Men", "8136", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:37 AM", "", "In Development",  0,13118)
+          InitProperty("MEI_Travel_Cost_Crew_Tot_Proj_Diem_Lead_Men", "8136", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:30:03 AM", "", "In Development",  0,18417)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Tot_Proj_Diem_Superintendent", "8135", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:35 AM", "", "In Development",  0,13116)
+          InitProperty("MEI_Travel_Cost_Crew_Tot_Proj_Diem_Superintendent", "8135", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:29:21 AM", "", "In Development",  0,18416)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Tot_Travel_Cost_Installer", "8144", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:53 AM", "", "In Development",  0,13134)
+          InitProperty("MEI_Travel_Cost_Crew_Tot_Travel_Cost_Installer", "8144", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:35:15 AM", "", "In Development",  0,18425)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Tot_Travel_Cost_Lead_Men", "8143", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:51 AM", "", "In Development",  0,13132)
+          InitProperty("MEI_Travel_Cost_Crew_Tot_Travel_Cost_Lead_Men", "8143", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:34:53 AM", "", "In Development",  0,18424)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI", "8142", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:49 AM", "", "In Development",  0,13130)
+          InitProperty("MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI", "8142", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:34:30 AM", "", "In Development",  0,18423)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Total_Mobilization_Cost", "8141", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:47 AM", "", "In Development",  0,13128)
+          InitProperty("MEI_Travel_Cost_Crew_Total_Mobilization_Cost", "8141", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:33:18 AM", "", "In Development",  0,18422)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Total_Travel_Cost", "8145", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:55 AM", "", "In Development",  0,13136)
+          InitProperty("MEI_Travel_Cost_Crew_Total_Travel_Cost", "8145", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:36:12 AM", "", "In Development",  0,18426)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Per_Diem_Range", "8130", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:24 AM", "", "In Development",  0,13106)
+          InitProperty("MEI_Travel_Cost_Per_Diem_Range", "8130", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:23:53 AM", "", "In Development",  0,13106)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Per_Diem_Range_Link", "8131", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:26 AM", "", "In Development",  0,13108)
+          InitProperty("MEI_Travel_Cost_Per_Diem_Range_Link", "8131", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:27:41 AM", "", "In Development",  0,18415)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Travel_Expense_Cost", "7986", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:51 AM", "", "In Development",  0,12818)
@@ -3166,82 +3168,82 @@ Option Infer On
           InitProperty("MEI_TTCB_Costing_D9", "7709", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/4/2025 3:49:41 PM", "", "In Development",  0,12640)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Commissioning_Cost", "7969", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:16 AM", "", "In Development",  0,12784)
+          InitProperty("MEI_TTCB_Installer_Commissioning_Cost", "7969", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 12:02:10 PM", "", "In Development",  0,18502)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Commissioning_Hours", "7978", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:34 AM", "", "In Development",  0,12802)
+          InitProperty("MEI_TTCB_Installer_Commissioning_Hours", "7978", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:14:25 PM", "", "In Development",  0,18516)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Cost", "7963", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:03 AM", "", "In Development",  0,12772)
+          InitProperty("MEI_TTCB_Installer_Cost", "7963", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:55:42 AM", "", "In Development",  0,18488)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Demo_Cost", "7966", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:09 AM", "", "In Development",  0,12778)
+          InitProperty("MEI_TTCB_Installer_Demo_Cost", "7966", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:59:56 AM", "", "In Development",  0,18495)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Demo_Hours", "7975", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:28 AM", "", "In Development",  0,12796)
+          InitProperty("MEI_TTCB_Installer_Demo_Hours", "7975", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:12:08 PM", "", "In Development",  0,18513)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Hours", "7972", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:22 AM", "", "In Development",  0,12790)
+          InitProperty("MEI_TTCB_Installer_Hours", "7972", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 12:25:12 PM", "", "In Development",  0,18509)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Install_Cost", "7964", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:05 AM", "", "In Development",  0,12774)
+          InitProperty("MEI_TTCB_Installer_Install_Cost", "7964", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:57:08 AM", "", "In Development",  0,18491)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Install_Hours", "7973", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:24 AM", "", "In Development",  0,12792)
+          InitProperty("MEI_TTCB_Installer_Install_Hours", "7973", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 12:34:10 PM", "", "In Development",  0,18510)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Miscellaneous_Cost", "7967", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:11 AM", "", "In Development",  0,12780)
+          InitProperty("MEI_TTCB_Installer_Miscellaneous_Cost", "7967", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 12:00:17 PM", "", "In Development",  0,18496)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Miscellaneous_Hours", "7976", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:30 AM", "", "In Development",  0,12798)
+          InitProperty("MEI_TTCB_Installer_Miscellaneous_Hours", "7976", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:13:02 PM", "", "In Development",  0,18514)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost", "7965", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:07 AM", "", "In Development",  0,12776)
+          InitProperty("MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost", "7965", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:58:00 AM", "", "In Development",  0,18493)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours", "7974", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:26 AM", "", "In Development",  0,12794)
+          InitProperty("MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours", "7974", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:09:22 PM", "", "In Development",  0,18512)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_TTCB_Installer_Rate", "7971", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:20 AM", "", "In Development",  0,12788)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Stagnant_Hours_Cost", "7968", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:14 AM", "", "In Development",  0,12782)
+          InitProperty("MEI_TTCB_Installer_Stagnant_Hours_Cost", "7968", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 12:00:48 PM", "", "In Development",  0,18498)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_Stagnant_Hours_Hours", "7977", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:32 AM", "", "In Development",  0,12800)
+          InitProperty("MEI_TTCB_Installer_Stagnant_Hours_Hours", "7977", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:13:43 PM", "", "In Development",  0,18515)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost", "7970", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:18 AM", "", "In Development",  0,12786)
+          InitProperty("MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost", "7970", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 12:04:21 PM", "", "In Development",  0,18504)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours", "7979", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:36 AM", "", "In Development",  0,12804)
+          InitProperty("MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours", "7979", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:27:29 PM", "", "In Development",  0,18525)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Lead_Person_Commissioning_Cost", "7957", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:51 AM", "", "In Development",  0,12760)
+          InitProperty("MEI_TTCB_Lead_Person_Commissioning_Cost", "7957", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:36:27 AM", "", "In Development",  0,18458)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Lead_Person_Commissioning_Hours", "7961", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:59 AM", "", "In Development",  0,12768)
+          InitProperty("MEI_TTCB_Lead_Person_Commissioning_Hours", "7961", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:45:12 AM", "", "In Development",  0,18480)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Lead_Person_Cost", "7954", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:44 AM", "", "In Development",  0,12754)
+          InitProperty("MEI_TTCB_Lead_Person_Cost", "7954", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:24:25 AM", "", "In Development",  0,18453)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Lead_Person_Hours", "7958", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:53 AM", "", "In Development",  0,12762)
+          InitProperty("MEI_TTCB_Lead_Person_Hours", "7958", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:37:22 AM", "", "In Development",  0,18459)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Lead_Person_Install_Cost", "7955", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:46 AM", "", "In Development",  0,12756)
+          InitProperty("MEI_TTCB_Lead_Person_Install_Cost", "7955", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:25:35 AM", "", "In Development",  0,18454)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Lead_Person_Install_Hours", "7959", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:55 AM", "", "In Development",  0,12764)
+          InitProperty("MEI_TTCB_Lead_Person_Install_Hours", "7959", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:38:25 AM", "", "In Development",  0,18461)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_TTCB_Lead_Person_Rate", "7962", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:40:01 AM", "", "In Development",  0,12770)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Lead_Person_Stagnant_Hours_Cost", "7956", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:48 AM", "", "In Development",  0,12758)
+          InitProperty("MEI_TTCB_Lead_Person_Stagnant_Hours_Cost", "7956", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:32:32 AM", "", "In Development",  0,18456)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_TTCB_Lead_Person_Stagnant_Hours_Hours", "7960", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:39:57 AM", "", "In Development",  0,12766)
+          InitProperty("MEI_TTCB_Lead_Person_Stagnant_Hours_Hours", "7960", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 11:43:53 AM", "", "In Development",  0,18477)
         End If
     End Sub
 
@@ -3254,6 +3256,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MEI_Travel_Cost_Per_Diem_Range_ValidValues", "8130", "-1", 18413)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -3469,7 +3475,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8051; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Adjust_Dollar_System_Efficiency + Me.MEI_Adjust_Dollar_Fencing + Me.MEI_Adjust_Dollar_Gates + Me.MEI_Adjust_Dollar_Miscellaneous_1 + Me.MEI_Adjust_Dollar_Miscellaneous_2 + Me.MEI_Adjust_Dollar_Miscellaneous_3
       '   END FORMULA; PROP ID:8051; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Adjust_Dollar_Total", ex.Message)
@@ -3515,7 +3521,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8054; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_Adjust_Hours_TTCB_Sorter = 0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Adjust_Hours_TTCB_Sorter * 0.05
+End If
       '   END FORMULA; PROP ID:8054; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Adjust_Hours_Clean_Up", ex.Message)
@@ -3538,7 +3548,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8055; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Fencing_Footage_Total
       '   END FORMULA; PROP ID:8055; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Adjust_Hours_Fencing", ex.Message)
@@ -3561,7 +3571,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8056; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Gates_QTY_Total
       '   END FORMULA; PROP ID:8056; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Adjust_Hours_Gates", ex.Message)
@@ -3653,7 +3663,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8053; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_Structures_Platforms_Hour_Demo + Me.MEI_Structures_Platforms_Hour_GRID_Structure + Me.MEI_Structures_Platforms_Hour_Platform_Bar_Grating + Me.MEI_Structures_Platforms_Hour_Platform_Resin_Deck + Me.MEI_Structures_Platforms_Hour_Catwalk + Me.MEI_Adjust_Hours_TTCB_Sorter + Me.MEI_Air_Pipe_Hours_Cost)*(1-Me.MEI_Ajust_Total_Percentage)
       '   END FORMULA; PROP ID:8053; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Adjust_Hours_System_Efficiency", ex.Message)
@@ -3676,7 +3686,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8060; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Adjust_Hours_System_Efficiency + Me.MEI_Adjust_Hours_Fencing + Me.MEI_Adjust_Hours_Gates + Me.MEI_Adjust_Hours_Miscellaneous_1 + Me.MEI_Adjust_Hours_Miscellaneous_2 + Me.MEI_Adjust_Hours_Miscellaneous_3
       '   END FORMULA; PROP ID:8060; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Adjust_Hours_Total", ex.Message)
@@ -4149,7 +4159,7 @@ Result = Math.Ceiling(Var)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8037; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_People_Needs_Install_No_of_Installers
       '   END FORMULA; PROP ID:8037; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Crew_Head_Count_Installer", ex.Message)
@@ -4172,7 +4182,7 @@ Result = Math.Ceiling(Var)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8036; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_People_Needs_Install_No_of_Lead_Men
       '   END FORMULA; PROP ID:8036; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Crew_Head_Count_Lead_Men", ex.Message)
@@ -4195,7 +4205,7 @@ Result = Math.Ceiling(Var)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8035; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_People_Needs_Install_No_of_Superintendents
       '   END FORMULA; PROP ID:8035; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Crew_Head_Count_Superintendent", ex.Message)
@@ -4218,7 +4228,7 @@ Result = Math.Ceiling(Var)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8038; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Crew_Head_Count_Superintendent + Me.MEI_Crew_Head_Count_Lead_Men + Me.MEI_Crew_Head_Count_Installer
       '   END FORMULA; PROP ID:8038; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Crew_Head_Count_Total", ex.Message)
@@ -4241,7 +4251,7 @@ Result = Math.Ceiling(Var)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8031; TYPE:PF
-      Result = 0.0
+      Result = 2654.00
       '   END FORMULA; PROP ID:8031; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Crew_Mobilization_Cost_Per_Person", ex.Message)
@@ -4383,7 +4393,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8041; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Crew_Mobilization_Cost_Per_Person * Me.MEI_Crew_Mobilization_Count_Installer * Me.MEI_Crew_Head_Count_Installer
       '   END FORMULA; PROP ID:8041; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Crew_Total_Mobilization_Cost_Installer", ex.Message)
@@ -4406,7 +4416,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8040; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Crew_Mobilization_Cost_Per_Person * Me.MEI_Crew_Mobilization_Count_Lead_Men * Me.MEI_Crew_Head_Count_Lead_Men
       '   END FORMULA; PROP ID:8040; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Crew_Total_Mobilization_Cost_Lead_Men", ex.Message)
@@ -4429,7 +4439,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8039; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Crew_Mobilization_Cost_Per_Person * Me.MEI_Crew_Mobilization_Count_Superintendent * Me.MEI_Crew_Head_Count_Superintendent
       '   END FORMULA; PROP ID:8039; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Crew_Total_Mobilization_Cost_Superintendent", ex.Message)
@@ -4452,7 +4462,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8042; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Crew_Total_Mobilization_Cost_Superintendent + Me.MEI_Crew_Total_Mobilization_Cost_Lead_Men + Me.MEI_Crew_Total_Mobilization_Cost_Installer
       '   END FORMULA; PROP ID:8042; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Crew_Total_Mobilization_Cost_Total", ex.Message)
@@ -4475,7 +4485,26 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7980; TYPE:PF
-      Result = 0.0
+      Dim Sum1 As Double = (Me.MEI_EquipRent_Total_Cost_Single_Person_Lift +
+Me.MEI_EquipRent_Total_Cost_Small_Scissors_Lift +
+Me.MEI_EquipRent_Total_Cost_Large_Scissors_Lift +
+Me.MEI_EquipRent_Total_Cost_Small_Boom_Lift +
+Me.MEI_EquipRent_Total_Cost_Large_Boom_Lift +
+Me.MEI_EquipRent_Total_Cost_Small_Telehandler +
+Me.MEI_EquipRent_Total_Cost_Large_Telehandler +
+Me.MEI_EquipRent_Total_Cost_Fork_Truck +
+Me.MEI_EquipRent_Total_Cost_Cranes_Small_Indoors +
+Me.MEI_EquipRent_Total_Cost_Cranes_Large_Outdoors +
+Me.MEI_EquipRent_Total_Cost_Welders +
+Me.MEI_EquipRent_Total_Cost_Site_Trailer +
+Me.MEI_EquipRent_Total_Cost_Dumpsters +
+Me.MEI_EquipRent_Total_Cost_Porta_Johns)
+
+If (Me.MEI_Schedule_Weeks_Install + Me.MEI_Schedule_Weeks_Comm) = 0 Then
+Result = 0
+Else
+Result = math.Round(Sum1,0)
+End If
       '   END FORMULA; PROP ID:7980; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Equipment_Rental_Cost", ex.Message)
@@ -4498,7 +4527,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7981; TYPE:PF
-      Result = 0.0
+      Result = Math.Round(Me.MEI_EquipRent_Total_Cost_Dumpsters,0)
       '   END FORMULA; PROP ID:7981; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Equipment_Rental_Dumpsters_Cost", ex.Message)
@@ -4521,7 +4550,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7982; TYPE:PF
-      Result = 0.0
+      Result = Math.Round(Me.MEI_EquipRent_Total_Cost_Porta_Johns,0)
       '   END FORMULA; PROP ID:7982; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Equipment_Rental_Porta_Johns_Cost", ex.Message)
@@ -4590,7 +4619,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8095; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Dumpsters=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8095; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Dumpsters", ex.Message)
@@ -4613,7 +4646,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8090; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Fork_Truck=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8090; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Fork_Truck", ex.Message)
@@ -4636,7 +4673,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8087; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Large_Boom_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8087; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Large_Boom_Lift", ex.Message)
@@ -4659,7 +4700,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8085; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Large_Scissors_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8085; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Large_Scissors_Lift", ex.Message)
@@ -4705,7 +4750,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8096; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Porta_Johns=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8096; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Porta_Johns", ex.Message)
@@ -4728,7 +4777,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8083; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Small_Scissors_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8083; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Single_Person_Lift", ex.Message)
@@ -4751,7 +4804,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8094; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Site_Trailer=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8094; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Site_Trailer", ex.Message)
@@ -4774,7 +4831,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8086; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Small_Boom_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8086; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Small_Boom_Lift", ex.Message)
@@ -4797,7 +4858,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8084; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Small_Scissors_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8084; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Small_Scissors_Lift", ex.Message)
@@ -4843,7 +4908,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8093; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Welders=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_Schedule_Weeks_Install
+End If
       '   END FORMULA; PROP ID:8093; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Install_Duration_Welders", ex.Message)
@@ -5188,7 +5257,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8120; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Cranes_Large_Outdoors=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Cranes_Large_Outdoors*Me.MEI_EquipRent_Install_Duration_Cranes_LargeOutdoor*Me.MEI_EquipRent_Quantity_Cranes_Large_Outdoors
+End If
       '   END FORMULA; PROP ID:8120; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Cranes_Large_Outdoors", ex.Message)
@@ -5211,7 +5284,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8119; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Cranes_Small_Indoors=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Cranes_Small_Indoors*Me.MEI_EquipRent_Install_Duration_Cranes_SmallIndoor*Me.MEI_EquipRent_Quantity_Cranes_Small_Indoors
+End If
       '   END FORMULA; PROP ID:8119; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Cranes_Small_Indoors", ex.Message)
@@ -5234,7 +5311,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8123; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Dumpsters=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Dumpsters*Me.MEI_EquipRent_Install_Duration_Dumpsters*Me.MEI_EquipRent_Quantity_Dumpsters
+End If
       '   END FORMULA; PROP ID:8123; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Dumpsters", ex.Message)
@@ -5257,7 +5338,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8118; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Fork_Truck=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Fork_Truck*(Me.MEI_EquipRent_Install_Duration_Fork_Truck*Me.MEI_EquipRent_Quantity_Fork_Truck+Me.MEI_Schedule_Weeks_Comm)
+End If
       '   END FORMULA; PROP ID:8118; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Fork_Truck", ex.Message)
@@ -5280,7 +5365,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8115; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Large_Boom_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Large_Boom_Lift*Me.MEI_EquipRent_Install_Duration_Large_Boom_Lift*Me.MEI_EquipRent_Quantity_Large_Boom_Lift
+End If
       '   END FORMULA; PROP ID:8115; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Large_Boom_Lift", ex.Message)
@@ -5303,7 +5392,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8113; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Large_Scissors_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Large_Scissors_Lift*Me.MEI_EquipRent_Install_Duration_Large_Scissors_Lift*Me.MEI_EquipRent_Quantity_Large_Scissors_Lift
+End If
       '   END FORMULA; PROP ID:8113; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Large_Scissors_Lift", ex.Message)
@@ -5326,7 +5419,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8117; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Large_Telehandler=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Large_Telehandler*Me.MEI_EquipRent_Install_Duration_Large_Telehandler*Me.MEI_EquipRent_Quantity_Large_Telehandler
+End If
       '   END FORMULA; PROP ID:8117; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Large_Telehandler", ex.Message)
@@ -5349,7 +5446,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8124; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Porta_Johns=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Porta_Johns*Me.MEI_EquipRent_Install_Duration_Porta_Johns*Me.MEI_EquipRent_Quantity_Porta_Johns
+End If
       '   END FORMULA; PROP ID:8124; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Porta_Johns", ex.Message)
@@ -5372,7 +5473,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8111; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_EquipRent_Quantity_Single_Person_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Single_Person_Lift*Me.MEI_EquipRent_Install_Duration_Single_Person_Lift*Me.MEI_EquipRent_Quantity_Single_Person_Lift
+End If
       '   END FORMULA; PROP ID:8111; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Single_Person_Lift", ex.Message)
@@ -5418,7 +5523,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8114; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Small_Boom_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Small_Boom_Lift*Me.MEI_EquipRent_Install_Duration_Small_Boom_Lift*Me.MEI_EquipRent_Quantity_Small_Boom_Lift
+End If
       '   END FORMULA; PROP ID:8114; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Small_Boom_Lift", ex.Message)
@@ -5441,7 +5550,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8112; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Small_Scissors_Lift=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Small_Scissors_Lift*(Me.MEI_EquipRent_Install_Duration_Small_Scissors_Lift*MEI_EquipRent_Quantity_Small_Scissors_Lift+Me.MEI_Schedule_Weeks_Comm)
+End If
       '   END FORMULA; PROP ID:8112; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Small_Scissors_Lift", ex.Message)
@@ -5464,7 +5577,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8116; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Small_Telehandler=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Small_Telehandler*Me.MEI_EquipRent_Install_Duration_Small_Telehandler*Me.MEI_EquipRent_Quantity_Small_Telehandler
+End If
       '   END FORMULA; PROP ID:8116; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Small_Telehandler", ex.Message)
@@ -5487,7 +5604,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8121; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_EquipRent_Quantity_Welders=0)
+	Result = 0.0
+Else
+	Result = Me.MEI_EquipRent_Weekly_Rate_Welders*Me.MEI_EquipRent_Install_Duration_Welders*Me.MEI_EquipRent_Quantity_Welders
+End If
       '   END FORMULA; PROP ID:8121; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_EquipRent_Total_Cost_Welders", ex.Message)
@@ -5952,7 +6073,8 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8065; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change, Hardcoded 'coz its in excel - MPC 07/17/2025
+Result = 0.25
       '   END FORMULA; PROP ID:8065; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Fencing_Footage_Cost_per_Hours", ex.Message)
@@ -5975,7 +6097,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8067; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling(Me.MEI_Fencing_Footage * Me.MEI_Fencing_Footage_Cost_per_Hours)
       '   END FORMULA; PROP ID:8067; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Fencing_Footage_Total", ex.Message)
@@ -6021,7 +6143,8 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8066; TYPE:PF
-      Result = 0.0
+      'Todo - Review: Check with business How often the Price change, Hardcoded 'coz its in excel - MPC 07/17/2025
+Result = 4
       '   END FORMULA; PROP ID:8066; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Gates_QTY_Cost_per_Hours", ex.Message)
@@ -6044,7 +6167,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8068; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Gates_QTY * Me.MEI_Gates_QTY_Cost_per_Hours
       '   END FORMULA; PROP ID:8068; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Gates_QTY_Total", ex.Message)
@@ -6136,7 +6259,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8155; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.MEI_Labor_Rate_Current_Rate_IG_Installer + Me.MEI_Labor_Rate_Current_Rate_IG_Installer*Me.MEI_Labor_Rate_Percent_Adjustment_IG_Installer)*100)/100
       '   END FORMULA; PROP ID:8155; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_New_Rate_IG_Installer", ex.Message)
@@ -6159,7 +6282,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8154; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.MEI_Labor_Rate_Current_Rate_Lead_Person + Me.MEI_Labor_Rate_Current_Rate_Lead_Person*Me.MEI_Labor_Rate_Percent_Adjustment_Lead_Person)*100)/100
       '   END FORMULA; PROP ID:8154; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_New_Rate_Lead_Person", ex.Message)
@@ -6182,7 +6305,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8153; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.MEI_Labor_Rate_Current_Rate_Superintendent + Me.MEI_Labor_Rate_Current_Rate_Superintendent*Me.MEI_Labor_Rate_Percent_Adjustment_Superintendent)*100)/100
       '   END FORMULA; PROP ID:8153; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_New_Rate_Superintendent", ex.Message)
@@ -6228,7 +6351,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8149; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Labor_Rate_Percent_Adjustment
       '   END FORMULA; PROP ID:8149; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_Percent_Adjustment_IG_Installer", ex.Message)
@@ -6251,7 +6374,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8148; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Labor_Rate_Percent_Adjustment
       '   END FORMULA; PROP ID:8148; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_Percent_Adjustment_Lead_Person", ex.Message)
@@ -6274,7 +6397,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8147; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Labor_Rate_Percent_Adjustment
       '   END FORMULA; PROP ID:8147; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_Percent_Adjustment_Superintendent", ex.Message)
@@ -6297,7 +6420,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8158; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.MEI_Labor_Rate_New_Rate_IG_Installer-Me.MEI_Labor_Rate_Current_Rate_IG_Installer)*Me.MEI_TTCB_Installer_Hours)
       '   END FORMULA; PROP ID:8158; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_Tot_Cost_Adj_Installer", ex.Message)
@@ -6320,7 +6443,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8157; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.MEI_Labor_Rate_New_Rate_Lead_Person-Me.MEI_Labor_Rate_Current_Rate_Lead_Person)*Me.MEI_TTCB_Lead_Person_Hours)
       '   END FORMULA; PROP ID:8157; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_Tot_Cost_Adj_Lead_Person", ex.Message)
@@ -6343,7 +6466,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8156; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.MEI_Labor_Rate_New_Rate_Superintendent-Me.MEI_Labor_Rate_Current_Rate_Superintendent)*Me.MEI_Superintendent__Hours)
       '   END FORMULA; PROP ID:8156; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_Tot_Cost_Adj_Superintendent", ex.Message)
@@ -6366,7 +6489,7 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8159; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Labor_Rate_Tot_Cost_Adj_Superintendent+Me.MEI_Labor_Rate_Tot_Cost_Adj_Lead_Person+Me.MEI_Labor_Rate_Tot_Cost_Adj_Installer
       '   END FORMULA; PROP ID:8159; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Labor_Rate_Total_Cost_Adjustment", ex.Message)
@@ -6389,7 +6512,15 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7943; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_Superintendent_Cost +
+Me.MEI_TTCB_Lead_Person_Cost +
+Me.MEI_TTCB_Installer_Cost +
+Me.MEI_Equipment_Rental_Cost +
+Me.MEI_Supplies_Consumables_Cost +
+Me.MEI_Travel_Expense_Cost +
+Me.MEI_Permits_Cost +
+Me.MEI_Miscellaneous_Cost
       '   END FORMULA; PROP ID:7943; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Mech_Conveyor_Installation_Cost", ex.Message)
@@ -6412,7 +6543,10 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7944; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_Superintendent__Hours +
+Me.MEI_TTCB_Lead_Person_Hours +
+Me.MEI_TTCB_Installer_Hours
       '   END FORMULA; PROP ID:7944; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Mech_Conveyor_Installation_Hours", ex.Message)
@@ -6435,7 +6569,13 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7989; TYPE:PF
-      Result = 0.0
+      Dim Var1 As Double
+If Me.MEI_Other_Cost_Qty_Trucks = 0 Then 
+Var1 = 0 
+Else
+Var1 = 15
+End If
+Result = (Math. Round(((Me.MEI_Other_Cost_Onsite_Admin_Duration_Wks * Me.MEI_Other_Cost_Onsite_Admin_Hrs_Per_Week)+Var1),0))* (Me.MEI_TTCB_Installer_Rate * 0.75)
       '   END FORMULA; PROP ID:7989; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Miscellaneous_Administrative_Cost", ex.Message)
@@ -6481,7 +6621,11 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8128; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_Project_Tier_Value <= 2 Or Me.MEI_Schedule_Weeks_Install > 8)
+	Result = Me.MEI_Schedule_Weeks_Install
+Else
+	Result = 0.0
+End If
       '   END FORMULA; PROP ID:8128; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Other_Cost_Onsite_Admin_Duration_Wks", ex.Message)
@@ -6504,7 +6648,11 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8129; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_Other_Cost_Onsite_Admin_Duration_Wks > 0)
+	Result = 40.0
+Else
+	Result = 0.0
+End If
       '   END FORMULA; PROP ID:8129; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Other_Cost_Onsite_Admin_Hrs_Per_Week", ex.Message)
@@ -6527,7 +6675,18 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8127; TYPE:PF
-      Result = 0.0
+      Dim Var_Sum_F18_21 = Me.MEI_TTCB_Installer_Install_Hours + Me.MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours + Me.MEI_TTCB_Installer_Demo_Hours + Me.MEI_TTCB_Installer_Miscellaneous_Hours
+Dim Var_K9 = Me.MEI_Project_Tier_Value
+
+If(Var_Sum_F18_21 = 0)
+	Result = 0.0
+Else If(Var_K9 <= 3.5)
+	Result = 40
+Else If(Var_K9 = 4)
+	Result = 8
+Else
+	Result = 0.0
+End If
       '   END FORMULA; PROP ID:8127; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Other_Cost_Permit_Hours", ex.Message)
@@ -6550,7 +6709,11 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8126; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_Project_Tier_Value >= 3.5)
+	Result = 1
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:8126; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Other_Cost_Qty_Gang_Boxes", ex.Message)
@@ -6573,7 +6736,13 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8125; TYPE:PF
-      Result = 0.0
+      If(Me.MEI_Project_Tier_Value = 1)
+	Result = 2
+Else If(Me.MEI_Project_Tier_Value = 2 Or Me.MEI_Project_Tier_Value = 3)
+	Result = 1
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:8125; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Other_Cost_Qty_Trucks", ex.Message)
@@ -6596,7 +6765,11 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8028; TYPE:PF
-      Result = 0.0
+      If ((Me.MEI_People_Needs_Comm_No_of_Lead_Men>0 Or Me.MEI_People_Needs_Comm_No_of_Superintendents>0) And Me.MEI_Schedule_Weeks_Comm>0)
+	Result = 1
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:8028; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_People_Needs_Comm_No_of_Installers", ex.Message)
@@ -6619,7 +6792,11 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8027; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_People_Needs_Comm_No_of_Superintendents<1 And Me.MEI_Schedule_Weeks_Comm>0)
+	Result = 1
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:8027; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_People_Needs_Comm_No_of_Lead_Men", ex.Message)
@@ -6642,7 +6819,11 @@ Result = Var.Substring(0, 1)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8026; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_People_Needs_Install_No_of_Lead_Men<1 And Me.MEI_Schedule_Weeks_Comm>0)
+	Result = 1
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:8026; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_People_Needs_Comm_No_of_Superintendents", ex.Message)
@@ -6748,7 +6929,15 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8030; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_People_Needs_Install_No_of_Lead_Men > 0)
+	If(Me.MEI_People_Needs_Install_No_of_Lead_Men = 1)
+	Result = 0.9
+	Else
+	Result = 0.5
+	End If
+Else
+	Result = 0.0
+End If
       '   END FORMULA; PROP ID:8030; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_People_Needs_Work_Percent_No_of_Lead_Men", ex.Message)
@@ -6771,7 +6960,15 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8029; TYPE:PF
-      Result = 0.0
+      If (Me.MEI_People_Needs_Install_No_of_Superintendents = 0)
+	Result = 0.0
+Else If(Me.MEI_People_Needs_Install_No_of_Lead_Men = 0)
+	Result = 0.9
+Else If(Me.MEI_People_Needs_Install_No_of_Lead_Men = 1)
+	Result = 0.5
+Else
+	Result = 0.0
+End If
       '   END FORMULA; PROP ID:8029; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_People_Needs_Work_Percent_No_of_Superintendent", ex.Message)
@@ -6794,7 +6991,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7987; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Other_Cost_Permit_Hours *  Me.MEI_TTCB_Lead_Person_Rate
       '   END FORMULA; PROP ID:7987; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Permits_Cost", ex.Message)
@@ -7069,7 +7266,20 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8017; TYPE:PF
-      Result = 0.0
+      ' Calculate the difference
+Dim difference As TimeSpan = Me.MEI_Schedule_End_Run_In_Level_5 - Me.MEI_Schedule_End_Mechanical_Installation
+
+' Get number of days
+Dim totalDays As Integer = difference.Days + 1
+
+' Get number of weeks (rounded down)
+Dim totalWeeks As Integer = totalDays / 7
+
+If(Me.MEI_Schedule_End_Run_In_Level_5 > Me.MEI_Schedule_End_Mechanical_Installation)
+Result = Math.Ceiling(totalWeeks*10)/10
+Else 
+Result = 0.0
+End If
       '   END FORMULA; PROP ID:8017; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Schedule_Weeks_Comm", ex.Message)
@@ -7092,7 +7302,20 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8016; TYPE:PF
-      Result = 0
+      ' Calculate the difference
+Dim difference As TimeSpan = Me.MEI_Schedule_End_Mechanical_Installation - Me.MEI_Schedule_Start_Mechanical_Installation
+
+' Get number of days
+Dim totalDays As Integer = difference.Days + 1
+
+' Get number of weeks (rounded down)
+Dim totalWeeks As Integer = totalDays / 7
+
+If(Me.MEI_Schedule_End_Mechanical_Installation > Me.MEI_Schedule_Start_Mechanical_Installation)
+Result = Math.Ceiling(totalWeeks*10)/10
+Else 
+Result = 0.0
+End If
       '   END FORMULA; PROP ID:8016; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Schedule_Weeks_Install", ex.Message)
@@ -7230,7 +7453,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8165; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Structures_Platforms_Feet_Demo+Me.MEI_Structures_Platforms_Feet_GRID_Structure+Me.MEI_Structures_Platforms_Feet_Platform_Bar_Grating+Me.MEI_Structures_Platforms_Feet_Platform_Resin_Deck+Me.MEI_Structures_Platforms_Feet_Catwalk
       '   END FORMULA; PROP ID:8165; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Structures_Platforms_Feet_Total", ex.Message)
@@ -7253,7 +7476,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8170; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling(Me.MEI_Structures_Platforms_Feet_Catwalk*Me.MEI_Structures_Platforms_Per_Ft_Catwalk)
       '   END FORMULA; PROP ID:8170; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Structures_Platforms_Hour_Catwalk", ex.Message)
@@ -7276,7 +7499,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8166; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling(Me.MEI_Structures_Platforms_Feet_Demo*Me.MEI_Structures_Platforms_Per_Ft_Demo)
       '   END FORMULA; PROP ID:8166; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Structures_Platforms_Hour_Demo", ex.Message)
@@ -7368,7 +7591,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8171; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Structures_Platforms_Hour_Demo+Me.MEI_Structures_Platforms_Hour_GRID_Structure+Me.MEI_Structures_Platforms_Hour_Platform_Bar_Grating+Me.MEI_Structures_Platforms_Hour_Platform_Resin_Deck+Me.MEI_Structures_Platforms_Hour_Catwalk
       '   END FORMULA; PROP ID:8171; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Structures_Platforms_Hour_Total", ex.Message)
@@ -7437,7 +7660,18 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8174; TYPE:PF
-      Result = 0.0
+      Try
+	Result = Me.MEI_Structures_Platforms_Hour_Total/Me.MEI_Structures_Platforms_Feet_Total
+Catch ex As Exception
+	Result = 0.0
+End Try
+
+
+'If (Me.MEI_Structures_Platforms_Feet_Total = 0)
+'	Result = 0.0
+'Else
+'	Result = Me.MEI_Structures_Platforms_Hour_Total/Me.MEI_Structures_Platforms_Feet_Total
+'End If
       '   END FORMULA; PROP ID:8174; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Structures_Platforms_Per_Ft_Total", ex.Message)
@@ -7460,7 +7694,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7949; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_Superintendent_Install_Hours +
+Me.MEI_Superintendent_Stagnant_Hours_Hours
       '   END FORMULA; PROP ID:7949; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Superintendent__Hours", ex.Message)
@@ -7483,7 +7719,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7948; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_Superintendent_Commissioning_Hours *
+Me.MEI_Superintendent_Rate
       '   END FORMULA; PROP ID:7948; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Superintendent_Commissioning_Cost", ex.Message)
@@ -7506,7 +7744,8 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7952; TYPE:PF
-      Result = 0.0
+      Result = 
+Math.Ceiling(Me.MEI_Schedule_Weeks_Comm * Me.MEI_Crew_Comm_Sppt_Hrs_per_Wk * Me.MEI_People_Needs_Comm_No_of_Superintendents)
       '   END FORMULA; PROP ID:7952; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Superintendent_Commissioning_Hours", ex.Message)
@@ -7529,7 +7768,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7945; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_Superintendent_Install_Cost +
+Me.MEI_Superintendent_Stagnant_Hours_Cost
       '   END FORMULA; PROP ID:7945; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Superintendent_Cost", ex.Message)
@@ -7552,7 +7793,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7946; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_Superintendent_Install_Hours *
+Me.MEI_Superintendent_Rate
       '   END FORMULA; PROP ID:7946; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Superintendent_Install_Cost", ex.Message)
@@ -7575,7 +7818,8 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7950; TYPE:PF
-      Result = 0.0
+      Result = 
+Math.Ceiling(Me.MEI_Schedule_Weeks_Install * Me.MEI_People_Needs_Install_No_of_Superintendents * Me.MEI_Crew_Average_Hrs_per_Wk)
       '   END FORMULA; PROP ID:7950; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Superintendent_Install_Hours", ex.Message)
@@ -7621,7 +7865,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7947; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_Superintendent_Stagnant_Hours_Hours *
+Me.MEI_Superintendent_Rate
       '   END FORMULA; PROP ID:7947; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Superintendent_Stagnant_Hours_Cost", ex.Message)
@@ -7644,7 +7890,20 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7951; TYPE:PF
-      Result = 0.0
+      Dim Var1,Var2 As Double
+
+If (MEI_Crew_Average_Hrs_per_Wk < 40) Then
+Var1 = ((40-MEI_Crew_Average_Hrs_per_Wk )*MEI_People_Needs_Install_No_of_Superintendents)
+Else
+Var1 = 0
+End If
+
+If (MEI_Crew_Comm_Sppt_Hrs_per_Wk < 40) Then
+Var2 =  (40-MEI_Crew_Comm_Sppt_Hrs_per_Wk)* MEI_People_Needs_Comm_No_of_Superintendents
+Else 
+Var2 = 0
+End If
+Result = Var1 + Var2
       '   END FORMULA; PROP ID:7951; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Superintendent_Stagnant_Hours_Hours", ex.Message)
@@ -7667,7 +7926,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7985; TYPE:PF
-      Result = 0.0
+      Result = Math.Round(((Me.MEI_Superintendent__Hours + Me.MEI_TTCB_Lead_Person_Hours + Me.MEI_TTCB_Installer_Hours)*1),0)
       '   END FORMULA; PROP ID:7985; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Supplies_Consumables_All_Other_Cost", ex.Message)
@@ -7690,7 +7949,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7983; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.MEI_Supplies_Consumables_HW_Air_Piping_Cost + Me.MEI_Supplies_Consumables_All_Other_Cost),0)
       '   END FORMULA; PROP ID:7983; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Supplies_Consumables_Cost", ex.Message)
@@ -7713,7 +7972,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7984; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((((Me.MEI_Superintendent__Hours + Me.MEI_TTCB_Lead_Person_Hours + Me.MEI_TTCB_Installer_Hours)* 0.4) + Me.MEI_Air_Pipe_Mat_Cost_Cost),0)
       '   END FORMULA; PROP ID:7984; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Supplies_Consumables_HW_Air_Piping_Cost", ex.Message)
@@ -7805,7 +8064,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8140; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Crew_Total_Mobilization_Cost_Installer
       '   END FORMULA; PROP ID:8140; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer", ex.Message)
@@ -7828,7 +8087,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8139; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Crew_Total_Mobilization_Cost_Lead_Men
       '   END FORMULA; PROP ID:8139; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men", ex.Message)
@@ -7851,7 +8110,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8138; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Crew_Total_Mobilization_Cost_Superintendent
       '   END FORMULA; PROP ID:8138; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI", ex.Message)
@@ -7874,7 +8133,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8137; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_Schedule_Weeks_Install*Me.MEI_People_Needs_Install_No_of_Installers + Me.MEI_Schedule_Weeks_Comm*Me.MEI_People_Needs_Comm_No_of_Installers)*Me.MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer
       '   END FORMULA; PROP ID:8137; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Tot_Proj_Diem_Installer", ex.Message)
@@ -7897,7 +8156,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8136; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_Schedule_Weeks_Install*Me.MEI_People_Needs_Install_No_of_Lead_Men + Me.MEI_Schedule_Weeks_Comm*Me.MEI_People_Needs_Comm_No_of_Lead_Men)*Me.MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men
       '   END FORMULA; PROP ID:8136; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Tot_Proj_Diem_Lead_Men", ex.Message)
@@ -7920,7 +8179,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8135; TYPE:PF
-      Result = 0.0
+      Result = (Me.MEI_Schedule_Weeks_Install*Me.MEI_People_Needs_Install_No_of_Superintendents + Me.MEI_Schedule_Weeks_Comm*Me.MEI_People_Needs_Comm_No_of_Superintendents)*Me.MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent
       '   END FORMULA; PROP ID:8135; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Tot_Proj_Diem_Superintendent", ex.Message)
@@ -7943,7 +8202,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8144; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Travel_Cost_Crew_Tot_Proj_Diem_Installer+ Me.MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer
       '   END FORMULA; PROP ID:8144; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Tot_Travel_Cost_Installer", ex.Message)
@@ -7966,7 +8225,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8143; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Travel_Cost_Crew_Tot_Proj_Diem_Lead_Men+ Me.MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men
       '   END FORMULA; PROP ID:8143; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Tot_Travel_Cost_Lead_Men", ex.Message)
@@ -7989,7 +8248,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8142; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Travel_Cost_Crew_Tot_Proj_Diem_Superintendent + Me.MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI
       '   END FORMULA; PROP ID:8142; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI", ex.Message)
@@ -8012,7 +8271,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8141; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI + Me.MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men + Me.MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer
       '   END FORMULA; PROP ID:8141; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Total_Mobilization_Cost", ex.Message)
@@ -8035,7 +8294,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8145; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling(Me.MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI + Me.MEI_Travel_Cost_Crew_Tot_Travel_Cost_Lead_Men + Me.MEI_Travel_Cost_Crew_Tot_Travel_Cost_Installer)
       '   END FORMULA; PROP ID:8145; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Total_Travel_Cost", ex.Message)
@@ -8085,7 +8344,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8131; TYPE:PF
-      Result = ""
+      ' Todo - Review: Check with team how to implement URL in RS - MPC 07/17/2025
+
+Result = "https://www.gsa.gov/travel/plan-book/per-diem-rates"
       '   END FORMULA; PROP ID:8131; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Per_Diem_Range_Link", ex.Message)
@@ -8154,7 +8415,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7969; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_TTCB_Installer_Commissioning_Hours * Me.MEI_TTCB_Installer_Rate
       '   END FORMULA; PROP ID:7969; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Commissioning_Cost", ex.Message)
@@ -8177,7 +8438,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7978; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.MEI_Schedule_Weeks_Comm * Me.MEI_Crew_Comm_Sppt_Hrs_per_Wk * MEI_People_Needs_Comm_No_of_Installers),0)
       '   END FORMULA; PROP ID:7978; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Commissioning_Hours", ex.Message)
@@ -8200,7 +8461,17 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7963; TYPE:PF
-      Result = 0.0
+      Dim Sum1 As Double = Me.MEI_TTCB_Installer_Install_Cost +
+Me.MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost +
+Me.MEI_TTCB_Installer_Demo_Cost +
+Me.MEI_TTCB_Installer_Miscellaneous_Cost +
+Me.MEI_TTCB_Installer_Stagnant_Hours_Cost
+
+If(Sum1<0)
+Result = 0
+Else 
+Result = Sum1
+End If
       '   END FORMULA; PROP ID:7963; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Cost", ex.Message)
@@ -8223,7 +8494,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7966; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_TTCB_Installer_Demo_Hours * Me.MEI_TTCB_Installer_Rate
       '   END FORMULA; PROP ID:7966; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Demo_Cost", ex.Message)
@@ -8246,7 +8517,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7975; TYPE:PF
-      Result = 0.0
+      Result = Math.Round(Me.MEI_Structures_Platforms_Hour_Demo,0)
       '   END FORMULA; PROP ID:7975; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Demo_Hours", ex.Message)
@@ -8269,7 +8540,35 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7972; TYPE:PF
-      Result = 0.0
+      Dim Sum1 As Double = Me.MEI_Schedule_Weeks_Install + Me.MEI_Schedule_Weeks_Comm
+Dim Sum2 As Double = Me.MEI_TTCB_Installer_Install_Hours +
+Me.MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours +
+Me.MEI_TTCB_Installer_Demo_Hours +
+Me.MEI_TTCB_Installer_Miscellaneous_Hours
+
+Dim Sum3 As Double = Me.MEI_TTCB_Installer_Install_Hours +
+Me.MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours +
+Me.MEI_TTCB_Installer_Demo_Hours +
+Me.MEI_TTCB_Installer_Miscellaneous_Hours + Me.MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours
+
+Dim Sum4 As Double = Me.MEI_TTCB_Installer_Stagnant_Hours_Hours +
+Me.MEI_TTCB_Installer_Commissioning_Hours
+
+Dim Sum5 As Double = Me.MEI_TTCB_Installer_Install_Hours +
+Me.MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours +
+Me.MEI_TTCB_Installer_Demo_Hours +
+Me.MEI_TTCB_Installer_Miscellaneous_Hours +
+Me.MEI_TTCB_Installer_Stagnant_Hours_Hours +
+Me.MEI_TTCB_Installer_Commissioning_Hours +
+Me.MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours
+
+If ((Sum1 = 0 ) Or (Sum2 = 0)) Then
+Result = 0 
+Else If (Sum3 < (Me.MEI_Schedule_Weeks_Install * Me.MEI_Crew_Average_Hrs_per_Wk)) Then
+	Result = ((MEI_Schedule_Weeks_Comm * MEI_Crew_Average_Hrs_per_Wk ) + (Sum4))
+	Else 
+	Result = Sum5
+End If
       '   END FORMULA; PROP ID:7972; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Hours", ex.Message)
@@ -8292,7 +8591,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7964; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_TTCB_Installer_Install_Hours * Me.MEI_TTCB_Installer_Rate
       '   END FORMULA; PROP ID:7964; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Install_Cost", ex.Message)
@@ -8315,7 +8614,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7973; TYPE:PF
-      Result = 0.0
+      Dim Sum1 As Double = Me.MEI_Adjust_Hours_TTCB_Sorter + Me.MEI_Adjust_Hours_Clean_Up + Me.MEI_Air_Pipe_Hours_Cost
+
+Result = Math.Round(Sum1,0)
       '   END FORMULA; PROP ID:7973; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Install_Hours", ex.Message)
@@ -8338,7 +8639,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7967; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_TTCB_Installer_Miscellaneous_Hours * Me.MEI_TTCB_Installer_Rate
       '   END FORMULA; PROP ID:7967; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Miscellaneous_Cost", ex.Message)
@@ -8361,7 +8662,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7976; TYPE:PF
-      Result = 0.0
+      Result = Math.Round(MEI_Adjust_Hours_Total,0)
       '   END FORMULA; PROP ID:7976; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Miscellaneous_Hours", ex.Message)
@@ -8384,7 +8685,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7965; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours * Me.MEI_TTCB_Installer_Rate
       '   END FORMULA; PROP ID:7965; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost", ex.Message)
@@ -8407,7 +8708,12 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7974; TYPE:PF
-      Result = 0.0
+      Dim sum1 As Double  = Me.MEI_Structures_Platforms_Hour_GRID_Structure +
+Me.MEI_Structures_Platforms_Hour_Platform_Bar_Grating +
+Me.MEI_Structures_Platforms_Hour_Platform_Resin_Deck +
+Me.MEI_Structures_Platforms_Hour_Catwalk
+
+Result = Math.Round(sum1,0)
       '   END FORMULA; PROP ID:7974; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours", ex.Message)
@@ -8453,7 +8759,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7968; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_TTCB_Installer_Stagnant_Hours_Hours * Me.MEI_TTCB_Installer_Rate
       '   END FORMULA; PROP ID:7968; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Stagnant_Hours_Cost", ex.Message)
@@ -8476,7 +8782,20 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7977; TYPE:PF
-      Result = 0.0
+      Dim Var1 As Double
+If (Me.MEI_Crew_Average_Hrs_per_Wk < 40) Then
+Var1 = ((40 - Me.MEI_Crew_Average_Hrs_per_Wk) * Me.MEI_People_Needs_Install_No_of_Installers)
+Else
+Var1 = 0
+End If
+
+Dim Var2 As Double
+If ( Me.MEI_Crew_Comm_Sppt_Hrs_per_Wk < 40) Then
+Var2 = ((40 - Me.MEI_Crew_Comm_Sppt_Hrs_per_Wk) * Me.MEI_People_Needs_Comm_No_of_Installers)
+Else
+Var2 = 0
+End If
+Result = Var1 + Var2
       '   END FORMULA; PROP ID:7977; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_Stagnant_Hours_Hours", ex.Message)
@@ -8499,7 +8818,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7970; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours * Me.MEI_TTCB_Installer_Rate
       '   END FORMULA; PROP ID:7970; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost", ex.Message)
@@ -8522,7 +8841,8 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7979; TYPE:PF
-      Result = 0.0
+      Result = (-((Me.MEI_TTCB_Lead_Person_Install_Hours * Me.MEI_People_Needs_Work_Percent_No_of_Lead_Men)+
+(Me.MEI_Superintendent_Install_Hours * Me.MEI_People_Needs_Work_Percent_No_of_Superintendent)))
       '   END FORMULA; PROP ID:7979; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours", ex.Message)
@@ -8545,7 +8865,8 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7957; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_TTCB_Lead_Person_Commissioning_Hours * Me.MEI_TTCB_Lead_Person_Rate
       '   END FORMULA; PROP ID:7957; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Lead_Person_Commissioning_Cost", ex.Message)
@@ -8568,7 +8889,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7961; TYPE:PF
-      Result = 0.0
+      Dim Var1 As Double = (Me.MEI_Schedule_Weeks_Comm * Me.MEI_Crew_Comm_Sppt_Hrs_per_Wk * Me.MEI_People_Needs_Comm_No_of_Lead_Men)
+Result = 
+Math.Round(Var1,0 )
       '   END FORMULA; PROP ID:7961; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Lead_Person_Commissioning_Hours", ex.Message)
@@ -8591,7 +8914,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7954; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_TTCB_Lead_Person_Install_Cost +
+Me.MEI_TTCB_Lead_Person_Stagnant_Hours_Cost
       '   END FORMULA; PROP ID:7954; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Lead_Person_Cost", ex.Message)
@@ -8614,7 +8939,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7958; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_TTCB_Lead_Person_Install_Hours +
+Me.MEI_TTCB_Lead_Person_Stagnant_Hours_Hours
       '   END FORMULA; PROP ID:7958; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Lead_Person_Hours", ex.Message)
@@ -8637,7 +8964,8 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7955; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_TTCB_Lead_Person_Install_Hours * Me.MEI_TTCB_Lead_Person_Rate
       '   END FORMULA; PROP ID:7955; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Lead_Person_Install_Cost", ex.Message)
@@ -8660,7 +8988,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7959; TYPE:PF
-      Result = 0.0
+      Dim Var1 As Double = (Me.MEI_Schedule_Weeks_Install * Me.MEI_People_Needs_Install_No_of_Lead_Men * Me.MEI_Crew_Average_Hrs_per_Wk)
+Result = 
+Math.Round(Var1,0 )
       '   END FORMULA; PROP ID:7959; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Lead_Person_Install_Hours", ex.Message)
@@ -8706,7 +9036,8 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7956; TYPE:PF
-      Result = 0.0
+      Result = 
+Me.MEI_TTCB_Lead_Person_Stagnant_Hours_Hours * Me.MEI_TTCB_Lead_Person_Rate
       '   END FORMULA; PROP ID:7956; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Lead_Person_Stagnant_Hours_Cost", ex.Message)
@@ -8729,7 +9060,20 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:7960; TYPE:PF
-      Result = 0.0
+      Dim Var1, Var2 As Double
+If (Me.MEI_Crew_Average_Hrs_per_Wk < 40) Then
+Var1 = ((40-Me.MEI_Crew_Average_Hrs_per_Wk )* Me.MEI_People_Needs_Install_No_of_Lead_Men)
+Else
+Var1 = 0
+End If
+
+If (MEI_Crew_Comm_Sppt_Hrs_per_Wk < 40) Then
+Var2 =  (40-MEI_Crew_Comm_Sppt_Hrs_per_Wk)* MEI_People_Needs_Comm_No_of_Lead_Men
+Else 
+Var2 = 0
+End If
+
+Result = Var1 + Var2
       '   END FORMULA; PROP ID:7960; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_TTCB_Lead_Person_Stagnant_Hours_Hours", ex.Message)
@@ -21264,6 +21608,30 @@ End If
       '*****************************************************************************
       Public Function Formula_MEI_TTCB_Lead_Person_Stagnant_Hours_Hours_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MEI_Travel_Cost_Per_Diem_Range_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MEI_Travel_Cost_Per_Diem_Range").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:8130; TYPE:VV
+      Result = MakeValidValues(Array("1 - $170 & Below", "2 - $171 to $210", "3 - $211 to $250", "4 - $251 to $290", "5 - $291 to $330"))
+      '   END FORMULA; PROP ID:8130; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Per_Diem_Range_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
 

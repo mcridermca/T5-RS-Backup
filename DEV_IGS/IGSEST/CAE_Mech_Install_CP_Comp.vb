@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Mech_Install_CP_Comp
-'$ GenerateDate: 07/15/2025 16:49:01
+'$ GenerateDate: 07/18/2025 11:37:15
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -8661,519 +8661,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [PRD_Conv_Lead_Men_COST]() As Double
-      Get
-      Return Properties("PRD_Conv_Lead_Men_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Conv_Lead_Men_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Conv_Lead_Men_HRS]() As Double
-      Get
-      Return Properties("PRD_Conv_Lead_Men_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Conv_Lead_Men_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Conv_Lead_Men_RATE]() As Double
-      Get
-      Return Properties("PRD_Conv_Lead_Men_RATE").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Conv_Lead_Men_RATE").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Equipment_Rental_COST]() As Double
-      Get
-      Return Properties("PRD_Equipment_Rental_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Equipment_Rental_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Project_Support_COST]() As Double
-      Get
-      Return Properties("PRD_Project_Support_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Project_Support_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Project_Support_HRS]() As Double
-      Get
-      Return Properties("PRD_Project_Support_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Project_Support_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Project_Support_RATE]() As Double
-      Get
-      Return Properties("PRD_Project_Support_RATE").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Project_Support_RATE").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Sbcntrct_Svcs_COST]() As Double
-      Get
-      Return Properties("PRD_Sbcntrct_Svcs_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Sbcntrct_Svcs_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Sbcntrct_Svcs_HRS]() As Double
-      Get
-      Return Properties("PRD_Sbcntrct_Svcs_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Sbcntrct_Svcs_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Sbcntrct_Svcs_HSE_COST]() As Double
-      Get
-      Return Properties("PRD_Sbcntrct_Svcs_HSE_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Sbcntrct_Svcs_HSE_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Sbcntrct_Svcs_HSE_HRS]() As Double
-      Get
-      Return Properties("PRD_Sbcntrct_Svcs_HSE_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Sbcntrct_Svcs_HSE_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Sbcntrct_Svcs_RATE]() As Double
-      Get
-      Return Properties("PRD_Sbcntrct_Svcs_RATE").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Sbcntrct_Svcs_RATE").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Superintendent_COST]() As Double
-      Get
-      Return Properties("PRD_Superintendent_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Superintendent_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Superintendent_HRS]() As Double
-      Get
-      Return Properties("PRD_Superintendent_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Superintendent_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Superintendent_RATE]() As Double
-      Get
-      Return Properties("PRD_Superintendent_RATE").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Superintendent_RATE").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Travel_Expenses_COST]() As Double
-      Get
-      Return Properties("PRD_Travel_Expenses_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Travel_Expenses_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [PRD_Travel_Expenses_HRS]() As Double
-      Get
-      Return Properties("PRD_Travel_Expenses_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("PRD_Travel_Expenses_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__CP_Names]() As String
-      Get
-      Return Properties("Rollup__CP_Names").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Rollup__CP_Names").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Include_Stagnant_HRS]() As Boolean
-      Get
-      Return Properties("Rollup__Include_Stagnant_HRS").Value
-      End Get
-      Set(ByVal Value As Boolean)
-      Properties("Rollup__Include_Stagnant_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Labor_Type]() As String
-      Get
-      Return Properties("Rollup__Labor_Type").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Rollup__Labor_Type").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Mech_Install_Total_COST]() As Double
-      Get
-      Return Properties("Rollup__Mech_Install_Total_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup__Mech_Install_Total_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Mech_Install_Total_HRS]() As Double
-      Get
-      Return Properties("Rollup__Mech_Install_Total_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup__Mech_Install_Total_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Total_Conveyor_COST_per_Footage]() As Double
-      Get
-      Return Properties("Rollup__Total_Conveyor_COST_per_Footage").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup__Total_Conveyor_COST_per_Footage").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Total_Conveyor_Footage]() As Double
-      Get
-      Return Properties("Rollup__Total_Conveyor_Footage").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup__Total_Conveyor_Footage").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Total_Conveyor_HRS_per_Footage]() As Double
-      Get
-      Return Properties("Rollup__Total_Conveyor_HRS_per_Footage").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup__Total_Conveyor_HRS_per_Footage").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Weeks_Comm]() As Double
-      Get
-      Return Properties("Rollup__Weeks_Comm").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup__Weeks_Comm").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Weeks_Install]() As Double
-      Get
-      Return Properties("Rollup__Weeks_Install").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup__Weeks_Install").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Work_Week_HRS_per_Week]() As Double
-      Get
-      Return Properties("Rollup__Work_Week_HRS_per_Week").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup__Work_Week_HRS_per_Week").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup__Work_Week_Type]() As String
-      Get
-      Return Properties("Rollup__Work_Week_Type").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Rollup__Work_Week_Type").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Additional_Subcontractor_Services_COST]() As Double
-      Get
-      Return Properties("Rollup_Additional_Subcontractor_Services_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Additional_Subcontractor_Services_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Conv_Intelligrated_Installers_COST]() As Double
-      Get
-      Return Properties("Rollup_Conv_Intelligrated_Installers_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Conv_Intelligrated_Installers_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Conv_Intelligrated_Installers_HRS]() As Double
-      Get
-      Return Properties("Rollup_Conv_Intelligrated_Installers_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Conv_Intelligrated_Installers_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Conv_Intelligrated_Installers_UOM]() As Double
-      Get
-      Return Properties("Rollup_Conv_Intelligrated_Installers_UOM").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Conv_Intelligrated_Installers_UOM").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Conv_Lead_Men_COST]() As Double
-      Get
-      Return Properties("Rollup_Conv_Lead_Men_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Conv_Lead_Men_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Conv_Lead_Men_HRS]() As Double
-      Get
-      Return Properties("Rollup_Conv_Lead_Men_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Conv_Lead_Men_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Conv_Lead_Men_UOM]() As Double
-      Get
-      Return Properties("Rollup_Conv_Lead_Men_UOM").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Conv_Lead_Men_UOM").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Equipment_Rental_COST]() As Double
-      Get
-      Return Properties("Rollup_Equipment_Rental_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Equipment_Rental_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Intelligrated_Installer_COST]() As Double
-      Get
-      Return Properties("Rollup_Intelligrated_Installer_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Intelligrated_Installer_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Intelligrated_Installer_HRS]() As Double
-      Get
-      Return Properties("Rollup_Intelligrated_Installer_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Intelligrated_Installer_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Intelligrated_Installer_UOM]() As Double
-      Get
-      Return Properties("Rollup_Intelligrated_Installer_UOM").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Intelligrated_Installer_UOM").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Miscellanious_COST]() As Double
-      Get
-      Return Properties("Rollup_Miscellanious_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Miscellanious_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Permits_COST]() As Double
-      Get
-      Return Properties("Rollup_Permits_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Permits_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Prototype_COST]() As Double
-      Get
-      Return Properties("Rollup_Prototype_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Prototype_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Superintendent_COST]() As Double
-      Get
-      Return Properties("Rollup_Superintendent_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Superintendent_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Superintendent_HRS]() As Double
-      Get
-      Return Properties("Rollup_Superintendent_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Superintendent_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Superintendent_UOM]() As Double
-      Get
-      Return Properties("Rollup_Superintendent_UOM").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Superintendent_UOM").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_SuppliesConsumables_COST]() As Double
-      Get
-      Return Properties("Rollup_SuppliesConsumables_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_SuppliesConsumables_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Tariff_Adder_COST]() As Double
-      Get
-      Return Properties("Rollup_Tariff_Adder_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Tariff_Adder_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Tariff_Adder_Pecentage]() As Double
-      Get
-      Return Properties("Rollup_Tariff_Adder_Pecentage").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Tariff_Adder_Pecentage").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Tariff_Adder_Pecentage_UI]() As Double
-      Get
-      Return Properties("Rollup_Tariff_Adder_Pecentage_UI").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Tariff_Adder_Pecentage_UI").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_Travel_Expenses_COST]() As Double
-      Get
-      Return Properties("Rollup_Travel_Expenses_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_Travel_Expenses_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_TTCB_Intelligrated_Installers_COST]() As Double
-      Get
-      Return Properties("Rollup_TTCB_Intelligrated_Installers_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_TTCB_Intelligrated_Installers_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_TTCB_Intelligrated_Installers_HRS]() As Double
-      Get
-      Return Properties("Rollup_TTCB_Intelligrated_Installers_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_TTCB_Intelligrated_Installers_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_TTCB_Intelligrated_Installers_UOM]() As Double
-      Get
-      Return Properties("Rollup_TTCB_Intelligrated_Installers_UOM").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_TTCB_Intelligrated_Installers_UOM").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_TTCB_Lead_Men_COST]() As Double
-      Get
-      Return Properties("Rollup_TTCB_Lead_Men_COST").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_TTCB_Lead_Men_COST").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_TTCB_Lead_Men_HRS]() As Double
-      Get
-      Return Properties("Rollup_TTCB_Lead_Men_HRS").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_TTCB_Lead_Men_HRS").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Rollup_TTCB_Lead_Men_UOM]() As Double
-      Get
-      Return Properties("Rollup_TTCB_Lead_Men_UOM").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Rollup_TTCB_Lead_Men_UOM").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Singulated_Flow_Bottom_Guards_HRS]() As Double
       Get
       Return Properties("Singulated_Flow_Bottom_Guards_HRS").Value
@@ -9606,6 +9093,573 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [PRD_Base__Internal_Install_Sbcntrct_Svcs_COST]() As Double
+      Get
+      Return Properties("PRD_Base__Internal_Install_Sbcntrct_Svcs_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base__Internal_Install_Sbcntrct_Svcs_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS]() As Double
+      Get
+      Return Properties("PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Conv_Lead_Men_COST]() As Double
+      Get
+      Return Properties("PRD_Base_Conv_Lead_Men_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Conv_Lead_Men_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Conv_Lead_Men_HRS]() As Double
+      Get
+      Return Properties("PRD_Base_Conv_Lead_Men_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Conv_Lead_Men_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Conv_Lead_Men_RATE]() As Double
+      Get
+      Return Properties("PRD_Base_Conv_Lead_Men_RATE").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Conv_Lead_Men_RATE").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Equipment_Rental_COST]() As Double
+      Get
+      Return Properties("PRD_Base_Equipment_Rental_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Equipment_Rental_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Project_Support_COST]() As Double
+      Get
+      Return Properties("PRD_Base_Project_Support_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Project_Support_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Project_Support_HRS]() As Double
+      Get
+      Return Properties("PRD_Base_Project_Support_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Project_Support_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Project_Support_RATE]() As Double
+      Get
+      Return Properties("PRD_Base_Project_Support_RATE").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Project_Support_RATE").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Sbcntrct_Svcs_COST]() As Double
+      Get
+      Return Properties("PRD_Base_Sbcntrct_Svcs_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Sbcntrct_Svcs_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Sbcntrct_Svcs_HRS]() As Double
+      Get
+      Return Properties("PRD_Base_Sbcntrct_Svcs_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Sbcntrct_Svcs_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Sbcntrct_Svcs_HSE_COST]() As Double
+      Get
+      Return Properties("PRD_Base_Sbcntrct_Svcs_HSE_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Sbcntrct_Svcs_HSE_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Sbcntrct_Svcs_HSE_HRS]() As Double
+      Get
+      Return Properties("PRD_Base_Sbcntrct_Svcs_HSE_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Sbcntrct_Svcs_HSE_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Sbcntrct_Svcs_RATE]() As Double
+      Get
+      Return Properties("PRD_Base_Sbcntrct_Svcs_RATE").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Sbcntrct_Svcs_RATE").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Superintendent_COST]() As Double
+      Get
+      Return Properties("PRD_Base_Superintendent_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Superintendent_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Superintendent_HRS]() As Double
+      Get
+      Return Properties("PRD_Base_Superintendent_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Superintendent_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Superintendent_RATE]() As Double
+      Get
+      Return Properties("PRD_Base_Superintendent_RATE").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Superintendent_RATE").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Travel_Expenses_COST]() As Double
+      Get
+      Return Properties("PRD_Base_Travel_Expenses_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Travel_Expenses_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Base_Travel_Expenses_HRS]() As Double
+      Get
+      Return Properties("PRD_Base_Travel_Expenses_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Base_Travel_Expenses_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Option_Internal_Install_Sbcntrct_Svcs_COST]() As Double
+      Get
+      Return Properties("PRD_Option_Internal_Install_Sbcntrct_Svcs_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Option_Internal_Install_Sbcntrct_Svcs_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS]() As Double
+      Get
+      Return Properties("PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Option_Sbcntrct_Svcs_COST]() As Double
+      Get
+      Return Properties("PRD_Option_Sbcntrct_Svcs_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Option_Sbcntrct_Svcs_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Option_Sbcntrct_Svcs_HRS]() As Double
+      Get
+      Return Properties("PRD_Option_Sbcntrct_Svcs_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Option_Sbcntrct_Svcs_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__CP_Names]() As String
+      Get
+      Return Properties("Rollup__CP_Names").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Rollup__CP_Names").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Include_Stagnant_HRS]() As Boolean
+      Get
+      Return Properties("Rollup__Include_Stagnant_HRS").Value
+      End Get
+      Set(ByVal Value As Boolean)
+      Properties("Rollup__Include_Stagnant_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Labor_Type]() As String
+      Get
+      Return Properties("Rollup__Labor_Type").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Rollup__Labor_Type").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Mech_Install_Total_COST]() As Double
+      Get
+      Return Properties("Rollup__Mech_Install_Total_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup__Mech_Install_Total_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Mech_Install_Total_HRS]() As Double
+      Get
+      Return Properties("Rollup__Mech_Install_Total_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup__Mech_Install_Total_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Total_Conveyor_COST_per_Footage]() As Double
+      Get
+      Return Properties("Rollup__Total_Conveyor_COST_per_Footage").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup__Total_Conveyor_COST_per_Footage").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Total_Conveyor_Footage]() As Double
+      Get
+      Return Properties("Rollup__Total_Conveyor_Footage").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup__Total_Conveyor_Footage").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Total_Conveyor_HRS_per_Footage]() As Double
+      Get
+      Return Properties("Rollup__Total_Conveyor_HRS_per_Footage").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup__Total_Conveyor_HRS_per_Footage").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Weeks_Comm]() As Double
+      Get
+      Return Properties("Rollup__Weeks_Comm").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup__Weeks_Comm").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Weeks_Install]() As Double
+      Get
+      Return Properties("Rollup__Weeks_Install").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup__Weeks_Install").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Work_Week_HRS_per_Week]() As Double
+      Get
+      Return Properties("Rollup__Work_Week_HRS_per_Week").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup__Work_Week_HRS_per_Week").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup__Work_Week_Type]() As String
+      Get
+      Return Properties("Rollup__Work_Week_Type").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Rollup__Work_Week_Type").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Additional_Subcontractor_Services_COST]() As Double
+      Get
+      Return Properties("Rollup_Additional_Subcontractor_Services_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Additional_Subcontractor_Services_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Conv_Intelligrated_Installers_COST]() As Double
+      Get
+      Return Properties("Rollup_Conv_Intelligrated_Installers_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Conv_Intelligrated_Installers_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Conv_Intelligrated_Installers_HRS]() As Double
+      Get
+      Return Properties("Rollup_Conv_Intelligrated_Installers_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Conv_Intelligrated_Installers_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Conv_Intelligrated_Installers_UOM]() As Double
+      Get
+      Return Properties("Rollup_Conv_Intelligrated_Installers_UOM").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Conv_Intelligrated_Installers_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Conv_Lead_Men_COST]() As Double
+      Get
+      Return Properties("Rollup_Conv_Lead_Men_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Conv_Lead_Men_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Conv_Lead_Men_HRS]() As Double
+      Get
+      Return Properties("Rollup_Conv_Lead_Men_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Conv_Lead_Men_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Conv_Lead_Men_UOM]() As Double
+      Get
+      Return Properties("Rollup_Conv_Lead_Men_UOM").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Conv_Lead_Men_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Equipment_Rental_COST]() As Double
+      Get
+      Return Properties("Rollup_Equipment_Rental_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Equipment_Rental_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Intelligrated_Installer_COST]() As Double
+      Get
+      Return Properties("Rollup_Intelligrated_Installer_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Intelligrated_Installer_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Intelligrated_Installer_HRS]() As Double
+      Get
+      Return Properties("Rollup_Intelligrated_Installer_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Intelligrated_Installer_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Intelligrated_Installer_UOM]() As Double
+      Get
+      Return Properties("Rollup_Intelligrated_Installer_UOM").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Intelligrated_Installer_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Miscellanious_COST]() As Double
+      Get
+      Return Properties("Rollup_Miscellanious_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Miscellanious_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Permits_COST]() As Double
+      Get
+      Return Properties("Rollup_Permits_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Permits_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Prototype_COST]() As Double
+      Get
+      Return Properties("Rollup_Prototype_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Prototype_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Superintendent_COST]() As Double
+      Get
+      Return Properties("Rollup_Superintendent_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Superintendent_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Superintendent_HRS]() As Double
+      Get
+      Return Properties("Rollup_Superintendent_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Superintendent_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Superintendent_UOM]() As Double
+      Get
+      Return Properties("Rollup_Superintendent_UOM").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Superintendent_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_SuppliesConsumables_COST]() As Double
+      Get
+      Return Properties("Rollup_SuppliesConsumables_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_SuppliesConsumables_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Tariff_Adder_COST]() As Double
+      Get
+      Return Properties("Rollup_Tariff_Adder_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Tariff_Adder_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Tariff_Adder_Pecentage]() As Double
+      Get
+      Return Properties("Rollup_Tariff_Adder_Pecentage").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Tariff_Adder_Pecentage").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Tariff_Adder_Pecentage_UI]() As Double
+      Get
+      Return Properties("Rollup_Tariff_Adder_Pecentage_UI").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Tariff_Adder_Pecentage_UI").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_Travel_Expenses_COST]() As Double
+      Get
+      Return Properties("Rollup_Travel_Expenses_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_Travel_Expenses_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_TTCB_Intelligrated_Installers_COST]() As Double
+      Get
+      Return Properties("Rollup_TTCB_Intelligrated_Installers_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_TTCB_Intelligrated_Installers_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_TTCB_Intelligrated_Installers_HRS]() As Double
+      Get
+      Return Properties("Rollup_TTCB_Intelligrated_Installers_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_TTCB_Intelligrated_Installers_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_TTCB_Intelligrated_Installers_UOM]() As Double
+      Get
+      Return Properties("Rollup_TTCB_Intelligrated_Installers_UOM").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_TTCB_Intelligrated_Installers_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_TTCB_Lead_Men_COST]() As Double
+      Get
+      Return Properties("Rollup_TTCB_Lead_Men_COST").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_TTCB_Lead_Men_COST").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_TTCB_Lead_Men_HRS]() As Double
+      Get
+      Return Properties("Rollup_TTCB_Lead_Men_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_TTCB_Lead_Men_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rollup_TTCB_Lead_Men_UOM]() As Double
+      Get
+      Return Properties("Rollup_TTCB_Lead_Men_UOM").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rollup_TTCB_Lead_Men_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -9645,6 +9699,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [My_System_Delta]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_System_Delta")
+      End Get
+      End Property
+    
     #End Region
 
     #Region " Initialization "
@@ -9659,7 +9719,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Mech_Install_CP_Comp", <a><![CDATA[CAE_Mech_Install_CP_Comp]]></a>.Value, 399, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H617242", "07/15/2025 16:20:30")
+    InitPart("CAE_Mech_Install_CP_Comp", <a><![CDATA[CAE_Mech_Install_CP_Comp]]></a>.Value, 399, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H582667", "07/18/2025 10:11:37")
     AddProperty("6174", "a_Sample_Cnvy_Hrs_MDR_Bed_Size", <a><![CDATA[a_Sample_Cnvy_Hrs_MDR_Bed_Size]]></a>.Value, "Retrieves hours from a cached set of Component DB (Conveyor Hours) Table.", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6199", "bool_Include_In_Subsystem", <a><![CDATA[bool_Include_In_Subsystem]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6219", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 4:46:16 PM")
@@ -9668,26 +9728,26 @@ Option Infer On
     AddProperty("6177", "Add_Hours_Dollars_Anchors_Qty", <a><![CDATA[Add_Hours_Dollars_Anchors_Qty]]></a>.Value, "Mech Install^'Hours'!Q298", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 4:25:40 AM")
     AddProperty("6178", "Add_Hours_Dollars_Subsystem_Efficiency_Dollars", <a><![CDATA[Add_Hours_Dollars_Subsystem_Efficiency_Dollars]]></a>.Value, "Mech Install^'Hours'!P297", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6179", "Add_Hours_Dollars_Subsystem_Efficiency_Hours", <a><![CDATA[Add_Hours_Dollars_Subsystem_Efficiency_Hours]]></a>.Value, "Mech Install^'Hours'!R297", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 4:56:03 AM")
-    AddProperty("6180", "Add_Hours_Dollars_Subsystem_Efficiency_Qty", <a><![CDATA[Add_Hours_Dollars_Subsystem_Efficiency_Qty]]></a>.Value, "Mech Install^'Hours'!Q297", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 5:14:41 AM")
+    AddProperty("6180", "Add_Hours_Dollars_Subsystem_Efficiency_Qty", <a><![CDATA[Add_Hours_Dollars_Subsystem_Efficiency_Qty]]></a>.Value, "Mech Install^'Hours'!Q297", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 10:11:37 AM")
     AddProperty("6181", "Add_Hours_Dollars_Total_Dollars", <a><![CDATA[Add_Hours_Dollars_Total_Dollars]]></a>.Value, "Mech Install^'Hours'!P299", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 8:57:39 AM")
     AddProperty("6182", "Add_Hours_Dollars_Total_Hours", <a><![CDATA[Add_Hours_Dollars_Total_Hours]]></a>.Value, "Mech Install^'Hours'!R299", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 8:58:59 AM")
     AddProperty("6183", "Add_Hours_Dollars_Total_Qty", <a><![CDATA[Add_Hours_Dollars_Total_Qty]]></a>.Value, "Mech Install^'Hours'!Q299", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
-    AddProperty("6184", "Air_Piping_112_inches_pipe", <a><![CDATA[Air_Piping_1 1/2_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O213", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:18:15 AM")
-    AddProperty("6185", "Air_Piping_12_inches_pipe", <a><![CDATA[Air_Piping_1/2_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O215", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:20:02 AM")
-    AddProperty("6186", "Air_Piping_212_inches_pipe", <a><![CDATA[Air_Piping_2 1/2_inches_ pipe]]></a>.Value, "Mech Install^'Hours'!O212", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:21:05 AM")
-    AddProperty("6187", "Air_Piping_3pipe", <a><![CDATA[Air_Piping_3_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O211", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:22:38 AM")
-    AddProperty("6188", "Air_Piping_78_inches_pipe", <a><![CDATA[Air_Piping_7/8_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O214", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:27:47 AM")
-    AddProperty("6189", "Air_Piping_AC", <a><![CDATA[Air_Piping_A/C]]></a>.Value, "Mech Install^'Hours'!O218", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:28:40 AM")
+    AddProperty("6184", "Air_Piping_112_inches_pipe", <a><![CDATA[Air_Piping_112_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O213", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:55:10 AM")
+    AddProperty("6185", "Air_Piping_12_inches_pipe", <a><![CDATA[Air_Piping_12_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O215", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:54:54 AM")
+    AddProperty("6186", "Air_Piping_212_inches_pipe", <a><![CDATA[Air_Piping_212_inches_ pipe]]></a>.Value, "Mech Install^'Hours'!O212", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:55:30 AM")
+    AddProperty("6187", "Air_Piping_3pipe", <a><![CDATA[Air_Piping_3_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O211", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:54:47 AM")
+    AddProperty("6188", "Air_Piping_78_inches_pipe", <a><![CDATA[Air_Piping_78_inches_pipe]]></a>.Value, "Mech Install^'Hours'!O214", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:55:39 AM")
+    AddProperty("6189", "Air_Piping_AC", <a><![CDATA[Air_Piping_AC]]></a>.Value, "Mech Install^'Hours'!O218", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:59:05 AM")
     AddProperty("6190", "Air_Piping_CHAINLUB", <a><![CDATA[Air_Piping_CHAIN/LUB]]></a>.Value, "Mech Install^'Hours'!O220", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
-    AddProperty("6191", "Air_Piping_Dryer", <a><![CDATA[Air_Piping_Dryer]]></a>.Value, "Mech Install^'Hours'!O220", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:29:37 AM")
+    AddProperty("6191", "Air_Piping_Dryer", <a><![CDATA[Air_Piping_Dryer]]></a>.Value, "Mech Install^'Hours'!O220", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:56:14 AM")
     AddProperty("8057", "Air_Piping_Factor", <a><![CDATA[Air_Piping_Factor]]></a>.Value, "Mech Install^'Hours'!T221", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 6:50:45 PM")
-    AddProperty("6192", "Air_Piping_FILTERREG", <a><![CDATA[Air_Piping_FILTER_REG]]></a>.Value, "Mech Install^'Hours'!O217", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:30:55 AM")
-    AddProperty("6193", "Air_Piping_RedAC", <a><![CDATA[Air_Piping_Red A/C]]></a>.Value, "Mech Install^'Hours'!O219", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:31:58 AM")
-    AddProperty("6194", "Air_Piping_SUBTOTAL", <a><![CDATA[Air_Piping_SUBTOTAL]]></a>.Value, "Mech Install^'Hours'!Q221", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:41:10 AM")
-    AddProperty("6195", "Air_Piping_SUBTOTAL_Hours", <a><![CDATA[Air_Piping_SUBTOTAL_Hours]]></a>.Value, "Mech Install^'Hours'!S225", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:43:55 AM")
+    AddProperty("6192", "Air_Piping_FILTERREG", <a><![CDATA[Air_Piping_FILTERREG]]></a>.Value, "Mech Install^'Hours'!O217", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:55:59 AM")
+    AddProperty("6193", "Air_Piping_RedAC", <a><![CDATA[Air_Piping_RedAC]]></a>.Value, "Mech Install^'Hours'!O219", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:56:06 AM")
+    AddProperty("6194", "Air_Piping_SUBTOTAL", <a><![CDATA[Air_Piping_SUBTOTAL]]></a>.Value, "Mech Install^'Hours'!Q221", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:37:16 AM")
+    AddProperty("6195", "Air_Piping_SUBTOTAL_Hours", <a><![CDATA[Air_Piping_SUBTOTAL_Hours]]></a>.Value, "Mech Install^'Hours'!S225", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:38:10 AM")
     AddProperty("6196", "Air_Piping_SUBTOTAL_Units", <a><![CDATA[Air_Piping_SUBTOTAL_Units]]></a>.Value, "Mech Install^'Hours'!Q225", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:07 PM")
     AddProperty("6197", "Air_Piping_Total_Hours", <a><![CDATA[Air_Piping_Total_Hours]]></a>.Value, "Mech Install^'Hours'!S221", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/2/2025 12:22:18 PM")
-    AddProperty("6198", "Air_Piping_Tubing", <a><![CDATA[Air_Piping_Tubing]]></a>.Value, "Mech Install^'Hours'!O216", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 9:33:00 AM")
+    AddProperty("6198", "Air_Piping_Tubing", <a><![CDATA[Air_Piping_Tubing]]></a>.Value, "Mech Install^'Hours'!O216", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:56:45 AM")
     AddProperty("6200", "Bulk_Flow_Bottom_Guards_HRS", <a><![CDATA[Bulk_Flow_Bottom_Guards_HRS]]></a>.Value, "Mech Install^'Hours'!R312", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:39:14 AM")
     AddProperty("6201", "Bulk_Flow_Bottom_Guards_Metrics", <a><![CDATA[Bulk_Flow_Bottom_Guards_Metrics]]></a>.Value, "Mech Install^'Hours'!Q312", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/10/2025 2:44:01 PM")
     AddProperty("6202", "Bulk_Flow_Bottom_Guards_QTY_FT", <a><![CDATA[Bulk_Flow_Bottom_Guards_QTY_FT]]></a>.Value, "Mech Install^'Hours'!P312", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 9:40:05 AM")
@@ -9895,7 +9955,7 @@ Option Infer On
     AddProperty("6402", "HCAD_GravityTrailerLoader_Total_Units", <a><![CDATA[HCAD_Gravity Trailer Loader_Total_Units]]></a>.Value, "Mech Install^'Hours'!Q125", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:08 PM")
     AddProperty("6403", "HCAD_GravityTrailerLoader_Unloading_Hours", <a><![CDATA[HCAD_Gravity Trailer Loader_Unloading_Hours]]></a>.Value, "Mech Install^'Hours'!130", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/7/2025 3:56:48 AM")
     AddProperty("6404", "HCAD_GravityTrailerLoader_Unloading_Units", <a><![CDATA[HCAD_Gravity Trailer Loader_Unloading_Units]]></a>.Value, "Mech Install^'Hours'!Q130", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/8/2025 8:35:11 AM")
-    AddProperty("6405", "HCAD_Hanger_Seismic_Factor", <a><![CDATA[HCAD_Hanger_Seismic_Factor]]></a>.Value, "Mech Install^'Hours'!Q198", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/14/2025 10:16:46 AM")
+    AddProperty("6405", "HCAD_Hanger_Seismic_Factor", <a><![CDATA[HCAD_Hanger_Seismic_Factor]]></a>.Value, "Mech Install^'Hours'!Q198", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 10:03:14 AM")
     AddProperty("6406", "HCAD_Hanger_Total_Hours", <a><![CDATA[HCAD_Hanger_Total_Hours]]></a>.Value, "Mech Install^'Hours'!X207", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 12:00:42 PM")
     AddProperty("6407", "HCAD_Hanger_Total_Qty", <a><![CDATA[HCAD_Hanger_Total_Qty]]></a>.Value, "Mech Install^'Hours'!W207", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 11:59:29 AM")
     AddProperty("6408", "HCAD_Hanger_Type_A_Hours", <a><![CDATA[HCAD_Hanger_Type_A_Hours]]></a>.Value, "Mech Install^'Hours'!X195", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/7/2025 11:46:55 AM")
@@ -10151,17 +10211,17 @@ Option Infer On
     AddProperty("6638", "Hours_Misc_Chute_Style_1_Air", <a><![CDATA[Hours_Misc_Chute_Style_1_Air]]></a>.Value, "Mech Install^'Hours'!S288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:29:51 PM")
     AddProperty("6639", "Hours_Misc_Chute_Style_1_Dollars", <a><![CDATA[Hours_Misc_Chute_Style_1_Dollars]]></a>.Value, "Mech Install^'Hours'!P288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:30:08 PM")
     AddProperty("6640", "Hours_Misc_Chute_Style_1_Hours", <a><![CDATA[Hours_Misc_Chute_Style_1_Hours]]></a>.Value, "Mech Install^'Hours'!R288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:28:23 PM")
-    AddProperty("6641", "Hours_Misc_Chute_Style_1_Metric", <a><![CDATA[Hours_Misc_Chute_Style_1_Metric]]></a>.Value, "Mech Install^'Hours'!T288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:01:36 AM")
+    AddProperty("6641", "Hours_Misc_Chute_Style_1_Metric", <a><![CDATA[Hours_Misc_Chute_Style_1_Metric]]></a>.Value, "Mech Install^'Hours'!T288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 6:09:28 AM")
     AddProperty("6642", "Hours_Misc_Chute_Style_1_Qty", <a><![CDATA[Hours_Misc_Chute_Style_1_Qty]]></a>.Value, "Mech Install^'Hours'!Q288", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:31:10 PM")
     AddProperty("6643", "Hours_Misc_Chute_Style_2_Air", <a><![CDATA[Hours_Misc_Chute_Style_2_Air]]></a>.Value, "Mech Install^'Hours'!S289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:31:35 PM")
     AddProperty("6644", "Hours_Misc_Chute_Style_2_Dollars", <a><![CDATA[Hours_Misc_Chute_Style_2_Dollars]]></a>.Value, "Mech Install^'Hours'!P289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:31:52 PM")
     AddProperty("6645", "Hours_Misc_Chute_Style_2_Hours", <a><![CDATA[Hours_Misc_Chute_Style_2_Hours]]></a>.Value, "Mech Install^'Hours'!R289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:28:57 PM")
-    AddProperty("6646", "Hours_Misc_Chute_Style_2_Metric", <a><![CDATA[Hours_Misc_Chute_Style_2_Metric]]></a>.Value, "Mech Install^'Hours'!T289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:03:48 AM")
+    AddProperty("6646", "Hours_Misc_Chute_Style_2_Metric", <a><![CDATA[Hours_Misc_Chute_Style_2_Metric]]></a>.Value, "Mech Install^'Hours'!T289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 6:09:43 AM")
     AddProperty("6647", "Hours_Misc_Chute_Style_2_Qty", <a><![CDATA[Hours_Misc_Chute_Style_2_Qty]]></a>.Value, "Mech Install^'Hours'!Q289", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:32:37 PM")
     AddProperty("6648", "Hours_Misc_Chute_Style_3_Air", <a><![CDATA[Hours_Misc_Chute_Style_3_Air]]></a>.Value, "Mech Install^'Hours'!S290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:32:57 PM")
     AddProperty("6649", "Hours_Misc_Chute_Style_3_Dollars", <a><![CDATA[Hours_Misc_Chute_Style_3_Dollars]]></a>.Value, "Mech Install^'Hours'!P290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:33:17 PM")
     AddProperty("6650", "Hours_Misc_Chute_Style_3_Hours", <a><![CDATA[Hours_Misc_Chute_Style_3_Hours]]></a>.Value, "Mech Install^'Hours'!R290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:29:30 PM")
-    AddProperty("6651", "Hours_Misc_Chute_Style_3_Metric", <a><![CDATA[Hours_Misc_Chute_Style_3_Metric]]></a>.Value, "Mech Install^'Hours'!T290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:04:09 AM")
+    AddProperty("6651", "Hours_Misc_Chute_Style_3_Metric", <a><![CDATA[Hours_Misc_Chute_Style_3_Metric]]></a>.Value, "Mech Install^'Hours'!T290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 6:09:54 AM")
     AddProperty("6652", "Hours_Misc_Chute_Style_3_Qty", <a><![CDATA[Hours_Misc_Chute_Style_3_Qty]]></a>.Value, "Mech Install^'Hours'!Q290", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/8/2025 1:34:03 PM")
     AddProperty("6653", "Hours_Misc_Chute_Total_Air", <a><![CDATA[Hours_Misc_Chute_Total_Air]]></a>.Value, "Mech Install^'Hours'!S295", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:11:04 AM")
     AddProperty("6654", "Hours_Misc_Chute_Total_Hours", <a><![CDATA[Hours_Misc_Chute_Total_Hours]]></a>.Value, "Mech Install^'Hours'!R295", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:17:21 AM")
@@ -10606,63 +10666,6 @@ Option Infer On
     AddProperty("7064", "Plt_Cnvyr_Total_Footage", <a><![CDATA[Plt_Cnvyr_Total_Footage]]></a>.Value, "Mech Install^'Hours'!S385", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:43:42 AM")
     AddProperty("7065", "Plt_Cnvyr_Total_Hours", <a><![CDATA[Plt_Cnvyr_Total_Hours]]></a>.Value, "Mech Install^'Hours'!Q385", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 11:46:58 AM")
     AddProperty("7066", "Plt_Cnvyr_Unloading", <a><![CDATA[Plt_Cnvyr_Unloading]]></a>.Value, "Mech Install^'Hours'!Q341", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 3:50:59 PM")
-    AddProperty("9727", "PRD_Conv_Lead_Men_COST", <a><![CDATA[PRD_Conv_Lead_Men_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:21:14 PM")
-    AddProperty("9717", "PRD_Conv_Lead_Men_HRS", <a><![CDATA[PRD_Conv_Lead_Men_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:21:05 PM")
-    AddProperty("9723", "PRD_Conv_Lead_Men_RATE", <a><![CDATA[PRD_Conv_Lead_Men_RATE]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!J6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:04:12 PM")
-    AddProperty("9729", "PRD_Equipment_Rental_COST", <a><![CDATA[PRD_Equipment_Rental_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:07:10 PM")
-    AddProperty("9728", "PRD_Project_Support_COST", <a><![CDATA[PRD_Project_Support_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:06:44 PM")
-    AddProperty("9718", "PRD_Project_Support_HRS", <a><![CDATA[PRD_Project_Support_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 8:58:24 PM")
-    AddProperty("9724", "PRD_Project_Support_RATE", <a><![CDATA[PRD_Project_Support_RATE]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!J7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:04:39 PM")
-    AddProperty("9731", "PRD_Sbcntrct_Svcs_COST", <a><![CDATA[PRD_Sbcntrct_Svcs_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:08:10 PM")
-    AddProperty("9720", "PRD_Sbcntrct_Svcs_HRS", <a><![CDATA[PRD_Sbcntrct_Svcs_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:02:42 PM")
-    AddProperty("9732", "PRD_Sbcntrct_Svcs_HSE_COST", <a><![CDATA[PRD_Sbcntrct_Svcs_HSE_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:08:40 PM")
-    AddProperty("9721", "PRD_Sbcntrct_Svcs_HSE_HRS", <a><![CDATA[PRD_Sbcntrct_Svcs_HSE_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:03:10 PM")
-    AddProperty("9725", "PRD_Sbcntrct_Svcs_RATE", <a><![CDATA[PRD_Sbcntrct_Svcs_RATE]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!J10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:13:22 PM")
-    AddProperty("9726", "PRD_Superintendent_COST", <a><![CDATA[PRD_Superintendent_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:20:42 PM")
-    AddProperty("9716", "PRD_Superintendent_HRS", <a><![CDATA[PRD_Superintendent_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:20:33 PM")
-    AddProperty("9722", "PRD_Superintendent_RATE", <a><![CDATA[PRD_Superintendent_RATE]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!J5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:03:43 PM")
-    AddProperty("9730", "PRD_Travel_Expenses_COST", <a><![CDATA[PRD_Travel_Expenses_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:07:38 PM")
-    AddProperty("9719", "PRD_Travel_Expenses_HRS", <a><![CDATA[PRD_Travel_Expenses_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:01:36 PM")
-    AddProperty("9715", "Rollup__CP_Names", <a><![CDATA[Rollup__CP_Names]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 5:01:48 PM")
-    AddProperty("9570", "Rollup__Include_Stagnant_HRS", <a><![CDATA[Rollup__Include_Stagnant_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D28", "Boolean","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:41:17 PM")
-    AddProperty("9571", "Rollup__Labor_Type", <a><![CDATA[Rollup__Labor_Type]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D29", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:41:28 PM")
-    AddProperty("9563", "Rollup__Mech_Install_Total_COST", <a><![CDATA[Rollup__Mech_Install_Total_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:13:08 PM")
-    AddProperty("9564", "Rollup__Mech_Install_Total_HRS", <a><![CDATA[Rollup__Mech_Install_Total_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:13:17 PM")
-    AddProperty("9569", "Rollup__Total_Conveyor_COST_per_Footage", <a><![CDATA[Rollup__Total_Conveyor_COST_per_Footage]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:34:51 PM")
-    AddProperty("9567", "Rollup__Total_Conveyor_Footage", <a><![CDATA[Rollup__Total_Conveyor_Footage]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 8:38:33 PM")
-    AddProperty("9568", "Rollup__Total_Conveyor_HRS_per_Footage", <a><![CDATA[Rollup__Total_Conveyor_HRS_per_Footage]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:30:36 PM")
-    AddProperty("9577", "Rollup__Weeks_Comm", <a><![CDATA[Rollup__Weeks_Comm]]></a>.Value, "Mech Install^'Mech Inst Price Summary'A30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 8:30:58 PM")
-    AddProperty("9576", "Rollup__Weeks_Install", <a><![CDATA[Rollup__Weeks_Install]]></a>.Value, "Mech Install^'Mech Inst Price Summary'A29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 8:30:34 PM")
-    AddProperty("9574", "Rollup__Work_Week_HRS_per_Week", <a><![CDATA[Rollup__Work_Week_HRS_per_Week]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 8:29:35 PM")
-    AddProperty("9572", "Rollup__Work_Week_Type", <a><![CDATA[Rollup__Work_Week_Type]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D30", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:42:26 PM")
-    AddProperty("9559", "Rollup_Additional_Subcontractor_Services_COST", <a><![CDATA[Rollup_Additional_Subcontractor_Services_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:22:26 PM")
-    AddProperty("9551", "Rollup_Conv_Intelligrated_Installers_COST", <a><![CDATA[Rollup_Conv_Intelligrated_Installers_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:22:40 PM")
-    AddProperty("9538", "Rollup_Conv_Intelligrated_Installers_HRS", <a><![CDATA[Rollup_Conv_Intelligrated_Installers_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:22:55 PM")
-    AddProperty("9525", "Rollup_Conv_Intelligrated_Installers_UOM", <a><![CDATA[Rollup_Conv_Intelligrated_Installers_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:15:34 PM")
-    AddProperty("9550", "Rollup_Conv_Lead_Men_COST", <a><![CDATA[Rollup_Conv_Lead_Men_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:23:15 PM")
-    AddProperty("9537", "Rollup_Conv_Lead_Men_HRS", <a><![CDATA[Rollup_Conv_Lead_Men_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:23:32 PM")
-    AddProperty("9524", "Rollup_Conv_Lead_Men_UOM", <a><![CDATA[Rollup_Conv_Lead_Men_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:14:46 PM")
-    AddProperty("9554", "Rollup_Equipment_Rental_COST", <a><![CDATA[Rollup_Equipment_Rental_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E16", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:23:51 PM")
-    AddProperty("9549", "Rollup_Intelligrated_Installer_COST", <a><![CDATA[Rollup_Intelligrated_Installer_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:24:06 PM")
-    AddProperty("9536", "Rollup_Intelligrated_Installer_HRS", <a><![CDATA[Rollup_Intelligrated_Installer_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:24:22 PM")
-    AddProperty("9523", "Rollup_Intelligrated_Installer_UOM", <a><![CDATA[Rollup_Intelligrated_Installer_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:16:05 PM")
-    AddProperty("9560", "Rollup_Miscellanious_COST", <a><![CDATA[Rollup_Miscellanious_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:24:39 PM")
-    AddProperty("9558", "Rollup_Permits_COST", <a><![CDATA[Rollup_Permits_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:24:55 PM")
-    AddProperty("9556", "Rollup_Prototype_COST", <a><![CDATA[Rollup_Prototype_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:16:39 PM")
-    AddProperty("9548", "Rollup_Superintendent_COST", <a><![CDATA[Rollup_Superintendent_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:25:16 PM")
-    AddProperty("9535", "Rollup_Superintendent_HRS", <a><![CDATA[Rollup_Superintendent_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:25:30 PM")
-    AddProperty("9522", "Rollup_Superintendent_UOM", <a><![CDATA[Rollup_Superintendent_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:17:10 PM")
-    AddProperty("9555", "Rollup_SuppliesConsumables_COST", <a><![CDATA[Rollup_SuppliesConsumables_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:25:50 PM")
-    AddProperty("9566", "Rollup_Tariff_Adder_COST", <a><![CDATA[Rollup_Tariff_Adder_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'B28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:22:43 PM")
-    AddProperty("9565", "Rollup_Tariff_Adder_Pecentage", <a><![CDATA[Rollup_Tariff_Adder_Pecentage]]></a>.Value, "Mech Install^'Mech Inst Price Summary'A27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 4:37:46 PM")
-    AddProperty("9714", "Rollup_Tariff_Adder_Pecentage_UI", <a><![CDATA[Rollup_Tariff_Adder_Pecentage_UI]]></a>.Value, "Mech Install^'Mech Inst Price Summary'A27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 4:35:09 PM")
-    AddProperty("9557", "Rollup_Travel_Expenses_COST", <a><![CDATA[Rollup_Travel_Expenses_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:26:15 PM")
-    AddProperty("9553", "Rollup_TTCB_Intelligrated_Installers_COST", <a><![CDATA[Rollup_TTCB_Intelligrated_Installers_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:26:29 PM")
-    AddProperty("9540", "Rollup_TTCB_Intelligrated_Installers_HRS", <a><![CDATA[Rollup_TTCB_Intelligrated_Installers_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:26:43 PM")
-    AddProperty("9527", "Rollup_TTCB_Intelligrated_Installers_UOM", <a><![CDATA[Rollup_TTCB_Intelligrated_Installers_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:18:08 PM")
-    AddProperty("9552", "Rollup_TTCB_Lead_Men_COST", <a><![CDATA[Rollup_TTCB_Lead_Men_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:27:00 PM")
-    AddProperty("9539", "Rollup_TTCB_Lead_Men_HRS", <a><![CDATA[Rollup_TTCB_Lead_Men_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 12:27:16 PM")
-    AddProperty("9526", "Rollup_TTCB_Lead_Men_UOM", <a><![CDATA[Rollup_TTCB_Lead_Men_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 9:18:53 PM")
     AddProperty("7067", "Singulated_Flow_Bottom_Guards_HRS", <a><![CDATA[Singulated_Flow_Bottom_Guards_HRS]]></a>.Value, "Mech Install^'Hours'!R320", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 10:00:56 AM")
     AddProperty("7068", "Singulated_Flow_Bottom_Guards_Metrics", <a><![CDATA[Singulated_Flow_Bottom_Guards_Metrics]]></a>.Value, "Mech Install^'Hours'!Q320", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/10/2025 2:52:48 PM")
     AddProperty("7069", "Singulated_Flow_Bottom_Guards_QTY_FT", <a><![CDATA[Singulated_Flow_Bottom_Guards_QTY_FT]]></a>.Value, "Mech Install^'Hours'!P320", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/9/2025 10:01:29 AM")
@@ -10705,17 +10708,76 @@ Option Infer On
     AddProperty("7106", "ZFA_Retrofit_Replace_Rollers_Hours", <a><![CDATA[ZFA_Retrofit_Replace_Rollers_Hours]]></a>.Value, "Mech Install^'Hours'!P392", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:17:04 PM")
     AddProperty("7107", "ZFA_Retrofit_Replace_Rollers_QTY", <a><![CDATA[ZFA_Retrofit_Replace_Rollers_QTY]]></a>.Value, "Mech Install^'Hours'!O392", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:18:01 PM")
     AddProperty("7108", "ZFA_Retrofit_Roller_Centers", <a><![CDATA[ZFA_Retrofit_Roller_Centers]]></a>.Value, "Mech Install^'Hours'!S392", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
-    AddProperty("7109", "ZFA_Retrofit_Roller_Count", <a><![CDATA[ZFA_Retrofit_Roller_Count]]></a>.Value, "Mech Install^'Hours'!S396", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:20:30 PM")
+    AddProperty("7109", "ZFA_Retrofit_Roller_Count", <a><![CDATA[ZFA_Retrofit_Roller_Count]]></a>.Value, "Mech Install^'Hours'!S396", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:20:36 AM")
     AddProperty("7110", "ZFA_Retrofit_Run_Air_Tubing_Hours", <a><![CDATA[ZFA_Retrofit_Run_Air_Tubing_Hours]]></a>.Value, "Mech Install^'Hours'!P393", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:10:27 PM")
     AddProperty("7111", "ZFA_Retrofit_Run_Air_Tubing_QTY", <a><![CDATA[ZFA_Retrofit_Run_Air_Tubing_QTY]]></a>.Value, "Mech Install^'Hours'!O389", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/11/2025 1:20:28 PM")
     AddProperty("7112", "ZFA_Retrofit_Total_hours_Hours", <a><![CDATA[ZFA_Retrofit_Total_hours_Hours]]></a>.Value, "Mech Install^'Hours'!P398", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:13:17 PM")
     AddProperty("7113", "ZFA_Retrofit_Total_hours_per_12_ft_Bed", <a><![CDATA[ZFA_Retrofit_Total_hours_per_12_ft_Bed]]></a>.Value, "Mech Install^'Hours'!Q398", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/15/2025 4:16:37 PM")
     AddProperty("7114", "ZFA_Retrofit_Zone_Length", <a><![CDATA[ZFA_Retrofit_Zone_Length]]></a>.Value, "Mech Install^'Hours'!S393", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:10 PM")
+    AddProperty("10602", "PRD_Base__Internal_Install_Sbcntrct_Svcs_COST", <a><![CDATA[PRD_Base__Internal_Install_Sbcntrct_Svcs_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K15", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:36:50 PM")
+    AddProperty("10601", "PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS", <a><![CDATA[PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I15", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:35:24 PM")
+    AddProperty("10582", "PRD_Base_Conv_Lead_Men_COST", <a><![CDATA[PRD_Base_Conv_Lead_Men_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K6", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:18:50 PM")
+    AddProperty("10583", "PRD_Base_Conv_Lead_Men_HRS", <a><![CDATA[PRD_Base_Conv_Lead_Men_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I6", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:19:51 PM")
+    AddProperty("10584", "PRD_Base_Conv_Lead_Men_RATE", <a><![CDATA[PRD_Base_Conv_Lead_Men_RATE]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!J6", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:20:43 PM")
+    AddProperty("10585", "PRD_Base_Equipment_Rental_COST", <a><![CDATA[PRD_Base_Equipment_Rental_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K8", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:21:22 PM")
+    AddProperty("10586", "PRD_Base_Project_Support_COST", <a><![CDATA[PRD_Base_Project_Support_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K7", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:22:13 PM")
+    AddProperty("10587", "PRD_Base_Project_Support_HRS", <a><![CDATA[PRD_Base_Project_Support_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I7", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:22:52 PM")
+    AddProperty("10588", "PRD_Base_Project_Support_RATE", <a><![CDATA[PRD_Base_Project_Support_RATE]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!J7", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:23:43 PM")
+    AddProperty("10589", "PRD_Base_Sbcntrct_Svcs_COST", <a><![CDATA[PRD_Base_Sbcntrct_Svcs_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K10", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:24:40 PM")
+    AddProperty("10590", "PRD_Base_Sbcntrct_Svcs_HRS", <a><![CDATA[PRD_Base_Sbcntrct_Svcs_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I10", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:25:19 PM")
+    AddProperty("10591", "PRD_Base_Sbcntrct_Svcs_HSE_COST", <a><![CDATA[PRD_Base_Sbcntrct_Svcs_HSE_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K11", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:26:03 PM")
+    AddProperty("10592", "PRD_Base_Sbcntrct_Svcs_HSE_HRS", <a><![CDATA[PRD_Base_Sbcntrct_Svcs_HSE_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I11", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:41:47 PM")
+    AddProperty("10593", "PRD_Base_Sbcntrct_Svcs_RATE", <a><![CDATA[PRD_Base_Sbcntrct_Svcs_RATE]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!J10", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:27:35 PM")
+    AddProperty("10594", "PRD_Base_Superintendent_COST", <a><![CDATA[PRD_Base_Superintendent_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K5", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:28:17 PM")
+    AddProperty("10595", "PRD_Base_Superintendent_HRS", <a><![CDATA[PRD_Base_Superintendent_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I5", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:28:56 PM")
+    AddProperty("10596", "PRD_Base_Superintendent_RATE", <a><![CDATA[PRD_Base_Superintendent_RATE]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!J5", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:29:38 PM")
+    AddProperty("10597", "PRD_Base_Travel_Expenses_COST", <a><![CDATA[PRD_Base_Travel_Expenses_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K9", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:30:21 PM")
+    AddProperty("10607", "PRD_Base_Travel_Expenses_HRS", <a><![CDATA[PRD_Base_Travel_Expenses_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I9", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 5:02:31 PM")
+    AddProperty("10606", "PRD_Option_Internal_Install_Sbcntrct_Svcs_COST", <a><![CDATA[PRD_Option_Internal_Install_Sbcntrct_Svcs_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K23", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:45:46 PM")
+    AddProperty("10605", "PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS", <a><![CDATA[PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I23", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:44:48 PM")
+    AddProperty("10604", "PRD_Option_Sbcntrct_Svcs_COST", <a><![CDATA[PRD_Option_Sbcntrct_Svcs_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!K19", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:38:34 PM")
+    AddProperty("10603", "PRD_Option_Sbcntrct_Svcs_HRS", <a><![CDATA[PRD_Option_Sbcntrct_Svcs_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'!I19", "Double","","Mech Install PRD","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 3:37:54 PM")
+    AddProperty("9715", "Rollup__CP_Names", <a><![CDATA[Rollup__CP_Names]]></a>.Value, "", "String","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:24:14 PM")
+    AddProperty("9570", "Rollup__Include_Stagnant_HRS", <a><![CDATA[Rollup__Include_Stagnant_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D28", "Boolean","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:24:26 PM")
+    AddProperty("9571", "Rollup__Labor_Type", <a><![CDATA[Rollup__Labor_Type]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D29", "String","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:50:31 PM")
+    AddProperty("9563", "Rollup__Mech_Install_Total_COST", <a><![CDATA[Rollup__Mech_Install_Total_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E23", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:24:41 PM")
+    AddProperty("9564", "Rollup__Mech_Install_Total_HRS", <a><![CDATA[Rollup__Mech_Install_Total_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D23", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:24:48 PM")
+    AddProperty("9569", "Rollup__Total_Conveyor_COST_per_Footage", <a><![CDATA[Rollup__Total_Conveyor_COST_per_Footage]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E26", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:24:56 PM")
+    AddProperty("9567", "Rollup__Total_Conveyor_Footage", <a><![CDATA[Rollup__Total_Conveyor_Footage]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C26", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:25:04 PM")
+    AddProperty("9568", "Rollup__Total_Conveyor_HRS_per_Footage", <a><![CDATA[Rollup__Total_Conveyor_HRS_per_Footage]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D26", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:25:10 PM")
+    AddProperty("9577", "Rollup__Weeks_Comm", <a><![CDATA[Rollup__Weeks_Comm]]></a>.Value, "Mech Install^'Mech Inst Price Summary'A30", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:25:19 PM")
+    AddProperty("9576", "Rollup__Weeks_Install", <a><![CDATA[Rollup__Weeks_Install]]></a>.Value, "Mech Install^'Mech Inst Price Summary'A29", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:25:25 PM")
+    AddProperty("9574", "Rollup__Work_Week_HRS_per_Week", <a><![CDATA[Rollup__Work_Week_HRS_per_Week]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E29", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:25:35 PM")
+    AddProperty("9572", "Rollup__Work_Week_Type", <a><![CDATA[Rollup__Work_Week_Type]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D30", "String","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:51:57 PM")
+    AddProperty("9559", "Rollup_Additional_Subcontractor_Services_COST", <a><![CDATA[Rollup_Additional_Subcontractor_Services_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E21", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 5:21:49 PM")
+    AddProperty("9551", "Rollup_Conv_Intelligrated_Installers_COST", <a><![CDATA[Rollup_Conv_Intelligrated_Installers_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E13", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:26:09 PM")
+    AddProperty("9538", "Rollup_Conv_Intelligrated_Installers_HRS", <a><![CDATA[Rollup_Conv_Intelligrated_Installers_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D13", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:26:16 PM")
+    AddProperty("9525", "Rollup_Conv_Intelligrated_Installers_UOM", <a><![CDATA[Rollup_Conv_Intelligrated_Installers_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C13", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:26:22 PM")
+    AddProperty("9550", "Rollup_Conv_Lead_Men_COST", <a><![CDATA[Rollup_Conv_Lead_Men_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E12", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:26:31 PM")
+    AddProperty("9537", "Rollup_Conv_Lead_Men_HRS", <a><![CDATA[Rollup_Conv_Lead_Men_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D11", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:26:38 PM")
+    AddProperty("9524", "Rollup_Conv_Lead_Men_UOM", <a><![CDATA[Rollup_Conv_Lead_Men_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C11", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:26:51 PM")
+    AddProperty("9554", "Rollup_Equipment_Rental_COST", <a><![CDATA[Rollup_Equipment_Rental_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E16", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:26:57 PM")
+    AddProperty("9549", "Rollup_Intelligrated_Installer_COST", <a><![CDATA[Rollup_Intelligrated_Installer_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E11", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:27:02 PM")
+    AddProperty("9536", "Rollup_Intelligrated_Installer_HRS", <a><![CDATA[Rollup_Intelligrated_Installer_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D11", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:27:08 PM")
+    AddProperty("9523", "Rollup_Intelligrated_Installer_UOM", <a><![CDATA[Rollup_Intelligrated_Installer_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C11", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:27:14 PM")
+    AddProperty("9560", "Rollup_Miscellanious_COST", <a><![CDATA[Rollup_Miscellanious_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E22", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 5:22:35 PM")
+    AddProperty("9558", "Rollup_Permits_COST", <a><![CDATA[Rollup_Permits_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E20", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 5:21:02 PM")
+    AddProperty("9556", "Rollup_Prototype_COST", <a><![CDATA[Rollup_Prototype_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E18", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:27:31 PM")
+    AddProperty("9548", "Rollup_Superintendent_COST", <a><![CDATA[Rollup_Superintendent_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E10", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:27:37 PM")
+    AddProperty("9535", "Rollup_Superintendent_HRS", <a><![CDATA[Rollup_Superintendent_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D10", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:27:43 PM")
+    AddProperty("9522", "Rollup_Superintendent_UOM", <a><![CDATA[Rollup_Superintendent_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C10", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:27:49 PM")
+    AddProperty("9555", "Rollup_SuppliesConsumables_COST", <a><![CDATA[Rollup_SuppliesConsumables_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E17", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:27:55 PM")
+    AddProperty("9566", "Rollup_Tariff_Adder_COST", <a><![CDATA[Rollup_Tariff_Adder_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'B28", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:28:01 PM")
+    AddProperty("9565", "Rollup_Tariff_Adder_Pecentage", <a><![CDATA[Rollup_Tariff_Adder_Pecentage]]></a>.Value, "Mech Install^'Mech Inst Price Summary'A27", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:28:07 PM")
+    AddProperty("9714", "Rollup_Tariff_Adder_Pecentage_UI", <a><![CDATA[Rollup_Tariff_Adder_Pecentage_UI]]></a>.Value, "Mech Install^'Mech Inst Price Summary'A27", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:28:13 PM")
+    AddProperty("9557", "Rollup_Travel_Expenses_COST", <a><![CDATA[Rollup_Travel_Expenses_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E19", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:28:19 PM")
+    AddProperty("9553", "Rollup_TTCB_Intelligrated_Installers_COST", <a><![CDATA[Rollup_TTCB_Intelligrated_Installers_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E15", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:28:26 PM")
+    AddProperty("9540", "Rollup_TTCB_Intelligrated_Installers_HRS", <a><![CDATA[Rollup_TTCB_Intelligrated_Installers_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D15", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:28:34 PM")
+    AddProperty("9527", "Rollup_TTCB_Intelligrated_Installers_UOM", <a><![CDATA[Rollup_TTCB_Intelligrated_Installers_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C15", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:28:51 PM")
+    AddProperty("9552", "Rollup_TTCB_Lead_Men_COST", <a><![CDATA[Rollup_TTCB_Lead_Men_COST]]></a>.Value, "Mech Install^'Mech Inst Price Summary'E14", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:30:03 PM")
+    AddProperty("9539", "Rollup_TTCB_Lead_Men_HRS", <a><![CDATA[Rollup_TTCB_Lead_Men_HRS]]></a>.Value, "Mech Install^'Mech Inst Price Summary'D14", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:30:11 PM")
+    AddProperty("9526", "Rollup_TTCB_Lead_Men_UOM", <a><![CDATA[Rollup_TTCB_Lead_Men_UOM]]></a>.Value, "Mech Install^'Mech Inst Price Summary'C14", "Double","","Mech Install Rollup","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 2:30:17 PM")
     AddProperty("6173", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 6:29:09 PM")
-    
-      AddValidValue("Rollup__Labor_Type")
-    
-      AddValidValue("Rollup__Work_Week_Type")
     
       oConnection = AddConnection("Mt_TTCB_Costing", <a><![CDATA[Mt_TTCB_Costing]]></a>.Value, "", "138", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/10/2025 8:42:27 PM")
       
@@ -10736,6 +10798,10 @@ Option Infer On
       oConnection = AddConnection("My_Intelligrated", <a><![CDATA[My_Intelligrated]]></a>.Value, "", "139", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/9/2025 8:09:53 PM")
       
         oConnection.AddVPF(389, "CAE_Conveyor_Costing")
+      
+      oConnection = AddConnection("My_System_Delta", <a><![CDATA[My_System_Delta]]></a>.Value, "", "198", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/17/2025 3:40:16 PM")
+      
+        oConnection.AddVPF(399, "CAE_Mech_Install_CP_Comp")
       
     End Sub
 
@@ -10790,7 +10856,7 @@ Option Infer On
           InitProperty("Add_Hours_Dollars_Subsystem_Efficiency_Hours", "5780", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 4:56:03 AM", "", "In Development",  0,16849)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Add_Hours_Dollars_Subsystem_Efficiency_Qty", "5781", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 5:14:41 AM", "", "In Development",  0,16853)
+          InitProperty("Add_Hours_Dollars_Subsystem_Efficiency_Qty", "5781", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 10:11:29 AM", "", "In Development",  0,19036)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Add_Hours_Dollars_Total_Dollars", "5782", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 8:57:39 AM", "", "In Development",  0,16857)
@@ -10802,40 +10868,40 @@ Option Infer On
           InitProperty("Add_Hours_Dollars_Total_Qty", "5784", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9053)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_112_inches_pipe", "5785", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:18:15 AM", "", "In Development",  0,16859)
+          InitProperty("Air_Piping_112_inches_pipe", "5785", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:55:10 AM", "", "In Development",  0,19024)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_12_inches_pipe", "5786", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:20:02 AM", "", "In Development",  0,16860)
+          InitProperty("Air_Piping_12_inches_pipe", "5786", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:54:54 AM", "", "In Development",  0,19023)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_212_inches_pipe", "5787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:21:05 AM", "", "In Development",  0,16861)
+          InitProperty("Air_Piping_212_inches_pipe", "5787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:55:30 AM", "", "In Development",  0,19025)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_3pipe", "5788", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:22:38 AM", "", "In Development",  0,16862)
+          InitProperty("Air_Piping_3pipe", "5788", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:54:47 AM", "", "In Development",  0,19022)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_78_inches_pipe", "5789", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:27:47 AM", "", "In Development",  0,16863)
+          InitProperty("Air_Piping_78_inches_pipe", "5789", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:55:39 AM", "", "In Development",  0,19026)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_AC", "5790", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:28:40 AM", "", "In Development",  0,16864)
+          InitProperty("Air_Piping_AC", "5790", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:59:05 AM", "", "In Development",  0,19031)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Air_Piping_CHAINLUB", "5791", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9060)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_Dryer", "5792", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:29:37 AM", "", "In Development",  0,16865)
+          InitProperty("Air_Piping_Dryer", "5792", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:56:14 AM", "", "In Development",  0,19029)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Air_Piping_Factor", "7657", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 6:50:45 PM", "", "In Development",  0,15191)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_FILTERREG", "5793", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:30:55 AM", "", "In Development",  0,16866)
+          InitProperty("Air_Piping_FILTERREG", "5793", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:55:59 AM", "", "In Development",  0,19027)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_RedAC", "5794", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:31:58 AM", "", "In Development",  0,16867)
+          InitProperty("Air_Piping_RedAC", "5794", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:56:06 AM", "", "In Development",  0,19028)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_SUBTOTAL", "5795", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:41:10 AM", "", "In Development",  0,16869)
+          InitProperty("Air_Piping_SUBTOTAL", "5795", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:37:16 AM", "", "In Development",  0,19021)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Air_Piping_SUBTOTAL_Hours", "5796", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:43:55 AM", "", "In Development",  0,16870)
@@ -10847,7 +10913,7 @@ Option Infer On
           InitProperty("Air_Piping_Total_Hours", "5798", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:10 PM", "", "In Development",  0,9067)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Air_Piping_Tubing", "5799", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 9:33:00 AM", "", "In Development",  0,16868)
+          InitProperty("Air_Piping_Tubing", "5799", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:56:45 AM", "", "In Development",  0,19030)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Bulk_Flow_Bottom_Guards_HRS", "5801", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/9/2025 9:39:14 AM", "", "In Development",  0,15618)
@@ -11471,7 +11537,7 @@ Option Infer On
           InitProperty("HCAD_GravityTrailerLoader_Unloading_Units", "6005", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/8/2025 8:35:11 AM", "", "In Development",  0,14289)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HCAD_Hanger_Seismic_Factor", "6006", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/14/2025 10:16:46 AM", "", "In Development",  0,16875)
+          InitProperty("HCAD_Hanger_Seismic_Factor", "6006", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 10:03:14 AM", "", "In Development",  0,19035)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HCAD_Hanger_Total_Hours", "6007", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/7/2025 12:00:42 PM", "", "In Development",  0,13260)
@@ -12239,7 +12305,7 @@ Option Infer On
           InitProperty("Hours_Misc_Chute_Style_1_Hours", "6241", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/8/2025 1:28:13 PM", "", "In Development",  0,14459)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Hours_Misc_Chute_Style_1_Metric", "6242", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:01:36 AM", "", "In Development",  0,17246)
+          InitProperty("Hours_Misc_Chute_Style_1_Metric", "6242", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 6:09:28 AM", "", "In Development",  0,18999)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Hours_Misc_Chute_Style_1_Qty", "6243", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9527)
@@ -12254,7 +12320,7 @@ Option Infer On
           InitProperty("Hours_Misc_Chute_Style_2_Hours", "6246", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/8/2025 1:28:57 PM", "", "In Development",  0,14460)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Hours_Misc_Chute_Style_2_Metric", "6247", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:03:48 AM", "", "In Development",  0,17247)
+          InitProperty("Hours_Misc_Chute_Style_2_Metric", "6247", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 6:09:43 AM", "", "In Development",  0,19000)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Hours_Misc_Chute_Style_2_Qty", "6248", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9532)
@@ -12269,7 +12335,7 @@ Option Infer On
           InitProperty("Hours_Misc_Chute_Style_3_Hours", "6251", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/8/2025 1:29:30 PM", "", "In Development",  0,14461)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Hours_Misc_Chute_Style_3_Metric", "6252", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 11:04:09 AM", "", "In Development",  0,17248)
+          InitProperty("Hours_Misc_Chute_Style_3_Metric", "6252", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 6:09:54 AM", "", "In Development",  0,19001)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Hours_Misc_Chute_Style_3_Qty", "6253", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:30 PM", "", "In Development",  0,9537)
@@ -13604,177 +13670,6 @@ Option Infer On
           InitProperty("Plt_Cnvyr_Unloading", "6667", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 3:50:59 PM", "", "In Development",  0,17434)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("PRD_Conv_Lead_Men_COST", "9306", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:21:14 PM", "", "In Development",  0,16017)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Conv_Lead_Men_HRS", "9296", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:21:05 PM", "", "In Development",  0,16016)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Conv_Lead_Men_RATE", "9302", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:03:51 PM", "", "In Development",  0,15713)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Equipment_Rental_COST", "9308", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:06:48 PM", "", "In Development",  0,15719)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Project_Support_COST", "9307", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:06:23 PM", "", "In Development",  0,15718)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Project_Support_HRS", "9297", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 8:58:24 PM", "", "In Development",  0,15708)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Project_Support_RATE", "9303", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:04:19 PM", "", "In Development",  0,15714)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Sbcntrct_Svcs_COST", "9310", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:07:44 PM", "", "In Development",  0,15721)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Sbcntrct_Svcs_HRS", "9299", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:02:06 PM", "", "In Development",  0,15710)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Sbcntrct_Svcs_HSE_COST", "9311", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:08:16 PM", "", "In Development",  0,15722)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Sbcntrct_Svcs_HSE_HRS", "9300", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:02:49 PM", "", "In Development",  0,15711)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Sbcntrct_Svcs_RATE", "9304", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:04:50 PM", "", "In Development",  0,15715)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Superintendent_COST", "9305", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:20:42 PM", "", "In Development",  0,16015)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Superintendent_HRS", "9295", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:20:33 PM", "", "In Development",  0,16014)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Superintendent_RATE", "9301", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:03:21 PM", "", "In Development",  0,15712)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Travel_Expenses_COST", "9309", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:07:17 PM", "", "In Development",  0,15720)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("PRD_Travel_Expenses_HRS", "9298", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 8:00:56 PM", "", "In Development",  0,15709)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__CP_Names", "9294", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 5:01:48 PM", "", "In Development",  0,15679)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Include_Stagnant_HRS", "9150", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:36:02 PM", "", "In Development",  0,15301)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Labor_Type", "9151", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:37:04 PM", "", "In Development",  0,15302)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Mech_Install_Total_COST", "9143", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:09:21 PM", "", "In Development",  0,15287)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Mech_Install_Total_HRS", "9144", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:11:41 PM", "", "In Development",  0,15289)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Total_Conveyor_COST_per_Footage", "9149", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:34:51 PM", "", "In Development",  0,15300)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Total_Conveyor_Footage", "9147", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 8:38:33 PM", "", "In Development",  0,16278)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Total_Conveyor_HRS_per_Footage", "9148", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:30:36 PM", "", "In Development",  0,15298)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Weeks_Comm", "9157", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 8:30:58 PM", "", "In Development",  0,16275)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Weeks_Install", "9156", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 8:30:34 PM", "", "In Development",  0,16274)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Work_Week_HRS_per_Week", "9154", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 8:29:35 PM", "", "In Development",  0,16273)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup__Work_Week_Type", "9152", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:42:26 PM", "", "In Development",  0,15306)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Additional_Subcontractor_Services_COST", "9139", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:22:26 PM", "", "In Development",  0,16018)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Conv_Intelligrated_Installers_COST", "9131", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:22:40 PM", "", "In Development",  0,16019)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Conv_Intelligrated_Installers_HRS", "9118", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:22:55 PM", "", "In Development",  0,16020)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Conv_Intelligrated_Installers_UOM", "9105", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:03:35 PM", "", "In Development",  0,15245)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Conv_Lead_Men_COST", "9130", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:23:15 PM", "", "In Development",  0,16021)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Conv_Lead_Men_HRS", "9117", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:23:32 PM", "", "In Development",  0,16022)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Conv_Lead_Men_UOM", "9104", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:04:24 PM", "", "In Development",  0,15247)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Equipment_Rental_COST", "9134", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:23:51 PM", "", "In Development",  0,16023)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Intelligrated_Installer_COST", "9129", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:24:06 PM", "", "In Development",  0,16024)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Intelligrated_Installer_HRS", "9116", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:24:22 PM", "", "In Development",  0,16025)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Intelligrated_Installer_UOM", "9103", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:04:50 PM", "", "In Development",  0,15248)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Miscellanious_COST", "9140", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:24:39 PM", "", "In Development",  0,16026)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Permits_COST", "9138", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:24:55 PM", "", "In Development",  0,16027)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Prototype_COST", "9136", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 7:59:19 PM", "", "In Development",  0,15239)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Superintendent_COST", "9128", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:25:16 PM", "", "In Development",  0,16028)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Superintendent_HRS", "9115", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:25:30 PM", "", "In Development",  0,16029)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Superintendent_UOM", "9102", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:06:27 PM", "", "In Development",  0,15252)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_SuppliesConsumables_COST", "9135", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:25:50 PM", "", "In Development",  0,16030)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Tariff_Adder_COST", "9146", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:22:43 PM", "", "In Development",  0,15293)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Tariff_Adder_Pecentage", "9145", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 4:37:46 PM", "", "In Development",  0,15678)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Tariff_Adder_Pecentage_UI", "9293", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 4:35:09 PM", "", "In Development",  0,15676)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_Travel_Expenses_COST", "9137", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:26:15 PM", "", "In Development",  0,16031)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_TTCB_Intelligrated_Installers_COST", "9133", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:26:29 PM", "", "In Development",  0,16032)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_TTCB_Intelligrated_Installers_HRS", "9120", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:26:43 PM", "", "In Development",  0,16033)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_TTCB_Intelligrated_Installers_UOM", "9107", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:07:31 PM", "", "In Development",  0,15255)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_TTCB_Lead_Men_COST", "9132", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:27:00 PM", "", "In Development",  0,16034)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_TTCB_Lead_Men_HRS", "9119", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:27:16 PM", "", "In Development",  0,16035)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Rollup_TTCB_Lead_Men_UOM", "9106", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:08:10 PM", "", "In Development",  0,15256)
-        End If
-            If Incontext("-1", ctx) Then
           InitProperty("Singulated_Flow_Bottom_Guards_HRS", "6668", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/9/2025 10:00:48 AM", "", "In Development",  0,15631)
         End If
             If Incontext("-1", ctx) Then
@@ -13901,7 +13796,7 @@ Option Infer On
           InitProperty("ZFA_Retrofit_Roller_Centers", "6709", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:57 PM", "", "In Development",  0,10425)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ZFA_Retrofit_Roller_Count", "6710", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:20:30 PM", "", "In Development",  0,17481)
+          InitProperty("ZFA_Retrofit_Roller_Count", "6710", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:20:36 AM", "", "In Development",  0,19017)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ZFA_Retrofit_Run_Air_Tubing_Hours", "6711", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/15/2025 4:10:27 PM", "", "In Development",  0,17476)
@@ -13918,6 +13813,195 @@ Option Infer On
             If Incontext("-1", ctx) Then
           InitProperty("ZFA_Retrofit_Zone_Length", "6715", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/1/2025 6:29:58 PM", "", "In Development",  0,10434)
         End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base__Internal_Install_Sbcntrct_Svcs_COST", "10172", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:36:50 PM", "", "In Development",  0,18888)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS", "10171", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:35:24 PM", "", "In Development",  0,18886)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Conv_Lead_Men_COST", "10152", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:18:50 PM", "", "In Development",  0,18866)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Conv_Lead_Men_HRS", "10153", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:19:51 PM", "", "In Development",  0,18867)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Conv_Lead_Men_RATE", "10154", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:20:43 PM", "", "In Development",  0,18868)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Equipment_Rental_COST", "10155", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:21:22 PM", "", "In Development",  0,18869)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Project_Support_COST", "10156", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:22:13 PM", "", "In Development",  0,18870)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Project_Support_HRS", "10157", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:22:52 PM", "", "In Development",  0,18871)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Project_Support_RATE", "10158", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:23:43 PM", "", "In Development",  0,18872)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Sbcntrct_Svcs_COST", "10159", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:24:40 PM", "", "In Development",  0,18873)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Sbcntrct_Svcs_HRS", "10160", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:25:19 PM", "", "In Development",  0,18874)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Sbcntrct_Svcs_HSE_COST", "10161", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:26:03 PM", "", "In Development",  0,18875)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Sbcntrct_Svcs_HSE_HRS", "10162", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:41:47 PM", "", "In Development",  0,18893)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Sbcntrct_Svcs_RATE", "10163", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:27:35 PM", "", "In Development",  0,18877)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Superintendent_COST", "10164", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:28:17 PM", "", "In Development",  0,18878)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Superintendent_HRS", "10165", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:28:56 PM", "", "In Development",  0,18879)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Superintendent_RATE", "10166", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:29:38 PM", "", "In Development",  0,18880)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Travel_Expenses_COST", "10167", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:30:21 PM", "", "In Development",  0,18881)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Base_Travel_Expenses_HRS", "10177", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 5:02:31 PM", "", "In Development",  0,18898)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Option_Internal_Install_Sbcntrct_Svcs_COST", "10176", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:45:46 PM", "", "In Development",  0,18896)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS", "10175", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:44:35 PM", "", "In Development",  0,18894)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Option_Sbcntrct_Svcs_COST", "10174", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:38:09 PM", "", "In Development",  0,18891)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Option_Sbcntrct_Svcs_HRS", "10173", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 3:37:54 PM", "", "In Development",  0,18890)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__CP_Names", "9294", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 5:01:48 PM", "", "In Development",  0,15679)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Include_Stagnant_HRS", "9150", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:36:02 PM", "", "In Development",  0,15301)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Labor_Type", "9151", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:50:31 PM", "", "In Development",  0,18928)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Mech_Install_Total_COST", "9143", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:09:21 PM", "", "In Development",  0,15287)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Mech_Install_Total_HRS", "9144", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:11:41 PM", "", "In Development",  0,15289)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Total_Conveyor_COST_per_Footage", "9149", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:34:51 PM", "", "In Development",  0,15300)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Total_Conveyor_Footage", "9147", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 8:38:33 PM", "", "In Development",  0,16278)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Total_Conveyor_HRS_per_Footage", "9148", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:30:36 PM", "", "In Development",  0,15298)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Weeks_Comm", "9157", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 8:30:58 PM", "", "In Development",  0,16275)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Weeks_Install", "9156", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 8:30:34 PM", "", "In Development",  0,16274)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Work_Week_HRS_per_Week", "9154", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 8:29:35 PM", "", "In Development",  0,16273)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup__Work_Week_Type", "9152", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:51:57 PM", "", "In Development",  0,18932)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Additional_Subcontractor_Services_COST", "9139", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 5:21:49 PM", "", "In Development",  0,18900)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Conv_Intelligrated_Installers_COST", "9131", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:22:40 PM", "", "In Development",  0,16019)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Conv_Intelligrated_Installers_HRS", "9118", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:22:55 PM", "", "In Development",  0,16020)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Conv_Intelligrated_Installers_UOM", "9105", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:03:35 PM", "", "In Development",  0,15245)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Conv_Lead_Men_COST", "9130", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:23:15 PM", "", "In Development",  0,16021)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Conv_Lead_Men_HRS", "9117", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:23:32 PM", "", "In Development",  0,16022)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Conv_Lead_Men_UOM", "9104", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:04:24 PM", "", "In Development",  0,15247)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Equipment_Rental_COST", "9134", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:23:51 PM", "", "In Development",  0,16023)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Intelligrated_Installer_COST", "9129", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:24:06 PM", "", "In Development",  0,16024)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Intelligrated_Installer_HRS", "9116", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:24:22 PM", "", "In Development",  0,16025)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Intelligrated_Installer_UOM", "9103", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:04:50 PM", "", "In Development",  0,15248)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Miscellanious_COST", "9140", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 5:22:35 PM", "", "In Development",  0,18901)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Permits_COST", "9138", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 5:21:02 PM", "", "In Development",  0,18899)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Prototype_COST", "9136", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 7:59:19 PM", "", "In Development",  0,15239)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Superintendent_COST", "9128", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:25:16 PM", "", "In Development",  0,16028)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Superintendent_HRS", "9115", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:25:30 PM", "", "In Development",  0,16029)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Superintendent_UOM", "9102", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:06:27 PM", "", "In Development",  0,15252)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_SuppliesConsumables_COST", "9135", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:25:50 PM", "", "In Development",  0,16030)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Tariff_Adder_COST", "9146", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 9:22:43 PM", "", "In Development",  0,15293)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Tariff_Adder_Pecentage", "9145", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 4:37:46 PM", "", "In Development",  0,15678)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Tariff_Adder_Pecentage_UI", "9293", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/9/2025 4:35:09 PM", "", "In Development",  0,15676)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_Travel_Expenses_COST", "9137", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:26:15 PM", "", "In Development",  0,16031)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_TTCB_Intelligrated_Installers_COST", "9133", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:26:29 PM", "", "In Development",  0,16032)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_TTCB_Intelligrated_Installers_HRS", "9120", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:26:43 PM", "", "In Development",  0,16033)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_TTCB_Intelligrated_Installers_UOM", "9107", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:07:31 PM", "", "In Development",  0,15255)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_TTCB_Lead_Men_COST", "9132", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:27:00 PM", "", "In Development",  0,16034)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_TTCB_Lead_Men_HRS", "9119", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/10/2025 12:27:16 PM", "", "In Development",  0,16035)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rollup_TTCB_Lead_Men_UOM", "9106", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 8:08:10 PM", "", "In Development",  0,15256)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -13929,14 +14013,6 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitValidValue("Rollup__Labor_Type_ValidValues", "9151", "-1", 15303)
-        End If
-            If Incontext("-1", ctx) Then
-          
-        InitValidValue("Rollup__Work_Week_Type_ValidValues", "9152", "-1", 15307)
-        End If
     End Sub
 
     '*****************************************************************************
@@ -13986,6 +14062,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitConnection("My_Intelligrated", "119", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/9/2025 8:09:53 PM", "", "In Development", "N",216)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_System_Delta", "178", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 3:40:16 PM", "", "In Development", "N",325)
         
           End If
         
@@ -14155,6 +14237,33 @@ End Select
       
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_My_Intelligrated_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_System_Delta_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:178; TYPE:PF
+        Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.Parent.Base_Options_Alternates_Delta(1)
+	Case Else
+		Result = Nothing
+End Select
+        '   END FORMULA; CON ID:178; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_My_System_Delta_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -14392,8 +14501,14 @@ Result = (1-Me.Add_Hours_Dollars_Subsystem_Efficiency_Qty)*Sum
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5781; TYPE:PF
-      Dim ConveyorCostingK50 As Double
-ConveyorCostingK50 = Me.My_Conveyor(1).Miscellaneous_System_Efficiency_Percentage
+      Dim ConveyorCostingK50 As Double	
+
+If Me.My_Conveyor.Quantity > 0 Then
+	ConveyorCostingK50 = Me.My_Conveyor(1).Miscellaneous_System_Efficiency_Percentage
+Else
+	ConveyorCostingK50 = 100
+End If
+
 Result = ConveyorCostingK50
       '   END FORMULA; PROP ID:5781; TYPE:PF
       Catch ex As Exception
@@ -14537,19 +14652,7 @@ Me.Hrs_Misc_Work_Stations_Hours
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5785; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB7 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB7 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB7
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5785; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_112_inches_pipe", ex.Message)
@@ -14572,19 +14675,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5786; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB9 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB9 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_Half_In_Pipe
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB9
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5786; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_12_inches_pipe", ex.Message)
@@ -14607,20 +14698,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5787; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB6 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB6 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe
-
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB6
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5787; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_212_inches_pipe", ex.Message)
@@ -14643,20 +14721,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5788; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB5 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB5 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe
-
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB5
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5788; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_3pipe", ex.Message)
@@ -14679,20 +14744,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5789; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB8 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB8 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe
-
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB8
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5789; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_78_inches_pipe", ex.Message)
@@ -14715,20 +14767,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5790; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB13 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB13 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_AC
-
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB13
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5790; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_AC", ex.Message)
@@ -14774,20 +14813,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5792; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB15 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB15 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Dryer
-
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB15
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5792; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_Dryer", ex.Message)
@@ -14833,20 +14859,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5793; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB12 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB12 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Filter_Reg
-
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB12
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5793; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_FILTERREG", ex.Message)
@@ -14869,20 +14882,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5794; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB14 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB14 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Red_AC
-
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB14
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5794; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_RedAC", ex.Message)
@@ -14905,14 +14905,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5795; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB17 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB17 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Costs
-
-Y2 = 1
+      Dim AirPipingM4 As Double = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
+Dim AirPipingB17 As Double = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Costs
+Dim Y2 As Double = 1
 
 If(AirPipingM4=Y2)
 	Result = AirPipingB17
@@ -15023,20 +15018,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5799; TYPE:PF
-      Dim AirPipingM4 As Double
-Dim AirPipingB11 As Double
-Dim Y2 As Double
-
-AirPipingM4 = Me.Parent.My_Air_Piping(1).MEI_AP_Air_Subsystem
-AirPipingB11 = Me.Parent.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Tubing
-
-Y2 = 1
-
-If(AirPipingM4=Y2)
-	Result = AirPipingB11
-Else
-	Result = 0
-End If
+      Result = 0
       '   END FORMULA; PROP ID:5799; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Air_Piping_Tubing", ex.Message)
@@ -21550,11 +21532,12 @@ Result = Me.HCAD_GravityTrailerLoader_Unloading_Units*MetricsI18
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6006; TYPE:PF
-      Dim ConveyorCostingI17 As Double
+      'Todo
+'Dim ConveyorCostingI17 As Double
+'ConveyorCostingI17 = Me.My_Conveyor(1).Factors_Seismic
 
-ConveyorCostingI17 = Me.My_Conveyor(1).Factors_Seismic
-
-Result = ConveyorCostingI17
+'Result = ConveyorCostingI17
+Result = 1
       '   END FORMULA; PROP ID:6006; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_HCAD_Hanger_Seismic_Factor", ex.Message)
@@ -29303,7 +29286,9 @@ Result = Me.HCAD_WheelDivert_Total_Footage/MetricsL14
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6242; TYPE:PF
-      Result = Me.Parent.My_Chute(1).MEI_Chutes_Style_1_Total_Hours_per_Chute
+      'Result = Me.Parent.My_Chute(1).MEI_Chutes_Style_1_Total_Hours_per_Chute
+'Result = Me.Parent.Chutes(1).Chute(1).MEI_Chutes_Style_1_Total_Hours_per_Chute
+Result = 0.0
       '   END FORMULA; PROP ID:6242; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Hours_Misc_Chute_Style_1_Metric", ex.Message)
@@ -29418,7 +29403,9 @@ Result = Me.HCAD_WheelDivert_Total_Footage/MetricsL14
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6247; TYPE:PF
-      Result = Me.Parent.My_Chute(1).MEI_Chutes_Style_2_Total_Hours_per_Chute
+      'Result = Me.Parent.My_Chute(1).MEI_Chutes_Style_2_Total_Hours_per_Chute
+'Result = Me.Parent.Chutes(1).Chute(1).MEI_Chutes_Style_2_Total_Hours_per_Chute
+Result = 0.0
       '   END FORMULA; PROP ID:6247; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Hours_Misc_Chute_Style_2_Metric", ex.Message)
@@ -29533,7 +29520,9 @@ Result = Me.HCAD_WheelDivert_Total_Footage/MetricsL14
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6252; TYPE:PF
-      Result = Me.Parent.My_Chute(1).MEI_Chutes_Style_3_Total_Hours_per_Chute
+      'Result = Me.Parent.My_Chute(1).MEI_Chutes_Style_3_Total_Hours_per_Chute
+'Result = Me.Parent.Chutes(1).Chute(1).MEI_Chutes_Style_3_Total_Hours_per_Chute
+Result = 0.0
       '   END FORMULA; PROP ID:6252; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Hours_Misc_Chute_Style_3_Metric", ex.Message)
@@ -41027,1573 +41016,6 @@ Me.Plt_Cnvyr_MISC_Transfer_Car_QTY
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_PRD_Conv_Lead_Men_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Conv_Lead_Men_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9306; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Me.My_Intelligrated(1).Lead_Person_Commissioning_Cost _
-			+ Me.My_Intelligrated(1).Lead_Person_Install_Support_Cost _
-			+ Me.My_Intelligrated(1).Lead_Person_Stagnant_Hours_Cost
-	Case Else
-		Result = 0
-End Select
-      '   END FORMULA; PROP ID:9306; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Conv_Lead_Men_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Conv_Lead_Men_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Conv_Lead_Men_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9296; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Me.My_Intelligrated(1).Lead_Person_Commissioning_Hours _
-			+ Me.My_Intelligrated(1).Lead_Person_Install_Support_Hours _
-			+ Me.My_Intelligrated(1).Lead_Person_Stagnant_Hours_Hours
-		Case Else
-			Result = 0
-	End Select
-      '   END FORMULA; PROP ID:9296; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Conv_Lead_Men_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Conv_Lead_Men_RATE() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Conv_Lead_Men_RATE").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9302; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9302; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Conv_Lead_Men_RATE", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Equipment_Rental_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Equipment_Rental_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9308; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9308; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Equipment_Rental_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Project_Support_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Project_Support_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9307; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9307; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Project_Support_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Project_Support_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Project_Support_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9297; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9297; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Project_Support_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Project_Support_RATE() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Project_Support_RATE").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9303; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9303; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Project_Support_RATE", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Sbcntrct_Svcs_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Sbcntrct_Svcs_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9310; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9310; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Sbcntrct_Svcs_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Sbcntrct_Svcs_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Sbcntrct_Svcs_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9299; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9299; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Sbcntrct_Svcs_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Sbcntrct_Svcs_HSE_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Sbcntrct_Svcs_HSE_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9311; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9311; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Sbcntrct_Svcs_HSE_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Sbcntrct_Svcs_HSE_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Sbcntrct_Svcs_HSE_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9300; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9300; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Sbcntrct_Svcs_HSE_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Sbcntrct_Svcs_RATE() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Sbcntrct_Svcs_RATE").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9304; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9304; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Sbcntrct_Svcs_RATE", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Superintendent_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Superintendent_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9305; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Me.My_Intelligrated(1).Superintendent_Commissioning_Cost _
-			+ Me.My_Intelligrated(1).Superintendent_Install_Support_Cost _
-			+ Me.My_Intelligrated(1).Superintendent_Stagnant_Hours_Cost
-		Case Else
-			Result = 0
-	End Select
-      '   END FORMULA; PROP ID:9305; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Superintendent_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Superintendent_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Superintendent_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9295; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Me.My_Intelligrated(1).Superintendent_Commissioning_Hours _
-			+ Me.My_Intelligrated(1).Superintendent_Install_Support_Hours _
-			+ Me.My_Intelligrated(1).Superintendent_Stagnant_Hours_Hours
-		Case Else
-			Result = 0
-	End Select
-      '   END FORMULA; PROP ID:9295; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Superintendent_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Superintendent_RATE() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Superintendent_RATE").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9301; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9301; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Superintendent_RATE", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Travel_Expenses_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Travel_Expenses_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9309; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9309; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Travel_Expenses_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_PRD_Travel_Expenses_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("PRD_Travel_Expenses_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9298; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9298; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Travel_Expenses_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__CP_Names() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__CP_Names").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9294; TYPE:PF
-      Result = ""
-
-If Me.Owner.Name = "Base_Options_Alternates"
-	Dim strRaw As String() = Me.DATA_Raw.Split("^")
-	Dim lst As New list(Of String)
-
-	For Each s As String In strRaw
-		Dim vals As String() = s.split(":")
-		If vals.length > 3 Then
-			If Not lst.Contains(vals(0)) Then
-				lst.Add(vals(0))
-			End If
-		End If
-	Next
-
-	For Each l As String In lst
-		Result &= l & "|"
-	Next
-	
-End If
-      '   END FORMULA; PROP ID:9294; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__CP_Names", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Include_Stagnant_HRS() As Boolean
-          Dim Result as Boolean
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Include_Stagnant_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9150; TYPE:PF
-      Result = False
-      '   END FORMULA; PROP ID:9150; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Include_Stagnant_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Labor_Type() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9151; TYPE:PF
-      Result = "Non-Union"
-      '   END FORMULA; PROP ID:9151; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Labor_Type", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Mech_Install_Total_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Mech_Install_Total_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9143; TYPE:PF
-      Result = Me.Rollup_Superintendent_COST + Me.Rollup_Intelligrated_Installer_COST + Me.Rollup_Equipment_Rental_COST + Me.Rollup_SuppliesConsumables_COST + Me.Rollup_Prototype_COST + Me.Rollup_Travel_Expenses_COST + Me.Rollup_Permits_COST + Me.Rollup_Additional_Subcontractor_Services_COST + me.Rollup_Miscellanious_COST
-      '   END FORMULA; PROP ID:9143; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Mech_Install_Total_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Mech_Install_Total_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Mech_Install_Total_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9144; TYPE:PF
-      Result = Me.Rollup_Superintendent_HRS + Me.Rollup_Intelligrated_Installer_HRS
-      '   END FORMULA; PROP ID:9144; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Mech_Install_Total_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Total_Conveyor_COST_per_Footage() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Total_Conveyor_COST_per_Footage").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9149; TYPE:PF
-      Result = Me.Rollup__Mech_Install_Total_COST / Me.Rollup__Total_Conveyor_Footage
-      '   END FORMULA; PROP ID:9149; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Total_Conveyor_COST_per_Footage", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Total_Conveyor_Footage() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Total_Conveyor_Footage").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9147; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Me.HCAD_With_Buyouts + math.ceiling(Me.Mt_TTCB_Costing(1).MEI_Adjust_Length_TTCB_Sorter * 3.28084)
-	Case Else
-		Result = 0
-End Select
-      '   END FORMULA; PROP ID:9147; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Total_Conveyor_Footage", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Total_Conveyor_HRS_per_Footage() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Total_Conveyor_HRS_per_Footage").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9148; TYPE:PF
-      Result = Me.Rollup__Mech_Install_Total_HRS / Me.Rollup__Total_Conveyor_Footage
-      '   END FORMULA; PROP ID:9148; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Total_Conveyor_HRS_per_Footage", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Weeks_Comm() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Weeks_Comm").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9157; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = math.Ceiling((Me.My_Conveyor(1).Schedule_End_Run_to_In_Level_5 - Me.My_Conveyor(1).Schedule_End_Mechanical_Install + 1) / 7)
-	Case Else
-		Result = 0
-End Select
-      '   END FORMULA; PROP ID:9157; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Weeks_Comm", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Weeks_Install() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Weeks_Install").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9156; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = math.Ceiling((Me.My_Conveyor(1).Schedule_End_Mechanical_Install - Me.My_Conveyor(1).Schedule_Start_Mechanical_Install + 1) / 7)
-	Case Else
-		Result = 0
-End Select
-      '   END FORMULA; PROP ID:9156; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Weeks_Install", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Work_Week_HRS_per_Week() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Work_Week_HRS_per_Week").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9154; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Me.My_Conveyor(1).Crew_Average_Hours_per_wk
-	Case Else
-		Result = 0
-End Select
-      '   END FORMULA; PROP ID:9154; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Work_Week_HRS_per_Week", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup__Work_Week_Type() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9152; TYPE:PF
-      Result = "1st Shift"
-      '   END FORMULA; PROP ID:9152; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Work_Week_Type", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Additional_Subcontractor_Services_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Additional_Subcontractor_Services_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9139; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Me.My_Conveyor(1).Additional_Subcontractor_Services_Cost
-	Case Else
-		Result = 0
-End Select
-      '   END FORMULA; PROP ID:9139; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Additional_Subcontractor_Services_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Conv_Intelligrated_Installers_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Conv_Intelligrated_Installers_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9131; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Installer_Commissioning_Support_Cost _
-				+ My_Conveyor(1).Installer_Demo_Cost _
-				+ My_Conveyor(1).Installer_Install_Cost _
-				+ My_Conveyor(1).Installer_Misc_Install_Cost _
-				+ My_Conveyor(1).Installer_Platforms_Grid_Catwalk_Cost _
-				+ My_Conveyor(1).Installer_Stagnant_Hours_Cost _
-				+ My_Conveyor(1).Installer_Working_Super_or_Lead_Deduct_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9131; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Intelligrated_Installers_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Conv_Intelligrated_Installers_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Conv_Intelligrated_Installers_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9118; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Installer_Commissioning_Support_Hours _
-				+ My_Conveyor(1).Installer_Demo_Hours _
-				+ My_Conveyor(1).Installer_Install_Hours _
-				+ My_Conveyor(1).Installer_Misc_Install_Hours _
-				+ My_Conveyor(1).Installer_Platforms_Grid_Catwalk_Hours _
-				+ My_Conveyor(1).Installer_Stagnant_Hours_Hours _
-				+ My_Conveyor(1).Installer_Working_Super_or_Lead_Deduct_Hours
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9118; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Intelligrated_Installers_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Conv_Intelligrated_Installers_UOM() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Conv_Intelligrated_Installers_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9105; TYPE:PF
-      Result = Me.Rollup_Conv_Intelligrated_Installers_COST / Me.Rollup_Conv_Intelligrated_Installers_HRS
-      '   END FORMULA; PROP ID:9105; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Intelligrated_Installers_UOM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Conv_Lead_Men_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Conv_Lead_Men_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9130; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Lead_Person_Commissioning_Cost _
- 				+ My_Conveyor(1).Lead_Person_Install_Support_Cost _
-				+ My_Conveyor(1).Lead_Person_Install_Support_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9130; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Lead_Men_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Conv_Lead_Men_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Conv_Lead_Men_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9117; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Lead_Person_Commissioning_Hours _
- 				+ My_Conveyor(1).Lead_Person_Install_Support_Hours _
-				+ My_Conveyor(1).Lead_Person_Install_Support_Hours
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9117; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Lead_Men_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Conv_Lead_Men_UOM() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Conv_Lead_Men_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9104; TYPE:PF
-      Result = Me.Rollup_Conv_Lead_Men_COST / Me.Rollup_Conv_Lead_Men_HRS
-      '   END FORMULA; PROP ID:9104; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Lead_Men_UOM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Equipment_Rental_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Equipment_Rental_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9134; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Equipment_Rental_Dumpsters_Cost _
-				+ My_Conveyor(1).Equipment_Rental_Porta_Johns_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Equipment_Rental_Dumpsters_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Equipment_Rental_Porta_Johns_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9134; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Equipment_Rental_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Intelligrated_Installer_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Intelligrated_Installer_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9129; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Lead_Person_Commissioning_Cost _
- 				+ My_Conveyor(1).Lead_Person_Install_Support_Cost _
-				+ My_Conveyor(1).Lead_Person_Install_Support_Cost _
-				+ My_Conveyor(1).Installer_Commissioning_Support_Cost _
-				+ My_Conveyor(1).Installer_Demo_Cost _
-				+ My_Conveyor(1).Installer_Install_Cost _
-				+ My_Conveyor(1).Installer_Misc_Install_Cost _
-				+ My_Conveyor(1).Installer_Platforms_Grid_Catwalk_Cost _
-				+ My_Conveyor(1).Installer_Stagnant_Hours_Cost _
-				+ My_Conveyor(1).Installer_Working_Super_or_Lead_Deduct_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Commissioning_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Install_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Stagnant_Hours_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Commissioning_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Demo_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Install_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Miscellaneous_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Stagnant_Hours_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9129; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Intelligrated_Installer_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Intelligrated_Installer_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Intelligrated_Installer_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9116; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Lead_Person_Commissioning_Hours _
- 				+ My_Conveyor(1).Lead_Person_Install_Support_Hours _
-				+ My_Conveyor(1).Lead_Person_Install_Support_Hours _
-				+ My_Conveyor(1).Installer_Commissioning_Support_Hours _
-				+ My_Conveyor(1).Installer_Demo_Hours _
-				+ My_Conveyor(1).Installer_Install_Hours _
-				+ My_Conveyor(1).Installer_Misc_Install_Hours _
-				+ My_Conveyor(1).Installer_Platforms_Grid_Catwalk_Hours _
-				+ My_Conveyor(1).Installer_Stagnant_Hours_Hours _
-				+ My_Conveyor(1).Installer_Working_Super_or_Lead_Deduct_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Commissioning_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Install_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Stagnant_Hours_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Commissioning_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Demo_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Install_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Miscellaneous_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Stagnant_Hours_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9116; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Intelligrated_Installer_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Intelligrated_Installer_UOM() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Intelligrated_Installer_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9103; TYPE:PF
-      Result = Me.Rollup_Intelligrated_Installer_COST / Me.Rollup_Intelligrated_Installer_HRS
-      '   END FORMULA; PROP ID:9103; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Intelligrated_Installer_UOM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Miscellanious_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Miscellanious_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9140; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Miscellaneous_Cost _
-				+ My_Conveyor(1).Administrative_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Miscellaneous_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Miscellaneous_Administrative_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9140; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Miscellanious_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Permits_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Permits_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9138; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Permits_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Permits_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9138; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Permits_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Prototype_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Prototype_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9136; TYPE:PF
-      result = 0.0
-      '   END FORMULA; PROP ID:9136; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Prototype_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Superintendent_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Superintendent_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9128; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Superintendent_Commissioning_Cost _
- 				+ My_Conveyor(1).Superintendent_Install_Support_Cost _
-				+ My_Conveyor(1).Superintendent_Stagnant_Hours_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Superintendent_Commissioning_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Superintendent_Install_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Superintendent_Stagnant_Hours_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9128; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Superintendent_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Superintendent_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Superintendent_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9115; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Superintendent_Commissioning_Hours _
- 				+ My_Conveyor(1).Superintendent_Install_Support_Hours _
-				+ My_Conveyor(1).Superintendent_Stagnant_Hours_Hours _
-				+ Mt_TTCB_Costing(1).MEI_Superintendent_Commissioning_Hours _
-				+ Mt_TTCB_Costing(1).MEI_Superintendent_Install_Hours _
-				+ Mt_TTCB_Costing(1).MEI_Superintendent_Stagnant_Hours_Hours
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9115; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Superintendent_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Superintendent_UOM() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Superintendent_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9102; TYPE:PF
-      Result = Me.Rollup_Superintendent_COST / Me.Rollup_Superintendent_HRS
-      '   END FORMULA; PROP ID:9102; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Superintendent_UOM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_SuppliesConsumables_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_SuppliesConsumables_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9135; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Supplies_Consumables_Hardware_Air_Piping_Cost _
-				+ My_Conveyor(1).Supplies_Consumables_Anchors_1USD_per_Cost _
-				+ My_Conveyor(1).Supplies_Consumables_All_Other_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Supplies_Consumables_HW_Air_Piping_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Supplies_Consumables_All_Other_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9135; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_SuppliesConsumables_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Tariff_Adder_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Tariff_Adder_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9146; TYPE:PF
-      Result = Me.Rollup_SuppliesConsumables_COST * Me.Rollup_Tariff_Adder_Pecentage
-      '   END FORMULA; PROP ID:9146; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Tariff_Adder_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Tariff_Adder_Pecentage() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Tariff_Adder_Pecentage").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9145; TYPE:PF
-      Result = Rollup_Tariff_Adder_Pecentage_UI / 100
-      '   END FORMULA; PROP ID:9145; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Tariff_Adder_Pecentage", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Tariff_Adder_Pecentage_UI() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Tariff_Adder_Pecentage_UI").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9293; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:9293; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Tariff_Adder_Pecentage_UI", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_Travel_Expenses_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_Travel_Expenses_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9137; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = My_Conveyor(1).Travel_Expense_Per_Diem_Cost _
-				+ My_Conveyor(1).Travel_Expense_Mobilization_Cost _
-				+ Mt_TTCB_Costing(1).MEI_Travel_Expense_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9137; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Travel_Expenses_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_TTCB_Intelligrated_Installers_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_TTCB_Intelligrated_Installers_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9133; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Mt_TTCB_Costing(1).MEI_TTCB_Installer_Commissioning_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Demo_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Install_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Miscellaneous_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Stagnant_Hours_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9133; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Intelligrated_Installers_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_TTCB_Intelligrated_Installers_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_TTCB_Intelligrated_Installers_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9120; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Mt_TTCB_Costing(1).MEI_TTCB_Installer_Commissioning_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Demo_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Install_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Miscellaneous_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Stagnant_Hours_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9120; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Intelligrated_Installers_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_TTCB_Intelligrated_Installers_UOM() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_TTCB_Intelligrated_Installers_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9107; TYPE:PF
-      Result = Me.Rollup_TTCB_Intelligrated_Installers_COST / Me.Rollup_TTCB_Intelligrated_Installers_HRS
-      '   END FORMULA; PROP ID:9107; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Intelligrated_Installers_UOM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_TTCB_Lead_Men_COST() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_TTCB_Lead_Men_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9132; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Commissioning_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Install_Cost _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Stagnant_Hours_Cost
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9132; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Lead_Men_COST", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_TTCB_Lead_Men_HRS() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_TTCB_Lead_Men_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9119; TYPE:PF
-      Select Case Me.Owner.Name
-	Case "Base_Options_Alternates"
-		Result = Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Commissioning_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Install_Hours _
-				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Stagnant_Hours_Hours
-			Case Else
-				Result = 0
-		End Select
-      '   END FORMULA; PROP ID:9119; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Lead_Men_HRS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Rollup_TTCB_Lead_Men_UOM() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup_TTCB_Lead_Men_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9106; TYPE:PF
-      Result = Me.Rollup_TTCB_Lead_Men_COST / Me.Rollup_TTCB_Lead_Men_HRS
-      '   END FORMULA; PROP ID:9106; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Lead_Men_UOM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Singulated_Flow_Bottom_Guards_HRS() As Double
           Dim Result as Double
       Dim ctx as Object
@@ -43620,7 +42042,12 @@ Me.Singulated_Flow_Bottom_Guards_HRS
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:6710; TYPE:PF
-      If(Me.ZFA_Retrofit_Replace_Rollers = "yes")
+      'If(Me.ZFA_Retrofit_Replace_Rollers = "yes")
+	'Result = (Me.ZFA_Retrofit_Bed_Footage*12)/Me.ZFA_Retrofit_Roller_Centers
+'Else
+	'Result = (Me.ZFA_Retrofit_Bed_Footage*12)/(Me.ZFA_Retrofit_Roller_Centers*0.3)
+'End If
+If(Me.ZFA_Retrofit_Replace_Rollers = True)
 	Result = (Me.ZFA_Retrofit_Bed_Footage*12)/Me.ZFA_Retrofit_Roller_Centers
 Else
 	Result = (Me.ZFA_Retrofit_Bed_Footage*12)/(Me.ZFA_Retrofit_Roller_Centers*0.3)
@@ -43753,6 +42180,1763 @@ End If
       '   END FORMULA; PROP ID:6715; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_ZFA_Retrofit_Zone_Length", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base__Internal_Install_Sbcntrct_Svcs_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base__Internal_Install_Sbcntrct_Svcs_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10172; TYPE:PF
+      Result = Me.Rollup__Mech_Install_Total_COST
+      '   END FORMULA; PROP ID:10172; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base__Internal_Install_Sbcntrct_Svcs_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10171; TYPE:PF
+      Result = me.Rollup__Mech_Install_Total_HRS
+      '   END FORMULA; PROP ID:10171; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Conv_Lead_Men_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Conv_Lead_Men_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10152; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Lead_Men_Total_Cost
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10152; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Conv_Lead_Men_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Conv_Lead_Men_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Conv_Lead_Men_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10153; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Lead_Men_Total_Hours
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10153; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Conv_Lead_Men_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Conv_Lead_Men_RATE() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Conv_Lead_Men_RATE").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10154; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Lead_Men_Rate
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10154; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Conv_Lead_Men_RATE", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Equipment_Rental_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Equipment_Rental_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10155; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = me.My_Intelligrated(1).Equipment_Rental_Total_Cost
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10155; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Equipment_Rental_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Project_Support_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Project_Support_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10156; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Project_Support_Total_Cost
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10156; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Project_Support_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Project_Support_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Project_Support_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10157; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Project_Support_Total_Hours
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10157; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Project_Support_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Project_Support_RATE() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Project_Support_RATE").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10158; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Project_Support_Rate
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10158; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Project_Support_RATE", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Sbcntrct_Svcs_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Sbcntrct_Svcs_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10159; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:10159; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Sbcntrct_Svcs_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Sbcntrct_Svcs_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Sbcntrct_Svcs_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10160; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:10160; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Sbcntrct_Svcs_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Sbcntrct_Svcs_HSE_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Sbcntrct_Svcs_HSE_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10161; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Additional_Subcontractor_Services_Total_Cost
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10161; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Sbcntrct_Svcs_HSE_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Sbcntrct_Svcs_HSE_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Sbcntrct_Svcs_HSE_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10162; TYPE:PF
+      Select Case Me.PRD_Base_Sbcntrct_Svcs_HSE_COST
+	Case 0
+		Result = 0
+	Case Else
+		Result = 1
+End Select
+      '   END FORMULA; PROP ID:10162; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Sbcntrct_Svcs_HSE_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Sbcntrct_Svcs_RATE() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Sbcntrct_Svcs_RATE").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10163; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:10163; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Sbcntrct_Svcs_RATE", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Superintendent_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Superintendent_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10164; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Superintendent_Total_Cost
+		Case Else
+			Result = 0
+	End Select
+      '   END FORMULA; PROP ID:10164; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Superintendent_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Superintendent_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Superintendent_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10165; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Superintendent_Total_Hours
+		Case Else
+			Result = 0
+	End Select
+      '   END FORMULA; PROP ID:10165; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Superintendent_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Superintendent_RATE() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Superintendent_RATE").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10166; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Superintendent_Rate
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10166; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Superintendent_RATE", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Travel_Expenses_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Travel_Expenses_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10167; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = me.My_Intelligrated(1).Travel_Expense_Total_Cost
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10167; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Travel_Expenses_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Base_Travel_Expenses_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Base_Travel_Expenses_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10177; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Intelligrated(1).Crew_Lead_Men_Mobilization_Count * me.My_Intelligrated(1).Crew_Installer_Headcount
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10177; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Base_Travel_Expenses_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Option_Internal_Install_Sbcntrct_Svcs_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Option_Internal_Install_Sbcntrct_Svcs_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10176; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_System_Delta(1).Rollup__Mech_Install_Total_COST
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10176; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Option_Internal_Install_Sbcntrct_Svcs_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10175; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_System_Delta(1).Rollup__Mech_Install_Total_HRS
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:10175; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Option_Sbcntrct_Svcs_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Option_Sbcntrct_Svcs_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10174; TYPE:PF
+      Result = 0
+      '   END FORMULA; PROP ID:10174; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Option_Sbcntrct_Svcs_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Option_Sbcntrct_Svcs_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Option_Sbcntrct_Svcs_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10173; TYPE:PF
+      Result = 0
+      '   END FORMULA; PROP ID:10173; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_PRD_Option_Sbcntrct_Svcs_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__CP_Names() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__CP_Names").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9294; TYPE:PF
+      Result = ""
+
+If Me.Owner.Name = "Base_Options_Alternates"
+	Dim strRaw As String() = Me.DATA_Raw.Split("^")
+	Dim lst As New list(Of String)
+
+	For Each s As String In strRaw
+		Dim vals As String() = s.split(":")
+		If vals.length > 3 Then
+			If Not lst.Contains(vals(0)) Then
+				lst.Add(vals(0))
+			End If
+		End If
+	Next
+
+	For Each l As String In lst
+		Result &= l & "|"
+	Next
+	
+End If
+      '   END FORMULA; PROP ID:9294; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__CP_Names", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Include_Stagnant_HRS() As Boolean
+          Dim Result as Boolean
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Include_Stagnant_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9150; TYPE:PF
+      Result = False
+      '   END FORMULA; PROP ID:9150; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Include_Stagnant_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Labor_Type() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9151; TYPE:PF
+      Result = me.Parent.Input_Labor_Type
+      '   END FORMULA; PROP ID:9151; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Labor_Type", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Mech_Install_Total_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Mech_Install_Total_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9143; TYPE:PF
+      Result = Me.Rollup_Superintendent_COST + Me.Rollup_Intelligrated_Installer_COST + Me.Rollup_Equipment_Rental_COST + Me.Rollup_SuppliesConsumables_COST + Me.Rollup_Prototype_COST + Me.Rollup_Travel_Expenses_COST + Me.Rollup_Permits_COST + Me.Rollup_Additional_Subcontractor_Services_COST + me.Rollup_Miscellanious_COST
+      '   END FORMULA; PROP ID:9143; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Mech_Install_Total_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Mech_Install_Total_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Mech_Install_Total_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9144; TYPE:PF
+      Result = Me.Rollup_Superintendent_HRS + Me.Rollup_Intelligrated_Installer_HRS
+      '   END FORMULA; PROP ID:9144; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Mech_Install_Total_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Total_Conveyor_COST_per_Footage() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Total_Conveyor_COST_per_Footage").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9149; TYPE:PF
+      Result = Me.Rollup__Mech_Install_Total_COST / Me.Rollup__Total_Conveyor_Footage
+      '   END FORMULA; PROP ID:9149; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Total_Conveyor_COST_per_Footage", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Total_Conveyor_Footage() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Total_Conveyor_Footage").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9147; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.HCAD_With_Buyouts + math.ceiling(Me.Mt_TTCB_Costing(1).MEI_Adjust_Length_TTCB_Sorter * 3.28084)
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:9147; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Total_Conveyor_Footage", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Total_Conveyor_HRS_per_Footage() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Total_Conveyor_HRS_per_Footage").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9148; TYPE:PF
+      Result = Me.Rollup__Mech_Install_Total_HRS / Me.Rollup__Total_Conveyor_Footage
+      '   END FORMULA; PROP ID:9148; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Total_Conveyor_HRS_per_Footage", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Weeks_Comm() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Weeks_Comm").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9157; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = math.Ceiling((Me.My_Conveyor(1).Schedule_End_Run_to_In_Level_5 - Me.My_Conveyor(1).Schedule_End_Mechanical_Install + 1) / 7)
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:9157; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Weeks_Comm", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Weeks_Install() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Weeks_Install").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9156; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = math.Ceiling((Me.My_Conveyor(1).Schedule_End_Mechanical_Install - Me.My_Conveyor(1).Schedule_Start_Mechanical_Install + 1) / 7)
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:9156; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Weeks_Install", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Work_Week_HRS_per_Week() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Work_Week_HRS_per_Week").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9154; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Conveyor(1).Crew_Average_Hours_per_wk
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:9154; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Work_Week_HRS_per_Week", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup__Work_Week_Type() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup__Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9152; TYPE:PF
+      Result = me.Parent.Input_Work_Week_Type
+      '   END FORMULA; PROP ID:9152; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Work_Week_Type", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Additional_Subcontractor_Services_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Additional_Subcontractor_Services_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9139; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Conveyor(1).Additional_Subcontractor_Services_Total_Cost
+	Case Else
+		Result = 0
+End Select
+      '   END FORMULA; PROP ID:9139; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Additional_Subcontractor_Services_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Conv_Intelligrated_Installers_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Conv_Intelligrated_Installers_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9131; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Installer_Commissioning_Support_Cost _
+				+ My_Conveyor(1).Installer_Demo_Cost _
+				+ My_Conveyor(1).Installer_Install_Cost _
+				+ My_Conveyor(1).Installer_Misc_Install_Cost _
+				+ My_Conveyor(1).Installer_Platforms_Grid_Catwalk_Cost _
+				+ My_Conveyor(1).Installer_Stagnant_Hours_Cost _
+				+ My_Conveyor(1).Installer_Working_Super_or_Lead_Deduct_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9131; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Intelligrated_Installers_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Conv_Intelligrated_Installers_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Conv_Intelligrated_Installers_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9118; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Installer_Commissioning_Support_Hours _
+				+ My_Conveyor(1).Installer_Demo_Hours _
+				+ My_Conveyor(1).Installer_Install_Hours _
+				+ My_Conveyor(1).Installer_Misc_Install_Hours _
+				+ My_Conveyor(1).Installer_Platforms_Grid_Catwalk_Hours _
+				+ My_Conveyor(1).Installer_Stagnant_Hours_Hours _
+				+ My_Conveyor(1).Installer_Working_Super_or_Lead_Deduct_Hours
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9118; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Intelligrated_Installers_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Conv_Intelligrated_Installers_UOM() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Conv_Intelligrated_Installers_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9105; TYPE:PF
+      Result = Me.Rollup_Conv_Intelligrated_Installers_COST / Me.Rollup_Conv_Intelligrated_Installers_HRS
+      '   END FORMULA; PROP ID:9105; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Intelligrated_Installers_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Conv_Lead_Men_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Conv_Lead_Men_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9130; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Lead_Person_Commissioning_Cost _
+ 				+ My_Conveyor(1).Lead_Person_Install_Support_Cost _
+				+ My_Conveyor(1).Lead_Person_Install_Support_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9130; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Lead_Men_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Conv_Lead_Men_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Conv_Lead_Men_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9117; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Lead_Person_Commissioning_Hours _
+ 				+ My_Conveyor(1).Lead_Person_Install_Support_Hours _
+				+ My_Conveyor(1).Lead_Person_Install_Support_Hours
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9117; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Lead_Men_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Conv_Lead_Men_UOM() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Conv_Lead_Men_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9104; TYPE:PF
+      Result = Me.Rollup_Conv_Lead_Men_COST / Me.Rollup_Conv_Lead_Men_HRS
+      '   END FORMULA; PROP ID:9104; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Conv_Lead_Men_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Equipment_Rental_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Equipment_Rental_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9134; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Equipment_Rental_Dumpsters_Cost _
+				+ My_Conveyor(1).Equipment_Rental_Porta_Johns_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Equipment_Rental_Dumpsters_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Equipment_Rental_Porta_Johns_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9134; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Equipment_Rental_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Intelligrated_Installer_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Intelligrated_Installer_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9129; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Lead_Person_Commissioning_Cost _
+ 				+ My_Conveyor(1).Lead_Person_Install_Support_Cost _
+				+ My_Conveyor(1).Lead_Person_Install_Support_Cost _
+				+ My_Conveyor(1).Installer_Commissioning_Support_Cost _
+				+ My_Conveyor(1).Installer_Demo_Cost _
+				+ My_Conveyor(1).Installer_Install_Cost _
+				+ My_Conveyor(1).Installer_Misc_Install_Cost _
+				+ My_Conveyor(1).Installer_Platforms_Grid_Catwalk_Cost _
+				+ My_Conveyor(1).Installer_Stagnant_Hours_Cost _
+				+ My_Conveyor(1).Installer_Working_Super_or_Lead_Deduct_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Commissioning_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Install_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Stagnant_Hours_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Commissioning_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Demo_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Install_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Miscellaneous_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Stagnant_Hours_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9129; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Intelligrated_Installer_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Intelligrated_Installer_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Intelligrated_Installer_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9116; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Lead_Person_Commissioning_Hours _
+ 				+ My_Conveyor(1).Lead_Person_Install_Support_Hours _
+				+ My_Conveyor(1).Lead_Person_Install_Support_Hours _
+				+ My_Conveyor(1).Installer_Commissioning_Support_Hours _
+				+ My_Conveyor(1).Installer_Demo_Hours _
+				+ My_Conveyor(1).Installer_Install_Hours _
+				+ My_Conveyor(1).Installer_Misc_Install_Hours _
+				+ My_Conveyor(1).Installer_Platforms_Grid_Catwalk_Hours _
+				+ My_Conveyor(1).Installer_Stagnant_Hours_Hours _
+				+ My_Conveyor(1).Installer_Working_Super_or_Lead_Deduct_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Commissioning_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Install_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Stagnant_Hours_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Commissioning_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Demo_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Install_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Miscellaneous_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Stagnant_Hours_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9116; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Intelligrated_Installer_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Intelligrated_Installer_UOM() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Intelligrated_Installer_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9103; TYPE:PF
+      Result = Me.Rollup_Intelligrated_Installer_COST / Me.Rollup_Intelligrated_Installer_HRS
+      '   END FORMULA; PROP ID:9103; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Intelligrated_Installer_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Miscellanious_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Miscellanious_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9140; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Conveyor(1).Miscellaneous_Total_Cost _
+				+ My_Conveyor(1).Administrative_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Miscellaneous_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Miscellaneous_Administrative_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9140; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Miscellanious_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Permits_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Permits_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9138; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Me.My_Conveyor(1).Permits_Total_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Permits_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9138; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Permits_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Prototype_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Prototype_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9136; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:9136; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Prototype_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Superintendent_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Superintendent_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9128; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Superintendent_Commissioning_Cost _
+ 				+ My_Conveyor(1).Superintendent_Install_Support_Cost _
+				+ My_Conveyor(1).Superintendent_Stagnant_Hours_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Superintendent_Commissioning_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Superintendent_Install_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Superintendent_Stagnant_Hours_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9128; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Superintendent_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Superintendent_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Superintendent_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9115; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Superintendent_Commissioning_Hours _
+ 				+ My_Conveyor(1).Superintendent_Install_Support_Hours _
+				+ My_Conveyor(1).Superintendent_Stagnant_Hours_Hours _
+				+ Mt_TTCB_Costing(1).MEI_Superintendent_Commissioning_Hours _
+				+ Mt_TTCB_Costing(1).MEI_Superintendent_Install_Hours _
+				+ Mt_TTCB_Costing(1).MEI_Superintendent_Stagnant_Hours_Hours
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9115; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Superintendent_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Superintendent_UOM() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Superintendent_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9102; TYPE:PF
+      Result = Me.Rollup_Superintendent_COST / Me.Rollup_Superintendent_HRS
+      '   END FORMULA; PROP ID:9102; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Superintendent_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_SuppliesConsumables_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_SuppliesConsumables_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9135; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Supplies_Consumables_Hardware_Air_Piping_Cost _
+				+ My_Conveyor(1).Supplies_Consumables_Anchors_1USD_per_Cost _
+				+ My_Conveyor(1).Supplies_Consumables_All_Other_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Supplies_Consumables_HW_Air_Piping_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Supplies_Consumables_All_Other_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9135; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_SuppliesConsumables_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Tariff_Adder_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Tariff_Adder_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9146; TYPE:PF
+      Result = Me.Rollup_SuppliesConsumables_COST * Me.Rollup_Tariff_Adder_Pecentage
+      '   END FORMULA; PROP ID:9146; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Tariff_Adder_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Tariff_Adder_Pecentage() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Tariff_Adder_Pecentage").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9145; TYPE:PF
+      Result = Rollup_Tariff_Adder_Pecentage_UI / 100
+      '   END FORMULA; PROP ID:9145; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Tariff_Adder_Pecentage", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Tariff_Adder_Pecentage_UI() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Tariff_Adder_Pecentage_UI").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9293; TYPE:PF
+      Result = 0.0
+      '   END FORMULA; PROP ID:9293; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Tariff_Adder_Pecentage_UI", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_Travel_Expenses_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_Travel_Expenses_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9137; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = My_Conveyor(1).Travel_Expense_Per_Diem_Cost _
+				+ My_Conveyor(1).Travel_Expense_Mobilization_Cost _
+				+ Mt_TTCB_Costing(1).MEI_Travel_Expense_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9137; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_Travel_Expenses_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_TTCB_Intelligrated_Installers_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_TTCB_Intelligrated_Installers_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9133; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Mt_TTCB_Costing(1).MEI_TTCB_Installer_Commissioning_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Demo_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Install_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Miscellaneous_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Platforms_Grid_Catwalk_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Stagnant_Hours_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9133; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Intelligrated_Installers_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_TTCB_Intelligrated_Installers_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_TTCB_Intelligrated_Installers_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9120; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Mt_TTCB_Costing(1).MEI_TTCB_Installer_Commissioning_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Demo_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Install_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Miscellaneous_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Platforms_Grid_Catwalk_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_Stagnant_Hours_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Installer_WorkingSuper_LeadDeduct_Hours
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9120; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Intelligrated_Installers_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_TTCB_Intelligrated_Installers_UOM() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_TTCB_Intelligrated_Installers_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9107; TYPE:PF
+      Result = Me.Rollup_TTCB_Intelligrated_Installers_COST / Me.Rollup_TTCB_Intelligrated_Installers_HRS
+      '   END FORMULA; PROP ID:9107; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Intelligrated_Installers_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_TTCB_Lead_Men_COST() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_TTCB_Lead_Men_COST").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9132; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Commissioning_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Install_Cost _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Stagnant_Hours_Cost
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9132; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Lead_Men_COST", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_TTCB_Lead_Men_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_TTCB_Lead_Men_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9119; TYPE:PF
+      Select Case Me.Owner.Name
+	Case "Base_Options_Alternates"
+		Result = Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Commissioning_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Install_Hours _
+				+ Mt_TTCB_Costing(1).MEI_TTCB_Lead_Person_Stagnant_Hours_Hours
+			Case Else
+				Result = 0
+		End Select
+      '   END FORMULA; PROP ID:9119; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Lead_Men_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rollup_TTCB_Lead_Men_UOM() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rollup_TTCB_Lead_Men_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9106; TYPE:PF
+      Result = Me.Rollup_TTCB_Lead_Men_COST / Me.Rollup_TTCB_Lead_Men_HRS
+      '   END FORMULA; PROP ID:9106; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup_TTCB_Lead_Men_UOM", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -68693,519 +68877,6 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_PRD_Conv_Lead_Men_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Conv_Lead_Men_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Conv_Lead_Men_RATE_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Equipment_Rental_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Project_Support_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Project_Support_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Project_Support_RATE_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_HSE_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_HSE_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_RATE_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Superintendent_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Superintendent_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Superintendent_RATE_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Travel_Expenses_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Travel_Expenses_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__CP_Names_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Include_Stagnant_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Labor_Type_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Mech_Install_Total_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Mech_Install_Total_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Total_Conveyor_COST_per_Footage_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Total_Conveyor_Footage_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Total_Conveyor_HRS_per_Footage_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Weeks_Comm_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Weeks_Install_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Work_Week_HRS_per_Week_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Work_Week_Type_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Additional_Subcontractor_Services_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Intelligrated_Installers_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Intelligrated_Installers_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Intelligrated_Installers_UOM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Lead_Men_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Lead_Men_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Lead_Men_UOM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Equipment_Rental_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Intelligrated_Installer_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Intelligrated_Installer_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Intelligrated_Installer_UOM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Miscellanious_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Permits_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Prototype_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Superintendent_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Superintendent_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Superintendent_UOM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_SuppliesConsumables_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Tariff_Adder_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Tariff_Adder_Pecentage_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Tariff_Adder_Pecentage_UI_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Travel_Expenses_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_UOM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Lead_Men_COST_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Lead_Men_HRS_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Lead_Men_UOM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Singulated_Flow_Bottom_Guards_HRS_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -69630,6 +69301,573 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_ZFA_Retrofit_Zone_Length_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base__Internal_Install_Sbcntrct_Svcs_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Conv_Lead_Men_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Conv_Lead_Men_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Conv_Lead_Men_RATE_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Equipment_Rental_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Project_Support_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Project_Support_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Project_Support_RATE_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_HSE_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_HSE_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_RATE_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Superintendent_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Superintendent_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Superintendent_RATE_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Travel_Expenses_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Travel_Expenses_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Option_Internal_Install_Sbcntrct_Svcs_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Option_Sbcntrct_Svcs_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Option_Sbcntrct_Svcs_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__CP_Names_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Include_Stagnant_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Labor_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Mech_Install_Total_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Mech_Install_Total_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Total_Conveyor_COST_per_Footage_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Total_Conveyor_Footage_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Total_Conveyor_HRS_per_Footage_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Weeks_Comm_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Weeks_Install_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Work_Week_HRS_per_Week_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Work_Week_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Additional_Subcontractor_Services_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Intelligrated_Installers_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Intelligrated_Installers_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Intelligrated_Installers_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Lead_Men_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Lead_Men_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Lead_Men_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Equipment_Rental_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Intelligrated_Installer_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Intelligrated_Installer_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Intelligrated_Installer_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Miscellanious_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Permits_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Prototype_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Superintendent_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Superintendent_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Superintendent_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_SuppliesConsumables_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Tariff_Adder_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Tariff_Adder_Pecentage_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Tariff_Adder_Pecentage_UI_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Travel_Expenses_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Lead_Men_COST_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Lead_Men_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Lead_Men_UOM_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -78152,519 +78390,6 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_PRD_Conv_Lead_Men_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Conv_Lead_Men_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Conv_Lead_Men_RATE_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Equipment_Rental_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Project_Support_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Project_Support_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Project_Support_RATE_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_HSE_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_HSE_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Sbcntrct_Svcs_RATE_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Superintendent_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Superintendent_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Superintendent_RATE_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Travel_Expenses_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Travel_Expenses_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__CP_Names_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Include_Stagnant_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Labor_Type_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Mech_Install_Total_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Mech_Install_Total_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Total_Conveyor_COST_per_Footage_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Total_Conveyor_Footage_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Total_Conveyor_HRS_per_Footage_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Weeks_Comm_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Weeks_Install_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Work_Week_HRS_per_Week_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup__Work_Week_Type_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Additional_Subcontractor_Services_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Intelligrated_Installers_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Intelligrated_Installers_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Intelligrated_Installers_UOM_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Lead_Men_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Lead_Men_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Conv_Lead_Men_UOM_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Equipment_Rental_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Intelligrated_Installer_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Intelligrated_Installer_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Intelligrated_Installer_UOM_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Miscellanious_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Permits_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Prototype_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Superintendent_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Superintendent_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Superintendent_UOM_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_SuppliesConsumables_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Tariff_Adder_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Tariff_Adder_Pecentage_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Tariff_Adder_Pecentage_UI_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_Travel_Expenses_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_UOM_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Lead_Men_COST_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Lead_Men_HRS_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Rollup_TTCB_Lead_Men_UOM_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Singulated_Flow_Bottom_Guards_HRS_USERCHANGE() as Boolean
       Return True
       End Function
@@ -79097,23 +78822,8 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Rollup__Labor_Type_ValidValues() as Rulestream.Kernel.ValidValues
-      
-      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9151; TYPE:VV
-      result = MakeValidValues(Array("Non-Union", "Union"))
-      '   END FORMULA; PROP ID:9151; TYPE:VV
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Labor_Type_ValidValues", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
+      Public Function Formula_PRD_Base__Internal_Install_Sbcntrct_Svcs_COST_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************
@@ -79121,23 +78831,557 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Rollup__Work_Week_Type_ValidValues() as Rulestream.Kernel.ValidValues
-      
-      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Rollup__Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9152; TYPE:VV
-      Result = MakeValidValues(Array("1st Shift", "2nd Shift", "3rd Shift", "24/7", "Weekend Only"))
-      '   END FORMULA; PROP ID:9152; TYPE:VV
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_CP_Comp.Formula_Rollup__Work_Week_Type_ValidValues", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
+      Public Function Formula_PRD_Base__Internal_Install_Sbcntrct_Svcs_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Conv_Lead_Men_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Conv_Lead_Men_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Conv_Lead_Men_RATE_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Equipment_Rental_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Project_Support_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Project_Support_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Project_Support_RATE_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_HSE_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_HSE_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Sbcntrct_Svcs_RATE_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Superintendent_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Superintendent_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Superintendent_RATE_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Travel_Expenses_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Base_Travel_Expenses_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Option_Internal_Install_Sbcntrct_Svcs_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Option_Internal_Install_Sbcntrct_Svcs_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Option_Sbcntrct_Svcs_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Option_Sbcntrct_Svcs_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__CP_Names_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Include_Stagnant_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Labor_Type_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Mech_Install_Total_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Mech_Install_Total_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Total_Conveyor_COST_per_Footage_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Total_Conveyor_Footage_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Total_Conveyor_HRS_per_Footage_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Weeks_Comm_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Weeks_Install_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Work_Week_HRS_per_Week_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup__Work_Week_Type_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Additional_Subcontractor_Services_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Intelligrated_Installers_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Intelligrated_Installers_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Intelligrated_Installers_UOM_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Lead_Men_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Lead_Men_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Conv_Lead_Men_UOM_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Equipment_Rental_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Intelligrated_Installer_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Intelligrated_Installer_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Intelligrated_Installer_UOM_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Miscellanious_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Permits_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Prototype_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Superintendent_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Superintendent_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Superintendent_UOM_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_SuppliesConsumables_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Tariff_Adder_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Tariff_Adder_Pecentage_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Tariff_Adder_Pecentage_UI_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_Travel_Expenses_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Intelligrated_Installers_UOM_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Lead_Men_COST_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Lead_Men_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rollup_TTCB_Lead_Men_UOM_USERCHANGE() as Boolean
+      Return True
       End Function
     
 

@@ -3,7 +3,7 @@ Option Explicit On
 Option Infer On
 
 '$ Application: IGSEST
-'$ PartFamily: IGS_Proposal_Data
+'$ PartFamily: APC_Setup_Sort_Equip_Option
 '$ GenerateDate: 07/18/2025 13:15:19
 
     Imports Microsoft.VisualBasic
@@ -24,7 +24,7 @@ Option Infer On
     Imports IGSEST.swMateAlign_e
     Imports IGSEST.severity
 
-    Public Class [IGS_Proposal_Data]
+    Public Class [APC_Setup_Sort_Equip_Option]
     
     Inherits RuleStream.Kernel.Part
     Implements RuleStream.IRsPartFormulas
@@ -45,7 +45,7 @@ Option Infer On
     '*                                                                       *
     '*************************************************************************
 
-    Private this as IGS_Proposal_Data = me
+    Private this as APC_Setup_Sort_Equip_Option = me
 
     #Region " IRsPartFormulas Implementation "
 
@@ -147,21 +147,12 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
-          Public Shadows Property [DisplayName]() As String
+          Public Property [User_UOM_System]() As String
       Get
-      Return Properties("DisplayName").Value
+      Return Properties("User_UOM_System").Value
       End Get
       Set(ByVal Value As String)
-      Properties("DisplayName").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Proposal_Name]() As String
-      Get
-      Return Properties("Proposal_Name").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Proposal_Name").CalculatedValue = Value
+      Properties("User_UOM_System").CalculatedValue = Value
       End Set
       End Property
     
@@ -174,9 +165,9 @@ Option Infer On
       End Set
       End Property
     
-      Public ReadOnly Property [PRD_Document]() As Rulestream.Kernel.Subpart
+      Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
       Get
-      Return Subparts("PRD_Document")
+      Return Connections("My_PRD")
       End Get
       End Property
     
@@ -194,14 +185,15 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Proposal_Data", <a><![CDATA[IGS_Proposal_Data]]></a>.Value, 375, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/18/2025 12:55:19")
-    AddProperty("10651", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 12:55:19 PM")
-    AddProperty("4824", "Proposal_Name", <a><![CDATA[Proposal_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 12:55:10 PM")
-    AddProperty("4820", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/23/2025 11:58:52 AM")
+    InitPart("APC_Setup_Sort_Equip_Option", <a><![CDATA[APC_Setup_Sort_Equip_Option]]></a>.Value, 436, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/18/2025 13:14:40")
+    AddProperty("10652", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "App Calc Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/18/2025 1:14:40 PM")
+    AddProperty("10649", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/18/2025 11:51:39 AM")
     
-      oSubpart = AddSubpart(256,"PRD_Document", <a><![CDATA[PRD_Document]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "6/23/2025 3:25:14 PM")
+      AddValidValue("User_UOM_System")
+    
+      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "205", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/18/2025 1:11:31 PM")
       
-        oSubpart.AddVPF (163, "SFD_Salesforce_PRD_Header_Mock", "SFD_Salesforce_PRD_Header_Mock")
+        oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
       
     End Sub
 
@@ -232,10 +224,7 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("DisplayName", "10215", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 12:55:19 PM", "", "In Development",  0,19043)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Proposal_Name", "4447", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 12:55:10 PM", "", "In Development",  0,19042)
+          InitProperty("User_UOM_System", "10216", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/18/2025 1:14:18 PM", "Default UOM System", "In Development",  0,19050)
         End If
     End Sub
 
@@ -248,6 +237,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("User_UOM_System_ValidValues", "10216", "-1", 19046)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -259,12 +252,6 @@ Option Infer On
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("PRD_Document", 191, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "6/23/2025 3:25:14 PM", "", "In Development", "Y",0,528,527)
-        
-          End If
-        
     End Sub
 
     '*****************************************************************************
@@ -276,6 +263,12 @@ Option Infer On
     Private Sub NewContextInit_Connections()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_PRD", "184", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/18/2025 1:11:31 PM", "", "In Development", "N",332)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -294,29 +287,26 @@ Option Infer On
     #Region " Formulas "
 
     
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_DisplayName() As String
-          
-          Dim Result as String = String.Empty
-        
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_PRD_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("DisplayName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:10215; TYPE:PF
-      Result = "Proposal: " & Me.SubpartID
-      '   END FORMULA; PROP ID:10215; TYPE:PF
+        '   BEGIN FORMULA; CON ID:184; TYPE:PF
+        Result = Me.Parent.My_Prd(1)
+        '   END FORMULA; CON ID:184; TYPE:PF
+      
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_DisplayName", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup_Sort_Equip_Option.Formula_My_PRD_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
-      Return Result
+      Return ConvertToCollection(Result)
       End Function
     
           '*****************************************************************************
@@ -324,21 +314,21 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Proposal_Name() As String
+          Public Function Formula_User_UOM_System() As String
           
           Dim Result as String = String.Empty
         
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Proposal_Name").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("User_UOM_System").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4447; TYPE:PF
-      Result = Me.DisplayName
-      '   END FORMULA; PROP ID:4447; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10216; TYPE:PF
+      Result = Me.Parent.User_UOM_System
+      '   END FORMULA; PROP ID:10216; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_Proposal_Name", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup_Sort_Equip_Option.Formula_User_UOM_System", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -349,7 +339,7 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_User_UOM_System_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -358,7 +348,7 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Proposal_Name_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_User_UOM_System_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -367,83 +357,20 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_DisplayName_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Proposal_Name_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Document_PARTNAMES() as String
+      Public Function Formula_User_UOM_System_ValidValues() as Rulestream.Kernel.ValidValues
       
-      Dim Result as String = ""
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
       Dim ctx as Object
       Try
       ctx = this
-      '   BEGIN FORMULA; SUB ID:191; TYPE:PN
-      
-      '   END FORMULA; SUB ID:191; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_PRD_Document_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Document_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("PRD_Document").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      If Me.Properties("User_UOM_System").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; SUB ID:191; TYPE:QF
-      result = 1
-      '   END FORMULA; SUB ID:191; TYPE:QF
+      '   BEGIN FORMULA; PROP ID:10216; TYPE:VV
+      Result = MakeValidValues(Array( "Imperial", "Metric"))
+      '   END FORMULA; PROP ID:10216; TYPE:VV
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_PRD_Document_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_PRD_Document_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("PRD_Document").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:191; TYPE:OP
-      result = "SFD_Salesforce_PRD_Header_Mock"
-      '   END FORMULA; SUB ID:191; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Proposal_Data.Formula_PRD_Document_OPTIMALPARTFAMILY", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup_Sort_Equip_Option.Formula_User_UOM_System_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

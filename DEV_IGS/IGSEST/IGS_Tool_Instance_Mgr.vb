@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: IGS_Tool_Instance_Mgr
-'$ GenerateDate: 07/15/2025 16:49:01
+'$ GenerateDate: 07/18/2025 11:37:15
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -254,10 +254,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/15/2025 16:46:19")
-    AddProperty("5588", "HasAppCalc", <a><![CDATA[Has App Calc]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/27/2025 5:06:10 PM")
+    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/17/2025 20:43:48")
+    AddProperty("5588", "HasAppCalc", <a><![CDATA[Has App Calc]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:34:26 PM")
     AddProperty("4829", "HasElecInstall", <a><![CDATA[Has Elec Install]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 11:46:05 AM")
-    AddProperty("5587", "HasHeaderHanger", <a><![CDATA[Has Header Hanger]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/27/2025 5:06:01 PM")
+    AddProperty("5587", "HasHeaderHanger", <a><![CDATA[Has Header Hanger]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:35:54 PM")
     AddProperty("4828", "HasMechInstall", <a><![CDATA[Has Mech Install]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 11:45:58 AM")
     AddProperty("4823", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/23/2025 3:05:56 PM")
     
@@ -273,7 +273,7 @@ Option Infer On
       
         oSubpart.AddVPF (361, "CAE_Elec_Install_App", "CAE_Elec_Install_App")
       
-      oSubpart = AddSubpart(341,"Header_Hanger", <a><![CDATA[Header_Hanger]]></a>.Value, "FD", "Header Hanger Application", "General", 9999, "", "GLOBAL\H601424", "7/15/2025 4:46:19 PM")
+      oSubpart = AddSubpart(341,"Header_Hanger", <a><![CDATA[Header_Hanger]]></a>.Value, "FD", "Header Hanger Application", "General", 9999, "", "GLOBAL\H602502", "7/17/2025 8:43:48 PM")
       
         oSubpart.AddVPF (333, "HHS_HeaderHanger_Calc", "Header Hanger Calculator")
       
@@ -289,7 +289,7 @@ Option Infer On
       
         oConnection.AddVPF(143, "SFD_Salesforce_Data_Mock")
       
-      oConnection = AddConnection("ToolRollup", <a><![CDATA[Tool Rollup]]></a>.Value, "", "116", "OM", 0, "","General", 9999, "", "GLOBAL\H602502", "6/27/2025 7:42:04 PM")
+      oConnection = AddConnection("ToolRollup", <a><![CDATA[Tool Rollup]]></a>.Value, "", "116", "OM", 0, "","General", 9999, "", "GLOBAL\H602502", "7/16/2025 8:40:01 PM")
       
         oConnection.AddVPF(361, "CAE_Elec_Install_App")
       
@@ -322,13 +322,13 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("HasAppCalc", "5200", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "6/27/2025 5:06:10 PM", "", "In Development",  0,8161)
+          InitProperty("HasAppCalc", "5200", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:34:26 PM", "", "In Development",  0,8161)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HasElecInstall", "4452", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "6/30/2025 11:46:05 AM", "", "In Development",  0,6393)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HasHeaderHanger", "5199", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "6/27/2025 5:06:01 PM", "", "In Development",  0,8160)
+          InitProperty("HasHeaderHanger", "5199", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:35:54 PM", "", "In Development",  0,8160)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HasMechInstall", "4451", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "6/30/2025 11:45:58 AM", "", "In Development",  0,6392)
@@ -375,7 +375,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Header_Hanger", 268, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/15/2025 4:46:19 PM", "", "In Development", "N",0,729,728)
+        InitSubpart("Header_Hanger", 268, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 8:43:48 PM", "", "In Development", "N",0,729,761)
         
           End If
         
@@ -410,7 +410,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("ToolRollup", "96", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "6/27/2025 7:42:04 PM", "", "In Development", "N",173)
+        InitConnection("ToolRollup", "96", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 8:40:01 PM", "", "In Development", "N",320)
         
           End If
         
@@ -493,7 +493,11 @@ Dim ocol As New collection
 
 For Each s As SubPart In Me.Parent.Project_Tool_Manager(1).Subparts
 	For Each p As Part In s.Parts
-		ocol.add(p)
+		Dim vals As String() = p.Name.Split(":")
+		Select Case vals(0)
+			Case "App_Calc", "Elec_Install_Estimator", "Header_Hanger", "Mech_Install_Estimator"
+				ocol.add(p)
+		End Select
 	Next
 Next
 
@@ -641,7 +645,28 @@ Result = ocol
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_HasAppCalc_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("HasAppCalc").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:5200; TYPE:UC
+              Result = True
+
+If me.App_Calc.Quantity > 0 AndAlso Me.App_Calc(1).Tool_Status <> "New" Then
+	Result = False
+End If
+              '   END FORMULA; PROP ID:5200; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasAppCalc_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -680,7 +705,28 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_HasHeaderHanger_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("HasHeaderHanger").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:5199; TYPE:UC
+              Result = True
+
+If Me.Header_Hanger.Quantity > 0 AndAlso Me.Header_Hanger(1).Tool_Status <> "New" Then
+	Result = False
+End If
+              '   END FORMULA; PROP ID:5199; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasHeaderHanger_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -964,7 +1010,11 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; SUB ID:268; TYPE:QF
-      result = 1
+      Result = 0
+
+If Me.HasHeaderHanger Then
+	Result = 1
+End If
       '   END FORMULA; SUB ID:268; TYPE:QF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Header_Hanger_QUANTITY", ex.Message)

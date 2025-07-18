@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{d3703295-8f06-4c41-b68d-b2df82bfe700}</ProjectGuid>
+		<ProjectGuid>{b9be0277-137e-4543-8479-377780f5044c}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>APCTMP01</RootNamespace>
 		<AssemblyName>APCTMP01</AssemblyName>
@@ -368,9 +368,6 @@
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="igs_project_top_app_test_01.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="igs_tool_instance_mgr.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="mech_install_metrics.vb">

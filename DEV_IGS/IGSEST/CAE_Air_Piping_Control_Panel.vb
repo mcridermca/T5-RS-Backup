@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Air_Piping_Control_Panel
-'$ GenerateDate: 07/16/2025 13:16:42
+'$ GenerateDate: 07/18/2025 11:37:15
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -2534,12 +2534,12 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Air_Piping_Control_Panel", <a><![CDATA[CAE_Air_Piping_Control_Panel]]></a>.Value, 392, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/16/2025 13:14:15")
+    InitPart("CAE_Air_Piping_Control_Panel", <a><![CDATA[CAE_Air_Piping_Control_Panel]]></a>.Value, 392, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/18/2025 09:14:40")
     AddProperty("9496", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 4:17:39 PM")
     AddProperty("6026", "CP_Name", <a><![CDATA[CP_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 6:19:50 PM")
     AddProperty("8949", "MEI_AP_Air_Subsystem", <a><![CDATA[MEI_AP_Air_Subsystem]]></a>.Value, "Mech Install^'Air Piping'!M4", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:47:46 PM")
     AddProperty("8951", "MEI_AP_Ceiling_Height_Feet", <a><![CDATA[MEI_AP_Ceiling_Height_Feet]]></a>.Value, "Mech Install^'Air Piping'!M8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:49:58 PM")
-    AddProperty("8955", "MEI_AP_Compressor_Required", <a><![CDATA[MEI_AP_Compressor_Required]]></a>.Value, "Mech Install^'Air Piping'!M16", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:54:33 PM")
+    AddProperty("8955", "MEI_AP_Compressor_Required", <a><![CDATA[MEI_AP_Compressor_Required]]></a>.Value, "Mech Install^'Air Piping'!M16", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 7:28:31 AM")
     AddProperty("9091", "MEI_AP_Delta_1_2_inch_16_5mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Delta_1_2_inch_16_5mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!Q26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/8/2025 5:52:53 AM")
     AddProperty("9089", "MEI_AP_Delta_1_and_1_2_IN_40mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Delta_1_and_1_2_IN_40mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!Q24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:46 AM")
     AddProperty("9088", "MEI_AP_Delta_2_and_1_2_IN_63mm_pipe_Total_Order", <a><![CDATA[MEI_AP_Delta_2_and_1_2_IN_63mm_pipe_Total_Order]]></a>.Value, "Mech Install^'Air Piping'!Q23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:06:44 AM")
@@ -2723,16 +2723,16 @@ Option Infer On
     AddProperty("8893", "MEI_AP_SS1_Pipe_Type_Total_Order_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!B10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:20 AM")
     AddProperty("8956", "MEI_AP_SS1_Total_Costs", <a><![CDATA[MEI_AP_SS1_Total_Costs]]></a>.Value, "Mech Install^'Air Piping'!B17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:55:52 PM")
     AddProperty("8957", "MEI_AP_SS1_Total_Hours", <a><![CDATA[MEI_AP_SS1_Total_Hours]]></a>.Value, "Mech Install^'Air Piping'!B18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:57:59 PM")
-    AddProperty("8896", "MEI_AP_SS1_Total_Order_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_AC]]></a>.Value, "Mech Install^'Air Piping'!B13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:06:16 PM")
+    AddProperty("8896", "MEI_AP_SS1_Total_Order_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_AC]]></a>.Value, "Mech Install^'Air Piping'!B13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/18/2025 7:42:24 AM")
     AddProperty("8898", "MEI_AP_SS1_Total_Order_Dryer", <a><![CDATA[MEI_AP_SS1_Total_Order_Dryer]]></a>.Value, "Mech Install^'Air Piping'!B15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:08:06 PM")
-    AddProperty("8895", "MEI_AP_SS1_Total_Order_Filter_Reg", <a><![CDATA[MEI_AP_SS1_Total_Order_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!B12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 12:57:22 PM")
+    AddProperty("8895", "MEI_AP_SS1_Total_Order_Filter_Reg", <a><![CDATA[MEI_AP_SS1_Total_Order_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!B12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/18/2025 7:38:39 AM")
     AddProperty("8897", "MEI_AP_SS1_Total_Order_Red_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_Red_AC]]></a>.Value, "Mech Install^'Air Piping'!B14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:07:21 PM")
     AddProperty("8894", "MEI_AP_SS1_Total_Order_Tubing", <a><![CDATA[MEI_AP_SS1_Total_Order_Tubing]]></a>.Value, "Mech Install^'Air Piping'!B11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 12:49:52 PM")
     AddProperty("10023", "MEI_AP_Supplier_Discount", <a><![CDATA[MEI_AP_Supplier_Discount]]></a>.Value, "Mech Install^'Air Piping'!T40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 8:54:28 AM")
     AddProperty("9021", "MEI_AP_TotalCosts", <a><![CDATA[MEI_AP_TotalCosts]]></a>.Value, "Mech Install^'Air Piping'!B34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:05:07 AM")
     AddProperty("9022", "MEI_AP_TotalHours", <a><![CDATA[MEI_AP_TotalHours]]></a>.Value, "Mech Install^'Air Piping'!B35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:06:02 AM")
     AddProperty("8954", "MEI_AP_Trunkline_Length_Feet", <a><![CDATA[MEI_AP_Trunkline_Length_Feet]]></a>.Value, "Mech Install^'Air Piping'!M14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:02:17 AM")
-    AddProperty("9023", "MEI_AP_TTCB_Air_Piping_Factor", <a><![CDATA[MEI_AP_TTCB_Air_Piping_Factor]]></a>.Value, "Mech Install^'Air Piping'!D35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 1:07:14 PM")
+    AddProperty("9023", "MEI_AP_TTCB_Air_Piping_Factor", <a><![CDATA[MEI_AP_TTCB_Air_Piping_Factor]]></a>.Value, "Mech Install^'Air Piping'!D35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/18/2025 9:14:40 AM")
     AddProperty("9050", "MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_1_2_inch_16_5mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:55:52 AM")
     AddProperty("9048", "MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_1_and_1_2_Inch_40mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:55:11 AM")
     AddProperty("9047", "MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe", <a><![CDATA[MEI_AP_TTCB_Elbows_Cost_2_and_1_2_Inch_63mm_pipe]]></a>.Value, "Mech Install^'Air Piping'!G23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/16/2025 7:54:51 AM")
@@ -2856,7 +2856,7 @@ Option Infer On
           InitProperty("MEI_AP_Ceiling_Height_Feet", "8532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:49:58 PM", "", "In Development",  0,17548)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_Compressor_Required", "8536", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:54:33 PM", "", "In Development",  0,13859)
+          InitProperty("MEI_AP_Compressor_Required", "8536", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H611896", "7/17/2025 7:28:31 AM", "", "In Development",  0,13859)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_Delta_1_2_inch_16_5mm_pipe_Total_Order", "8672", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 4:06:50 AM", "", "In Development",  0,14131)
@@ -3408,13 +3408,13 @@ Option Infer On
           InitProperty("MEI_AP_SS1_Total_Hours", "8538", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:57:59 PM", "", "In Development",  0,17551)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Order_AC", "8477", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:06:16 PM", "", "In Development",  0,17493)
+          InitProperty("MEI_AP_SS1_Total_Order_AC", "8477", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/18/2025 7:42:24 AM", "", "In Development",  0,19004)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_SS1_Total_Order_Dryer", "8479", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:08:06 PM", "", "In Development",  0,17495)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Order_Filter_Reg", "8476", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/16/2025 12:57:22 PM", "", "In Development",  0,18044)
+          InitProperty("MEI_AP_SS1_Total_Order_Filter_Reg", "8476", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/18/2025 7:38:39 AM", "", "In Development",  0,19003)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_SS1_Total_Order_Red_AC", "8478", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:07:21 PM", "", "In Development",  0,17494)
@@ -8225,7 +8225,7 @@ End If
       End If
       '   BEGIN FORMULA; PROP ID:8477; TYPE:PF
       Dim VarL As String = Me.MEI_AP_Compressor_Required
-Dim VarChar As String = VarL.Substring(0, 1) 
+Dim VarChar As String = VarL.Substring(0,1) 
 If(VarChar = "A")
 Result = 1
 Else
@@ -8280,7 +8280,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8476; TYPE:PF
-      Result = Me.My_System(1).HCAD_IntelliQAccuglide_Total_Units + Me.My_System(1).HCAD_WheelDivert_Total_Units + Me.My_System(1).HCAD_ShoeSorter_Total_Units + Me.My_System(1).HCAD_MDR_Pneumatic_Transfers + Me.My_System(1).HCAD_MDR_Pneumatic_Diverts + Me.My_System(1).Plt_Cnvyr_MISC_Chain_Trans_Cnvyr_Air_Op_WedAir + Me.My_System(1).Plt_Cnvyr_MISC_Transfer_Air + Me.My_System(1).Plt_Cnvyr_MISC_Pusher_Air + Me.My_System(1).Plt_Cnvyr_MISC_Puller_Air
+      Result = Me.My_System(1).HCAD_IntelliQAccuglide_Total_Units + Me.My_System(1).HCAD_WheelDivert_Total_Units + Me.My_System(1).HCAD_ShoeSorter_Total_Units + Me.My_System(1).HCAD_MDR_Pneumatic_Transfers + Me.My_System(1).HCAD_MDR_Pneumatic_Diverts + Me.My_System(1).Plt_Cnvyr_MISC_Chain_Trans_Cnvyr_Air_Op_Wed_Air + Me.My_System(1).Plt_Cnvyr_MISC_Transfer_Air + Me.My_System(1).Plt_Cnvyr_MISC_Pusher_Air + Me.My_System(1).Plt_Cnvyr_MISC_Puller_Air
       '   END FORMULA; PROP ID:8476; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Air_Piping_Control_Panel.Formula_MEI_AP_SS1_Total_Order_Filter_Reg", ex.Message)

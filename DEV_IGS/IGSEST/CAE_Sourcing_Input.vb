@@ -3,7 +3,7 @@ Option Explicit On
 Option Infer On
 
 '$ Application: IGSEST
-'$ PartFamily: CAE_App_Calc_Print_And_Apply_Theoretical_Max
+'$ PartFamily: CAE_Sourcing_Input
 '$ GenerateDate: 07/18/2025 11:37:15
 
     Imports Microsoft.VisualBasic
@@ -24,7 +24,7 @@ Option Infer On
     Imports IGSEST.swMateAlign_e
     Imports IGSEST.severity
 
-    Public Class [CAE_App_Calc_Print_And_Apply_Theoretical_Max]
+    Public Class [CAE_Sourcing_Input]
     
     Inherits RuleStream.Kernel.Part
     Implements RuleStream.IRsPartFormulas
@@ -45,7 +45,7 @@ Option Infer On
     '*                                                                       *
     '*************************************************************************
 
-    Private this as CAE_App_Calc_Print_And_Apply_Theoretical_Max = me
+    Private this as CAE_Sourcing_Input = me
 
     #Region " IRsPartFormulas Implementation "
 
@@ -147,120 +147,93 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
-          Public Property [Summary_Carton_Length_IN]() As Double
-      Get
-      Return Properties("Summary_Carton_Length_IN").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Summary_Carton_Length_IN").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_Carton_Length_User]() As Double
-      Get
-      Return Properties("Summary_Carton_Length_User").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Summary_Carton_Length_User").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_Carton_Length_User_UOM]() As String
-      Get
-      Return Properties("Summary_Carton_Length_User_UOM").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Summary_Carton_Length_User_UOM").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_Carton_Rate_Display]() As String
-      Get
-      Return Properties("Summary_Carton_Rate_Display").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Summary_Carton_Rate_Display").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_Carton_Rate_User]() As Double
-      Get
-      Return Properties("Summary_Carton_Rate_User").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Summary_Carton_Rate_User").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_H_H_Spacing_IN]() As Double
-      Get
-      Return Properties("Summary_H_H_Spacing_IN").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Summary_H_H_Spacing_IN").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_H_H_Spacing_User]() As Double
-      Get
-      Return Properties("Summary_H_H_Spacing_User").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Summary_H_H_Spacing_User").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_H_H_Spacing_User_UOM]() As String
-      Get
-      Return Properties("Summary_H_H_Spacing_User_UOM").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Summary_H_H_Spacing_User_UOM").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_Limited_By]() As String
-      Get
-      Return Properties("Summary_Limited_By").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Summary_Limited_By").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_Volume_Flow_Rate_CFPM]() As Double
-      Get
-      Return Properties("Summary_Volume_Flow_Rate_CFPM").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Summary_Volume_Flow_Rate_CFPM").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_Volume_Flow_Rate_User]() As Double
-      Get
-      Return Properties("Summary_Volume_Flow_Rate_User").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Summary_Volume_Flow_Rate_User").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Summary_Volume_Flow_Rate_User_UOM]() As String
-      Get
-      Return Properties("Summary_Volume_Flow_Rate_User_UOM").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("Summary_Volume_Flow_Rate_User_UOM").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Debug_Mode]() As Boolean
       Get
       Return Properties("Debug_Mode").Value
       End Get
       Set(ByVal Value As Boolean)
       Properties("Debug_Mode").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Shadows Property [DisplayName]() As String
+      Get
+      Return Properties("DisplayName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("DisplayName").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sourcing_Commisioning_Crew_Size]() As Long
+      Get
+      Return Properties("Sourcing_Commisioning_Crew_Size").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Sourcing_Commisioning_Crew_Size").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sourcing_Equipment]() As Double
+      Get
+      Return Properties("Sourcing_Equipment").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Sourcing_Equipment").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sourcing_Installation_Crew_Size]() As Long
+      Get
+      Return Properties("Sourcing_Installation_Crew_Size").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Sourcing_Installation_Crew_Size").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sourcing_Installer_Hours]() As Double
+      Get
+      Return Properties("Sourcing_Installer_Hours").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Sourcing_Installer_Hours").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sourcing_Lead_Hours]() As Double
+      Get
+      Return Properties("Sourcing_Lead_Hours").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Sourcing_Lead_Hours").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sourcing_Materials]() As Double
+      Get
+      Return Properties("Sourcing_Materials").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Sourcing_Materials").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sourcing_Misc]() As Double
+      Get
+      Return Properties("Sourcing_Misc").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Sourcing_Misc").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sourcing_Super_Hours]() As Double
+      Get
+      Return Properties("Sourcing_Super_Hours").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Sourcing_Super_Hours").CalculatedValue = Value
       End Set
       End Property
     
@@ -300,6 +273,24 @@ Option Infer On
       End Set
       End Property
     
+      Public ReadOnly Property [My_Conveyor_Costing]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_Conveyor_Costing")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [My_System]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_System")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [My_TTCB_Costing]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_TTCB_Costing")
+      End Get
+      End Property
+    
       Public ReadOnly Property [MySource]() As Rulestream.Kernel.Connection
       Get
       Return Connections("MySource")
@@ -320,32 +311,35 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_App_Calc_Print_And_Apply_Theoretical_Max", <a><![CDATA[CAE_App_Calc_Print_And_Apply_Theoretical_Max]]></a>.Value, 422, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/17/2025 13:00:19")
-    AddProperty("10280", "Summary_Carton_Length_IN", <a><![CDATA[Summary_Carton_Length_IN]]></a>.Value, "Unit conversion to Imperial", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:33:21 PM")
-    AddProperty("10279", "Summary_Carton_Length_User", <a><![CDATA[Summary_Carton_Length_User]]></a>.Value, "AppCalc^'Belted PandA'!C145", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 1:00:19 PM")
-    AddProperty("10276", "Summary_Carton_Length_User_UOM", <a><![CDATA[Summary_Carton_Length_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:29:01 PM")
-    AddProperty("10433", "Summary_Carton_Rate_Display", <a><![CDATA[Summary_Carton_Rate_Display]]></a>.Value, "AppCalc^'Belted PandA'!G145", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:23:42 PM")
-    AddProperty("10293", "Summary_Carton_Rate_User", <a><![CDATA[Summary_Carton_Rate_User]]></a>.Value, "AppCalc^'Belted PandA'!G145", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 5:55:39 PM")
-    AddProperty("10292", "Summary_H_H_Spacing_IN", <a><![CDATA[Summary_H_H_Spacing_IN]]></a>.Value, "Unit conversion to Imperial", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 7:07:29 PM")
-    AddProperty("10281", "Summary_H_H_Spacing_User", <a><![CDATA[Summary_H_H_Spacing_User]]></a>.Value, "AppCalc^'Belted PandA'!E145", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 7:06:48 PM")
-    AddProperty("10277", "Summary_H_H_Spacing_User_UOM", <a><![CDATA[Summary_H_H_Spacing_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:29:19 PM")
-    AddProperty("10297", "Summary_Limited_By", <a><![CDATA[Summary_Limited_By]]></a>.Value, "AppCalc^'Belted PandA'!J145", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 7:22:28 PM")
-    AddProperty("10296", "Summary_Volume_Flow_Rate_CFPM", <a><![CDATA[Summary_Volume_Flow_Rate_CFPM]]></a>.Value, "Unit conversion to Imperial", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:35:35 PM")
-    AddProperty("10295", "Summary_Volume_Flow_Rate_User", <a><![CDATA[Summary_Volume_Flow_Rate_User]]></a>.Value, "AppCalc^'Belted PandA'!E145", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 6:08:52 PM")
-    AddProperty("10278", "Summary_Volume_Flow_Rate_User_UOM", <a><![CDATA[Summary_Volume_Flow_Rate_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:36:05 PM")
-    AddProperty("10428", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 4:02:35 PM")
-    AddProperty("10429", "XMLObjectName", <a><![CDATA[XMLObjectName]]></a>.Value, "XML Export Object Name", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/16/2025 4:03:26 PM")
-    AddProperty("10430", "XMLObjectType", <a><![CDATA[XMLObjectType]]></a>.Value, "XML Export Object Type", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/16/2025 4:02:36 PM")
-    AddProperty("10431", "XMLObjectValue", <a><![CDATA[XMLObjectValue]]></a>.Value, "XML Export Object Value", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/16/2025 4:02:36 PM")
-    AddProperty("10273", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 4:22:19 PM")
+    InitPart("CAE_Sourcing_Input", <a><![CDATA[CAE_Sourcing_Input]]></a>.Value, 431, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/17/2025 20:01:06")
+    AddProperty("10632", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 8:00:47 PM")
+    AddProperty("10610", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "Mech Install^'Sourcing Input'!J3", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:25:50 PM")
+    AddProperty("10619", "Sourcing_Commisioning_Crew_Size", <a><![CDATA[Sourcing_Commisioning_Crew_Size]]></a>.Value, "Mech Install^'Sourcing Input'!L3", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:45:58 PM")
+    AddProperty("10616", "Sourcing_Equipment", <a><![CDATA[Sourcing_Equipment]]></a>.Value, "Mech Install^'Sourcing Input'!P3", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:37:42 PM")
+    AddProperty("10621", "Sourcing_Installation_Crew_Size", <a><![CDATA[Sourcing_Installation_Crew_Size]]></a>.Value, "Mech Install^'Sourcing Input'!K3", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:46:32 PM")
+    AddProperty("10615", "Sourcing_Installer_Hours", <a><![CDATA[Sourcing_Installer_Hours]]></a>.Value, "Mech Install^'Sourcing Input'!O3", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:36:25 PM")
+    AddProperty("10622", "Sourcing_Lead_Hours", <a><![CDATA[Sourcing_Lead_Hours]]></a>.Value, "Mech Install^'Sourcing Input'!N3", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:46:54 PM")
+    AddProperty("10617", "Sourcing_Materials", <a><![CDATA[Sourcing_Materials]]></a>.Value, "Mech Install^'Sourcing Input'!Q3", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:38:31 PM")
+    AddProperty("10618", "Sourcing_Misc", <a><![CDATA[Sourcing_Misc]]></a>.Value, "Mech Install^'Sourcing Input'!R3", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:39:51 PM")
+    AddProperty("10620", "Sourcing_Super_Hours", <a><![CDATA[Sourcing_Super_Hours]]></a>.Value, "Mech Install^'Sourcing Input'!M3", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:46:14 PM")
+    AddProperty("10633", "XMLObjectName", <a><![CDATA[XMLObjectName]]></a>.Value, "XML Export Object Name", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/17/2025 8:01:06 PM")
+    AddProperty("10634", "XMLObjectType", <a><![CDATA[XMLObjectType]]></a>.Value, "XML Export Object Type", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/17/2025 8:00:47 PM")
+    AddProperty("10635", "XMLObjectValue", <a><![CDATA[XMLObjectValue]]></a>.Value, "XML Export Object Value", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/17/2025 8:00:47 PM")
+    AddProperty("10608", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:19:10 PM")
     
-      AddValidValue("Summary_Carton_Length_User_UOM")
-    
-      AddValidValue("Summary_H_H_Spacing_User_UOM")
-    
-      AddValidValue("Summary_Volume_Flow_Rate_User_UOM")
-    
-      oConnection = AddConnection("MySource", <a><![CDATA[My Source Part Family]]></a>.Value, "Connection to the Value Provider Part Family Instance", "194", "OO", 0, "","Oracle Config XML", 9999, "Oracle Configurator Transfer", "GLOBAL\H602502", "7/16/2025 4:02:36 PM")
+      oConnection = AddConnection("My_Conveyor_Costing", <a><![CDATA[My_Conveyor_Costing]]></a>.Value, "", "200", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/17/2025 7:23:17 PM")
+      
+        oConnection.AddVPF(389, "CAE_Conveyor_Costing")
+      
+      oConnection = AddConnection("My_System", <a><![CDATA[My_System]]></a>.Value, "", "199", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/17/2025 7:22:19 PM")
+      
+        oConnection.AddVPF(399, "CAE_Mech_Install_CP_Comp")
+      
+      oConnection = AddConnection("My_TTCB_Costing", <a><![CDATA[My_TTCB_Costing]]></a>.Value, "", "201", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/17/2025 7:23:56 PM")
+      
+        oConnection.AddVPF(401, "CAE_TTCB_Costing_Mech")
+      
+      oConnection = AddConnection("MySource", <a><![CDATA[My Source Part Family]]></a>.Value, "Connection to the Value Provider Part Family Instance", "203", "OO", 0, "","Oracle Config XML", 9999, "Oracle Configurator Transfer", "GLOBAL\H602502", "7/17/2025 8:00:47 PM")
       
         oConnection.AddVPF(33, "OCT_Accessory")
       
@@ -378,52 +372,43 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Carton_Length_IN", "9858", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:33:21 PM", "", "In Development",  0,17563)
+          InitProperty("Debug_Mode", "10200", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:00:47 PM", "True = Debug On / False = Debug Off", "In Development",  0,18943)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Carton_Length_User", "9857", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 1:00:19 PM", "", "In Development",  0,18511)
+          InitProperty("DisplayName", "10178", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:24:43 PM", "", "In Development",  0,18905)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Carton_Length_User_UOM", "9854", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:29:01 PM", "", "In Development",  0,17556)
+          InitProperty("Sourcing_Commisioning_Crew_Size", "10187", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:45:58 PM", "", "In Development",  0,18921)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Carton_Rate_Display", "10006", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:23:42 PM", "", "In Development",  0,18234)
+          InitProperty("Sourcing_Equipment", "10184", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:37:42 PM", "", "In Development",  0,18916)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Carton_Rate_User", "9871", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 5:55:39 PM", "", "In Development",  0,18177)
+          InitProperty("Sourcing_Installation_Crew_Size", "10189", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:46:32 PM", "", "In Development",  0,18923)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_H_H_Spacing_IN", "9870", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 7:07:29 PM", "", "In Development",  0,17595)
+          InitProperty("Sourcing_Installer_Hours", "10183", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:36:25 PM", "", "In Development",  0,18914)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_H_H_Spacing_User", "9859", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 7:06:48 PM", "", "In Development",  0,17593)
+          InitProperty("Sourcing_Lead_Hours", "10190", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:46:54 PM", "", "In Development",  0,18924)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_H_H_Spacing_User_UOM", "9855", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:29:19 PM", "", "In Development",  0,17557)
+          InitProperty("Sourcing_Materials", "10185", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:38:31 PM", "", "In Development",  0,18918)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Limited_By", "9875", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 7:22:28 PM", "", "In Development",  0,17605)
+          InitProperty("Sourcing_Misc", "10186", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:39:51 PM", "", "In Development",  0,18920)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Volume_Flow_Rate_CFPM", "9874", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:35:35 PM", "", "In Development",  0,17608)
+          InitProperty("Sourcing_Super_Hours", "10188", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:46:14 PM", "", "In Development",  0,18922)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Volume_Flow_Rate_User", "9873", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 6:08:52 PM", "", "In Development",  0,18178)
+          InitProperty("XMLObjectName", "10201", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:01:06 PM", "XML Export Object Name", "In Development",  0,18947)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Volume_Flow_Rate_User_UOM", "9856", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:36:05 PM", "", "In Development",  0,17561)
+          InitProperty("XMLObjectType", "10202", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:00:47 PM", "XML Export Object Type", "In Development",  0,18945)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Debug_Mode", "10001", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 4:02:35 PM", "True = Debug On / False = Debug Off", "In Development",  0,18163)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("XMLObjectName", "10002", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 4:03:26 PM", "XML Export Object Name", "In Development",  0,18167)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("XMLObjectType", "10003", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 4:02:36 PM", "XML Export Object Type", "In Development",  0,18165)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("XMLObjectValue", "10004", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 4:02:36 PM", "XML Export Object Value", "In Development",  0,18166)
+          InitProperty("XMLObjectValue", "10203", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:00:47 PM", "XML Export Object Value", "In Development",  0,18946)
         End If
     End Sub
 
@@ -436,18 +421,6 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitValidValue("Summary_Carton_Length_User_UOM_ValidValues", "9854", "-1", 17555)
-        End If
-            If Incontext("-1", ctx) Then
-          
-        InitValidValue("Summary_H_H_Spacing_User_UOM_ValidValues", "9855", "-1", 17558)
-        End If
-            If Incontext("-1", ctx) Then
-          
-        InitValidValue("Summary_Volume_Flow_Rate_User_UOM_ValidValues", "9856", "-1", 17609)
-        End If
     End Sub
 
     '*****************************************************************************
@@ -472,7 +445,25 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("MySource", "174", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 4:02:36 PM", "Connection to the Value Provider Part Family Instance", "In Development", "Y",316)
+        InitConnection("My_Conveyor_Costing", "180", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 7:23:17 PM", "", "In Development", "N",328)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_System", "179", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 7:22:19 PM", "", "In Development", "N",327)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("My_TTCB_Costing", "181", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 7:23:56 PM", "", "In Development", "N",329)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("MySource", "183", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 8:00:47 PM", "Connection to the Value Provider Part Family Instance", "In Development", "Y",331)
         
           End If
         
@@ -499,6 +490,72 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_My_Conveyor_Costing_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:180; TYPE:PF
+        Result = Me.Parent.Parent.Conveyor_Costing_SC_Mech_Install(Me.SubpartID)
+        '   END FORMULA; CON ID:180; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_My_Conveyor_Costing_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_System_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:179; TYPE:PF
+        Result = Me.Parent.Parent.Base_Options_Alternates(Me.SubpartID)
+        '   END FORMULA; CON ID:179; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_My_System_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_TTCB_Costing_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:181; TYPE:PF
+        Result = me.Parent.Parent.TTCB_Costing_Mech(1)
+        '   END FORMULA; CON ID:181; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_My_TTCB_Costing_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_MySource_PARTS() as Rulestream.Kernel.rsCollection
       
       Dim Result as Object = Nothing
@@ -507,333 +564,15 @@ Option Infer On
       ctx = this
           '   THIS FORMULA IS INHERITED. CHANGES TO THIS FORMULA WILL BREAK INHERITANCE.
         
-        '   BEGIN FORMULA; CON ID:174; TYPE:PF
+        '   BEGIN FORMULA; CON ID:183; TYPE:PF
         Result = Nothing ' Set to Object that has the data you need to report on ' Me.Parent.HHS_Output(1)
-        '   END FORMULA; CON ID:174; TYPE:PF
+        '   END FORMULA; CON ID:183; TYPE:PF
       
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_MySource_PARTS", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_MySource_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_Carton_Length_IN() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Carton_Length_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9858; TYPE:PF
-      Result = Units.Convert(Me.Summary_Carton_Length_User, Me.Summary_Carton_Length_User_UOM, "IN")
-      '   END FORMULA; PROP ID:9858; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Carton_Length_IN", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_Carton_Length_User() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Carton_Length_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9857; TYPE:PF
-      Result = Me.Parent.MTBH_Length_Minimum_IN + Me.SubpartID - 1
-
-If Me.Summary_Carton_Length_User_UOM = "MM" Then
-	Result = Units.Convert(Result, "IN", "MM")
-End If
-      '   END FORMULA; PROP ID:9857; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Carton_Length_User", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_Carton_Length_User_UOM() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Carton_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9854; TYPE:PF
-      If Me.parent.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
-      '   END FORMULA; PROP ID:9854; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Carton_Length_User_UOM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_Carton_Rate_Display() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Carton_Rate_Display").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:10006; TYPE:PF
-      Select Case Me.Parent.Summary_Caclucation_Errors_Present
-	Case 0
-		Result = Me.Summary_Carton_Rate_User.ToString()
-	Case Else
-		Result = "ERROR"
-End Select
-      '   END FORMULA; PROP ID:10006; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Carton_Rate_Display", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_Carton_Rate_User() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Carton_Rate_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9871; TYPE:PF
-      Result = math.ceiling(((Me.Parent.Gen_BM_Belt_Input_Speed_IN * 12) / Me.Summary_H_H_Spacing_IN) * 10^2) / 10^2
-      '   END FORMULA; PROP ID:9871; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Carton_Rate_User", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_H_H_Spacing_IN() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_H_H_Spacing_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9870; TYPE:PF
-      Result = Units.Convert(Me.Summary_H_H_Spacing_User, Me.Summary_H_H_Spacing_User_UOM, "IN")
-      '   END FORMULA; PROP ID:9870; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_H_H_Spacing_IN", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_H_H_Spacing_User() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_H_H_Spacing_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9859; TYPE:PF
-      If (Me.Summary_Carton_Length_IN + Me.Parent.Summary_Min_T_to_H_Gap_Req_IN) >= Me.Parent.Summary_Min_H_to_H_Spacing_Req_IN _
-	 OrElse (Me.Summary_Carton_Length_IN * Me.Parent.Gen_BM_Belt_PTO_Ratio) >= Me.Parent.Summary_Min_H_to_H_Spacing_Req_IN Then
-	 
-	 If (Me.Summary_Carton_Length_IN + Me.Parent.Summary_Min_T_to_H_Gap_Req_IN) > (Me.Summary_Carton_Length_IN * Me.Parent.Gen_BM_Belt_PTO_Ratio) Then
-		 Result = Me.Summary_Carton_Length_IN + Me.Parent.Summary_Min_T_to_H_Gap_Req_IN
-	 Else
-		 Result = Me.Summary_Carton_Length_IN * Me.Parent.Gen_BM_Belt_PTO_Ratio
-	 End If
-	
-Else
-	Result = Me.Parent.Summary_Min_H_to_H_Spacing_Req_IN
-End If
-      '   END FORMULA; PROP ID:9859; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_H_H_Spacing_User", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_H_H_Spacing_User_UOM() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_H_H_Spacing_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9855; TYPE:PF
-      If Me.parent.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
-      '   END FORMULA; PROP ID:9855; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_H_H_Spacing_User_UOM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_Limited_By() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Limited_By").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9875; TYPE:PF
-      If Me.Summary_H_H_Spacing_IN < Me.Parent.Summary_Min_H_to_H_Spacing_Req_IN Then
-	Result = Me.Parent.Summary_Min_H_to_H_Spacing_Limit_Set_By
-Else
-	If Me.Summary_Volume_Flow_Rate_CFPM < Me.Parent.Gen_BM_Belt_Input_Speed_IN Then
-		Result = Me.Parent.Summary_Min_T_to_H_Gap_Limit_Set_By	
-	Else
-		Result = "B/M Belt PTO Ratio"
-	End If
-End If
-      '   END FORMULA; PROP ID:9875; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Limited_By", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_Volume_Flow_Rate_CFPM() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Volume_Flow_Rate_CFPM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9874; TYPE:PF
-      Result = Units.Convert(Me.Summary_Volume_Flow_Rate_User, Me.Summary_Volume_Flow_Rate_User_UOM, "CFPM")
-      '   END FORMULA; PROP ID:9874; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Volume_Flow_Rate_CFPM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_Volume_Flow_Rate_User() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Volume_Flow_Rate_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9873; TYPE:PF
-      Result = Math.Ceiling(((Me.Summary_Carton_Rate_User * Me.Summary_Carton_Length_IN) / 12) * 10^2) / 10^2
-
-If Me.Summary_Volume_Flow_Rate_User_UOM = "CMPM" Then
-	Result = Units.Convert(Result, "CFPM", "CMPM")
-End If
-      '   END FORMULA; PROP ID:9873; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Volume_Flow_Rate_User", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Summary_Volume_Flow_Rate_User_UOM() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Volume_Flow_Rate_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9856; TYPE:PF
-      If Me.parent.User_UOM_System = "Imperial" Then Result = "CFPM" Else Result = "CMPM"
-      '   END FORMULA; PROP ID:9856; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Volume_Flow_Rate_User_UOM", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
       End Function
     
           '*****************************************************************************
@@ -851,14 +590,233 @@ End If
       If Me.Properties("Debug_Mode").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10001; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10200; TYPE:PF
       Result = False
 If Not Me.Parent Is Nothing AndAlso Me.Parent.Properties.ContainsKey("Debug_Mode") Then
 		Result = Me.Parent.Debug_Mode
 End If
-      '   END FORMULA; PROP ID:10001; TYPE:PF
+      '   END FORMULA; PROP ID:10200; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Debug_Mode", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Debug_Mode", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_DisplayName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("DisplayName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10178; TYPE:PF
+      Result = me.My_System(1).DisplayName
+      '   END FORMULA; PROP ID:10178; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_DisplayName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sourcing_Commisioning_Crew_Size() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sourcing_Commisioning_Crew_Size").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10187; TYPE:PF
+      Result = Me.My_Conveyor_Costing(1).People_Needs_Num_of_Installers_Comm _
+		+ Me.My_Conveyor_Costing(1).People_Needs_Num_of_Lead_Men_Comm _
+		+ Me.My_Conveyor_Costing(1).People_Needs_Num_of_Superintendents_Comm _
+		+ Me.My_TTCB_Costing(1).MEI_People_Needs_Comm_No_of_Installers _
+		+ Me.My_TTCB_Costing(1).MEI_People_Needs_Comm_No_of_Lead_Men _
+		+ Me.My_TTCB_Costing(1).MEI_People_Needs_Comm_No_of_Superintendents
+      '   END FORMULA; PROP ID:10187; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Sourcing_Commisioning_Crew_Size", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sourcing_Equipment() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sourcing_Equipment").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10184; TYPE:PF
+      Result = me.My_System(1).Rollup_Equipment_Rental_COST
+      '   END FORMULA; PROP ID:10184; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Sourcing_Equipment", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sourcing_Installation_Crew_Size() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sourcing_Installation_Crew_Size").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10189; TYPE:PF
+      Result = Me.My_Conveyor_Costing(1).People_Needs_Num_of_Installers_Install _
+		+ Me.My_Conveyor_Costing(1).People_Needs_Num_of_Lead_Men_Install _
+		+ Me.My_Conveyor_Costing(1).People_Needs_Num_of_Superintendents_Install _
+		+ Me.My_TTCB_Costing(1).MEI_People_Needs_Install_No_of_Installers _
+		+ Me.My_TTCB_Costing(1).MEI_People_Needs_Install_No_of_Lead_Men _
+		+ Me.My_TTCB_Costing(1).MEI_People_Needs_Install_No_of_Superintendents
+      '   END FORMULA; PROP ID:10189; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Sourcing_Installation_Crew_Size", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sourcing_Installer_Hours() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sourcing_Installer_Hours").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10183; TYPE:PF
+      Result = Me.My_System(1).Rollup_Conv_Intelligrated_Installers_HRS + me.My_System(1).Rollup_TTCB_Intelligrated_Installers_HRS
+      '   END FORMULA; PROP ID:10183; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Sourcing_Installer_Hours", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sourcing_Lead_Hours() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sourcing_Lead_Hours").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10190; TYPE:PF
+      Result = Me.My_System(1).Rollup_Conv_Lead_Men_HRS + me.My_System(1).Rollup_TTCB_Lead_Men_HRS
+      '   END FORMULA; PROP ID:10190; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Sourcing_Lead_Hours", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sourcing_Materials() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sourcing_Materials").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10185; TYPE:PF
+      Result = me.My_System(1).Rollup_SuppliesConsumables_COST
+      '   END FORMULA; PROP ID:10185; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Sourcing_Materials", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sourcing_Misc() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sourcing_Misc").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10186; TYPE:PF
+      Result = Me.My_System(1).Rollup_Permits_COST + me.My_System(1).Rollup_Miscellanious_COST
+      '   END FORMULA; PROP ID:10186; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Sourcing_Misc", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sourcing_Super_Hours() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sourcing_Super_Hours").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10188; TYPE:PF
+      Result = me.My_System(1).Rollup_Superintendent_HRS
+      '   END FORMULA; PROP ID:10188; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Sourcing_Super_Hours", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -879,11 +837,11 @@ End If
       If Me.Properties("XMLObjectName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10002; TYPE:PF
-      Result = "PandA_Theoretical_Max"
-      '   END FORMULA; PROP ID:10002; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10201; TYPE:PF
+      Result = "Sourcing_Input"
+      '   END FORMULA; PROP ID:10201; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_XMLObjectName", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_XMLObjectName", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -906,11 +864,11 @@ End If
       If Me.Properties("XMLObjectType").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10003; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10202; TYPE:PF
       result = "Element"
-      '   END FORMULA; PROP ID:10003; TYPE:PF
+      '   END FORMULA; PROP ID:10202; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_XMLObjectType", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_XMLObjectType", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -933,12 +891,12 @@ End If
       If Me.Properties("XMLObjectValue").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10004; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10203; TYPE:PF
       Dim Prop As PropertySF = Me.CurrentProperty
 Result = Custom.GetPFXMLRepresentation(Prop) 'Generate XML For this and Children Classes
-      '   END FORMULA; PROP ID:10004; TYPE:PF
+      '   END FORMULA; PROP ID:10203; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_XMLObjectValue", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_XMLObjectValue", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -949,115 +907,88 @@ Result = Custom.GetPFXMLRepresentation(Prop) 'Generate XML For this and Children
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Summary_Carton_Length_IN_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Carton_Length_User_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Carton_Length_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Carton_Rate_Display_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Carton_Rate_User_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_H_H_Spacing_IN_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_H_H_Spacing_User_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_H_H_Spacing_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Limited_By_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Volume_Flow_Rate_CFPM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Volume_Flow_Rate_User_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Volume_Flow_Rate_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Debug_Mode_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Commisioning_Crew_Size_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Equipment_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Installation_Crew_Size_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Installer_Hours_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Lead_Hours_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Materials_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Misc_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Super_Hours_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1093,116 +1024,89 @@ Result = Custom.GetPFXMLRepresentation(Prop) 'Generate XML For this and Children
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Summary_Carton_Length_IN_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Carton_Length_User_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Carton_Length_User_UOM_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Carton_Rate_Display_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Carton_Rate_User_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_H_H_Spacing_IN_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_H_H_Spacing_User_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_H_H_Spacing_User_UOM_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Limited_By_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Volume_Flow_Rate_CFPM_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Volume_Flow_Rate_User_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Volume_Flow_Rate_User_UOM_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Debug_Mode_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_DisplayName_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Commisioning_Crew_Size_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Equipment_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Installation_Crew_Size_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Installer_Hours_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Lead_Hours_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Materials_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Misc_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sourcing_Super_Hours_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -1230,78 +1134,6 @@ Result = Custom.GetPFXMLRepresentation(Prop) 'Generate XML For this and Children
       '*****************************************************************************
       Public Function Formula_XMLObjectValue_USERCHANGE() as Boolean
       Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Carton_Length_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
-      
-      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Carton_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9854; TYPE:VV
-      Result = MakeValidValues(Array("IN", "MM"))
-      '   END FORMULA; PROP ID:9854; TYPE:VV
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Carton_Length_User_UOM_ValidValues", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_H_H_Spacing_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
-      
-      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_H_H_Spacing_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9855; TYPE:VV
-      Result = MakeValidValues(Array("IN", "MM"))
-      '   END FORMULA; PROP ID:9855; TYPE:VV
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_H_H_Spacing_User_UOM_ValidValues", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Summary_Volume_Flow_Rate_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
-      
-      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Volume_Flow_Rate_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9856; TYPE:VV
-      Result = MakeValidValues(Array("CFPM", "CMPM"))
-      '   END FORMULA; PROP ID:9856; TYPE:VV
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply_Theoretical_Max.Formula_Summary_Volume_Flow_Rate_User_UOM_ValidValues", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
       End Function
     
 

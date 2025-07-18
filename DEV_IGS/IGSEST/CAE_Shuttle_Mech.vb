@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Shuttle_Mech
-'$ GenerateDate: 07/14/2025 18:02:17
+'$ GenerateDate: 07/18/2025 11:37:15
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -3284,8 +3284,8 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Shuttle_Mech", <a><![CDATA[CAE_Shuttle_Mech]]></a>.Value, 398, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H581955", "07/08/2025 14:25:59")
-    AddProperty("9278", "MEI_MI_Shuttle_Install_Hours_Per_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Hours_Per_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B73", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:22 PM")
+    InitPart("CAE_Shuttle_Mech", <a><![CDATA[CAE_Shuttle_Mech]]></a>.Value, 398, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H582667", "07/18/2025 09:15:12")
+    AddProperty("9278", "MEI_MI_Shuttle_Install_Hours_Per_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Hours_Per_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B73", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:14:19 AM")
     AddProperty("9276", "MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B72", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:17 PM")
     AddProperty("9274", "MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B71", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:12 PM")
     AddProperty("9277", "MEI_MI_Shuttle_Installation_Hours_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Installation_Hours_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!C72", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:20 PM")
@@ -3462,7 +3462,7 @@ Option Infer On
     AddProperty("9202", "MEI_Shuttle_RI_Aisles_Hours", <a><![CDATA[MEI_Shuttle_RI_Aisles_Hours]]></a>.Value, "Mech Install^'Shuttle'!F5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:08 PM")
     AddProperty("9145", "MEI_Shuttle_RI_Aisles_Input", <a><![CDATA[MEI_Shuttle_RI_Aisles_Input]]></a>.Value, "Mech Install^'Shuttle'!B5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:40 PM")
     AddProperty("9183", "MEI_Shuttle_RI_Aisles_Rate", <a><![CDATA[MEI_Shuttle_RI_Aisles_Rate]]></a>.Value, "Mech Install^'Shuttle'!E5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:20 PM")
-    AddProperty("9164", "MEI_Shuttle_RI_Aisles_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Aisles_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:29 PM")
+    AddProperty("9164", "MEI_Shuttle_RI_Aisles_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Aisles_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:15:12 AM")
     AddProperty("9204", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:14 PM")
     AddProperty("9147", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:45 PM")
     AddProperty("9185", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:25 PM")
@@ -3662,7 +3662,7 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_MI_Shuttle_Install_Hours_Per_Shuttle", "8859", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:22 PM", "", "In Development",  0,14728)
+          InitProperty("MEI_MI_Shuttle_Install_Hours_Per_Shuttle", "8859", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:14:19 AM", "", "In Development",  0,19015)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle", "8857", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:17 PM", "", "In Development",  0,14724)
@@ -4193,7 +4193,7 @@ Option Infer On
           InitProperty("MEI_Shuttle_RI_Aisles_Rate", "8764", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:20 PM", "", "In Development",  0,14538)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Aisles_System_Qty", "8745", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:29 PM", "", "In Development",  0,14500)
+          InitProperty("MEI_Shuttle_RI_Aisles_System_Qty", "8745", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:15:12 AM", "", "In Development",  0,19016)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours", "8785", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:14 PM", "", "In Development",  0,14580)
@@ -4764,7 +4764,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8859; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle + Me.MEI_MI_Shuttle_Installation_Hours_Shuttle
       '   END FORMULA; PROP ID:8859; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_MI_Shuttle_Install_Hours_Per_Shuttle", ex.Message)
@@ -8835,7 +8835,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8745; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8745; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Aisles_System_Qty", ex.Message)

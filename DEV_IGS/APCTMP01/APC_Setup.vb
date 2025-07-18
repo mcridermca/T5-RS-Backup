@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Setup
-'$ GenerateDate: 07/16/2025 19:18:25
+'$ GenerateDate: 07/18/2025 13:15:19
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -939,6 +939,12 @@ Option Infer On
       End Set
       End Property
     
+      Public ReadOnly Property [Sort_Equipment_Options]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("Sort_Equipment_Options")
+      End Get
+      End Property
+    
       Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
       Get
       Return Connections("My_PRD")
@@ -959,7 +965,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", True, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H601424", "07/16/2025 19:17:39")
+    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", True, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H601424", "07/18/2025 13:00:07")
     AddProperty("3778", "Belt_InclineDecline_Max_Deg", <a><![CDATA[Belt InclineDecline Max Deg (Degrees)]]></a>.Value, "Max. Belt Incline/Decline Angle for Stable Product (in Degrees)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 6:37:40 PM")
     AddProperty("3170", "BoxSize_Height_Avg_IN", <a><![CDATA[BoxSize Height Avg IN]]></a>.Value, "BoxSize Height Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:37:24 PM")
     AddProperty("3158", "BoxSize_Height_Avg_User", <a><![CDATA[BoxSize Height Avg User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:21:15 PM")
@@ -1045,9 +1051,9 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     AddProperty("3782", "Temp_System_Operating_Min_User", <a><![CDATA[Temp System Operating Min User]]></a>.Value, "Min. Operating Temp. for System Environment", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:38:49 PM")
     AddProperty("3775", "Totes_Plastic", <a><![CDATA[Totes Plastic]]></a>.Value, "Are Plastic Totes Used?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:33:23 PM")
     AddProperty("4532", "Totes_Plastic_Type", <a><![CDATA[Totes Plastic Type]]></a>.Value, "Type of Plastic Tote Used", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:38:54 PM")
-    AddProperty("3172", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:10:22 PM")
+    AddProperty("3172", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "App Calc Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/18/2025 1:00:07 PM")
     AddProperty("9795", "Valid", <a><![CDATA[Valid]]></a>.Value, "Are Plastic Totes Used?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/10/2025 2:33:56 PM")
-    AddProperty("9794", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/16/2025 2:03:18 PM")
+    AddProperty("9794", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/17/2025 8:32:17 PM")
     AddProperty("715", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/24/2025 5:32:55 PM")
     
       AddValidValue("BoxSize_Height_Avg_User_UOM")
@@ -1094,6 +1100,10 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     
       AddValidValue("User_UOM_System")
     
+      oSubpart = AddSubpart(349,"Sort_Equipment_Options", <a><![CDATA[Sort_Equipment_Options]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/18/2025 11:52:12 AM")
+      
+        oSubpart.AddVPF (436, "APC_Setup_Sort_Equip_Option", "APC_Setup_Sort_Equip_Option")
+      
       oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "115", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/18/2025 9:30:13 PM")
       
         oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
@@ -1386,7 +1396,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Valid", "9381", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/10/2025 2:33:56 PM", "Are Plastic Totes Used?", "In Development",  0,16048)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Valid_Message", "9380", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/16/2025 2:03:18 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,17492)
+          InitProperty("Valid_Message", "9380", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/17/2025 8:32:17 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,18949)
         End If
     End Sub
 
@@ -1498,6 +1508,12 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("Sort_Equipment_Options", 276, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/18/2025 11:52:03 AM", "", "In Development", "N",0,765,766)
+        
+          End If
+        
     End Sub
 
     '*****************************************************************************
@@ -3781,8 +3797,9 @@ If BoxSize_Weight_Max_LBS > 70 Then
 End If
 
 '=IF(AND(Live_Load_Avg_LBS>50,Live_Load_Avg_LBS<100),"WARNING: LIVE LOAD IS ABOVE THE TYPICAL RANGE FOR MOST EQUIPMENT TYPES","")
-If Live_Load_Avg_LBSFT > 50 And Live_Load_Avg_LBSFT < 100 Then
-      EList.Add(1,"WARNING: LIVE LOAD IS ABOVE THE TYPICAL RANGE FOR MOST EQUIPMENT TYPES", "APC010", Source)
+'If Live_Load_Avg_LBSFT > 50 And Live_Load_Avg_LBSFT < 100 Then
+If XlsAND(Live_Load_Avg_LBSFT>50,Live_Load_Avg_LBSFT<100) Then
+     EList.Add(1,"WARNING: LIVE LOAD IS ABOVE THE TYPICAL RANGE FOR MOST EQUIPMENT TYPES", "APC010", Source)
 End If
 'Below both warnings are similar
 ' TODO: VV  7/15/2025  Complete this error , ref Setup Cell M33 Check property BoxSize_Worst_Case_HL_Ratio
@@ -5944,6 +5961,75 @@ End If
       '   END FORMULA; PROP ID:2806; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_User_UOM_System_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sort_Equipment_Options_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:276; TYPE:PN
+      
+      '   END FORMULA; SUB ID:276; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Sort_Equipment_Options_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sort_Equipment_Options_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Sort_Equipment_Options").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:276; TYPE:QF
+      Result = 1 ' This needs updated
+      '   END FORMULA; SUB ID:276; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Sort_Equipment_Options_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sort_Equipment_Options_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Sort_Equipment_Options").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:276; TYPE:OP
+      result = "APC_Setup_Sort_Equip_Option"
+      '   END FORMULA; SUB ID:276; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Sort_Equipment_Options_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

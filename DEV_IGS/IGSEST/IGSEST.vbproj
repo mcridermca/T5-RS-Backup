@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{a3db1f9b-4c7d-4fd7-a878-3d41c8e70b5d}</ProjectGuid>
+		<ProjectGuid>{99744184-824b-4cfb-a243-f04957899eae}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>IGSEST</RootNamespace>
 		<AssemblyName>IGSEST</AssemblyName>
@@ -94,13 +94,70 @@
 		<Import Include="Aspose.Cells" />
 	</ItemGroup>
 	<ItemGroup>
+		<Compile Include="apc_setup_sort_equip_option.vb">
+			<SubType>Code</SubType>
+		</Compile>
 		<Compile Include="igs_project_top_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_proposal_data.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mech_install_cp_comp.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_shuttle_mech.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_air_piping_control_panel.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mech_install_data_market_labor_rates.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mech_install_metrics.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="mech_install_data_market_labor_rates.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="data_market_labor_rate.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_misc_constant.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_chutes.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_conveyor_costing.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_tool_instance_mgr.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_sourcing_inputs.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_sourcing_input.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_chute.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_ttcb_costing_mech.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_app_calc_print_and_apply_theoretical_max.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mei_equipment_rentals.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_app_calc_print_and_apply.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_app_calc_print_and_apply_theoretical_max.vb">
+		<Compile Include="cae_app_calc.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="prd_output_test_01_line.vb">
@@ -109,46 +166,16 @@
 		<Compile Include="prd_output_test_01.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_mech_install_metrics.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_misc_constant.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_conveyor_costing.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_ttcb_costing_mech.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_air_piping_control_panel.vb">
-			<SubType>Code</SubType>
-		</Compile>
 		<Compile Include="cae_mei_hhs_hanger_types.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_chutes.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="igs_tool_instance_mgr.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_mech_install_cp_comp.vb">
-			<SubType>Code</SubType>
-		</Compile>
 		<Compile Include="cae_ehs350_data.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_app_calc.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_mech_install_conveyor_hours.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_print_and_apply.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_shuttle_mech.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_conveyor_costing_elec.vb">
@@ -185,9 +212,6 @@
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="igs_opportunity.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="igs_proposal_data.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="ServerManager.vb">

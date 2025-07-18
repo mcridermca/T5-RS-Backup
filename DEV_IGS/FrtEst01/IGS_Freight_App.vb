@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: FrtEst01
 '$ PartFamily: IGS_Freight_App
-'$ GenerateDate: 07/12/2025 19:19:17
+'$ GenerateDate: 07/18/2025 12:22:56
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -385,7 +385,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Freight_App", <a><![CDATA[IGS_Freight_App]]></a>.Value, 18, "FrtEst01",  "", "", True, True, "In Development", "", "Top Level Part for Freight Estimatation Application", "", "", "",  "GLOBAL\H602502", "06/06/2025 17:35:16")
+    InitPart("IGS_Freight_App", <a><![CDATA[IGS_Freight_App]]></a>.Value, 18, "FrtEst01",  "", "", True, True, "In Development", "", "Top Level Part for Freight Estimatation Application", "", "", "",  "GLOBAL\H601424", "07/18/2025 12:21:07")
     AddProperty("188", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/19/2025 12:28:59 AM")
     
       oSubpart = AddSubpart(2,"Freight_Calculator", <a><![CDATA[Freight Calculator]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "3/19/2025 12:37:46 AM")

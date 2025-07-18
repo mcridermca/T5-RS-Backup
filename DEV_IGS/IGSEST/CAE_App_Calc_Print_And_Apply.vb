@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_App_Calc_Print_And_Apply
-'$ GenerateDate: 07/16/2025 20:14:50
+'$ GenerateDate: 07/17/2025 11:55:31
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -2640,15 +2640,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Summary_Carton_Length_User]() As Double
-      Get
-      Return Properties("Summary_Carton_Length_User").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Summary_Carton_Length_User").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Ver_Scan_Carton_Panels_Scanned_Quantity]() As Long
       Get
       Return Properties("Ver_Scan_Carton_Panels_Scanned_Quantity").Value
@@ -2955,6 +2946,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Summary_Carton_Length_User]() As Double
+      Get
+      Return Properties("Summary_Carton_Length_User").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Summary_Carton_Length_User").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Summary_Min_H_to_H_Spacing_Limit_Set_By]() As String
       Get
       Return Properties("Summary_Min_H_to_H_Spacing_Limit_Set_By").Value
@@ -3135,6 +3135,18 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [Ind_Scan_My_Scan_Config]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Ind_Scan_My_Scan_Config")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [Ver_Scan_My_Scan_Config]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Ver_Scan_My_Scan_Config")
+      End Get
+      End Property
+    
       Public ReadOnly Property [My_Setup]() As Rulestream.Kernel.Connection
       Get
       Return Connections("My_Setup")
@@ -3161,9 +3173,9 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_App_Calc_Print_And_Apply", <a><![CDATA[CAE_App_Calc_Print_And_Apply]]></a>.Value, 416, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/16/2025 20:02:15")
+    InitPart("CAE_App_Calc_Print_And_Apply", <a><![CDATA[CAE_App_Calc_Print_And_Apply]]></a>.Value, 416, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/17/2025 11:43:02")
     AddProperty("10076", "Brush_Length_Factor_IN", <a><![CDATA[Brush_Length_Factor_IN]]></a>.Value, "AppCalc^'Belted PandA'!S87", "Double","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/14/2025 3:27:33 PM")
-    AddProperty("10383", "Customer_Date", <a><![CDATA[Customer_Date]]></a>.Value, "AppCalc^'Belted PandA Layout'!G9", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 1:09:51 PM")
+    AddProperty("10383", "Customer_Date", <a><![CDATA[Customer_Date]]></a>.Value, "AppCalc^'Belted PandA Layout'!G9", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 11:43:02 AM")
     AddProperty("10381", "Customer_Location", <a><![CDATA[Customer_Location]]></a>.Value, "AppCalc^'Belted PandA Layout'!G7", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 1:09:59 PM")
     AddProperty("10380", "Customer_Name", <a><![CDATA[Customer_Name]]></a>.Value, "AppCalc^'Belted PandA Layout'!G6", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 1:10:03 PM")
     AddProperty("10382", "Customer_Proposal_Number", <a><![CDATA[Customer_Proposal_Number]]></a>.Value, "AppCalc^'Belted PandA Layout'!G8", "String","","AppCalc_PandA","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 1:09:55 PM")
@@ -3221,27 +3233,27 @@ Option Infer On
     AddProperty("9822", "Gen_MDR_Min_Gap_Throughput_Limit_User", <a><![CDATA[Gen_MDR_Min_Gap_Throughput_Limit_User]]></a>.Value, "AppCalc^'Belted PandA'!J42", "Double","","AppCalc_PandA_General_Input","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:39:28 PM")
     AddProperty("9815", "Gen_MDR_Min_Gap_Throughput_Limit_User_UOM", <a><![CDATA[Gen_MDR_Min_Gap_Throughput_Limit_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_General_Input","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:39:33 PM")
     AddProperty("9806", "Gen_Throughput_Rate", <a><![CDATA[Gen_Throughput_Rate]]></a>.Value, "AppCalc^'BeltedPandA'!J31", "Double","","AppCalc_PandA_General_Input","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 3:39:37 PM")
-    AddProperty("9917", "Ind_Scan_Carton_Panels_Scanned_Quantity", <a><![CDATA[Ind_Scan_Carton_Panels_Scanned_Quantity]]></a>.Value, "AppCalc^'Belted PandA'!J52", "Long","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:09:02 PM")
+    AddProperty("9917", "Ind_Scan_Carton_Panels_Scanned_Quantity", <a><![CDATA[Ind_Scan_Carton_Panels_Scanned_Quantity]]></a>.Value, "AppCalc^'Belted PandA'!J52", "Long","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:33:29 PM")
     AddProperty("9923", "Ind_Scan_Carton_Percent_Max_Length_Scanned", <a><![CDATA[Ind_Scan_Carton_Percent_Max_Length_Scanned]]></a>.Value, "AppCalc^'Belted PandA'!60", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:09:32 PM")
     AddProperty("9924", "Ind_Scan_Carton_Percent_Max_Length_Scanned_User", <a><![CDATA[Ind_Scan_Carton_Percent_Max_Length_Scanned_User]]></a>.Value, "AppCalc^'Belted PandA'!60", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:38:17 PM")
-    AddProperty("9919", "Ind_Scan_Carton_Presentation", <a><![CDATA[Ind_Scan_Carton_Presentation]]></a>.Value, "AppCalc^'Belted PandA'!54", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:28:38 PM")
+    AddProperty("9919", "Ind_Scan_Carton_Presentation", <a><![CDATA[Ind_Scan_Carton_Presentation]]></a>.Value, "AppCalc^'Belted PandA'!54", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:33:40 PM")
     AddProperty("9929", "Ind_Scan_Carton_Scanned_Max_Lin_Length_IN", <a><![CDATA[Ind_Scan_Carton_Scanned_Max_Lin_Length_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:49:32 PM")
     AddProperty("9933", "Ind_Scan_Carton_Scanned_Max_Lin_Length_User", <a><![CDATA[Ind_Scan_Carton_Scanned_Max_Lin_Length_User]]></a>.Value, "AppCalc^'Belted PandA'!J62", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:04:22 PM")
     AddProperty("9938", "Ind_Scan_Carton_Scanned_Max_Lin_Length_User_UOM", <a><![CDATA[Ind_Scan_Carton_Scanned_Max_Lin_Length_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:39:11 PM")
-    AddProperty("9918", "Ind_Scan_Label_Orientation", <a><![CDATA[Ind_Scan_Label_Orientation]]></a>.Value, "AppCalc^'Belted PandA'!53", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:01:49 PM")
+    AddProperty("9918", "Ind_Scan_Label_Orientation", <a><![CDATA[Ind_Scan_Label_Orientation]]></a>.Value, "AppCalc^'Belted PandA'!53", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:32:55 PM")
     AddProperty("9925", "Ind_Scan_Scan_App_Min_Gap_IN", <a><![CDATA[Ind_Scan_Scan_App_Min_Gap_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:49:45 PM")
-    AddProperty("9926", "Ind_Scan_Scan_App_Min_Gap_User", <a><![CDATA[Ind_Scan_Scan_App_Min_Gap_User]]></a>.Value, "AppCalc^'Belted PandA'!J57", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:10:46 PM")
+    AddProperty("9926", "Ind_Scan_Scan_App_Min_Gap_User", <a><![CDATA[Ind_Scan_Scan_App_Min_Gap_User]]></a>.Value, "AppCalc^'Belted PandA'!J57", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:40:24 PM")
     AddProperty("9935", "Ind_Scan_Scan_App_Min_Gap_User_UOM", <a><![CDATA[Ind_Scan_Scan_App_Min_Gap_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:39:18 PM")
     AddProperty("9927", "Ind_Scan_Scan_Window_Length_Req_IN", <a><![CDATA[Ind_Scan_Scan_Window_Length_Req_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:49:56 PM")
-    AddProperty("9931", "Ind_Scan_Scan_Window_Length_Req_User", <a><![CDATA[Ind_Scan_Scan_Window_Length_Req_User]]></a>.Value, "AppCalc^'Belted PandA'!J58", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:13:48 PM")
+    AddProperty("9931", "Ind_Scan_Scan_Window_Length_Req_User", <a><![CDATA[Ind_Scan_Scan_Window_Length_Req_User]]></a>.Value, "AppCalc^'Belted PandA'!J58", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:38:26 PM")
     AddProperty("9936", "Ind_Scan_Scan_Window_Length_Req_User_UOM", <a><![CDATA[Ind_Scan_Scan_Window_Length_Req_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:39:34 PM")
-    AddProperty("9916", "Ind_Scan_Scanner_Config", <a><![CDATA[Ind_Scan_Scanner_Config]]></a>.Value, "AppCalc^'Belted PandA'!51", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:18:06 PM")
+    AddProperty("9916", "Ind_Scan_Scanner_Config", <a><![CDATA[Ind_Scan_Scanner_Config]]></a>.Value, "AppCalc^'Belted PandA'!51", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:27:42 PM")
     AddProperty("9922", "Ind_Scan_Scanner_Data_Transmit_Mode", <a><![CDATA[Ind_Scan_Scanner_Data_Transmit_Mode]]></a>.Value, "AppCalc^'Belted PandA'!59", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:35:10 PM")
     AddProperty("9930", "Ind_Scan_Scanner_Min_Xmit_Point_IN", <a><![CDATA[Ind_Scan_Scanner_Min_Xmit_Point_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:50:14 PM")
     AddProperty("9934", "Ind_Scan_Scanner_Min_Xmit_Point_User", <a><![CDATA[Ind_Scan_Scanner_Min_Xmit_Point_User]]></a>.Value, "AppCalc^'Belted PandA'!J63", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 6:47:26 PM")
     AddProperty("9939", "Ind_Scan_Scanner_Min_Xmit_Point_User_UOM", <a><![CDATA[Ind_Scan_Scanner_Min_Xmit_Point_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:39:26 PM")
-    AddProperty("9921", "Ind_Scan_Shadowing_Allowed", <a><![CDATA[Ind_Scan_Shadowing_Allowed]]></a>.Value, "AppCalc^'Belted PandA'!56", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:31:50 PM")
-    AddProperty("9920", "Ind_Scan_Shadowing_Potential", <a><![CDATA[Ind_Scan_Shadowing_Potential]]></a>.Value, "AppCalc^'Belted PandA'!55", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 4:28:58 PM")
+    AddProperty("9921", "Ind_Scan_Shadowing_Allowed", <a><![CDATA[Ind_Scan_Shadowing_Allowed]]></a>.Value, "AppCalc^'Belted PandA'!56", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:35:36 PM")
+    AddProperty("9920", "Ind_Scan_Shadowing_Potential", <a><![CDATA[Ind_Scan_Shadowing_Potential]]></a>.Value, "AppCalc^'Belted PandA'!55", "String","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:34:29 PM")
     AddProperty("9928", "Ind_Scan_Tracking_Photocell_Distance_IN", <a><![CDATA[Ind_Scan_Tracking_Photocell_Distance_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/12/2025 12:50:24 PM")
     AddProperty("9932", "Ind_Scan_Tracking_Photocell_Distance_User", <a><![CDATA[Ind_Scan_Tracking_Photocell_Distance_User]]></a>.Value, "AppCalc^'Belted PandA'!J61", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:33:53 PM")
     AddProperty("9948", "Ind_Scan_Tracking_Photocell_Distance_User_Max_Val", <a><![CDATA[Ind_Scan_Tracking_Photocell_Distance_User_Max_Val]]></a>.Value, "", "Double","","AppCalc_PandA_Induction_Scanning","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/11/2025 7:00:57 PM")
@@ -3330,8 +3342,8 @@ Option Infer On
     AddProperty("10378", "Output_Total_Calc_Belt_Length_Double_FT_User", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_FT_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AJ19", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:59:34 PM")
     AddProperty("10316", "Output_Total_Calc_Belt_Length_Double_FT_User_UOM", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_FT_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:59:01 PM")
     AddProperty("10377", "Output_Total_Calc_Belt_Length_Double_IN", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:56:19 PM")
-    AddProperty("10370", "Output_Total_Calc_Belt_Length_Double_IN_User", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_IN_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AG19", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:55:37 PM")
-    AddProperty("10314", "Output_Total_Calc_Belt_Length_Double_IN_User_UOM", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_IN_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:58:28 PM")
+    AddProperty("10370", "Output_Total_Calc_Belt_Length_Double_IN_User", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_IN_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AG19", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:28:49 PM")
+    AddProperty("10314", "Output_Total_Calc_Belt_Length_Double_IN_User_UOM", <a><![CDATA[Output_Total_Calc_Belt_Length_Double_IN_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:29:12 PM")
     AddProperty("10369", "Output_Total_Calc_Belt_Length_Single_FT", <a><![CDATA[Output_Total_Calc_Belt_Length_Single_FT]]></a>.Value, "Conversion to FT", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 5:49:50 PM")
     AddProperty("10368", "Output_Total_Calc_Belt_Length_Single_FT_User", <a><![CDATA[Output_Total_Calc_Belt_Length_Single_FT_User]]></a>.Value, "AppCalc^'Belted PandA Layout'!AJ14", "Double","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 12:49:54 PM")
     AddProperty("10315", "Output_Total_Calc_Belt_Length_Single_FT_User_UOM", <a><![CDATA[Output_Total_Calc_Belt_Length_Single_FT_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Output","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:58:55 PM")
@@ -3432,27 +3444,26 @@ Option Infer On
     AddProperty("10262", "Scale_Min_Head_to_Head_User_UOM", <a><![CDATA[Scale_Min_Head_to_Head_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:55:40 PM")
     AddProperty("10250", "Scale_PandA_Scale_Required", <a><![CDATA[Scale_PandA_Scale_Required]]></a>.Value, "AppCalc^'Belted PandA'!J65", "String","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:22:07 PM")
     AddProperty("10259", "Scale_Scale_Bed_Length_IN", <a><![CDATA[Scale_Scale_Bed_Length_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:48:41 PM")
-    AddProperty("10258", "Scale_Scale_Bed_Length_User", <a><![CDATA[Scale_Scale_Bed_Length_User]]></a>.Value, "AppCalc^'Belted PandA'!J67", "Double","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:52:27 PM")
+    AddProperty("10258", "Scale_Scale_Bed_Length_User", <a><![CDATA[Scale_Scale_Bed_Length_User]]></a>.Value, "AppCalc^'Belted PandA'!J67", "Double","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:15:09 PM")
     AddProperty("10253", "Scale_Scale_Bed_Length_User_UOM", <a><![CDATA[Scale_Scale_Bed_Length_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:46:06 PM")
     AddProperty("10261", "Scale_Scale_Gap_Override_IN", <a><![CDATA[Scale_Scale_Gap_Override_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:55:17 PM")
-    AddProperty("10260", "Scale_Scale_Gap_Override_User", <a><![CDATA[Scale_Scale_Gap_Override_User]]></a>.Value, "AppCalc^'Belted PandA'!J69", "Double","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:50:33 PM")
+    AddProperty("10260", "Scale_Scale_Gap_Override_User", <a><![CDATA[Scale_Scale_Gap_Override_User]]></a>.Value, "AppCalc^'Belted PandA'!J69", "Double","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:15:20 PM")
     AddProperty("10254", "Scale_Scale_Gap_Override_User_UOM", <a><![CDATA[Scale_Scale_Gap_Override_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:46:14 PM")
     AddProperty("10251", "Scale_Scale_Type", <a><![CDATA[Scale_Scale_Type]]></a>.Value, "AppCalc^'Belted PandA'!J66", "String","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:22:54 PM")
     AddProperty("10252", "Scale_Spacing_Type", <a><![CDATA[Scale_Spacing_Type]]></a>.Value, "AppCalc^'Belted PandA'!J68", "String","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:45:28 PM")
-    AddProperty("10274", "Summary_Carton_Length_User", <a><![CDATA[Summary_Carton_Length_User]]></a>.Value, "AppCalc^'Belted PandA'!C145", "Double","","AppCalc_PandA_Scale","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 4:27:01 PM")
-    AddProperty("10211", "Ver_Scan_Carton_Panels_Scanned_Quantity", <a><![CDATA[Ver_Scan_Carton_Panels_Scanned_Quantity]]></a>.Value, "AppCalc^'Belted PandA'!J104", "Long","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 1:20:27 PM")
-    AddProperty("10213", "Ver_Scan_Carton_Presentation", <a><![CDATA[Ver_Scan_Carton_Presentation]]></a>.Value, "AppCalc^'Belted PandA'!J106", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 1:31:03 PM")
+    AddProperty("10211", "Ver_Scan_Carton_Panels_Scanned_Quantity", <a><![CDATA[Ver_Scan_Carton_Panels_Scanned_Quantity]]></a>.Value, "AppCalc^'Belted PandA'!J104", "Long","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:12:37 PM")
+    AddProperty("10213", "Ver_Scan_Carton_Presentation", <a><![CDATA[Ver_Scan_Carton_Presentation]]></a>.Value, "AppCalc^'Belted PandA'!J106", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:17:23 PM")
     AddProperty("10241", "Ver_Scan_Distance_Last_Tamp__Scan_Window_IN", <a><![CDATA[Ver_Scan_Distance_Last_Tamp__Scan_Window_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:56:55 PM")
     AddProperty("10239", "Ver_Scan_Distance_Last_Tamp__Scan_Window_Max_Value", <a><![CDATA[Ver_Scan_Distance_Last_Tamp__Scan_Window_Max_Value]]></a>.Value, "", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:53:12 PM")
     AddProperty("10240", "Ver_Scan_Distance_Last_Tamp__Scan_Window_Min_Value", <a><![CDATA[Ver_Scan_Distance_Last_Tamp__Scan_Window_Min_Value]]></a>.Value, "", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:53:40 PM")
     AddProperty("10238", "Ver_Scan_Distance_Last_Tamp__Scan_Window_User", <a><![CDATA[Ver_Scan_Distance_Last_Tamp__Scan_Window_User]]></a>.Value, "AppCalc^'Belted PandA'!J111", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:56:21 PM")
     AddProperty("10229", "Ver_Scan_Distance_Last_Tamp__Scan_Window_User_UOM", <a><![CDATA[Ver_Scan_Distance_Last_Tamp__Scan_Window_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:44:48 PM")
-    AddProperty("10212", "Ver_Scan_Label_Orientation", <a><![CDATA[Ver_Scan_Label_Orientation]]></a>.Value, "AppCalc^'Belted PandA'!J105", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 1:31:08 PM")
+    AddProperty("10212", "Ver_Scan_Label_Orientation", <a><![CDATA[Ver_Scan_Label_Orientation]]></a>.Value, "AppCalc^'Belted PandA'!J105", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:15:18 PM")
     AddProperty("10247", "Ver_Scan_Max_Linear_Length_Carton_Scanned_IN", <a><![CDATA[Ver_Scan_Max_Linear_Length_Carton_Scanned_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:07:19 PM")
     AddProperty("10246", "Ver_Scan_Max_Linear_Length_Carton_Scanned_User", <a><![CDATA[Ver_Scan_Max_Linear_Length_Carton_Scanned_User]]></a>.Value, "AppCalc^'Belted PandA'!J115", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:06:18 PM")
     AddProperty("10231", "Ver_Scan_Max_Linear_Length_Carton_Scanned_User_UOM", <a><![CDATA[Ver_Scan_Max_Linear_Length_Carton_Scanned_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:45:03 PM")
     AddProperty("10234", "Ver_Scan_Min_Gap_Scan_Application_IN", <a><![CDATA[Ver_Scan_Min_Gap_Scan_Application_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:48:50 PM")
-    AddProperty("10233", "Ver_Scan_Min_Gap_Scan_Application_User", <a><![CDATA[Ver_Scan_Min_Gap_Scan_Application_User]]></a>.Value, "AppCalc^'Belted PandA'!J109", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:47:44 PM")
+    AddProperty("10233", "Ver_Scan_Min_Gap_Scan_Application_User", <a><![CDATA[Ver_Scan_Min_Gap_Scan_Application_User]]></a>.Value, "AppCalc^'Belted PandA'!J109", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:23:03 PM")
     AddProperty("10227", "Ver_Scan_Min_Gap_Scan_Application_User_UOM", <a><![CDATA[Ver_Scan_Min_Gap_Scan_Application_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:44:33 PM")
     AddProperty("10249", "Ver_Scan_Min_Xmit_Point_FromScan_Window_IN", <a><![CDATA[Ver_Scan_Min_Xmit_Point_From Scan_Window_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:09:47 PM")
     AddProperty("10248", "Ver_Scan_Min_Xmit_Point_FromScan_Window_User", <a><![CDATA[Ver_Scan_Min_Xmit_Point_From Scan_Window_User]]></a>.Value, "AppCalc^'Belted PandA'!J116", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:09:03 PM")
@@ -3461,19 +3472,20 @@ Option Infer On
     AddProperty("10225", "Ver_Scan_Percent_Max_Carton_Length_Scanned_User", <a><![CDATA[Ver_Scan_Percent_Max_Carton_Length_Scanned_User]]></a>.Value, "AppCalc^'Belted PandA'!J113", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:42:12 PM")
     AddProperty("10209", "Ver_Scan_Rescan_Barcode_For_Verification", <a><![CDATA[Ver_Scan_Rescan_Barcode_For_Verification]]></a>.Value, "AppCalc^'Belted PandA'!J102", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 1:18:00 PM")
     AddProperty("10236", "Ver_Scan_Scan_Window_Length_Req_IN", <a><![CDATA[Ver_Scan_Scan_Window_Length_Req_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:50:37 PM")
-    AddProperty("10235", "Ver_Scan_Scan_Window_Length_Req_User", <a><![CDATA[Ver_Scan_Scan_Window_Length_Req_User]]></a>.Value, "AppCalc^'Belted PandA'!J110", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:50:09 PM")
+    AddProperty("10235", "Ver_Scan_Scan_Window_Length_Req_User", <a><![CDATA[Ver_Scan_Scan_Window_Length_Req_User]]></a>.Value, "AppCalc^'Belted PandA'!J110", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:37:34 PM")
     AddProperty("10228", "Ver_Scan_Scan_Window_Length_Req_User_UOM", <a><![CDATA[Ver_Scan_Scan_Window_Length_Req_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:44:40 PM")
-    AddProperty("10210", "Ver_Scan_Scanner_Configuration", <a><![CDATA[Ver_Scan_Scanner_Configuration]]></a>.Value, "AppCalc^'Belted PandA'!J103", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 1:20:47 PM")
+    AddProperty("10210", "Ver_Scan_Scanner_Configuration", <a><![CDATA[Ver_Scan_Scanner_Configuration]]></a>.Value, "AppCalc^'Belted PandA'!J103", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:01:15 PM")
     AddProperty("10224", "Ver_Scan_Scanner_Data_Transmit_Mode", <a><![CDATA[Ver_Scan_Scanner_Data_Transmit_Mode]]></a>.Value, "AppCalc^'Belted PandA'!J112", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:38:37 PM")
-    AddProperty("10223", "Ver_Scan_Shadowing_Allowed", <a><![CDATA[Ver_Scan_Shadowing_Allowed]]></a>.Value, "AppCalc^'Belted PandA'!J108", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:36:50 PM")
-    AddProperty("10220", "Ver_Scan_Shadowing_Potential", <a><![CDATA[Ver_Scan_Shadowing_Potential]]></a>.Value, "AppCalc^'Belted PandA'!J107", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:30:52 PM")
+    AddProperty("10223", "Ver_Scan_Shadowing_Allowed", <a><![CDATA[Ver_Scan_Shadowing_Allowed]]></a>.Value, "AppCalc^'Belted PandA'!J108", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:20:36 PM")
+    AddProperty("10220", "Ver_Scan_Shadowing_Potential", <a><![CDATA[Ver_Scan_Shadowing_Potential]]></a>.Value, "AppCalc^'Belted PandA'!J107", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:19:10 PM")
     AddProperty("10245", "Ver_Scan_Tracking_Photocell_Distance_IN", <a><![CDATA[Ver_Scan_Tracking_Photocell_Distance_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:03:55 PM")
     AddProperty("10243", "Ver_Scan_Tracking_Photocell_Distance_Max_Value", <a><![CDATA[Ver_Scan_Tracking_Photocell_Distance_Max_Value]]></a>.Value, "", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:59:34 PM")
     AddProperty("10244", "Ver_Scan_Tracking_Photocell_Distance_Min_Value", <a><![CDATA[Ver_Scan_Tracking_Photocell_Distance_Min_Value]]></a>.Value, "", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:00:41 PM")
     AddProperty("10242", "Ver_Scan_Tracking_Photocell_Distance_User", <a><![CDATA[Ver_Scan_Tracking_Photocell_Distance_User]]></a>.Value, "AppCalc^'Belted PandA'!J114", "Double","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 3:03:04 PM")
     AddProperty("10230", "Ver_Scan_Tracking_Photocell_Distance_User_UOM", <a><![CDATA[Ver_Scan_Tracking_Photocell_Distance_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Scanning_Details","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 2:44:55 PM")
-    AddProperty("10291", "Summary_Caclucation_Errors_Present", <a><![CDATA[Summary_Caclucation_Errors_Present]]></a>.Value, "Number of errors present at runtime", "Long","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:33:02 PM")
+    AddProperty("10291", "Summary_Caclucation_Errors_Present", <a><![CDATA[Summary_Caclucation_Errors_Present]]></a>.Value, "Number of errors present at runtime", "Long","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:25:19 PM")
     AddProperty("10290", "Summary_Caclucation_Warnings_Present", <a><![CDATA[Summary_Caclucation_Warnings_Present]]></a>.Value, "Number of warnings present at runtime", "Long","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 8:33:08 PM")
+    AddProperty("10274", "Summary_Carton_Length_User", <a><![CDATA[Summary_Carton_Length_User]]></a>.Value, "AppCalc^'Belted PandA'!C145", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:15:37 PM")
     AddProperty("10288", "Summary_Min_H_to_H_Spacing_Limit_Set_By", <a><![CDATA[Summary_Min_H_to_H_Spacing_Limit_Set_By]]></a>.Value, "AppCalc^'Belted PandA'!J136", "String","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:54:48 PM")
     AddProperty("10285", "Summary_Min_H_to_H_Spacing_Req_IN", <a><![CDATA[Summary_Min_H_to_H_Spacing_Req_IN]]></a>.Value, "Conversion to IN", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:44:30 PM")
     AddProperty("10284", "Summary_Min_H_to_H_Spacing_Req_User", <a><![CDATA[Summary_Min_H_to_H_Spacing_Req_User]]></a>.Value, "AppCalc^'Belted PandA'!J135", "Double","","AppCalc_PandA_Summary","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/15/2025 6:43:44 PM")
@@ -3561,9 +3573,9 @@ Option Infer On
     
       AddPropertyExtended(10069,"App_Tamp_Home_Height_Above_Conveyor_User", "9651", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/14/2025 6:44:55 PM")
     
-      AddPropertyExtended(10258,"Scale_Scale_Bed_Length_User", "9837", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/15/2025 3:52:27 PM")
+      AddPropertyExtended(10258,"Scale_Scale_Bed_Length_User", "9837", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 8:15:09 PM")
     
-      AddPropertyExtended(10260,"Scale_Scale_Gap_Override_User", "9839", "EXTLABEL", "Label", "FORMULA", "GLOBAL\H602502", "7/15/2025 3:50:33 PM")
+      AddPropertyExtended(10260,"Scale_Scale_Gap_Override_User", "9839", "EXTLABEL", "Label", "FORMULA", "GLOBAL\H602502", "7/16/2025 8:15:20 PM")
     
       AddPropertyExtended(10238,"Ver_Scan_Distance_Last_Tamp__Scan_Window_User", "9817", "EXTLABEL", "Label", "FORMULA", "GLOBAL\H602502", "7/15/2025 2:56:21 PM")
     
@@ -3573,7 +3585,7 @@ Option Infer On
     
       AddPropertyExtended(10209,"Ver_Scan_Rescan_Barcode_For_Verification", "9790", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/15/2025 1:18:00 PM")
     
-      AddPropertyExtended(10210,"Ver_Scan_Scanner_Configuration", "9791", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/15/2025 1:20:47 PM")
+      AddPropertyExtended(10210,"Ver_Scan_Scanner_Configuration", "9791", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/16/2025 9:01:15 PM")
     
       AddPropertyExtended(10242,"Ver_Scan_Tracking_Photocell_Distance_User", "9821", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/15/2025 3:03:04 PM")
     
@@ -3803,6 +3815,14 @@ Option Infer On
       
         oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
       
+      oConnection = AddConnection("Ind_Scan_My_Scan_Config", <a><![CDATA[Ind_Scan_My_Scan_Config]]></a>.Value, "", "197", "OO", 0, "","AppCalc_PandA_Induction_Scanning", 9999, "", "GLOBAL\H602502", "7/16/2025 9:26:30 PM")
+      
+        oConnection.AddVPF(417, "APC_Scan_Configuration")
+      
+      oConnection = AddConnection("Ver_Scan_My_Scan_Config", <a><![CDATA[Ver_Scan_My_Scan_Config]]></a>.Value, "", "196", "OO", 0, "","AppCalc_PandA_Scanning_Details", 9999, "", "GLOBAL\H602502", "7/16/2025 9:03:13 PM")
+      
+        oConnection.AddVPF(417, "APC_Scan_Configuration")
+      
       oConnection = AddConnection("My_Setup", <a><![CDATA[My_Setup]]></a>.Value, "", "195", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/16/2025 7:08:38 PM")
       
         oConnection.AddVPF(119, "APC_Setup")
@@ -3843,7 +3863,7 @@ Option Infer On
           InitProperty("Brush_Length_Factor_IN", "9658", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/14/2025 3:27:33 PM", "", "In Development",  0,17024)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Customer_Date", "9960", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 1:09:51 PM", "", "In Development",  0,18058)
+          InitProperty("Customer_Date", "9960", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 11:43:02 AM", "", "In Development",  0,18474)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Customer_Location", "9958", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 1:09:59 PM", "", "In Development",  0,18052)
@@ -4017,7 +4037,7 @@ Option Infer On
           InitProperty("Gen_Throughput_Rate", "9390", "0", "60", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 1:27:15 PM", "", "In Development",  0,16109)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ind_Scan_Carton_Panels_Scanned_Quantity", "9501", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:09:02 PM", "", "In Development",  0,16490)
+          InitProperty("Ind_Scan_Carton_Panels_Scanned_Quantity", "9501", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:33:29 PM", "", "In Development",  0,18281)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ind_Scan_Carton_Percent_Max_Length_Scanned", "9507", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:09:32 PM", "", "In Development",  0,16498)
@@ -4026,7 +4046,7 @@ Option Infer On
           InitProperty("Ind_Scan_Carton_Percent_Max_Length_Scanned_User", "9508", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:38:17 PM", "", "In Development",  0,16533)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ind_Scan_Carton_Presentation", "9503", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:28:38 PM", "", "In Development",  0,16524)
+          InitProperty("Ind_Scan_Carton_Presentation", "9503", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:33:40 PM", "", "In Development",  0,18283)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ind_Scan_Carton_Scanned_Max_Lin_Length_IN", "9513", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:49:32 PM", "", "In Development",  0,16630)
@@ -4038,13 +4058,13 @@ Option Infer On
           InitProperty("Ind_Scan_Carton_Scanned_Max_Lin_Length_User_UOM", "9522", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:16:16 PM", "", "In Development",  0,16516)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ind_Scan_Label_Orientation", "9502", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 7:01:49 PM", "", "In Development",  0,16522)
+          InitProperty("Ind_Scan_Label_Orientation", "9502", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:32:55 PM", "", "In Development",  0,18279)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ind_Scan_Scan_App_Min_Gap_IN", "9509", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:49:45 PM", "", "In Development",  0,16631)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ind_Scan_Scan_App_Min_Gap_User", "9510", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:10:27 PM", "", "In Development",  0,16501)
+          InitProperty("Ind_Scan_Scan_App_Min_Gap_User", "9510", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:40:24 PM", "", "In Development",  0,18292)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ind_Scan_Scan_App_Min_Gap_User_UOM", "9519", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:15:51 PM", "", "In Development",  0,16510)
@@ -4053,13 +4073,13 @@ Option Infer On
           InitProperty("Ind_Scan_Scan_Window_Length_Req_IN", "9511", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:49:56 PM", "", "In Development",  0,16632)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ind_Scan_Scan_Window_Length_Req_User", "9515", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:13:43 PM", "", "In Development",  0,16506)
+          InitProperty("Ind_Scan_Scan_Window_Length_Req_User", "9515", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:38:26 PM", "", "In Development",  0,18290)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ind_Scan_Scan_Window_Length_Req_User_UOM", "9520", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:16:00 PM", "", "In Development",  0,16512)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ind_Scan_Scanner_Config", "9500", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:18:06 PM", "", "In Development",  0,16520)
+          InitProperty("Ind_Scan_Scanner_Config", "9500", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:27:42 PM", "", "In Development",  0,18272)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ind_Scan_Scanner_Data_Transmit_Mode", "9506", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:35:10 PM", "", "In Development",  0,16531)
@@ -4074,10 +4094,10 @@ Option Infer On
           InitProperty("Ind_Scan_Scanner_Min_Xmit_Point_User_UOM", "9523", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:16:29 PM", "", "In Development",  0,16518)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ind_Scan_Shadowing_Allowed", "9505", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:31:50 PM", "", "In Development",  0,16528)
+          InitProperty("Ind_Scan_Shadowing_Allowed", "9505", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:35:36 PM", "", "In Development",  0,18287)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ind_Scan_Shadowing_Potential", "9504", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/11/2025 4:28:58 PM", "", "In Development",  0,16526)
+          InitProperty("Ind_Scan_Shadowing_Potential", "9504", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:34:29 PM", "", "In Development",  0,18285)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ind_Scan_Tracking_Photocell_Distance_IN", "9512", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/12/2025 12:50:24 PM", "", "In Development",  0,16634)
@@ -4344,10 +4364,10 @@ Option Infer On
           InitProperty("Output_Total_Calc_Belt_Length_Double_IN", "9954", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:56:19 PM", "", "In Development",  0,18042)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Output_Total_Calc_Belt_Length_Double_IN_User", "9948", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 12:55:37 PM", "", "In Development",  0,18040)
+          InitProperty("Output_Total_Calc_Belt_Length_Double_IN_User", "9948", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:28:49 PM", "", "In Development",  0,18236)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Output_Total_Calc_Belt_Length_Double_IN_User_UOM", "9892", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:58:28 PM", "", "In Development",  0,17640)
+          InitProperty("Output_Total_Calc_Belt_Length_Double_IN_User_UOM", "9892", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:29:12 PM", "", "In Development",  0,18237)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Output_Total_Calc_Belt_Length_Single_FT", "9947", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 5:49:50 PM", "", "In Development",  0,18176)
@@ -4650,7 +4670,7 @@ Option Infer On
           InitProperty("Scale_Scale_Bed_Length_IN", "9838", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:48:41 PM", "", "In Development",  0,17429)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Scale_Scale_Bed_Length_User", "9837", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:52:27 PM", "", "In Development",  0,17427)
+          InitProperty("Scale_Scale_Bed_Length_User", "9837", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:15:09 PM", "", "In Development",  0,17427)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Scale_Scale_Bed_Length_User_UOM", "9832", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:45:58 PM", "", "In Development",  0,17415)
@@ -4659,7 +4679,7 @@ Option Infer On
           InitProperty("Scale_Scale_Gap_Override_IN", "9840", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:55:17 PM", "", "In Development",  0,17441)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Scale_Scale_Gap_Override_User", "9839", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:50:33 PM", "", "In Development",  0,17432)
+          InitProperty("Scale_Scale_Gap_Override_User", "9839", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:15:20 PM", "", "In Development",  0,17432)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Scale_Scale_Gap_Override_User_UOM", "9833", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:46:14 PM", "", "In Development",  0,17417)
@@ -4671,13 +4691,10 @@ Option Infer On
           InitProperty("Scale_Spacing_Type", "9831", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:45:28 PM", "", "In Development",  0,17413)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Carton_Length_User", "9852", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 4:27:01 PM", "", "In Development",  0,17488)
+          InitProperty("Ver_Scan_Carton_Panels_Scanned_Quantity", "9792", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:12:37 PM", "", "In Development",  0,18256)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ver_Scan_Carton_Panels_Scanned_Quantity", "9792", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 1:20:27 PM", "", "In Development",  0,17292)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Ver_Scan_Carton_Presentation", "9794", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 1:31:03 PM", "", "In Development",  0,17301)
+          InitProperty("Ver_Scan_Carton_Presentation", "9794", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:17:23 PM", "", "In Development",  0,18262)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ver_Scan_Distance_Last_Tamp__Scan_Window_IN", "9820", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:56:55 PM", "", "In Development",  0,17382)
@@ -4695,7 +4712,7 @@ Option Infer On
           InitProperty("Ver_Scan_Distance_Last_Tamp__Scan_Window_User_UOM", "9808", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:44:48 PM", "", "In Development",  0,17353)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ver_Scan_Label_Orientation", "9793", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 1:31:08 PM", "", "In Development",  0,17296)
+          InitProperty("Ver_Scan_Label_Orientation", "9793", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:15:18 PM", "", "In Development",  0,18259)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ver_Scan_Max_Linear_Length_Carton_Scanned_IN", "9826", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:07:19 PM", "", "In Development",  0,17398)
@@ -4710,7 +4727,7 @@ Option Infer On
           InitProperty("Ver_Scan_Min_Gap_Scan_Application_IN", "9813", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:48:50 PM", "", "In Development",  0,17366)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ver_Scan_Min_Gap_Scan_Application_User", "9812", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:47:44 PM", "", "In Development",  0,17363)
+          InitProperty("Ver_Scan_Min_Gap_Scan_Application_User", "9812", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:23:03 PM", "", "In Development",  0,18268)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ver_Scan_Min_Gap_Scan_Application_User_UOM", "9806", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:44:26 PM", "", "In Development",  0,17349)
@@ -4737,22 +4754,22 @@ Option Infer On
           InitProperty("Ver_Scan_Scan_Window_Length_Req_IN", "9815", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:50:37 PM", "", "In Development",  0,17370)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ver_Scan_Scan_Window_Length_Req_User", "9814", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:50:09 PM", "", "In Development",  0,17368)
+          InitProperty("Ver_Scan_Scan_Window_Length_Req_User", "9814", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:37:34 PM", "", "In Development",  0,18289)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ver_Scan_Scan_Window_Length_Req_User_UOM", "9807", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:44:40 PM", "", "In Development",  0,17351)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ver_Scan_Scanner_Configuration", "9791", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 1:19:21 PM", "", "In Development",  0,17290)
+          InitProperty("Ver_Scan_Scanner_Configuration", "9791", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:01:15 PM", "", "In Development",  0,18251)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ver_Scan_Scanner_Data_Transmit_Mode", "9803", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:38:37 PM", "", "In Development",  0,17334)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ver_Scan_Shadowing_Allowed", "9802", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:36:50 PM", "", "In Development",  0,17328)
+          InitProperty("Ver_Scan_Shadowing_Allowed", "9802", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:20:36 PM", "", "In Development",  0,18266)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Ver_Scan_Shadowing_Potential", "9799", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:30:52 PM", "", "In Development",  0,17321)
+          InitProperty("Ver_Scan_Shadowing_Potential", "9799", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 9:19:10 PM", "", "In Development",  0,18264)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Ver_Scan_Tracking_Photocell_Distance_IN", "9824", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 3:03:55 PM", "", "In Development",  0,17393)
@@ -4770,10 +4787,13 @@ Option Infer On
           InitProperty("Ver_Scan_Tracking_Photocell_Distance_User_UOM", "9809", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/15/2025 2:44:55 PM", "", "In Development",  0,17355)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Summary_Caclucation_Errors_Present", "9869", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:33:02 PM", "", "In Development",  0,17592)
+          InitProperty("Summary_Caclucation_Errors_Present", "9869", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:25:19 PM", "", "In Development",  0,18235)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Summary_Caclucation_Warnings_Present", "9868", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 8:33:08 PM", "", "In Development",  0,17590)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Summary_Carton_Length_User", "9852", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 4:27:01 PM", "", "In Development",  0,17488)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Summary_Min_H_to_H_Spacing_Limit_Set_By", "9866", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/15/2025 6:54:48 PM", "", "In Development",  0,17582)
@@ -4923,7 +4943,7 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           
-        InitValidValue("Ind_Scan_Scanner_Config_ValidValues", "9500", "-1", 16521)
+        InitValidValue("Ind_Scan_Scanner_Config_ValidValues", "9500", "-1", 18273)
         End If
             If Incontext("-1", ctx) Then
           
@@ -5047,7 +5067,7 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           
-        InitValidValue("Output_Total_Calc_Belt_Length_Double_IN_User_UOM_ValidValues", "9892", "-1", 17641)
+        InitValidValue("Output_Total_Calc_Belt_Length_Double_IN_User_UOM_ValidValues", "9892", "-1", 18238)
         End If
             If Incontext("-1", ctx) Then
           
@@ -5239,7 +5259,7 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           
-        InitValidValue("Ver_Scan_Scanner_Configuration_ValidValues", "9791", "-1", 17291)
+        InitValidValue("Ver_Scan_Scanner_Configuration_ValidValues", "9791", "-1", 18253)
         End If
             If Incontext("-1", ctx) Then
           
@@ -5302,6 +5322,18 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitConnection("My_PRD", "168", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 1:04:12 PM", "", "In Development", "N",301)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("Ind_Scan_My_Scan_Config", "177", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 9:26:30 PM", "", "In Development", "N",323)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("Ver_Scan_My_Scan_Config", "176", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 9:03:13 PM", "", "In Development", "N",322)
         
           End If
         
@@ -5374,6 +5406,70 @@ Option Infer On
       
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_My_PRD_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Ind_Scan_My_Scan_Config_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:177; TYPE:PF
+        Select Case Me.Parent.Scan_Configurations.Quantity
+	Case 0
+		Result = Nothing
+	Case Else
+		For Each part As Part In Me.Parent.Scan_Configurations
+			If part.Properties("Configuration_Name").Value = me.Ind_Scan_Scanner_Config Then
+				Result = part
+				Exit For
+			End If
+		Next
+End Select
+        '   END FORMULA; CON ID:177; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_My_Scan_Config_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Ver_Scan_My_Scan_Config_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:176; TYPE:PF
+        Select Case Me.Parent.Scan_Configurations.Quantity
+	Case 0
+		Result = Nothing
+	Case Else
+		For Each part As Part In Me.Parent.Scan_Configurations
+			If part.Properties("Configuration_Name").Value = Me.Ver_Scan_Scanner_Configuration Then
+				Result = part
+				Exit For
+			End If
+		Next
+End Select
+        '   END FORMULA; CON ID:176; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_My_Scan_Config_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -5469,7 +5565,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9960; TYPE:PF
-      Result = ""  '''ToDo - Need property - TB 16 July, 2025
+      Result = Me.My_PRD(1).Proposal_Date
       '   END FORMULA; PROP ID:9960; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Customer_Date", ex.Message)
@@ -7032,7 +7128,12 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9501; TYPE:PF
-      result = 0
+      Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = 0
+	Case Else
+		Result = Me.Ind_Scan_My_Scan_Config(1).BoxPanelsScanned
+End Select
       '   END FORMULA; PROP ID:9501; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Carton_Panels_Scanned_Quantity", ex.Message)
@@ -7103,7 +7204,12 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9503; TYPE:PF
-      Result = "Edge Aligned"
+      Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = "Edge Aligned"
+	Case Else
+		Result = Me.Ind_Scan_My_Scan_Config(1).CartonPresentation
+End Select
       '   END FORMULA; PROP ID:9503; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Carton_Presentation", ex.Message)
@@ -7204,11 +7310,11 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9502; TYPE:PF
-      Select Case Me.Ind_Scan_Carton_Panels_Scanned_Quantity
-	Case 0
-		Result = ""
-	Case Else
+      Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
 		Result = "Uni-Directional"
+	Case Else
+		Result = Me.Ind_Scan_My_Scan_Config(1).AppType
 End Select
       '   END FORMULA; PROP ID:9502; TYPE:PF
       Catch ex As Exception
@@ -7255,7 +7361,15 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9510; TYPE:PF
-      Result = 0.0
+      Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = 6.0
+		If Me.Ind_Scan_Scan_App_Min_Gap_User_UOM = "MM" Then
+			Result = Units.Convert(Result, "IN", "MM")
+		End If
+	Case Else
+		Result = Me.Ind_Scan_My_Scan_Config(1).MinGapRequired_User
+End Select
       '   END FORMULA; PROP ID:9510; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Scan_App_Min_Gap_User", ex.Message)
@@ -7326,7 +7440,15 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9515; TYPE:PF
-      Result = 0.0
+      Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = 5.0
+		If Me.Ind_Scan_Scan_Window_Length_Req_User_UOM = "MM" Then
+			Result = Units.Convert(Result, "IN", "MM")
+		End If
+	Case Else
+		Result = Me.Ind_Scan_My_Scan_Config(1).ReadWindowSize_USER
+End Select
       '   END FORMULA; PROP ID:9515; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Scan_Window_Length_Req_User", ex.Message)
@@ -7376,7 +7498,12 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9500; TYPE:PF
-      Result = "Scan Config A"
+      Select Case Me.Parent.Scan_Configurations.Quantity
+	Case 0
+		Result = "None"
+	Case Else
+		Result = Me.Parent.Scan_Configurations(1).Configuration_Name
+End Select
       '   END FORMULA; PROP ID:9500; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Scanner_Config", ex.Message)
@@ -7502,11 +7629,16 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9505; TYPE:PF
-      Select Case Me.Ind_Scan_Shadowing_Potential
-	Case "No"
-		Result = "N/A"
+      Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Select Case Me.Ind_Scan_Shadowing_Potential
+			Case "Yes"
+				Result = "No"
+			Case Else
+				Result = ""
+		End Select
 	Case Else
-		Result = "No"
+		Result = Me.Ind_Scan_My_Scan_Config(1).ShadowingStatus
 End Select
       '   END FORMULA; PROP ID:9505; TYPE:PF
       Catch ex As Exception
@@ -7532,7 +7664,12 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9504; TYPE:PF
-      Result = "No"
+      Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = "No"
+	Case Else
+		Result = Me.Ind_Scan_My_Scan_Config(1).ShadowingPotential
+End Select
       '   END FORMULA; PROP ID:9504; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Shadowing_Potential", ex.Message)
@@ -9870,15 +10007,15 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9948; TYPE:PF
-      Result = Me.Output_Induct_Max_Lgth_of_Carton_Scanned_IN _
+      Result = (Me.Output_Induct_Max_Lgth_of_Carton_Scanned_IN _
 		+ Me.Output_Carton_Stability_Length_IN _
 		+ Me.Output_Induction_Scan_Window_Length_IN _
 		+ Me.Output_Induct_Scan_Data_Cap_Window_Lgth_IN _
 		+ Me.Output_Label_Data_Acq_Distance_App_1_IN _
-		+ me.Output_PandA_Belt_Exit_PE_Distance_IN
+		+ Me.Output_PandA_Belt_Exit_PE_Distance_IN) / 12
 
-If Me.Output_Total_Calc_Belt_Length_Double_IN_User_UOM = "MM" Then
-	Result = Units.Convert(Result, "IN", "MM")
+If Me.Output_Total_Calc_Belt_Length_Double_IN_User_UOM = "M" Then
+	Result = Units.Convert(Result, "FT", "M")
 End If
       '   END FORMULA; PROP ID:9948; TYPE:PF
       Catch ex As Exception
@@ -9904,7 +10041,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9892; TYPE:PF
-      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      If Me.User_UOM_System = "Imperial" Then Result = "FT" Else Result = "M"
       '   END FORMULA; PROP ID:9892; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_IN_User_UOM", ex.Message)
@@ -12764,29 +12901,6 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Summary_Carton_Length_User() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Summary_Carton_Length_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:9852; TYPE:PF
-      Result = Me.MTBH_Length_Minimum_IN + Me.SubpartID - 1
-      '   END FORMULA; PROP ID:9852; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Carton_Length_User", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Ver_Scan_Carton_Panels_Scanned_Quantity() As Long
           Dim Result as Long
       Dim ctx as Object
@@ -12796,7 +12910,12 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9792; TYPE:PF
-      Result = 1
+      Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = 0
+	Case Else
+		Result = Me.Ver_Scan_My_Scan_Config(1).BoxPanelsScanned
+End Select
       '   END FORMULA; PROP ID:9792; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Carton_Panels_Scanned_Quantity", ex.Message)
@@ -12821,7 +12940,12 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9794; TYPE:PF
-      Result = "Edge Aligned"
+      Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = "Edge Aligned"
+	Case Else
+		Result = Me.Ver_Scan_My_Scan_Config(1).CartonPresentation
+End Select
       '   END FORMULA; PROP ID:9794; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Carton_Presentation", ex.Message)
@@ -12977,7 +13101,12 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9793; TYPE:PF
-      Result = "Uni-Directional"
+      Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = "Uni-Directional"
+	Case Else
+		Result = Me.Ver_Scan_My_Scan_Config(1).AppType
+End Select
       '   END FORMULA; PROP ID:9793; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Label_Orientation", ex.Message)
@@ -13103,11 +13232,15 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9812; TYPE:PF
-      Result = 6.0
-
-If Me.Ver_Scan_Min_Gap_Scan_Application_User_UOM = "MM" Then
-	Result = Units.Convert(Result, "IN", "MM")
-End If
+      Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = 6.0
+		If Me.Ver_Scan_Min_Gap_Scan_Application_User_UOM = "MM" Then
+			Result = Units.Convert(Result, "IN", "MM")
+		End If
+	Case Else
+		Result = Me.Ver_Scan_My_Scan_Config(1).MinGapRequired_User
+End Select
       '   END FORMULA; PROP ID:9812; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Min_Gap_Scan_Application_User", ex.Message)
@@ -13329,11 +13462,15 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9814; TYPE:PF
-      Result = 5.0
-
-If Me.Ver_Scan_Min_Gap_Scan_Application_User_UOM = "MM" Then
-	Result = Units.Convert(Result, "IN", "MM")
-End If
+      Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = 5.0
+		If Me.Ver_Scan_Scan_Window_Length_Req_User_UOM = "MM" Then
+			Result = Units.Convert(Result, "IN", "MM")
+		End If
+	Case Else
+		Result = me.Ver_Scan_My_Scan_Config(1).ReadWindowSize_USER
+End Select
       '   END FORMULA; PROP ID:9814; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Scan_Window_Length_Req_User", ex.Message)
@@ -13383,7 +13520,12 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9791; TYPE:PF
-      Result = "Scan Config A"
+      Select Case Me.Parent.Scan_Configurations.Quantity
+	Case 0
+		Result = "None"
+	Case Else
+		Result = Me.Parent.Scan_Configurations(1).Configuration_Name
+End Select
       '   END FORMULA; PROP ID:9791; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Scanner_Configuration", ex.Message)
@@ -13433,11 +13575,16 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9802; TYPE:PF
-      Select Case Me.Ver_Scan_Shadowing_Potential
-	Case "Yes"
-		Result = "No"
+      Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Select Case Me.Ver_Scan_Shadowing_Potential
+			Case "Yes"
+				Result = "No"
+			Case Else
+				Result = ""
+		End Select
 	Case Else
-		Result = ""
+		Result = Me.Ver_Scan_My_Scan_Config(1).ShadowingStatus
 End Select
       '   END FORMULA; PROP ID:9802; TYPE:PF
       Catch ex As Exception
@@ -13463,7 +13610,12 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9799; TYPE:PF
-      Result = "No"
+      Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = "No"
+	Case Else
+		Result = Me.Ver_Scan_My_Scan_Config(1).ShadowingPotential
+End Select
       '   END FORMULA; PROP ID:9799; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Shadowing_Potential", ex.Message)
@@ -13617,7 +13769,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9869; TYPE:PF
-      result = 0
+      Result = 0
       '   END FORMULA; PROP ID:9869; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Caclucation_Errors_Present", ex.Message)
@@ -13644,6 +13796,29 @@ End Select
       '   END FORMULA; PROP ID:9868; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Caclucation_Warnings_Present", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Summary_Carton_Length_User() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Summary_Carton_Length_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:9852; TYPE:PF
+      Result = Me.MTBH_Length_Minimum_IN + Me.SubpartID - 1
+      '   END FORMULA; PROP ID:9852; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Summary_Carton_Length_User", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -17728,15 +17903,6 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Summary_Carton_Length_User_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Ver_Scan_Carton_Panels_Scanned_Quantity_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -18035,6 +18201,15 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Summary_Caclucation_Warnings_Present_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Carton_Length_User_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -18838,7 +19013,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ind_Scan_Carton_Panels_Scanned_Quantity_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ind_Scan_Carton_Panels_Scanned_Quantity").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9501; TYPE:UC
+              Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9501; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Carton_Panels_Scanned_Quantity_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -18865,7 +19062,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ind_Scan_Carton_Presentation_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ind_Scan_Carton_Presentation").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9503; TYPE:UC
+              Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9503; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Carton_Presentation_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -18911,11 +19130,11 @@ End Select
               Stop
               End If
               '   BEGIN FORMULA; PROP ID:9502; TYPE:UC
-              Select Case Me.Ind_Scan_Carton_Panels_Scanned_Quantity
-	Case 0
-		Result = False
-	Case Else
+              Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
 		Result = True
+	Case Else
+		Result = False
 End Select
               '   END FORMULA; PROP ID:9502; TYPE:UC
               Catch ex As Exception
@@ -18941,7 +19160,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ind_Scan_Scan_App_Min_Gap_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ind_Scan_Scan_App_Min_Gap_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9510; TYPE:UC
+              Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9510; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Scan_App_Min_Gap_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -18968,7 +19209,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ind_Scan_Scan_Window_Length_Req_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ind_Scan_Scan_Window_Length_Req_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9515; TYPE:UC
+              Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9515; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Scan_Window_Length_Req_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -19041,11 +19304,16 @@ End Select
               Stop
               End If
               '   BEGIN FORMULA; PROP ID:9505; TYPE:UC
-              Select Case Me.Ind_Scan_Shadowing_Potential
-	Case "No"
-		Result = False
+              Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Select Case Me.Ind_Scan_Shadowing_Potential
+			Case "Yes"
+				Result = True
+			Case Else
+				Result = False
+		End Select
 	Case Else
-		Result = True
+		Result = False
 End Select
               '   END FORMULA; PROP ID:9505; TYPE:UC
               Catch ex As Exception
@@ -19062,7 +19330,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ind_Scan_Shadowing_Potential_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ind_Scan_Shadowing_Potential").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9504; TYPE:UC
+              Select Case Me.Ind_Scan_Scanner_Config
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9504; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Shadowing_Potential_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -21309,7 +21599,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Scale_Scale_Bed_Length_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Scale_Scale_Bed_Length_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9837; TYPE:UC
+              Select Case Me.Scale_PandA_Scale_Required
+	Case "Yes"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9837; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Scale_Scale_Bed_Length_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -21336,7 +21648,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Scale_Scale_Gap_Override_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Scale_Scale_Gap_Override_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9839; TYPE:UC
+              Select Case Me.Scale_PandA_Scale_Required
+	Case "Yes"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9839; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Scale_Scale_Gap_Override_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -21371,17 +21705,30 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Summary_Carton_Length_User_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Ver_Scan_Carton_Panels_Scanned_Quantity_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ver_Scan_Carton_Panels_Scanned_Quantity").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9792; TYPE:UC
+              Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9792; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Carton_Panels_Scanned_Quantity_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -21390,7 +21737,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ver_Scan_Carton_Presentation_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ver_Scan_Carton_Presentation").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9794; TYPE:UC
+              Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9794; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Carton_Presentation_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -21444,7 +21813,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ver_Scan_Label_Orientation_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ver_Scan_Label_Orientation").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9793; TYPE:UC
+              Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9793; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Label_Orientation_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -21489,7 +21880,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ver_Scan_Min_Gap_Scan_Application_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ver_Scan_Min_Gap_Scan_Application_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9812; TYPE:UC
+              Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9812; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Min_Gap_Scan_Application_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -21614,7 +22027,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ver_Scan_Scan_Window_Length_Req_User_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ver_Scan_Scan_Window_Length_Req_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9814; TYPE:UC
+              Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9814; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Scan_Window_Length_Req_User_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -21660,9 +22095,14 @@ End Select
               Stop
               End If
               '   BEGIN FORMULA; PROP ID:9802; TYPE:UC
-              Select Case Me.Ver_Scan_Shadowing_Potential
-	Case "Yes"
-		Result = True
+              Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Select Case Me.Ver_Scan_Shadowing_Potential
+			Case "Yes"
+				Result = True
+			Case Else
+				Result = False
+		End Select
 	Case Else
 		Result = False
 End Select
@@ -21681,7 +22121,29 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Ver_Scan_Shadowing_Potential_USERCHANGE() as Boolean
-      Return True
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Ver_Scan_Shadowing_Potential").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:9799; TYPE:UC
+              Select Case Me.Ver_Scan_Scanner_Configuration
+	Case "None"
+		Result = True
+	Case Else
+		Result = False
+End Select
+              '   END FORMULA; PROP ID:9799; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Shadowing_Potential_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -21744,6 +22206,15 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Summary_Caclucation_Warnings_Present_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Summary_Carton_Length_User_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -22434,7 +22905,16 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9500; TYPE:VV
-      Result = MakeValidValues(Array("Scan Config A", "Scan Config B", "Scan Config C", "Scan Config D"))
+      Select Case Me.Parent.Scan_Configurations.Quantity
+	Case 0
+		Result = MakeValidValues(Array("None"))
+	Case Else
+		Dim vv As New ValidValues()
+		For Each part As Part In Me.Parent.Scan_Configurations
+			vv.add(part.Properties("Configuration_Name").Value)
+		Next
+		Result = vv
+End Select
       '   END FORMULA; PROP ID:9500; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ind_Scan_Scanner_Config_ValidValues", ex.Message)
@@ -23183,7 +23663,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9892; TYPE:VV
-      Result = MakeValidValues(Array("IN", "MM"))
+      Result = MakeValidValues(Array("FT", "M"))
       '   END FORMULA; PROP ID:9892; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Output_Total_Calc_Belt_Length_Double_IN_User_UOM_ValidValues", ex.Message)
@@ -24345,7 +24825,16 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9791; TYPE:VV
-      Result = MakeValidValues(Array("Scan Config A", "Scan Config B", "Scan Config C", "Scan Config D"))
+      Select Case Me.Parent.Scan_Configurations.Quantity
+	Case 0
+		Result = MakeValidValues(Array("None"))
+	Case Else
+		Dim vv As New ValidValues()
+		For Each part As Part In me.Parent.Scan_Configurations
+			vv.add(part.Properties("Configuration_Name").Value)
+		Next
+		Result = vv
+End Select
       '   END FORMULA; PROP ID:9791; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc_Print_And_Apply.Formula_Ver_Scan_Scanner_Configuration_ValidValues", ex.Message)
