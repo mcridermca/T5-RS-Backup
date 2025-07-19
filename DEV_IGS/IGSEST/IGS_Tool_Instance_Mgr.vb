@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: IGS_Tool_Instance_Mgr
-'$ GenerateDate: 07/18/2025 17:35:28
+'$ GenerateDate: 07/19/2025 12:53:16
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -263,7 +263,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/18/2025 13:19:58")
+    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/19/2025 12:40:10")
     AddProperty("10655", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 1:19:58 PM")
     AddProperty("5588", "HasAppCalc", <a><![CDATA[Has App Calc]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:34:26 PM")
     AddProperty("4829", "HasElecInstall", <a><![CDATA[Has Elec Install]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 11:46:05 AM")
@@ -287,9 +287,11 @@ Option Infer On
       
         oSubpart.AddVPF (333, "HHS_HeaderHanger_Calc", "Header Hanger Calculator")
       
-      oSubpart = AddSubpart(338,"Sortation", <a><![CDATA[Sortation]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:05:34 PM")
+      oSubpart = AddSubpart(338,"Sortation", <a><![CDATA[Sortation]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/19/2025 12:40:10 PM")
       
         oSubpart.AddVPF (120, "APC_Sortation", "APC_Sortation")
+      
+        oSubpart.AddVPF (442, "CAE_APC_Sortation", "CAE_APC_Sortation")
       
       oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "171", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:06:44 PM")
       
@@ -394,7 +396,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Sortation", 265, "N", "N", "N", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:05:34 PM", "", "In Development", "N",0,722,721)
+        InitSubpart("Sortation", 265, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/19/2025 12:40:10 PM", "", "In Development", "N",0,776,721)
         
           End If
         
@@ -1163,7 +1165,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; SUB ID:265; TYPE:OP
-      result = "APC_Sortation"
+      Result = "CAE_APC_Sortation"
       '   END FORMULA; SUB ID:265; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Sortation_OPTIMALPARTFAMILY", ex.Message)
