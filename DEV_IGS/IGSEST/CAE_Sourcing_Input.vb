@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Sourcing_Input
-'$ GenerateDate: 07/18/2025 11:37:15
+'$ GenerateDate: 07/18/2025 17:35:28
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -156,6 +156,114 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Air_Piping_1_1_5_in_Pipe]() As Long
+      Get
+      Return Properties("Air_Piping_1_1_5_in_Pipe").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_1_1_5_in_Pipe").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_1_2_in_Pipe]() As Long
+      Get
+      Return Properties("Air_Piping_1_2_in_Pipe").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_1_2_in_Pipe").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_2_1_5_in_Pipe]() As Long
+      Get
+      Return Properties("Air_Piping_2_1_5_in_Pipe").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_2_1_5_in_Pipe").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_3_in_Pipe]() As Long
+      Get
+      Return Properties("Air_Piping_3_in_Pipe").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_3_in_Pipe").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_7_8_in_Pipe]() As Long
+      Get
+      Return Properties("Air_Piping_7_8_in_Pipe").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_7_8_in_Pipe").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_AC]() As Long
+      Get
+      Return Properties("Air_Piping_AC").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_AC").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_AC_Redundant]() As Long
+      Get
+      Return Properties("Air_Piping_AC_Redundant").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_AC_Redundant").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_Anchors]() As Long
+      Get
+      Return Properties("Air_Piping_Anchors").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_Anchors").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_Bottom_Pans]() As Long
+      Get
+      Return Properties("Air_Piping_Bottom_Pans").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_Bottom_Pans").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_Dryer]() As Long
+      Get
+      Return Properties("Air_Piping_Dryer").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_Dryer").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_Filter_Reg]() As Long
+      Get
+      Return Properties("Air_Piping_Filter_Reg").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_Filter_Reg").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Air_Piping_Tubing]() As Long
+      Get
+      Return Properties("Air_Piping_Tubing").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Air_Piping_Tubing").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Shadows Property [DisplayName]() As String
       Get
       Return Properties("DisplayName").Value
@@ -273,6 +381,12 @@ Option Infer On
       End Set
       End Property
     
+      Public ReadOnly Property [My_Air_Piping]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_Air_Piping")
+      End Get
+      End Property
+    
       Public ReadOnly Property [My_Conveyor_Costing]() As Rulestream.Kernel.Connection
       Get
       Return Connections("My_Conveyor_Costing")
@@ -311,8 +425,20 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Sourcing_Input", <a><![CDATA[CAE_Sourcing_Input]]></a>.Value, 431, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/17/2025 20:01:06")
+    InitPart("CAE_Sourcing_Input", <a><![CDATA[CAE_Sourcing_Input]]></a>.Value, 431, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/18/2025 14:16:23")
     AddProperty("10632", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 8:00:47 PM")
+    AddProperty("10658", "Air_Piping_1_1_5_in_Pipe", <a><![CDATA[Air_Piping_1_1_5_in_Pipe]]></a>.Value, "Mech Install^'Sourcing Inputs'!C8", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:06:04 PM")
+    AddProperty("10660", "Air_Piping_1_2_in_Pipe", <a><![CDATA[Air_Piping_1_2_in_Pipe]]></a>.Value, "Mech Install^'Sourcing Inputs'!C10", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:08:22 PM")
+    AddProperty("10657", "Air_Piping_2_1_5_in_Pipe", <a><![CDATA[Air_Piping_2_1_5_in_Pipe]]></a>.Value, "Mech Install^'Sourcing Inputs'!C7", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:05:52 PM")
+    AddProperty("10656", "Air_Piping_3_in_Pipe", <a><![CDATA[Air_Piping_3_in_Pipe]]></a>.Value, "Mech Install^'Sourcing Inputs'!C6", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:05:40 PM")
+    AddProperty("10659", "Air_Piping_7_8_in_Pipe", <a><![CDATA[Air_Piping_7_8_in_Pipe]]></a>.Value, "Mech Install^'Sourcing Inputs'!C9", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:07:42 PM")
+    AddProperty("10663", "Air_Piping_AC", <a><![CDATA[Air_Piping_AC]]></a>.Value, "Mech Install^'Sourcing Inputs'!C13", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:11:24 PM")
+    AddProperty("10664", "Air_Piping_AC_Redundant", <a><![CDATA[Air_Piping_AC_Redundant]]></a>.Value, "Mech Install^'Sourcing Inputs'!C14", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:12:28 PM")
+    AddProperty("10666", "Air_Piping_Anchors", <a><![CDATA[Air_Piping_Anchors]]></a>.Value, "Mech Install^'Sourcing Inputs'!H3", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:15:12 PM")
+    AddProperty("10667", "Air_Piping_Bottom_Pans", <a><![CDATA[Air_Piping_Bottom_Pans]]></a>.Value, "Mech Install^'Sourcing Inputs'!H6", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:16:23 PM")
+    AddProperty("10665", "Air_Piping_Dryer", <a><![CDATA[Air_Piping_Dryer]]></a>.Value, "Mech Install^'Sourcing Inputs'!C15", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:12:57 PM")
+    AddProperty("10662", "Air_Piping_Filter_Reg", <a><![CDATA[Air_Piping_Filter_Reg]]></a>.Value, "Mech Install^'Sourcing Inputs'!C12", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:10:24 PM")
+    AddProperty("10661", "Air_Piping_Tubing", <a><![CDATA[Air_Piping_Tubing]]></a>.Value, "Mech Install^'Sourcing Inputs'!C11", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:09:33 PM")
     AddProperty("10610", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "Mech Install^'Sourcing Input'!J3", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:25:50 PM")
     AddProperty("10619", "Sourcing_Commisioning_Crew_Size", <a><![CDATA[Sourcing_Commisioning_Crew_Size]]></a>.Value, "Mech Install^'Sourcing Input'!L3", "Long","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:45:58 PM")
     AddProperty("10616", "Sourcing_Equipment", <a><![CDATA[Sourcing_Equipment]]></a>.Value, "Mech Install^'Sourcing Input'!P3", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:37:42 PM")
@@ -327,6 +453,10 @@ Option Infer On
     AddProperty("10635", "XMLObjectValue", <a><![CDATA[XMLObjectValue]]></a>.Value, "XML Export Object Value", "String","","Oracle Config XML","FD", 9999, "", 0,0, "Oracle Configurator Transfer", "", "GLOBAL\H602502", "7/17/2025 8:00:47 PM")
     AddProperty("10608", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:19:10 PM")
     
+      oConnection = AddConnection("My_Air_Piping", <a><![CDATA[My_Air_Piping]]></a>.Value, "", "206", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/18/2025 1:56:21 PM")
+      
+        oConnection.AddVPF(392, "CAE_Air_Piping_Control_Panel")
+      
       oConnection = AddConnection("My_Conveyor_Costing", <a><![CDATA[My_Conveyor_Costing]]></a>.Value, "", "200", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/17/2025 7:23:17 PM")
       
         oConnection.AddVPF(389, "CAE_Conveyor_Costing")
@@ -373,6 +503,42 @@ Option Infer On
     
             If Incontext("-1", ctx) Then
           InitProperty("Debug_Mode", "10200", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 8:00:47 PM", "True = Debug On / False = Debug Off", "In Development",  0,18943)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_1_1_5_in_Pipe", "10222", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:06:04 PM", "", "In Development",  0,19061)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_1_2_in_Pipe", "10224", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:08:22 PM", "", "In Development",  0,19065)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_2_1_5_in_Pipe", "10221", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:05:52 PM", "", "In Development",  0,19060)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_3_in_Pipe", "10220", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:05:40 PM", "", "In Development",  0,19059)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_7_8_in_Pipe", "10223", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:07:11 PM", "", "In Development",  0,19063)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_AC", "10227", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:11:24 PM", "", "In Development",  0,19071)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_AC_Redundant", "10228", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:12:28 PM", "", "In Development",  0,19073)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_Anchors", "10230", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:15:12 PM", "", "In Development",  0,19077)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_Bottom_Pans", "10231", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:16:23 PM", "", "In Development",  0,19079)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_Dryer", "10229", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:12:57 PM", "", "In Development",  0,19075)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_Filter_Reg", "10226", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:10:24 PM", "", "In Development",  0,19069)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Air_Piping_Tubing", "10225", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:09:33 PM", "", "In Development",  0,19067)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("DisplayName", "10178", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:24:43 PM", "", "In Development",  0,18905)
@@ -445,6 +611,12 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
+        InitConnection("My_Air_Piping", "185", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/18/2025 1:56:21 PM", "", "In Development", "N",333)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
         InitConnection("My_Conveyor_Costing", "180", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 7:23:17 PM", "", "In Development", "N",328)
         
           End If
@@ -484,6 +656,28 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_Air_Piping_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:185; TYPE:PF
+        Result = Me.Parent.Parent.Air_Piping(Me.SubpartID)
+        '   END FORMULA; CON ID:185; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_My_Air_Piping_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
     
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -598,6 +792,282 @@ End If
       '   END FORMULA; PROP ID:10200; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Debug_Mode", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_1_1_5_in_Pipe() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_1_1_5_in_Pipe").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10222; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_1_and_1_2_Inch_63mm_pipe
+      '   END FORMULA; PROP ID:10222; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_1_1_5_in_Pipe", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_1_2_in_Pipe() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_1_2_in_Pipe").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10224; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_1Half_In_Pipe + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_1_2_inch_16_5mm_pipe
+      '   END FORMULA; PROP ID:10224; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_1_2_in_Pipe", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_2_1_5_in_Pipe() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_2_1_5_in_Pipe").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10221; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_2Half_In_Pipe + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_2_and_1_2_Inch_63mm_pipe
+      '   END FORMULA; PROP ID:10221; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_2_1_5_in_Pipe", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_3_in_Pipe() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_3_in_Pipe").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10220; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_3Inch_Pipe + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_3_Inch_76mm_pipe
+      '   END FORMULA; PROP ID:10220; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_3_in_Pipe", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_7_8_in_Pipe() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_7_8_in_Pipe").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10223; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Pipe_Type_Total_Order_7_8Inch_Pipe + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_7_8_Inch_25mm_pipe
+      '   END FORMULA; PROP ID:10223; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_7_8_in_Pipe", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_AC() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_AC").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10227; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Total_Order_AC + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_A_C
+      '   END FORMULA; PROP ID:10227; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_AC", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_AC_Redundant() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_AC_Redundant").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10228; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Red_AC + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_Red_A_C
+      '   END FORMULA; PROP ID:10228; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_AC_Redundant", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_Anchors() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_Anchors").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10230; TYPE:PF
+      Result = me.My_System(1).Add_Hours_Dollars_Anchors_Qty
+      '   END FORMULA; PROP ID:10230; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_Anchors", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_Bottom_Pans() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_Bottom_Pans").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10231; TYPE:PF
+      Result = me.My_System(1).Hrs_Misc_Bottom_Pans_Qty
+      '   END FORMULA; PROP ID:10231; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_Bottom_Pans", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_Dryer() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_Dryer").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10229; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Dryer + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_Dryer
+      '   END FORMULA; PROP ID:10229; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_Dryer", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_Filter_Reg() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_Filter_Reg").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10226; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Filter_Reg + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_FILTER_REG
+      '   END FORMULA; PROP ID:10226; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_Filter_Reg", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Air_Piping_Tubing() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Air_Piping_Tubing").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10225; TYPE:PF
+      Result = Me.My_Air_Piping(1).MEI_AP_SS1_Total_Order_Tubing + Me.My_Air_Piping(1).MEI_AP_TTCB_Total_Order_Tubing
+      '   END FORMULA; PROP ID:10225; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Sourcing_Input.Formula_Air_Piping_Tubing", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -916,6 +1386,114 @@ Result = Custom.GetPFXMLRepresentation(Prop) 'Generate XML For this and Children
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Air_Piping_1_1_5_in_Pipe_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_1_2_in_Pipe_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_2_1_5_in_Pipe_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_3_in_Pipe_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_7_8_in_Pipe_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_AC_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_AC_Redundant_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Anchors_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Bottom_Pans_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Dryer_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Filter_Reg_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Tubing_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1026,6 +1604,114 @@ Result = Custom.GetPFXMLRepresentation(Prop) 'Generate XML For this and Children
       '*****************************************************************************
       Public Function Formula_Debug_Mode_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_1_1_5_in_Pipe_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_1_2_in_Pipe_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_2_1_5_in_Pipe_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_3_in_Pipe_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_7_8_in_Pipe_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_AC_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_AC_Redundant_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Anchors_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Bottom_Pans_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Dryer_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Filter_Reg_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Air_Piping_Tubing_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************

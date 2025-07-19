@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: SFD_Salesforce_PRD_Header_Mock
-'$ GenerateDate: 07/18/2025 13:15:19
+'$ GenerateDate: 07/18/2025 17:35:28
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -491,10 +491,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("SFD_Salesforce_PRD_Header_Mock", <a><![CDATA[SFD_Salesforce_PRD_Header_Mock]]></a>.Value, 163, "APCTMP01",  "N", "N", True, False, "In Development", "", "Salesforce PRD Document Mockup", "", "", "",  "GLOBAL\H602502", "07/18/2025 12:56:03")
+    InitPart("SFD_Salesforce_PRD_Header_Mock", <a><![CDATA[SFD_Salesforce_PRD_Header_Mock]]></a>.Value, 163, "APCTMP01",  "N", "N", True, False, "In Development", "", "Salesforce PRD Document Mockup", "", "", "",  "GLOBAL\H602502", "07/18/2025 13:21:40")
     AddProperty("10386", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 1:15:05 PM")
     AddProperty("1442", "Debug_1", <a><![CDATA[Debug_1]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/27/2025 12:04:45 AM")
-    AddProperty("10650", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 12:56:03 PM")
+    AddProperty("10650", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 1:21:40 PM")
     AddProperty("1529", "Opportunity_Data_Source_Type", <a><![CDATA[Opportunity_Data_Source_Type]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "CORA Data", "", "GLOBAL\H601424", "3/28/2025 11:26:09 AM")
     AddProperty("4493", "PRD_Conveyor_ASRS_VV", <a><![CDATA[PRD Conveyor ASRS VV]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 3:15:21 PM")
     AddProperty("4483", "PRD_Conveyor_Electrical_VV", <a><![CDATA[PRD Conveyor Electrical VV]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/17/2025 7:46:42 PM")
@@ -620,7 +620,7 @@ Option Infer On
           InitProperty("Debug_1", "1141", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "3/27/2025 12:04:45 AM", "", "In Development",  0,1214)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("DisplayName", "10214", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 12:56:03 PM", "", "In Development",  0,19044)
+          InitProperty("DisplayName", "10214", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 1:21:40 PM", "", "In Development",  0,19044)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Opportunity_Data_Source_Type", "1223", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "3/28/2025 11:26:09 AM", "", "In Development",  0,1315)
@@ -1982,7 +1982,7 @@ Next
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_DisplayName_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************

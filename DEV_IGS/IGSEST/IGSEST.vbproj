@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{99744184-824b-4cfb-a243-f04957899eae}</ProjectGuid>
+		<ProjectGuid>{3337fae8-5fa2-4478-9f85-adbdbbb1a7fa}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>IGSEST</RootNamespace>
 		<AssemblyName>IGSEST</AssemblyName>
@@ -94,10 +94,34 @@
 		<Import Include="Aspose.Cells" />
 	</ItemGroup>
 	<ItemGroup>
-		<Compile Include="apc_setup_sort_equip_option.vb">
+		<Compile Include="cae_apc_mdr.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="igs_project_top_app.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_app_calc_metrics.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_mdr_sorter.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_app_calc.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_conveyor_costing.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_sourcing_inputs.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_sourcing_input.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="igs_tool_instance_mgr.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="apc_setup_sort_equip_option.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="igs_proposal_data.vb">
@@ -130,18 +154,6 @@
 		<Compile Include="cae_chutes.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="cae_conveyor_costing.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="igs_tool_instance_mgr.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_sourcing_inputs.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_sourcing_input.vb">
-			<SubType>Code</SubType>
-		</Compile>
 		<Compile Include="cae_chute.vb">
 			<SubType>Code</SubType>
 		</Compile>
@@ -155,9 +167,6 @@
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_app_calc_print_and_apply.vb">
-			<SubType>Code</SubType>
-		</Compile>
-		<Compile Include="cae_app_calc.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="prd_output_test_01_line.vb">

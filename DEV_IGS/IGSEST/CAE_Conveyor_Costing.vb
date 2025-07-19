@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Conveyor_Costing
-'$ GenerateDate: 07/18/2025 11:37:15
+'$ GenerateDate: 07/18/2025 17:35:28
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -1893,15 +1893,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Project_Tier]() As Double
-      Get
-      Return Properties("Project_Tier").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Project_Tier").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Project_Tier_Value]() As Double
       Get
       Return Properties("Project_Tier_Value").Value
@@ -2568,6 +2559,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Project_Tier]() As String
+      Get
+      Return Properties("Project_Tier").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Project_Tier").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -2597,7 +2597,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Conveyor_Costing", <a><![CDATA[CAE_Conveyor_Costing]]></a>.Value, 389, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H615411", "07/18/2025 05:33:20")
+    InitPart("CAE_Conveyor_Costing", <a><![CDATA[CAE_Conveyor_Costing]]></a>.Value, 389, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H582667", "07/18/2025 15:35:16")
     AddProperty("10343", "Additional_Subcontractor_Services_Total_Cost", <a><![CDATA[Additional_Subcontractor_Services_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E36", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:23:55 AM")
     AddProperty("8829", "Administrative_Cost", <a><![CDATA[Administrative_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E38", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/10/2025 9:42:02 AM")
     AddProperty("8762", "Avg_Crew_Size", <a><![CDATA[Avg_Crew_Size]]></a>.Value, "Mech Install^'Conveyor Costing'!K29", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:55 PM")
@@ -2792,7 +2792,6 @@ Option Infer On
     AddProperty("10200", "Project_Support_Rate", <a><![CDATA[Project_Support_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!D71", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:27:49 AM")
     AddProperty("10197", "Project_Support_Total_Cost", <a><![CDATA[Project_Support_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E71", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:20:13 AM")
     AddProperty("10198", "Project_Support_Total_Hours", <a><![CDATA[Project_Support_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F71", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:20:52 AM")
-    AddProperty("8747", "Project_Tier", <a><![CDATA[Project_Tier]]></a>.Value, "Mech Install^'Conveyor Costing'!K8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:07 PM")
     AddProperty("10201", "Project_Tier_Value", <a><![CDATA[Project_Tier_Value]]></a>.Value, "Mech Install^'Conveyor Costing'!L8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:28:26 AM")
     AddProperty("10340", "Risk_Rating_Value", <a><![CDATA[Risk_Rating_Value]]></a>.Value, "Mech Install^'Conveyor Costing'!K15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:03:55 AM")
     AddProperty("10157", "Schedule_Commissioning_Duration_Weeks", <a><![CDATA[Schedule_Commissioning_Duration_Weeks]]></a>.Value, "Mech Install^'Conveyor Costing'!J76", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 8:59:49 AM")
@@ -2867,7 +2866,10 @@ Option Infer On
     AddProperty("8739", "Union_Rate_Superintendent_Tot_Cost_Adj", <a><![CDATA[Union_Rate_Superintendent_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q53", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:41 PM")
     AddProperty("10168", "Union_Rate_Tot_Cost_Adjustment", <a><![CDATA[Union_Rate_Tot_Cost_Adjustment]]></a>.Value, "Mech Install^'Conveyor Costing'!Q56", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:09:56 AM")
     AddProperty("9494", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 4:38:54 PM")
+    AddProperty("10682", "Project_Tier", <a><![CDATA[Project_Tier]]></a>.Value, "Mech Install^'Conveyor Costing'!K8", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 3:35:16 PM")
     AddProperty("6021", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 3:22:07 PM")
+    
+      AddValidValue("Project_Tier")
     
       oConnection = AddConnection("My_Subsystem", <a><![CDATA[My_Subsystem]]></a>.Value, "", "128", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/8/2025 4:22:21 PM")
       
@@ -3484,9 +3486,6 @@ Option Infer On
           InitProperty("Project_Support_Total_Hours", "9779", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:20:52 AM", "", "In Development",  0,18985)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Project_Tier", "8332", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:07 PM", "", "In Development",  0,13477)
-        End If
-            If Incontext("-1", ctx) Then
           InitProperty("Project_Tier_Value", "9782", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 10:28:26 AM", "", "In Development",  0,17243)
         End If
             If Incontext("-1", ctx) Then
@@ -3708,6 +3707,9 @@ Option Infer On
             If Incontext("-1", ctx) Then
           InitProperty("DisplayName", "9074", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/8/2025 4:38:54 PM", "", "In Development",  0,15157)
         End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Project_Tier", "10244", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H582667", "7/18/2025 3:35:16 PM", "", "In Development",  0,19122)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -3719,6 +3721,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Project_Tier_ValidValues", "10244", "-1", 19121)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -8276,29 +8282,6 @@ Me.Miscellaneous_Total_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Project_Tier() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Project_Tier").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:8332; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8332; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Tier", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Project_Tier_Value() As Double
           Dim Result as Double
       Dim ctx as Object
@@ -10015,6 +9998,31 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   END FORMULA; PROP ID:9074; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_DisplayName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Project_Tier() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Project_Tier").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10244; TYPE:PF
+      Result = "Tier 1: $20M+"
+      '   END FORMULA; PROP ID:10244; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Tier", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -14225,34 +14233,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Project_Tier_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Project_Tier"
-          Me.Properties("Project_Tier").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8332; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8332; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Tier_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Project_Tier").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Schedule_End_Mechanical_Install_CustomCheck() as Object
           
           Dim Result as Object
@@ -16848,14 +16828,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           End Try
           End Function
         
-          Public Function Formula_Project_Tier_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Tier_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
           Public Function Formula_Schedule_End_Mechanical_Install_CustomCheckDependnacy() as Boolean
           Try
           Return True
@@ -19007,15 +18979,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Project_Tier_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Project_Tier_Value_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -19674,6 +19637,15 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Project_Tier_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -21428,15 +21400,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Project_Tier_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Project_Tier_Value_USERCHANGE() as Boolean
       Return True
       End Function
@@ -22096,6 +22059,39 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '*****************************************************************************
       Public Function Formula_DisplayName_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Project_Tier_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Project_Tier_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Project_Tier").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10244; TYPE:VV
+      Result = MakeValidValues(Array("Tier 1: $20M+", "Tier 2: $5M - $20M", "Tier 3: $2M - $5M", "Tier 3.5: $1M - $2M", "Tier 4: $500K - $1M", "Tier 5: <$500K"))
+      '   END FORMULA; PROP ID:10244; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Tier_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
 

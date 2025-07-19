@@ -3,8 +3,8 @@ Option Explicit On
 Option Infer On
 
 '$ Application: IGSEST
-'$ PartFamily: IGS_Tool_Instance_Mgr
-'$ GenerateDate: 07/18/2025 17:35:28
+'$ PartFamily: CAE_APC_MDR
+'$ GenerateDate: 07/18/2025 18:34:28
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -24,7 +24,7 @@ Option Infer On
     Imports IGSEST.swMateAlign_e
     Imports IGSEST.severity
 
-    Public Class [IGS_Tool_Instance_Mgr]
+    Public Class [CAE_APC_MDR]
     
     Inherits RuleStream.Kernel.Part
     Implements RuleStream.IRsPartFormulas
@@ -45,7 +45,7 @@ Option Infer On
     '*                                                                       *
     '*************************************************************************
 
-    Private this as IGS_Tool_Instance_Mgr = me
+    Private this as CAE_APC_MDR = me
 
     #Region " IRsPartFormulas Implementation "
 
@@ -147,48 +147,75 @@ Option Infer On
 
     #Region " Properties, Subparts, Connections "
     
-          Public Shadows Property [DisplayName]() As String
+          Public Property [Gen_Sorter_Type]() As String
       Get
-      Return Properties("DisplayName").Value
+      Return Properties("Gen_Sorter_Type").Value
       End Get
       Set(ByVal Value As String)
-      Properties("DisplayName").CalculatedValue = Value
+      Properties("Gen_Sorter_Type").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [HasAppCalc]() As Boolean
+          Public Property [User_UOM_System]() As String
       Get
-      Return Properties("HasAppCalc").Value
+      Return Properties("User_UOM_System").Value
       End Get
-      Set(ByVal Value As Boolean)
-      Properties("HasAppCalc").CalculatedValue = Value
+      Set(ByVal Value As String)
+      Properties("User_UOM_System").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [HasElecInstall]() As Boolean
+          Public Property [Sort_Char_Divert_Angle]() As Double
       Get
-      Return Properties("HasElecInstall").Value
+      Return Properties("Sort_Char_Divert_Angle").Value
       End Get
-      Set(ByVal Value As Boolean)
-      Properties("HasElecInstall").CalculatedValue = Value
+      Set(ByVal Value As Double)
+      Properties("Sort_Char_Divert_Angle").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [HasHeaderHanger]() As Boolean
+          Public Property [Sort_Char_Max_Speed_FPM]() As Double
       Get
-      Return Properties("HasHeaderHanger").Value
+      Return Properties("Sort_Char_Max_Speed_FPM").Value
       End Get
-      Set(ByVal Value As Boolean)
-      Properties("HasHeaderHanger").CalculatedValue = Value
+      Set(ByVal Value As Double)
+      Properties("Sort_Char_Max_Speed_FPM").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [HasMechInstall]() As Boolean
+          Public Property [Sort_Char_Max_Speed_User]() As Double
       Get
-      Return Properties("HasMechInstall").Value
+      Return Properties("Sort_Char_Max_Speed_User").Value
       End Get
-      Set(ByVal Value As Boolean)
-      Properties("HasMechInstall").CalculatedValue = Value
+      Set(ByVal Value As Double)
+      Properties("Sort_Char_Max_Speed_User").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Acq_Label_Data_Acquisition_Travel_User_UOM]() As String
+      Get
+      Return Properties("Acq_Label_Data_Acquisition_Travel_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Acq_Label_Data_Acquisition_Travel_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sort_Char_Max_Speed_User_UOM]() As String
+      Get
+      Return Properties("Sort_Char_Max_Speed_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Sort_Char_Max_Speed_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sort_Char_Min_Operating_Temp_User_UOM]() As String
+      Get
+      Return Properties("Sort_Char_Min_Operating_Temp_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Sort_Char_Min_Operating_Temp_User_UOM").CalculatedValue = Value
       End Set
       End Property
     
@@ -201,51 +228,15 @@ Option Infer On
       End Set
       End Property
     
-      Public ReadOnly Property [Mech_Install_Estimator]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("Mech_Install_Estimator")
-      End Get
-      End Property
-    
-      Public ReadOnly Property [App_Calc]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("App_Calc")
-      End Get
-      End Property
-    
-      Public ReadOnly Property [Elec_Install_Estimator]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("Elec_Install_Estimator")
-      End Get
-      End Property
-    
-      Public ReadOnly Property [Header_Hanger]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("Header_Hanger")
-      End Get
-      End Property
-    
-      Public ReadOnly Property [Sortation]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("Sortation")
-      End Get
-      End Property
-    
       Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
       Get
       Return Connections("My_PRD")
       End Get
       End Property
     
-      Public ReadOnly Property [TestConn]() As Rulestream.Kernel.Connection
+      Public ReadOnly Property [My_Setup]() As Rulestream.Kernel.Connection
       Get
-      Return Connections("TestConn")
-      End Get
-      End Property
-    
-      Public ReadOnly Property [ToolRollup]() As Rulestream.Kernel.Connection
-      Get
-      Return Connections("ToolRollup")
+      Return Connections("My_Setup")
       End Get
       End Property
     
@@ -263,45 +254,34 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/18/2025 13:19:58")
-    AddProperty("10655", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 1:19:58 PM")
-    AddProperty("5588", "HasAppCalc", <a><![CDATA[Has App Calc]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:34:26 PM")
-    AddProperty("4829", "HasElecInstall", <a><![CDATA[Has Elec Install]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 11:46:05 AM")
-    AddProperty("5587", "HasHeaderHanger", <a><![CDATA[Has Header Hanger]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:35:54 PM")
-    AddProperty("4828", "HasMechInstall", <a><![CDATA[Has Mech Install]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 11:45:58 AM")
-    AddProperty("4823", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/23/2025 3:05:56 PM")
+    InitPart("CAE_APC_MDR", <a><![CDATA[CAE_APC_MDR]]></a>.Value, 439, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/18/2025 18:34:08")
+    AddProperty("10697", "Gen_Sorter_Type", <a><![CDATA[Gen_Sorter_Type]]></a>.Value, "AppCalc^'MDR Sort'!C17", "String","","AppCalc_MDR","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 4:23:00 PM")
+    AddProperty("10703", "User_UOM_System", <a><![CDATA[User_UOM_System]]></a>.Value, "", "String","","AppCalc_MDR","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 6:20:27 PM")
+    AddProperty("10700", "Sort_Char_Divert_Angle", <a><![CDATA[Sort_Char_Divert_Angle]]></a>.Value, "AppCalc^'MDR Sort'!J19", "Double","","AppCalc_MDR_Sort_Characteristics","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 6:16:50 PM")
+    AddProperty("10706", "Sort_Char_Max_Speed_FPM", <a><![CDATA[Sort_Char_Max_Speed_FPM]]></a>.Value, "Unit conversion to FT/MIN", "Double","","AppCalc_MDR_Sort_Characteristics","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 6:31:55 PM")
+    AddProperty("10705", "Sort_Char_Max_Speed_User", <a><![CDATA[Sort_Char_Max_Speed_User]]></a>.Value, "AppCalc^'MDR Sort'!J19", "Double","","AppCalc_MDR_Sort_Characteristics","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 6:29:10 PM")
+    AddProperty("10701", "Acq_Label_Data_Acquisition_Travel_User_UOM", <a><![CDATA[Acq_Label_Data_Acquisition_Travel_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 6:18:39 PM")
+    AddProperty("10702", "Sort_Char_Max_Speed_User_UOM", <a><![CDATA[Sort_Char_Max_Speed_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 6:25:36 PM")
+    AddProperty("10704", "Sort_Char_Min_Operating_Temp_User_UOM", <a><![CDATA[Sort_Char_Min_Operating_Temp_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_PandA_Acquisition","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 6:25:19 PM")
+    AddProperty("10696", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 4:20:38 PM")
     
-      oSubpart = AddSubpart(260,"Mech_Install_Estimator", <a><![CDATA[Mech_Install_Estimator]]></a>.Value, "FD", "", "File", 9999, "", "GLOBAL\H602502", "6/23/2025 7:17:55 PM")
-      
-        oSubpart.AddVPF (360, "CAE_Mech_Install_App", "CAE Mech Install App")
-      
-      oSubpart = AddSubpart(314,"App_Calc", <a><![CDATA[App_Calc]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/14/2025 5:29:35 PM")
-      
-        oSubpart.AddVPF (411, "CAE_App_Calc", "CAE_App_Calc")
-      
-      oSubpart = AddSubpart(259,"Elec_Install_Estimator", <a><![CDATA[Elec_Install_Estimator]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "6/23/2025 7:17:41 PM")
-      
-        oSubpart.AddVPF (361, "CAE_Elec_Install_App", "CAE_Elec_Install_App")
-      
-      oSubpart = AddSubpart(341,"Header_Hanger", <a><![CDATA[Header_Hanger]]></a>.Value, "FD", "Header Hanger Application", "General", 9999, "", "GLOBAL\H602502", "7/17/2025 8:43:48 PM")
-      
-        oSubpart.AddVPF (333, "HHS_HeaderHanger_Calc", "Header Hanger Calculator")
-      
-      oSubpart = AddSubpart(338,"Sortation", <a><![CDATA[Sortation]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:05:34 PM")
-      
-        oSubpart.AddVPF (120, "APC_Sortation", "APC_Sortation")
-      
-      oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "171", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:06:44 PM")
+      AddValidValue("Gen_Sorter_Type")
+    
+      AddValidValue("User_UOM_System")
+    
+      AddValidValue("Acq_Label_Data_Acquisition_Travel_User_UOM")
+    
+      AddValidValue("Sort_Char_Max_Speed_User_UOM")
+    
+      AddValidValue("Sort_Char_Min_Operating_Temp_User_UOM")
+    
+      oConnection = AddConnection("My_PRD", <a><![CDATA[My_PRD]]></a>.Value, "", "207", "OO", 0, "","AppCalc_MDR", 9999, "", "GLOBAL\H602502", "7/18/2025 6:34:08 PM")
       
         oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
       
-      oConnection = AddConnection("TestConn", <a><![CDATA[Test Conn]]></a>.Value, "", "157", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/11/2025 5:34:39 PM")
+      oConnection = AddConnection("My_Setup", <a><![CDATA[My_Setup]]></a>.Value, "", "208", "OO", 0, "","General", 9999, "", "GLOBAL\H602502", "7/18/2025 6:34:08 PM")
       
-        oConnection.AddVPF(143, "SFD_Salesforce_Data_Mock")
-      
-      oConnection = AddConnection("ToolRollup", <a><![CDATA[Tool Rollup]]></a>.Value, "", "116", "OM", 0, "","General", 9999, "", "GLOBAL\H602502", "7/16/2025 8:40:01 PM")
-      
-        oConnection.AddVPF(361, "CAE_Elec_Install_App")
+        oConnection.AddVPF(119, "APC_Setup")
       
     End Sub
 
@@ -332,19 +312,28 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("DisplayName", "10219", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 1:19:58 PM", "", "In Development",  0,19051)
+          InitProperty("Gen_Sorter_Type", "10258", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/18/2025 4:23:00 PM", "", "In Development",  0,19129)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HasAppCalc", "5200", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:34:26 PM", "", "In Development",  0,8161)
+          InitProperty("User_UOM_System", "10264", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/18/2025 6:20:27 PM", "", "In Development",  0,19147)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HasElecInstall", "4452", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "6/30/2025 11:46:05 AM", "", "In Development",  0,6393)
+          InitProperty("Sort_Char_Divert_Angle", "10261", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 6:16:50 PM", "", "In Development",  0,19141)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HasHeaderHanger", "5199", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:35:54 PM", "", "In Development",  0,8160)
+          InitProperty("Sort_Char_Max_Speed_FPM", "10267", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 6:31:55 PM", "", "In Development",  0,19160)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HasMechInstall", "4451", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "6/30/2025 11:45:58 AM", "", "In Development",  0,6392)
+          InitProperty("Sort_Char_Max_Speed_User", "10266", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 6:29:10 PM", "", "In Development",  0,19157)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Acq_Label_Data_Acquisition_Travel_User_UOM", "10262", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/18/2025 6:18:39 PM", "", "In Development",  0,19142)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Sort_Char_Max_Speed_User_UOM", "10263", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/18/2025 6:25:36 PM", "", "In Development",  0,19149)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Sort_Char_Min_Operating_Temp_User_UOM", "10265", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/18/2025 6:25:19 PM", "", "In Development",  0,19152)
         End If
     End Sub
 
@@ -357,6 +346,26 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Gen_Sorter_Type_ValidValues", "10258", "-1", 19130)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("User_UOM_System_ValidValues", "10264", "-1", 19148)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Acq_Label_Data_Acquisition_Travel_User_UOM_ValidValues", "10262", "-1", 19143)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Sort_Char_Max_Speed_User_UOM_ValidValues", "10263", "-1", 19154)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Sort_Char_Min_Operating_Temp_User_UOM_ValidValues", "10265", "-1", 19153)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -368,36 +377,6 @@ Option Infer On
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("Mech_Install_Estimator", 195, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "6/23/2025 7:17:55 PM", "", "In Development", "N",0,536,538)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("App_Calc", 241, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/9/2025 8:29:48 PM", "", "In Development", "N",0,652,651)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("Elec_Install_Estimator", 194, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "6/23/2025 7:17:41 PM", "", "In Development", "N",0,534,537)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("Header_Hanger", 268, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 8:43:48 PM", "", "In Development", "N",0,729,761)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("Sortation", 265, "N", "N", "N", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:05:34 PM", "", "In Development", "N",0,722,721)
-        
-          End If
-        
     End Sub
 
     '*****************************************************************************
@@ -411,19 +390,13 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("My_PRD", "151", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:06:44 PM", "", "In Development", "N",283)
+        InitConnection("My_PRD", "186", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/18/2025 6:34:08 PM", "", "In Development", "N",334)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("TestConn", "137", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/11/2025 5:34:39 PM", "", "In Development", "N",254)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitConnection("ToolRollup", "96", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/16/2025 8:40:01 PM", "", "In Development", "N",320)
+        InitConnection("My_Setup", "187", "","", "Y", 0, "-1", "", "GLOBAL\H602502", "7/18/2025 6:34:08 PM", "", "In Development", "N",335)
         
           End If
         
@@ -456,12 +429,12 @@ Option Infer On
       Dim ctx as Object
       Try
       ctx = this
-        '   BEGIN FORMULA; CON ID:151; TYPE:PF
-        Result = Me.Parent
-        '   END FORMULA; CON ID:151; TYPE:PF
+        '   BEGIN FORMULA; CON ID:186; TYPE:PF
+        Result = me.Parent.Parent.Parent
+        '   END FORMULA; CON ID:186; TYPE:PF
       
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_My_PRD_PARTS", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_My_PRD_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -472,53 +445,18 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_TestConn_PARTS() as Rulestream.Kernel.rsCollection
+      Public Function Formula_My_Setup_PARTS() as Rulestream.Kernel.rsCollection
       
       Dim Result as Object = Nothing
       Dim ctx as Object
       Try
       ctx = this
-        '   BEGIN FORMULA; CON ID:137; TYPE:PF
-        Result = Nothing
-        '   END FORMULA; CON ID:137; TYPE:PF
+        '   BEGIN FORMULA; CON ID:187; TYPE:PF
+        Result = me.Parent.Setup(1)
+        '   END FORMULA; CON ID:187; TYPE:PF
       
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_TestConn_PARTS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return ConvertToCollection(Result)
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_ToolRollup_PARTS() as Rulestream.Kernel.rsCollection
-      
-      Dim Result as Object = Nothing
-      Dim ctx as Object
-      Try
-      ctx = this
-        '   BEGIN FORMULA; CON ID:96; TYPE:PF
-        Result = Nothing
-Dim ocol As New collection
-
-For Each s As SubPart In Me.Parent.Project_Tool_Manager(1).Subparts
-	For Each p As Part In s.Parts
-		Dim vals As String() = p.Name.Split(":")
-		Select Case vals(0)
-			Case "App_Calc", "Elec_Install_Estimator", "Header_Hanger", "Mech_Install_Estimator"
-				ocol.add(p)
-		End Select
-	Next
-Next
-
-Result = ocol
-        '   END FORMULA; CON ID:96; TYPE:PF
-      
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_ToolRollup_PARTS", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_My_Setup_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -529,21 +467,21 @@ Result = ocol
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_DisplayName() As String
+          Public Function Formula_Gen_Sorter_Type() As String
           
           Dim Result as String = String.Empty
         
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("DisplayName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Gen_Sorter_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10219; TYPE:PF
-      Result = Me.Parent.DisplayName
-      '   END FORMULA; PROP ID:10219; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10258; TYPE:PF
+      Result = "MDR - RT3 RAT"
+      '   END FORMULA; PROP ID:10258; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_DisplayName", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Gen_Sorter_Type", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -554,19 +492,21 @@ Result = ocol
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_HasAppCalc() As Boolean
-          Dim Result as Boolean
+          Public Function Formula_User_UOM_System() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("HasAppCalc").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("User_UOM_System").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:5200; TYPE:PF
-      Result = False
-      '   END FORMULA; PROP ID:5200; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10264; TYPE:PF
+      Result = me.My_Setup(1).User_UOM_System
+      '   END FORMULA; PROP ID:10264; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasAppCalc", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_User_UOM_System", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -577,19 +517,26 @@ Result = ocol
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_HasElecInstall() As Boolean
-          Dim Result as Boolean
+          Public Function Formula_Sort_Char_Divert_Angle() As Double
+          Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("HasElecInstall").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Sort_Char_Divert_Angle").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4452; TYPE:PF
-      Result = False
-      '   END FORMULA; PROP ID:4452; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10261; TYPE:PF
+      Result = 90
+
+For Each pf As Rulestream.Kernel.Part In Me.Parent.App_Calc_Metrics(1).MDR_Sorters
+	If pf.Properties("CAE_MDR_SORTER_MASTER_ID").Value.ToUpper() = Me.Gen_Sorter_Type.ToUpper()
+		Result = pf.Properties("Divert_Angle").Value	
+		Exit For
+	End If
+Next
+      '   END FORMULA; PROP ID:10261; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasElecInstall", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Sort_Char_Divert_Angle", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -600,19 +547,19 @@ Result = ocol
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_HasHeaderHanger() As Boolean
-          Dim Result as Boolean
+          Public Function Formula_Sort_Char_Max_Speed_FPM() As Double
+          Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("HasHeaderHanger").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Sort_Char_Max_Speed_FPM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:5199; TYPE:PF
-      Result = False
-      '   END FORMULA; PROP ID:5199; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10267; TYPE:PF
+      Result = Units.Convert(Me.Sort_Char_Max_Speed_FPM, Me.Sort_Char_Max_Speed_User_UOM, "FT/MIN")
+      '   END FORMULA; PROP ID:10267; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasHeaderHanger", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Sort_Char_Max_Speed_FPM", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -623,19 +570,105 @@ Result = ocol
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_HasMechInstall() As Boolean
-          Dim Result as Boolean
+          Public Function Formula_Sort_Char_Max_Speed_User() As Double
+          Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("HasMechInstall").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Sort_Char_Max_Speed_User").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:4451; TYPE:PF
-      Result = False
-      '   END FORMULA; PROP ID:4451; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10266; TYPE:PF
+      Result = 90
+
+For Each pf As Rulestream.Kernel.Part In Me.Parent.App_Calc_Metrics(1).MDR_Sorters
+	If pf.Properties("CAE_MDR_SORTER_MASTER_ID").Value.ToUpper() = Me.Gen_Sorter_Type.ToUpper()
+		Result = pf.Properties("Max_Speed").Value	
+		Exit For
+	End If
+Next
+
+If Me.Sort_Char_Max_Speed_User_UOM = "M/SEC" Then
+	Result = Units.Convert(Result, "FT/MIN", "M/SEC")
+End If
+      '   END FORMULA; PROP ID:10266; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasMechInstall", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Sort_Char_Max_Speed_User", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Acq_Label_Data_Acquisition_Travel_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Acq_Label_Data_Acquisition_Travel_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10262; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10262; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Acq_Label_Data_Acquisition_Travel_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sort_Char_Max_Speed_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sort_Char_Max_Speed_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10263; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "FT/MIN" Else Result = "M/SEC"
+      '   END FORMULA; PROP ID:10263; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Sort_Char_Max_Speed_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sort_Char_Min_Operating_Temp_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sort_Char_Min_Operating_Temp_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10265; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "F" Else Result = "C"
+      '   END FORMULA; PROP ID:10265; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Sort_Char_Min_Operating_Temp_User_UOM", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -646,7 +679,7 @@ Result = ocol
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Gen_Sorter_Type_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -655,7 +688,7 @@ Result = ocol
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_HasAppCalc_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_User_UOM_System_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -664,7 +697,7 @@ Result = ocol
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_HasElecInstall_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Sort_Char_Divert_Angle_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -673,7 +706,7 @@ Result = ocol
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_HasHeaderHanger_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Sort_Char_Max_Speed_FPM_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -682,7 +715,7 @@ Result = ocol
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_HasMechInstall_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Sort_Char_Max_Speed_User_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -691,7 +724,7 @@ Result = ocol
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_DisplayName_USERCHANGE() as Boolean
+      Public Function Formula_Acq_Label_Data_Acquisition_Travel_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -700,29 +733,8 @@ Result = ocol
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_HasAppCalc_USERCHANGE() as Boolean
-      
-              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
-              Dim Result as Boolean = False
-              Dim ctx as Object
-              Try
-              ctx = this
-              If Me.Properties("HasAppCalc").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
-              Stop
-              End If
-              '   BEGIN FORMULA; PROP ID:5200; TYPE:UC
-              Result = True
-
-If me.App_Calc.Quantity > 0 AndAlso Me.App_Calc(1).Tool_Status <> "New" Then
-	Result = False
-End If
-              '   END FORMULA; PROP ID:5200; TYPE:UC
-              Catch ex As Exception
-              ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasAppCalc_USERCHANGE", ex.Message)
-              If ObjectManager.DebugMode Then Stop
-              End Try
-              Return Result
-            
+      Public Function Formula_Sort_Char_Max_Speed_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -730,29 +742,8 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_HasElecInstall_USERCHANGE() as Boolean
-      
-              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
-              Dim Result as Boolean = False
-              Dim ctx as Object
-              Try
-              ctx = this
-              If Me.Properties("HasElecInstall").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
-              Stop
-              End If
-              '   BEGIN FORMULA; PROP ID:4452; TYPE:UC
-              Result = True
-
-If Me.Elec_Install_Estimator.Quantity > 0 AndAlso Me.Elec_Install_Estimator(1).Tool_Status <> "New" Then
-	Result = False
-End If
-              '   END FORMULA; PROP ID:4452; TYPE:UC
-              Catch ex As Exception
-              ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasElecInstall_USERCHANGE", ex.Message)
-              If ObjectManager.DebugMode Then Stop
-              End Try
-              Return Result
-            
+      Public Function Formula_Sort_Char_Min_Operating_Temp_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -760,29 +751,8 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_HasHeaderHanger_USERCHANGE() as Boolean
-      
-              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
-              Dim Result as Boolean = False
-              Dim ctx as Object
-              Try
-              ctx = this
-              If Me.Properties("HasHeaderHanger").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
-              Stop
-              End If
-              '   BEGIN FORMULA; PROP ID:5199; TYPE:UC
-              Result = True
-
-If Me.Header_Hanger.Quantity > 0 AndAlso Me.Header_Hanger(1).Tool_Status <> "New" Then
-	Result = False
-End If
-              '   END FORMULA; PROP ID:5199; TYPE:UC
-              Catch ex As Exception
-              ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasHeaderHanger_USERCHANGE", ex.Message)
-              If ObjectManager.DebugMode Then Stop
-              End Try
-              Return Result
-            
+      Public Function Formula_Gen_Sorter_Type_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************
@@ -790,29 +760,8 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_HasMechInstall_USERCHANGE() as Boolean
-      
-              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
-              Dim Result as Boolean = False
-              Dim ctx as Object
-              Try
-              ctx = this
-              If Me.Properties("HasMechInstall").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
-              Stop
-              End If
-              '   BEGIN FORMULA; PROP ID:4451; TYPE:UC
-              Result = True
-
-If Me.Mech_Install_Estimator.Quantity > 0 AndAlso Me.Mech_Install_Estimator(1).Tool_Status <> "New" Then
-	Result = False
-End If
-              '   END FORMULA; PROP ID:4451; TYPE:UC
-              Catch ex As Exception
-              ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasMechInstall_USERCHANGE", ex.Message)
-              If ObjectManager.DebugMode Then Stop
-              End Try
-              Return Result
-            
+      Public Function Formula_User_UOM_System_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -820,69 +769,74 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Mech_Install_Estimator_PARTNAMES() as String
+      Public Function Formula_Sort_Char_Divert_Angle_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sort_Char_Max_Speed_FPM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sort_Char_Max_Speed_User_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Acq_Label_Data_Acquisition_Travel_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sort_Char_Max_Speed_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sort_Char_Min_Operating_Temp_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gen_Sorter_Type_ValidValues() as Rulestream.Kernel.ValidValues
       
-      Dim Result as String = ""
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
       Dim ctx as Object
       Try
       ctx = this
-      '   BEGIN FORMULA; SUB ID:195; TYPE:PN
-      
-      '   END FORMULA; SUB ID:195; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Mech_Install_Estimator_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Mech_Install_Estimator_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Mech_Install_Estimator").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      If Me.Properties("Gen_Sorter_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; SUB ID:195; TYPE:QF
-      Result = 0
-
-If Me.HasMechInstall Then
-	Result = 1
-End If
-      '   END FORMULA; SUB ID:195; TYPE:QF
+      '   BEGIN FORMULA; PROP ID:10258; TYPE:VV
+      Result = MakeValidValues(Array("MDR - Blue Wheel Diverter", "MDR - RT3 RAT", "MDR - 710 RAT Pneumatic"))
+      '   END FORMULA; PROP ID:10258; TYPE:VV
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Mech_Install_Estimator_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Mech_Install_Estimator_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Mech_Install_Estimator").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:195; TYPE:OP
-      result = "CAE_Mech_Install_App"
-      '   END FORMULA; SUB ID:195; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Mech_Install_Estimator_OPTIMALPARTFAMILY", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Gen_Sorter_Type_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -893,65 +847,20 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_App_Calc_PARTNAMES() as String
+      Public Function Formula_User_UOM_System_ValidValues() as Rulestream.Kernel.ValidValues
       
-      Dim Result as String = ""
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
       Dim ctx as Object
       Try
       ctx = this
-      '   BEGIN FORMULA; SUB ID:241; TYPE:PN
-      
-      '   END FORMULA; SUB ID:241; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_App_Calc_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_App_Calc_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("App_Calc").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      If Me.Properties("User_UOM_System").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; SUB ID:241; TYPE:QF
-      Result = If(Me.HasAppCalc, 1, 0)
-      '   END FORMULA; SUB ID:241; TYPE:QF
+      '   BEGIN FORMULA; PROP ID:10264; TYPE:VV
+      Result = MakeValidValues(Array("Imperial", "Metric"))
+      '   END FORMULA; PROP ID:10264; TYPE:VV
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_App_Calc_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_App_Calc_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("App_Calc").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:241; TYPE:OP
-      Result = "CAE_App_Calc"
-      '   END FORMULA; SUB ID:241; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_App_Calc_OPTIMALPARTFAMILY", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_User_UOM_System_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -962,69 +871,20 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Elec_Install_Estimator_PARTNAMES() as String
+      Public Function Formula_Acq_Label_Data_Acquisition_Travel_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
       
-      Dim Result as String = ""
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
       Dim ctx as Object
       Try
       ctx = this
-      '   BEGIN FORMULA; SUB ID:194; TYPE:PN
-      
-      '   END FORMULA; SUB ID:194; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Elec_Install_Estimator_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Elec_Install_Estimator_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Elec_Install_Estimator").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      If Me.Properties("Acq_Label_Data_Acquisition_Travel_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; SUB ID:194; TYPE:QF
-      Result = 0
-
-If Me.HasElecInstall Then
-	Result = 1
-End If
-      '   END FORMULA; SUB ID:194; TYPE:QF
+      '   BEGIN FORMULA; PROP ID:10262; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10262; TYPE:VV
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Elec_Install_Estimator_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Elec_Install_Estimator_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Elec_Install_Estimator").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:194; TYPE:OP
-      result = "CAE_Elec_Install_App"
-      '   END FORMULA; SUB ID:194; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Elec_Install_Estimator_OPTIMALPARTFAMILY", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Acq_Label_Data_Acquisition_Travel_User_UOM_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1035,69 +895,20 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Header_Hanger_PARTNAMES() as String
+      Public Function Formula_Sort_Char_Max_Speed_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
       
-      Dim Result as String = ""
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
       Dim ctx as Object
       Try
       ctx = this
-      '   BEGIN FORMULA; SUB ID:268; TYPE:PN
-      
-      '   END FORMULA; SUB ID:268; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Header_Hanger_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Header_Hanger_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Header_Hanger").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      If Me.Properties("Sort_Char_Max_Speed_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; SUB ID:268; TYPE:QF
-      Result = 0
-
-If Me.HasHeaderHanger Then
-	Result = 1
-End If
-      '   END FORMULA; SUB ID:268; TYPE:QF
+      '   BEGIN FORMULA; PROP ID:10263; TYPE:VV
+      Result = MakeValidValues(Array("FT/MIN", "M/SEC"))
+      '   END FORMULA; PROP ID:10263; TYPE:VV
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Header_Hanger_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Header_Hanger_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Header_Hanger").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:268; TYPE:OP
-      result = "HHS_HeaderHanger_Calc"
-      '   END FORMULA; SUB ID:268; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Header_Hanger_OPTIMALPARTFAMILY", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Sort_Char_Max_Speed_User_UOM_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1108,65 +919,20 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Sortation_PARTNAMES() as String
+      Public Function Formula_Sort_Char_Min_Operating_Temp_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
       
-      Dim Result as String = ""
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
       Dim ctx as Object
       Try
       ctx = this
-      '   BEGIN FORMULA; SUB ID:265; TYPE:PN
-      
-      '   END FORMULA; SUB ID:265; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Sortation_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Sortation_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Sortation").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      If Me.Properties("Sort_Char_Min_Operating_Temp_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; SUB ID:265; TYPE:QF
-      Result = 1
-      '   END FORMULA; SUB ID:265; TYPE:QF
+      '   BEGIN FORMULA; PROP ID:10265; TYPE:VV
+      Result = MakeValidValues(Array("F", "C"))
+      '   END FORMULA; PROP ID:10265; TYPE:VV
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Sortation_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Sortation_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Sortation").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:265; TYPE:OP
-      result = "APC_Sortation"
-      '   END FORMULA; SUB ID:265; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Sortation_OPTIMALPARTFAMILY", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_Sort_Char_Min_Operating_Temp_User_UOM_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

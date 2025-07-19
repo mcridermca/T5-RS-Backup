@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: IGS_Project_Top_App
-'$ GenerateDate: 07/18/2025 13:15:19
+'$ GenerateDate: 07/18/2025 17:35:28
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -541,7 +541,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Project_Top_App", <a><![CDATA[IGS_Project_Top_App]]></a>.Value, 376, "IGSEST",  "", "", True, True, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/18/2025 13:10:16")
+    InitPart("IGS_Project_Top_App", <a><![CDATA[IGS_Project_Top_App]]></a>.Value, 376, "IGSEST",  "", "", True, True, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/18/2025 17:32:10")
     AddProperty("4821", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/23/2025 1:10:55 PM")
     
       oSubpart = AddSubpart(255,"Project_Information", <a><![CDATA[Project_Information]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "6/23/2025 1:12:18 PM")
@@ -621,11 +621,11 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 374, "3", "0", "RsLabel", 0, "", 50, 6, 27, 354, 2, "Instructions", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.12;Font_Style:1.1;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 374, "4", "0", "RsGroupBox", 0, "", 107, 6, 633, 1065, 3, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
         oProcessStep.AddCustomLayout(1, 374, "5", "4", "RsGrid", 0, "", 9, 4, 350, 400, 4, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,253,Proposal_Information;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
-        oProcessStep.AddCustomLayout(1, 374, "6", "5", "RsGridColumn", 0, "Proposal_Name", 0, 0, 0, 150, 0, "Proposal", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 374, "6", "5", "RsGridColumn", 0, "DisplayName", 0, 0, 0, 150, 0, "Proposal", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 374, "7", "4", "RsAddDeleteCopy", 0, "", 365, 246, 22, 158, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,253,Proposal_Information;CanDelete:;AddPrompt:False;ShowCopy:True")
         oProcessStep.AddCustomLayout(1, 374, "8", "4", "RsSubForm", 0, "", 9, 410, 396, 418, 6, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,253,Proposal_Information")
         oProcessStep.AddCustomLayout(1, 374, "9", "8", "RsGrid", 0, "", 0, 0, 350, 400, 7, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,256,PRD_Document;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
-        oProcessStep.AddCustomLayout(1, 374, "10", "9", "RsGridColumn", 0, "PRD_Name", 0, 0, 0, 150, 0, "PRD", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 374, "10", "9", "RsGridColumn", 0, "DisplayName", 0, 0, 0, 150, 0, "PRD", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 374, "11", "8", "RsAddDeleteCopy", 0, "", 356, 242, 22, 158, 8, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,256,PRD_Document;CanDelete:;AddPrompt:False;ShowCopy:True")
         
         End Sub

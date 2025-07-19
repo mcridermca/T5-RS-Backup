@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: CAE_Mech_Install_App
-'$ GenerateDate: 07/18/2025 11:37:15
+'$ GenerateDate: 07/18/2025 17:35:28
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -260,21 +260,48 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Input_Labor_Type]() As String
+          Public Property [PRD_Labor_Type]() As String
       Get
-      Return Properties("Input_Labor_Type").Value
+      Return Properties("PRD_Labor_Type").Value
       End Get
       Set(ByVal Value As String)
-      Properties("Input_Labor_Type").CalculatedValue = Value
+      Properties("PRD_Labor_Type").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [Input_Work_Week_Type]() As String
+          Public Property [PRD_Weeks_Comm]() As Double
       Get
-      Return Properties("Input_Work_Week_Type").Value
+      Return Properties("PRD_Weeks_Comm").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Weeks_Comm").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Weeks_Install]() As Double
+      Get
+      Return Properties("PRD_Weeks_Install").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Weeks_Install").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Work_Week_HRS]() As Double
+      Get
+      Return Properties("PRD_Work_Week_HRS").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PRD_Work_Week_HRS").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [PRD_Work_Week_Type]() As String
+      Get
+      Return Properties("PRD_Work_Week_Type").Value
       End Get
       Set(ByVal Value As String)
-      Properties("Input_Work_Week_Type").CalculatedValue = Value
+      Properties("PRD_Work_Week_Type").CalculatedValue = Value
       End Set
       End Property
     
@@ -655,7 +682,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Mech_Install_App", <a><![CDATA[CAE Mech Install App]]></a>.Value, 360, "APCTMP01",  "N", "N", True, True, "In Development", "", "C&E Mechanical Install Estimator App", "", "", "",  "GLOBAL\H617242", "07/18/2025 10:38:30")
+    InitPart("CAE_Mech_Install_App", <a><![CDATA[CAE Mech Install App]]></a>.Value, 360, "APCTMP01",  "N", "N", True, True, "In Development", "", "C&E Mechanical Install Estimator App", "", "", "",  "GLOBAL\H602502", "07/18/2025 15:01:23")
     AddProperty("4540", "HCAD_Import_QuantityOfCPs", <a><![CDATA[HCAD_Import_Quantity Of CPs]]></a>.Value, "", "Long","","HCAD Pricing Sheet Import","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/19/2025 7:22:50 PM")
     AddProperty("4539", "HCAD_Import_RawData", <a><![CDATA[HCAD_Import_Raw Data]]></a>.Value, "", "String","","HCAD Pricing Sheet Import","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/18/2025 9:03:56 PM")
     AddProperty("9513", "AirPipingFactor", <a><![CDATA[Air Piping Factor]]></a>.Value, "", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 7:07:53 PM")
@@ -665,8 +692,11 @@ Option Infer On
     AddProperty("9519", "CAE_Customer_Location", <a><![CDATA[CAE_Customer_Location]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 5:25:21 PM")
     AddProperty("9521", "CAE_Customer_Project_Number", <a><![CDATA[CAE_Customer_Project_Number]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 5:26:39 PM")
     AddProperty("9520", "CAE_Quote_Date", <a><![CDATA[CAE_Quote_Date]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 11:42:09 AM")
-    AddProperty("10624", "Input_Labor_Type", <a><![CDATA[Input_Labor_Type]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:49:49 PM")
-    AddProperty("10625", "Input_Work_Week_Type", <a><![CDATA[Input_Work_Week_Type]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 7:51:37 PM")
+    AddProperty("10675", "PRD_Labor_Type", <a><![CDATA[PRD_Labor_Type]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:46:55 PM")
+    AddProperty("10672", "PRD_Weeks_Comm", <a><![CDATA[PRD_Weeks_Comm]]></a>.Value, "", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:55:42 PM")
+    AddProperty("10673", "PRD_Weeks_Install", <a><![CDATA[PRD_Weeks_Install]]></a>.Value, "", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:55:35 PM")
+    AddProperty("10671", "PRD_Work_Week_HRS", <a><![CDATA[PRD_Work_Week_HRS]]></a>.Value, "", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:45:54 PM")
+    AddProperty("10674", "PRD_Work_Week_Type", <a><![CDATA[PRD_Work_Week_Type]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 2:46:34 PM")
     AddProperty("9497", "Selection_Control_Panel", <a><![CDATA[Selection_Control_Panel]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 4:51:10 PM")
     AddProperty("9511", "Selection_Control_Panel_Delta", <a><![CDATA[Selection_Control_Panel_Delta]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 6:09:00 PM")
     AddProperty("8092", "Selection_System", <a><![CDATA[Selection_System]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/2/2025 7:10:05 PM")
@@ -678,9 +708,9 @@ Option Infer On
     
       AddValidValue("AirPipingFactor")
     
-      AddValidValue("Input_Labor_Type")
+      AddValidValue("PRD_Labor_Type")
     
-      AddValidValue("Input_Work_Week_Type")
+      AddValidValue("PRD_Work_Week_Type")
     
       AddValidValue("Selection_Control_Panel")
     
@@ -1460,10 +1490,19 @@ Option Infer On
           InitProperty("CAE_Quote_Date", "9100", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 11:42:09 AM", "", "In Development",  0,18472)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Input_Labor_Type", "10192", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:49:49 PM", "", "In Development",  0,18926)
+          InitProperty("PRD_Labor_Type", "10239", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:46:55 PM", "", "In Development",  0,19089)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Input_Work_Week_Type", "10193", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/17/2025 7:51:37 PM", "", "In Development",  0,18930)
+          InitProperty("PRD_Weeks_Comm", "10236", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:55:42 PM", "", "In Development",  0,19101)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Weeks_Install", "10237", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:55:35 PM", "", "In Development",  0,19100)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Work_Week_HRS", "10235", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:45:54 PM", "", "In Development",  0,19084)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PRD_Work_Week_Type", "10238", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/18/2025 2:46:34 PM", "", "In Development",  0,19087)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Selection_Control_Panel", "9077", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/8/2025 4:51:10 PM", "", "In Development",  0,15164)
@@ -1503,11 +1542,11 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           
-        InitValidValue("Input_Labor_Type_ValidValues", "10192", "-1", 18927)
+        InitValidValue("PRD_Labor_Type_ValidValues", "10239", "-1", 19090)
         End If
             If Incontext("-1", ctx) Then
           
-        InitValidValue("Input_Work_Week_Type_ValidValues", "10193", "-1", 18931)
+        InitValidValue("PRD_Work_Week_Type_ValidValues", "10238", "-1", 19088)
         End If
             If Incontext("-1", ctx) Then
           
@@ -2445,21 +2484,21 @@ End If
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Input_Labor_Type() As String
+          Public Function Formula_PRD_Labor_Type() As String
           
           Dim Result as String = String.Empty
         
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Input_Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("PRD_Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10192; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10239; TYPE:PF
       Result = "Non-Union"
-      '   END FORMULA; PROP ID:10192; TYPE:PF
+      '   END FORMULA; PROP ID:10239; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Input_Labor_Type", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_PRD_Labor_Type", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -2470,21 +2509,90 @@ End If
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Input_Work_Week_Type() As String
+          Public Function Formula_PRD_Weeks_Comm() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Weeks_Comm").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10236; TYPE:PF
+      Result = 0 '''ToDo - Build reference to PRD part family - TB 18 July, 2025
+      '   END FORMULA; PROP ID:10236; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_PRD_Weeks_Comm", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Weeks_Install() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Weeks_Install").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10237; TYPE:PF
+      Result = 0 '''ToDo - Build reference to PRD part family - TB 18 July, 2025
+      '   END FORMULA; PROP ID:10237; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_PRD_Weeks_Install", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Work_Week_HRS() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PRD_Work_Week_HRS").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10235; TYPE:PF
+      Result = 58
+      '   END FORMULA; PROP ID:10235; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_PRD_Work_Week_HRS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_PRD_Work_Week_Type() As String
           
           Dim Result as String = String.Empty
         
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Input_Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("PRD_Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10193; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:10238; TYPE:PF
       Result = "1st Shift"
-      '   END FORMULA; PROP ID:10193; TYPE:PF
+      '   END FORMULA; PROP ID:10238; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Input_Work_Week_Type", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_PRD_Work_Week_Type", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -2771,7 +2879,7 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Input_Labor_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_PRD_Labor_Type_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -2780,7 +2888,34 @@ End Select
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Input_Work_Week_Type_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_PRD_Weeks_Comm_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Weeks_Install_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Work_Week_HRS_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Work_Week_Type_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -2960,7 +3095,7 @@ Result = 2
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Input_Labor_Type_USERCHANGE() as Boolean
+      Public Function Formula_PRD_Labor_Type_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -2969,7 +3104,34 @@ Result = 2
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Input_Work_Week_Type_USERCHANGE() as Boolean
+      Public Function Formula_PRD_Weeks_Comm_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Weeks_Install_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Work_Week_HRS_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_PRD_Work_Week_Type_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -3065,20 +3227,20 @@ Result = 2
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Input_Labor_Type_ValidValues() as Rulestream.Kernel.ValidValues
+      Public Function Formula_PRD_Labor_Type_ValidValues() as Rulestream.Kernel.ValidValues
       
       Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Input_Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      If Me.Properties("PRD_Labor_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10192; TYPE:VV
+      '   BEGIN FORMULA; PROP ID:10239; TYPE:VV
       Result = MakeValidValues(Array("Union", "Non-Union"))
-      '   END FORMULA; PROP ID:10192; TYPE:VV
+      '   END FORMULA; PROP ID:10239; TYPE:VV
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Input_Labor_Type_ValidValues", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_PRD_Labor_Type_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -3089,20 +3251,20 @@ Result = 2
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Input_Work_Week_Type_ValidValues() as Rulestream.Kernel.ValidValues
+      Public Function Formula_PRD_Work_Week_Type_ValidValues() as Rulestream.Kernel.ValidValues
       
       Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Input_Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      If Me.Properties("PRD_Work_Week_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:10193; TYPE:VV
+      '   BEGIN FORMULA; PROP ID:10238; TYPE:VV
       Result = MakeValidValues(Array("1st Shift", "2nd Shift", "3rd Shift", "24/7", "Weekend Only"))
-      '   END FORMULA; PROP ID:10193; TYPE:VV
+      '   END FORMULA; PROP ID:10238; TYPE:VV
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_Input_Work_Week_Type_ValidValues", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Formula_PRD_Work_Week_Type_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
