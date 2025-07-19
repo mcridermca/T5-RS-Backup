@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: IGS_Tool_Instance_Mgr
-'$ GenerateDate: 07/19/2025 12:53:16
+'$ GenerateDate: 07/19/2025 13:01:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -225,12 +225,6 @@ Option Infer On
       End Get
       End Property
     
-      Public ReadOnly Property [Sortation]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("Sortation")
-      End Get
-      End Property
-    
       Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
       Get
       Return Connections("My_PRD")
@@ -263,7 +257,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/19/2025 12:40:10")
+    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/19/2025 13:01:11")
     AddProperty("10655", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 1:19:58 PM")
     AddProperty("5588", "HasAppCalc", <a><![CDATA[Has App Calc]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:34:26 PM")
     AddProperty("4829", "HasElecInstall", <a><![CDATA[Has Elec Install]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 11:46:05 AM")
@@ -286,12 +280,6 @@ Option Infer On
       oSubpart = AddSubpart(341,"Header_Hanger", <a><![CDATA[Header_Hanger]]></a>.Value, "FD", "Header Hanger Application", "General", 9999, "", "GLOBAL\H602502", "7/17/2025 8:43:48 PM")
       
         oSubpart.AddVPF (333, "HHS_HeaderHanger_Calc", "Header Hanger Calculator")
-      
-      oSubpart = AddSubpart(338,"Sortation", <a><![CDATA[Sortation]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/19/2025 12:40:10 PM")
-      
-        oSubpart.AddVPF (120, "APC_Sortation", "APC_Sortation")
-      
-        oSubpart.AddVPF (442, "CAE_APC_Sortation", "CAE_APC_Sortation")
       
       oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "171", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:06:44 PM")
       
@@ -391,12 +379,6 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitSubpart("Header_Hanger", 268, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/17/2025 8:43:48 PM", "", "In Development", "N",0,729,761)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("Sortation", 265, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/19/2025 12:40:10 PM", "", "In Development", "N",0,776,721)
         
           End If
         
@@ -1100,75 +1082,6 @@ End If
       '   END FORMULA; SUB ID:268; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Header_Hanger_OPTIMALPARTFAMILY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Sortation_PARTNAMES() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      '   BEGIN FORMULA; SUB ID:265; TYPE:PN
-      
-      '   END FORMULA; SUB ID:265; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Sortation_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Sortation_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Sortation").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:265; TYPE:QF
-      Result = 1
-      '   END FORMULA; SUB ID:265; TYPE:QF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Sortation_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Sortation_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Sortation").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:265; TYPE:OP
-      Result = "CAE_APC_Sortation"
-      '   END FORMULA; SUB ID:265; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_Sortation_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

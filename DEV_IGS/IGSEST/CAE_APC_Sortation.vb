@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_APC_Sortation
-'$ GenerateDate: 07/19/2025 12:53:16
+'$ GenerateDate: 07/19/2025 13:01:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -188,9 +188,9 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_APC_Sortation", <a><![CDATA[CAE_APC_Sortation]]></a>.Value, 442, "IGSEST",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/19/2025 12:51:11")
+    InitPart("CAE_APC_Sortation", <a><![CDATA[CAE_APC_Sortation]]></a>.Value, 442, "IGSEST",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/19/2025 12:58:13")
     AddProperty("10821", "Sorter_Selected_Width_IN", <a><![CDATA[Sorter_Selected_Width_IN]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 12:40:59 PM")
-    AddProperty("10822", "Sorter_Types_dbKeys", <a><![CDATA[Sorter_Types_dbKeys]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 12:51:11 PM")
+    AddProperty("10822", "Sorter_Types_dbKeys", <a><![CDATA[Sorter_Types_dbKeys]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 12:58:13 PM")
     AddProperty("10820", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 12:39:50 PM")
     
       AddValidValue("Sorter_Selected_Width_IN")
