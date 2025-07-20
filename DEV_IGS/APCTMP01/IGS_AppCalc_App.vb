@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: IGS_AppCalc_App
-'$ GenerateDate: 07/16/2025 20:14:58
+'$ GenerateDate: 07/19/2025 14:19:09
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -574,7 +574,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_AppCalc_App", <a><![CDATA[IGS_AppCalc_App]]></a>.Value, 116, "APCTMP01",  "N", "N", True, True, "In Development", "", "App Calc Top Part", "", "", "",  "GLOBAL\H601424", "07/16/2025 20:12:35")
+    InitPart("IGS_AppCalc_App", <a><![CDATA[IGS_AppCalc_App]]></a>.Value, 116, "APCTMP01",  "N", "N", True, True, "In Development", "", "App Calc Top Part", "", "", "",  "GLOBAL\H601424", "07/19/2025 14:15:15")
     AddProperty("4535", "App_Calc_Name", <a><![CDATA[App_Calc_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 8:26:13 PM")
     AddProperty("1521", "Approved_By", <a><![CDATA[Approved By]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/28/2025 5:13:01 AM")
     AddProperty("1522", "Approved_Date", <a><![CDATA[Approved Date]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/28/2025 5:13:01 AM")
@@ -646,9 +646,9 @@ Option Infer On
       
         oSubpart.AddVPF (119, "APC_Setup", "APC_Setup")
       
-      oSubpart = AddSubpart(34,"Sortation", <a><![CDATA[Sortation]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "3/26/2025 1:58:22 AM")
+      oSubpart = AddSubpart(34,"Sortation", <a><![CDATA[Sortation]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/19/2025 2:15:15 PM")
       
-        oSubpart.AddVPF (120, "APC_Sortation", "APC_Sortation")
+        oSubpart.AddVPF (442, "CAE_APC_Sortation", "CAE_APC_Sortation")
       
       oSubpart = AddSubpart(42,"Space_Avail_Merge", <a><![CDATA[Space_Avail_Merge]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "3/26/2025 1:58:22 AM")
       
@@ -1199,7 +1199,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Sortation", 29, "N", "N", "N", 0, "-1", "", "GLOBAL\H601424", "3/26/2025 1:58:22 AM", "", "In Development", "N",0,76,77)
+        InitSubpart("Sortation", 29, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/19/2025 2:15:15 PM", "", "In Development", "N",0,784,77)
         
           End If
         
@@ -2994,7 +2994,7 @@ result = STATUS_ENABLED
       Stop
       End If
       '   BEGIN FORMULA; SUB ID:29; TYPE:OP
-      result = "APC_Sortation"
+      Result = "CAE_APC_Sortation"
       '   END FORMULA; SUB ID:29; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Formula_Sortation_OPTIMALPARTFAMILY", ex.Message)

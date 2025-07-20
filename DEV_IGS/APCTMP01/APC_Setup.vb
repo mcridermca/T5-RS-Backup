@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Setup
-'$ GenerateDate: 07/18/2025 18:34:28
+'$ GenerateDate: 07/19/2025 16:41:40
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -965,22 +965,22 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", True, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H601424", "07/18/2025 18:31:13")
+    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", True, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H601424", "07/19/2025 16:40:41")
     AddProperty("3778", "Belt_InclineDecline_Max_Deg", <a><![CDATA[Belt InclineDecline Max Deg (Degrees)]]></a>.Value, "Max. Belt Incline/Decline Angle for Stable Product (in Degrees)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 6:37:40 PM")
-    AddProperty("3170", "BoxSize_Height_Avg_IN", <a><![CDATA[BoxSize Height Avg IN]]></a>.Value, "BoxSize Height Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:37:24 PM")
+    AddProperty("3170", "BoxSize_Height_Avg_IN", <a><![CDATA[BoxSize Height Avg IN]]></a>.Value, "BoxSize Height Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:34:04 PM")
     AddProperty("3158", "BoxSize_Height_Avg_User", <a><![CDATA[BoxSize Height Avg User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:21:15 PM")
     AddProperty("3171", "BoxSize_Height_Avg_User_UOM", <a><![CDATA[BoxSize Height Avg User UOM]]></a>.Value, "BoxSize Height Avg User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:11:09 PM")
     AddProperty("3776", "BoxSize_Height_GRTR_Len_Possible", <a><![CDATA[BoxSize Height GRTR Len Possible]]></a>.Value, "Within MTBH Range, Can Product Heights be > Length?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:33:45 PM")
-    AddProperty("3296", "BoxSize_Height_Max_IN", <a><![CDATA[BoxSize Height Max IN]]></a>.Value, "BoxSize Height Max IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:37:44 PM")
+    AddProperty("3296", "BoxSize_Height_Max_IN", <a><![CDATA[BoxSize Height Max IN]]></a>.Value, "BoxSize Height Max IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:34:21 PM")
     AddProperty("3160", "BoxSize_Height_Max_User", <a><![CDATA[BoxSize Height Max User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:21:57 PM")
     AddProperty("3247", "BoxSize_Height_Max_User_UOM", <a><![CDATA[BoxSize Height Max User UOM]]></a>.Value, "BoxSize Height Max User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:12:05 PM")
-    AddProperty("3297", "BoxSize_Height_Min_IN", <a><![CDATA[BoxSize Height Min IN]]></a>.Value, "BoxSize Height Min IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:38:00 PM")
+    AddProperty("3297", "BoxSize_Height_Min_IN", <a><![CDATA[BoxSize Height Min IN]]></a>.Value, "BoxSize Height Min IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:34:35 PM")
     AddProperty("3159", "BoxSize_Height_Min_User", <a><![CDATA[BoxSize Height Min User]]></a>.Value, "The allowable input range is 0.75 inch (19.05 mm) to the defined ""Average Height"". Conveying product heights below 0.75 inch (19.05 mm) is possible, but requires special design considerations system wide and needs PAE/engineering approval.", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:21:33 PM")
     AddProperty("3246", "BoxSize_Height_Min_User_UOM", <a><![CDATA[BoxSize Height Min User UOM]]></a>.Value, "BoxSize Height Min User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:11:33 PM")
-    AddProperty("3298", "BoxSize_Length_Avg_IN", <a><![CDATA[BoxSize Length Avg IN]]></a>.Value, "BoxSize Length Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:38:18 PM")
+    AddProperty("3298", "BoxSize_Length_Avg_IN", <a><![CDATA[BoxSize Length Avg IN]]></a>.Value, "BoxSize Length Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:35:07 PM")
     AddProperty("3161", "BoxSize_Length_Avg_User", <a><![CDATA[BoxSize Length Avg User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:22:21 PM")
     AddProperty("3248", "BoxSize_Length_Avg_User_UOM", <a><![CDATA[BoxSize Length Avg User UOM]]></a>.Value, "BoxSize Length Avg User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:12:26 PM")
-    AddProperty("3299", "BoxSize_Length_Max_IN", <a><![CDATA[BoxSize Length Max IN]]></a>.Value, "BoxSize Length Max IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:38:43 PM")
+    AddProperty("3299", "BoxSize_Length_Max_IN", <a><![CDATA[BoxSize Length Max IN]]></a>.Value, "BoxSize Length Max IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:35:25 PM")
     AddProperty("3300", "BoxSize_Length_Max_MM", <a><![CDATA[BoxSize Length Max MM]]></a>.Value, "BoxSize Length Max MM", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:39:04 PM")
     AddProperty("3163", "BoxSize_Length_Max_User", <a><![CDATA[BoxSize Length Max User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:23:07 PM")
     AddProperty("3250", "BoxSize_Length_Max_User_UOM", <a><![CDATA[BoxSize Length Max User UOM]]></a>.Value, "BoxSize Length Max User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:18:23 PM")
@@ -990,24 +990,24 @@ Option Infer On
     AddProperty("3249", "BoxSize_Length_Min_User_UOM", <a><![CDATA[BoxSize Length Min User UOM]]></a>.Value, "BoxSize Length Min User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:12:49 PM")
     AddProperty("3777", "BoxSize_Other_Known_Issues", <a><![CDATA[BoxSize Other Known Issues]]></a>.Value, "Other Known or Potential Product Stability Issues Exist?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:36:38 PM")
     AddProperty("3157", "BoxSize_User_UOM", <a><![CDATA[BoxSize User UOM]]></a>.Value, "Default UOM For Box Size", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/12/2025 10:13:18 PM")
-    AddProperty("3303", "BoxSize_Weight_Avg_LBS", <a><![CDATA[BoxSize Weight Avg LBS]]></a>.Value, "BoxSize Weight Avg LBS", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 2:11:55 PM")
+    AddProperty("3303", "BoxSize_Weight_Avg_LBS", <a><![CDATA[BoxSize Weight Avg LBS]]></a>.Value, "BoxSize Weight Avg LBS", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:35:54 PM")
     AddProperty("3167", "BoxSize_Weight_Avg_User", <a><![CDATA[BoxSize Weight Avg User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:24:27 PM")
     AddProperty("3254", "BoxSize_Weight_Avg_User_UOM", <a><![CDATA[BoxSize Weight Avg User UOM]]></a>.Value, "BoxSize Weight Avg User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:11:07 PM")
-    AddProperty("3760", "BoxSize_Weight_Max_LBS", <a><![CDATA[BoxSize Weight Max LBS]]></a>.Value, "BoxSize Weight Max LBS", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 2:06:40 PM")
+    AddProperty("3760", "BoxSize_Weight_Max_LBS", <a><![CDATA[BoxSize Weight Max LBS]]></a>.Value, "BoxSize Weight Max LBS", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:36:07 PM")
     AddProperty("3169", "BoxSize_Weight_Max_User", <a><![CDATA[BoxSize Weight Max User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:25:17 PM")
     AddProperty("3295", "BoxSize_Weight_Max_User_UOM", <a><![CDATA[BoxSize Weight Max User UOM]]></a>.Value, "BoxSize Weight Max User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:11:44 PM")
-    AddProperty("3761", "BoxSize_Weight_Min_LBS", <a><![CDATA[BoxSize Weight Min LBS]]></a>.Value, "BoxSize Weight Min LBS", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:12:16 PM")
+    AddProperty("3761", "BoxSize_Weight_Min_LBS", <a><![CDATA[BoxSize Weight Min LBS]]></a>.Value, "BoxSize Weight Min LBS", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:36:21 PM")
     AddProperty("3168", "BoxSize_Weight_Min_User", <a><![CDATA[BoxSize Weight Min User]]></a>.Value, "The allowable input range is 0.5 LBS (0.23 Kg) to the defined Maximum Weight.", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:24:45 PM")
     AddProperty("3255", "BoxSize_Weight_Min_User_UOM", <a><![CDATA[BoxSize Weight Min User UOM]]></a>.Value, "BoxSize Weight Min User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:13:21 PM")
-    AddProperty("3763", "BoxSize_Width_Avg_IN", <a><![CDATA[BoxSize Width Avg IN]]></a>.Value, "BoxSize Width Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:29:02 PM")
+    AddProperty("3763", "BoxSize_Width_Avg_IN", <a><![CDATA[BoxSize Width Avg IN]]></a>.Value, "BoxSize Width Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:36:38 PM")
     AddProperty("3164", "BoxSize_Width_Avg_User", <a><![CDATA[BoxSize Width Avg User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:23:30 PM")
     AddProperty("3251", "BoxSize_Width_Avg_User_UOM", <a><![CDATA[BoxSize Width Avg User UOM]]></a>.Value, "BoxSize Width Avg User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:18:41 PM")
-    AddProperty("3765", "BoxSize_Width_Max_IN", <a><![CDATA[BoxSize Width Max IN]]></a>.Value, "BoxSize Width Max IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:29:42 PM")
-    AddProperty("3767", "BoxSize_Width_Max_MM", <a><![CDATA[BoxSize Width Max MM]]></a>.Value, "BoxSize Width Max MM", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:30:11 PM")
+    AddProperty("3765", "BoxSize_Width_Max_IN", <a><![CDATA[BoxSize Width Max IN]]></a>.Value, "BoxSize Width Max IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:36:51 PM")
+    AddProperty("3767", "BoxSize_Width_Max_MM", <a><![CDATA[BoxSize Width Max MM]]></a>.Value, "BoxSize Width Max MM", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:37:03 PM")
     AddProperty("3166", "BoxSize_Width_Max_User", <a><![CDATA[BoxSize Width Max User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:24:13 PM")
     AddProperty("3253", "BoxSize_Width_Max_User_UOM", <a><![CDATA[BoxSize Width Max User UOM]]></a>.Value, "BoxSize Width Max User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:19:33 PM")
-    AddProperty("3768", "BoxSize_Width_Min_IN", <a><![CDATA[BoxSize Width Min IN]]></a>.Value, "BoxSize Width Min IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:30:33 PM")
-    AddProperty("3769", "BoxSize_Width_Min_MM", <a><![CDATA[BoxSize Width Min MM]]></a>.Value, "BoxSize Width Min MM", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:30:54 PM")
+    AddProperty("3768", "BoxSize_Width_Min_IN", <a><![CDATA[BoxSize Width Min IN]]></a>.Value, "BoxSize Width Min IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:37:29 PM")
+    AddProperty("3769", "BoxSize_Width_Min_MM", <a><![CDATA[BoxSize Width Min MM]]></a>.Value, "BoxSize Width Min MM", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:37:16 PM")
     AddProperty("3165", "BoxSize_Width_Min_User", <a><![CDATA[BoxSize Width Min User]]></a>.Value, "The allowable input range is from 4 inches (101.6 mm) to the defined ""Average Width"".", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:23:56 PM")
     AddProperty("3252", "BoxSize_Width_Min_User_UOM", <a><![CDATA[BoxSize Width Min User UOM]]></a>.Value, "BoxSize Width Min User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:19:06 PM")
     AddProperty("4533", "BoxSize_Worst_Case_Height_IN", <a><![CDATA[BoxSize_Worst_Case_Height IN]]></a>.Value, "Allowable input range is between the defined MTBH Minimum Product Length and Maximum Product Length.", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 6:07:28 PM")
@@ -1015,7 +1015,7 @@ Option Infer On
     AddProperty("4534", "BoxSize_Worst_Case_Length_IN", <a><![CDATA[BoxSize_Worst_Case_Length IN]]></a>.Value, "Allowable input range is between the defined MTBH Minimum Product Length and Maximum Product Length.", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 6:08:06 PM")
     AddProperty("4892", "Case_Length_Per_Minute_Target_FT", <a><![CDATA[Case_Length_Per_Minute_Target_FT]]></a>.Value, "Target Case Length per Minute (in Feet)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 3:22:03 PM")
     AddProperty("4891", "Case_Length_Per_Minute_Target_M", <a><![CDATA[Case_Length_Per_Minute_Target_M]]></a>.Value, "Target Case Length per Minute (in Meters)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 2:24:13 PM")
-    AddProperty("4521", "Conveyor_BF_Selected_Min_IN", <a><![CDATA[Conveyor_BF_Selected_Min_IN]]></a>.Value, "Selected Minimum System Conveyor Width (B/F - Inches)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/23/2025 4:55:28 PM")
+    AddProperty("4521", "Conveyor_BF_Selected_Min_IN", <a><![CDATA[Conveyor_BF_Selected_Min_IN]]></a>.Value, "Selected Minimum System Conveyor Width (B/F - Inches)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:38:30 PM")
     AddProperty("4522", "Conveyor_BF_Selected_Min_User", <a><![CDATA[Conveyor_BF_Selected_Min_User]]></a>.Value, "Selected Minimum System Conveyor Width (B/F - Inches)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/23/2025 4:59:25 PM")
     AddProperty("4523", "Conveyor_BF_Selected_Min_User_UOM", <a><![CDATA[Conveyor_BF_Selected_Min_User_UOM]]></a>.Value, "Selected Minimum System Conveyor Width (UOM)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/23/2025 4:55:37 PM")
     AddProperty("4519", "Conveyor_Curve_BF_Calc_Min_In", <a><![CDATA[Conveyor Curve BF Calc Min In]]></a>.Value, "Calculated Min Curve B/F (Min. Calculated Curve Conveyor Width)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:06:03 PM")
@@ -1030,12 +1030,12 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     AddProperty("4517", "Conveyor_Width_Min_IN", <a><![CDATA[Conveyor Width Min IN]]></a>.Value, "Min. Allowable Straight Conveyor Width  ' =VLOOKUP(BoxSize_Width_Max_IN+1.99,$S$55:$U$60,2,TRUE)  'B/F (Imperial)  IR '0 16 30 '16 22 40 '22 28 50 '28 34 60 '34 40 60 '40 40 60", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/23/2025 4:26:26 PM")
     AddProperty("3154", "Customer_Location_CityState", <a><![CDATA[Customer Location CityState]]></a>.Value, "Customer's Site Location (City, St)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 7:17:39 PM")
     AddProperty("3153", "Customer_Name", <a><![CDATA[Customer Name]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 7:16:14 PM")
-    AddProperty("3774", "Live_Load_Avg_KGM", <a><![CDATA[Live Load Avg KGM]]></a>.Value, "Live Load", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:16:35 PM")
-    AddProperty("3773", "Live_Load_Avg_LBSFT", <a><![CDATA[Live Load Avg LBSFT]]></a>.Value, "Live Load", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 2:14:19 PM")
+    AddProperty("3774", "Live_Load_Avg_KGM", <a><![CDATA[Live Load Avg KGM]]></a>.Value, "Live Load", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:39:19 PM")
+    AddProperty("3773", "Live_Load_Avg_LBSFT", <a><![CDATA[Live Load Avg LBSFT]]></a>.Value, "Live Load", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:39:34 PM")
     AddProperty("3308", "Live_Load_Avg_User", <a><![CDATA[Live Load Avg User]]></a>.Value, "Live Load (Average)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 2:11:18 PM")
     AddProperty("3856", "Live_Load_Avg_User_UOM", <a><![CDATA[Live_Load_Avg_User_UOM]]></a>.Value, "Live Load (UOM)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:16:28 PM")
-    AddProperty("4529", "Material_Gap_Override_IN", <a><![CDATA[Material Gap Override IN]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/18/2025 6:31:13 PM")
-    AddProperty("4530", "Material_Gap_Override_MM", <a><![CDATA[Material Gap Override MM]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:29:13 PM")
+    AddProperty("4529", "Material_Gap_Override_IN", <a><![CDATA[Material Gap Override IN]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:39:48 PM")
+    AddProperty("4530", "Material_Gap_Override_MM", <a><![CDATA[Material Gap Override MM]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:40:23 PM")
     AddProperty("4528", "Material_Gap_Override_User", <a><![CDATA[Material Gap Override User]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:38:22 PM")
     AddProperty("4531", "Material_Gap_Override_User_UOM", <a><![CDATA[Material Gap Override User UOM]]></a>.Value, "Global Design Gap Override  (UOM)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:38:36 PM")
     AddProperty("3156", "Proposal_Date", <a><![CDATA[Proposal_Date]]></a>.Value, "Salesface Proposal Date", "Date","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 7:16:31 PM")
@@ -1043,7 +1043,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     AddProperty("3307", "Selected_Sortation_Controls", <a><![CDATA[Selected Sortation Controls]]></a>.Value, "Control system used for Primary Merge/Sortation? ICW & Boss Control platforms are now in ""sunset"" status and should not used for new projects moving forward.", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:36:08 PM")
     AddProperty("3770", "Sort_Dual_Sided", <a><![CDATA[Sort Dual Sided]]></a>.Value, "Dual Sided Sort Application?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:31:09 PM")
     AddProperty("3771", "Sort_Rate_Required_CPM", <a><![CDATA[Sort_Rate_Required_CPM]]></a>.Value, "Target Sortation Rate (CPM)  This is the maximum expected throughput the sortation system is to be designed to convey with the carton parameters input above. Allowable input range for this parameter is 5 to 400 CPM.", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 2:19:48 PM")
-    AddProperty("3781", "Temp_Sort_Operating_Min_F", <a><![CDATA[Temp Sort Operating Min F]]></a>.Value, "Min. Operating Temp. for Sorter Environment", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 7:02:27 PM")
+    AddProperty("3781", "Temp_Sort_Operating_Min_F", <a><![CDATA[Temp Sort Operating Min F]]></a>.Value, "Min. Operating Temp. for Sorter Environment", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:40:41 PM")
     AddProperty("3779", "Temp_Sort_Operating_Min_User", <a><![CDATA[Temp Sort Operating Min User]]></a>.Value, "Min. Operating Temp. for Sorter Environment", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:37:15 PM")
     AddProperty("3780", "Temp_Sort_Operating_Min_User_UOM", <a><![CDATA[Temp Sort Operating Min User UOM]]></a>.Value, "Temp Sort Operating Min User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 7:04:54 PM")
     AddProperty("3784", "Temp_System_Operating_Min_F", <a><![CDATA[Temp System Operating Min F]]></a>.Value, "Min. Operating Temp. for System Environment", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 7:01:46 PM")
@@ -1140,7 +1140,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Belt_InclineDecline_Max_Deg", "3408", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 6:37:40 PM", "Max. Belt Incline/Decline Angle for Stable Product (in Degrees)", "In Development",  0,5690)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Height_Avg_IN", "2804", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:37:24 PM", "BoxSize Height Avg IN", "In Development",  0,4307)
+          InitProperty("BoxSize_Height_Avg_IN", "2804", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:34:04 PM", "BoxSize Height Avg IN", "In Development",  0,19553)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Height_Avg_User", "2792", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:21:15 PM", "Todo: Enter Description from Spreadsheet", "In Development",  0,4139)
@@ -1152,7 +1152,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_Height_GRTR_Len_Possible", "3406", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 12:33:45 PM", "Within MTBH Range, Can Product Heights be > Length?", "In Development",  0,4785)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Height_Max_IN", "2926", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:37:44 PM", "BoxSize Height Max IN", "In Development",  0,4308)
+          InitProperty("BoxSize_Height_Max_IN", "2926", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:34:21 PM", "BoxSize Height Max IN", "In Development",  0,19554)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Height_Max_User", "2794", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:21:57 PM", "Todo: Enter Description from Spreadsheet", "In Development",  0,4240)
@@ -1161,7 +1161,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_Height_Max_User_UOM", "2878", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:12:05 PM", "BoxSize Height Max User UOM", "In Development",  0,4219)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Height_Min_IN", "2927", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:38:00 PM", "BoxSize Height Min IN", "In Development",  0,4309)
+          InitProperty("BoxSize_Height_Min_IN", "2927", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:34:35 PM", "BoxSize Height Min IN", "In Development",  0,19555)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Height_Min_User", "2793", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:21:33 PM", "The allowable input range is 0.75 inch (19.05 mm) to the defined ""Average Height"". Conveying product heights below 0.75 inch (19.05 mm) is possible, but requires special design considerations system wide and needs PAE/engineering approval.", "In Development",  0,4239)
@@ -1170,7 +1170,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_Height_Min_User_UOM", "2877", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:11:33 PM", "BoxSize Height Min User UOM", "In Development",  0,4217)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Length_Avg_IN", "2928", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:38:18 PM", "BoxSize Length Avg IN", "In Development",  0,4310)
+          InitProperty("BoxSize_Length_Avg_IN", "2928", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:34:55 PM", "BoxSize Length Avg IN", "In Development",  0,19556)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Length_Avg_User", "2795", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:22:21 PM", "Todo: Enter Description from Spreadsheet", "In Development",  0,4241)
@@ -1179,7 +1179,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_Length_Avg_User_UOM", "2879", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:12:26 PM", "BoxSize Length Avg User UOM", "In Development",  0,4221)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Length_Max_IN", "2929", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:38:43 PM", "BoxSize Length Max IN", "In Development",  0,4311)
+          InitProperty("BoxSize_Length_Max_IN", "2929", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:35:25 PM", "BoxSize Length Max IN", "In Development",  0,19557)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Length_Max_MM", "2930", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:39:04 PM", "BoxSize Length Max MM", "In Development",  0,4312)
@@ -1209,7 +1209,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_User_UOM", "2791", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/12/2025 10:13:18 PM", "Default UOM For Box Size", "In Development",  0,4123)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Weight_Avg_LBS", "2933", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 2:11:55 PM", "BoxSize Weight Avg LBS", "In Development",  0,4876)
+          InitProperty("BoxSize_Weight_Avg_LBS", "2933", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:35:54 PM", "BoxSize Weight Avg LBS", "In Development",  0,19558)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Weight_Avg_User", "2801", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:24:27 PM", "Todo: Enter Description from Spreadsheet", "In Development",  0,4248)
@@ -1218,7 +1218,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_Weight_Avg_User_UOM", "2885", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 12:11:07 PM", "BoxSize Weight Avg User UOM", "In Development",  0,5783)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Weight_Max_LBS", "3390", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 2:06:40 PM", "BoxSize Weight Max LBS", "In Development",  0,4868)
+          InitProperty("BoxSize_Weight_Max_LBS", "3390", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:36:07 PM", "BoxSize Weight Max LBS", "In Development",  0,19559)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Weight_Max_User", "2803", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:25:17 PM", "Todo: Enter Description from Spreadsheet", "In Development",  0,4251)
@@ -1227,7 +1227,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_Weight_Max_User_UOM", "2925", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 12:11:44 PM", "BoxSize Weight Max User UOM", "In Development",  0,5785)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Weight_Min_LBS", "3391", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 12:12:16 PM", "BoxSize Weight Min LBS", "In Development",  0,5788)
+          InitProperty("BoxSize_Weight_Min_LBS", "3391", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:36:21 PM", "BoxSize Weight Min LBS", "In Development",  0,19560)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Weight_Min_User", "2802", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:24:45 PM", "The allowable input range is 0.5 LBS (0.23 Kg) to the defined Maximum Weight.", "In Development",  0,4249)
@@ -1236,7 +1236,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_Weight_Min_User_UOM", "2886", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 12:13:21 PM", "BoxSize Weight Min User UOM", "In Development",  0,5789)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Width_Avg_IN", "3393", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 12:29:02 PM", "BoxSize Width Avg IN", "In Development",  0,4772)
+          InitProperty("BoxSize_Width_Avg_IN", "3393", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:36:38 PM", "BoxSize Width Avg IN", "In Development",  0,19561)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Width_Avg_User", "2798", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:23:30 PM", "Todo: Enter Description from Spreadsheet", "In Development",  0,4245)
@@ -1245,10 +1245,10 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_Width_Avg_User_UOM", "2882", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:18:41 PM", "BoxSize Width Avg User UOM", "In Development",  0,4227)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Width_Max_IN", "3395", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 12:29:42 PM", "BoxSize Width Max IN", "In Development",  0,4774)
+          InitProperty("BoxSize_Width_Max_IN", "3395", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:36:51 PM", "BoxSize Width Max IN", "In Development",  0,19562)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Width_Max_MM", "3397", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 12:30:11 PM", "BoxSize Width Max MM", "In Development",  0,4776)
+          InitProperty("BoxSize_Width_Max_MM", "3397", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:37:03 PM", "BoxSize Width Max MM", "In Development",  0,19563)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Width_Max_User", "2800", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:24:13 PM", "Todo: Enter Description from Spreadsheet", "In Development",  0,4247)
@@ -1257,10 +1257,10 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("BoxSize_Width_Max_User_UOM", "2884", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:19:33 PM", "BoxSize Width Max User UOM", "In Development",  0,4231)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Width_Min_IN", "3398", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 12:30:33 PM", "BoxSize Width Min IN", "In Development",  0,4777)
+          InitProperty("BoxSize_Width_Min_IN", "3398", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:37:29 PM", "BoxSize Width Min IN", "In Development",  0,19565)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("BoxSize_Width_Min_MM", "3399", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 12:30:54 PM", "BoxSize Width Min MM", "In Development",  0,4778)
+          InitProperty("BoxSize_Width_Min_MM", "3399", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:37:16 PM", "BoxSize Width Min MM", "In Development",  0,19564)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BoxSize_Width_Min_User", "2799", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/13/2025 6:23:56 PM", "The allowable input range is from 4 inches (101.6 mm) to the defined ""Average Width"".", "In Development",  0,4246)
@@ -1284,7 +1284,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Case_Length_Per_Minute_Target_M", "4512", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/24/2025 2:24:13 PM", "", "In Development",  0,6537)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Conveyor_BF_Selected_Min_IN", "4149", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/23/2025 4:55:28 PM", "Selected Minimum System Conveyor Width (B/F - Inches)", "In Development",  0,6389)
+          InitProperty("Conveyor_BF_Selected_Min_IN", "4149", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:38:30 PM", "Selected Minimum System Conveyor Width (B/F - Inches)", "In Development",  0,19566)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Conveyor_BF_Selected_Min_User", "4150", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "6/23/2025 4:59:25 PM", "Selected Minimum System Conveyor Width (B/F - Inches)", "In Development",  0,6391)
@@ -1327,10 +1327,10 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Customer_Name", "2787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 7:16:14 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,5732)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Live_Load_Avg_KGM", "3404", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 2:14:32 PM", "Live Load", "In Development",  0,4823)
+          InitProperty("Live_Load_Avg_KGM", "3404", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:39:19 PM", "Live Load", "In Development",  0,19567)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Live_Load_Avg_LBSFT", "3403", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 2:14:19 PM", "Live Load", "In Development",  0,4882)
+          InitProperty("Live_Load_Avg_LBSFT", "3403", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:39:34 PM", "Live Load", "In Development",  0,19568)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Live_Load_Avg_User", "2938", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 2:11:18 PM", "Live Load (Average)", "In Development",  0,4306)
@@ -1339,10 +1339,10 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Live_Load_Avg_User_UOM", "3486", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 12:16:28 PM", "Live Load (UOM)", "In Development",  0,5790)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Material_Gap_Override_IN", "4157", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/18/2025 6:30:35 PM", "Global Design Gap Override", "In Development",  0,19159)
+          InitProperty("Material_Gap_Override_IN", "4157", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:39:48 PM", "Global Design Gap Override", "In Development",  0,19569)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Material_Gap_Override_MM", "4158", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 5:29:13 PM", "Global Design Gap Override", "In Development",  0,5677)
+          InitProperty("Material_Gap_Override_MM", "4158", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:40:23 PM", "Global Design Gap Override", "In Development",  0,19570)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Material_Gap_Override_User", "4156", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 5:38:22 PM", "Global Design Gap Override", "In Development",  0,5675)
@@ -1366,7 +1366,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Sort_Rate_Required_CPM", "3401", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 5:22:47 PM", "Target Sortation Rate (CPM)  This is the maximum expected throughput the sortation system is to be designed to convey with the carton parameters input above. Allowable input range for this parameter is 5 to 400 CPM.", "In Development",  0,4780)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Temp_Sort_Operating_Min_F", "3411", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 7:02:27 PM", "Min. Operating Temp. for Sorter Environment", "In Development",  0,5697)
+          InitProperty("Temp_Sort_Operating_Min_F", "3411", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:40:41 PM", "Min. Operating Temp. for Sorter Environment", "In Development",  0,19571)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Temp_Sort_Operating_Min_User", "3409", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 12:37:15 PM", "Min. Operating Temp. for Sorter Environment", "In Development",  0,4788)
@@ -1626,7 +1626,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:2804; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Height_Avg_User,"IN", Me.BoxSize_Height_Avg_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Height_Avg_User, Me.BoxSize_Height_Avg_User_UOM, "IN")
       '   END FORMULA; PROP ID:2804; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Height_Avg_IN", ex.Message)
@@ -1720,7 +1720,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:2926; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Height_Max_User,"IN", Me.BoxSize_Height_Max_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Height_Max_User, Me.BoxSize_Height_Max_User_UOM, "IN")
       '   END FORMULA; PROP ID:2926; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Height_Max_IN", ex.Message)
@@ -1791,7 +1791,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:2927; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Height_Min_User,"IN", Me.BoxSize_Height_Min_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Height_Min_User, Me.BoxSize_Height_Min_User_UOM, "IN")
       '   END FORMULA; PROP ID:2927; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Height_Min_IN", ex.Message)
@@ -1862,7 +1862,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:2928; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Length_Avg_User,"IN", Me.BoxSize_Length_Avg_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Length_Avg_User, Me.BoxSize_Length_Avg_User_UOM,"IN")
       '   END FORMULA; PROP ID:2928; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Length_Avg_IN", ex.Message)
@@ -1933,7 +1933,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:2929; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Length_Max_User,"IN", Me.BoxSize_Length_Max_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Length_Max_User, Me.BoxSize_Length_Max_User_UOM ,"IN")
       '   END FORMULA; PROP ID:2929; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Length_Max_IN", ex.Message)
@@ -2169,7 +2169,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:2933; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Weight_Avg_User,"LBS", BoxSize_Weight_Avg_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Weight_Avg_User, BoxSize_Weight_Avg_User_UOM,"LBS")
       '   END FORMULA; PROP ID:2933; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Weight_Avg_LBS", ex.Message)
@@ -2240,7 +2240,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3390; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Weight_Max_User,"LBS", Me.BoxSize_Weight_Max_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Weight_Max_User, Me.BoxSize_Weight_Max_User_UOM,"LBS")
       '   END FORMULA; PROP ID:3390; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Weight_Max_LBS", ex.Message)
@@ -2311,7 +2311,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3391; TYPE:PF
-      Result = Units.Convert(Me.BoxSize_Weight_Min_User,"LBS", Me.BoxSize_Weight_Min_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Weight_Min_User, Me.BoxSize_Weight_Min_User_UOM,"LBS")
       '   END FORMULA; PROP ID:3391; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Weight_Min_LBS", ex.Message)
@@ -2382,7 +2382,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3393; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Width_Avg_User,"IN", Me.BoxSize_Width_Avg_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Width_Avg_User, Me.BoxSize_Width_Avg_User_UOM,"IN")
       '   END FORMULA; PROP ID:3393; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Width_Avg_IN", ex.Message)
@@ -2453,7 +2453,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3395; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Width_Max_User,"IN", Me.BoxSize_Width_Max_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Width_Max_User, Me.BoxSize_Width_Max_User_UOM,"IN")
       '   END FORMULA; PROP ID:3395; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Width_Max_IN", ex.Message)
@@ -2476,7 +2476,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3397; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Width_Max_User,"MM", Me.BoxSize_Width_Max_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Width_Max_User, Me.BoxSize_Width_Max_User_UOM,"MM")
       '   END FORMULA; PROP ID:3397; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Width_Max_MM", ex.Message)
@@ -2547,7 +2547,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3398; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Width_Min_User,"IN", Me.BoxSize_Width_Min_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Width_Min_User, Me.BoxSize_Width_Min_User_UOM,"IN")
       '   END FORMULA; PROP ID:3398; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Width_Min_IN", ex.Message)
@@ -2570,7 +2570,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3399; TYPE:PF
-      result = Units.Convert(Me.BoxSize_Width_Min_User,"MM", Me.BoxSize_Width_Min_User_UOM)
+      Result = Units.Convert(Me.BoxSize_Width_Min_User, Me.BoxSize_Width_Min_User_UOM ,"MM")
       '   END FORMULA; PROP ID:3399; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_BoxSize_Width_Min_MM", ex.Message)
@@ -2769,7 +2769,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:4149; TYPE:PF
-      Result = Units.Convert(Me.Conveyor_BF_Selected_Min_User,"IN", Me.Conveyor_BF_Selected_Min_User_UOM)
+      Result = Units.Convert(Me.Conveyor_BF_Selected_Min_User, Me.Conveyor_BF_Selected_Min_User_UOM,"IN")
       '   END FORMULA; PROP ID:4149; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Conveyor_BF_Selected_Min_IN", ex.Message)
@@ -3174,7 +3174,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3404; TYPE:PF
-      result = Units.Convert(Me.Live_Load_Avg_User,"KGM", Me.Live_Load_Avg_User_UOM)
+      Result = Units.Convert(Me.Live_Load_Avg_User, Me.Live_Load_Avg_User_UOM,"KGM")
       '   END FORMULA; PROP ID:3404; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Live_Load_Avg_KGM", ex.Message)
@@ -3197,7 +3197,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3403; TYPE:PF
-      result = Units.Convert(Me.Live_Load_Avg_User,"LBSFT", Me.Live_Load_Avg_User_UOM)
+      Result = Units.Convert(Me.Live_Load_Avg_User, Me.Live_Load_Avg_User_UOM,"LBSFT")
       '   END FORMULA; PROP ID:3403; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Live_Load_Avg_LBSFT", ex.Message)
@@ -3268,7 +3268,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:4157; TYPE:PF
-      Result = Units.Convert(Me.Material_Gap_Override_User,"IN", Me.Material_Gap_Override_User_UOM)
+      Result = Units.Convert(Me.Material_Gap_Override_User, Me.Material_Gap_Override_User_UOM,"IN")
       '   END FORMULA; PROP ID:4157; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Material_Gap_Override_IN", ex.Message)
@@ -3291,7 +3291,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:4158; TYPE:PF
-      result = 0
+      Result = Units.Convert(Me.Material_Gap_Override_User, Me.Material_Gap_Override_User_UOM,"MM")
       '   END FORMULA; PROP ID:4158; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Material_Gap_Override_MM", ex.Message)
@@ -3484,8 +3484,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:3411; TYPE:PF
-      Result = 0 'Fix
-Result = Units.Convert(Me.Temp_Sort_operating_Min_User, Me.Temp_Sort_operating_Min_User_UOM, "F")
+      Result = Units.Convert(Me.Temp_Sort_operating_Min_User, Me.Temp_Sort_operating_Min_User_UOM, "F")
       '   END FORMULA; PROP ID:3411; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Temp_Sort_Operating_Min_F", ex.Message)

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Panel_Configuration
-'$ GenerateDate: 07/16/2025 19:07:43
+'$ GenerateDate: 07/19/2025 14:28:13
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -344,7 +344,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Panel_Configuration", <a><![CDATA[APC_Scan_Panel_Configuration]]></a>.Value, 418, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/16/2025 19:06:35")
+    InitPart("APC_Scan_Panel_Configuration", <a><![CDATA[APC_Scan_Panel_Configuration]]></a>.Value, 418, "APCTMP01",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/19/2025 14:18:32")
     AddProperty("10151", "BP_ConvWidth", <a><![CDATA[Belt Panda  Conveyor Width]]></a>.Value, "Belt Panda  Conveyor Width from (Belt Panda Object)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 10:31:35 PM")
     AddProperty("10202", "Carton_Presentation", <a><![CDATA[Carton_Presentation]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 4:24:11 PM")
     AddProperty("9943", "Is_Scanned", <a><![CDATA[Is_Scanned]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/11/2025 6:28:07 PM")
@@ -375,9 +375,9 @@ Option Infer On
       
         oConnection.AddVPF(412, "CAE_Print_And_Apply")
       
-      oConnection = AddConnection("Sortation_Master_Config", <a><![CDATA[Sortation_Master_Config]]></a>.Value, "Connection / Reference to the Sortation Configuration Object", "168", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:08:43 PM")
+      oConnection = AddConnection("Sortation_Master_Config", <a><![CDATA[Sortation_Master_Config]]></a>.Value, "Connection / Reference to the Sortation Configuration Object", "168", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/19/2025 2:18:32 PM")
       
-        oConnection.AddVPF(120, "APC_Sortation")
+        oConnection.AddVPF(442, "CAE_APC_Sortation")
       
     End Sub
 
