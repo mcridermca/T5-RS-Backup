@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{0eb77bf6-20c4-4837-a92d-1e28e11a7a8f}</ProjectGuid>
+		<ProjectGuid>{f554165d-bca1-4f83-bc6d-de5b7b649321}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>APCTMP01</RootNamespace>
 		<AssemblyName>APCTMP01</AssemblyName>
@@ -194,6 +194,12 @@
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="apc_ziptest.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_apc_sorter_app_details.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="cae_apc_sorter_app_details_dbinfo.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cae_elec_install_app.vb">
