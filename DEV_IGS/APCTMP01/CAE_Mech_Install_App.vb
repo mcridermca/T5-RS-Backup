@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: CAE_Mech_Install_App
-'$ GenerateDate: 07/18/2025 17:35:28
+'$ GenerateDate: 07/21/2025 12:25:40
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -85,6 +85,9 @@ Option Infer On
         
         Case "110"
         Result = Process_DefaultProcess_Chutes_Grid_test_COMMENT()
+        
+        Case "114"
+        Result = Process_DefaultProcess_Conveyor_costing_COMMENT()
         End Select
         End Select
       
@@ -107,6 +110,9 @@ Option Infer On
         
         Case "110"
         Result = Process_DefaultProcess_Chutes_Grid_test_STATUS()
+        
+        Case "114"
+        Result = Process_DefaultProcess_Conveyor_costing_STATUS()
         End Select
         End Select
       
@@ -682,7 +688,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Mech_Install_App", <a><![CDATA[CAE Mech Install App]]></a>.Value, 360, "APCTMP01",  "N", "N", True, True, "In Development", "", "C&E Mechanical Install Estimator App", "", "", "",  "GLOBAL\H602502", "07/18/2025 15:01:23")
+    InitPart("CAE_Mech_Install_App", <a><![CDATA[CAE Mech Install App]]></a>.Value, 360, "APCTMP01",  "N", "N", True, True, "In Development", "", "C&E Mechanical Install Estimator App", "", "", "",  "GLOBAL\H617242", "07/21/2025 10:31:16")
     AddProperty("4540", "HCAD_Import_QuantityOfCPs", <a><![CDATA[HCAD_Import_Quantity Of CPs]]></a>.Value, "", "Long","","HCAD Pricing Sheet Import","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/19/2025 7:22:50 PM")
     AddProperty("4539", "HCAD_Import_RawData", <a><![CDATA[HCAD_Import_Raw Data]]></a>.Value, "", "String","","HCAD Pricing Sheet Import","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/18/2025 9:03:56 PM")
     AddProperty("9513", "AirPipingFactor", <a><![CDATA[Air Piping Factor]]></a>.Value, "", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 7:07:53 PM")
@@ -746,11 +752,11 @@ Option Infer On
       
         oSubpart.AddVPF (399, "CAE_Mech_Install_CP_Comp", "CAE_Mech_Install_CP_Comp")
       
-      oSubpart = AddSubpart(308,"Conveyor_Costing_Intelligrated_Suppor_Mech_Install", <a><![CDATA[Conveyor_Costing_Intelligrated_Suppor_Mech_Install]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H617242", "7/17/2025 5:37:44 AM")
+      oSubpart = AddSubpart(308,"Conveyor_Costing_Intelligrated_Suppor_Mech_Install", <a><![CDATA[Conveyor_Costing_Intelligrated_Suppor_Mech_Install]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H617242", "7/21/2025 10:12:14 AM")
       
         oSubpart.AddVPF (389, "CAE_Conveyor_Costing", "CAE_Conveyor_Costing")
       
-      oSubpart = AddSubpart(309,"Conveyor_Costing_SC_Mech_Install", <a><![CDATA[Conveyor_Costing_SC_Mech_Install]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H617242", "7/17/2025 5:37:58 AM")
+      oSubpart = AddSubpart(309,"Conveyor_Costing_SC_Mech_Install", <a><![CDATA[Conveyor_Costing_SC_Mech_Install]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H617242", "7/21/2025 10:11:32 AM")
       
         oSubpart.AddVPF (389, "CAE_Conveyor_Costing", "CAE_Conveyor_Costing")
       
@@ -836,6 +842,7 @@ Option Infer On
         Initialize_Process_DefaultProcess_Metrics_Table()
         Initialize_Process_DefaultProcess_Chutes_Test()
         Initialize_Process_DefaultProcess_Chutes_Grid_test()
+        Initialize_Process_DefaultProcess_Conveyor_costing()
     Case Else
     Process = "DefaultProcess"
     End Select
@@ -1451,6 +1458,26 @@ Option Infer On
         
         End Sub
       
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
+        Private Sub Initialize_Process_DefaultProcess_Conveyor_costing()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(114, "Conveyor costing", "", 101, 46, 1, 5, 50, 50)
+        oProcessStep.AddPath("CAE_Mech_Install_App.Conveyor_Costing_Intelligrated_Suppor_Mech_Install/CAE_Conveyor_Costing")
+        oProcessStep.AddPath("CAE_Mech_Install_App.Conveyor_Costing_SC_Mech_Install/CAE_Conveyor_Costing")
+        oProcessStep.AddFilter(1, 389, "Conveyor Costing", 1, "Project_Info_Customer", 1)
+        oProcessStep.AddFilter(1, 389, "Conveyor Costing", 1, "Project_Info_Description", 2)
+        oProcessStep.AddFilter(1, 389, "Conveyor Costing", 1, "Project_Info_Location", 3)
+        oProcessStep.AddFilter(1, 389, "Conveyor Costing", 1, "Project_Info_Number", 4)
+        oProcessStep.AddFilter(1, 389, "Conveyor Costing", 1, "Project_Info_QuoteDate", 5)
+        oProcessStep.AddLayout(1, 1, "1;2;0")
+        
+        End Sub
+      
 
     '*****************************************************************************
     '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -1611,13 +1638,13 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Conveyor_Costing_Intelligrated_Suppor_Mech_Install", 235, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/17/2025 5:37:44 AM", "", "In Development", "N",0,635,743)
+        InitSubpart("Conveyor_Costing_Intelligrated_Suppor_Mech_Install", 235, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/21/2025 10:11:48 AM", "", "In Development", "N",0,635,792)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Conveyor_Costing_SC_Mech_Install", 236, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/17/2025 5:37:58 AM", "", "In Development", "N",0,638,744)
+        InitSubpart("Conveyor_Costing_SC_Mech_Install", 236, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/21/2025 10:11:32 AM", "", "In Development", "N",0,638,791)
         
           End If
         
@@ -2219,6 +2246,51 @@ Result = STATUS_HIDDEN
       '   END FORMULA; PROC ID:110; TYPE:CO
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Process_DefaultProcess_Chutes_Grid_test_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Conveyor_costing_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:114; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+Result = STATUS_HIDDEN
+      '   END FORMULA; PROC ID:114; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Process_DefaultProcess_Conveyor_costing_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Conveyor_costing_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:114; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:114; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_App.Process_DefaultProcess_Conveyor_costing_COMMENT", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

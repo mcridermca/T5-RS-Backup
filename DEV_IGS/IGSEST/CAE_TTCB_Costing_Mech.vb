@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_TTCB_Costing_Mech
-'$ GenerateDate: 07/19/2025 14:28:13
+'$ GenerateDate: 07/21/2025 12:25:40
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -2294,7 +2294,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_TTCB_Costing_Mech", <a><![CDATA[CAE_TTCB_Costing_Mech]]></a>.Value, 401, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/19/2025 14:15:26")
+    InitPart("CAE_TTCB_Costing_Mech", <a><![CDATA[CAE_TTCB_Costing_Mech]]></a>.Value, 401, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/20/2025 13:31:00")
     AddProperty("8460", "MEI_Adjust_Dollar_Clean_Up", <a><![CDATA[MEI_Adjust_Dollar_Clean_Up]]></a>.Value, "Mech Install^'TTCB Costing'!I46", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:42:59 AM")
     AddProperty("8461", "MEI_Adjust_Dollar_Fencing", <a><![CDATA[MEI_Adjust_Dollar_Fencing]]></a>.Value, "Mech Install^'TTCB Costing'!I47", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:02 AM")
     AddProperty("8462", "MEI_Adjust_Dollar_Gates", <a><![CDATA[MEI_Adjust_Dollar_Gates]]></a>.Value, "Mech Install^'TTCB Costing'!I48", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:43:05 AM")
@@ -2485,9 +2485,9 @@ Option Infer On
     AddProperty("8400", "MEI_Supplies_Consumables_All_Other_Cost", <a><![CDATA[MEI_Supplies_Consumables_All_Other_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E30", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:24:17 PM")
     AddProperty("8398", "MEI_Supplies_Consumables_Cost", <a><![CDATA[MEI_Supplies_Consumables_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E28", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:23:30 PM")
     AddProperty("8399", "MEI_Supplies_Consumables_HW_Air_Piping_Cost", <a><![CDATA[MEI_Supplies_Consumables_HW_Air_Piping_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 1:23:55 PM")
-    AddProperty("8549", "MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!N37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:33 AM")
-    AddProperty("8548", "MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!N36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:30 AM")
-    AddProperty("8547", "MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent", <a><![CDATA[MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!N35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 6:46:28 AM")
+    AddProperty("8549", "MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!N37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 1:31:00 PM")
+    AddProperty("8548", "MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!N36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 1:25:36 PM")
+    AddProperty("8547", "MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent", <a><![CDATA[MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent]]></a>.Value, "Mech Install^'TTCB Costing'!N35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 1:22:51 PM")
     AddProperty("8555", "MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer]]></a>.Value, "Mech Install^'TTCB Costing'!P37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:32:01 AM")
     AddProperty("8554", "MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Lead_Men]]></a>.Value, "Mech Install^'TTCB Costing'!P36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:31:45 AM")
     AddProperty("8553", "MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Mobile_Cost_SI]]></a>.Value, "Mech Install^'TTCB Costing'!P35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:31:30 AM")
@@ -2499,7 +2499,7 @@ Option Infer On
     AddProperty("8557", "MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI", <a><![CDATA[MEI_Travel_Cost_Crew_Tot_Travel_Cost_SI]]></a>.Value, "Mech Install^'TTCB Costing'!Q35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:34:30 AM")
     AddProperty("8556", "MEI_Travel_Cost_Crew_Total_Mobilization_Cost", <a><![CDATA[MEI_Travel_Cost_Crew_Total_Mobilization_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!P38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:33:18 AM")
     AddProperty("8560", "MEI_Travel_Cost_Crew_Total_Travel_Cost", <a><![CDATA[MEI_Travel_Cost_Crew_Total_Travel_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!Q38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:36:12 AM")
-    AddProperty("8545", "MEI_Travel_Cost_Per_Diem_Range", <a><![CDATA[MEI_Travel_Cost_Per_Diem_Range]]></a>.Value, "Mech Install^'TTCB Costing'!N33", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:23:53 AM")
+    AddProperty("8545", "MEI_Travel_Cost_Per_Diem_Range", <a><![CDATA[MEI_Travel_Cost_Per_Diem_Range]]></a>.Value, "Mech Install^'TTCB Costing'!N33", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 1:17:14 PM")
     AddProperty("8546", "MEI_Travel_Cost_Per_Diem_Range_Link", <a><![CDATA[MEI_Travel_Cost_Per_Diem_Range_Link]]></a>.Value, "Mech Install^'TTCB Costing'!O33", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/17/2025 10:27:41 AM")
     AddProperty("8401", "MEI_Travel_Expense_Cost", <a><![CDATA[MEI_Travel_Expense_Cost]]></a>.Value, "Mech Install^'TTCB Costing'!E31", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/19/2025 11:47:27 AM")
     AddProperty("8121", "MEI_TTCB_Costing_D9", <a><![CDATA[Superintendent Rate]]></a>.Value, "Mechanical Conveyor Installation_Superintendent_Rate", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/4/2025 3:49:41 PM")
@@ -3144,13 +3144,13 @@ Option Infer On
           InitProperty("MEI_Supplies_Consumables_HW_Air_Piping_Cost", "7984", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 1:23:55 PM", "", "In Development",  0,18520)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer", "8134", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:33 AM", "", "In Development",  0,13114)
+          InitProperty("MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer", "8134", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/20/2025 1:31:00 PM", "", "In Development",  0,19993)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men", "8133", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:30 AM", "", "In Development",  0,13112)
+          InitProperty("MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men", "8133", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/20/2025 1:25:36 PM", "", "In Development",  0,19988)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent", "8132", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 6:46:28 AM", "", "In Development",  0,13110)
+          InitProperty("MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent", "8132", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/20/2025 1:22:51 PM", "", "In Development",  0,19982)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Travel_Cost_Crew_Tot_Mobile_Cost_Installer", "8140", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:32:01 AM", "", "In Development",  0,18421)
@@ -3186,7 +3186,7 @@ Option Infer On
           InitProperty("MEI_Travel_Cost_Crew_Total_Travel_Cost", "8145", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:36:12 AM", "", "In Development",  0,18426)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Travel_Cost_Per_Diem_Range", "8130", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:23:53 AM", "", "In Development",  0,13106)
+          InitProperty("MEI_Travel_Cost_Per_Diem_Range", "8130", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H611896", "7/20/2025 1:17:07 PM", "", "In Development",  0,13106)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Travel_Cost_Per_Diem_Range_Link", "8131", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/17/2025 10:27:41 AM", "", "In Development",  0,18415)
@@ -3288,7 +3288,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitValidValue("MEI_Travel_Cost_Per_Diem_Range_ValidValues", "8130", "-1", 18413)
+        InitValidValue("MEI_Travel_Cost_Per_Diem_Range_ValidValues", "8130", "-1", 19969)
         End If
     End Sub
 
@@ -8397,7 +8397,23 @@ Result = Var1 + Var2
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8134; TYPE:PF
-      Result = 0.0
+      'Todo Update: This is hardcoded, chnage it after the wave
+Dim Var As String = Me.MEI_Travel_Cost_Per_Diem_Range
+
+Select Case Var
+	Case "170 & below"
+		Result = 735
+	Case "171 to 210"
+		Result = 805
+	Case "211 to 250"
+		Result = 875
+	Case "251 to 290"
+		Result = 945
+	Case "291 to 330"
+		Result = 1015
+	Case "331 & above"
+		Result = 1085
+End Select
       '   END FORMULA; PROP ID:8134; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Per_Diem_Rates_Installer", ex.Message)
@@ -8420,7 +8436,23 @@ Result = Var1 + Var2
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8133; TYPE:PF
-      Result = 0.0
+      'Todo Update: This is hardcoded, chnage it after the wave
+Dim Var As String = Me.MEI_Travel_Cost_Per_Diem_Range
+
+Select Case Var
+	Case "170 & below"
+		Result = 840
+	Case "171 to 210"
+		Result = 910
+	Case "211 to 250"
+		Result = 980
+	Case "251 to 290"
+		Result = 1050
+	Case "291 to 330"
+		Result = 1120
+	Case "331 & above"
+		Result = 1260
+End Select
       '   END FORMULA; PROP ID:8133; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Per_Diem_Rates_Lead_Men", ex.Message)
@@ -8443,7 +8475,23 @@ Result = Var1 + Var2
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8132; TYPE:PF
-      Result = 0.0
+      'Todo Update: This is hardcoded, chnage it after the wave
+Dim Var As String = Me.MEI_Travel_Cost_Per_Diem_Range
+
+Select Case Var
+	Case "170 & below"
+		Result = 1120
+	Case "171 to 210"
+		Result = 1260
+	Case "211 to 250"
+		Result = 1260
+	Case "251 to 290"
+		Result = 1330
+	Case "291 to 330"
+		Result = 1400
+	Case "331 & above"
+		Result = 1540
+End Select
       '   END FORMULA; PROP ID:8132; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Crew_Per_Diem_Rates_Superintendent", ex.Message)
@@ -22047,7 +22095,7 @@ Result = Var1 + Var2
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8130; TYPE:VV
-      Result = MakeValidValues(Array("1 - $170 & Below", "2 - $171 to $210", "3 - $211 to $250", "4 - $251 to $290", "5 - $291 to $330"))
+      Result = MakeValidValueKeyFromDatabase("[CAE_CMN_Per_Diem_Ranges]", "[CAE_CMN_Per_Diem_Ranges_In_Dollars]", "[CAE_CMN_Per_Diem_Ranges_In_Dollars]", " ORDER BY [CAE_CMN_Per_Diem_Ranges_ID]")
       '   END FORMULA; PROP ID:8130; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_TTCB_Costing_Mech.Formula_MEI_Travel_Cost_Per_Diem_Range_ValidValues", ex.Message)

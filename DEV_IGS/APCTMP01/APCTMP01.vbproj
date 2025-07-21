@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{f554165d-bca1-4f83-bc6d-de5b7b649321}</ProjectGuid>
+		<ProjectGuid>{2009bcee-3155-4b3a-a0b4-ed1b9870f232}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>APCTMP01</RootNamespace>
 		<AssemblyName>APCTMP01</AssemblyName>

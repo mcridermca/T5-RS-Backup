@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Conveyor_Costing
-'$ GenerateDate: 07/18/2025 17:35:28
+'$ GenerateDate: 07/21/2025 12:25:40
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -867,11 +867,11 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Factors_Air_Piping]() As Double
+          Public Property [Factors_Air_Piping]() As String
       Get
       Return Properties("Factors_Air_Piping").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As String)
       Properties("Factors_Air_Piping").CalculatedValue = Value
       End Set
       End Property
@@ -1137,15 +1137,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Labor_Rate_Intelligrated_Installer_Percent_Adj]() As Double
-      Get
-      Return Properties("Labor_Rate_Intelligrated_Installer_Percent_Adj").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Labor_Rate_Intelligrated_Installer_Percent_Adj").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj]() As Double
       Get
       Return Properties("Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj").Value
@@ -1170,15 +1161,6 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Labor_Rate_Lead_Person_New_Rate").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Labor_Rate_Lead_Person_Percent_Adj]() As Double
-      Get
-      Return Properties("Labor_Rate_Lead_Person_Percent_Adj").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Labor_Rate_Lead_Person_Percent_Adj").CalculatedValue = Value
       End Set
       End Property
     
@@ -1215,15 +1197,6 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Labor_Rate_Superintendent_New_Rate").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Labor_Rate_Superintendent_Percent_Adj]() As Double
-      Get
-      Return Properties("Labor_Rate_Superintendent_Percent_Adj").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Labor_Rate_Superintendent_Percent_Adj").CalculatedValue = Value
       End Set
       End Property
     
@@ -1821,47 +1794,47 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Project_Info_Customer]() As Double
+          Public Property [Project_Info_Customer]() As String
       Get
       Return Properties("Project_Info_Customer").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As String)
       Properties("Project_Info_Customer").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [Project_Info_Description]() As Double
+          Public Property [Project_Info_Description]() As String
       Get
       Return Properties("Project_Info_Description").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As String)
       Properties("Project_Info_Description").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [Project_Info_Location]() As Double
+          Public Property [Project_Info_Location]() As String
       Get
       Return Properties("Project_Info_Location").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As String)
       Properties("Project_Info_Location").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [Project_Info_Number]() As Double
+          Public Property [Project_Info_Number]() As Long
       Get
       Return Properties("Project_Info_Number").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As Long)
       Properties("Project_Info_Number").CalculatedValue = Value
       End Set
       End Property
     
-          Public Property [Project_Info_QuoteDate]() As Double
+          Public Property [Project_Info_QuoteDate]() As Date
       Get
       Return Properties("Project_Info_QuoteDate").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As Date)
       Properties("Project_Info_QuoteDate").CalculatedValue = Value
       End Set
       End Property
@@ -1893,11 +1866,11 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Project_Tier_Value]() As Double
+          Public Property [Project_Tier_Value]() As String
       Get
       Return Properties("Project_Tier_Value").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As String)
       Properties("Project_Tier_Value").CalculatedValue = Value
       End Set
       End Property
@@ -1920,11 +1893,11 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Schedule_End_Mechanical_Install]() As Double
+          Public Property [Schedule_End_Mechanical_Install]() As Date
       Get
       Return Properties("Schedule_End_Mechanical_Install").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As Date)
       Properties("Schedule_End_Mechanical_Install").CalculatedValue = Value
       End Set
       End Property
@@ -1992,11 +1965,11 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Schedule_Start_Mechanical_Install]() As Double
+          Public Property [Schedule_Start_Mechanical_Install]() As Date
       Get
       Return Properties("Schedule_Start_Mechanical_Install").Value
       End Get
-      Set(ByVal Value As Double)
+      Set(ByVal Value As Date)
       Properties("Schedule_Start_Mechanical_Install").CalculatedValue = Value
       End Set
       End Property
@@ -2442,15 +2415,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Union_Rate_Intelligrated_Installer_Percent_Adj]() As Double
-      Get
-      Return Properties("Union_Rate_Intelligrated_Installer_Percent_Adj").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Union_Rate_Intelligrated_Installer_Percent_Adj").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Union_Rate_Intelligrated_Installer_Tot_Cost_Adj]() As Double
       Get
       Return Properties("Union_Rate_Intelligrated_Installer_Tot_Cost_Adj").Value
@@ -2478,15 +2442,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Union_Rate_Lead_Person_Percent_Adj]() As Double
-      Get
-      Return Properties("Union_Rate_Lead_Person_Percent_Adj").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Union_Rate_Lead_Person_Percent_Adj").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [Union_Rate_Lead_Person_Tot_Cost_Adj]() As Double
       Get
       Return Properties("Union_Rate_Lead_Person_Tot_Cost_Adj").Value
@@ -2496,11 +2451,11 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Union_Rate_Percent_Adjustment]() As String
+          Public Property [Union_Rate_Percent_Adjustment]() As Double
       Get
       Return Properties("Union_Rate_Percent_Adjustment").Value
       End Get
-      Set(ByVal Value As String)
+      Set(ByVal Value As Double)
       Properties("Union_Rate_Percent_Adjustment").CalculatedValue = Value
       End Set
       End Property
@@ -2520,15 +2475,6 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Union_Rate_Superintendent_New_Rate").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [Union_Rate_Superintendent_Percent_Adj]() As Double
-      Get
-      Return Properties("Union_Rate_Superintendent_Percent_Adj").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("Union_Rate_Superintendent_Percent_Adj").CalculatedValue = Value
       End Set
       End Property
     
@@ -2597,10 +2543,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Conveyor_Costing", <a><![CDATA[CAE_Conveyor_Costing]]></a>.Value, 389, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H582667", "07/18/2025 15:35:16")
-    AddProperty("10343", "Additional_Subcontractor_Services_Total_Cost", <a><![CDATA[Additional_Subcontractor_Services_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E36", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:23:55 AM")
+    InitPart("CAE_Conveyor_Costing", <a><![CDATA[CAE_Conveyor_Costing]]></a>.Value, 389, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H615411", "07/21/2025 12:21:56")
+    AddProperty("10343", "Additional_Subcontractor_Services_Total_Cost", <a><![CDATA[Additional_Subcontractor_Services_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E36", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:10:34 AM")
     AddProperty("8829", "Administrative_Cost", <a><![CDATA[Administrative_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E38", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/10/2025 9:42:02 AM")
-    AddProperty("8762", "Avg_Crew_Size", <a><![CDATA[Avg_Crew_Size]]></a>.Value, "Mech Install^'Conveyor Costing'!K29", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:55 PM")
+    AddProperty("8762", "Avg_Crew_Size", <a><![CDATA[Avg_Crew_Size]]></a>.Value, "Mech Install^'Conveyor Costing'!K29", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:57:03 AM")
     AddProperty("8698", "Conveyor_above_8_ft", <a><![CDATA[Conveyor_above_8_ft]]></a>.Value, "Mech Install^'Conveyor Costing'!Q25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:21 PM")
     AddProperty("8697", "Conveyor_between_5_ft_to_8_ft_Footage", <a><![CDATA[Conveyor_between_5_ft_to_8_ft_Footage]]></a>.Value, "Mech Install^'Conveyor Costing'!Q24", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:17 PM")
     AddProperty("8699", "Conveyor_Hours_Added", <a><![CDATA[Conveyor_Hours_Added]]></a>.Value, "Mech Install^'Conveyor Costing'!Q26", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:24 PM")
@@ -2625,100 +2571,97 @@ Option Infer On
     AddProperty("8782", "Crew_Total_Mobilization_Cost", <a><![CDATA[Crew_Total_Mobilization_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K42", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/17/2025 1:28:32 PM")
     AddProperty("8660", "EQ_Rental_Crane_Large_Outdoor_Duration", <a><![CDATA[EQ_Rental_Crane_Large_Outdoor_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:21 PM")
     AddProperty("8647", "EQ_Rental_Crane_Large_Outdoor_Quantity", <a><![CDATA[EQ_Rental_Crane_Large_Outdoor_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:40 PM")
-    AddProperty("8686", "EQ_Rental_Crane_Large_Outdoor_Total_Cost", <a><![CDATA[EQ_Rental_Crane_Large_Outdoor_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:42 PM")
-    AddProperty("8673", "EQ_Rental_Crane_Large_Outdoor_Wkly_Rate", <a><![CDATA[EQ_Rental_Crane_Large_Outdoor_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:02 PM")
+    AddProperty("8686", "EQ_Rental_Crane_Large_Outdoor_Total_Cost", <a><![CDATA[EQ_Rental_Crane_Large_Outdoor_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:37:01 AM")
+    AddProperty("8673", "EQ_Rental_Crane_Large_Outdoor_Wkly_Rate", <a><![CDATA[EQ_Rental_Crane_Large_Outdoor_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 9:01:27 AM")
     AddProperty("8659", "EQ_Rental_Cranes_Small_indoors_Duration", <a><![CDATA[EQ_Rental_Cranes_Small_indoors_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:18 PM")
     AddProperty("8646", "EQ_Rental_Cranes_Small_indoors_Quantity", <a><![CDATA[EQ_Rental_Cranes_Small_indoors_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:37 PM")
-    AddProperty("8685", "EQ_Rental_Cranes_Small_indoors_Total_Cost", <a><![CDATA[EQ_Rental_Cranes_Small_indoors_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:39 PM")
-    AddProperty("8672", "EQ_Rental_Cranes_Small_indoors_Wkly_Rate", <a><![CDATA[EQ_Rental_Cranes_Small_indoors_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:58 PM")
-    AddProperty("8663", "EQ_Rental_Dumpsters_Duration", <a><![CDATA[EQ_Rental_Dumpsters_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:30 PM")
+    AddProperty("8685", "EQ_Rental_Cranes_Small_indoors_Total_Cost", <a><![CDATA[EQ_Rental_Cranes_Small_indoors_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:36:07 AM")
+    AddProperty("8672", "EQ_Rental_Cranes_Small_indoors_Wkly_Rate", <a><![CDATA[EQ_Rental_Cranes_Small_indoors_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 9:00:34 AM")
+    AddProperty("8663", "EQ_Rental_Dumpsters_Duration", <a><![CDATA[EQ_Rental_Dumpsters_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:25:33 AM")
     AddProperty("8650", "EQ_Rental_Dumpsters_Quantity", <a><![CDATA[EQ_Rental_Dumpsters_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:49 PM")
-    AddProperty("8689", "EQ_Rental_Dumpsters_Total_Cost", <a><![CDATA[EQ_Rental_Dumpsters_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:52 PM")
-    AddProperty("8676", "EQ_Rental_Dumpsters_Wkly_Rate", <a><![CDATA[EQ_Rental_Dumpsters_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:11 PM")
-    AddProperty("8658", "EQ_Rental_Fork_Truck_Duration", <a><![CDATA[EQ_Rental_Fork_Truck_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:15 PM")
-    AddProperty("8645", "EQ_Rental_Fork_Truck_Quantity", <a><![CDATA[EQ_Rental_Fork_Truck_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:34 PM")
-    AddProperty("8684", "EQ_Rental_Fork_Truck_Total_Cost", <a><![CDATA[EQ_Rental_Fork_Truck_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:36 PM")
+    AddProperty("8689", "EQ_Rental_Dumpsters_Total_Cost", <a><![CDATA[EQ_Rental_Dumpsters_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:41:42 AM")
+    AddProperty("8676", "EQ_Rental_Dumpsters_Wkly_Rate", <a><![CDATA[EQ_Rental_Dumpsters_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 9:05:58 AM")
+    AddProperty("8658", "EQ_Rental_Fork_Truck_Duration", <a><![CDATA[EQ_Rental_Fork_Truck_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:03:49 AM")
+    AddProperty("8645", "EQ_Rental_Fork_Truck_Quantity", <a><![CDATA[EQ_Rental_Fork_Truck_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:20:49 AM")
+    AddProperty("8684", "EQ_Rental_Fork_Truck_Total_Cost", <a><![CDATA[EQ_Rental_Fork_Truck_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:35:26 AM")
     AddProperty("8671", "EQ_Rental_Fork_Truck_Wkly_Rate", <a><![CDATA[EQ_Rental_Fork_Truck_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:55 PM")
-    AddProperty("8655", "EQ_Rental_Large_Boom_Lift_Duration", <a><![CDATA[EQ_Rental_Large_Boom_Lift_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:06 PM")
+    AddProperty("8655", "EQ_Rental_Large_Boom_Lift_Duration", <a><![CDATA[EQ_Rental_Large_Boom_Lift_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:02:18 AM")
     AddProperty("8642", "EQ_Rental_Large_Boom_Lift_Quantity", <a><![CDATA[EQ_Rental_Large_Boom_Lift_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:24 PM")
-    AddProperty("8681", "EQ_Rental_Large_Boom_Lift_Total_Cost", <a><![CDATA[EQ_Rental_Large_Boom_Lift_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:26 PM")
-    AddProperty("8668", "EQ_Rental_Large_Boom_Lift_Wkly_Rate", <a><![CDATA[EQ_Rental_Large_Boom_Lift_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:46 PM")
-    AddProperty("8653", "EQ_Rental_Large_Scissor_Lift_Duration", <a><![CDATA[EQ_Rental_Large_Scissor_Lift_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:59 PM")
+    AddProperty("8681", "EQ_Rental_Large_Boom_Lift_Total_Cost", <a><![CDATA[EQ_Rental_Large_Boom_Lift_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:33:11 AM")
+    AddProperty("8668", "EQ_Rental_Large_Boom_Lift_Wkly_Rate", <a><![CDATA[EQ_Rental_Large_Boom_Lift_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:56:50 AM")
+    AddProperty("8653", "EQ_Rental_Large_Scissor_Lift_Duration", <a><![CDATA[EQ_Rental_Large_Scissor_Lift_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:00:13 AM")
     AddProperty("8640", "EQ_Rental_Large_Scissor_Lift_Quantity", <a><![CDATA[EQ_Rental_Large_Scissor_Lift_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:18 PM")
-    AddProperty("8679", "EQ_Rental_Large_Scissor_Lift_Total_Cost", <a><![CDATA[EQ_Rental_Large_Scissor_Lift_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:20 PM")
-    AddProperty("8666", "EQ_Rental_Large_Scissor_Lift_Wkly_Rate", <a><![CDATA[EQ_Rental_Large_Scissor_Lift_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:39 PM")
+    AddProperty("8679", "EQ_Rental_Large_Scissor_Lift_Total_Cost", <a><![CDATA[EQ_Rental_Large_Scissor_Lift_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:31:18 AM")
+    AddProperty("8666", "EQ_Rental_Large_Scissor_Lift_Wkly_Rate", <a><![CDATA[EQ_Rental_Large_Scissor_Lift_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:54:09 AM")
     AddProperty("8657", "EQ_Rental_Large_Telehandler_Duration", <a><![CDATA[EQ_Rental_Large_Telehandler_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O14", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:12 PM")
     AddProperty("8644", "EQ_Rental_Large_Telehandler_Quantity", <a><![CDATA[EQ_Rental_Large_Telehandler_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N14", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:31 PM")
-    AddProperty("8683", "EQ_Rental_Large_Telehandler_Total_Cost", <a><![CDATA[EQ_Rental_Large_Telehandler_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q14", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:33 PM")
-    AddProperty("8670", "EQ_Rental_Large_Telehandler_Wkly_Rate", <a><![CDATA[EQ_Rental_Large_Telehandler_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P14", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:52 PM")
-    AddProperty("8664", "EQ_Rental_Porta_Johns_Duration", <a><![CDATA[EQ_Rental_Porta_Johns_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:33 PM")
+    AddProperty("8683", "EQ_Rental_Large_Telehandler_Total_Cost", <a><![CDATA[EQ_Rental_Large_Telehandler_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q14", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:34:40 AM")
+    AddProperty("8670", "EQ_Rental_Large_Telehandler_Wkly_Rate", <a><![CDATA[EQ_Rental_Large_Telehandler_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P14", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:58:33 AM")
+    AddProperty("8664", "EQ_Rental_Porta_Johns_Duration", <a><![CDATA[EQ_Rental_Porta_Johns_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:26:04 AM")
     AddProperty("8651", "EQ_Rental_Porta_Johns_Quantity", <a><![CDATA[EQ_Rental_Porta_Johns_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:53 PM")
-    AddProperty("8690", "EQ_Rental_Porta_Johns_Total_Cost", <a><![CDATA[EQ_Rental_Porta_Johns_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:55 PM")
-    AddProperty("8677", "EQ_Rental_Porta_Johns_Wkly_Rate", <a><![CDATA[EQ_Rental_Porta_Johns_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:14 PM")
-    AddProperty("8662", "EQ_Rental_Site_Trailer_Duration", <a><![CDATA[EQ_Rental_Site_Trailer_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:27 PM")
+    AddProperty("8690", "EQ_Rental_Porta_Johns_Total_Cost", <a><![CDATA[EQ_Rental_Porta_Johns_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:42:35 AM")
+    AddProperty("8677", "EQ_Rental_Porta_Johns_Wkly_Rate", <a><![CDATA[EQ_Rental_Porta_Johns_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 9:07:16 AM")
+    AddProperty("8662", "EQ_Rental_Site_Trailer_Duration", <a><![CDATA[EQ_Rental_Site_Trailer_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:24:53 AM")
     AddProperty("8649", "EQ_Rental_Site_Trailer_Quantity", <a><![CDATA[EQ_Rental_Site_Trailer_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:46 PM")
-    AddProperty("8688", "EQ_Rental_Site_Trailer_Total_Cost", <a><![CDATA[EQ_Rental_Site_Trailer_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:48 PM")
-    AddProperty("8675", "EQ_Rental_Site_Trailer_Wkly_Rate", <a><![CDATA[EQ_Rental_Site_Trailer_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:08 PM")
-    AddProperty("8654", "EQ_Rental_Small_Boom_Lift_Duration", <a><![CDATA[EQ_Rental_Small_Boom_Lift_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:02 PM")
+    AddProperty("8688", "EQ_Rental_Site_Trailer_Total_Cost", <a><![CDATA[EQ_Rental_Site_Trailer_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:43:33 AM")
+    AddProperty("8675", "EQ_Rental_Site_Trailer_Wkly_Rate", <a><![CDATA[EQ_Rental_Site_Trailer_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 9:06:38 AM")
+    AddProperty("8654", "EQ_Rental_Small_Boom_Lift_Duration", <a><![CDATA[EQ_Rental_Small_Boom_Lift_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:01:11 AM")
     AddProperty("8641", "EQ_Rental_Small_Boom_Lift_Quantity", <a><![CDATA[EQ_Rental_Small_Boom_Lift_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:21 PM")
-    AddProperty("8680", "EQ_Rental_Small_Boom_Lift_Total_Cost", <a><![CDATA[EQ_Rental_Small_Boom_Lift_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:23 PM")
-    AddProperty("8667", "EQ_Rental_Small_Boom_Lift_Wkly_Rate", <a><![CDATA[EQ_Rental_Small_Boom_Lift_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:43 PM")
-    AddProperty("8652", "EQ_Rental_Small_Scissors_Lift_Duration", <a><![CDATA[EQ_Rental_Small_Scissors_Lift_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:56 PM")
-    AddProperty("8639", "EQ_Rental_Small_Scissors_Lift_Quantity", <a><![CDATA[EQ_Rental_Small_Scissors_Lift_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:15 PM")
-    AddProperty("8678", "EQ_Rental_Small_Scissors_Lift_Total_Cost", <a><![CDATA[EQ_Rental_Small_Scissors_Lift_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:17 PM")
-    AddProperty("8665", "EQ_Rental_Small_Scissors_Lift_Wkly_Rate", <a><![CDATA[EQ_Rental_Small_Scissors_Lift_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:36 PM")
+    AddProperty("8680", "EQ_Rental_Small_Boom_Lift_Total_Cost", <a><![CDATA[EQ_Rental_Small_Boom_Lift_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:32:32 AM")
+    AddProperty("8667", "EQ_Rental_Small_Boom_Lift_Wkly_Rate", <a><![CDATA[EQ_Rental_Small_Boom_Lift_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:56:10 AM")
+    AddProperty("8652", "EQ_Rental_Small_Scissors_Lift_Duration", <a><![CDATA[EQ_Rental_Small_Scissors_Lift_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 7:59:23 AM")
+    AddProperty("8639", "EQ_Rental_Small_Scissors_Lift_Quantity", <a><![CDATA[EQ_Rental_Small_Scissors_Lift_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 7:55:04 AM")
+    AddProperty("8678", "EQ_Rental_Small_Scissors_Lift_Total_Cost", <a><![CDATA[EQ_Rental_Small_Scissors_Lift_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:31:54 AM")
+    AddProperty("8665", "EQ_Rental_Small_Scissors_Lift_Wkly_Rate", <a><![CDATA[EQ_Rental_Small_Scissors_Lift_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:54:33 AM")
     AddProperty("8656", "EQ_Rental_Small_Telehandler_Duration", <a><![CDATA[EQ_Rental_Small_Telehandler_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O13", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:09 PM")
-    AddProperty("8682", "EQ_Rental_Small_Telehandler_Total_Cost", <a><![CDATA[EQ_Rental_Small_Telehandler_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q13", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:30 PM")
-    AddProperty("8669", "EQ_Rental_Small_Telehandler_Wkly_Rate", <a><![CDATA[EQ_Rental_Small_Telehandler_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P13", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:49 PM")
+    AddProperty("8682", "EQ_Rental_Small_Telehandler_Total_Cost", <a><![CDATA[EQ_Rental_Small_Telehandler_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q13", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:33:57 AM")
+    AddProperty("8669", "EQ_Rental_Small_Telehandler_Wkly_Rate", <a><![CDATA[EQ_Rental_Small_Telehandler_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P13", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:58:11 AM")
     AddProperty("8643", "EQ_Rental_Small_TelehandlerQuantity", <a><![CDATA[EQ_Rental_Small_TelehandlerQuantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N13", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:27 PM")
-    AddProperty("8661", "EQ_Rental_Welders_Duration", <a><![CDATA[EQ_Rental_Welders_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:05:24 PM")
+    AddProperty("8661", "EQ_Rental_Welders_Duration", <a><![CDATA[EQ_Rental_Welders_Duration]]></a>.Value, "Mech Install^'Conveyor Costing'!O18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:24:17 AM")
     AddProperty("8648", "EQ_Rental_Welders_Quantity", <a><![CDATA[EQ_Rental_Welders_Quantity]]></a>.Value, "Mech Install^'Conveyor Costing'!N18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:04:43 PM")
-    AddProperty("8687", "EQ_Rental_Welders_Total_Cost", <a><![CDATA[EQ_Rental_Welders_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:45 PM")
-    AddProperty("8674", "EQ_Rental_Welders_Wkly_Rate", <a><![CDATA[EQ_Rental_Welders_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:05 PM")
-    AddProperty("8819", "Equipment_Rental_Dumpsters_Cost", <a><![CDATA[Equipment_Rental_Dumpsters_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E26", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:55 PM")
-    AddProperty("8820", "Equipment_Rental_Porta_Johns_Cost", <a><![CDATA[Equipment_Rental_Porta_Johns_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E27", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:58 PM")
-    AddProperty("10341", "Equipment_Rental_Total_Cost", <a><![CDATA[Equipment_Rental_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:17:10 AM")
-    AddProperty("8749", "Factors_Air_Piping", <a><![CDATA[Factors_Air_Piping]]></a>.Value, "Mech Install^'Conveyor Costing'!I16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:13 PM")
+    AddProperty("8687", "EQ_Rental_Welders_Total_Cost", <a><![CDATA[EQ_Rental_Welders_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:38:18 AM")
+    AddProperty("8674", "EQ_Rental_Welders_Wkly_Rate", <a><![CDATA[EQ_Rental_Welders_Wkly_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 9:02:11 AM")
+    AddProperty("8819", "Equipment_Rental_Dumpsters_Cost", <a><![CDATA[Equipment_Rental_Dumpsters_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E26", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:44:46 AM")
+    AddProperty("8820", "Equipment_Rental_Porta_Johns_Cost", <a><![CDATA[Equipment_Rental_Porta_Johns_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E27", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:45:21 AM")
+    AddProperty("10341", "Equipment_Rental_Total_Cost", <a><![CDATA[Equipment_Rental_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:08:47 AM")
+    AddProperty("8749", "Factors_Air_Piping", <a><![CDATA[Factors_Air_Piping]]></a>.Value, "Mech Install^'Conveyor Costing'!I16", "String","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/21/2025 9:52:30 AM")
     AddProperty("8751", "Factors_Customer_Spec_Difficulty", <a><![CDATA[Factors_Customer_Spec_Difficulty]]></a>.Value, "Mech Install^'Conveyor Costing'!I18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:20 PM")
     AddProperty("8748", "Factors_Risk_Rating", <a><![CDATA[Factors_Risk_Rating]]></a>.Value, "Mech Install^'Conveyor Costing'!I15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:10 PM")
     AddProperty("8750", "Factors_Seismic", <a><![CDATA[Factors_Seismic]]></a>.Value, "Mech Install^'Conveyor Costing'!I17  'Todo - Review: Need to check if the factor will change or not - MPC 07/17/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/17/2025 11:48:02 AM")
     AddProperty("10334", "HSE_Per_Diem_Rate", <a><![CDATA[HSE_Per_Diem_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!J46  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:28:36 AM")
-    AddProperty("10336", "HSE_Per_Diem_Rate_Cost", <a><![CDATA[HSE_Per_Diem_Rate_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K46  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:29:04 AM")
+    AddProperty("10336", "HSE_Per_Diem_Rate_Cost", <a><![CDATA[HSE_Per_Diem_Rate_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K46  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 4:41:43 AM")
     AddProperty("10332", "HSE_Per_Diem_Rate_Headcount", <a><![CDATA[HSE_Per_Diem_Rate_Headcount]]></a>.Value, "Mech Install^'Conveyor Costing'!I46  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:27:55 AM")
-    AddProperty("10335", "HSE_Wages_Cost", <a><![CDATA[HSE_Wages_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K45  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/16/2025 2:26:39 PM")
+    AddProperty("10335", "HSE_Wages_Cost", <a><![CDATA[HSE_Wages_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K45  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 4:46:09 AM")
     AddProperty("10331", "HSE_Wages_Headcount", <a><![CDATA[HSE_Wages_Headcount]]></a>.Value, "Mech Install^'Conveyor Costing'!I45  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:19:20 AM")
     AddProperty("10333", "HSE_Wages_Rate", <a><![CDATA[HSE_Wages_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!J45  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:22:12 AM")
-    AddProperty("10337", "HSE_Wages_Total_Cost", <a><![CDATA[HSE_Wages_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K47  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 5:30:28 AM")
+    AddProperty("10337", "HSE_Wages_Total_Cost", <a><![CDATA[HSE_Wages_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!K47  'Todo - Review: Property name needs to be checked if correct - MPC 07/16/2025", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 7:54:07 AM")
     AddProperty("8816", "Installer_Commissioning_Support_Cost", <a><![CDATA[Installer_Commissioning_Support_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E23", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:03:29 AM")
-    AddProperty("8809", "Installer_Commissioning_Support_Hours", <a><![CDATA[Installer_Commissioning_Support_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F23", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:24 PM")
+    AddProperty("8809", "Installer_Commissioning_Support_Hours", <a><![CDATA[Installer_Commissioning_Support_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F23", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:02:31 AM")
     AddProperty("8813", "Installer_Demo_Cost", <a><![CDATA[Installer_Demo_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:55:17 AM")
-    AddProperty("8806", "Installer_Demo_Hours", <a><![CDATA[Installer_Demo_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:14 PM")
+    AddProperty("8806", "Installer_Demo_Hours", <a><![CDATA[Installer_Demo_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F20", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:01:15 AM")
     AddProperty("8811", "Installer_Install_Cost", <a><![CDATA[Installer_Install_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:53:49 AM")
     AddProperty("8804", "Installer_Install_Hours", <a><![CDATA[Installer_Install_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F18", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:08 PM")
     AddProperty("8814", "Installer_Misc_Install_Cost", <a><![CDATA[Installer_Misc_Install_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:00:28 AM")
-    AddProperty("8807", "Installer_Misc_Install_Hours", <a><![CDATA[Installer_Misc_Install_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:18 PM")
+    AddProperty("8807", "Installer_Misc_Install_Hours", <a><![CDATA[Installer_Misc_Install_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:01:59 AM")
     AddProperty("8812", "Installer_Platforms_Grid_Catwalk_Cost", <a><![CDATA[Installer_Platforms_Grid_Catwalk_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:54:41 AM")
-    AddProperty("8805", "Installer_Platforms_Grid_Catwalk_Hours", <a><![CDATA[Installer_Platforms_Grid_Catwalk_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:11 PM")
+    AddProperty("8805", "Installer_Platforms_Grid_Catwalk_Hours", <a><![CDATA[Installer_Platforms_Grid_Catwalk_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F19", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:00:35 AM")
     AddProperty("8818", "Installer_Rate", <a><![CDATA[Installer_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!D17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:52 PM")
     AddProperty("8815", "Installer_Stagnant_Hours_Cost", <a><![CDATA[Installer_Stagnant_Hours_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E22", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:01:51 AM")
     AddProperty("8808", "Installer_Stagnant_Hours_Hours", <a><![CDATA[Installer_Stagnant_Hours_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F22", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:21 PM")
     AddProperty("10183", "Installer_Total_Cost", <a><![CDATA[Installer_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:14:46 AM")
-    AddProperty("10184", "Installer_Total_Hours", <a><![CDATA[Installer_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:45:03 AM")
+    AddProperty("10184", "Installer_Total_Hours", <a><![CDATA[Installer_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F17", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 12:21:56 PM")
     AddProperty("8817", "Installer_Working_Super_or_Lead_Deduct_Cost", <a><![CDATA[Installer_Working_Super_or_Lead_Deduct_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E24", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:04:16 AM")
     AddProperty("8810", "Installer_Working_Super_or_Lead_Deduct_Hours", <a><![CDATA[Installer_Working_Super_or_Lead_Deduct_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F24", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:53:07 AM")
     AddProperty("8723", "Labor_Rate_Intelligrated_Installer_Current_Rate", <a><![CDATA[Labor_Rate_Intelligrated_Installer_Current_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!O48", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:41 PM")
-    AddProperty("8726", "Labor_Rate_Intelligrated_Installer_New_Rate", <a><![CDATA[Labor_Rate_Intelligrated_Installer_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P48", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:51 PM")
-    AddProperty("8720", "Labor_Rate_Intelligrated_Installer_Percent_Adj", <a><![CDATA[Labor_Rate_Intelligrated_Installer_Percent_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!N48", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:32 PM")
-    AddProperty("8729", "Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj", <a><![CDATA[Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q48", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:00 PM")
+    AddProperty("8726", "Labor_Rate_Intelligrated_Installer_New_Rate", <a><![CDATA[Labor_Rate_Intelligrated_Installer_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P48", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:50:03 AM")
+    AddProperty("8729", "Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj", <a><![CDATA[Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q48", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:51:08 AM")
     AddProperty("8722", "Labor_Rate_Lead_Person_Current_Rate", <a><![CDATA[Labor_Rate_Lead_Person_Current_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!O47", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:38 PM")
-    AddProperty("8725", "Labor_Rate_Lead_Person_New_Rate", <a><![CDATA[Labor_Rate_Lead_Person_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P47", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:48 PM")
-    AddProperty("8719", "Labor_Rate_Lead_Person_Percent_Adj", <a><![CDATA[Labor_Rate_Lead_Person_Percent_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!N47", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:28 PM")
-    AddProperty("8728", "Labor_Rate_Lead_Person_Tot_Cost_Adj", <a><![CDATA[Labor_Rate_Lead_Person_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q47", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:57 PM")
+    AddProperty("8725", "Labor_Rate_Lead_Person_New_Rate", <a><![CDATA[Labor_Rate_Lead_Person_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P47", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:49:09 AM")
+    AddProperty("8728", "Labor_Rate_Lead_Person_Tot_Cost_Adj", <a><![CDATA[Labor_Rate_Lead_Person_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q47", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:50:29 AM")
     AddProperty("10165", "Labor_Rate_Percent_Adjustment", <a><![CDATA[Labor_Rate_Percent_Adjustment]]></a>.Value, "Mech Install^'Conveyor Costing'!N45", "String","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:16:33 AM")
     AddProperty("8721", "Labor_Rate_Superintendent_Current_Rate", <a><![CDATA[Labor_Rate_Superintendent_Current_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!O46", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:35 PM")
-    AddProperty("8724", "Labor_Rate_Superintendent_New_Rate", <a><![CDATA[Labor_Rate_Superintendent_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P46", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:45 PM")
-    AddProperty("8718", "Labor_Rate_Superintendent_Percent_Adj", <a><![CDATA[Labor_Rate_Superintendent_Percent_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!N46", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:25 PM")
-    AddProperty("8727", "Labor_Rate_Superintendent_Tot_Cost_Adj", <a><![CDATA[Labor_Rate_Superintendent_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q46", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:54 PM")
+    AddProperty("8724", "Labor_Rate_Superintendent_New_Rate", <a><![CDATA[Labor_Rate_Superintendent_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P46", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:48:32 AM")
+    AddProperty("8727", "Labor_Rate_Superintendent_Tot_Cost_Adj", <a><![CDATA[Labor_Rate_Superintendent_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q46", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:49:36 AM")
     AddProperty("10166", "Labor_Rate_Tot_Cost_Adjustment", <a><![CDATA[Labor_Rate_Tot_Cost_Adjustment]]></a>.Value, "Mech Install^'Conveyor Costing'!Q49", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:09:05 AM")
     AddProperty("10195", "Lead_Men_Commissioning_Cost", <a><![CDATA[Lead_Men_Commissioning_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E70", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:18:09 AM")
     AddProperty("10196", "Lead_Men_Commissioning_Hours", <a><![CDATA[Lead_Men_Commissioning_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F70", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:19:27 AM")
@@ -2728,9 +2671,9 @@ Option Infer On
     AddProperty("10191", "Lead_Men_Total_Cost", <a><![CDATA[Lead_Men_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E68", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:15:24 AM")
     AddProperty("10192", "Lead_Men_Total_Hours", <a><![CDATA[Lead_Men_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F68", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:16:03 AM")
     AddProperty("8802", "Lead_Person_Commissioning_Cost", <a><![CDATA[Lead_Person_Commissioning_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:51:31 AM")
-    AddProperty("8799", "Lead_Person_Commissioning_Hours", <a><![CDATA[Lead_Person_Commissioning_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:52 PM")
+    AddProperty("8799", "Lead_Person_Commissioning_Hours", <a><![CDATA[Lead_Person_Commissioning_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F16", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:59:57 AM")
     AddProperty("8800", "Lead_Person_Install_Support_Cost", <a><![CDATA[Lead_Person_Install_Support_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E14", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:48:48 AM")
-    AddProperty("8797", "Lead_Person_Install_Support_Hours", <a><![CDATA[Lead_Person_Install_Support_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F14", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:46 PM")
+    AddProperty("8797", "Lead_Person_Install_Support_Hours", <a><![CDATA[Lead_Person_Install_Support_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F14", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:59:22 AM")
     AddProperty("8803", "Lead_Person_Rate", <a><![CDATA[Lead_Person_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!D13", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:13:05 PM")
     AddProperty("8801", "Lead_Person_Stagnant_Hours_Cost", <a><![CDATA[Lead_Person_Stagnant_Hours_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:49:29 AM")
     AddProperty("8798", "Lead_Person_Stagnant_Hours_Hours", <a><![CDATA[Lead_Person_Stagnant_Hours_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:49 PM")
@@ -2746,7 +2689,7 @@ Option Infer On
     AddProperty("8837", "Metrics_Pallet_Conveyor_Footage_ft", <a><![CDATA[Metrics_Pallet_Conveyor_Footage_ft]]></a>.Value, "Mech Install^'Conveyor Costing'!C50", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:52 PM")
     AddProperty("8838", "Metrics_Pallet_Hours_per_Foot", <a><![CDATA[Metrics_Pallet_Hours_per_Foot]]></a>.Value, "Mech Install^'Conveyor Costing'!C51", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:55 PM")
     AddProperty("8832", "Metrics_Platform_Hours_per_Foot", <a><![CDATA[Metrics_Platform_Hours_per_Foot]]></a>.Value, "Mech Install^'Conveyor Costing'!C45", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:36 PM")
-    AddProperty("8842", "Metrics_Rental_Cost_per_Week", <a><![CDATA[Metrics_Rental_Cost_per_Week]]></a>.Value, "Mech Install^'Conveyor Costing'!F46", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:15:07 PM")
+    AddProperty("8842", "Metrics_Rental_Cost_per_Week", <a><![CDATA[Metrics_Rental_Cost_per_Week]]></a>.Value, "Mech Install^'Conveyor Costing'!F46", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 12:21:24 PM")
     AddProperty("8841", "Metrics_Total_Commissioning_Cost", <a><![CDATA[Metrics_Total_Commissioning_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!F45", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:15:04 PM")
     AddProperty("8839", "Metrics_Total_Cost", <a><![CDATA[Metrics_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!F43", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:07:12 AM")
     AddProperty("8830", "Metrics_Total_Footage", <a><![CDATA[Metrics_Total_Footage]]></a>.Value, "Mech Install^'Conveyor Costing'!C43", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:30 PM")
@@ -2767,35 +2710,35 @@ Option Infer On
     AddProperty("10169", "Miscellaneous_System_Efficiency_Cost", <a><![CDATA[Miscellaneous_System_Efficiency_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!I50", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:21:26 AM")
     AddProperty("8783", "Miscellaneous_System_Efficiency_Hours", <a><![CDATA[Miscellaneous_System_Efficiency_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!J50", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:01 PM")
     AddProperty("10344", "Miscellaneous_Total_Cost", <a><![CDATA[Miscellaneous_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E37", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:24:57 AM")
-    AddProperty("8695", "Other_Cost_Duration_Wks", <a><![CDATA[Other_Cost_Duration_Wks]]></a>.Value, "Mech Install^'Conveyor Costing'!N28", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:11 PM")
-    AddProperty("8696", "Other_Cost_Hrs_Per_Week", <a><![CDATA[Other_Cost_Hrs_Per_Week]]></a>.Value, "Mech Install^'Conveyor Costing'!N29", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:14 PM")
+    AddProperty("8695", "Other_Cost_Duration_Wks", <a><![CDATA[Other_Cost_Duration_Wks]]></a>.Value, "Mech Install^'Conveyor Costing'!N28", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 10:25:17 AM")
+    AddProperty("8696", "Other_Cost_Hrs_Per_Week", <a><![CDATA[Other_Cost_Hrs_Per_Week]]></a>.Value, "Mech Install^'Conveyor Costing'!N29", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 10:25:58 AM")
     AddProperty("8694", "Other_Cost_Onsite_Admin", <a><![CDATA[Other_Cost_Onsite_Admin]]></a>.Value, "Mech Install^'Conveyor Costing'!N27", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:08 PM")
-    AddProperty("8693", "Other_Cost_Permit_Hours", <a><![CDATA[Other_Cost_Permit_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!N26", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:05 PM")
-    AddProperty("8692", "Other_Cost_Qty_Gang_Boxes", <a><![CDATA[Other_Cost_Qty_Gang_Boxes]]></a>.Value, "Mech Install^'Conveyor Costing'!N25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:01 PM")
-    AddProperty("8691", "Other_Cost_Qty_Trucks", <a><![CDATA[Other_Cost_Qty_Trucks]]></a>.Value, "Mech Install^'Conveyor Costing'!N24", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:06:58 PM")
-    AddProperty("8761", "Peak_Crew", <a><![CDATA[Peak_Crew]]></a>.Value, "Mech Install^'Conveyor Costing'!K27", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:51 PM")
+    AddProperty("8693", "Other_Cost_Permit_Hours", <a><![CDATA[Other_Cost_Permit_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!N26", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 10:24:28 AM")
+    AddProperty("8692", "Other_Cost_Qty_Gang_Boxes", <a><![CDATA[Other_Cost_Qty_Gang_Boxes]]></a>.Value, "Mech Install^'Conveyor Costing'!N25", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 10:23:22 AM")
+    AddProperty("8691", "Other_Cost_Qty_Trucks", <a><![CDATA[Other_Cost_Qty_Trucks]]></a>.Value, "Mech Install^'Conveyor Costing'!N24", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 10:21:44 AM")
+    AddProperty("8761", "Peak_Crew", <a><![CDATA[Peak_Crew]]></a>.Value, "Mech Install^'Conveyor Costing'!K27", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:56:29 AM")
     AddProperty("10339", "Peak_Crew_Value", <a><![CDATA[Peak_Crew_Value]]></a>.Value, "Mech Install^'Conveyor Costing'!L26", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 9:53:40 AM")
     AddProperty("8770", "People_Needs_Lead_Men_Working_Percent", <a><![CDATA[People_Needs_Lead_Men_Working_Percent]]></a>.Value, "Mech Install^'Conveyor Costing'!K33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:21 PM")
     AddProperty("8768", "People_Needs_Num_of_Installers_Comm", <a><![CDATA[People_Needs_Num_of_Installers_Comm]]></a>.Value, "Mech Install^'Conveyor Costing'!J34", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:14 PM")
     AddProperty("8765", "People_Needs_Num_of_Installers_Install", <a><![CDATA[People_Needs_Num_of_Installers_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I34", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/17/2025 11:49:25 AM")
-    AddProperty("8767", "People_Needs_Num_of_Lead_Men_Comm", <a><![CDATA[People_Needs_Num_of_Lead_Men_Comm]]></a>.Value, "Mech Install^'Conveyor Costing'!J33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:11 PM")
-    AddProperty("8764", "People_Needs_Num_of_Lead_Men_Install", <a><![CDATA[People_Needs_Num_of_Lead_Men_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:01 PM")
-    AddProperty("8766", "People_Needs_Num_of_Superintendents_Comm", <a><![CDATA[People_Needs_Num_of_Superintendents_Comm]]></a>.Value, "Mech Install^'Conveyor Costing'!J32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:07 PM")
+    AddProperty("8767", "People_Needs_Num_of_Lead_Men_Comm", <a><![CDATA[People_Needs_Num_of_Lead_Men_Comm]]></a>.Value, "Mech Install^'Conveyor Costing'!J33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 12:20:28 PM")
+    AddProperty("8764", "People_Needs_Num_of_Lead_Men_Install", <a><![CDATA[People_Needs_Num_of_Lead_Men_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 12:19:10 PM")
+    AddProperty("8766", "People_Needs_Num_of_Superintendents_Comm", <a><![CDATA[People_Needs_Num_of_Superintendents_Comm]]></a>.Value, "Mech Install^'Conveyor Costing'!J32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 12:19:44 PM")
     AddProperty("8763", "People_Needs_Num_of_Superintendents_Install", <a><![CDATA[People_Needs_Num_of_Superintendents_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:58 PM")
     AddProperty("8769", "People_Needs_Superintendents_Working_Percent", <a><![CDATA[People_Needs_Superintendents_Working_Percent]]></a>.Value, "Mech Install^'Conveyor Costing'!K32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:11:17 PM")
     AddProperty("10342", "Permits_Total_Cost", <a><![CDATA[Permits_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E35", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:06:28 AM")
-    AddProperty("8742", "Project_Info_Customer", <a><![CDATA[Project_Info_Customer]]></a>.Value, "Mech Install^'Conveyor Costing'!I8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:51 PM")
-    AddProperty("8745", "Project_Info_Description", <a><![CDATA[Project_Info_Description]]></a>.Value, "Mech Install^'Conveyor Costing'!I11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:01 PM")
-    AddProperty("8743", "Project_Info_Location", <a><![CDATA[Project_Info_Location]]></a>.Value, "Mech Install^'Conveyor Costing'!I9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:54 PM")
-    AddProperty("8744", "Project_Info_Number", <a><![CDATA[Project_Info_Number]]></a>.Value, "Mech Install^'Conveyor Costing'!I10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:57 PM")
-    AddProperty("8746", "Project_Info_QuoteDate", <a><![CDATA[Project_Info_QuoteDate]]></a>.Value, "Mech Install^'Conveyor Costing'!I12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:04 PM")
+    AddProperty("8742", "Project_Info_Customer", <a><![CDATA[Project_Info_Customer]]></a>.Value, "Mech Install^'Conveyor Costing'!I8", "String","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 10:35:05 AM")
+    AddProperty("8745", "Project_Info_Description", <a><![CDATA[Project_Info_Description]]></a>.Value, "Mech Install^'Conveyor Costing'!I11", "String","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/21/2025 9:50:25 AM")
+    AddProperty("8743", "Project_Info_Location", <a><![CDATA[Project_Info_Location]]></a>.Value, "Mech Install^'Conveyor Costing'!I9", "String","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 10:35:35 AM")
+    AddProperty("8744", "Project_Info_Number", <a><![CDATA[Project_Info_Number]]></a>.Value, "Mech Install^'Conveyor Costing'!I10", "Long","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 10:33:49 AM")
+    AddProperty("8746", "Project_Info_QuoteDate", <a><![CDATA[Project_Info_QuoteDate]]></a>.Value, "Mech Install^'Conveyor Costing'!I12", "Date","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/21/2025 5:21:09 AM")
     AddProperty("10200", "Project_Support_Rate", <a><![CDATA[Project_Support_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!D71", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:27:49 AM")
     AddProperty("10197", "Project_Support_Total_Cost", <a><![CDATA[Project_Support_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E71", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:20:13 AM")
     AddProperty("10198", "Project_Support_Total_Hours", <a><![CDATA[Project_Support_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F71", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:20:52 AM")
-    AddProperty("10201", "Project_Tier_Value", <a><![CDATA[Project_Tier_Value]]></a>.Value, "Mech Install^'Conveyor Costing'!L8", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:28:26 AM")
+    AddProperty("10201", "Project_Tier_Value", <a><![CDATA[Project_Tier_Value]]></a>.Value, "Mech Install^'Conveyor Costing'!L8", "String","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/21/2025 9:54:35 AM")
     AddProperty("10340", "Risk_Rating_Value", <a><![CDATA[Risk_Rating_Value]]></a>.Value, "Mech Install^'Conveyor Costing'!K15", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/16/2025 10:03:55 AM")
     AddProperty("10157", "Schedule_Commissioning_Duration_Weeks", <a><![CDATA[Schedule_Commissioning_Duration_Weeks]]></a>.Value, "Mech Install^'Conveyor Costing'!J76", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 8:59:49 AM")
-    AddProperty("8753", "Schedule_End_Mechanical_Install", <a><![CDATA[Schedule_End_Mechanical_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I22", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:26 PM")
+    AddProperty("8753", "Schedule_End_Mechanical_Install", <a><![CDATA[Schedule_End_Mechanical_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I22", "Date","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/21/2025 5:22:10 AM")
     AddProperty("8754", "Schedule_End_Run_to_In_Level_5", <a><![CDATA[Schedule_End_Run_to_In_Level_5]]></a>.Value, "Mech Install^'Conveyor Costing'!I23", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:29 PM")
     AddProperty("10156", "Schedule_Install_Duration_Weeks", <a><![CDATA[Schedule_Install_Duration_Weeks]]></a>.Value, "Mech Install^'Conveyor Costing'!J75", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:00:07 AM")
     AddProperty("10155", "Schedule_Pre_Install_Duration_Weeks", <a><![CDATA[Schedule_Pre_Install_Duration_Weeks]]></a>.Value, "Mech Install^'Conveyor Costing'!J74", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:00:25 AM")
@@ -2803,7 +2746,7 @@ Option Infer On
     AddProperty("8757", "Schedule_Revision_End_Run_to_In_Level_5", <a><![CDATA[Schedule_Revision_End_Run_to_In_Level_5]]></a>.Value, "Mech Install^'Conveyor Costing'!K23", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:39 PM")
     AddProperty("8755", "Schedule_Revision_Start_Mechanical_Install", <a><![CDATA[Schedule_Revision_Start_Mechanical_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!K21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:33 PM")
     AddProperty("10153", "Schedule_Start_In_house_Engineering", <a><![CDATA[Schedule_Start_In_house_Engineering]]></a>.Value, "Mech Install^'Conveyor Costing'!I73", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:00:42 AM")
-    AddProperty("8752", "Schedule_Start_Mechanical_Install", <a><![CDATA[Schedule_Start_Mechanical_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I21", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:10:23 PM")
+    AddProperty("8752", "Schedule_Start_Mechanical_Install", <a><![CDATA[Schedule_Start_Mechanical_Install]]></a>.Value, "Mech Install^'Conveyor Costing'!I21", "Date","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/21/2025 5:21:44 AM")
     AddProperty("10158", "Schedule_Total_Project_Duration_Weeks", <a><![CDATA[Schedule_Total_Project_Duration_Weeks]]></a>.Value, "Mech Install^'Conveyor Costing'!J77", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:08:03 AM")
     AddProperty("10154", "Schedule_Turnover_to_Customer_Go_Live", <a><![CDATA[Schedule_Turnover_to_Customer_Go_Live]]></a>.Value, "Mech Install^'Conveyor Costing'!I76", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:01:17 AM")
     AddProperty("10163", "Site_Needs_Lead_Men_Commissioning", <a><![CDATA[Site_Needs_Lead_Men_Commissioning]]></a>.Value, "Mech Install^'Conveyor Costing'!J85", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:01:32 AM")
@@ -2815,18 +2758,18 @@ Option Infer On
     AddProperty("8701", "Structures_PLATFORM_Feet", <a><![CDATA[Structures_PLATFORM_Feet]]></a>.Value, "Mech Install^'Conveyor Costing'!N33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:31 PM")
     AddProperty("8704", "Structures_PLATFORM_Hours", <a><![CDATA[Structures_PLATFORM_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!O33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:40 PM")
     AddProperty("8795", "Superintendent_Commissioning_Cost", <a><![CDATA[Superintendent_Commissioning_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:44:00 AM")
-    AddProperty("8792", "Superintendent_Commissioning_Hours", <a><![CDATA[Superintendent_Commissioning_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:30 PM")
+    AddProperty("8792", "Superintendent_Commissioning_Hours", <a><![CDATA[Superintendent_Commissioning_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F12", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:58:23 AM")
     AddProperty("8793", "Superintendent_Install_Support_Cost", <a><![CDATA[Superintendent_Install_Support_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:40:44 AM")
-    AddProperty("8790", "Superintendent_Install_Support_Hours", <a><![CDATA[Superintendent_Install_Support_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:24 PM")
+    AddProperty("8790", "Superintendent_Install_Support_Hours", <a><![CDATA[Superintendent_Install_Support_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F10", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:57:41 AM")
     AddProperty("8796", "Superintendent_Rate", <a><![CDATA[Superintendent_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!D9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:43 PM")
     AddProperty("8794", "Superintendent_Stagnant_Hours_Cost", <a><![CDATA[Superintendent_Stagnant_Hours_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 4:42:45 AM")
     AddProperty("8791", "Superintendent_Stagnant_Hours_Hours", <a><![CDATA[Superintendent_Stagnant_Hours_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F11", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:12:27 PM")
     AddProperty("10179", "Superintendent_Total_Cost", <a><![CDATA[Superintendent_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:11:18 AM")
     AddProperty("10180", "Superintendent_Total_Hours", <a><![CDATA[Superintendent_Total_Hours]]></a>.Value, "Mech Install^'Conveyor Costing'!F9", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:12:05 AM")
-    AddProperty("8823", "Supplies_Consumables_All_Other_Cost", <a><![CDATA[Supplies_Consumables_All_Other_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E31", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:08 PM")
+    AddProperty("8823", "Supplies_Consumables_All_Other_Cost", <a><![CDATA[Supplies_Consumables_All_Other_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E31", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:03:15 AM")
     AddProperty("8822", "Supplies_Consumables_Anchors_1USD_per_Cost", <a><![CDATA[Supplies_Consumables_Anchors_1USD_per_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E30", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:05 PM")
     AddProperty("8821", "Supplies_Consumables_Hardware_Air_Piping_Cost", <a><![CDATA[Supplies_Consumables_Hardware_Air_Piping_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E29", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:14:01 PM")
-    AddProperty("10186", "Supplies_Consumables_Total_Cost", <a><![CDATA[Supplies_Consumables_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E28", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:01:27 AM")
+    AddProperty("10186", "Supplies_Consumables_Total_Cost", <a><![CDATA[Supplies_Consumables_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E28", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:04:03 AM")
     AddProperty("10160", "Support_Lead_Men_Hrs_per_Wk", <a><![CDATA[Support_Lead_Men_Hrs_per_Wk]]></a>.Value, "Mech Install^'Conveyor Costing'!I81", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:02:10 AM")
     AddProperty("10161", "Support_Project_Administrative_Hrs_per_Wk", <a><![CDATA[Support_Project_Administrative_Hrs_per_Wk]]></a>.Value, "Mech Install^'Conveyor Costing'!I82", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:02:28 AM")
     AddProperty("10159", "Support_Superintendent_Hrs_per_Wk", <a><![CDATA[Support_Superintendent_Hrs_per_Wk]]></a>.Value, "Mech Install^'Conveyor Costing'!I80", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:02:45 AM")
@@ -2837,9 +2780,9 @@ Option Infer On
     AddProperty("8711", "Travel_Cost_Installer_Total_Project_Per_Diem", <a><![CDATA[Travel_Cost_Installer_Total_Project_Per_Diem]]></a>.Value, "Mech Install^'Conveyor Costing'!O41", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/17/2025 11:40:13 AM")
     AddProperty("8717", "Travel_Cost_Installer_Total_Travel_Cost", <a><![CDATA[Travel_Cost_Installer_Total_Travel_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q41", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/17/2025 11:43:48 AM")
     AddProperty("8707", "Travel_Cost_Lead_Men_Per_Diem_Rates_Wkly", <a><![CDATA[Travel_Cost_Lead_Men_Per_Diem_Rates_Wkly]]></a>.Value, "Mech Install^'Conveyor Costing'!N40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:49 PM")
-    AddProperty("8713", "Travel_Cost_Lead_Men_Total_Mobilization", <a><![CDATA[Travel_Cost_Lead_Men_Total_Mobilization]]></a>.Value, "Mech Install^'Conveyor Costing'!P40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:09 PM")
-    AddProperty("8710", "Travel_Cost_Lead_Men_Total_Project_Per_Diem", <a><![CDATA[Travel_Cost_Lead_Men_Total_Project_Per_Diem]]></a>.Value, "Mech Install^'Conveyor Costing'!O40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:59 PM")
-    AddProperty("8716", "Travel_Cost_Lead_Men_Total_Travel_Cost", <a><![CDATA[Travel_Cost_Lead_Men_Total_Travel_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:08:18 PM")
+    AddProperty("8713", "Travel_Cost_Lead_Men_Total_Mobilization", <a><![CDATA[Travel_Cost_Lead_Men_Total_Mobilization]]></a>.Value, "Mech Install^'Conveyor Costing'!P40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:49:33 AM")
+    AddProperty("8710", "Travel_Cost_Lead_Men_Total_Project_Per_Diem", <a><![CDATA[Travel_Cost_Lead_Men_Total_Project_Per_Diem]]></a>.Value, "Mech Install^'Conveyor Costing'!O40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:48:48 AM")
+    AddProperty("8716", "Travel_Cost_Lead_Men_Total_Travel_Cost", <a><![CDATA[Travel_Cost_Lead_Men_Total_Travel_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q40", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:50:22 AM")
     AddProperty("10164", "Travel_Cost_Per_Diem_Range", <a><![CDATA[Travel_Cost_Per_Diem_Range]]></a>.Value, "Mech Install^'Conveyor Costing'!N37", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/17/2025 5:34:32 AM")
     AddProperty("8706", "Travel_Cost_Superintendent_Per_Diem_Rates_Wkly", <a><![CDATA[Travel_Cost_Superintendent_Per_Diem_Rates_Wkly]]></a>.Value, "Mech Install^'Conveyor Costing'!N39", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:07:46 PM")
     AddProperty("8712", "Travel_Cost_Superintendent_Total_Mobilization", <a><![CDATA[Travel_Cost_Superintendent_Total_Mobilization]]></a>.Value, "Mech Install^'Conveyor Costing'!P39", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/17/2025 11:41:15 AM")
@@ -2847,23 +2790,20 @@ Option Infer On
     AddProperty("8715", "Travel_Cost_Superintendent_Total_Travel_Cost", <a><![CDATA[Travel_Cost_Superintendent_Total_Travel_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q39", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/17/2025 11:43:03 AM")
     AddProperty("10441", "Travel_Cost_Total_Mobilization_Cost", <a><![CDATA[Travel_Cost_Total_Mobilization_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!P42", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:32:00 AM")
     AddProperty("10440", "Travel_Cost_Total_Project_Per_Diem", <a><![CDATA[Travel_Cost_Total_Project_Per_Diem]]></a>.Value, "Mech Install^'Conveyor Costing'!O42", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:31:15 AM")
-    AddProperty("10442", "Travel_Cost_Total_Travel_Cost", <a><![CDATA[Travel_Cost_Total_Travel_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q42", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/17/2025 9:37:02 AM")
+    AddProperty("10442", "Travel_Cost_Total_Travel_Cost", <a><![CDATA[Travel_Cost_Total_Travel_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!Q42", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:06:55 AM")
     AddProperty("8825", "Travel_Expense_Mobilization_Cost", <a><![CDATA[Travel_Expense_Mobilization_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E34", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:05:43 AM")
     AddProperty("8824", "Travel_Expense_Per_Diem_Cost", <a><![CDATA[Travel_Expense_Per_Diem_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E33", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:05:05 AM")
-    AddProperty("10187", "Travel_Expense_Total_Cost", <a><![CDATA[Travel_Expense_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 10:02:09 AM")
+    AddProperty("10187", "Travel_Expense_Total_Cost", <a><![CDATA[Travel_Expense_Total_Cost]]></a>.Value, "Mech Install^'Conveyor Costing'!E32", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/20/2025 8:47:07 AM")
     AddProperty("8735", "Union_Rate_Intelligrated_Installer_Current_Rate", <a><![CDATA[Union_Rate_Intelligrated_Installer_Current_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!O55", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:28 PM")
-    AddProperty("8738", "Union_Rate_Intelligrated_Installer_New_Rate", <a><![CDATA[Union_Rate_Intelligrated_Installer_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P55", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:38 PM")
-    AddProperty("8732", "Union_Rate_Intelligrated_Installer_Percent_Adj", <a><![CDATA[Union_Rate_Intelligrated_Installer_Percent_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!N55", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:10 PM")
-    AddProperty("8741", "Union_Rate_Intelligrated_Installer_Tot_Cost_Adj", <a><![CDATA[Union_Rate_Intelligrated_Installer_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q55", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:48 PM")
+    AddProperty("8738", "Union_Rate_Intelligrated_Installer_New_Rate", <a><![CDATA[Union_Rate_Intelligrated_Installer_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P55", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:55:02 AM")
+    AddProperty("8741", "Union_Rate_Intelligrated_Installer_Tot_Cost_Adj", <a><![CDATA[Union_Rate_Intelligrated_Installer_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q55", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:55:51 AM")
     AddProperty("8734", "Union_Rate_Lead_Person_Current_Rate", <a><![CDATA[Union_Rate_Lead_Person_Current_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!O54", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:25 PM")
-    AddProperty("8737", "Union_Rate_Lead_Person_New_Rate", <a><![CDATA[Union_Rate_Lead_Person_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P54", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:35 PM")
-    AddProperty("8731", "Union_Rate_Lead_Person_Percent_Adj", <a><![CDATA[Union_Rate_Lead_Person_Percent_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!N54", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:07 PM")
-    AddProperty("8740", "Union_Rate_Lead_Person_Tot_Cost_Adj", <a><![CDATA[Union_Rate_Lead_Person_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q54", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:44 PM")
-    AddProperty("10167", "Union_Rate_Percent_Adjustment", <a><![CDATA[Union_Rate_Percent_Adjustment]]></a>.Value, "Mech Install^'Conveyor Costing'!N52", "String","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/15/2025 9:19:02 AM")
+    AddProperty("8737", "Union_Rate_Lead_Person_New_Rate", <a><![CDATA[Union_Rate_Lead_Person_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P54", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:51:33 AM")
+    AddProperty("8740", "Union_Rate_Lead_Person_Tot_Cost_Adj", <a><![CDATA[Union_Rate_Lead_Person_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q54", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:55:06 AM")
+    AddProperty("10167", "Union_Rate_Percent_Adjustment", <a><![CDATA[Union_Rate_Percent_Adjustment]]></a>.Value, "Mech Install^'Conveyor Costing'!N52", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/21/2025 11:02:02 AM")
     AddProperty("8733", "Union_Rate_Superintendent_Current_Rate", <a><![CDATA[Union_Rate_Superintendent_Current_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!O53", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:22 PM")
-    AddProperty("8736", "Union_Rate_Superintendent_New_Rate", <a><![CDATA[Union_Rate_Superintendent_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P53", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:32 PM")
-    AddProperty("8730", "Union_Rate_Superintendent_Percent_Adj", <a><![CDATA[Union_Rate_Superintendent_Percent_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!N53", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:03 PM")
-    AddProperty("8739", "Union_Rate_Superintendent_Tot_Cost_Adj", <a><![CDATA[Union_Rate_Superintendent_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q53", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/7/2025 12:09:41 PM")
+    AddProperty("8736", "Union_Rate_Superintendent_New_Rate", <a><![CDATA[Union_Rate_Superintendent_New_Rate]]></a>.Value, "Mech Install^'Conveyor Costing'!P53", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 9:50:55 AM")
+    AddProperty("8739", "Union_Rate_Superintendent_Tot_Cost_Adj", <a><![CDATA[Union_Rate_Superintendent_Tot_Cost_Adj]]></a>.Value, "Mech Install^'Conveyor Costing'!Q53", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/21/2025 8:53:59 AM")
     AddProperty("10168", "Union_Rate_Tot_Cost_Adjustment", <a><![CDATA[Union_Rate_Tot_Cost_Adjustment]]></a>.Value, "Mech Install^'Conveyor Costing'!Q56", "Double","","Conveyor Costing","FD", 9999, "", 0,0, "", "", "GLOBAL\H615411", "7/18/2025 5:09:56 AM")
     AddProperty("9494", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/8/2025 4:38:54 PM")
     AddProperty("10682", "Project_Tier", <a><![CDATA[Project_Tier]]></a>.Value, "Mech Install^'Conveyor Costing'!K8", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 3:35:16 PM")
@@ -2904,13 +2844,13 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("Additional_Subcontractor_Services_Total_Cost", "9921", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 10:23:55 AM", "", "In Development",  0,17981)
+          InitProperty("Additional_Subcontractor_Services_Total_Cost", "9921", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:10:34 AM", "", "In Development",  0,20183)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Administrative_Cost", "8414", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/10/2025 9:42:02 AM", "", "In Development",  0,15946)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Avg_Crew_Size", "8347", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:55 PM", "", "In Development",  0,13507)
+          InitProperty("Avg_Crew_Size", "8347", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:57:03 AM", "", "In Development",  0,20197)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Conveyor_above_8_ft", "8283", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:07:21 PM", "", "In Development",  0,13379)
@@ -2985,10 +2925,10 @@ Option Infer On
           InitProperty("EQ_Rental_Crane_Large_Outdoor_Quantity", "8232", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:40 PM", "", "In Development",  0,13277)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Crane_Large_Outdoor_Total_Cost", "8271", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:42 PM", "", "In Development",  0,13355)
+          InitProperty("EQ_Rental_Crane_Large_Outdoor_Total_Cost", "8271", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:37:01 AM", "", "In Development",  0,19802)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Crane_Large_Outdoor_Wkly_Rate", "8258", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:02 PM", "", "In Development",  0,13329)
+          InitProperty("EQ_Rental_Crane_Large_Outdoor_Wkly_Rate", "8258", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 9:01:27 AM", "", "In Development",  0,19830)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Cranes_Small_indoors_Duration", "8244", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:18 PM", "", "In Development",  0,13301)
@@ -2997,58 +2937,58 @@ Option Infer On
           InitProperty("EQ_Rental_Cranes_Small_indoors_Quantity", "8231", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:37 PM", "", "In Development",  0,13275)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Cranes_Small_indoors_Total_Cost", "8270", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:39 PM", "", "In Development",  0,13353)
+          InitProperty("EQ_Rental_Cranes_Small_indoors_Total_Cost", "8270", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:36:07 AM", "", "In Development",  0,19800)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Cranes_Small_indoors_Wkly_Rate", "8257", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:58 PM", "", "In Development",  0,13327)
+          InitProperty("EQ_Rental_Cranes_Small_indoors_Wkly_Rate", "8257", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 9:00:34 AM", "", "In Development",  0,19829)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Dumpsters_Duration", "8248", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:30 PM", "", "In Development",  0,13309)
+          InitProperty("EQ_Rental_Dumpsters_Duration", "8248", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:25:33 AM", "", "In Development",  0,19775)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Dumpsters_Quantity", "8235", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:49 PM", "", "In Development",  0,13283)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Dumpsters_Total_Cost", "8274", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:52 PM", "", "In Development",  0,13361)
+          InitProperty("EQ_Rental_Dumpsters_Total_Cost", "8274", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:41:42 AM", "", "In Development",  0,19808)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Dumpsters_Wkly_Rate", "8261", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:11 PM", "", "In Development",  0,13335)
+          InitProperty("EQ_Rental_Dumpsters_Wkly_Rate", "8261", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 9:05:58 AM", "", "In Development",  0,19833)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Fork_Truck_Duration", "8243", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:15 PM", "", "In Development",  0,13299)
+          InitProperty("EQ_Rental_Fork_Truck_Duration", "8243", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:03:49 AM", "", "In Development",  0,19745)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Fork_Truck_Quantity", "8230", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:34 PM", "", "In Development",  0,13273)
+          InitProperty("EQ_Rental_Fork_Truck_Quantity", "8230", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:20:49 AM", "", "In Development",  0,19768)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Fork_Truck_Total_Cost", "8269", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:36 PM", "", "In Development",  0,13351)
+          InitProperty("EQ_Rental_Fork_Truck_Total_Cost", "8269", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:35:26 AM", "", "In Development",  0,19798)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Fork_Truck_Wkly_Rate", "8256", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:55 PM", "", "In Development",  0,13325)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Large_Boom_Lift_Duration", "8240", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:06 PM", "", "In Development",  0,13293)
+          InitProperty("EQ_Rental_Large_Boom_Lift_Duration", "8240", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:02:18 AM", "", "In Development",  0,19744)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Large_Boom_Lift_Quantity", "8227", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:24 PM", "", "In Development",  0,13267)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Large_Boom_Lift_Total_Cost", "8266", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:26 PM", "", "In Development",  0,13345)
+          InitProperty("EQ_Rental_Large_Boom_Lift_Total_Cost", "8266", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:33:11 AM", "", "In Development",  0,19790)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Large_Boom_Lift_Wkly_Rate", "8253", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:46 PM", "", "In Development",  0,13319)
+          InitProperty("EQ_Rental_Large_Boom_Lift_Wkly_Rate", "8253", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:56:50 AM", "", "In Development",  0,19826)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Large_Scissor_Lift_Duration", "8238", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:59 PM", "", "In Development",  0,13289)
+          InitProperty("EQ_Rental_Large_Scissor_Lift_Duration", "8238", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:00:13 AM", "", "In Development",  0,19742)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Large_Scissor_Lift_Quantity", "8225", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:18 PM", "", "In Development",  0,13263)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Large_Scissor_Lift_Total_Cost", "8264", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:20 PM", "", "In Development",  0,13341)
+          InitProperty("EQ_Rental_Large_Scissor_Lift_Total_Cost", "8264", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:31:18 AM", "", "In Development",  0,19786)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Large_Scissor_Lift_Wkly_Rate", "8251", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:39 PM", "", "In Development",  0,13315)
+          InitProperty("EQ_Rental_Large_Scissor_Lift_Wkly_Rate", "8251", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:54:09 AM", "", "In Development",  0,19824)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Large_Telehandler_Duration", "8242", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:12 PM", "", "In Development",  0,13297)
@@ -3057,91 +2997,91 @@ Option Infer On
           InitProperty("EQ_Rental_Large_Telehandler_Quantity", "8229", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:31 PM", "", "In Development",  0,13271)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Large_Telehandler_Total_Cost", "8268", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:33 PM", "", "In Development",  0,13349)
+          InitProperty("EQ_Rental_Large_Telehandler_Total_Cost", "8268", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:34:40 AM", "", "In Development",  0,19795)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Large_Telehandler_Wkly_Rate", "8255", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:52 PM", "", "In Development",  0,13323)
+          InitProperty("EQ_Rental_Large_Telehandler_Wkly_Rate", "8255", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:58:33 AM", "", "In Development",  0,19828)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Porta_Johns_Duration", "8249", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:33 PM", "", "In Development",  0,13311)
+          InitProperty("EQ_Rental_Porta_Johns_Duration", "8249", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:26:04 AM", "", "In Development",  0,19776)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Porta_Johns_Quantity", "8236", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:53 PM", "", "In Development",  0,13285)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Porta_Johns_Total_Cost", "8275", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:55 PM", "", "In Development",  0,13363)
+          InitProperty("EQ_Rental_Porta_Johns_Total_Cost", "8275", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:42:23 AM", "", "In Development",  0,19810)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Porta_Johns_Wkly_Rate", "8262", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:14 PM", "", "In Development",  0,13337)
+          InitProperty("EQ_Rental_Porta_Johns_Wkly_Rate", "8262", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 9:07:16 AM", "", "In Development",  0,19835)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Site_Trailer_Duration", "8247", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:27 PM", "", "In Development",  0,13307)
+          InitProperty("EQ_Rental_Site_Trailer_Duration", "8247", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:24:53 AM", "", "In Development",  0,19772)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Site_Trailer_Quantity", "8234", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:46 PM", "", "In Development",  0,13281)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Site_Trailer_Total_Cost", "8273", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:48 PM", "", "In Development",  0,13359)
+          InitProperty("EQ_Rental_Site_Trailer_Total_Cost", "8273", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:43:33 AM", "", "In Development",  0,19811)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Site_Trailer_Wkly_Rate", "8260", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:08 PM", "", "In Development",  0,13333)
+          InitProperty("EQ_Rental_Site_Trailer_Wkly_Rate", "8260", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 9:06:38 AM", "", "In Development",  0,19834)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Small_Boom_Lift_Duration", "8239", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:02 PM", "", "In Development",  0,13291)
+          InitProperty("EQ_Rental_Small_Boom_Lift_Duration", "8239", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:01:11 AM", "", "In Development",  0,19743)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Small_Boom_Lift_Quantity", "8226", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:21 PM", "", "In Development",  0,13265)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Small_Boom_Lift_Total_Cost", "8265", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:23 PM", "", "In Development",  0,13343)
+          InitProperty("EQ_Rental_Small_Boom_Lift_Total_Cost", "8265", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:32:32 AM", "", "In Development",  0,19788)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Small_Boom_Lift_Wkly_Rate", "8252", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:43 PM", "", "In Development",  0,13317)
+          InitProperty("EQ_Rental_Small_Boom_Lift_Wkly_Rate", "8252", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:56:10 AM", "", "In Development",  0,19825)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Small_Scissors_Lift_Duration", "8237", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:56 PM", "", "In Development",  0,13287)
+          InitProperty("EQ_Rental_Small_Scissors_Lift_Duration", "8237", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 7:59:23 AM", "", "In Development",  0,19741)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Small_Scissors_Lift_Quantity", "8224", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:15 PM", "", "In Development",  0,13261)
+          InitProperty("EQ_Rental_Small_Scissors_Lift_Quantity", "8224", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 7:55:04 AM", "", "In Development",  0,19740)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Small_Scissors_Lift_Total_Cost", "8263", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:17 PM", "", "In Development",  0,13339)
+          InitProperty("EQ_Rental_Small_Scissors_Lift_Total_Cost", "8263", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:31:54 AM", "", "In Development",  0,19787)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Small_Scissors_Lift_Wkly_Rate", "8250", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:36 PM", "", "In Development",  0,13313)
+          InitProperty("EQ_Rental_Small_Scissors_Lift_Wkly_Rate", "8250", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:53:19 AM", "", "In Development",  0,19823)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Small_Telehandler_Duration", "8241", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:09 PM", "", "In Development",  0,13295)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Small_Telehandler_Total_Cost", "8267", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:30 PM", "", "In Development",  0,13347)
+          InitProperty("EQ_Rental_Small_Telehandler_Total_Cost", "8267", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:33:57 AM", "", "In Development",  0,19793)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Small_Telehandler_Wkly_Rate", "8254", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:49 PM", "", "In Development",  0,13321)
+          InitProperty("EQ_Rental_Small_Telehandler_Wkly_Rate", "8254", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:57:43 AM", "", "In Development",  0,19827)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Small_TelehandlerQuantity", "8228", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:27 PM", "", "In Development",  0,13269)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Welders_Duration", "8246", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:05:24 PM", "", "In Development",  0,13305)
+          InitProperty("EQ_Rental_Welders_Duration", "8246", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:24:16 AM", "", "In Development",  0,19770)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("EQ_Rental_Welders_Quantity", "8233", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:04:43 PM", "", "In Development",  0,13279)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Welders_Total_Cost", "8272", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:45 PM", "", "In Development",  0,13357)
+          InitProperty("EQ_Rental_Welders_Total_Cost", "8272", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:38:18 AM", "", "In Development",  0,19803)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("EQ_Rental_Welders_Wkly_Rate", "8259", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:05 PM", "", "In Development",  0,13331)
+          InitProperty("EQ_Rental_Welders_Wkly_Rate", "8259", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 9:02:11 AM", "", "In Development",  0,19831)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Equipment_Rental_Dumpsters_Cost", "8404", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:55 PM", "", "In Development",  0,13621)
+          InitProperty("Equipment_Rental_Dumpsters_Cost", "8404", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:44:46 AM", "", "In Development",  0,19812)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Equipment_Rental_Porta_Johns_Cost", "8405", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:58 PM", "", "In Development",  0,13623)
+          InitProperty("Equipment_Rental_Porta_Johns_Cost", "8405", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:45:21 AM", "", "In Development",  0,19813)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Equipment_Rental_Total_Cost", "9919", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 10:17:10 AM", "", "In Development",  0,17979)
+          InitProperty("Equipment_Rental_Total_Cost", "9919", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:08:47 AM", "", "In Development",  0,20182)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Factors_Air_Piping", "8334", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:13 PM", "", "In Development",  0,13481)
@@ -3159,13 +3099,13 @@ Option Infer On
           InitProperty("HSE_Per_Diem_Rate", "9912", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:28:36 AM", "", "In Development",  0,18987)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HSE_Per_Diem_Rate_Cost", "9914", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:29:04 AM", "", "In Development",  0,17681)
+          InitProperty("HSE_Per_Diem_Rate_Cost", "9914", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 4:41:43 AM", "", "In Development",  0,20140)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HSE_Per_Diem_Rate_Headcount", "9910", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:27:55 AM", "", "In Development",  0,18986)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HSE_Wages_Cost", "9913", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/16/2025 2:26:15 PM", "", "In Development",  0,18078)
+          InitProperty("HSE_Wages_Cost", "9913", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 4:46:09 AM", "", "In Development",  0,20141)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HSE_Wages_Headcount", "9909", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:19:20 AM", "", "In Development",  0,17676)
@@ -3174,19 +3114,19 @@ Option Infer On
           InitProperty("HSE_Wages_Rate", "9911", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:22:12 AM", "", "In Development",  0,17678)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HSE_Wages_Total_Cost", "9915", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 5:29:44 AM", "", "In Development",  0,17682)
+          InitProperty("HSE_Wages_Total_Cost", "9915", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 7:54:07 AM", "", "In Development",  0,19739)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Installer_Commissioning_Support_Cost", "8401", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:03:29 AM", "", "In Development",  0,18964)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Installer_Commissioning_Support_Hours", "8394", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:24 PM", "", "In Development",  0,13601)
+          InitProperty("Installer_Commissioning_Support_Hours", "8394", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:02:31 AM", "", "In Development",  0,20205)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Installer_Demo_Cost", "8398", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 4:55:17 AM", "", "In Development",  0,18961)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Installer_Demo_Hours", "8391", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:14 PM", "", "In Development",  0,13595)
+          InitProperty("Installer_Demo_Hours", "8391", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:01:15 AM", "", "In Development",  0,20203)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Installer_Install_Cost", "8396", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 4:53:49 AM", "", "In Development",  0,18959)
@@ -3198,13 +3138,13 @@ Option Infer On
           InitProperty("Installer_Misc_Install_Cost", "8399", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:00:28 AM", "", "In Development",  0,18962)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Installer_Misc_Install_Hours", "8392", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:18 PM", "", "In Development",  0,13597)
+          InitProperty("Installer_Misc_Install_Hours", "8392", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:01:59 AM", "", "In Development",  0,20204)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Installer_Platforms_Grid_Catwalk_Cost", "8397", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 4:54:41 AM", "", "In Development",  0,18960)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Installer_Platforms_Grid_Catwalk_Hours", "8390", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:11 PM", "", "In Development",  0,13593)
+          InitProperty("Installer_Platforms_Grid_Catwalk_Hours", "8390", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:00:35 AM", "", "In Development",  0,20202)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Installer_Rate", "8403", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:52 PM", "", "In Development",  0,13619)
@@ -3219,7 +3159,7 @@ Option Infer On
           InitProperty("Installer_Total_Cost", "9764", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:14:46 AM", "", "In Development",  0,18977)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Installer_Total_Hours", "9765", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 9:45:03 AM", "", "In Development",  0,17226)
+          InitProperty("Installer_Total_Hours", "9765", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 12:21:56 PM", "", "In Development",  0,20254)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Installer_Working_Super_or_Lead_Deduct_Cost", "8402", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:04:16 AM", "", "In Development",  0,18965)
@@ -3231,25 +3171,19 @@ Option Infer On
           InitProperty("Labor_Rate_Intelligrated_Installer_Current_Rate", "8308", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:41 PM", "", "In Development",  0,13429)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Labor_Rate_Intelligrated_Installer_New_Rate", "8311", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:51 PM", "", "In Development",  0,13435)
+          InitProperty("Labor_Rate_Intelligrated_Installer_New_Rate", "8311", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:50:03 AM", "", "In Development",  0,20213)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Labor_Rate_Intelligrated_Installer_Percent_Adj", "8305", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:32 PM", "", "In Development",  0,13423)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj", "8314", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:00 PM", "", "In Development",  0,13441)
+          InitProperty("Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj", "8314", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:51:08 AM", "", "In Development",  0,20189)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Labor_Rate_Lead_Person_Current_Rate", "8307", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:38 PM", "", "In Development",  0,13427)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Labor_Rate_Lead_Person_New_Rate", "8310", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:48 PM", "", "In Development",  0,13433)
+          InitProperty("Labor_Rate_Lead_Person_New_Rate", "8310", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:49:09 AM", "", "In Development",  0,20212)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Labor_Rate_Lead_Person_Percent_Adj", "8304", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:28 PM", "", "In Development",  0,13421)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Labor_Rate_Lead_Person_Tot_Cost_Adj", "8313", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:57 PM", "", "In Development",  0,13439)
+          InitProperty("Labor_Rate_Lead_Person_Tot_Cost_Adj", "8313", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:50:29 AM", "", "In Development",  0,20188)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Labor_Rate_Percent_Adjustment", "9746", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 9:16:33 AM", "", "In Development",  0,17207)
@@ -3258,13 +3192,10 @@ Option Infer On
           InitProperty("Labor_Rate_Superintendent_Current_Rate", "8306", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:35 PM", "", "In Development",  0,13425)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Labor_Rate_Superintendent_New_Rate", "8309", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:45 PM", "", "In Development",  0,13431)
+          InitProperty("Labor_Rate_Superintendent_New_Rate", "8309", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:48:32 AM", "", "In Development",  0,20211)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Labor_Rate_Superintendent_Percent_Adj", "8303", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:25 PM", "", "In Development",  0,13419)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Labor_Rate_Superintendent_Tot_Cost_Adj", "8312", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:54 PM", "", "In Development",  0,13437)
+          InitProperty("Labor_Rate_Superintendent_Tot_Cost_Adj", "8312", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:49:36 AM", "", "In Development",  0,20187)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Labor_Rate_Tot_Cost_Adjustment", "9747", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:09:05 AM", "", "In Development",  0,18971)
@@ -3294,13 +3225,13 @@ Option Infer On
           InitProperty("Lead_Person_Commissioning_Cost", "8387", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 4:51:31 AM", "", "In Development",  0,18957)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Lead_Person_Commissioning_Hours", "8384", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:12:52 PM", "", "In Development",  0,13581)
+          InitProperty("Lead_Person_Commissioning_Hours", "8384", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:59:57 AM", "", "In Development",  0,20201)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Lead_Person_Install_Support_Cost", "8385", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 4:48:48 AM", "", "In Development",  0,18955)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Lead_Person_Install_Support_Hours", "8382", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:12:46 PM", "", "In Development",  0,13577)
+          InitProperty("Lead_Person_Install_Support_Hours", "8382", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:59:22 AM", "", "In Development",  0,20200)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Lead_Person_Rate", "8388", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:13:05 PM", "", "In Development",  0,13589)
@@ -3348,7 +3279,7 @@ Option Infer On
           InitProperty("Metrics_Platform_Hours_per_Foot", "8417", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:36 PM", "", "In Development",  0,13647)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Metrics_Rental_Cost_per_Week", "8427", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:15:07 PM", "", "In Development",  0,13667)
+          InitProperty("Metrics_Rental_Cost_per_Week", "8427", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 12:21:12 PM", "", "In Development",  0,20245)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Metrics_Total_Commissioning_Cost", "8426", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:15:04 PM", "", "In Development",  0,13665)
@@ -3411,25 +3342,25 @@ Option Infer On
           InitProperty("Miscellaneous_Total_Cost", "9922", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 10:24:57 AM", "", "In Development",  0,17982)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Other_Cost_Duration_Wks", "8280", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:07:11 PM", "", "In Development",  0,13373)
+          InitProperty("Other_Cost_Duration_Wks", "8280", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 10:25:17 AM", "", "In Development",  0,20221)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Other_Cost_Hrs_Per_Week", "8281", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:07:14 PM", "", "In Development",  0,13375)
+          InitProperty("Other_Cost_Hrs_Per_Week", "8281", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 10:25:58 AM", "", "In Development",  0,20222)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Other_Cost_Onsite_Admin", "8279", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:07:08 PM", "", "In Development",  0,13371)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Other_Cost_Permit_Hours", "8278", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:07:05 PM", "", "In Development",  0,13369)
+          InitProperty("Other_Cost_Permit_Hours", "8278", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 10:24:28 AM", "", "In Development",  0,20220)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Other_Cost_Qty_Gang_Boxes", "8277", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:07:01 PM", "", "In Development",  0,13367)
+          InitProperty("Other_Cost_Qty_Gang_Boxes", "8277", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 10:23:22 AM", "", "In Development",  0,20219)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Other_Cost_Qty_Trucks", "8276", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:06:58 PM", "", "In Development",  0,13365)
+          InitProperty("Other_Cost_Qty_Trucks", "8276", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 10:21:44 AM", "", "In Development",  0,20218)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Peak_Crew", "8346", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:51 PM", "", "In Development",  0,13505)
+          InitProperty("Peak_Crew", "8346", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:56:29 AM", "", "In Development",  0,20196)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Peak_Crew_Value", "9917", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/16/2025 9:53:40 AM", "", "In Development",  0,17946)
@@ -3444,13 +3375,13 @@ Option Infer On
           InitProperty("People_Needs_Num_of_Installers_Install", "8350", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/17/2025 11:49:25 AM", "", "In Development",  0,18481)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("People_Needs_Num_of_Lead_Men_Comm", "8352", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:11:10 PM", "", "In Development",  0,13517)
+          InitProperty("People_Needs_Num_of_Lead_Men_Comm", "8352", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 12:20:28 PM", "", "In Development",  0,20240)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("People_Needs_Num_of_Lead_Men_Install", "8349", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:11:01 PM", "", "In Development",  0,13511)
+          InitProperty("People_Needs_Num_of_Lead_Men_Install", "8349", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 12:19:10 PM", "", "In Development",  0,20238)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("People_Needs_Num_of_Superintendents_Comm", "8351", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:11:07 PM", "", "In Development",  0,13515)
+          InitProperty("People_Needs_Num_of_Superintendents_Comm", "8351", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 12:19:44 PM", "", "In Development",  0,20239)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("People_Needs_Num_of_Superintendents_Install", "8348", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:58 PM", "", "In Development",  0,13509)
@@ -3462,19 +3393,19 @@ Option Infer On
           InitProperty("Permits_Total_Cost", "9920", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:06:28 AM", "", "In Development",  0,18968)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Project_Info_Customer", "8327", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:51 PM", "", "In Development",  0,13467)
+          InitProperty("Project_Info_Customer", "8327", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 10:35:05 AM", "", "In Development",  0,19845)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Project_Info_Description", "8330", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:01 PM", "", "In Development",  0,13473)
+          InitProperty("Project_Info_Description", "8330", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/21/2025 9:47:32 AM", "", "In Development",  0,20210)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Project_Info_Location", "8328", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:54 PM", "", "In Development",  0,13469)
+          InitProperty("Project_Info_Location", "8328", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 10:35:35 AM", "", "In Development",  0,19846)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Project_Info_Number", "8329", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:57 PM", "", "In Development",  0,13471)
+          InitProperty("Project_Info_Number", "8329", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 10:33:49 AM", "", "In Development",  0,19844)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Project_Info_QuoteDate", "8331", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:04 PM", "", "In Development",  0,13475)
+          InitProperty("Project_Info_QuoteDate", "8331", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/21/2025 5:21:09 AM", "", "In Development",  0,20146)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Project_Support_Rate", "9781", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 10:27:49 AM", "", "In Development",  0,17242)
@@ -3495,7 +3426,7 @@ Option Infer On
           InitProperty("Schedule_Commissioning_Duration_Weeks", "9738", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 8:41:49 AM", "", "In Development",  0,17198)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Schedule_End_Mechanical_Install", "8338", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:26 PM", "", "In Development",  0,13489)
+          InitProperty("Schedule_End_Mechanical_Install", "8338", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/21/2025 5:22:10 AM", "", "In Development",  0,20148)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Schedule_End_Run_to_In_Level_5", "8339", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:29 PM", "", "In Development",  0,13491)
@@ -3519,7 +3450,7 @@ Option Infer On
           InitProperty("Schedule_Start_In_house_Engineering", "9734", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 8:37:37 AM", "", "In Development",  0,17194)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Schedule_Start_Mechanical_Install", "8337", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:10:23 PM", "", "In Development",  0,13487)
+          InitProperty("Schedule_Start_Mechanical_Install", "8337", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/21/2025 5:21:44 AM", "", "In Development",  0,20147)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Schedule_Total_Project_Duration_Weeks", "9739", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:08:03 AM", "", "In Development",  0,18970)
@@ -3555,13 +3486,13 @@ Option Infer On
           InitProperty("Superintendent_Commissioning_Cost", "8380", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 4:44:00 AM", "", "In Development",  0,18954)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Superintendent_Commissioning_Hours", "8377", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:12:30 PM", "", "In Development",  0,13567)
+          InitProperty("Superintendent_Commissioning_Hours", "8377", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:58:23 AM", "", "In Development",  0,20199)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Superintendent_Install_Support_Cost", "8378", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 4:39:14 AM", "", "In Development",  0,18952)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Superintendent_Install_Support_Hours", "8375", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:12:24 PM", "", "In Development",  0,13563)
+          InitProperty("Superintendent_Install_Support_Hours", "8375", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:57:41 AM", "", "In Development",  0,20198)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Superintendent_Rate", "8381", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:12:43 PM", "", "In Development",  0,13575)
@@ -3579,7 +3510,7 @@ Option Infer On
           InitProperty("Superintendent_Total_Hours", "9761", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:12:05 AM", "", "In Development",  0,18974)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Supplies_Consumables_All_Other_Cost", "8408", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:08 PM", "", "In Development",  0,13629)
+          InitProperty("Supplies_Consumables_All_Other_Cost", "8408", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:03:15 AM", "", "In Development",  0,20206)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Supplies_Consumables_Anchors_1USD_per_Cost", "8407", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:05 PM", "", "In Development",  0,13627)
@@ -3588,7 +3519,7 @@ Option Infer On
           InitProperty("Supplies_Consumables_Hardware_Air_Piping_Cost", "8406", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:14:01 PM", "", "In Development",  0,13625)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Supplies_Consumables_Total_Cost", "9767", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 10:01:27 AM", "", "In Development",  0,17228)
+          InitProperty("Supplies_Consumables_Total_Cost", "9767", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:04:03 AM", "", "In Development",  0,20207)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Support_Lead_Men_Hrs_per_Wk", "9741", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 8:46:19 AM", "", "In Development",  0,17201)
@@ -3621,13 +3552,13 @@ Option Infer On
           InitProperty("Travel_Cost_Lead_Men_Per_Diem_Rates_Wkly", "8292", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:07:49 PM", "", "In Development",  0,13397)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Travel_Cost_Lead_Men_Total_Mobilization", "8298", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:09 PM", "", "In Development",  0,13409)
+          InitProperty("Travel_Cost_Lead_Men_Total_Mobilization", "8298", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:49:33 AM", "", "In Development",  0,19821)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Travel_Cost_Lead_Men_Total_Project_Per_Diem", "8295", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:07:59 PM", "", "In Development",  0,13403)
+          InitProperty("Travel_Cost_Lead_Men_Total_Project_Per_Diem", "8295", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:48:48 AM", "", "In Development",  0,19820)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Travel_Cost_Lead_Men_Total_Travel_Cost", "8301", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:08:18 PM", "", "In Development",  0,13415)
+          InitProperty("Travel_Cost_Lead_Men_Total_Travel_Cost", "8301", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:50:22 AM", "", "In Development",  0,19822)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Travel_Cost_Per_Diem_Range", "9745", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/17/2025 5:34:32 AM", "", "In Development",  0,18305)
@@ -3651,7 +3582,7 @@ Option Infer On
           InitProperty("Travel_Cost_Total_Project_Per_Diem", "10012", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:31:15 AM", "", "In Development",  0,18990)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Travel_Cost_Total_Travel_Cost", "10014", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/17/2025 9:37:02 AM", "", "In Development",  0,18383)
+          InitProperty("Travel_Cost_Total_Travel_Cost", "10014", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:06:55 AM", "", "In Development",  0,20208)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Travel_Expense_Mobilization_Cost", "8410", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:05:43 AM", "", "In Development",  0,18967)
@@ -3660,46 +3591,37 @@ Option Infer On
           InitProperty("Travel_Expense_Per_Diem_Cost", "8409", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:05:05 AM", "", "In Development",  0,18966)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Travel_Expense_Total_Cost", "9768", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 10:02:09 AM", "", "In Development",  0,17229)
+          InitProperty("Travel_Expense_Total_Cost", "9768", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/20/2025 8:47:07 AM", "", "In Development",  0,19817)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Union_Rate_Intelligrated_Installer_Current_Rate", "8320", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:28 PM", "", "In Development",  0,13453)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Intelligrated_Installer_New_Rate", "8323", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:38 PM", "", "In Development",  0,13459)
+          InitProperty("Union_Rate_Intelligrated_Installer_New_Rate", "8323", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:52:18 AM", "", "In Development",  0,20216)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Intelligrated_Installer_Percent_Adj", "8317", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:10 PM", "", "In Development",  0,13447)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Intelligrated_Installer_Tot_Cost_Adj", "8326", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:48 PM", "", "In Development",  0,13465)
+          InitProperty("Union_Rate_Intelligrated_Installer_Tot_Cost_Adj", "8326", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:55:51 AM", "", "In Development",  0,20195)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Union_Rate_Lead_Person_Current_Rate", "8319", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:25 PM", "", "In Development",  0,13451)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Lead_Person_New_Rate", "8322", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:35 PM", "", "In Development",  0,13457)
+          InitProperty("Union_Rate_Lead_Person_New_Rate", "8322", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:51:33 AM", "", "In Development",  0,20215)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Lead_Person_Percent_Adj", "8316", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:07 PM", "", "In Development",  0,13445)
+          InitProperty("Union_Rate_Lead_Person_Tot_Cost_Adj", "8325", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:55:06 AM", "", "In Development",  0,20194)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Lead_Person_Tot_Cost_Adj", "8325", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:44 PM", "", "In Development",  0,13463)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Percent_Adjustment", "9748", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/15/2025 9:19:02 AM", "", "In Development",  0,17209)
+          InitProperty("Union_Rate_Percent_Adjustment", "9748", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H617242", "7/21/2025 11:02:02 AM", "", "In Development",  0,20224)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Union_Rate_Superintendent_Current_Rate", "8318", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:22 PM", "", "In Development",  0,13449)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Superintendent_New_Rate", "8321", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:32 PM", "", "In Development",  0,13455)
+          InitProperty("Union_Rate_Superintendent_New_Rate", "8321", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 9:50:55 AM", "", "In Development",  0,20214)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Superintendent_Percent_Adj", "8315", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:03 PM", "", "In Development",  0,13443)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("Union_Rate_Superintendent_Tot_Cost_Adj", "8324", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/7/2025 12:09:41 PM", "", "In Development",  0,13461)
+          InitProperty("Union_Rate_Superintendent_Tot_Cost_Adj", "8324", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/21/2025 8:53:59 AM", "", "In Development",  0,20193)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Union_Rate_Tot_Cost_Adjustment", "9749", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H615411", "7/18/2025 5:09:56 AM", "", "In Development",  0,18972)
@@ -3807,7 +3729,12 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9921; TYPE:PF
-      result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		Result = Math.Round(Me.EQ_Rental_Porta_Johns_Total_Cost,0)
+	Case Else
+		Result = Me.Travel_Cost_Lead_Men_Total_Travel_Cost
+End Select
       '   END FORMULA; PROP ID:9921; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Additional_Subcontractor_Services_Total_Cost", ex.Message)
@@ -3853,7 +3780,18 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8347; TYPE:PF
-      Result = 0.0
+      Dim installHoursSum As Double = Me.Installer_Install_Hours + Me.Installer_Platforms_Grid_Catwalk_Hours + Me.Installer_Demo_Hours + Me.Installer_Misc_Install_Hours
+Dim totalHours As Double = installHoursSum + Me.Installer_Working_Super_or_Lead_Deduct_Hours
+Dim weeks As Double = Me.Schedule_Revision_End_Mechanical_Install
+Dim avgHoursPerWeek As Double = Me.Crew_Average_Hours_per_wk
+ 
+If weeks = 0 Or installHoursSum = 0 Then
+    Result = 0
+ElseIf installHoursSum < (avgHoursPerWeek * weeks) Then
+    Result = 1
+Else
+    Result = Math.Ceiling(totalHours / avgHoursPerWeek / weeks)
+End If
       '   END FORMULA; PROP ID:8347; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Avg_Crew_Size", ex.Message)
@@ -4428,7 +4366,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8271; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Crane_Large_Outdoor_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Crane_Large_Outdoor_Wkly_Rate * Me.EQ_Rental_Crane_Large_Outdoor_Duration * Me.EQ_Rental_Crane_Large_Outdoor_Quantity
+End If
       '   END FORMULA; PROP ID:8271; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Crane_Large_Outdoor_Total_Cost", ex.Message)
@@ -4451,7 +4393,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8258; TYPE:PF
-      Result = 0.0
+      Dim DataU10 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Crane (Large Outdoor)"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU10 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU10
       '   END FORMULA; PROP ID:8258; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Crane_Large_Outdoor_Wkly_Rate", ex.Message)
@@ -4520,7 +4474,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8270; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Cranes_Small_indoors_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Cranes_Small_indoors_Wkly_Rate * Me.EQ_Rental_Cranes_Small_indoors_Duration * Me.EQ_Rental_Cranes_Small_indoors_Quantity
+End If
       '   END FORMULA; PROP ID:8270; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Cranes_Small_indoors_Total_Cost", ex.Message)
@@ -4543,7 +4501,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8257; TYPE:PF
-      Result = 0.0
+      Dim DataU9 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Cranes (Small indoors)"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU9 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU9
       '   END FORMULA; PROP ID:8257; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Cranes_Small_indoors_Wkly_Rate", ex.Message)
@@ -4566,7 +4536,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8248; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		If Me.EQ_Rental_Dumpsters_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.Schedule_Revision_End_Mechanical_Install
+End If
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8248; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Dumpsters_Duration", ex.Message)
@@ -4612,7 +4591,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8274; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Dumpsters_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Dumpsters_Wkly_Rate * Me.EQ_Rental_Dumpsters_Duration * Me.EQ_Rental_Dumpsters_Quantity
+End If
       '   END FORMULA; PROP ID:8274; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Dumpsters_Total_Cost", ex.Message)
@@ -4635,7 +4618,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8261; TYPE:PF
-      Result = 0.0
+      Dim DataU13 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Dumpsters:"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU13 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU13
       '   END FORMULA; PROP ID:8261; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Dumpsters_Wkly_Rate", ex.Message)
@@ -4658,7 +4653,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8243; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		If Me.EQ_Rental_Fork_Truck_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.Schedule_Revision_End_Mechanical_Install
+End If
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8243; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Fork_Truck_Duration", ex.Message)
@@ -4681,7 +4685,12 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8230; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		Result = Math.Ceiling(Me.Avg_Crew_Size / 3)	
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8230; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Fork_Truck_Quantity", ex.Message)
@@ -4704,7 +4713,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8269; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Fork_Truck_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Small_Scissors_Lift_Wkly_Rate * (Me.EQ_Rental_Fork_Truck_Duration * Me.EQ_Rental_Fork_Truck_Quantity + Me.Schedule_Revision_End_Run_to_In_Level_5)
+End If
       '   END FORMULA; PROP ID:8269; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Fork_Truck_Total_Cost", ex.Message)
@@ -4750,7 +4763,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8240; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		If Me.EQ_Rental_Large_Boom_Lift_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.Schedule_Revision_End_Mechanical_Install
+End If
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8240; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Large_Boom_Lift_Duration", ex.Message)
@@ -4796,7 +4818,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8266; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Large_Boom_Lift_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Large_Boom_Lift_Wkly_Rate * Me.EQ_Rental_Large_Boom_Lift_Duration * Me.EQ_Rental_Large_Boom_Lift_Quantity
+End If
       '   END FORMULA; PROP ID:8266; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Large_Boom_Lift_Total_Cost", ex.Message)
@@ -4819,7 +4845,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8253; TYPE:PF
-      Result = 0.0
+      Dim DataU5 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Large Boom Lift:"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU5 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU5
       '   END FORMULA; PROP ID:8253; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Large_Boom_Lift_Wkly_Rate", ex.Message)
@@ -4842,7 +4880,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8238; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		If Me.EQ_Rental_Large_Scissor_Lift_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.Schedule_Revision_End_Mechanical_Install
+End If
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8238; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Large_Scissor_Lift_Duration", ex.Message)
@@ -4888,7 +4935,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8264; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Large_Scissor_Lift_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Large_Scissor_Lift_Wkly_Rate * Me.EQ_Rental_Large_Scissor_Lift_Duration * Me.EQ_Rental_Large_Scissor_Lift_Quantity
+End If
       '   END FORMULA; PROP ID:8264; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Large_Scissor_Lift_Total_Cost", ex.Message)
@@ -4911,7 +4962,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8251; TYPE:PF
-      Result = 0.0
+      Dim DataU3 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Large Scissor Lift"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU3 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU3
       '   END FORMULA; PROP ID:8251; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Large_Scissor_Lift_Wkly_Rate", ex.Message)
@@ -4980,7 +5043,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8268; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Large_Telehandler_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Large_Telehandler_Wkly_Rate * Me.EQ_Rental_Large_Telehandler_Duration * Me.EQ_Rental_Large_Telehandler_Quantity
+End If
       '   END FORMULA; PROP ID:8268; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Large_Telehandler_Total_Cost", ex.Message)
@@ -5003,7 +5070,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8255; TYPE:PF
-      Result = 0.0
+      Dim DataU7 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Large Telehandler"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU7 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU7
       '   END FORMULA; PROP ID:8255; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Large_Telehandler_Wkly_Rate", ex.Message)
@@ -5026,7 +5105,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8249; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		If Me.EQ_Rental_Porta_Johns_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.Schedule_Revision_End_Mechanical_Install
+End If
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8249; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Porta_Johns_Duration", ex.Message)
@@ -5072,7 +5160,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8275; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Porta_Johns_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Porta_Johns_Wkly_Rate * Me.EQ_Rental_Porta_Johns_Duration * Me.EQ_Rental_Porta_Johns_Quantity
+End If
       '   END FORMULA; PROP ID:8275; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Porta_Johns_Total_Cost", ex.Message)
@@ -5095,7 +5187,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8262; TYPE:PF
-      Result = 0.0
+      Dim DataU14 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Porta Johns:"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU14 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU14
       '   END FORMULA; PROP ID:8262; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Porta_Johns_Wkly_Rate", ex.Message)
@@ -5118,7 +5222,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8247; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		If Me.EQ_Rental_Site_Trailer_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.Schedule_Revision_End_Mechanical_Install
+End If
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8247; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Site_Trailer_Duration", ex.Message)
@@ -5187,7 +5300,27 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8260; TYPE:PF
-      Result = 0.0
+      Dim DataU12 As Double
+Dim DataU16 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Site Trailer:"
+Const SearchDescription1 As String = "Generator"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU12 = p.properties(ValueProperty).value
+	End If
+Next p
+
+For Each q As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If q.properties(SearchPropertyName).value.trim().toLower() = SearchDescription1.Trim().ToLower Then
+		DataU16 = q.properties(ValueProperty).value
+	End If
+Next q
+ 
+Result = DataU12 + DataU16
       '   END FORMULA; PROP ID:8260; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Site_Trailer_Wkly_Rate", ex.Message)
@@ -5210,7 +5343,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8239; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		If Me.EQ_Rental_Small_Boom_Lift_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.Schedule_Revision_End_Mechanical_Install
+End If
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8239; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Small_Boom_Lift_Duration", ex.Message)
@@ -5256,7 +5398,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8265; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Small_Boom_Lift_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Small_Boom_Lift_Wkly_Rate * Me.EQ_Rental_Small_Boom_Lift_Duration * Me.EQ_Rental_Small_Boom_Lift_Quantity
+End If
       '   END FORMULA; PROP ID:8265; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Small_Boom_Lift_Total_Cost", ex.Message)
@@ -5279,7 +5425,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8252; TYPE:PF
-      Result = 0.0
+      Dim DataU4 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Small Boom Lift:"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU4 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU4
       '   END FORMULA; PROP ID:8252; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Small_Boom_Lift_Wkly_Rate", ex.Message)
@@ -5302,7 +5460,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8237; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		If Me.EQ_Rental_Small_Scissors_Lift_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.Schedule_Revision_End_Mechanical_Install
+End If
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8237; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Small_Scissors_Lift_Duration", ex.Message)
@@ -5325,7 +5492,12 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8224; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		Result = Math.Ceiling(Me.Avg_Crew_Size / 4)	
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8224; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Small_Scissors_Lift_Quantity", ex.Message)
@@ -5348,7 +5520,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8263; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Small_Scissors_Lift_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Small_Scissors_Lift_Wkly_Rate * (Me.EQ_Rental_Small_Scissors_Lift_Duration * Me.EQ_Rental_Small_Scissors_Lift_Quantity + Me.Schedule_Revision_End_Run_to_In_Level_5)
+End If
       '   END FORMULA; PROP ID:8263; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Small_Scissors_Lift_Total_Cost", ex.Message)
@@ -5371,7 +5547,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8250; TYPE:PF
-      Result = 0.0
+      Dim DataU2 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Small Scissors Lift:"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU2 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU2
       '   END FORMULA; PROP ID:8250; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Small_Scissors_Lift_Wkly_Rate", ex.Message)
@@ -5417,7 +5605,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8267; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Small_TelehandlerQuantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Small_Telehandler_Wkly_Rate * Me.EQ_Rental_Small_Telehandler_Duration * Me.EQ_Rental_Small_TelehandlerQuantity
+End If
       '   END FORMULA; PROP ID:8267; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Small_Telehandler_Total_Cost", ex.Message)
@@ -5440,7 +5632,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8254; TYPE:PF
-      Result = 0.0
+      Dim DataU6 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Small Telehandler"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU6 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU6
       '   END FORMULA; PROP ID:8254; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Small_Telehandler_Wkly_Rate", ex.Message)
@@ -5486,7 +5690,16 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8246; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		If Me.EQ_Rental_Welders_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.Schedule_Revision_End_Mechanical_Install
+End If
+	Case Else
+		Result = 0
+End Select
       '   END FORMULA; PROP ID:8246; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Welders_Duration", ex.Message)
@@ -5532,7 +5745,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8272; TYPE:PF
-      Result = 0.0
+      If Me.EQ_Rental_Welders_Quantity = 0 Then
+    Result = 0
+Else
+    Result = Me.EQ_Rental_Welders_Wkly_Rate * Me.EQ_Rental_Welders_Duration * Me.EQ_Rental_Welders_Quantity
+End If
       '   END FORMULA; PROP ID:8272; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Welders_Total_Cost", ex.Message)
@@ -5555,7 +5772,19 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8259; TYPE:PF
-      Result = 0.0
+      Dim DataU11 As Double
+
+Const SearchPropertyName As String = "Equipment_Rentals"
+Const SearchDescription As String = "Welders:"
+Const ValueProperty      As String = "Wkly_Rate_In_Usd"
+ 
+For Each p As part In Me.Parent.Mech_Install_Metrics(1).Equipment_Rentals.Parts
+	If p.properties(SearchPropertyName).value.trim().toLower() = SearchDescription.Trim().ToLower Then
+		DataU11 = p.properties(ValueProperty).value
+	End If
+Next p
+ 
+Result = DataU11
       '   END FORMULA; PROP ID:8259; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_EQ_Rental_Welders_Wkly_Rate", ex.Message)
@@ -5578,7 +5807,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8404; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling(Me.EQ_Rental_Dumpsters_Total_Cost)
       '   END FORMULA; PROP ID:8404; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Equipment_Rental_Dumpsters_Cost", ex.Message)
@@ -5601,7 +5830,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8405; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling(Me.EQ_Rental_Porta_Johns_Total_Cost)
       '   END FORMULA; PROP ID:8405; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Equipment_Rental_Porta_Johns_Cost", ex.Message)
@@ -5624,7 +5853,44 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9919; TYPE:PF
-      result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+If (Me.Schedule_Revision_End_Mechanical_Install + Me.Schedule_Revision_End_Run_to_In_Level_5) = 0 Then
+    Result = 0
+Else
+    Result = Math.Round(Me.EQ_Rental_Small_Scissors_Lift_Total_Cost + 
+Me.EQ_Rental_Large_Scissor_Lift_Total_Cost + 
+Me.EQ_Rental_Small_Boom_Lift_Total_Cost + 
+Me.EQ_Rental_Large_Boom_Lift_Total_Cost + 
+Me.EQ_Rental_Small_Telehandler_Total_Cost + 
+Me.EQ_Rental_Large_Telehandler_Total_Cost + 
+Me.EQ_Rental_Fork_Truck_Total_Cost + 
+Me.EQ_Rental_Cranes_Small_indoors_Total_Cost + 
+Me.EQ_Rental_Crane_Large_Outdoor_Total_Cost + 
+Me.EQ_Rental_Welders_Total_Cost + 
+Me.EQ_Rental_Site_Trailer_Total_Cost + 
+Me.EQ_Rental_Dumpsters_Total_Cost + 
+Me.EQ_Rental_Porta_Johns_Total_Cost,0)
+End If
+	Case Else
+		If (Me.Schedule_Pre_Install_Duration_Weeks + Me.Schedule_Install_Duration_Weeks + Me.Schedule_Commissioning_Duration_Weeks) = 0 Then
+    Result = 0
+Else
+    Result = Math.Round(Me.EQ_Rental_Small_Scissors_Lift_Total_Cost + 
+Me.EQ_Rental_Large_Scissor_Lift_Total_Cost + 
+Me.EQ_Rental_Small_Boom_Lift_Total_Cost + 
+Me.EQ_Rental_Large_Boom_Lift_Total_Cost + 
+Me.EQ_Rental_Small_Telehandler_Total_Cost + 
+Me.EQ_Rental_Large_Telehandler_Total_Cost + 
+Me.EQ_Rental_Fork_Truck_Total_Cost + 
+Me.EQ_Rental_Cranes_Small_indoors_Total_Cost + 
+Me.EQ_Rental_Crane_Large_Outdoor_Total_Cost + 
+Me.EQ_Rental_Welders_Total_Cost + 
+Me.EQ_Rental_Site_Trailer_Total_Cost + 
+Me.EQ_Rental_Dumpsters_Total_Cost + 
+Me.EQ_Rental_Porta_Johns_Total_Cost,0)
+End If
+End Select
       '   END FORMULA; PROP ID:9919; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Equipment_Rental_Total_Cost", ex.Message)
@@ -5638,8 +5904,10 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Factors_Air_Piping() As Double
-          Dim Result as Double
+          Public Function Formula_Factors_Air_Piping() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
@@ -5762,7 +6030,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9914; TYPE:PF
-      result = 0.0
+      Result = Math.Ceiling(Me.HSE_Per_Diem_Rate_Headcount * Me.HSE_Per_Diem_Rate * Me.HSE_Wages_Headcount)
       '   END FORMULA; PROP ID:9914; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_HSE_Per_Diem_Rate_Cost", ex.Message)
@@ -5812,7 +6080,7 @@ Option Infer On
 	Case "Conveyor_Costing_SC_Mech_Install"
 		Result = Math.Ceiling(Me.Crew_Average_Hours_per_wk * Me.HSE_Wages_Rate * Me.HSE_Wages_Headcount * Me.HSE_Per_Diem_Rate_Headcount)	
 	Case Else
-		Result = Math.Ceiling(Me.HSE_Per_Diem_Rate * Me.Support_Lead_Men_Hrs_per_Wk * Me.HSE_Wages_Headcount * Me.HSE_Wages_Rate)
+		Result = Math.Ceiling(Me.HSE_Per_Diem_Rate_Headcount * Me.HSE_Per_Diem_Rate * Me.HSE_Wages_Headcount)
 End Select
       '   END FORMULA; PROP ID:9913; TYPE:PF
       Catch ex As Exception
@@ -5882,7 +6150,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9915; TYPE:PF
-      result = 0.0
+      Result = Math.Ceiling(Me.HSE_Wages_Cost + Me.HSE_Per_Diem_Rate_Cost)
       '   END FORMULA; PROP ID:9915; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_HSE_Wages_Total_Cost", ex.Message)
@@ -5928,7 +6196,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8394; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Schedule_Revision_End_Run_to_In_Level_5 * Me.Crew_Comm_Sppt_Hours_per_wk * Me.People_Needs_Num_of_Installers_Comm),0)
       '   END FORMULA; PROP ID:8394; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Installer_Commissioning_Support_Hours", ex.Message)
@@ -5974,7 +6242,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8391; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Structures_DEMO_Hours),0)
       '   END FORMULA; PROP ID:8391; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Installer_Demo_Hours", ex.Message)
@@ -6066,7 +6334,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8392; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Total_Miscellaneous_Hours),0)
       '   END FORMULA; PROP ID:8392; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Installer_Misc_Install_Hours", ex.Message)
@@ -6112,7 +6380,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8390; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Structures_PLATFORM_Hours + Me.Structures_CATWALK_Hours),0)
       '   END FORMULA; PROP ID:8390; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Installer_Platforms_Grid_Catwalk_Hours", ex.Message)
@@ -6227,7 +6495,15 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9765; TYPE:PF
-      result = 0.0
+      Dim totalInstallHours As Double = Me.Installer_Install_Hours + Me.Installer_Platforms_Grid_Catwalk_Hours + Me.Installer_Demo_Hours + Me.Installer_Misc_Install_Hours
+ 
+If Me.Schedule_Revision_End_Mechanical_Install + Me.Schedule_Revision_End_Run_to_In_Level_5 = 0 Or totalInstallHours = 0 Then
+    Result = 0
+Else If (totalInstallHours + Me.Installer_Working_Super_or_Lead_Deduct_Hours) < (Me.Schedule_Revision_End_Mechanical_Install * Me.Crew_Average_Hours_per_wk) Then
+    Result = (Me.Schedule_Revision_End_Mechanical_Install * Me.Crew_Average_Hours_per_wk) + Me.Installer_Stagnant_Hours_Hours + Me.Installer_Commissioning_Support_Hours
+Else
+    Result = totalInstallHours + Me.Installer_Stagnant_Hours_Hours + Me.Installer_Commissioning_Support_Hours + Me.Installer_Working_Super_or_Lead_Deduct_Hours 
+End If
       '   END FORMULA; PROP ID:9765; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Installer_Total_Hours", ex.Message)
@@ -6320,33 +6596,10 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8311; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.Labor_Rate_Intelligrated_Installer_Current_Rate + Me.Labor_Rate_Intelligrated_Installer_Current_Rate * Me.Labor_Rate_Percent_Adjustment) * 100) / 100
       '   END FORMULA; PROP ID:8311; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Intelligrated_Installer_New_Rate", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Labor_Rate_Intelligrated_Installer_Percent_Adj() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Labor_Rate_Intelligrated_Installer_Percent_Adj").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:8305; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8305; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Intelligrated_Installer_Percent_Adj", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -6366,7 +6619,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8314; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Labor_Rate_Intelligrated_Installer_New_Rate - Me.Labor_Rate_Intelligrated_Installer_Current_Rate) * Me.Installer_Total_Hours,0)
       '   END FORMULA; PROP ID:8314; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj", ex.Message)
@@ -6412,33 +6665,10 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8310; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.Labor_Rate_Lead_Person_Current_Rate + Me.Labor_Rate_Lead_Person_Current_Rate * Me.Labor_Rate_Percent_Adjustment) * 100) / 100
       '   END FORMULA; PROP ID:8310; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Lead_Person_New_Rate", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Labor_Rate_Lead_Person_Percent_Adj() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Labor_Rate_Lead_Person_Percent_Adj").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:8304; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8304; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Lead_Person_Percent_Adj", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -6458,7 +6688,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8313; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Labor_Rate_Lead_Person_New_Rate - Me.Labor_Rate_Lead_Person_Current_Rate) * Me.Lead_Person_Total_Hours,0)
       '   END FORMULA; PROP ID:8313; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Lead_Person_Tot_Cost_Adj", ex.Message)
@@ -6529,33 +6759,10 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8309; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.Labor_Rate_Superintendent_Current_Rate + Me.Labor_Rate_Superintendent_Current_Rate * Me.Labor_Rate_Percent_Adjustment) * 100) / 100
       '   END FORMULA; PROP ID:8309; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Superintendent_New_Rate", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Labor_Rate_Superintendent_Percent_Adj() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Labor_Rate_Superintendent_Percent_Adj").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:8303; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8303; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Superintendent_Percent_Adj", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -6575,7 +6782,7 @@ End Select
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8312; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Labor_Rate_Superintendent_New_Rate - Me.Labor_Rate_Superintendent_Current_Rate) * Me.Superintendent_Total_Hours,0)
       '   END FORMULA; PROP ID:8312; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Superintendent_Tot_Cost_Adj", ex.Message)
@@ -6807,7 +7014,7 @@ Me. Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8384; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Schedule_Revision_End_Run_to_In_Level_5 * Me.Crew_Comm_Sppt_Hours_per_wk * Me.People_Needs_Num_of_Lead_Men_Comm),0)
       '   END FORMULA; PROP ID:8384; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Lead_Person_Commissioning_Hours", ex.Message)
@@ -6853,7 +7060,7 @@ Me. Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8382; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Schedule_Revision_End_Mechanical_Install * Me.People_Needs_Num_of_Lead_Men_Install * Me.Crew_Average_Hours_per_wk),0)
       '   END FORMULA; PROP ID:8382; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Lead_Person_Install_Support_Hours", ex.Message)
@@ -7233,7 +7440,12 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8427; TYPE:PF
-      Result = 0.0
+      Result = Me.Installer_Commissioning_Support_Cost + 
+         Me.Lead_Person_Commissioning_Cost + 
+         Me.Superintendent_Commissioning_Cost + 
+         (Me.People_Needs_Num_of_Superintendents_Comm * Me.Schedule_Revision_End_Run_to_In_Level_5 * Me.Travel_Cost_Superintendent_Per_Diem_Rates_Wkly) + 
+         (Me.People_Needs_Num_of_Lead_Men_Comm * Me.Schedule_Revision_End_Run_to_In_Level_5 * Me.Travel_Cost_Lead_Men_Per_Diem_Rates_Wkly) + 
+         (Me.People_Needs_Num_of_Installers_Comm * Me.Schedule_Revision_End_Run_to_In_Level_5 * Me.Travel_Cost_Installer_Per_Diem_Rates_Wkly)
       '   END FORMULA; PROP ID:8427; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Metrics_Rental_Cost_per_Week", ex.Message)
@@ -7716,7 +7928,13 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8280; TYPE:PF
-      Result = 0.0
+      If (Me.Installer_Install_Hours + Me.Installer_Platforms_Grid_Catwalk_Hours + Me.Installer_Demo_Hours + Me.Installer_Misc_Install_Hours) = 0 Then
+    Result = 0
+Else If(Me.Project_Tier_Value <= 2)
+	Result = Me.Schedule_Revision_End_Mechanical_Install
+Else
+	Result = 0.0
+End If
       '   END FORMULA; PROP ID:8280; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Other_Cost_Duration_Wks", ex.Message)
@@ -7739,7 +7957,11 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8281; TYPE:PF
-      Result = 0.0
+      If(Me.Other_Cost_Duration_Wks > 0)
+	Result = 40.0
+Else
+	Result = 0.0
+End If
       '   END FORMULA; PROP ID:8281; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Other_Cost_Hrs_Per_Week", ex.Message)
@@ -7785,7 +8007,15 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8278; TYPE:PF
-      Result = 0.0
+      If (Me.Installer_Install_Hours + Me.Installer_Platforms_Grid_Catwalk_Hours + Me.Installer_Demo_Hours + Me.Installer_Misc_Install_Hours) = 0 Then
+    Result = 0
+Else If(Me.Project_Tier_Value <= 3.5) Then
+    Result = 40
+Else If(Me.Project_Tier_Value = 4)
+	Result = 8
+Else
+	Result = 0
+End If
       '   END FORMULA; PROP ID:8278; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Other_Cost_Permit_Hours", ex.Message)
@@ -7808,7 +8038,13 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8277; TYPE:PF
-      Result = 0.0
+      If (Me.Installer_Install_Hours + Me.Installer_Platforms_Grid_Catwalk_Hours + Me.Installer_Demo_Hours + Me.Installer_Misc_Install_Hours) = 0 Then
+    Result = 0
+Else If Me.Project_Tier_Value >= 3.5 Then
+    Result = 1
+Else
+    Result = 0
+End If
       '   END FORMULA; PROP ID:8277; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Other_Cost_Qty_Gang_Boxes", ex.Message)
@@ -7831,7 +8067,15 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8276; TYPE:PF
-      Result = 0.0
+      If (Me.Installer_Install_Hours + Me.Installer_Platforms_Grid_Catwalk_Hours + Me.Installer_Demo_Hours + Me.Installer_Misc_Install_Hours) = 0 Then
+    Result = 0
+Else If Me.Project_Tier_Value = 1 Then
+    Result = 2
+Else If (Me.Project_Tier_Value = 2 Or Me.Project_Tier_Value = 3) Then
+    Result = 1
+Else
+    Result = 0
+End If
       '   END FORMULA; PROP ID:8276; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Other_Cost_Qty_Trucks", ex.Message)
@@ -7854,7 +8098,7 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8346; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling(Me.Avg_Crew_Size * Me.Crew_Peak_Crew_Multiplier)
       '   END FORMULA; PROP ID:8346; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Peak_Crew", ex.Message)
@@ -7969,7 +8213,15 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8352; TYPE:PF
-      Result = 0.0
+      Dim totalInstallHours As Double = Me.Installer_Install_Hours + Me.Installer_Platforms_Grid_Catwalk_Hours + Me.Installer_Demo_Hours + Me.Installer_Misc_Install_Hours
+ 
+If totalInstallHours = 0 Then
+    Result = 0
+Else If Me.People_Needs_Num_of_Superintendents_Comm < 1 AndAlso Me.Schedule_Revision_End_Run_to_In_Level_5 > 0 Then
+    Result = 1
+Else
+    Result = 0
+End If
       '   END FORMULA; PROP ID:8352; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_People_Needs_Num_of_Lead_Men_Comm", ex.Message)
@@ -7992,7 +8244,13 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8349; TYPE:PF
-      Result = 0.0
+      Dim totalInstallHours As Double = Me.Installer_Install_Hours + Me.Installer_Platforms_Grid_Catwalk_Hours + Me.Installer_Demo_Hours + Me.Installer_Misc_Install_Hours
+ 
+If Me.Schedule_Revision_End_Mechanical_Install = 0 Or totalInstallHours = 0 Then
+    Result = 0
+Else
+    Result = Math.Floor((totalInstallHours / Me.Crew_Average_Hours_per_wk) / Me.Schedule_Revision_End_Mechanical_Install / 10) + 1
+End If
       '   END FORMULA; PROP ID:8349; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_People_Needs_Num_of_Lead_Men_Install", ex.Message)
@@ -8015,7 +8273,15 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8351; TYPE:PF
-      Result = 0.0
+      Dim totalInstallHours As Double = Me.Installer_Install_Hours + Me.Installer_Platforms_Grid_Catwalk_Hours + Me.Installer_Demo_Hours + Me.Installer_Misc_Install_Hours
+ 
+If totalInstallHours = 0 Then
+    Result = 0
+Else If Me.People_Needs_Num_of_Lead_Men_Install < 1 AndAlso Me.Schedule_Revision_End_Run_to_In_Level_5 > 0 Then
+    Result = 1
+Else
+    Result = 0
+End If
       '   END FORMULA; PROP ID:8351; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_People_Needs_Num_of_Superintendents_Comm", ex.Message)
@@ -8098,8 +8364,10 @@ Me.Miscellaneous_Total_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Project_Info_Customer() As Double
-          Dim Result as Double
+          Public Function Formula_Project_Info_Customer() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
@@ -8107,7 +8375,17 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8327; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+    Case "Conveyor_Costing_SC_Mech_Install"
+        Result = 0
+ 
+    Case Else
+        If Me.Project_Info_Customer = Nothing
+            Result = ""
+        Else
+            Result = Me.Project_Info_Customer
+        End If
+End Select
       '   END FORMULA; PROP ID:8327; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Info_Customer", ex.Message)
@@ -8121,8 +8399,10 @@ Me.Miscellaneous_Total_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Project_Info_Description() As Double
-          Dim Result as Double
+          Public Function Formula_Project_Info_Description() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
@@ -8130,7 +8410,17 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8330; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+    Case "Conveyor_Costing_SC_Mech_Install"
+        Result = 0
+ 
+    Case Else
+        If Me.Project_Info_Description = Nothing
+            Result = ""
+        Else
+            Result = Me.Project_Info_Description
+        End If
+End Select
       '   END FORMULA; PROP ID:8330; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Info_Description", ex.Message)
@@ -8144,8 +8434,10 @@ Me.Miscellaneous_Total_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Project_Info_Location() As Double
-          Dim Result as Double
+          Public Function Formula_Project_Info_Location() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
@@ -8153,7 +8445,17 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8328; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+    Case "Conveyor_Costing_SC_Mech_Install"
+        Result = 0
+ 
+    Case Else
+        If Me.Project_Info_Location = Nothing
+            Result = ""
+        Else
+            Result = Me.Project_Info_Location
+        End If
+End Select
       '   END FORMULA; PROP ID:8328; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Info_Location", ex.Message)
@@ -8167,8 +8469,8 @@ Me.Miscellaneous_Total_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Project_Info_Number() As Double
-          Dim Result as Double
+          Public Function Formula_Project_Info_Number() As Long
+          Dim Result as Long
       Dim ctx as Object
       Try
       ctx = this
@@ -8176,7 +8478,17 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8329; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+    Case "Conveyor_Costing_SC_Mech_Install"
+        Result = 0
+ 
+    Case Else
+        If Me.Project_Info_Number = Nothing
+            Result = ""
+        Else
+            Result = Me.Project_Info_Number
+        End If
+End Select
       '   END FORMULA; PROP ID:8329; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Info_Number", ex.Message)
@@ -8190,8 +8502,8 @@ Me.Miscellaneous_Total_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Project_Info_QuoteDate() As Double
-          Dim Result as Double
+          Public Function Formula_Project_Info_QuoteDate() As Date
+          Dim Result as Date
       Dim ctx as Object
       Try
       ctx = this
@@ -8199,7 +8511,17 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8331; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+    Case "Conveyor_Costing_SC_Mech_Install"
+        Result =  Date.Today()
+ 
+    Case Else
+        If Me.Project_Info_QuoteDate = Nothing
+            Result =  Date.Today()
+        Else
+            Result = Me.Project_Info_QuoteDate
+        End If
+End Select
       '   END FORMULA; PROP ID:8331; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Project_Info_QuoteDate", ex.Message)
@@ -8282,8 +8604,10 @@ Me.Miscellaneous_Total_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Project_Tier_Value() As Double
-          Dim Result as Double
+          Public Function Formula_Project_Tier_Value() As String
+          
+          Dim Result as String = String.Empty
+        
       Dim ctx as Object
       Try
       ctx = this
@@ -8351,8 +8675,8 @@ Me.Miscellaneous_Total_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Schedule_End_Mechanical_Install() As Double
-          Dim Result as Double
+          Public Function Formula_Schedule_End_Mechanical_Install() As Date
+          Dim Result as Date
       Dim ctx as Object
       Try
       ctx = this
@@ -8360,7 +8684,17 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8338; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+    Case "Conveyor_Costing_SC_Mech_Install"
+        Result =  Date.Today()
+ 
+    Case Else
+        If Me.Schedule_End_Mechanical_Install = Nothing
+            Result =  Date.Today()
+        Else
+            Result = Me.Schedule_End_Mechanical_Install
+        End If
+End Select
       '   END FORMULA; PROP ID:8338; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Schedule_End_Mechanical_Install", ex.Message)
@@ -8535,8 +8869,8 @@ Me.Miscellaneous_Total_Cost
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Schedule_Start_Mechanical_Install() As Double
-          Dim Result as Double
+          Public Function Formula_Schedule_Start_Mechanical_Install() As Date
+          Dim Result as Date
       Dim ctx as Object
       Try
       ctx = this
@@ -8544,7 +8878,17 @@ Me.Miscellaneous_Total_Cost
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8337; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+    Case "Conveyor_Costing_SC_Mech_Install"
+        Result =  Date.Today()
+ 
+    Case Else
+        If Me.Schedule_Start_Mechanical_Install = Nothing
+            Result =  Date.Today()
+        Else
+            Result = Me.Schedule_Start_Mechanical_Install
+        End If
+End Select
       '   END FORMULA; PROP ID:8337; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Schedule_Start_Mechanical_Install", ex.Message)
@@ -8822,7 +9166,7 @@ Me.Schedule_Commissioning_Duration_Weeks
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8377; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Schedule_Revision_End_Run_to_In_Level_5 * Me.Crew_Comm_Sppt_Hours_per_wk * Me.People_Needs_Num_of_Superintendents_Comm),0)
       '   END FORMULA; PROP ID:8377; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Superintendent_Commissioning_Hours", ex.Message)
@@ -8868,7 +9212,7 @@ Me.Schedule_Commissioning_Duration_Weeks
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8375; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Schedule_Revision_End_Mechanical_Install * Me.People_Needs_Num_of_Superintendents_Install * Me.Crew_Average_Hours_per_wk),0)
       '   END FORMULA; PROP ID:8375; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Superintendent_Install_Support_Hours", ex.Message)
@@ -9008,7 +9352,7 @@ Me.Superintendent_Commissioning_Hours
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8408; TYPE:PF
-      Result = 0.0
+      Result = Math.Round(((Me.Mech_Convyr_Inst_Total_Hours) * 1),0)
       '   END FORMULA; PROP ID:8408; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Supplies_Consumables_All_Other_Cost", ex.Message)
@@ -9077,7 +9421,7 @@ Me.Superintendent_Commissioning_Hours
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9767; TYPE:PF
-      result = 0.0
+      Result = Math.Round((Me.Supplies_Consumables_Hardware_Air_Piping_Cost + Me.Supplies_Consumables_Anchors_1USD_per_Cost * Me.Supplies_Consumables_All_Other_Cost),0)
       '   END FORMULA; PROP ID:9767; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Supplies_Consumables_Total_Cost", ex.Message)
@@ -9340,7 +9684,12 @@ Me.Miscellaneous_Elevation_Adder
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8298; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		Result = Me.Crew_Lead_Man_Total_Mobilization_Cost
+	Case Else
+		Result = Me.Crew_Lead_Men_Total_Mobilization_Cost
+End Select
       '   END FORMULA; PROP ID:8298; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Travel_Cost_Lead_Men_Total_Mobilization", ex.Message)
@@ -9363,7 +9712,12 @@ Me.Miscellaneous_Elevation_Adder
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8295; TYPE:PF
-      Result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		Result = (Me.Schedule_Revision_End_Mechanical_Install * Me.People_Needs_Num_of_Lead_Men_Install + Me.Schedule_Revision_End_Run_to_In_Level_5 * Me.People_Needs_Num_of_Lead_Men_Comm) * Me.Travel_Cost_Lead_Men_Per_Diem_Rates_Wkly
+	Case Else
+		Result = ((Me.Site_Needs_Lead_Men_Install * Me.Schedule_Install_Duration_Weeks) + (Me.Site_Needs_Lead_Men_Commissioning * Me.Schedule_Commissioning_Duration_Weeks)) * Me.Travel_Cost_Lead_Men_Per_Diem_Rates_Wkly
+End Select
       '   END FORMULA; PROP ID:8295; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Travel_Cost_Lead_Men_Total_Project_Per_Diem", ex.Message)
@@ -9386,7 +9740,7 @@ Me.Miscellaneous_Elevation_Adder
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8301; TYPE:PF
-      Result = 0.0
+      Result = Me.Travel_Cost_Lead_Men_Total_Project_Per_Diem + Me.Travel_Cost_Lead_Men_Total_Mobilization
       '   END FORMULA; PROP ID:8301; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Travel_Cost_Lead_Men_Total_Travel_Cost", ex.Message)
@@ -9574,7 +9928,7 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:10014; TYPE:PF
-      result = 0.0
+      Result = Math.Ceiling(Me.Travel_Cost_Total_Project_Per_Diem + Me.Travel_Cost_Total_Mobilization_Cost)
       '   END FORMULA; PROP ID:10014; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Travel_Cost_Total_Travel_Cost", ex.Message)
@@ -9643,7 +9997,12 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9768; TYPE:PF
-      result = 0.0
+      Select Case Me.Owner.Name
+	Case "Conveyor_Costing_SC_Mech_Install"
+		Result = Me.Travel_Cost_Total_Travel_Cost
+	Case Else
+		Result = Me.Travel_Cost_Lead_Men_Total_Travel_Cost
+End Select
       '   END FORMULA; PROP ID:9768; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Travel_Expense_Total_Cost", ex.Message)
@@ -9689,33 +10048,10 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8323; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.Union_Rate_Intelligrated_Installer_Current_Rate + Me.Union_Rate_Intelligrated_Installer_Current_Rate * Me.Union_Rate_Percent_Adjustment) * 100) / 100
       '   END FORMULA; PROP ID:8323; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Intelligrated_Installer_New_Rate", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Union_Rate_Intelligrated_Installer_Percent_Adj() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Union_Rate_Intelligrated_Installer_Percent_Adj").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:8317; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8317; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Intelligrated_Installer_Percent_Adj", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -9735,7 +10071,7 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8326; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Union_Rate_Intelligrated_Installer_New_Rate - Me.Union_Rate_Intelligrated_Installer_Current_Rate) * Me.Installer_Total_Hours,0)
       '   END FORMULA; PROP ID:8326; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Intelligrated_Installer_Tot_Cost_Adj", ex.Message)
@@ -9781,33 +10117,10 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8322; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.Union_Rate_Lead_Person_Current_Rate + Me.Union_Rate_Lead_Person_Current_Rate * Me.Union_Rate_Percent_Adjustment) * 100) / 100
       '   END FORMULA; PROP ID:8322; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Lead_Person_New_Rate", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Union_Rate_Lead_Person_Percent_Adj() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Union_Rate_Lead_Person_Percent_Adj").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:8316; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8316; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Lead_Person_Percent_Adj", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -9827,7 +10140,7 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8325; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Union_Rate_Lead_Person_New_Rate - Me.Union_Rate_Lead_Person_Current_Rate) * Me.Lead_Person_Total_Hours,0)
       '   END FORMULA; PROP ID:8325; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Lead_Person_Tot_Cost_Adj", ex.Message)
@@ -9841,10 +10154,8 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Union_Rate_Percent_Adjustment() As String
-          
-          Dim Result as String = String.Empty
-        
+          Public Function Formula_Union_Rate_Percent_Adjustment() As Double
+          Dim Result as Double
       Dim ctx as Object
       Try
       ctx = this
@@ -9852,7 +10163,7 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9748; TYPE:PF
-      result = ""
+      Result = 0.0
       '   END FORMULA; PROP ID:9748; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Percent_Adjustment", ex.Message)
@@ -9898,33 +10209,10 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8321; TYPE:PF
-      Result = 0.0
+      Result = Math.Ceiling((Me.Union_Rate_Superintendent_Current_Rate + Me.Union_Rate_Superintendent_Current_Rate * Me.Union_Rate_Percent_Adjustment) * 100) / 100
       '   END FORMULA; PROP ID:8321; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Superintendent_New_Rate", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Union_Rate_Superintendent_Percent_Adj() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("Union_Rate_Superintendent_Percent_Adj").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:8315; TYPE:PF
-      Result = 0.0
-      '   END FORMULA; PROP ID:8315; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Superintendent_Percent_Adj", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -9944,7 +10232,7 @@ Me.Travel_Cost_Installer_Total_Project_Per_Diem
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8324; TYPE:PF
-      Result = 0.0
+      Result = Math.Round((Me.Union_Rate_Superintendent_New_Rate - Me.Union_Rate_Superintendent_Current_Rate) * Me.Superintendent_Total_Hours,0)
       '   END FORMULA; PROP ID:8324; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Superintendent_Tot_Cost_Adj", ex.Message)
@@ -12693,34 +12981,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Labor_Rate_Intelligrated_Installer_Percent_Adj_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Labor_Rate_Intelligrated_Installer_Percent_Adj"
-          Me.Properties("Labor_Rate_Intelligrated_Installer_Percent_Adj").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8305; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8305; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Intelligrated_Installer_Percent_Adj_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Labor_Rate_Intelligrated_Installer_Percent_Adj").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj_CustomCheck() as Object
           
           Dim Result as Object
@@ -12805,34 +13065,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Labor_Rate_Lead_Person_Percent_Adj_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Labor_Rate_Lead_Person_Percent_Adj"
-          Me.Properties("Labor_Rate_Lead_Person_Percent_Adj").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8304; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8304; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Lead_Person_Percent_Adj_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Labor_Rate_Lead_Person_Percent_Adj").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Labor_Rate_Lead_Person_Tot_Cost_Adj_CustomCheck() as Object
           
           Dim Result as Object
@@ -12910,34 +13142,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           If ObjectManager.StopOnErrors Then Stop
           End Try
           Return Me.Properties("Labor_Rate_Superintendent_New_Rate").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Labor_Rate_Superintendent_Percent_Adj_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Labor_Rate_Superintendent_Percent_Adj"
-          Me.Properties("Labor_Rate_Superintendent_Percent_Adj").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8303; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8303; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Superintendent_Percent_Adj_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Labor_Rate_Superintendent_Percent_Adj").ErrorReporting
           End Function
         
           '*****************************************************************************
@@ -15353,34 +15557,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Union_Rate_Intelligrated_Installer_Percent_Adj_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Union_Rate_Intelligrated_Installer_Percent_Adj"
-          Me.Properties("Union_Rate_Intelligrated_Installer_Percent_Adj").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8317; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8317; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Intelligrated_Installer_Percent_Adj_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Union_Rate_Intelligrated_Installer_Percent_Adj").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Union_Rate_Intelligrated_Installer_Tot_Cost_Adj_CustomCheck() as Object
           
           Dim Result as Object
@@ -15465,34 +15641,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Union_Rate_Lead_Person_Percent_Adj_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Union_Rate_Lead_Person_Percent_Adj"
-          Me.Properties("Union_Rate_Lead_Person_Percent_Adj").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8316; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8316; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Lead_Person_Percent_Adj_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Union_Rate_Lead_Person_Percent_Adj").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_Union_Rate_Lead_Person_Tot_Cost_Adj_CustomCheck() as Object
           
           Dim Result as Object
@@ -15570,34 +15718,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           If ObjectManager.StopOnErrors Then Stop
           End Try
           Return Me.Properties("Union_Rate_Superintendent_New_Rate").ErrorReporting
-          End Function
-        
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
-          Public Function Formula_Union_Rate_Superintendent_Percent_Adj_CustomCheck() as Object
-          
-          Dim Result as Object
-          Dim ctx as Object
-          Dim PropertyName As String
-          PropertyName = "Union_Rate_Superintendent_Percent_Adj"
-          Me.Properties("Union_Rate_Superintendent_Percent_Adj").ClearCustomErrors()
-          Try
-          ctx = this
-              '   BEGIN FORMULA; PROP ID:8315; TYPE:CC
-              'Dim MyProp As PropertySF = Me.Properties("Replace Your Property Name")
-'Choices For Severity ARE: VIA_ERROR, VIA_WARNING
-'If MyProp.IsInvalid() Then 
-' RS_CustomReportError(Me, PropertyName, VIA_ERROR/VIA_WARNING, "Replace Your Error Message")
-'End If
-              '   END FORMULA; PROP ID:8315; TYPE:CC
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Superintendent_Percent_Adj_CustomCheck", ex.Message)
-          If ObjectManager.StopOnErrors Then Stop
-          End Try
-          Return Me.Properties("Union_Rate_Superintendent_Percent_Adj").ErrorReporting
           End Function
         
           '*****************************************************************************
@@ -16388,14 +16508,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           End Try
           End Function
         
-          Public Function Formula_Labor_Rate_Intelligrated_Installer_Percent_Adj_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Intelligrated_Installer_Percent_Adj_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
           Public Function Formula_Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj_CustomCheckDependnacy() as Boolean
           Try
           Return True
@@ -16420,14 +16532,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           End Try
           End Function
         
-          Public Function Formula_Labor_Rate_Lead_Person_Percent_Adj_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Lead_Person_Percent_Adj_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
           Public Function Formula_Labor_Rate_Lead_Person_Tot_Cost_Adj_CustomCheckDependnacy() as Boolean
           Try
           Return True
@@ -16449,14 +16553,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           Return True
           Catch ex As Exception
           ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Superintendent_New_Rate_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
-          Public Function Formula_Labor_Rate_Superintendent_Percent_Adj_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Labor_Rate_Superintendent_Percent_Adj_CustomCheckDependnacy", ex.Message)
           End Try
           End Function
         
@@ -17148,14 +17244,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           End Try
           End Function
         
-          Public Function Formula_Union_Rate_Intelligrated_Installer_Percent_Adj_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Intelligrated_Installer_Percent_Adj_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
           Public Function Formula_Union_Rate_Intelligrated_Installer_Tot_Cost_Adj_CustomCheckDependnacy() as Boolean
           Try
           Return True
@@ -17180,14 +17268,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           End Try
           End Function
         
-          Public Function Formula_Union_Rate_Lead_Person_Percent_Adj_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Lead_Person_Percent_Adj_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
           Public Function Formula_Union_Rate_Lead_Person_Tot_Cost_Adj_CustomCheckDependnacy() as Boolean
           Try
           Return True
@@ -17209,14 +17289,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
           Return True
           Catch ex As Exception
           ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Superintendent_New_Rate_CustomCheckDependnacy", ex.Message)
-          End Try
-          End Function
-        
-          Public Function Formula_Union_Rate_Superintendent_Percent_Adj_CustomCheckDependnacy() as Boolean
-          Try
-          Return True
-          Catch ex As Exception
-          ObjectManager.LogError("Application: " + Me.Application + " CAE_Conveyor_Costing.Formula_Union_Rate_Superintendent_Percent_Adj_CustomCheckDependnacy", ex.Message)
           End Try
           End Function
         
@@ -18223,15 +18295,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Labor_Rate_Intelligrated_Installer_Percent_Adj_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -18251,15 +18314,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Labor_Rate_Lead_Person_New_Rate_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Labor_Rate_Lead_Person_Percent_Adj_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -18296,15 +18350,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Labor_Rate_Superintendent_New_Rate_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Labor_Rate_Superintendent_Percent_Adj_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -19528,15 +19573,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Union_Rate_Intelligrated_Installer_Percent_Adj_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Union_Rate_Intelligrated_Installer_Tot_Cost_Adj_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -19556,15 +19592,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Union_Rate_Lead_Person_New_Rate_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Union_Rate_Lead_Person_Percent_Adj_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -19601,15 +19628,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Union_Rate_Superintendent_New_Rate_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Union_Rate_Superintendent_Percent_Adj_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -20644,15 +20662,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Labor_Rate_Intelligrated_Installer_Percent_Adj_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Labor_Rate_Intelligrated_Installer_Tot_Cost_Adj_USERCHANGE() as Boolean
       Return True
       End Function
@@ -20672,15 +20681,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Labor_Rate_Lead_Person_New_Rate_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Labor_Rate_Lead_Person_Percent_Adj_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -20717,15 +20717,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Labor_Rate_Superintendent_New_Rate_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Labor_Rate_Superintendent_Percent_Adj_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -21949,15 +21940,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Union_Rate_Intelligrated_Installer_Percent_Adj_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_Union_Rate_Intelligrated_Installer_Tot_Cost_Adj_USERCHANGE() as Boolean
       Return True
       End Function
@@ -21977,15 +21959,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Union_Rate_Lead_Person_New_Rate_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Union_Rate_Lead_Person_Percent_Adj_USERCHANGE() as Boolean
       Return True
       End Function
     
@@ -22022,15 +21995,6 @@ Me.Union_Rate_Intelligrated_Installer_Tot_Cost_Adj
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Union_Rate_Superintendent_New_Rate_USERCHANGE() as Boolean
-      Return True
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Union_Rate_Superintendent_Percent_Adj_USERCHANGE() as Boolean
       Return True
       End Function
     

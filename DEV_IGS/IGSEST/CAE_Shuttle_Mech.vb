@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Shuttle_Mech
-'$ GenerateDate: 07/18/2025 11:37:15
+'$ GenerateDate: 07/21/2025 12:25:40
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -3284,353 +3284,353 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Shuttle_Mech", <a><![CDATA[CAE_Shuttle_Mech]]></a>.Value, 398, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H582667", "07/18/2025 09:15:12")
-    AddProperty("9278", "MEI_MI_Shuttle_Install_Hours_Per_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Hours_Per_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B73", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:14:19 AM")
-    AddProperty("9276", "MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B72", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:17 PM")
-    AddProperty("9274", "MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B71", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:12 PM")
-    AddProperty("9277", "MEI_MI_Shuttle_Installation_Hours_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Installation_Hours_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!C72", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:20 PM")
-    AddProperty("9275", "MEI_MI_Shuttle_Installation_Min_Per_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Installation_Min_Per_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!C71", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:15 PM")
-    AddProperty("9333", "MEI_Shuttle_A_T_P_L_and_T_F_and_R_Plum_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_F_and_R_Plum_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!F134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:36 PM")
-    AddProperty("9328", "MEI_Shuttle_A_T_P_L_and_T_Frnt_Rear_PAvg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Frnt_Rear_PAvg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!F133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:24 PM")
-    AddProperty("9324", "MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!B133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:14 PM")
-    AddProperty("9329", "MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!B134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:27 PM")
-    AddProperty("9334", "MEI_Shuttle_A_T_P_L_and_T_Hours_Per_Aisle", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Hours_Per_Aisle]]></a>.Value, "Mech Install^'Shuttle'!C135", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:38 PM")
-    AddProperty("9330", "MEI_Shuttle_A_T_P_L_and_T_L_Based_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_L_Based_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!C134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:29 PM")
-    AddProperty("9325", "MEI_Shuttle_A_T_P_L_and_T_Level_Based_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Level_Based_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!C133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:16 PM")
-    AddProperty("9327", "MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!E133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:22 PM")
-    AddProperty("9332", "MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!E134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:33 PM")
-    AddProperty("9331", "MEI_Shuttle_A_T_P_L_and_T_T_Based_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_T_Based_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!D134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:31 PM")
-    AddProperty("9326", "MEI_Shuttle_A_T_P_L_and_T_Tower_Based_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Tower_Based_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!D133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:19 PM")
-    AddProperty("9454", "MEI_Shuttle_BT_Intermediate_Aisle_JFB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Aisle_JFB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!U112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:37 PM")
-    AddProperty("9462", "MEI_Shuttle_BT_Intermediate_Aisle_JFB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Aisle_JFB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!U113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:55 PM")
-    AddProperty("9455", "MEI_Shuttle_BT_Intermediate_Aisle_JSB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Aisle_JSB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!V112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:39 PM")
-    AddProperty("9463", "MEI_Shuttle_BT_Intermediate_Aisle_JSB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Aisle_JSB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!V113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:57 PM")
-    AddProperty("9456", "MEI_Shuttle_BT_Intermediate_Bracing_THR_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Bracing_THR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!W112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:41 PM")
-    AddProperty("9464", "MEI_Shuttle_BT_Intermediate_Bracing_THR_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Bracing_THR_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!W113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:00 PM")
-    AddProperty("9460", "MEI_Shuttle_BT_Intermediate_Grout_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Grout_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!AA112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:50 PM")
-    AddProperty("9468", "MEI_Shuttle_BT_Intermediate_Grout_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Grout_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!AA113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:09 PM")
-    AddProperty("9457", "MEI_Shuttle_BT_Intermediate_HT_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_HT_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!X112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:43 PM")
-    AddProperty("9465", "MEI_Shuttle_BT_Intermediate_HT_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_HT_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!X113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:02 PM")
-    AddProperty("9453", "MEI_Shuttle_BT_Intermediate_Standard_T_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Standard_T_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!T112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:35 PM")
-    AddProperty("9461", "MEI_Shuttle_BT_Intermediate_Standard_T_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Standard_T_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!T113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:52 PM")
+    InitPart("CAE_Shuttle_Mech", <a><![CDATA[CAE_Shuttle_Mech]]></a>.Value, 398, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H582667", "07/21/2025 11:14:55")
+    AddProperty("9278", "MEI_MI_Shuttle_Install_Hours_Per_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Hours_Per_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B73", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:31:17 AM")
+    AddProperty("9276", "MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B72", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:29:46 AM")
+    AddProperty("9274", "MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!B71", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:28:56 AM")
+    AddProperty("9277", "MEI_MI_Shuttle_Installation_Hours_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Installation_Hours_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!C72", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:30:08 AM")
+    AddProperty("9275", "MEI_MI_Shuttle_Installation_Min_Per_Shuttle", <a><![CDATA[MEI_MI_Shuttle_Installation_Min_Per_Shuttle]]></a>.Value, "Mech Install^'Shuttle'!C71", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:29:17 AM")
+    AddProperty("9333", "MEI_Shuttle_A_T_P_L_and_T_F_and_R_Plum_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_F_and_R_Plum_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!F134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:07:35 PM")
+    AddProperty("9328", "MEI_Shuttle_A_T_P_L_and_T_Frnt_Rear_PAvg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Frnt_Rear_PAvg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!F133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:04:54 PM")
+    AddProperty("9324", "MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!B133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:03:26 PM")
+    AddProperty("9329", "MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!B134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:05:22 PM")
+    AddProperty("9334", "MEI_Shuttle_A_T_P_L_and_T_Hours_Per_Aisle", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Hours_Per_Aisle]]></a>.Value, "Mech Install^'Shuttle'!C135", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:07:49 PM")
+    AddProperty("9330", "MEI_Shuttle_A_T_P_L_and_T_L_Based_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_L_Based_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!C134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:06:11 PM")
+    AddProperty("9325", "MEI_Shuttle_A_T_P_L_and_T_Level_Based_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Level_Based_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!C133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:03:46 PM")
+    AddProperty("9327", "MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!E133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:04:29 PM")
+    AddProperty("9332", "MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!E134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:07:13 PM")
+    AddProperty("9331", "MEI_Shuttle_A_T_P_L_and_T_T_Based_Time_Per_A", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_T_Based_Time_Per_A]]></a>.Value, "Mech Install^'Shuttle'!D134", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:06:56 PM")
+    AddProperty("9326", "MEI_Shuttle_A_T_P_L_and_T_Tower_Based_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_A_T_P_L_and_T_Tower_Based_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!D133", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:04:10 PM")
+    AddProperty("9454", "MEI_Shuttle_BT_Intermediate_Aisle_JFB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Aisle_JFB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!U112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:54:09 PM")
+    AddProperty("9462", "MEI_Shuttle_BT_Intermediate_Aisle_JFB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Aisle_JFB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!U113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:38:08 AM")
+    AddProperty("9455", "MEI_Shuttle_BT_Intermediate_Aisle_JSB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Aisle_JSB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!V112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:54:25 PM")
+    AddProperty("9463", "MEI_Shuttle_BT_Intermediate_Aisle_JSB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Aisle_JSB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!V113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:38:22 AM")
+    AddProperty("9456", "MEI_Shuttle_BT_Intermediate_Bracing_THR_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Bracing_THR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!W112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:54:45 PM")
+    AddProperty("9464", "MEI_Shuttle_BT_Intermediate_Bracing_THR_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Bracing_THR_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!W113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:38:45 AM")
+    AddProperty("9460", "MEI_Shuttle_BT_Intermediate_Grout_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Grout_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!AA112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:56:12 PM")
+    AddProperty("9468", "MEI_Shuttle_BT_Intermediate_Grout_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Grout_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!AA113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:39:52 AM")
+    AddProperty("9457", "MEI_Shuttle_BT_Intermediate_HT_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_HT_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!X112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:55:03 PM")
+    AddProperty("9465", "MEI_Shuttle_BT_Intermediate_HT_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_HT_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!X113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:39:07 AM")
+    AddProperty("9453", "MEI_Shuttle_BT_Intermediate_Standard_T_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Standard_T_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!T112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:53:50 PM")
+    AddProperty("9461", "MEI_Shuttle_BT_Intermediate_Standard_T_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_Standard_T_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!T113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:37:40 AM")
     AddProperty("9458", "MEI_Shuttle_BT_Intermediate_VT_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_VT_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!Y112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:45 PM")
-    AddProperty("9466", "MEI_Shuttle_BT_Intermediate_VT_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_VT_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!Y113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:04 PM")
-    AddProperty("9459", "MEI_Shuttle_BT_Intermediate_VTFA_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_VTFA_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!Z112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:48 PM")
-    AddProperty("9467", "MEI_Shuttle_BT_Intermediate_VTFA_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_VTFA_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!Z113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:07 PM")
-    AddProperty("9420", "MEI_Shuttle_BT_Layout_Anchor_Leveling_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Layout_Anchor_Leveling_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!E112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:17 PM")
-    AddProperty("9424", "MEI_Shuttle_BT_Layout_Anchor_Leveling_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Layout_Anchor_Leveling_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!E113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:27 PM")
-    AddProperty("9419", "MEI_Shuttle_BT_Layout_FAB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Layout_FAB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!D112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:15 PM")
-    AddProperty("9423", "MEI_Shuttle_BT_Layout_FAB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Layout_FAB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!D113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:25 PM")
-    AddProperty("9417", "MEI_Shuttle_BT_Layout_Pilot_Drill_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Layout_Pilot_Drill_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!B112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:10 PM")
-    AddProperty("9421", "MEI_Shuttle_BT_Layout_Pilot_Drill_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Layout_Pilot_Drill_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!B113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:19 PM")
-    AddProperty("9418", "MEI_Shuttle_BT_Layout_Second_Hole_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Layout_Second_Hole_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!C112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:13 PM")
-    AddProperty("9422", "MEI_Shuttle_BT_Layout_Second_Hole_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Layout_Second_Hole_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!C113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:22 PM")
-    AddProperty("9471", "MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!AD112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:16 PM")
-    AddProperty("9474", "MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!AD113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:22 PM")
-    AddProperty("9469", "MEI_Shuttle_BT_Level_Tight_TT_Zone_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_TT_Zone_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!AB112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:11 PM")
-    AddProperty("9472", "MEI_Shuttle_BT_Level_Tight_TT_Zone_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_TT_Zone_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!AB113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:18 PM")
-    AddProperty("9470", "MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!AC112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:13 PM")
-    AddProperty("9473", "MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!AC113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:20 PM")
-    AddProperty("9447", "MEI_Shuttle_BT_Material_PreStage_PR_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Material_PreStage_PR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!Q112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:21 PM")
-    AddProperty("9450", "MEI_Shuttle_BT_Material_PreStage_PR_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Material_PreStage_PR_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!Q113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:28 PM")
-    AddProperty("9448", "MEI_Shuttle_BT_Material_Upright_RS_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Material_Upright_RS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!R112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:23 PM")
-    AddProperty("9451", "MEI_Shuttle_BT_Material_Upright_RS_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Material_Upright_RS_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!R113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:30 PM")
-    AddProperty("9449", "MEI_Shuttle_BT_Material_VB_Prep_Area_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Material_VB_Prep_Area_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!S112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:25 PM")
-    AddProperty("9452", "MEI_Shuttle_BT_Material_VB_Prep_Area_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Material_VB_Prep_Area_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!S113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:32 PM")
-    AddProperty("9428", "MEI_Shuttle_BT_Prepping_Assemble_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Assemble_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!I112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:37 PM")
-    AddProperty("9439", "MEI_Shuttle_BT_Prepping_Assemble_GB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Assemble_GB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!I113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:03 PM")
-    AddProperty("9434", "MEI_Shuttle_BT_Prepping_BU_Prep_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_BU_Prep_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!O112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:52 PM")
-    AddProperty("9445", "MEI_Shuttle_BT_Prepping_BU_Prep_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_BU_Prep_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!O113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:17 PM")
-    AddProperty("9435", "MEI_Shuttle_BT_Prepping_Clean_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Clean_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!P112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:54 PM")
-    AddProperty("9446", "MEI_Shuttle_BT_Prepping_Clean_GB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Clean_GB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!P113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:19 PM")
-    AddProperty("9427", "MEI_Shuttle_BT_Prepping_Cut_Wood_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Cut_Wood_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!H112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:35 PM")
-    AddProperty("9438", "MEI_Shuttle_BT_Prepping_Cut_Wood_GB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Cut_Wood_GB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!H113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:01 PM")
-    AddProperty("9433", "MEI_Shuttle_BT_Prepping_H_Brace_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_H_Brace_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!N112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:49 PM")
-    AddProperty("9444", "MEI_Shuttle_BT_Prepping_H_Brace_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_H_Brace_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!N113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:14 PM")
-    AddProperty("9432", "MEI_Shuttle_BT_Prepping_HT_Buckle_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_HT_Buckle_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!M112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:46 PM")
-    AddProperty("9443", "MEI_Shuttle_BT_Prepping_HT_Buckle_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_HT_Buckle_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!M113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:12 PM")
-    AddProperty("9440", "MEI_Shuttle_BT_Prepping_Oil_PB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Oil_PB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!J113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:05 PM")
-    AddProperty("9429", "MEI_Shuttle_BT_Prepping_Oil_Place_Blocks_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Oil_Place_Blocks_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!J112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:39 PM")
-    AddProperty("9425", "MEI_Shuttle_BT_Prepping_Prep_UR_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Prep_UR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!F112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:29 PM")
+    AddProperty("9466", "MEI_Shuttle_BT_Intermediate_VT_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_VT_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!Y113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:39:25 AM")
+    AddProperty("9459", "MEI_Shuttle_BT_Intermediate_VTFA_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Intermediate_VTFA_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!Z112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:55:29 PM")
+    AddProperty("9467", "MEI_Shuttle_BT_Intermediate_VTFA_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Intermediate_VTFA_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!Z113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:39:36 AM")
+    AddProperty("9420", "MEI_Shuttle_BT_Layout_Anchor_Leveling_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Layout_Anchor_Leveling_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!E112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:30:55 PM")
+    AddProperty("9424", "MEI_Shuttle_BT_Layout_Anchor_Leveling_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Layout_Anchor_Leveling_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!E113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:33:37 PM")
+    AddProperty("9419", "MEI_Shuttle_BT_Layout_FAB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Layout_FAB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!D112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:24:57 PM")
+    AddProperty("9423", "MEI_Shuttle_BT_Layout_FAB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Layout_FAB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!D113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:33:13 PM")
+    AddProperty("9417", "MEI_Shuttle_BT_Layout_Pilot_Drill_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Layout_Pilot_Drill_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!B112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:24:24 PM")
+    AddProperty("9421", "MEI_Shuttle_BT_Layout_Pilot_Drill_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Layout_Pilot_Drill_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!B113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:31:51 PM")
+    AddProperty("9418", "MEI_Shuttle_BT_Layout_Second_Hole_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Layout_Second_Hole_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!C112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:24:38 PM")
+    AddProperty("9422", "MEI_Shuttle_BT_Layout_Second_Hole_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Layout_Second_Hole_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!C113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:32:36 PM")
+    AddProperty("9471", "MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!AD112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:08:55 AM")
+    AddProperty("9474", "MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!AD113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:10:23 AM")
+    AddProperty("9469", "MEI_Shuttle_BT_Level_Tight_TT_Zone_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_TT_Zone_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!AB112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:56:24 AM")
+    AddProperty("9472", "MEI_Shuttle_BT_Level_Tight_TT_Zone_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_TT_Zone_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!AB113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:09:15 AM")
+    AddProperty("9470", "MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!AC112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 5:57:05 AM")
+    AddProperty("9473", "MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!AC113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:09:51 AM")
+    AddProperty("9447", "MEI_Shuttle_BT_Material_PreStage_PR_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Material_PreStage_PR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!Q112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:49:17 PM")
+    AddProperty("9450", "MEI_Shuttle_BT_Material_PreStage_PR_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Material_PreStage_PR_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!Q113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:50:17 PM")
+    AddProperty("9448", "MEI_Shuttle_BT_Material_Upright_RS_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Material_Upright_RS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!R112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:49:31 PM")
+    AddProperty("9451", "MEI_Shuttle_BT_Material_Upright_RS_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Material_Upright_RS_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!R113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:50:36 PM")
+    AddProperty("9449", "MEI_Shuttle_BT_Material_VB_Prep_Area_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Material_VB_Prep_Area_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!S112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:49:44 PM")
+    AddProperty("9452", "MEI_Shuttle_BT_Material_VB_Prep_Area_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Material_VB_Prep_Area_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!S113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:53:17 PM")
+    AddProperty("9428", "MEI_Shuttle_BT_Prepping_Assemble_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Assemble_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!I112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:35:27 PM")
+    AddProperty("9439", "MEI_Shuttle_BT_Prepping_Assemble_GB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Assemble_GB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!I113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:42:51 PM")
+    AddProperty("9434", "MEI_Shuttle_BT_Prepping_BU_Prep_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_BU_Prep_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!O112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:37:41 PM")
+    AddProperty("9445", "MEI_Shuttle_BT_Prepping_BU_Prep_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_BU_Prep_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!O113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:47:59 PM")
+    AddProperty("9435", "MEI_Shuttle_BT_Prepping_Clean_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Clean_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!P112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:39:42 PM")
+    AddProperty("9446", "MEI_Shuttle_BT_Prepping_Clean_GB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Clean_GB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!P113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:48:16 PM")
+    AddProperty("9427", "MEI_Shuttle_BT_Prepping_Cut_Wood_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Cut_Wood_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!H112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:35:07 PM")
+    AddProperty("9438", "MEI_Shuttle_BT_Prepping_Cut_Wood_GB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Cut_Wood_GB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!H113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:42:34 PM")
+    AddProperty("9433", "MEI_Shuttle_BT_Prepping_H_Brace_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_H_Brace_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!N112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:37:16 PM")
+    AddProperty("9444", "MEI_Shuttle_BT_Prepping_H_Brace_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_H_Brace_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!N113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:47:41 PM")
+    AddProperty("9432", "MEI_Shuttle_BT_Prepping_HT_Buckle_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_HT_Buckle_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!M112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:36:55 PM")
+    AddProperty("9443", "MEI_Shuttle_BT_Prepping_HT_Buckle_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_HT_Buckle_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!M113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:47:22 PM")
+    AddProperty("9440", "MEI_Shuttle_BT_Prepping_Oil_PB_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Oil_PB_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!J113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:43:12 PM")
+    AddProperty("9429", "MEI_Shuttle_BT_Prepping_Oil_Place_Blocks_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Oil_Place_Blocks_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!J112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:35:58 PM")
+    AddProperty("9425", "MEI_Shuttle_BT_Prepping_Prep_UR_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Prep_UR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!F112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:34:11 PM")
     AddProperty("9436", "MEI_Shuttle_BT_Prepping_Prep_UR_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Prep_UR_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!F113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:56 PM")
-    AddProperty("9426", "MEI_Shuttle_BT_Prepping_Upright_AP_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Upright_AP_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!G112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:32 PM")
-    AddProperty("9437", "MEI_Shuttle_BT_Prepping_Upright_AP_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Upright_AP_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!G113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:59 PM")
-    AddProperty("9431", "MEI_Shuttle_BT_Prepping_VBT_Buckle_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_VBT_Buckle_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!L112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:44 PM")
-    AddProperty("9442", "MEI_Shuttle_BT_Prepping_VBT_Buckle_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_VBT_Buckle_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!L113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:10 PM")
-    AddProperty("9430", "MEI_Shuttle_BT_Prepping_VT_Buckle_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_VT_Buckle_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!K112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:42 PM")
-    AddProperty("9441", "MEI_Shuttle_BT_Prepping_VT_Buckle_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_VT_Buckle_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!K113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:24:08 PM")
-    AddProperty("9475", "MEI_Shuttle_BT_Time_Per_Bracing_Tower", <a><![CDATA[MEI_Shuttle_BT_Time_Per_Bracing_Tower]]></a>.Value, "Mech Install^'Shuttle'!C114", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:24 PM")
-    AddProperty("9361", "MEI_Shuttle_FZ_Intermediate_Conveyor_SR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Conveyor_SR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!P98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:40 PM")
-    AddProperty("9371", "MEI_Shuttle_FZ_Intermediate_Conveyor_SR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Conveyor_SR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!P99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:03 PM")
-    AddProperty("9363", "MEI_Shuttle_FZ_Intermediate_CS_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_CS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!R98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:44 PM")
-    AddProperty("9373", "MEI_Shuttle_FZ_Intermediate_CS_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_CS_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!R99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:07 PM")
-    AddProperty("9365", "MEI_Shuttle_FZ_Intermediate_Cut_HR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Cut_HR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!T98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:49 PM")
-    AddProperty("9375", "MEI_Shuttle_FZ_Intermediate_Cut_HR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Cut_HR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!T99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:12 PM")
-    AddProperty("9364", "MEI_Shuttle_FZ_Intermediate_Front_CS_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Front_CS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!S98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:47 PM")
-    AddProperty("9374", "MEI_Shuttle_FZ_Intermediate_Front_CS_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Front_CS_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!S99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:09 PM")
-    AddProperty("9362", "MEI_Shuttle_FZ_Intermediate_FrontU_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_FrontU_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!Q98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:42 PM")
-    AddProperty("9372", "MEI_Shuttle_FZ_Intermediate_FrontU_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_FrontU_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!Q99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:05 PM")
-    AddProperty("9366", "MEI_Shuttle_FZ_Intermediate_FZ_HB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_FZ_HB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!U98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:51 PM")
-    AddProperty("9376", "MEI_Shuttle_FZ_Intermediate_FZ_HB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_FZ_HB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!U99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:14 PM")
-    AddProperty("9368", "MEI_Shuttle_FZ_Intermediate_Grout_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Grout_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!W98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:56 PM")
-    AddProperty("9378", "MEI_Shuttle_FZ_Intermediate_Grout_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Grout_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!W99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:19 PM")
-    AddProperty("9360", "MEI_Shuttle_FZ_Intermediate_Internal_SR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Internal_SR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!O98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:37 PM")
-    AddProperty("9370", "MEI_Shuttle_FZ_Intermediate_Internal_SR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Internal_SR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!O99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:00 PM")
-    AddProperty("9367", "MEI_Shuttle_FZ_Intermediate_Lift_SR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Lift_SR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!V98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:54 PM")
-    AddProperty("9377", "MEI_Shuttle_FZ_Intermediate_Lift_SR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Lift_SR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!V99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:16 PM")
-    AddProperty("9359", "MEI_Shuttle_FZ_Intermediate_ST_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_ST_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!N98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:35 PM")
-    AddProperty("9369", "MEI_Shuttle_FZ_Intermediate_ST_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_ST_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!N99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:58 PM")
-    AddProperty("9338", "MEI_Shuttle_FZ_Layout_Anchor_Leveling_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Layout_Anchor_Leveling_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!E98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:47 PM")
-    AddProperty("9342", "MEI_Shuttle_FZ_Layout_Anchor_Leveling_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Layout_Anchor_Leveling_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!E99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:56 PM")
-    AddProperty("9337", "MEI_Shuttle_FZ_Layout_FAB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Layout_FAB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!D98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:45 PM")
-    AddProperty("9341", "MEI_Shuttle_FZ_Layout_FAB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Layout_FAB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!D99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:54 PM")
-    AddProperty("9335", "MEI_Shuttle_FZ_Layout_Pilot_Drill_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Layout_Pilot_Drill_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!B98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:40 PM")
-    AddProperty("9339", "MEI_Shuttle_FZ_Layout_Pilot_Drill_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Layout_Pilot_Drill_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!B99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:50 PM")
-    AddProperty("9336", "MEI_Shuttle_FZ_Layout_Second_Hole_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Layout_Second_Hole_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!C98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:43 PM")
-    AddProperty("9340", "MEI_Shuttle_FZ_Layout_Second_Hole_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Layout_Second_Hole_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!C99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:52 PM")
-    AddProperty("9379", "MEI_Shuttle_FZ_Level_Tight_Upright_Knock_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Level_Tight_Upright_Knock_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!X98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:21 PM")
-    AddProperty("9380", "MEI_Shuttle_FZ_Level_Tight_Upright_Knock_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Level_Tight_Upright_Knock_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!X99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:23 PM")
-    AddProperty("9355", "MEI_Shuttle_FZ_Material_PreStage_PR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Material_PreStage_PR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!L98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:26 PM")
-    AddProperty("9357", "MEI_Shuttle_FZ_Material_PreStage_PR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Material_PreStage_PR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!L99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:31 PM")
-    AddProperty("9356", "MEI_Shuttle_FZ_Material_Upright_RS_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Material_Upright_RS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!M98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:28 PM")
-    AddProperty("9358", "MEI_Shuttle_FZ_Material_Upright_RS_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Material_Upright_RS_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!M99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:33 PM")
-    AddProperty("9346", "MEI_Shuttle_FZ_Prepping_Assemble_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Assemble_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!I98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:05 PM")
-    AddProperty("9352", "MEI_Shuttle_FZ_Prepping_Assemble_GB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Assemble_GB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!I99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:19 PM")
-    AddProperty("9348", "MEI_Shuttle_FZ_Prepping_Clean_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Clean_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!K98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:10 PM")
-    AddProperty("9354", "MEI_Shuttle_FZ_Prepping_Clean_GB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Clean_GB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!K99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:23 PM")
-    AddProperty("9345", "MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!H98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:03 PM")
-    AddProperty("9351", "MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!H99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:16 PM")
-    AddProperty("9353", "MEI_Shuttle_FZ_Prepping_Oil_PB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Oil_PB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!J99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:21 PM")
-    AddProperty("9347", "MEI_Shuttle_FZ_Prepping_Oil_Place_Blocks_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Oil_Place_Blocks_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!J98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:07 PM")
-    AddProperty("9343", "MEI_Shuttle_FZ_Prepping_Prep_UR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Prep_UR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!F98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:58 PM")
-    AddProperty("9349", "MEI_Shuttle_FZ_Prepping_Prep_UR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Prep_UR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!F99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:12 PM")
-    AddProperty("9344", "MEI_Shuttle_FZ_Prepping_Upright_AP_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Upright_AP_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!G98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:01 PM")
-    AddProperty("9350", "MEI_Shuttle_FZ_Prepping_Upright_AP_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Upright_AP_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!G99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:20:14 PM")
-    AddProperty("9381", "MEI_Shuttle_FZ_Time_Per_Front_Zone", <a><![CDATA[MEI_Shuttle_FZ_Time_Per_Front_Zone]]></a>.Value, "Mech Install^'Shuttle'!C100", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:26 PM")
-    AddProperty("9273", "MEI_Shuttle_MI_Double_MDR_Lift", <a><![CDATA[MEI_Shuttle_MI_Double_MDR_Lift]]></a>.Value, "Mech Install^'Shuttle'!B67", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:10 PM")
-    AddProperty("9243", "MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:46 PM")
+    AddProperty("9426", "MEI_Shuttle_BT_Prepping_Upright_AP_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_Upright_AP_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!G112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:34:49 PM")
+    AddProperty("9437", "MEI_Shuttle_BT_Prepping_Upright_AP_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_Upright_AP_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!G113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:42:17 PM")
+    AddProperty("9431", "MEI_Shuttle_BT_Prepping_VBT_Buckle_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_VBT_Buckle_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!L112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:36:29 PM")
+    AddProperty("9442", "MEI_Shuttle_BT_Prepping_VBT_Buckle_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_VBT_Buckle_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!L113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:46:44 PM")
+    AddProperty("9430", "MEI_Shuttle_BT_Prepping_VT_Buckle_AMM_Task", <a><![CDATA[MEI_Shuttle_BT_Prepping_VT_Buckle_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!K112", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:44:09 PM")
+    AddProperty("9441", "MEI_Shuttle_BT_Prepping_VT_Buckle_Time_Tower", <a><![CDATA[MEI_Shuttle_BT_Prepping_VT_Buckle_Time_Tower]]></a>.Value, "Mech Install^'Shuttle'!K113", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:46:14 PM")
+    AddProperty("9475", "MEI_Shuttle_BT_Time_Per_Bracing_Tower", <a><![CDATA[MEI_Shuttle_BT_Time_Per_Bracing_Tower]]></a>.Value, "Mech Install^'Shuttle'!C114", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:10:56 AM")
+    AddProperty("9361", "MEI_Shuttle_FZ_Intermediate_Conveyor_SR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Conveyor_SR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!P98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:21:34 PM")
+    AddProperty("9371", "MEI_Shuttle_FZ_Intermediate_Conveyor_SR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Conveyor_SR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!P99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:25:13 PM")
+    AddProperty("9363", "MEI_Shuttle_FZ_Intermediate_CS_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_CS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!R98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:22:14 PM")
+    AddProperty("9373", "MEI_Shuttle_FZ_Intermediate_CS_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_CS_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!R99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:25:51 PM")
+    AddProperty("9365", "MEI_Shuttle_FZ_Intermediate_Cut_HR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Cut_HR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!T98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:22:56 PM")
+    AddProperty("9375", "MEI_Shuttle_FZ_Intermediate_Cut_HR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Cut_HR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!T99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:26:28 PM")
+    AddProperty("9364", "MEI_Shuttle_FZ_Intermediate_Front_CS_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Front_CS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!S98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:22:40 PM")
+    AddProperty("9374", "MEI_Shuttle_FZ_Intermediate_Front_CS_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Front_CS_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!S99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:26:13 PM")
+    AddProperty("9362", "MEI_Shuttle_FZ_Intermediate_FrontU_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_FrontU_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!Q98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:21:55 PM")
+    AddProperty("9372", "MEI_Shuttle_FZ_Intermediate_FrontU_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_FrontU_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!Q99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:25:31 PM")
+    AddProperty("9366", "MEI_Shuttle_FZ_Intermediate_FZ_HB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_FZ_HB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!U98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:23:18 PM")
+    AddProperty("9376", "MEI_Shuttle_FZ_Intermediate_FZ_HB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_FZ_HB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!U99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:26:43 PM")
+    AddProperty("9368", "MEI_Shuttle_FZ_Intermediate_Grout_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Grout_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!W98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:24:17 PM")
+    AddProperty("9378", "MEI_Shuttle_FZ_Intermediate_Grout_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Grout_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!W99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:27:13 PM")
+    AddProperty("9360", "MEI_Shuttle_FZ_Intermediate_Internal_SR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Internal_SR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!O98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:21:11 PM")
+    AddProperty("9370", "MEI_Shuttle_FZ_Intermediate_Internal_SR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Internal_SR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!O99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:24:58 PM")
+    AddProperty("9367", "MEI_Shuttle_FZ_Intermediate_Lift_SR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Lift_SR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!V98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:24:04 PM")
+    AddProperty("9377", "MEI_Shuttle_FZ_Intermediate_Lift_SR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_Lift_SR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!V99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:26:59 PM")
+    AddProperty("9359", "MEI_Shuttle_FZ_Intermediate_ST_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_ST_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!N98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:20:47 PM")
+    AddProperty("9369", "MEI_Shuttle_FZ_Intermediate_ST_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Intermediate_ST_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!N99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:24:37 PM")
+    AddProperty("9338", "MEI_Shuttle_FZ_Layout_Anchor_Leveling_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Layout_Anchor_Leveling_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!E98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:09:19 PM")
+    AddProperty("9342", "MEI_Shuttle_FZ_Layout_Anchor_Leveling_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Layout_Anchor_Leveling_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!E99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:10:30 PM")
+    AddProperty("9337", "MEI_Shuttle_FZ_Layout_FAB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Layout_FAB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!D98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:09:05 PM")
+    AddProperty("9341", "MEI_Shuttle_FZ_Layout_FAB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Layout_FAB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!D99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:10:07 PM")
+    AddProperty("9335", "MEI_Shuttle_FZ_Layout_Pilot_Drill_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Layout_Pilot_Drill_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!B98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:08:38 PM")
+    AddProperty("9339", "MEI_Shuttle_FZ_Layout_Pilot_Drill_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Layout_Pilot_Drill_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!B99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:09:35 PM")
+    AddProperty("9336", "MEI_Shuttle_FZ_Layout_Second_Hole_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Layout_Second_Hole_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!C98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:08:51 PM")
+    AddProperty("9340", "MEI_Shuttle_FZ_Layout_Second_Hole_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Layout_Second_Hole_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!C99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:09:52 PM")
+    AddProperty("9379", "MEI_Shuttle_FZ_Level_Tight_Upright_Knock_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Level_Tight_Upright_Knock_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!X98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:27:41 PM")
+    AddProperty("9380", "MEI_Shuttle_FZ_Level_Tight_Upright_Knock_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Level_Tight_Upright_Knock_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!X99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:28:04 PM")
+    AddProperty("9355", "MEI_Shuttle_FZ_Material_PreStage_PR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Material_PreStage_PR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!L98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:19:14 PM")
+    AddProperty("9357", "MEI_Shuttle_FZ_Material_PreStage_PR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Material_PreStage_PR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!L99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:19:56 PM")
+    AddProperty("9356", "MEI_Shuttle_FZ_Material_Upright_RS_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Material_Upright_RS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!M98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:19:31 PM")
+    AddProperty("9358", "MEI_Shuttle_FZ_Material_Upright_RS_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Material_Upright_RS_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!M99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:20:19 PM")
+    AddProperty("9346", "MEI_Shuttle_FZ_Prepping_Assemble_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Assemble_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!I98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:11:57 PM")
+    AddProperty("9352", "MEI_Shuttle_FZ_Prepping_Assemble_GB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Assemble_GB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!I99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:16:05 PM")
+    AddProperty("9348", "MEI_Shuttle_FZ_Prepping_Clean_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Clean_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!K98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:12:36 PM")
+    AddProperty("9354", "MEI_Shuttle_FZ_Prepping_Clean_GB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Clean_GB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!K99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:18:45 PM")
+    AddProperty("9345", "MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!H98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:11:38 PM")
+    AddProperty("9351", "MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!H99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:15:38 PM")
+    AddProperty("9353", "MEI_Shuttle_FZ_Prepping_Oil_PB_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Oil_PB_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!J99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:18:22 PM")
+    AddProperty("9347", "MEI_Shuttle_FZ_Prepping_Oil_Place_Blocks_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Oil_Place_Blocks_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!J98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:12:18 PM")
+    AddProperty("9343", "MEI_Shuttle_FZ_Prepping_Prep_UR_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Prep_UR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!F98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:10:52 PM")
+    AddProperty("9349", "MEI_Shuttle_FZ_Prepping_Prep_UR_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Prep_UR_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!F99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:15:03 PM")
+    AddProperty("9344", "MEI_Shuttle_FZ_Prepping_Upright_AP_AMM_Task", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Upright_AP_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!G98", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:11:07 PM")
+    AddProperty("9350", "MEI_Shuttle_FZ_Prepping_Upright_AP_Time_Zone", <a><![CDATA[MEI_Shuttle_FZ_Prepping_Upright_AP_Time_Zone]]></a>.Value, "Mech Install^'Shuttle'!G99", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:15:16 PM")
+    AddProperty("9381", "MEI_Shuttle_FZ_Time_Per_Front_Zone", <a><![CDATA[MEI_Shuttle_FZ_Time_Per_Front_Zone]]></a>.Value, "Mech Install^'Shuttle'!C100", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:29:23 PM")
+    AddProperty("9273", "MEI_Shuttle_MI_Double_MDR_Lift", <a><![CDATA[MEI_Shuttle_MI_Double_MDR_Lift]]></a>.Value, "Mech Install^'Shuttle'!B67", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:27:00 AM")
+    AddProperty("9243", "MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:21:32 PM")
     AddProperty("9225", "MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Input", <a><![CDATA[MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:03 PM")
-    AddProperty("9237", "MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Rate", <a><![CDATA[MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:33 PM")
-    AddProperty("9231", "MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:19 PM")
-    AddProperty("9256", "MEI_Shuttle_MI_H_Install_Attachment_Time_Per_Unit", <a><![CDATA[MEI_Shuttle_MI_H_Install_Attachment_Time_Per_Unit]]></a>.Value, "Mech Install^'Shuttle'!D57", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:29 PM")
-    AddProperty("9255", "MEI_Shuttle_MI_H_Install_Grid_Supp_Time_Per_Unit", <a><![CDATA[MEI_Shuttle_MI_H_Install_Grid_Supp_Time_Per_Unit]]></a>.Value, "Mech Install^'Shuttle'!C57", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:27 PM")
-    AddProperty("9254", "MEI_Shuttle_MI_H_Install_Mat_Move_Time_Per_Unit", <a><![CDATA[MEI_Shuttle_MI_H_Install_Mat_Move_Time_Per_Unit]]></a>.Value, "Mech Install^'Shuttle'!B57", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:24 PM")
-    AddProperty("9245", "MEI_Shuttle_MI_Hoist_Hours", <a><![CDATA[MEI_Shuttle_MI_Hoist_Hours]]></a>.Value, "Mech Install^'Shuttle'!F38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:03 PM")
+    AddProperty("9237", "MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Rate", <a><![CDATA[MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:17:46 PM")
+    AddProperty("9231", "MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D36", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:13:50 PM")
+    AddProperty("9256", "MEI_Shuttle_MI_H_Install_Attachment_Time_Per_Unit", <a><![CDATA[MEI_Shuttle_MI_H_Install_Attachment_Time_Per_Unit]]></a>.Value, "Mech Install^'Shuttle'!D57", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:14:22 AM")
+    AddProperty("9255", "MEI_Shuttle_MI_H_Install_Grid_Supp_Time_Per_Unit", <a><![CDATA[MEI_Shuttle_MI_H_Install_Grid_Supp_Time_Per_Unit]]></a>.Value, "Mech Install^'Shuttle'!C57", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:14:08 AM")
+    AddProperty("9254", "MEI_Shuttle_MI_H_Install_Mat_Move_Time_Per_Unit", <a><![CDATA[MEI_Shuttle_MI_H_Install_Mat_Move_Time_Per_Unit]]></a>.Value, "Mech Install^'Shuttle'!B57", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:13:51 AM")
+    AddProperty("9245", "MEI_Shuttle_MI_Hoist_Hours", <a><![CDATA[MEI_Shuttle_MI_Hoist_Hours]]></a>.Value, "Mech Install^'Shuttle'!F38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:22:48 PM")
     AddProperty("9227", "MEI_Shuttle_MI_Hoist_Input", <a><![CDATA[MEI_Shuttle_MI_Hoist_Input]]></a>.Value, "Mech Install^'Shuttle'!B38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:08 PM")
-    AddProperty("9239", "MEI_Shuttle_MI_Hoist_Rate", <a><![CDATA[MEI_Shuttle_MI_Hoist_Rate]]></a>.Value, "Mech Install^'Shuttle'!E38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:37 PM")
-    AddProperty("9233", "MEI_Shuttle_MI_Hoist_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Hoist_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:24 PM")
-    AddProperty("9257", "MEI_Shuttle_MI_Hours_Per_Hoist", <a><![CDATA[MEI_Shuttle_MI_Hours_Per_Hoist]]></a>.Value, "Mech Install^'Shuttle'!B59", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:31 PM")
-    AddProperty("9272", "MEI_Shuttle_MI_Hours_Per_Lift", <a><![CDATA[MEI_Shuttle_MI_Hours_Per_Lift]]></a>.Value, "Mech Install^'Shuttle'!B66", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:07 PM")
-    AddProperty("9253", "MEI_Shuttle_MI_Hours_Per_MDR", <a><![CDATA[MEI_Shuttle_MI_Hours_Per_MDR]]></a>.Value, "Mech Install^'Shuttle'!B53", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:22 PM")
-    AddProperty("9267", "MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!D65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:55 PM")
-    AddProperty("9260", "MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!D64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:38 PM")
-    AddProperty("9269", "MEI_Shuttle_MI_Lift_Install_L_Plumb_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_L_Plumb_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!F65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:59 PM")
-    AddProperty("9262", "MEI_Shuttle_MI_Lift_Install_L_Plumb_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_L_Plumb_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!F64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:44 PM")
-    AddProperty("9268", "MEI_Shuttle_MI_Lift_Install_Lift_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Lift_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!E65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:57 PM")
-    AddProperty("9261", "MEI_Shuttle_MI_Lift_Install_Lift_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Lift_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!E64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:41 PM")
-    AddProperty("9265", "MEI_Shuttle_MI_Lift_Install_Mat_Move_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Mat_Move_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!B65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:50 PM")
-    AddProperty("9258", "MEI_Shuttle_MI_Lift_Install_Mat_Move_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Mat_Move_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!B64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:34 PM")
-    AddProperty("9270", "MEI_Shuttle_MI_Lift_Install_MDR_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_MDR_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!G65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:02 PM")
-    AddProperty("9263", "MEI_Shuttle_MI_Lift_Install_MDR_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_MDR_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!G64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:46 PM")
-    AddProperty("9271", "MEI_Shuttle_MI_Lift_Install_Run_In_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Run_In_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!H65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:05 PM")
-    AddProperty("9264", "MEI_Shuttle_MI_Lift_Install_Run_In_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Run_In_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!H64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:48 PM")
-    AddProperty("9266", "MEI_Shuttle_MI_Lift_Install_Staging_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Staging_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!C65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:53 PM")
-    AddProperty("9259", "MEI_Shuttle_MI_Lift_Install_Staging_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Staging_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!C64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:36 PM")
-    AddProperty("9252", "MEI_Shuttle_MI_MDR_Install_Attach_Guarding", <a><![CDATA[MEI_Shuttle_MI_MDR_Install_Attach_Guarding]]></a>.Value, "Mech Install^'Shuttle'!F51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:20 PM")
-    AddProperty("9250", "MEI_Shuttle_MI_MDR_Install_Layout", <a><![CDATA[MEI_Shuttle_MI_MDR_Install_Layout]]></a>.Value, "Mech Install^'Shuttle'!D51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:15 PM")
-    AddProperty("9248", "MEI_Shuttle_MI_MDR_Install_Mat_Movement", <a><![CDATA[MEI_Shuttle_MI_MDR_Install_Mat_Movement]]></a>.Value, "Mech Install^'Shuttle'!B51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:10 PM")
-    AddProperty("9249", "MEI_Shuttle_MI_MDR_Install_Uncrate", <a><![CDATA[MEI_Shuttle_MI_MDR_Install_Uncrate]]></a>.Value, "Mech Install^'Shuttle'!C51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:12 PM")
-    AddProperty("9251", "MEI_Shuttle_MI_MDR_Installation", <a><![CDATA[MEI_Shuttle_MI_MDR_Installation]]></a>.Value, "Mech Install^'Shuttle'!E51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:17 PM")
-    AddProperty("9241", "MEI_Shuttle_MI_MDR_Installation_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_MDR_Installation_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:42 PM")
+    AddProperty("9239", "MEI_Shuttle_MI_Hoist_Rate", <a><![CDATA[MEI_Shuttle_MI_Hoist_Rate]]></a>.Value, "Mech Install^'Shuttle'!E38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:18:30 PM")
+    AddProperty("9233", "MEI_Shuttle_MI_Hoist_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Hoist_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D38", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:15:28 PM")
+    AddProperty("9257", "MEI_Shuttle_MI_Hours_Per_Hoist", <a><![CDATA[MEI_Shuttle_MI_Hours_Per_Hoist]]></a>.Value, "Mech Install^'Shuttle'!B59", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:15:22 AM")
+    AddProperty("9272", "MEI_Shuttle_MI_Hours_Per_Lift", <a><![CDATA[MEI_Shuttle_MI_Hours_Per_Lift]]></a>.Value, "Mech Install^'Shuttle'!B66", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:25:31 AM")
+    AddProperty("9253", "MEI_Shuttle_MI_Hours_Per_MDR", <a><![CDATA[MEI_Shuttle_MI_Hours_Per_MDR]]></a>.Value, "Mech Install^'Shuttle'!B53", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:12:21 AM")
+    AddProperty("9267", "MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!D65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:20:21 AM")
+    AddProperty("9260", "MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!D64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:17:37 AM")
+    AddProperty("9269", "MEI_Shuttle_MI_Lift_Install_L_Plumb_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_L_Plumb_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!F65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:20:58 AM")
+    AddProperty("9262", "MEI_Shuttle_MI_Lift_Install_L_Plumb_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_L_Plumb_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!F64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:18:15 AM")
+    AddProperty("9268", "MEI_Shuttle_MI_Lift_Install_Lift_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Lift_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!E65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:20:42 AM")
+    AddProperty("9261", "MEI_Shuttle_MI_Lift_Install_Lift_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Lift_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!E64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:17:57 AM")
+    AddProperty("9265", "MEI_Shuttle_MI_Lift_Install_Mat_Move_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Mat_Move_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!B65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:19:33 AM")
+    AddProperty("9258", "MEI_Shuttle_MI_Lift_Install_Mat_Move_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Mat_Move_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!B64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:15:54 AM")
+    AddProperty("9270", "MEI_Shuttle_MI_Lift_Install_MDR_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_MDR_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!G65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:24:18 AM")
+    AddProperty("9263", "MEI_Shuttle_MI_Lift_Install_MDR_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_MDR_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!G64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:18:47 AM")
+    AddProperty("9271", "MEI_Shuttle_MI_Lift_Install_Run_In_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Run_In_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!H65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:24:56 AM")
+    AddProperty("9264", "MEI_Shuttle_MI_Lift_Install_Run_In_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Run_In_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!H64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:19:09 AM")
+    AddProperty("9266", "MEI_Shuttle_MI_Lift_Install_Staging_Hours_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Staging_Hours_lift]]></a>.Value, "Mech Install^'Shuttle'!C65", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:20:00 AM")
+    AddProperty("9259", "MEI_Shuttle_MI_Lift_Install_Staging_Min_Per_lift", <a><![CDATA[MEI_Shuttle_MI_Lift_Install_Staging_Min_Per_lift]]></a>.Value, "Mech Install^'Shuttle'!C64", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:16:19 AM")
+    AddProperty("9252", "MEI_Shuttle_MI_MDR_Install_Attach_Guarding", <a><![CDATA[MEI_Shuttle_MI_MDR_Install_Attach_Guarding]]></a>.Value, "Mech Install^'Shuttle'!F51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:11:38 AM")
+    AddProperty("9250", "MEI_Shuttle_MI_MDR_Install_Layout", <a><![CDATA[MEI_Shuttle_MI_MDR_Install_Layout]]></a>.Value, "Mech Install^'Shuttle'!D51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:10:57 AM")
+    AddProperty("9248", "MEI_Shuttle_MI_MDR_Install_Mat_Movement", <a><![CDATA[MEI_Shuttle_MI_MDR_Install_Mat_Movement]]></a>.Value, "Mech Install^'Shuttle'!B51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:08:52 AM")
+    AddProperty("9249", "MEI_Shuttle_MI_MDR_Install_Uncrate", <a><![CDATA[MEI_Shuttle_MI_MDR_Install_Uncrate]]></a>.Value, "Mech Install^'Shuttle'!C51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:09:23 AM")
+    AddProperty("9251", "MEI_Shuttle_MI_MDR_Installation", <a><![CDATA[MEI_Shuttle_MI_MDR_Installation]]></a>.Value, "Mech Install^'Shuttle'!E51", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:11:20 AM")
+    AddProperty("9241", "MEI_Shuttle_MI_MDR_Installation_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_MDR_Installation_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:20:18 PM")
     AddProperty("9223", "MEI_Shuttle_MI_MDR_Installation_Aisle_Input", <a><![CDATA[MEI_Shuttle_MI_MDR_Installation_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:59 PM")
-    AddProperty("9235", "MEI_Shuttle_MI_MDR_Installation_Aisle_Rate", <a><![CDATA[MEI_Shuttle_MI_MDR_Installation_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:29 PM")
-    AddProperty("9229", "MEI_Shuttle_MI_MDR_Installation_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_MDR_Installation_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:14 PM")
-    AddProperty("9244", "MEI_Shuttle_MI_Other_Lifts_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_Other_Lifts_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:48 PM")
+    AddProperty("9235", "MEI_Shuttle_MI_MDR_Installation_Aisle_Rate", <a><![CDATA[MEI_Shuttle_MI_MDR_Installation_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:16:35 PM")
+    AddProperty("9229", "MEI_Shuttle_MI_MDR_Installation_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_MDR_Installation_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D34", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:12:09 PM")
+    AddProperty("9244", "MEI_Shuttle_MI_Other_Lifts_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_Other_Lifts_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:22:08 PM")
     AddProperty("9226", "MEI_Shuttle_MI_Other_Lifts_Aisle_Input", <a><![CDATA[MEI_Shuttle_MI_Other_Lifts_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:06 PM")
     AddProperty("9238", "MEI_Shuttle_MI_Other_Lifts_Aisle_Rate", <a><![CDATA[MEI_Shuttle_MI_Other_Lifts_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:35 PM")
-    AddProperty("9232", "MEI_Shuttle_MI_Other_Lifts_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Other_Lifts_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:22 PM")
-    AddProperty("9240", "MEI_Shuttle_MI_Shuttles_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_Shuttles_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:40 PM")
+    AddProperty("9232", "MEI_Shuttle_MI_Other_Lifts_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Other_Lifts_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D37", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:14:31 PM")
+    AddProperty("9240", "MEI_Shuttle_MI_Shuttles_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_Shuttles_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:19:41 PM")
     AddProperty("9222", "MEI_Shuttle_MI_Shuttles_Aisle_Input", <a><![CDATA[MEI_Shuttle_MI_Shuttles_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:57 PM")
-    AddProperty("9234", "MEI_Shuttle_MI_Shuttles_Aisle_Rate", <a><![CDATA[MEI_Shuttle_MI_Shuttles_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:26 PM")
-    AddProperty("9228", "MEI_Shuttle_MI_Shuttles_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Shuttles_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:11 PM")
-    AddProperty("9247", "MEI_Shuttle_MI_Total_Hours", <a><![CDATA[MEI_Shuttle_MI_Total_Hours]]></a>.Value, "Mech Install^'Shuttle'!F42", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:07 PM")
-    AddProperty("9246", "MEI_Shuttle_MI_Total_Shuttle_Hours", <a><![CDATA[MEI_Shuttle_MI_Total_Shuttle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:16:05 PM")
-    AddProperty("9242", "MEI_Shuttle_MI_Vertical_Lifts_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_Vertical_Lifts_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:44 PM")
+    AddProperty("9234", "MEI_Shuttle_MI_Shuttles_Aisle_Rate", <a><![CDATA[MEI_Shuttle_MI_Shuttles_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:16:02 PM")
+    AddProperty("9228", "MEI_Shuttle_MI_Shuttles_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Shuttles_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D33", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:10:20 PM")
+    AddProperty("9247", "MEI_Shuttle_MI_Total_Hours", <a><![CDATA[MEI_Shuttle_MI_Total_Hours]]></a>.Value, "Mech Install^'Shuttle'!F42", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:25:01 PM")
+    AddProperty("9246", "MEI_Shuttle_MI_Total_Shuttle_Hours", <a><![CDATA[MEI_Shuttle_MI_Total_Shuttle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F40", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:23:27 PM")
+    AddProperty("9242", "MEI_Shuttle_MI_Vertical_Lifts_Aisle_Hours", <a><![CDATA[MEI_Shuttle_MI_Vertical_Lifts_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:20:58 PM")
     AddProperty("9224", "MEI_Shuttle_MI_Vertical_Lifts_Aisle_Input", <a><![CDATA[MEI_Shuttle_MI_Vertical_Lifts_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:01 PM")
-    AddProperty("9236", "MEI_Shuttle_MI_Vertical_Lifts_Aisle_Rate", <a><![CDATA[MEI_Shuttle_MI_Vertical_Lifts_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:31 PM")
-    AddProperty("9230", "MEI_Shuttle_MI_Vertical_Lifts_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Vertical_Lifts_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:15:17 PM")
-    AddProperty("9202", "MEI_Shuttle_RI_Aisles_Hours", <a><![CDATA[MEI_Shuttle_RI_Aisles_Hours]]></a>.Value, "Mech Install^'Shuttle'!F5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:08 PM")
+    AddProperty("9236", "MEI_Shuttle_MI_Vertical_Lifts_Aisle_Rate", <a><![CDATA[MEI_Shuttle_MI_Vertical_Lifts_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:17:11 PM")
+    AddProperty("9230", "MEI_Shuttle_MI_Vertical_Lifts_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_MI_Vertical_Lifts_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D35", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:12:58 PM")
+    AddProperty("9202", "MEI_Shuttle_RI_Aisles_Hours", <a><![CDATA[MEI_Shuttle_RI_Aisles_Hours]]></a>.Value, "Mech Install^'Shuttle'!F5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:50:04 PM")
     AddProperty("9145", "MEI_Shuttle_RI_Aisles_Input", <a><![CDATA[MEI_Shuttle_RI_Aisles_Input]]></a>.Value, "Mech Install^'Shuttle'!B5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:40 PM")
-    AddProperty("9183", "MEI_Shuttle_RI_Aisles_Rate", <a><![CDATA[MEI_Shuttle_RI_Aisles_Rate]]></a>.Value, "Mech Install^'Shuttle'!E5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:20 PM")
-    AddProperty("9164", "MEI_Shuttle_RI_Aisles_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Aisles_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/18/2025 9:15:12 AM")
-    AddProperty("9204", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:14 PM")
+    AddProperty("9183", "MEI_Shuttle_RI_Aisles_Rate", <a><![CDATA[MEI_Shuttle_RI_Aisles_Rate]]></a>.Value, "Mech Install^'Shuttle'!E5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:31:49 PM")
+    AddProperty("9164", "MEI_Shuttle_RI_Aisles_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Aisles_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D5", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:16:38 AM")
+    AddProperty("9204", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:51:52 PM")
     AddProperty("9147", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:45 PM")
-    AddProperty("9185", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:25 PM")
-    AddProperty("9166", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:33 PM")
-    AddProperty("9218", "MEI_Shuttle_RI_Entry_Gates_Hours", <a><![CDATA[MEI_Shuttle_RI_Entry_Gates_Hours]]></a>.Value, "Mech Install^'Shuttle'!F24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:48 PM")
+    AddProperty("9185", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:34:16 PM")
+    AddProperty("9166", "MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D7", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:14:49 AM")
+    AddProperty("9218", "MEI_Shuttle_RI_Entry_Gates_Hours", <a><![CDATA[MEI_Shuttle_RI_Entry_Gates_Hours]]></a>.Value, "Mech Install^'Shuttle'!F24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:06:06 PM")
     AddProperty("9161", "MEI_Shuttle_RI_Entry_Gates_Input", <a><![CDATA[MEI_Shuttle_RI_Entry_Gates_Input]]></a>.Value, "Mech Install^'Shuttle'!B24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:21 PM")
-    AddProperty("9199", "MEI_Shuttle_RI_Entry_Gates_Rate", <a><![CDATA[MEI_Shuttle_RI_Entry_Gates_Rate]]></a>.Value, "Mech Install^'Shuttle'!E24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:01 PM")
-    AddProperty("9180", "MEI_Shuttle_RI_Entry_Gates_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Entry_Gates_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:13 PM")
-    AddProperty("9307", "MEI_Shuttle_RI_Fencing_Anchor_Drill_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Fencing_Anchor_Drill_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!D90", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:32 PM")
-    AddProperty("9312", "MEI_Shuttle_RI_Fencing_Anchor_Drill_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Fencing_Anchor_Drill_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!D91", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:44 PM")
+    AddProperty("9199", "MEI_Shuttle_RI_Entry_Gates_Rate", <a><![CDATA[MEI_Shuttle_RI_Entry_Gates_Rate]]></a>.Value, "Mech Install^'Shuttle'!E24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:46:14 PM")
+    AddProperty("9180", "MEI_Shuttle_RI_Entry_Gates_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Entry_Gates_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D24", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:28:40 PM")
+    AddProperty("9307", "MEI_Shuttle_RI_Fencing_Anchor_Drill_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Fencing_Anchor_Drill_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!D90", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:53:15 AM")
+    AddProperty("9312", "MEI_Shuttle_RI_Fencing_Anchor_Drill_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Fencing_Anchor_Drill_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!D91", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:55:07 AM")
     AddProperty("9308", "MEI_Shuttle_RI_Fencing_Entry_D_Build_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Fencing_Entry_D_Build_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!E90", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:35 PM")
     AddProperty("9313", "MEI_Shuttle_RI_Fencing_Entry_D_Build_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Fencing_Entry_D_Build_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!E91", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:46 PM")
-    AddProperty("9309", "MEI_Shuttle_RI_Fencing_Entry_D_Inst_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Fencing_Entry_D_Inst_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!F90", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:37 PM")
+    AddProperty("9309", "MEI_Shuttle_RI_Fencing_Entry_D_Inst_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Fencing_Entry_D_Inst_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!F90", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:53:49 AM")
     AddProperty("9314", "MEI_Shuttle_RI_Fencing_Entry_D_Inst_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Fencing_Entry_D_Inst_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!F91", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:50 PM")
-    AddProperty("9316", "MEI_Shuttle_RI_Fencing_Entry_Door", <a><![CDATA[MEI_Shuttle_RI_Fencing_Entry_Door]]></a>.Value, "Mech Install^'Shuttle'!C93", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:55 PM")
-    AddProperty("9212", "MEI_Shuttle_RI_Fencing_Hours", <a><![CDATA[MEI_Shuttle_RI_Fencing_Hours]]></a>.Value, "Mech Install^'Shuttle'!F17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:32 PM")
+    AddProperty("9316", "MEI_Shuttle_RI_Fencing_Entry_Door", <a><![CDATA[MEI_Shuttle_RI_Fencing_Entry_Door]]></a>.Value, "Mech Install^'Shuttle'!C93", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:56:09 AM")
+    AddProperty("9212", "MEI_Shuttle_RI_Fencing_Hours", <a><![CDATA[MEI_Shuttle_RI_Fencing_Hours]]></a>.Value, "Mech Install^'Shuttle'!F17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:00:33 PM")
     AddProperty("9155", "MEI_Shuttle_RI_Fencing_Input", <a><![CDATA[MEI_Shuttle_RI_Fencing_Input]]></a>.Value, "Mech Install^'Shuttle'!B17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:05 PM")
-    AddProperty("9305", "MEI_Shuttle_RI_Fencing_Layout_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Fencing_Layout_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!B90", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:28 PM")
-    AddProperty("9310", "MEI_Shuttle_RI_Fencing_Layout_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Fencing_Layout_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!B91", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:39 PM")
-    AddProperty("9193", "MEI_Shuttle_RI_Fencing_Rate", <a><![CDATA[MEI_Shuttle_RI_Fencing_Rate]]></a>.Value, "Mech Install^'Shuttle'!E17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:44 PM")
-    AddProperty("9306", "MEI_Shuttle_RI_Fencing_STD_Exterior_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Fencing_STD_Exterior_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!C90", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:30 PM")
-    AddProperty("9311", "MEI_Shuttle_RI_Fencing_STD_Exterior_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Fencing_STD_Exterior_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!C91", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:42 PM")
-    AddProperty("9174", "MEI_Shuttle_RI_Fencing_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Fencing_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:53 PM")
-    AddProperty("9315", "MEI_Shuttle_RI_Fencing_Time_Per_Foot", <a><![CDATA[MEI_Shuttle_RI_Fencing_Time_Per_Foot]]></a>.Value, "Mech Install^'Shuttle'!C92", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:52 PM")
-    AddProperty("9208", "MEI_Shuttle_RI_Front_Zone_Hours", <a><![CDATA[MEI_Shuttle_RI_Front_Zone_Hours]]></a>.Value, "Mech Install^'Shuttle'!F11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:23 PM")
+    AddProperty("9305", "MEI_Shuttle_RI_Fencing_Layout_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Fencing_Layout_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!B90", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:52:37 AM")
+    AddProperty("9310", "MEI_Shuttle_RI_Fencing_Layout_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Fencing_Layout_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!B91", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:54:11 AM")
+    AddProperty("9193", "MEI_Shuttle_RI_Fencing_Rate", <a><![CDATA[MEI_Shuttle_RI_Fencing_Rate]]></a>.Value, "Mech Install^'Shuttle'!E17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:41:19 PM")
+    AddProperty("9306", "MEI_Shuttle_RI_Fencing_STD_Exterior_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Fencing_STD_Exterior_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!C90", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:52:55 AM")
+    AddProperty("9311", "MEI_Shuttle_RI_Fencing_STD_Exterior_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Fencing_STD_Exterior_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!C91", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:54:25 AM")
+    AddProperty("9174", "MEI_Shuttle_RI_Fencing_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Fencing_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:47:21 AM")
+    AddProperty("9315", "MEI_Shuttle_RI_Fencing_Time_Per_Foot", <a><![CDATA[MEI_Shuttle_RI_Fencing_Time_Per_Foot]]></a>.Value, "Mech Install^'Shuttle'!C92", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:56:40 AM")
+    AddProperty("9208", "MEI_Shuttle_RI_Front_Zone_Hours", <a><![CDATA[MEI_Shuttle_RI_Front_Zone_Hours]]></a>.Value, "Mech Install^'Shuttle'!F11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:58:29 PM")
     AddProperty("9151", "MEI_Shuttle_RI_Front_Zone_Input", <a><![CDATA[MEI_Shuttle_RI_Front_Zone_Input]]></a>.Value, "Mech Install^'Shuttle'!B11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:55 PM")
-    AddProperty("9189", "MEI_Shuttle_RI_Front_Zone_Rate", <a><![CDATA[MEI_Shuttle_RI_Front_Zone_Rate]]></a>.Value, "Mech Install^'Shuttle'!E11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:34 PM")
-    AddProperty("9170", "MEI_Shuttle_RI_Front_Zone_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Front_Zone_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:43 PM")
+    AddProperty("9189", "MEI_Shuttle_RI_Front_Zone_Rate", <a><![CDATA[MEI_Shuttle_RI_Front_Zone_Rate]]></a>.Value, "Mech Install^'Shuttle'!E11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:37:16 PM")
+    AddProperty("9170", "MEI_Shuttle_RI_Front_Zone_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Front_Zone_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D11", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:19:33 AM")
     AddProperty("9209", "MEI_Shuttle_RI_Height_Hours", <a><![CDATA[MEI_Shuttle_RI_Height_Hours]]></a>.Value, "Mech Install^'Shuttle'!F13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:25 PM")
     AddProperty("9152", "MEI_Shuttle_RI_Height_Input", <a><![CDATA[MEI_Shuttle_RI_Height_Input]]></a>.Value, "Mech Install^'Shuttle'!B13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:57 PM")
-    AddProperty("9190", "MEI_Shuttle_RI_Height_Rate", <a><![CDATA[MEI_Shuttle_RI_Height_Rate]]></a>.Value, "Mech Install^'Shuttle'!E13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:37 PM")
-    AddProperty("9171", "MEI_Shuttle_RI_Height_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Height_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:45 PM")
-    AddProperty("9219", "MEI_Shuttle_RI_Layout_Hours", <a><![CDATA[MEI_Shuttle_RI_Layout_Hours]]></a>.Value, "Mech Install^'Shuttle'!F26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:50 PM")
+    AddProperty("9190", "MEI_Shuttle_RI_Height_Rate", <a><![CDATA[MEI_Shuttle_RI_Height_Rate]]></a>.Value, "Mech Install^'Shuttle'!E13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:39:31 PM")
+    AddProperty("9171", "MEI_Shuttle_RI_Height_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Height_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:33:35 AM")
+    AddProperty("9219", "MEI_Shuttle_RI_Layout_Hours", <a><![CDATA[MEI_Shuttle_RI_Layout_Hours]]></a>.Value, "Mech Install^'Shuttle'!F26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:06:41 PM")
     AddProperty("9162", "MEI_Shuttle_RI_Layout_Input", <a><![CDATA[MEI_Shuttle_RI_Layout_Input]]></a>.Value, "Mech Install^'Shuttle'!B26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:23 PM")
-    AddProperty("9200", "MEI_Shuttle_RI_Layout_Rate", <a><![CDATA[MEI_Shuttle_RI_Layout_Rate]]></a>.Value, "Mech Install^'Shuttle'!E26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:03 PM")
-    AddProperty("9181", "MEI_Shuttle_RI_Layout_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Layout_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:16 PM")
-    AddProperty("9210", "MEI_Shuttle_RI_Length_Hours", <a><![CDATA[MEI_Shuttle_RI_Length_Hours]]></a>.Value, "Mech Install^'Shuttle'!F14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:28 PM")
+    AddProperty("9200", "MEI_Shuttle_RI_Layout_Rate", <a><![CDATA[MEI_Shuttle_RI_Layout_Rate]]></a>.Value, "Mech Install^'Shuttle'!E26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:46:50 PM")
+    AddProperty("9181", "MEI_Shuttle_RI_Layout_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Layout_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D26", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:30:11 PM")
+    AddProperty("9210", "MEI_Shuttle_RI_Length_Hours", <a><![CDATA[MEI_Shuttle_RI_Length_Hours]]></a>.Value, "Mech Install^'Shuttle'!F14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:59:16 PM")
     AddProperty("9153", "MEI_Shuttle_RI_Length_Input", <a><![CDATA[MEI_Shuttle_RI_Length_Input]]></a>.Value, "Mech Install^'Shuttle'!B14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:00 PM")
     AddProperty("9191", "MEI_Shuttle_RI_Length_Rate", <a><![CDATA[MEI_Shuttle_RI_Length_Rate]]></a>.Value, "Mech Install^'Shuttle'!E14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:39 PM")
-    AddProperty("9172", "MEI_Shuttle_RI_Length_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Length_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:48 PM")
-    AddProperty("9206", "MEI_Shuttle_RI_Levels_Aisle_Hours", <a><![CDATA[MEI_Shuttle_RI_Levels_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:19 PM")
+    AddProperty("9172", "MEI_Shuttle_RI_Length_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Length_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:41:58 AM")
+    AddProperty("9206", "MEI_Shuttle_RI_Levels_Aisle_Hours", <a><![CDATA[MEI_Shuttle_RI_Levels_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:53:19 PM")
     AddProperty("9149", "MEI_Shuttle_RI_Levels_Aisle_Input", <a><![CDATA[MEI_Shuttle_RI_Levels_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:50 PM")
-    AddProperty("9187", "MEI_Shuttle_RI_Levels_Aisle_Rate", <a><![CDATA[MEI_Shuttle_RI_Levels_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:30 PM")
-    AddProperty("9168", "MEI_Shuttle_RI_Levels_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Levels_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:38 PM")
-    AddProperty("9220", "MEI_Shuttle_RI_Material_Movement_Hours", <a><![CDATA[MEI_Shuttle_RI_Material_Movement_Hours]]></a>.Value, "Mech Install^'Shuttle'!F27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:52 PM")
+    AddProperty("9187", "MEI_Shuttle_RI_Levels_Aisle_Rate", <a><![CDATA[MEI_Shuttle_RI_Levels_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:35:31 PM")
+    AddProperty("9168", "MEI_Shuttle_RI_Levels_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Levels_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D9", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:12:50 AM")
+    AddProperty("9220", "MEI_Shuttle_RI_Material_Movement_Hours", <a><![CDATA[MEI_Shuttle_RI_Material_Movement_Hours]]></a>.Value, "Mech Install^'Shuttle'!F27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:07:22 PM")
     AddProperty("9163", "MEI_Shuttle_RI_Material_Movement_Input", <a><![CDATA[MEI_Shuttle_RI_Material_Movement_Input]]></a>.Value, "Mech Install^'Shuttle'!B27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:26 PM")
-    AddProperty("9201", "MEI_Shuttle_RI_Material_Movement_Rate", <a><![CDATA[MEI_Shuttle_RI_Material_Movement_Rate]]></a>.Value, "Mech Install^'Shuttle'!E27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:06 PM")
-    AddProperty("9182", "MEI_Shuttle_RI_Material_Movement_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Material_Movement_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:18 PM")
-    AddProperty("9285", "MEI_Shuttle_RI_Net_Inst_Attach_N_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Attach_N_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!H82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:39 PM")
-    AddProperty("9301", "MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!H84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:17 PM")
+    AddProperty("9201", "MEI_Shuttle_RI_Material_Movement_Rate", <a><![CDATA[MEI_Shuttle_RI_Material_Movement_Rate]]></a>.Value, "Mech Install^'Shuttle'!E27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:47:36 PM")
+    AddProperty("9182", "MEI_Shuttle_RI_Material_Movement_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Material_Movement_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D27", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:30:44 PM")
+    AddProperty("9285", "MEI_Shuttle_RI_Net_Inst_Attach_N_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Attach_N_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!H82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:35:35 AM")
+    AddProperty("9301", "MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!H84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:50:15 AM")
     AddProperty("9293", "MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!H83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:58 PM")
-    AddProperty("9286", "MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!I82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:41 PM")
-    AddProperty("9302", "MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!I84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:20 PM")
+    AddProperty("9286", "MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!I82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:36:09 AM")
+    AddProperty("9302", "MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!I84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:50:44 AM")
     AddProperty("9294", "MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!I83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:00 PM")
-    AddProperty("9283", "MEI_Shuttle_RI_Net_Inst_N_Brkt_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_N_Brkt_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!F82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:34 PM")
+    AddProperty("9283", "MEI_Shuttle_RI_Net_Inst_N_Brkt_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_N_Brkt_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!F82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:34:52 AM")
     AddProperty("9299", "MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!F84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:12 PM")
-    AddProperty("9291", "MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!F83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:53 PM")
-    AddProperty("9284", "MEI_Shuttle_RI_Net_Inst_Safety_NC_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Safety_NC_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!G82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:37 PM")
-    AddProperty("9300", "MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!G84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:14 PM")
+    AddProperty("9291", "MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!F83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:45:22 AM")
+    AddProperty("9284", "MEI_Shuttle_RI_Net_Inst_Safety_NC_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Safety_NC_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!G82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:35:11 AM")
+    AddProperty("9300", "MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!G84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:48:39 AM")
     AddProperty("9292", "MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!G83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:56 PM")
-    AddProperty("9280", "MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!C82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:27 PM")
+    AddProperty("9280", "MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!C82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:33:27 AM")
     AddProperty("9296", "MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!C84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:05 PM")
-    AddProperty("9288", "MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!C83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:46 PM")
-    AddProperty("9281", "MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!D82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:30 PM")
+    AddProperty("9288", "MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!C83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:39:27 AM")
+    AddProperty("9281", "MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!D82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:33:50 AM")
     AddProperty("9297", "MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!D84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:07 PM")
-    AddProperty("9289", "MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!D83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:48 PM")
-    AddProperty("9279", "MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!B82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:25 PM")
+    AddProperty("9289", "MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!D83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:40:49 AM")
+    AddProperty("9279", "MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!B82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:32:46 AM")
     AddProperty("9295", "MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!B84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:02 PM")
-    AddProperty("9287", "MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!B83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:43 PM")
-    AddProperty("9282", "MEI_Shuttle_RI_Net_Prep_Netting_T_B_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Netting_T_B_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!E82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:32 PM")
+    AddProperty("9287", "MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!B83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:38:42 AM")
+    AddProperty("9282", "MEI_Shuttle_RI_Net_Prep_Netting_T_B_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Netting_T_B_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!E82", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:34:28 AM")
     AddProperty("9298", "MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Ft", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Ft]]></a>.Value, "Mech Install^'Shuttle'!E84", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:09 PM")
-    AddProperty("9290", "MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!E83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:17:51 PM")
-    AddProperty("9215", "MEI_Shuttle_RI_Netting_Hours", <a><![CDATA[MEI_Shuttle_RI_Netting_Hours]]></a>.Value, "Mech Install^'Shuttle'!F21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:41 PM")
-    AddProperty("9304", "MEI_Shuttle_RI_Netting_Hours_Per_Foot", <a><![CDATA[MEI_Shuttle_RI_Netting_Hours_Per_Foot]]></a>.Value, "Mech Install^'Shuttle'!B86", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:25 PM")
-    AddProperty("9303", "MEI_Shuttle_RI_Netting_Hours_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Netting_Hours_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!B85", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:23 PM")
+    AddProperty("9290", "MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!E83", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 8:46:30 AM")
+    AddProperty("9215", "MEI_Shuttle_RI_Netting_Hours", <a><![CDATA[MEI_Shuttle_RI_Netting_Hours]]></a>.Value, "Mech Install^'Shuttle'!F21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 11:13:11 AM")
+    AddProperty("9304", "MEI_Shuttle_RI_Netting_Hours_Per_Foot", <a><![CDATA[MEI_Shuttle_RI_Netting_Hours_Per_Foot]]></a>.Value, "Mech Install^'Shuttle'!B86", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:52:05 AM")
+    AddProperty("9303", "MEI_Shuttle_RI_Netting_Hours_Per_Side", <a><![CDATA[MEI_Shuttle_RI_Netting_Hours_Per_Side]]></a>.Value, "Mech Install^'Shuttle'!B85", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:51:19 AM")
     AddProperty("9158", "MEI_Shuttle_RI_Netting_Input", <a><![CDATA[MEI_Shuttle_RI_Netting_Input]]></a>.Value, "Mech Install^'Shuttle'!B21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:14 PM")
-    AddProperty("9196", "MEI_Shuttle_RI_Netting_Rate", <a><![CDATA[MEI_Shuttle_RI_Netting_Rate]]></a>.Value, "Mech Install^'Shuttle'!E21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:54 PM")
-    AddProperty("9177", "MEI_Shuttle_RI_Netting_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Netting_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:03 PM")
-    AddProperty("9216", "MEI_Shuttle_RI_Service_Ladders_Hours", <a><![CDATA[MEI_Shuttle_RI_Service_Ladders_Hours]]></a>.Value, "Mech Install^'Shuttle'!F22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:43 PM")
+    AddProperty("9196", "MEI_Shuttle_RI_Netting_Rate", <a><![CDATA[MEI_Shuttle_RI_Netting_Rate]]></a>.Value, "Mech Install^'Shuttle'!E21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 11:14:55 AM")
+    AddProperty("9177", "MEI_Shuttle_RI_Netting_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Netting_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D21", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 11:43:16 AM")
+    AddProperty("9216", "MEI_Shuttle_RI_Service_Ladders_Hours", <a><![CDATA[MEI_Shuttle_RI_Service_Ladders_Hours]]></a>.Value, "Mech Install^'Shuttle'!F22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 11:14:38 AM")
     AddProperty("9159", "MEI_Shuttle_RI_Service_Ladders_Input", <a><![CDATA[MEI_Shuttle_RI_Service_Ladders_Input]]></a>.Value, "Mech Install^'Shuttle'!B22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:17 PM")
-    AddProperty("9197", "MEI_Shuttle_RI_Service_Ladders_Rate", <a><![CDATA[MEI_Shuttle_RI_Service_Ladders_Rate]]></a>.Value, "Mech Install^'Shuttle'!E22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:56 PM")
-    AddProperty("9178", "MEI_Shuttle_RI_Service_Ladders_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Service_Ladders_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:05 PM")
-    AddProperty("9205", "MEI_Shuttle_RI_Service_Levels_Aisle_Hours", <a><![CDATA[MEI_Shuttle_RI_Service_Levels_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:16 PM")
+    AddProperty("9197", "MEI_Shuttle_RI_Service_Ladders_Rate", <a><![CDATA[MEI_Shuttle_RI_Service_Ladders_Rate]]></a>.Value, "Mech Install^'Shuttle'!E22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:44:54 PM")
+    AddProperty("9178", "MEI_Shuttle_RI_Service_Ladders_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Service_Ladders_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D22", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 11:44:26 AM")
+    AddProperty("9205", "MEI_Shuttle_RI_Service_Levels_Aisle_Hours", <a><![CDATA[MEI_Shuttle_RI_Service_Levels_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:52:39 PM")
     AddProperty("9148", "MEI_Shuttle_RI_Service_Levels_Aisle_Input", <a><![CDATA[MEI_Shuttle_RI_Service_Levels_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:48 PM")
-    AddProperty("9186", "MEI_Shuttle_RI_Service_Levels_Aisle_Rate", <a><![CDATA[MEI_Shuttle_RI_Service_Levels_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:27 PM")
-    AddProperty("9167", "MEI_Shuttle_RI_Service_Levels_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Service_Levels_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:36 PM")
-    AddProperty("9213", "MEI_Shuttle_RI_Service_Platform_Hours", <a><![CDATA[MEI_Shuttle_RI_Service_Platform_Hours]]></a>.Value, "Mech Install^'Shuttle'!F19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:36 PM")
+    AddProperty("9186", "MEI_Shuttle_RI_Service_Levels_Aisle_Rate", <a><![CDATA[MEI_Shuttle_RI_Service_Levels_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:35:01 PM")
+    AddProperty("9167", "MEI_Shuttle_RI_Service_Levels_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Service_Levels_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D8", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:13:33 AM")
+    AddProperty("9213", "MEI_Shuttle_RI_Service_Platform_Hours", <a><![CDATA[MEI_Shuttle_RI_Service_Platform_Hours]]></a>.Value, "Mech Install^'Shuttle'!F19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:01:49 PM")
     AddProperty("9156", "MEI_Shuttle_RI_Service_Platform_Input", <a><![CDATA[MEI_Shuttle_RI_Service_Platform_Input]]></a>.Value, "Mech Install^'Shuttle'!B19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:09 PM")
-    AddProperty("9194", "MEI_Shuttle_RI_Service_Platform_Rate", <a><![CDATA[MEI_Shuttle_RI_Service_Platform_Rate]]></a>.Value, "Mech Install^'Shuttle'!E19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:48 PM")
-    AddProperty("9175", "MEI_Shuttle_RI_Service_Platform_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Service_Platform_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:57 PM")
-    AddProperty("9214", "MEI_Shuttle_RI_Sides_of_Netting_Hours", <a><![CDATA[MEI_Shuttle_RI_Sides_of_Netting_Hours]]></a>.Value, "Mech Install^'Shuttle'!F20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:39 PM")
+    AddProperty("9194", "MEI_Shuttle_RI_Service_Platform_Rate", <a><![CDATA[MEI_Shuttle_RI_Service_Platform_Rate]]></a>.Value, "Mech Install^'Shuttle'!E19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:43:13 PM")
+    AddProperty("9175", "MEI_Shuttle_RI_Service_Platform_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Service_Platform_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D19", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 11:36:36 AM")
+    AddProperty("9214", "MEI_Shuttle_RI_Sides_of_Netting_Hours", <a><![CDATA[MEI_Shuttle_RI_Sides_of_Netting_Hours]]></a>.Value, "Mech Install^'Shuttle'!F20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:02:43 PM")
     AddProperty("9157", "MEI_Shuttle_RI_Sides_of_Netting_Input", <a><![CDATA[MEI_Shuttle_RI_Sides_of_Netting_Input]]></a>.Value, "Mech Install^'Shuttle'!B20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:12 PM")
-    AddProperty("9195", "MEI_Shuttle_RI_Sides_of_Netting_Rate", <a><![CDATA[MEI_Shuttle_RI_Sides_of_Netting_Rate]]></a>.Value, "Mech Install^'Shuttle'!E20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:52 PM")
-    AddProperty("9176", "MEI_Shuttle_RI_Sides_of_Netting_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Sides_of_Netting_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:00 PM")
-    AddProperty("9217", "MEI_Shuttle_RI_Stairs_Hours", <a><![CDATA[MEI_Shuttle_RI_Stairs_Hours]]></a>.Value, "Mech Install^'Shuttle'!F23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:46 PM")
+    AddProperty("9195", "MEI_Shuttle_RI_Sides_of_Netting_Rate", <a><![CDATA[MEI_Shuttle_RI_Sides_of_Netting_Rate]]></a>.Value, "Mech Install^'Shuttle'!E20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:43:41 PM")
+    AddProperty("9176", "MEI_Shuttle_RI_Sides_of_Netting_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Sides_of_Netting_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D20", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 11:38:27 AM")
+    AddProperty("9217", "MEI_Shuttle_RI_Stairs_Hours", <a><![CDATA[MEI_Shuttle_RI_Stairs_Hours]]></a>.Value, "Mech Install^'Shuttle'!F23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:05:21 PM")
     AddProperty("9160", "MEI_Shuttle_RI_Stairs_Input", <a><![CDATA[MEI_Shuttle_RI_Stairs_Input]]></a>.Value, "Mech Install^'Shuttle'!B23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:19 PM")
-    AddProperty("9198", "MEI_Shuttle_RI_Stairs_Rate", <a><![CDATA[MEI_Shuttle_RI_Stairs_Rate]]></a>.Value, "Mech Install^'Shuttle'!E23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:58 PM")
-    AddProperty("9179", "MEI_Shuttle_RI_Stairs_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Stairs_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:08 PM")
-    AddProperty("9203", "MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Hours", <a><![CDATA[MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:11 PM")
+    AddProperty("9198", "MEI_Shuttle_RI_Stairs_Rate", <a><![CDATA[MEI_Shuttle_RI_Stairs_Rate]]></a>.Value, "Mech Install^'Shuttle'!E23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:45:09 PM")
+    AddProperty("9179", "MEI_Shuttle_RI_Stairs_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Stairs_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D23", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 11:45:16 AM")
+    AddProperty("9203", "MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Hours", <a><![CDATA[MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Hours]]></a>.Value, "Mech Install^'Shuttle'!F6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:50:58 PM")
     AddProperty("9146", "MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input", <a><![CDATA[MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input]]></a>.Value, "Mech Install^'Shuttle'!B6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:43 PM")
-    AddProperty("9184", "MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Rate", <a><![CDATA[MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:23 PM")
-    AddProperty("9165", "MEI_Shuttle_RI_Std_Rack_Bays_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Std_Rack_Bays_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:31 PM")
-    AddProperty("9221", "MEI_Shuttle_RI_Total_Rack_Hours", <a><![CDATA[MEI_Shuttle_RI_Total_Rack_Hours]]></a>.Value, "Mech Install^'Shuttle'!F29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:55 PM")
-    AddProperty("9207", "MEI_Shuttle_RI_Totes_per_Bay_Hours", <a><![CDATA[MEI_Shuttle_RI_Totes_per_Bay_Hours]]></a>.Value, "Mech Install^'Shuttle'!F10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:21 PM")
+    AddProperty("9184", "MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Rate", <a><![CDATA[MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Rate]]></a>.Value, "Mech Install^'Shuttle'!E6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:33:57 PM")
+    AddProperty("9165", "MEI_Shuttle_RI_Std_Rack_Bays_Aisle_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Std_Rack_Bays_Aisle_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D6", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:15:59 AM")
+    AddProperty("9221", "MEI_Shuttle_RI_Total_Rack_Hours", <a><![CDATA[MEI_Shuttle_RI_Total_Rack_Hours]]></a>.Value, "Mech Install^'Shuttle'!F29", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 6:08:02 PM")
+    AddProperty("9207", "MEI_Shuttle_RI_Totes_per_Bay_Hours", <a><![CDATA[MEI_Shuttle_RI_Totes_per_Bay_Hours]]></a>.Value, "Mech Install^'Shuttle'!F10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:56:20 PM")
     AddProperty("9150", "MEI_Shuttle_RI_Totes_per_Bay_Input", <a><![CDATA[MEI_Shuttle_RI_Totes_per_Bay_Input]]></a>.Value, "Mech Install^'Shuttle'!B10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:11:52 PM")
     AddProperty("9188", "MEI_Shuttle_RI_Totes_per_Bay_Rate", <a><![CDATA[MEI_Shuttle_RI_Totes_per_Bay_Rate]]></a>.Value, "Mech Install^'Shuttle'!E10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:32 PM")
-    AddProperty("9169", "MEI_Shuttle_RI_Totes_per_Bay_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Totes_per_Bay_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:41 PM")
-    AddProperty("9211", "MEI_Shuttle_RI_Width_Hours", <a><![CDATA[MEI_Shuttle_RI_Width_Hours]]></a>.Value, "Mech Install^'Shuttle'!F15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:14:30 PM")
+    AddProperty("9169", "MEI_Shuttle_RI_Totes_per_Bay_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Totes_per_Bay_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 10:57:21 AM")
+    AddProperty("9211", "MEI_Shuttle_RI_Width_Hours", <a><![CDATA[MEI_Shuttle_RI_Width_Hours]]></a>.Value, "Mech Install^'Shuttle'!F15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 5:59:51 PM")
     AddProperty("9154", "MEI_Shuttle_RI_Width_Input", <a><![CDATA[MEI_Shuttle_RI_Width_Input]]></a>.Value, "Mech Install^'Shuttle'!B15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:03 PM")
     AddProperty("9192", "MEI_Shuttle_RI_Width_Rate", <a><![CDATA[MEI_Shuttle_RI_Width_Rate]]></a>.Value, "Mech Install^'Shuttle'!E15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:13:42 PM")
-    AddProperty("9173", "MEI_Shuttle_RI_Width_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Width_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:12:51 PM")
-    AddProperty("9319", "MEI_Shuttle_SL_Intermediate_AJ_FJ_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_SL_Intermediate_AJ_FJ_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!D126", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:02 PM")
-    AddProperty("9322", "MEI_Shuttle_SL_Intermediate_AJ_FJ_Time_Per_Row", <a><![CDATA[MEI_Shuttle_SL_Intermediate_AJ_FJ_Time_Per_Row]]></a>.Value, "Mech Install^'Shuttle'!D127", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:10 PM")
-    AddProperty("9317", "MEI_Shuttle_SL_Intermediate_SLG_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_SL_Intermediate_SLG_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!B126", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:18:57 PM")
-    AddProperty("9318", "MEI_Shuttle_SL_Intermediate_SLG_Screw_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_SL_Intermediate_SLG_Screw_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!C126", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:00 PM")
-    AddProperty("9321", "MEI_Shuttle_SL_Intermediate_SLG_Screw_Time_Per_Row", <a><![CDATA[MEI_Shuttle_SL_Intermediate_SLG_Screw_Time_Per_Row]]></a>.Value, "Mech Install^'Shuttle'!C127", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:07 PM")
-    AddProperty("9320", "MEI_Shuttle_SL_Intermediate_SLG_Time_Per_Row", <a><![CDATA[MEI_Shuttle_SL_Intermediate_SLG_Time_Per_Row]]></a>.Value, "Mech Install^'Shuttle'!B127", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:05 PM")
-    AddProperty("9323", "MEI_Shuttle_SL_Intermediate_Time_Per_SL", <a><![CDATA[MEI_Shuttle_SL_Intermediate_Time_Per_SL]]></a>.Value, "Mech Install^'Shuttle'!C128", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:19:12 PM")
-    AddProperty("9407", "MEI_Shuttle_ST_Intermediate_Aisle_JFB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Aisle_JFB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!O105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:46 PM")
-    AddProperty("9411", "MEI_Shuttle_ST_Intermediate_Aisle_JFB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Aisle_JFB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!O106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:56 PM")
-    AddProperty("9408", "MEI_Shuttle_ST_Intermediate_Aisle_JSB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Aisle_JSB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!P105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:49 PM")
-    AddProperty("9412", "MEI_Shuttle_ST_Intermediate_Aisle_JSB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Aisle_JSB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!P106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:58 PM")
-    AddProperty("9409", "MEI_Shuttle_ST_Intermediate_Grout_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Grout_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!Q105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:51 PM")
-    AddProperty("9413", "MEI_Shuttle_ST_Intermediate_Grout_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Grout_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!Q106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:01 PM")
-    AddProperty("9406", "MEI_Shuttle_ST_Intermediate_Standard_T_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Standard_T_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!N105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:43 PM")
-    AddProperty("9410", "MEI_Shuttle_ST_Intermediate_Standard_T_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Standard_T_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!N106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:54 PM")
-    AddProperty("9385", "MEI_Shuttle_ST_Layout_Anchor_Leveling_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Layout_Anchor_Leveling_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!E105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:54 PM")
-    AddProperty("9389", "MEI_Shuttle_ST_Layout_Anchor_Leveling_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Layout_Anchor_Leveling_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!E106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:03 PM")
-    AddProperty("9384", "MEI_Shuttle_ST_Layout_FAB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Layout_FAB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!D105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:52 PM")
-    AddProperty("9388", "MEI_Shuttle_ST_Layout_FAB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Layout_FAB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!D106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:01 PM")
-    AddProperty("9382", "MEI_Shuttle_ST_Layout_Pilot_Drill_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Layout_Pilot_Drill_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!B105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:47 PM")
-    AddProperty("9386", "MEI_Shuttle_ST_Layout_Pilot_Drill_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Layout_Pilot_Drill_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!B106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:56 PM")
-    AddProperty("9383", "MEI_Shuttle_ST_Layout_Second_Hole_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Layout_Second_Hole_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!C105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:49 PM")
-    AddProperty("9387", "MEI_Shuttle_ST_Layout_Second_Hole_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Layout_Second_Hole_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!C106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:21:58 PM")
-    AddProperty("9414", "MEI_Shuttle_ST_Level_Tight_Upright_Knock_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Level_Tight_Upright_Knock_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!R105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:03 PM")
-    AddProperty("9415", "MEI_Shuttle_ST_Level_Tight_Upright_Knock_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Level_Tight_Upright_Knock_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!R106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:05 PM")
-    AddProperty("9402", "MEI_Shuttle_ST_Material_PreStage_PR_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Material_PreStage_PR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!L105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:34 PM")
-    AddProperty("9404", "MEI_Shuttle_ST_Material_PreStage_PR_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Material_PreStage_PR_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!L106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:38 PM")
-    AddProperty("9403", "MEI_Shuttle_ST_Material_Upright_RS_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Material_Upright_RS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!M105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:36 PM")
-    AddProperty("9405", "MEI_Shuttle_ST_Material_Upright_RS_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Material_Upright_RS_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!M106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:41 PM")
-    AddProperty("9393", "MEI_Shuttle_ST_Prepping_Assemble_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Assemble_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!I105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:12 PM")
-    AddProperty("9399", "MEI_Shuttle_ST_Prepping_Assemble_GB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Assemble_GB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!I106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:26 PM")
-    AddProperty("9395", "MEI_Shuttle_ST_Prepping_Clean_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Clean_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!K105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:16 PM")
-    AddProperty("9401", "MEI_Shuttle_ST_Prepping_Clean_GB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Clean_GB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!K106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:31 PM")
-    AddProperty("9392", "MEI_Shuttle_ST_Prepping_Cut_Wood_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Cut_Wood_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!H105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:10 PM")
-    AddProperty("9398", "MEI_Shuttle_ST_Prepping_Cut_Wood_GB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Cut_Wood_GB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!H106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:23 PM")
-    AddProperty("9400", "MEI_Shuttle_ST_Prepping_Oil_PB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Oil_PB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!J106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:28 PM")
-    AddProperty("9394", "MEI_Shuttle_ST_Prepping_Oil_Place_Blocks_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Oil_Place_Blocks_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!J105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:14 PM")
-    AddProperty("9390", "MEI_Shuttle_ST_Prepping_Prep_UR_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Prep_UR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!F105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:05 PM")
-    AddProperty("9396", "MEI_Shuttle_ST_Prepping_Prep_UR_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Prep_UR_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!F106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:19 PM")
-    AddProperty("9391", "MEI_Shuttle_ST_Prepping_Upright_AP_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Upright_AP_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!G105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:07 PM")
-    AddProperty("9397", "MEI_Shuttle_ST_Prepping_Upright_AP_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Upright_AP_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!G106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:22:21 PM")
-    AddProperty("9416", "MEI_Shuttle_ST_Time_Per_Standard_Tower", <a><![CDATA[MEI_Shuttle_ST_Time_Per_Standard_Tower]]></a>.Value, "Mech Install^'Shuttle'!C107", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:23:08 PM")
-    AddProperty("9476", "MEI_Shuttle_TL_Intermediate_ER_Install_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Intermediate_ER_Install_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!B119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:27 PM")
-    AddProperty("9480", "MEI_Shuttle_TL_Intermediate_ER_Install_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Intermediate_ER_Install_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!B120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:36 PM")
-    AddProperty("9479", "MEI_Shuttle_TL_Intermediate_FR_Bumper_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Intermediate_FR_Bumper_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!E119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:33 PM")
-    AddProperty("9483", "MEI_Shuttle_TL_Intermediate_FR_Bumper_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Intermediate_FR_Bumper_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!E120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:43 PM")
-    AddProperty("9477", "MEI_Shuttle_TL_Intermediate_Internal_SR_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Intermediate_Internal_SR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!C119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:29 PM")
-    AddProperty("9481", "MEI_Shuttle_TL_Intermediate_Internal_SR_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Intermediate_Internal_SR_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!C120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:38 PM")
-    AddProperty("9478", "MEI_Shuttle_TL_Intermediate_Shelf_Insert_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Intermediate_Shelf_Insert_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!D119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:31 PM")
-    AddProperty("9482", "MEI_Shuttle_TL_Intermediate_Shelf_Insert_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Intermediate_Shelf_Insert_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!D120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:41 PM")
-    AddProperty("9485", "MEI_Shuttle_TL_Level_TightIR_Hole_Cover_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Level_TightIR_Hole_Cover_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!G119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:47 PM")
-    AddProperty("9488", "MEI_Shuttle_TL_Level_TightIR_Hole_Cover_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Level_TightIR_Hole_Cover_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!G120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:54 PM")
-    AddProperty("9486", "MEI_Shuttle_TL_Level_TightTight_ER_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Level_TightTight_ER_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!H119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:49 PM")
-    AddProperty("9489", "MEI_Shuttle_TL_Level_TightTight_ER_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Level_TightTight_ER_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!H120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:56 PM")
-    AddProperty("9484", "MEI_Shuttle_TL_Level_TightTight_IR_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Level_TightTight_IR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!F119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:45 PM")
-    AddProperty("9487", "MEI_Shuttle_TL_Level_TightTight_IR_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Level_TightTight_IR_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!F120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:52 PM")
-    AddProperty("9490", "MEI_Shuttle_TL_Time_Per_Row", <a><![CDATA[MEI_Shuttle_TL_Time_Per_Row]]></a>.Value, "Mech Install^'Shuttle'!C121", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 2:25:59 PM")
+    AddProperty("9173", "MEI_Shuttle_RI_Width_System_Qty", <a><![CDATA[MEI_Shuttle_RI_Width_System_Qty]]></a>.Value, "Mech Install^'Shuttle'!D15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/19/2025 10:43:00 AM")
+    AddProperty("9319", "MEI_Shuttle_SL_Intermediate_AJ_FJ_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_SL_Intermediate_AJ_FJ_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!D126", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:57:59 AM")
+    AddProperty("9322", "MEI_Shuttle_SL_Intermediate_AJ_FJ_Time_Per_Row", <a><![CDATA[MEI_Shuttle_SL_Intermediate_AJ_FJ_Time_Per_Row]]></a>.Value, "Mech Install^'Shuttle'!D127", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:02:26 PM")
+    AddProperty("9317", "MEI_Shuttle_SL_Intermediate_SLG_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_SL_Intermediate_SLG_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!B126", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:57:17 AM")
+    AddProperty("9318", "MEI_Shuttle_SL_Intermediate_SLG_Screw_Avg_MM_Task", <a><![CDATA[MEI_Shuttle_SL_Intermediate_SLG_Screw_Avg_MM_Task]]></a>.Value, "Mech Install^'Shuttle'!C126", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 11:57:40 AM")
+    AddProperty("9321", "MEI_Shuttle_SL_Intermediate_SLG_Screw_Time_Per_Row", <a><![CDATA[MEI_Shuttle_SL_Intermediate_SLG_Screw_Time_Per_Row]]></a>.Value, "Mech Install^'Shuttle'!C127", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:01:15 PM")
+    AddProperty("9320", "MEI_Shuttle_SL_Intermediate_SLG_Time_Per_Row", <a><![CDATA[MEI_Shuttle_SL_Intermediate_SLG_Time_Per_Row]]></a>.Value, "Mech Install^'Shuttle'!B127", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 11:06:46 AM")
+    AddProperty("9323", "MEI_Shuttle_SL_Intermediate_Time_Per_SL", <a><![CDATA[MEI_Shuttle_SL_Intermediate_Time_Per_SL]]></a>.Value, "Mech Install^'Shuttle'!C128", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:02:56 PM")
+    AddProperty("9407", "MEI_Shuttle_ST_Intermediate_Aisle_JFB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Aisle_JFB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!O105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:18:06 PM")
+    AddProperty("9411", "MEI_Shuttle_ST_Intermediate_Aisle_JFB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Aisle_JFB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!O106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:20:59 PM")
+    AddProperty("9408", "MEI_Shuttle_ST_Intermediate_Aisle_JSB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Aisle_JSB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!P105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:18:21 PM")
+    AddProperty("9412", "MEI_Shuttle_ST_Intermediate_Aisle_JSB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Aisle_JSB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!P106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:21:17 PM")
+    AddProperty("9409", "MEI_Shuttle_ST_Intermediate_Grout_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Grout_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!Q105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:19:30 PM")
+    AddProperty("9413", "MEI_Shuttle_ST_Intermediate_Grout_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Grout_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!Q106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:21:43 PM")
+    AddProperty("9406", "MEI_Shuttle_ST_Intermediate_Standard_T_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Standard_T_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!N105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:17:46 PM")
+    AddProperty("9410", "MEI_Shuttle_ST_Intermediate_Standard_T_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Intermediate_Standard_T_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!N106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:20:00 PM")
+    AddProperty("9385", "MEI_Shuttle_ST_Layout_Anchor_Leveling_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Layout_Anchor_Leveling_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!E105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:31:50 PM")
+    AddProperty("9389", "MEI_Shuttle_ST_Layout_Anchor_Leveling_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Layout_Anchor_Leveling_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!E106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:35:00 PM")
+    AddProperty("9384", "MEI_Shuttle_ST_Layout_FAB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Layout_FAB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!D105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:31:19 PM")
+    AddProperty("9388", "MEI_Shuttle_ST_Layout_FAB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Layout_FAB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!D106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:34:37 PM")
+    AddProperty("9382", "MEI_Shuttle_ST_Layout_Pilot_Drill_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Layout_Pilot_Drill_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!B105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:30:15 PM")
+    AddProperty("9386", "MEI_Shuttle_ST_Layout_Pilot_Drill_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Layout_Pilot_Drill_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!B106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:33:42 PM")
+    AddProperty("9383", "MEI_Shuttle_ST_Layout_Second_Hole_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Layout_Second_Hole_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!C105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:30:49 PM")
+    AddProperty("9387", "MEI_Shuttle_ST_Layout_Second_Hole_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Layout_Second_Hole_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!C106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:34:18 PM")
+    AddProperty("9414", "MEI_Shuttle_ST_Level_Tight_Upright_Knock_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Level_Tight_Upright_Knock_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!R105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:22:16 PM")
+    AddProperty("9415", "MEI_Shuttle_ST_Level_Tight_Upright_Knock_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Level_Tight_Upright_Knock_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!R106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:22:31 PM")
+    AddProperty("9402", "MEI_Shuttle_ST_Material_PreStage_PR_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Material_PreStage_PR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!L105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:14:25 PM")
+    AddProperty("9404", "MEI_Shuttle_ST_Material_PreStage_PR_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Material_PreStage_PR_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!L106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:15:07 PM")
+    AddProperty("9403", "MEI_Shuttle_ST_Material_Upright_RS_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Material_Upright_RS_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!M105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:14:43 PM")
+    AddProperty("9405", "MEI_Shuttle_ST_Material_Upright_RS_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Material_Upright_RS_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!M106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:15:27 PM")
+    AddProperty("9393", "MEI_Shuttle_ST_Prepping_Assemble_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Assemble_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!I105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:00:27 PM")
+    AddProperty("9399", "MEI_Shuttle_ST_Prepping_Assemble_GB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Assemble_GB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!I106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:09:37 PM")
+    AddProperty("9395", "MEI_Shuttle_ST_Prepping_Clean_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Clean_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!K105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:03:09 PM")
+    AddProperty("9401", "MEI_Shuttle_ST_Prepping_Clean_GB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Clean_GB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!K106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:10:28 PM")
+    AddProperty("9392", "MEI_Shuttle_ST_Prepping_Cut_Wood_GB_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Cut_Wood_GB_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!H105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:59:22 PM")
+    AddProperty("9398", "MEI_Shuttle_ST_Prepping_Cut_Wood_GB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Cut_Wood_GB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!H106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:08:36 PM")
+    AddProperty("9400", "MEI_Shuttle_ST_Prepping_Oil_PB_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Oil_PB_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!J106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:10:00 PM")
+    AddProperty("9394", "MEI_Shuttle_ST_Prepping_Oil_Place_Blocks_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Oil_Place_Blocks_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!J105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:02:49 PM")
+    AddProperty("9390", "MEI_Shuttle_ST_Prepping_Prep_UR_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Prep_UR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!F105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:46:33 PM")
+    AddProperty("9396", "MEI_Shuttle_ST_Prepping_Prep_UR_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Prep_UR_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!F106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:06:02 PM")
+    AddProperty("9391", "MEI_Shuttle_ST_Prepping_Upright_AP_AMM_Task", <a><![CDATA[MEI_Shuttle_ST_Prepping_Upright_AP_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!G105", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 12:46:50 PM")
+    AddProperty("9397", "MEI_Shuttle_ST_Prepping_Upright_AP_Time_ST", <a><![CDATA[MEI_Shuttle_ST_Prepping_Upright_AP_Time_ST]]></a>.Value, "Mech Install^'Shuttle'!G106", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:06:37 PM")
+    AddProperty("9416", "MEI_Shuttle_ST_Time_Per_Standard_Tower", <a><![CDATA[MEI_Shuttle_ST_Time_Per_Standard_Tower]]></a>.Value, "Mech Install^'Shuttle'!C107", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/20/2025 1:22:54 PM")
+    AddProperty("9476", "MEI_Shuttle_TL_Intermediate_ER_Install_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Intermediate_ER_Install_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!B119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:11:34 AM")
+    AddProperty("9480", "MEI_Shuttle_TL_Intermediate_ER_Install_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Intermediate_ER_Install_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!B120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:18:00 AM")
+    AddProperty("9479", "MEI_Shuttle_TL_Intermediate_FR_Bumper_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Intermediate_FR_Bumper_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!E119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:15:27 AM")
+    AddProperty("9483", "MEI_Shuttle_TL_Intermediate_FR_Bumper_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Intermediate_FR_Bumper_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!E120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:19:53 AM")
+    AddProperty("9477", "MEI_Shuttle_TL_Intermediate_Internal_SR_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Intermediate_Internal_SR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!C119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:12:08 AM")
+    AddProperty("9481", "MEI_Shuttle_TL_Intermediate_Internal_SR_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Intermediate_Internal_SR_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!C120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:18:50 AM")
+    AddProperty("9478", "MEI_Shuttle_TL_Intermediate_Shelf_Insert_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Intermediate_Shelf_Insert_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!D119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:14:53 AM")
+    AddProperty("9482", "MEI_Shuttle_TL_Intermediate_Shelf_Insert_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Intermediate_Shelf_Insert_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!D120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:19:26 AM")
+    AddProperty("9485", "MEI_Shuttle_TL_Level_TightIR_Hole_Cover_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Level_TightIR_Hole_Cover_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!G119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:21:38 AM")
+    AddProperty("9488", "MEI_Shuttle_TL_Level_TightIR_Hole_Cover_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Level_TightIR_Hole_Cover_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!G120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:22:26 AM")
+    AddProperty("9486", "MEI_Shuttle_TL_Level_TightTight_ER_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Level_TightTight_ER_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!H119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:21:16 AM")
+    AddProperty("9489", "MEI_Shuttle_TL_Level_TightTight_ER_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Level_TightTight_ER_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!H120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:22:43 AM")
+    AddProperty("9484", "MEI_Shuttle_TL_Level_TightTight_IR_AMM_Task", <a><![CDATA[MEI_Shuttle_TL_Level_TightTight_IR_AMM_Task]]></a>.Value, "Mech Install^'Shuttle'!F119", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:20:26 AM")
+    AddProperty("9487", "MEI_Shuttle_TL_Level_TightTight_IR_Time_Bay", <a><![CDATA[MEI_Shuttle_TL_Level_TightTight_IR_Time_Bay]]></a>.Value, "Mech Install^'Shuttle'!F120", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:22:02 AM")
+    AddProperty("9490", "MEI_Shuttle_TL_Time_Per_Row", <a><![CDATA[MEI_Shuttle_TL_Time_Per_Row]]></a>.Value, "Mech Install^'Shuttle'!C121", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H582667", "7/21/2025 6:24:15 AM")
     AddProperty("6171", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/1/2025 5:53:59 PM")
     
     End Sub
@@ -3662,487 +3662,487 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_MI_Shuttle_Install_Hours_Per_Shuttle", "8859", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:14:19 AM", "", "In Development",  0,19015)
+          InitProperty("MEI_MI_Shuttle_Install_Hours_Per_Shuttle", "8859", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:31:17 AM", "", "In Development",  0,19785)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle", "8857", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:17 PM", "", "In Development",  0,14724)
+          InitProperty("MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle", "8857", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:29:46 AM", "", "In Development",  0,19782)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle", "8855", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:12 PM", "", "In Development",  0,14720)
+          InitProperty("MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle", "8855", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:28:56 AM", "", "In Development",  0,19778)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_MI_Shuttle_Installation_Hours_Shuttle", "8858", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:20 PM", "", "In Development",  0,14726)
+          InitProperty("MEI_MI_Shuttle_Installation_Hours_Shuttle", "8858", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:30:08 AM", "", "In Development",  0,19783)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_MI_Shuttle_Installation_Min_Per_Shuttle", "8856", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:15 PM", "", "In Development",  0,14722)
+          InitProperty("MEI_MI_Shuttle_Installation_Min_Per_Shuttle", "8856", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:29:17 AM", "", "In Development",  0,19780)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_F_and_R_Plum_Time_Per_A", "8914", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:36 PM", "", "In Development",  0,14838)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_F_and_R_Plum_Time_Per_A", "8914", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:07:35 PM", "", "In Development",  0,19883)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Frnt_Rear_PAvg_MM_Task", "8909", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:24 PM", "", "In Development",  0,14828)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Frnt_Rear_PAvg_MM_Task", "8909", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:04:54 PM", "", "In Development",  0,19878)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Avg_MM_Task", "8905", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:14 PM", "", "In Development",  0,14820)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Avg_MM_Task", "8905", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:03:26 PM", "", "In Development",  0,19874)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Time_Per_A", "8910", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:27 PM", "", "In Development",  0,14830)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Time_Per_A", "8910", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:05:22 PM", "", "In Development",  0,19879)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Hours_Per_Aisle", "8915", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:38 PM", "", "In Development",  0,14840)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Hours_Per_Aisle", "8915", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:07:49 PM", "", "In Development",  0,19884)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_L_Based_Time_Per_A", "8911", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:29 PM", "", "In Development",  0,14832)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_L_Based_Time_Per_A", "8911", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:06:11 PM", "", "In Development",  0,19880)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Level_Based_Avg_MM_Task", "8906", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:16 PM", "", "In Development",  0,14822)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Level_Based_Avg_MM_Task", "8906", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:03:46 PM", "", "In Development",  0,19875)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Avg_MM_Task", "8908", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:22 PM", "", "In Development",  0,14826)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Avg_MM_Task", "8908", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:04:29 PM", "", "In Development",  0,19877)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Time_Per_A", "8913", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:33 PM", "", "In Development",  0,14836)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Time_Per_A", "8913", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:07:13 PM", "", "In Development",  0,19882)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_T_Based_Time_Per_A", "8912", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:31 PM", "", "In Development",  0,14834)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_T_Based_Time_Per_A", "8912", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:06:56 PM", "", "In Development",  0,19881)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Tower_Based_Avg_MM_Task", "8907", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:19 PM", "", "In Development",  0,14824)
+          InitProperty("MEI_Shuttle_A_T_P_L_and_T_Tower_Based_Avg_MM_Task", "8907", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:04:10 PM", "", "In Development",  0,19876)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Aisle_JFB_AMM_Task", "9035", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:37 PM", "", "In Development",  0,15080)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Aisle_JFB_AMM_Task", "9035", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:54:09 PM", "", "In Development",  0,20032)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Aisle_JFB_Time_Tower", "9043", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:55 PM", "", "In Development",  0,15096)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Aisle_JFB_Time_Tower", "9043", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:38:08 AM", "", "In Development",  0,20150)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Aisle_JSB_AMM_Task", "9036", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:39 PM", "", "In Development",  0,15082)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Aisle_JSB_AMM_Task", "9036", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:54:25 PM", "", "In Development",  0,20033)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Aisle_JSB_Time_Tower", "9044", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:57 PM", "", "In Development",  0,15098)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Aisle_JSB_Time_Tower", "9044", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:38:22 AM", "", "In Development",  0,20151)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Bracing_THR_AMM_Task", "9037", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:41 PM", "", "In Development",  0,15084)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Bracing_THR_AMM_Task", "9037", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:54:45 PM", "", "In Development",  0,20034)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Bracing_THR_Time_Tower", "9045", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:00 PM", "", "In Development",  0,15100)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Bracing_THR_Time_Tower", "9045", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:38:45 AM", "", "In Development",  0,20152)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Grout_AMM_Task", "9041", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:50 PM", "", "In Development",  0,15092)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Grout_AMM_Task", "9041", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:55:49 PM", "", "In Development",  0,20037)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Grout_Time_Tower", "9049", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:09 PM", "", "In Development",  0,15108)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Grout_Time_Tower", "9049", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:39:52 AM", "", "In Development",  0,20156)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_HT_AMM_Task", "9038", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:43 PM", "", "In Development",  0,15086)
+          InitProperty("MEI_Shuttle_BT_Intermediate_HT_AMM_Task", "9038", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:55:03 PM", "", "In Development",  0,20035)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_HT_Time_Tower", "9046", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:02 PM", "", "In Development",  0,15102)
+          InitProperty("MEI_Shuttle_BT_Intermediate_HT_Time_Tower", "9046", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:39:07 AM", "", "In Development",  0,20153)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Standard_T_AMM_Task", "9034", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:35 PM", "", "In Development",  0,15078)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Standard_T_AMM_Task", "9034", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:53:50 PM", "", "In Development",  0,20030)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_Standard_T_Time_Tower", "9042", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:52 PM", "", "In Development",  0,15094)
+          InitProperty("MEI_Shuttle_BT_Intermediate_Standard_T_Time_Tower", "9042", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:37:38 AM", "", "In Development",  0,20149)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_BT_Intermediate_VT_AMM_Task", "9039", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:45 PM", "", "In Development",  0,15088)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_VT_Time_Tower", "9047", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:04 PM", "", "In Development",  0,15104)
+          InitProperty("MEI_Shuttle_BT_Intermediate_VT_Time_Tower", "9047", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:39:25 AM", "", "In Development",  0,20154)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_VTFA_AMM_Task", "9040", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:48 PM", "", "In Development",  0,15090)
+          InitProperty("MEI_Shuttle_BT_Intermediate_VTFA_AMM_Task", "9040", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:55:29 PM", "", "In Development",  0,20036)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Intermediate_VTFA_Time_Tower", "9048", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:07 PM", "", "In Development",  0,15106)
+          InitProperty("MEI_Shuttle_BT_Intermediate_VTFA_Time_Tower", "9048", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:39:36 AM", "", "In Development",  0,20155)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Layout_Anchor_Leveling_AMM_Task", "9001", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:17 PM", "", "In Development",  0,15012)
+          InitProperty("MEI_Shuttle_BT_Layout_Anchor_Leveling_AMM_Task", "9001", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:30:55 PM", "", "In Development",  0,19992)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Layout_Anchor_Leveling_Time_Tower", "9005", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:27 PM", "", "In Development",  0,15020)
+          InitProperty("MEI_Shuttle_BT_Layout_Anchor_Leveling_Time_Tower", "9005", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:33:37 PM", "", "In Development",  0,19998)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Layout_FAB_AMM_Task", "9000", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:15 PM", "", "In Development",  0,15010)
+          InitProperty("MEI_Shuttle_BT_Layout_FAB_AMM_Task", "9000", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:24:57 PM", "", "In Development",  0,19987)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Layout_FAB_Time_Tower", "9004", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:25 PM", "", "In Development",  0,15018)
+          InitProperty("MEI_Shuttle_BT_Layout_FAB_Time_Tower", "9004", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:33:05 PM", "", "In Development",  0,19997)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Layout_Pilot_Drill_AMM_Task", "8998", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:10 PM", "", "In Development",  0,15006)
+          InitProperty("MEI_Shuttle_BT_Layout_Pilot_Drill_AMM_Task", "8998", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:24:24 PM", "", "In Development",  0,19985)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Layout_Pilot_Drill_Time_Tower", "9002", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:19 PM", "", "In Development",  0,15014)
+          InitProperty("MEI_Shuttle_BT_Layout_Pilot_Drill_Time_Tower", "9002", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:31:51 PM", "", "In Development",  0,19995)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Layout_Second_Hole_AMM_Task", "8999", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:13 PM", "", "In Development",  0,15008)
+          InitProperty("MEI_Shuttle_BT_Layout_Second_Hole_AMM_Task", "8999", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:24:38 PM", "", "In Development",  0,19986)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Layout_Second_Hole_Time_Tower", "9003", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:22 PM", "", "In Development",  0,15016)
+          InitProperty("MEI_Shuttle_BT_Layout_Second_Hole_Time_Tower", "9003", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:32:36 PM", "", "In Development",  0,19996)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_AMM_Task", "9052", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:16 PM", "", "In Development",  0,15114)
+          InitProperty("MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_AMM_Task", "9052", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:08:55 AM", "", "In Development",  0,20159)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_Time_Tower", "9055", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:22 PM", "", "In Development",  0,15120)
+          InitProperty("MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_Time_Tower", "9055", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:10:23 AM", "", "In Development",  0,20162)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Level_Tight_TT_Zone_AMM_Task", "9050", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:11 PM", "", "In Development",  0,15110)
+          InitProperty("MEI_Shuttle_BT_Level_Tight_TT_Zone_AMM_Task", "9050", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:56:24 AM", "", "In Development",  0,20157)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Level_Tight_TT_Zone_Time_Tower", "9053", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:18 PM", "", "In Development",  0,15116)
+          InitProperty("MEI_Shuttle_BT_Level_Tight_TT_Zone_Time_Tower", "9053", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:09:15 AM", "", "In Development",  0,20160)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_AMM_Task", "9051", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:13 PM", "", "In Development",  0,15112)
+          InitProperty("MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_AMM_Task", "9051", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 5:57:05 AM", "", "In Development",  0,20158)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_Time_Tower", "9054", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:20 PM", "", "In Development",  0,15118)
+          InitProperty("MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_Time_Tower", "9054", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:09:51 AM", "", "In Development",  0,20161)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Material_PreStage_PR_AMM_Task", "9028", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:21 PM", "", "In Development",  0,15066)
+          InitProperty("MEI_Shuttle_BT_Material_PreStage_PR_AMM_Task", "9028", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:49:17 PM", "", "In Development",  0,20024)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Material_PreStage_PR_Time_Tower", "9031", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:28 PM", "", "In Development",  0,15072)
+          InitProperty("MEI_Shuttle_BT_Material_PreStage_PR_Time_Tower", "9031", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:50:17 PM", "", "In Development",  0,20027)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Material_Upright_RS_AMM_Task", "9029", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:23 PM", "", "In Development",  0,15068)
+          InitProperty("MEI_Shuttle_BT_Material_Upright_RS_AMM_Task", "9029", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:49:31 PM", "", "In Development",  0,20025)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Material_Upright_RS_Time_Tower", "9032", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:30 PM", "", "In Development",  0,15074)
+          InitProperty("MEI_Shuttle_BT_Material_Upright_RS_Time_Tower", "9032", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:50:36 PM", "", "In Development",  0,20028)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Material_VB_Prep_Area_AMM_Task", "9030", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:25 PM", "", "In Development",  0,15070)
+          InitProperty("MEI_Shuttle_BT_Material_VB_Prep_Area_AMM_Task", "9030", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:49:44 PM", "", "In Development",  0,20026)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Material_VB_Prep_Area_Time_Tower", "9033", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:32 PM", "", "In Development",  0,15076)
+          InitProperty("MEI_Shuttle_BT_Material_VB_Prep_Area_Time_Tower", "9033", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:53:17 PM", "", "In Development",  0,20029)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Assemble_GB_AMM_Task", "9009", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:37 PM", "", "In Development",  0,15028)
+          InitProperty("MEI_Shuttle_BT_Prepping_Assemble_GB_AMM_Task", "9009", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:35:27 PM", "", "In Development",  0,20003)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Assemble_GB_Time_Tower", "9020", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:03 PM", "", "In Development",  0,15050)
+          InitProperty("MEI_Shuttle_BT_Prepping_Assemble_GB_Time_Tower", "9020", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:42:51 PM", "", "In Development",  0,20015)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_BU_Prep_AMM_Task", "9015", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:52 PM", "", "In Development",  0,15040)
+          InitProperty("MEI_Shuttle_BT_Prepping_BU_Prep_AMM_Task", "9015", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:37:41 PM", "", "In Development",  0,20009)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_BU_Prep_Time_Tower", "9026", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:17 PM", "", "In Development",  0,15062)
+          InitProperty("MEI_Shuttle_BT_Prepping_BU_Prep_Time_Tower", "9026", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:47:59 PM", "", "In Development",  0,20022)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Clean_GB_AMM_Task", "9016", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:54 PM", "", "In Development",  0,15042)
+          InitProperty("MEI_Shuttle_BT_Prepping_Clean_GB_AMM_Task", "9016", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:39:42 PM", "", "In Development",  0,20011)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Clean_GB_Time_Tower", "9027", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:19 PM", "", "In Development",  0,15064)
+          InitProperty("MEI_Shuttle_BT_Prepping_Clean_GB_Time_Tower", "9027", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:48:16 PM", "", "In Development",  0,20023)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Cut_Wood_GB_AMM_Task", "9008", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:35 PM", "", "In Development",  0,15026)
+          InitProperty("MEI_Shuttle_BT_Prepping_Cut_Wood_GB_AMM_Task", "9008", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:35:07 PM", "", "In Development",  0,20002)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Cut_Wood_GB_Time_Tower", "9019", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:01 PM", "", "In Development",  0,15048)
+          InitProperty("MEI_Shuttle_BT_Prepping_Cut_Wood_GB_Time_Tower", "9019", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:42:34 PM", "", "In Development",  0,20014)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_H_Brace_AMM_Task", "9014", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:49 PM", "", "In Development",  0,15038)
+          InitProperty("MEI_Shuttle_BT_Prepping_H_Brace_AMM_Task", "9014", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:37:16 PM", "", "In Development",  0,20008)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_H_Brace_Time_Tower", "9025", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:14 PM", "", "In Development",  0,15060)
+          InitProperty("MEI_Shuttle_BT_Prepping_H_Brace_Time_Tower", "9025", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:47:41 PM", "", "In Development",  0,20021)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_HT_Buckle_AMM_Task", "9013", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:46 PM", "", "In Development",  0,15036)
+          InitProperty("MEI_Shuttle_BT_Prepping_HT_Buckle_AMM_Task", "9013", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:36:55 PM", "", "In Development",  0,20007)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_HT_Buckle_Time_Tower", "9024", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:12 PM", "", "In Development",  0,15058)
+          InitProperty("MEI_Shuttle_BT_Prepping_HT_Buckle_Time_Tower", "9024", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:47:22 PM", "", "In Development",  0,20020)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Oil_PB_Time_Tower", "9021", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:05 PM", "", "In Development",  0,15052)
+          InitProperty("MEI_Shuttle_BT_Prepping_Oil_PB_Time_Tower", "9021", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:43:12 PM", "", "In Development",  0,20016)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Oil_Place_Blocks_AMM_Task", "9010", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:39 PM", "", "In Development",  0,15030)
+          InitProperty("MEI_Shuttle_BT_Prepping_Oil_Place_Blocks_AMM_Task", "9010", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:35:58 PM", "", "In Development",  0,20004)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Prep_UR_AMM_Task", "9006", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:29 PM", "", "In Development",  0,15022)
+          InitProperty("MEI_Shuttle_BT_Prepping_Prep_UR_AMM_Task", "9006", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:34:11 PM", "", "In Development",  0,19999)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_BT_Prepping_Prep_UR_Time_Tower", "9017", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:56 PM", "", "In Development",  0,15044)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Upright_AP_AMM_Task", "9007", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:32 PM", "", "In Development",  0,15024)
+          InitProperty("MEI_Shuttle_BT_Prepping_Upright_AP_AMM_Task", "9007", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:34:49 PM", "", "In Development",  0,20001)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_Upright_AP_Time_Tower", "9018", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:59 PM", "", "In Development",  0,15046)
+          InitProperty("MEI_Shuttle_BT_Prepping_Upright_AP_Time_Tower", "9018", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:42:17 PM", "", "In Development",  0,20013)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_VBT_Buckle_AMM_Task", "9012", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:44 PM", "", "In Development",  0,15034)
+          InitProperty("MEI_Shuttle_BT_Prepping_VBT_Buckle_AMM_Task", "9012", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:36:29 PM", "", "In Development",  0,20006)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_VBT_Buckle_Time_Tower", "9023", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:10 PM", "", "In Development",  0,15056)
+          InitProperty("MEI_Shuttle_BT_Prepping_VBT_Buckle_Time_Tower", "9023", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:46:44 PM", "", "In Development",  0,20019)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_VT_Buckle_AMM_Task", "9011", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:42 PM", "", "In Development",  0,15032)
+          InitProperty("MEI_Shuttle_BT_Prepping_VT_Buckle_AMM_Task", "9011", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:44:09 PM", "", "In Development",  0,20017)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Prepping_VT_Buckle_Time_Tower", "9022", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:24:08 PM", "", "In Development",  0,15054)
+          InitProperty("MEI_Shuttle_BT_Prepping_VT_Buckle_Time_Tower", "9022", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:46:14 PM", "", "In Development",  0,20018)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_BT_Time_Per_Bracing_Tower", "9056", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:24 PM", "", "In Development",  0,15122)
+          InitProperty("MEI_Shuttle_BT_Time_Per_Bracing_Tower", "9056", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:10:56 AM", "", "In Development",  0,20163)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Conveyor_SR_AMM_Task", "8942", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:40 PM", "", "In Development",  0,14894)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Conveyor_SR_AMM_Task", "8942", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:21:34 PM", "", "In Development",  0,19912)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Conveyor_SR_Time_Zone", "8952", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:03 PM", "", "In Development",  0,14914)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Conveyor_SR_Time_Zone", "8952", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:25:13 PM", "", "In Development",  0,19922)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_CS_AMM_Task", "8944", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:44 PM", "", "In Development",  0,14898)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_CS_AMM_Task", "8944", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:22:14 PM", "", "In Development",  0,19914)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_CS_Time_Zone", "8954", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:07 PM", "", "In Development",  0,14918)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_CS_Time_Zone", "8954", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:25:51 PM", "", "In Development",  0,19924)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Cut_HR_AMM_Task", "8946", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:49 PM", "", "In Development",  0,14902)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Cut_HR_AMM_Task", "8946", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:22:56 PM", "", "In Development",  0,19916)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Cut_HR_Time_Zone", "8956", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:12 PM", "", "In Development",  0,14922)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Cut_HR_Time_Zone", "8956", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:26:28 PM", "", "In Development",  0,19926)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Front_CS_AMM_Task", "8945", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:47 PM", "", "In Development",  0,14900)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Front_CS_AMM_Task", "8945", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:22:40 PM", "", "In Development",  0,19915)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Front_CS_Time_Zone", "8955", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:09 PM", "", "In Development",  0,14920)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Front_CS_Time_Zone", "8955", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:26:13 PM", "", "In Development",  0,19925)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_FrontU_AMM_Task", "8943", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:42 PM", "", "In Development",  0,14896)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_FrontU_AMM_Task", "8943", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:21:55 PM", "", "In Development",  0,19913)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_FrontU_Time_Zone", "8953", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:05 PM", "", "In Development",  0,14916)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_FrontU_Time_Zone", "8953", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:25:31 PM", "", "In Development",  0,19923)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_FZ_HB_AMM_Task", "8947", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:51 PM", "", "In Development",  0,14904)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_FZ_HB_AMM_Task", "8947", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:23:18 PM", "", "In Development",  0,19917)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_FZ_HB_Time_Zone", "8957", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:14 PM", "", "In Development",  0,14924)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_FZ_HB_Time_Zone", "8957", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:26:43 PM", "", "In Development",  0,19927)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Grout_AMM_Task", "8949", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:56 PM", "", "In Development",  0,14908)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Grout_AMM_Task", "8949", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:24:17 PM", "", "In Development",  0,19919)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Grout_Time_Zone", "8959", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:19 PM", "", "In Development",  0,14928)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Grout_Time_Zone", "8959", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:27:13 PM", "", "In Development",  0,19929)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Internal_SR_AMM_Task", "8941", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:37 PM", "", "In Development",  0,14892)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Internal_SR_AMM_Task", "8941", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:21:11 PM", "", "In Development",  0,19911)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Internal_SR_Time_Zone", "8951", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:00 PM", "", "In Development",  0,14912)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Internal_SR_Time_Zone", "8951", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:24:58 PM", "", "In Development",  0,19921)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Lift_SR_AMM_Task", "8948", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:54 PM", "", "In Development",  0,14906)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Lift_SR_AMM_Task", "8948", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:24:04 PM", "", "In Development",  0,19918)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_Lift_SR_Time_Zone", "8958", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:16 PM", "", "In Development",  0,14926)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_Lift_SR_Time_Zone", "8958", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:26:59 PM", "", "In Development",  0,19928)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_ST_AMM_Task", "8940", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:35 PM", "", "In Development",  0,14890)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_ST_AMM_Task", "8940", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:20:47 PM", "", "In Development",  0,19910)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Intermediate_ST_Time_Zone", "8950", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:58 PM", "", "In Development",  0,14910)
+          InitProperty("MEI_Shuttle_FZ_Intermediate_ST_Time_Zone", "8950", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:24:37 PM", "", "In Development",  0,19920)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Layout_Anchor_Leveling_AMM_Task", "8919", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:47 PM", "", "In Development",  0,14848)
+          InitProperty("MEI_Shuttle_FZ_Layout_Anchor_Leveling_AMM_Task", "8919", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:09:19 PM", "", "In Development",  0,19888)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Layout_Anchor_Leveling_Time_Zone", "8923", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:56 PM", "", "In Development",  0,14856)
+          InitProperty("MEI_Shuttle_FZ_Layout_Anchor_Leveling_Time_Zone", "8923", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:10:30 PM", "", "In Development",  0,19892)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Layout_FAB_AMM_Task", "8918", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:45 PM", "", "In Development",  0,14846)
+          InitProperty("MEI_Shuttle_FZ_Layout_FAB_AMM_Task", "8918", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:09:05 PM", "", "In Development",  0,19887)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Layout_FAB_Time_Zone", "8922", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:54 PM", "", "In Development",  0,14854)
+          InitProperty("MEI_Shuttle_FZ_Layout_FAB_Time_Zone", "8922", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:10:07 PM", "", "In Development",  0,19891)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Layout_Pilot_Drill_AMM_Task", "8916", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:40 PM", "", "In Development",  0,14842)
+          InitProperty("MEI_Shuttle_FZ_Layout_Pilot_Drill_AMM_Task", "8916", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:08:38 PM", "", "In Development",  0,19885)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Layout_Pilot_Drill_Time_Zone", "8920", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:50 PM", "", "In Development",  0,14850)
+          InitProperty("MEI_Shuttle_FZ_Layout_Pilot_Drill_Time_Zone", "8920", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:09:35 PM", "", "In Development",  0,19889)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Layout_Second_Hole_AMM_Task", "8917", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:43 PM", "", "In Development",  0,14844)
+          InitProperty("MEI_Shuttle_FZ_Layout_Second_Hole_AMM_Task", "8917", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:08:51 PM", "", "In Development",  0,19886)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Layout_Second_Hole_Time_Zone", "8921", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:52 PM", "", "In Development",  0,14852)
+          InitProperty("MEI_Shuttle_FZ_Layout_Second_Hole_Time_Zone", "8921", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:09:52 PM", "", "In Development",  0,19890)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Level_Tight_Upright_Knock_AMM_Task", "8960", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:21 PM", "", "In Development",  0,14930)
+          InitProperty("MEI_Shuttle_FZ_Level_Tight_Upright_Knock_AMM_Task", "8960", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:27:41 PM", "", "In Development",  0,19931)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Level_Tight_Upright_Knock_Time_Zone", "8961", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:23 PM", "", "In Development",  0,14932)
+          InitProperty("MEI_Shuttle_FZ_Level_Tight_Upright_Knock_Time_Zone", "8961", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:28:04 PM", "", "In Development",  0,19932)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Material_PreStage_PR_AMM_Task", "8936", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:26 PM", "", "In Development",  0,14882)
+          InitProperty("MEI_Shuttle_FZ_Material_PreStage_PR_AMM_Task", "8936", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:19:14 PM", "", "In Development",  0,19906)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Material_PreStage_PR_Time_Zone", "8938", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:31 PM", "", "In Development",  0,14886)
+          InitProperty("MEI_Shuttle_FZ_Material_PreStage_PR_Time_Zone", "8938", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:19:56 PM", "", "In Development",  0,19908)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Material_Upright_RS_AMM_Task", "8937", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:28 PM", "", "In Development",  0,14884)
+          InitProperty("MEI_Shuttle_FZ_Material_Upright_RS_AMM_Task", "8937", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:19:31 PM", "", "In Development",  0,19907)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Material_Upright_RS_Time_Zone", "8939", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:33 PM", "", "In Development",  0,14888)
+          InitProperty("MEI_Shuttle_FZ_Material_Upright_RS_Time_Zone", "8939", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:20:19 PM", "", "In Development",  0,19909)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Assemble_GB_AMM_Task", "8927", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:05 PM", "", "In Development",  0,14864)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Assemble_GB_AMM_Task", "8927", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:11:57 PM", "", "In Development",  0,19897)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Assemble_GB_Time_Zone", "8933", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:19 PM", "", "In Development",  0,14876)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Assemble_GB_Time_Zone", "8933", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:16:05 PM", "", "In Development",  0,19903)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Clean_GB_AMM_Task", "8929", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:10 PM", "", "In Development",  0,14868)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Clean_GB_AMM_Task", "8929", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:12:36 PM", "", "In Development",  0,19899)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Clean_GB_Time_Zone", "8935", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:23 PM", "", "In Development",  0,14880)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Clean_GB_Time_Zone", "8935", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:18:45 PM", "", "In Development",  0,19905)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_AMM_Task", "8926", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:03 PM", "", "In Development",  0,14862)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_AMM_Task", "8926", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:11:38 PM", "", "In Development",  0,19896)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_Time_Zone", "8932", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:16 PM", "", "In Development",  0,14874)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_Time_Zone", "8932", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:15:38 PM", "", "In Development",  0,19902)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Oil_PB_Time_Zone", "8934", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:21 PM", "", "In Development",  0,14878)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Oil_PB_Time_Zone", "8934", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:18:22 PM", "", "In Development",  0,19904)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Oil_Place_Blocks_AMM_Task", "8928", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:07 PM", "", "In Development",  0,14866)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Oil_Place_Blocks_AMM_Task", "8928", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:12:18 PM", "", "In Development",  0,19898)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Prep_UR_AMM_Task", "8924", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:58 PM", "", "In Development",  0,14858)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Prep_UR_AMM_Task", "8924", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:10:52 PM", "", "In Development",  0,19893)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Prep_UR_Time_Zone", "8930", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:12 PM", "", "In Development",  0,14870)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Prep_UR_Time_Zone", "8930", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:15:03 PM", "", "In Development",  0,19900)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Upright_AP_AMM_Task", "8925", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:01 PM", "", "In Development",  0,14860)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Upright_AP_AMM_Task", "8925", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:11:07 PM", "", "In Development",  0,19894)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Prepping_Upright_AP_Time_Zone", "8931", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:20:14 PM", "", "In Development",  0,14872)
+          InitProperty("MEI_Shuttle_FZ_Prepping_Upright_AP_Time_Zone", "8931", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:15:16 PM", "", "In Development",  0,19901)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_FZ_Time_Per_Front_Zone", "8962", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:26 PM", "", "In Development",  0,14934)
+          InitProperty("MEI_Shuttle_FZ_Time_Per_Front_Zone", "8962", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:29:23 PM", "", "In Development",  0,19933)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Double_MDR_Lift", "8854", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:10 PM", "", "In Development",  0,14718)
+          InitProperty("MEI_Shuttle_MI_Double_MDR_Lift", "8854", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:27:00 AM", "", "In Development",  0,19777)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Hours", "8824", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:46 PM", "", "In Development",  0,14658)
+          InitProperty("MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Hours", "8824", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:21:32 PM", "", "In Development",  0,19635)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Input", "8806", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:03 PM", "", "In Development",  0,14622)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Rate", "8818", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:33 PM", "", "In Development",  0,14646)
+          InitProperty("MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Rate", "8818", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:17:46 PM", "", "In Development",  0,19630)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_System_Qty", "8812", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:19 PM", "", "In Development",  0,14634)
+          InitProperty("MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_System_Qty", "8812", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:13:50 PM", "", "In Development",  0,19624)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_H_Install_Attachment_Time_Per_Unit", "8837", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:29 PM", "", "In Development",  0,14684)
+          InitProperty("MEI_Shuttle_MI_H_Install_Attachment_Time_Per_Unit", "8837", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:14:22 AM", "", "In Development",  0,19755)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_H_Install_Grid_Supp_Time_Per_Unit", "8836", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:27 PM", "", "In Development",  0,14682)
+          InitProperty("MEI_Shuttle_MI_H_Install_Grid_Supp_Time_Per_Unit", "8836", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:14:08 AM", "", "In Development",  0,19754)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_H_Install_Mat_Move_Time_Per_Unit", "8835", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:24 PM", "", "In Development",  0,14680)
+          InitProperty("MEI_Shuttle_MI_H_Install_Mat_Move_Time_Per_Unit", "8835", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:13:51 AM", "", "In Development",  0,19753)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Hoist_Hours", "8826", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:03 PM", "", "In Development",  0,14662)
+          InitProperty("MEI_Shuttle_MI_Hoist_Hours", "8826", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:22:48 PM", "", "In Development",  0,19637)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_MI_Hoist_Input", "8808", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:08 PM", "", "In Development",  0,14626)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Hoist_Rate", "8820", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:37 PM", "", "In Development",  0,14650)
+          InitProperty("MEI_Shuttle_MI_Hoist_Rate", "8820", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:18:30 PM", "", "In Development",  0,19631)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Hoist_System_Qty", "8814", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:24 PM", "", "In Development",  0,14638)
+          InitProperty("MEI_Shuttle_MI_Hoist_System_Qty", "8814", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:15:28 PM", "", "In Development",  0,19626)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Hours_Per_Hoist", "8838", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:31 PM", "", "In Development",  0,14686)
+          InitProperty("MEI_Shuttle_MI_Hours_Per_Hoist", "8838", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:15:22 AM", "", "In Development",  0,19756)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Hours_Per_Lift", "8853", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:07 PM", "", "In Development",  0,14716)
+          InitProperty("MEI_Shuttle_MI_Hours_Per_Lift", "8853", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:25:31 AM", "", "In Development",  0,19774)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Hours_Per_MDR", "8834", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:22 PM", "", "In Development",  0,14678)
+          InitProperty("MEI_Shuttle_MI_Hours_Per_MDR", "8834", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:12:21 AM", "", "In Development",  0,19752)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Hours_lift", "8848", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:55 PM", "", "In Development",  0,14706)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Hours_lift", "8848", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:20:21 AM", "", "In Development",  0,19766)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Min_Per_lift", "8841", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:38 PM", "", "In Development",  0,14692)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Min_Per_lift", "8841", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:17:37 AM", "", "In Development",  0,19759)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_L_Plumb_Hours_lift", "8850", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:59 PM", "", "In Development",  0,14710)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_L_Plumb_Hours_lift", "8850", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:20:58 AM", "", "In Development",  0,19769)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_L_Plumb_Min_Per_lift", "8843", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:44 PM", "", "In Development",  0,14696)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_L_Plumb_Min_Per_lift", "8843", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:18:15 AM", "", "In Development",  0,19761)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Lift_Hours_lift", "8849", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:57 PM", "", "In Development",  0,14708)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Lift_Hours_lift", "8849", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:20:42 AM", "", "In Development",  0,19767)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Lift_Min_Per_lift", "8842", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:41 PM", "", "In Development",  0,14694)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Lift_Min_Per_lift", "8842", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:17:57 AM", "", "In Development",  0,19760)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Mat_Move_Hours_lift", "8846", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:50 PM", "", "In Development",  0,14702)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Mat_Move_Hours_lift", "8846", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:19:33 AM", "", "In Development",  0,19764)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Mat_Move_Min_Per_lift", "8839", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:34 PM", "", "In Development",  0,14688)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Mat_Move_Min_Per_lift", "8839", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:15:54 AM", "", "In Development",  0,19757)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_MDR_Hours_lift", "8851", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:02 PM", "", "In Development",  0,14712)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_MDR_Hours_lift", "8851", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:24:18 AM", "", "In Development",  0,19771)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_MDR_Min_Per_lift", "8844", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:46 PM", "", "In Development",  0,14698)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_MDR_Min_Per_lift", "8844", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:18:47 AM", "", "In Development",  0,19762)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Run_In_Hours_lift", "8852", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:05 PM", "", "In Development",  0,14714)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Run_In_Hours_lift", "8852", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:24:56 AM", "", "In Development",  0,19773)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Run_In_Min_Per_lift", "8845", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:48 PM", "", "In Development",  0,14700)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Run_In_Min_Per_lift", "8845", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:19:09 AM", "", "In Development",  0,19763)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Staging_Hours_lift", "8847", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:53 PM", "", "In Development",  0,14704)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Staging_Hours_lift", "8847", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:20:00 AM", "", "In Development",  0,19765)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Lift_Install_Staging_Min_Per_lift", "8840", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:36 PM", "", "In Development",  0,14690)
+          InitProperty("MEI_Shuttle_MI_Lift_Install_Staging_Min_Per_lift", "8840", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:16:19 AM", "", "In Development",  0,19758)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_MDR_Install_Attach_Guarding", "8833", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:20 PM", "", "In Development",  0,14676)
+          InitProperty("MEI_Shuttle_MI_MDR_Install_Attach_Guarding", "8833", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:11:38 AM", "", "In Development",  0,19751)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_MDR_Install_Layout", "8831", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:15 PM", "", "In Development",  0,14672)
+          InitProperty("MEI_Shuttle_MI_MDR_Install_Layout", "8831", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:10:57 AM", "", "In Development",  0,19749)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_MDR_Install_Mat_Movement", "8829", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:10 PM", "", "In Development",  0,14668)
+          InitProperty("MEI_Shuttle_MI_MDR_Install_Mat_Movement", "8829", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:08:52 AM", "", "In Development",  0,19746)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_MDR_Install_Uncrate", "8830", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:12 PM", "", "In Development",  0,14670)
+          InitProperty("MEI_Shuttle_MI_MDR_Install_Uncrate", "8830", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:09:23 AM", "", "In Development",  0,19747)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_MDR_Installation", "8832", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:17 PM", "", "In Development",  0,14674)
+          InitProperty("MEI_Shuttle_MI_MDR_Installation", "8832", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:11:20 AM", "", "In Development",  0,19750)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_MDR_Installation_Aisle_Hours", "8822", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:42 PM", "", "In Development",  0,14654)
+          InitProperty("MEI_Shuttle_MI_MDR_Installation_Aisle_Hours", "8822", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:20:18 PM", "", "In Development",  0,19633)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_MI_MDR_Installation_Aisle_Input", "8804", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:59 PM", "", "In Development",  0,14618)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_MDR_Installation_Aisle_Rate", "8816", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:29 PM", "", "In Development",  0,14642)
+          InitProperty("MEI_Shuttle_MI_MDR_Installation_Aisle_Rate", "8816", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:16:35 PM", "", "In Development",  0,19628)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_MDR_Installation_Aisle_System_Qty", "8810", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:14 PM", "", "In Development",  0,14630)
+          InitProperty("MEI_Shuttle_MI_MDR_Installation_Aisle_System_Qty", "8810", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:12:09 PM", "", "In Development",  0,19622)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Other_Lifts_Aisle_Hours", "8825", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:48 PM", "", "In Development",  0,14660)
+          InitProperty("MEI_Shuttle_MI_Other_Lifts_Aisle_Hours", "8825", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:22:08 PM", "", "In Development",  0,19636)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_MI_Other_Lifts_Aisle_Input", "8807", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:06 PM", "", "In Development",  0,14624)
@@ -4151,79 +4151,79 @@ Option Infer On
           InitProperty("MEI_Shuttle_MI_Other_Lifts_Aisle_Rate", "8819", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:35 PM", "", "In Development",  0,14648)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Other_Lifts_Aisle_System_Qty", "8813", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:22 PM", "", "In Development",  0,14636)
+          InitProperty("MEI_Shuttle_MI_Other_Lifts_Aisle_System_Qty", "8813", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:14:31 PM", "", "In Development",  0,19625)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Shuttles_Aisle_Hours", "8821", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:40 PM", "", "In Development",  0,14652)
+          InitProperty("MEI_Shuttle_MI_Shuttles_Aisle_Hours", "8821", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:19:41 PM", "", "In Development",  0,19632)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_MI_Shuttles_Aisle_Input", "8803", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:57 PM", "", "In Development",  0,14616)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Shuttles_Aisle_Rate", "8815", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:26 PM", "", "In Development",  0,14640)
+          InitProperty("MEI_Shuttle_MI_Shuttles_Aisle_Rate", "8815", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:16:02 PM", "", "In Development",  0,19627)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Shuttles_Aisle_System_Qty", "8809", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:11 PM", "", "In Development",  0,14628)
+          InitProperty("MEI_Shuttle_MI_Shuttles_Aisle_System_Qty", "8809", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:10:20 PM", "", "In Development",  0,19621)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Total_Hours", "8828", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:07 PM", "", "In Development",  0,14666)
+          InitProperty("MEI_Shuttle_MI_Total_Hours", "8828", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:24:28 PM", "", "In Development",  0,19639)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Total_Shuttle_Hours", "8827", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:16:05 PM", "", "In Development",  0,14664)
+          InitProperty("MEI_Shuttle_MI_Total_Shuttle_Hours", "8827", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:23:27 PM", "", "In Development",  0,19638)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Vertical_Lifts_Aisle_Hours", "8823", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:44 PM", "", "In Development",  0,14656)
+          InitProperty("MEI_Shuttle_MI_Vertical_Lifts_Aisle_Hours", "8823", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:20:58 PM", "", "In Development",  0,19634)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_MI_Vertical_Lifts_Aisle_Input", "8805", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:01 PM", "", "In Development",  0,14620)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Vertical_Lifts_Aisle_Rate", "8817", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:31 PM", "", "In Development",  0,14644)
+          InitProperty("MEI_Shuttle_MI_Vertical_Lifts_Aisle_Rate", "8817", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:17:11 PM", "", "In Development",  0,19629)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_MI_Vertical_Lifts_Aisle_System_Qty", "8811", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:15:17 PM", "", "In Development",  0,14632)
+          InitProperty("MEI_Shuttle_MI_Vertical_Lifts_Aisle_System_Qty", "8811", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:12:58 PM", "", "In Development",  0,19623)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Aisles_Hours", "8783", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:08 PM", "", "In Development",  0,14576)
+          InitProperty("MEI_Shuttle_RI_Aisles_Hours", "8783", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:50:04 PM", "", "In Development",  0,19602)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Aisles_Input", "8726", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:11:40 PM", "", "In Development",  0,14462)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Aisles_Rate", "8764", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:20 PM", "", "In Development",  0,14538)
+          InitProperty("MEI_Shuttle_RI_Aisles_Rate", "8764", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:31:49 PM", "", "In Development",  0,19585)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Aisles_System_Qty", "8745", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/18/2025 9:15:12 AM", "", "In Development",  0,19016)
+          InitProperty("MEI_Shuttle_RI_Aisles_System_Qty", "8745", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:16:38 AM", "", "In Development",  0,19328)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours", "8785", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:14 PM", "", "In Development",  0,14580)
+          InitProperty("MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours", "8785", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:51:52 PM", "", "In Development",  0,19604)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input", "8728", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:11:45 PM", "", "In Development",  0,14466)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate", "8766", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:25 PM", "", "In Development",  0,14542)
+          InitProperty("MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate", "8766", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:34:16 PM", "", "In Development",  0,19588)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_System_Qty", "8747", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:33 PM", "", "In Development",  0,14504)
+          InitProperty("MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_System_Qty", "8747", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:14:49 AM", "", "In Development",  0,19325)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Entry_Gates_Hours", "8799", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:48 PM", "", "In Development",  0,14608)
+          InitProperty("MEI_Shuttle_RI_Entry_Gates_Hours", "8799", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:06:06 PM", "", "In Development",  0,19617)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Entry_Gates_Input", "8742", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:21 PM", "", "In Development",  0,14494)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Entry_Gates_Rate", "8780", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:01 PM", "", "In Development",  0,14570)
+          InitProperty("MEI_Shuttle_RI_Entry_Gates_Rate", "8780", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:46:14 PM", "", "In Development",  0,19599)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Entry_Gates_System_Qty", "8761", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:13 PM", "", "In Development",  0,14532)
+          InitProperty("MEI_Shuttle_RI_Entry_Gates_System_Qty", "8761", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:28:40 PM", "", "In Development",  0,19582)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_Anchor_Drill_Avg_MM_Task", "8888", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:32 PM", "", "In Development",  0,14786)
+          InitProperty("MEI_Shuttle_RI_Fencing_Anchor_Drill_Avg_MM_Task", "8888", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:53:15 AM", "", "In Development",  0,19860)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_Anchor_Drill_Time_Per_Ft", "8893", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:44 PM", "", "In Development",  0,14796)
+          InitProperty("MEI_Shuttle_RI_Fencing_Anchor_Drill_Time_Per_Ft", "8893", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:55:07 AM", "", "In Development",  0,19864)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Fencing_Entry_D_Build_Avg_MM_Task", "8889", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:35 PM", "", "In Development",  0,14788)
@@ -4232,52 +4232,52 @@ Option Infer On
           InitProperty("MEI_Shuttle_RI_Fencing_Entry_D_Build_Time_Per_Ft", "8894", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:46 PM", "", "In Development",  0,14798)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_Entry_D_Inst_Avg_MM_Task", "8890", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:37 PM", "", "In Development",  0,14790)
+          InitProperty("MEI_Shuttle_RI_Fencing_Entry_D_Inst_Avg_MM_Task", "8890", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:53:49 AM", "", "In Development",  0,19861)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Fencing_Entry_D_Inst_Time_Per_Ft", "8895", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:50 PM", "", "In Development",  0,14800)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_Entry_Door", "8897", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:55 PM", "", "In Development",  0,14804)
+          InitProperty("MEI_Shuttle_RI_Fencing_Entry_Door", "8897", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:56:09 AM", "", "In Development",  0,19865)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_Hours", "8793", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:32 PM", "", "In Development",  0,14596)
+          InitProperty("MEI_Shuttle_RI_Fencing_Hours", "8793", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:00:33 PM", "", "In Development",  0,19611)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Fencing_Input", "8736", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:05 PM", "", "In Development",  0,14482)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_Layout_Avg_MM_Task", "8886", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:28 PM", "", "In Development",  0,14782)
+          InitProperty("MEI_Shuttle_RI_Fencing_Layout_Avg_MM_Task", "8886", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:52:37 AM", "", "In Development",  0,19858)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_Layout_Time_Per_Ft", "8891", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:39 PM", "", "In Development",  0,14792)
+          InitProperty("MEI_Shuttle_RI_Fencing_Layout_Time_Per_Ft", "8891", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:54:11 AM", "", "In Development",  0,19862)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_Rate", "8774", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:44 PM", "", "In Development",  0,14558)
+          InitProperty("MEI_Shuttle_RI_Fencing_Rate", "8774", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:41:19 PM", "", "In Development",  0,19593)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_STD_Exterior_Avg_MM_Task", "8887", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:30 PM", "", "In Development",  0,14784)
+          InitProperty("MEI_Shuttle_RI_Fencing_STD_Exterior_Avg_MM_Task", "8887", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:52:55 AM", "", "In Development",  0,19859)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_STD_Exterior_Time_Per_Ft", "8892", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:42 PM", "", "In Development",  0,14794)
+          InitProperty("MEI_Shuttle_RI_Fencing_STD_Exterior_Time_Per_Ft", "8892", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:54:25 AM", "", "In Development",  0,19863)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_System_Qty", "8755", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:53 PM", "", "In Development",  0,14520)
+          InitProperty("MEI_Shuttle_RI_Fencing_System_Qty", "8755", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:47:21 AM", "", "In Development",  0,19333)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Fencing_Time_Per_Foot", "8896", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:52 PM", "", "In Development",  0,14802)
+          InitProperty("MEI_Shuttle_RI_Fencing_Time_Per_Foot", "8896", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:56:40 AM", "", "In Development",  0,19866)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Front_Zone_Hours", "8789", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:23 PM", "", "In Development",  0,14588)
+          InitProperty("MEI_Shuttle_RI_Front_Zone_Hours", "8789", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:58:29 PM", "", "In Development",  0,19608)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Front_Zone_Input", "8732", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:11:55 PM", "", "In Development",  0,14474)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Front_Zone_Rate", "8770", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:34 PM", "", "In Development",  0,14550)
+          InitProperty("MEI_Shuttle_RI_Front_Zone_Rate", "8770", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:37:16 PM", "", "In Development",  0,19591)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Front_Zone_System_Qty", "8751", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:43 PM", "", "In Development",  0,14512)
+          InitProperty("MEI_Shuttle_RI_Front_Zone_System_Qty", "8751", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:19:33 AM", "", "In Development",  0,19329)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Height_Hours", "8790", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:25 PM", "", "In Development",  0,14590)
@@ -4286,25 +4286,25 @@ Option Infer On
           InitProperty("MEI_Shuttle_RI_Height_Input", "8733", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:11:57 PM", "", "In Development",  0,14476)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Height_Rate", "8771", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:37 PM", "", "In Development",  0,14552)
+          InitProperty("MEI_Shuttle_RI_Height_Rate", "8771", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:39:31 PM", "", "In Development",  0,19592)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Height_System_Qty", "8752", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:45 PM", "", "In Development",  0,14514)
+          InitProperty("MEI_Shuttle_RI_Height_System_Qty", "8752", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:33:35 AM", "", "In Development",  0,19330)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Layout_Hours", "8800", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:50 PM", "", "In Development",  0,14610)
+          InitProperty("MEI_Shuttle_RI_Layout_Hours", "8800", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:06:41 PM", "", "In Development",  0,19618)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Layout_Input", "8743", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:23 PM", "", "In Development",  0,14496)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Layout_Rate", "8781", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:03 PM", "", "In Development",  0,14572)
+          InitProperty("MEI_Shuttle_RI_Layout_Rate", "8781", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:46:50 PM", "", "In Development",  0,19600)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Layout_System_Qty", "8762", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:16 PM", "", "In Development",  0,14534)
+          InitProperty("MEI_Shuttle_RI_Layout_System_Qty", "8762", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:30:11 PM", "", "In Development",  0,19583)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Length_Hours", "8791", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:28 PM", "", "In Development",  0,14592)
+          InitProperty("MEI_Shuttle_RI_Length_Hours", "8791", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:59:16 PM", "", "In Development",  0,19609)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Length_Input", "8734", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:00 PM", "", "In Development",  0,14478)
@@ -4313,199 +4313,199 @@ Option Infer On
           InitProperty("MEI_Shuttle_RI_Length_Rate", "8772", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:39 PM", "", "In Development",  0,14554)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Length_System_Qty", "8753", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:48 PM", "", "In Development",  0,14516)
+          InitProperty("MEI_Shuttle_RI_Length_System_Qty", "8753", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:41:58 AM", "", "In Development",  0,19331)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Levels_Aisle_Hours", "8787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:19 PM", "", "In Development",  0,14584)
+          InitProperty("MEI_Shuttle_RI_Levels_Aisle_Hours", "8787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:53:19 PM", "", "In Development",  0,19606)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Levels_Aisle_Input", "8730", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:11:50 PM", "", "In Development",  0,14470)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Levels_Aisle_Rate", "8768", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:30 PM", "", "In Development",  0,14546)
+          InitProperty("MEI_Shuttle_RI_Levels_Aisle_Rate", "8768", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:35:31 PM", "", "In Development",  0,19590)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Levels_Aisle_System_Qty", "8749", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:38 PM", "", "In Development",  0,14508)
+          InitProperty("MEI_Shuttle_RI_Levels_Aisle_System_Qty", "8749", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:12:50 AM", "", "In Development",  0,19323)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Material_Movement_Hours", "8801", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:52 PM", "", "In Development",  0,14612)
+          InitProperty("MEI_Shuttle_RI_Material_Movement_Hours", "8801", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:07:22 PM", "", "In Development",  0,19619)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Material_Movement_Input", "8744", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:26 PM", "", "In Development",  0,14498)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Material_Movement_Rate", "8782", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:06 PM", "", "In Development",  0,14574)
+          InitProperty("MEI_Shuttle_RI_Material_Movement_Rate", "8782", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:47:36 PM", "", "In Development",  0,19601)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Material_Movement_System_Qty", "8763", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:18 PM", "", "In Development",  0,14536)
+          InitProperty("MEI_Shuttle_RI_Material_Movement_System_Qty", "8763", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:30:44 PM", "", "In Development",  0,19584)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Inst_Attach_N_Avg_MM_Task", "8866", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:39 PM", "", "In Development",  0,14742)
+          InitProperty("MEI_Shuttle_RI_Net_Inst_Attach_N_Avg_MM_Task", "8866", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:35:35 AM", "", "In Development",  0,19799)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Ft", "8882", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:17 PM", "", "In Development",  0,14774)
+          InitProperty("MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Ft", "8882", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:50:15 AM", "", "In Development",  0,19854)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Side", "8874", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:58 PM", "", "In Development",  0,14758)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Avg_MM_Task", "8867", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:41 PM", "", "In Development",  0,14744)
+          InitProperty("MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Avg_MM_Task", "8867", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:36:09 AM", "", "In Development",  0,19801)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Ft", "8883", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:20 PM", "", "In Development",  0,14776)
+          InitProperty("MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Ft", "8883", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:50:44 AM", "", "In Development",  0,19855)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Side", "8875", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:00 PM", "", "In Development",  0,14760)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Inst_N_Brkt_Avg_MM_Task", "8864", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:34 PM", "", "In Development",  0,14738)
+          InitProperty("MEI_Shuttle_RI_Net_Inst_N_Brkt_Avg_MM_Task", "8864", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:34:52 AM", "", "In Development",  0,19796)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Ft", "8880", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:12 PM", "", "In Development",  0,14770)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Side", "8872", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:53 PM", "", "In Development",  0,14754)
+          InitProperty("MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Side", "8872", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:45:22 AM", "", "In Development",  0,19814)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Inst_Safety_NC_Avg_MM_Task", "8865", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:37 PM", "", "In Development",  0,14740)
+          InitProperty("MEI_Shuttle_RI_Net_Inst_Safety_NC_Avg_MM_Task", "8865", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:35:11 AM", "", "In Development",  0,19797)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Ft", "8881", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:14 PM", "", "In Development",  0,14772)
+          InitProperty("MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Ft", "8881", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:48:39 AM", "", "In Development",  0,19819)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Side", "8873", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:56 PM", "", "In Development",  0,14756)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Avg_MM_Task", "8861", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:27 PM", "", "In Development",  0,14732)
+          InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Avg_MM_Task", "8861", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:33:27 AM", "", "In Development",  0,19791)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Ft", "8877", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:05 PM", "", "In Development",  0,14764)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Side", "8869", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:46 PM", "", "In Development",  0,14748)
+          InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Side", "8869", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:39:27 AM", "", "In Development",  0,19805)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Avg_MM_Task", "8862", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:30 PM", "", "In Development",  0,14734)
+          InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Avg_MM_Task", "8862", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:33:50 AM", "", "In Development",  0,19792)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Ft", "8878", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:07 PM", "", "In Development",  0,14766)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Side", "8870", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:48 PM", "", "In Development",  0,14750)
+          InitProperty("MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Side", "8870", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:40:49 AM", "", "In Development",  0,19806)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Avg_MM_Task", "8860", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:25 PM", "", "In Development",  0,14730)
+          InitProperty("MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Avg_MM_Task", "8860", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:32:46 AM", "", "In Development",  0,19789)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Ft", "8876", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:02 PM", "", "In Development",  0,14762)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Side", "8868", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:43 PM", "", "In Development",  0,14746)
+          InitProperty("MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Side", "8868", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:38:42 AM", "", "In Development",  0,19804)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Prep_Netting_T_B_Avg_MM_Task", "8863", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:32 PM", "", "In Development",  0,14736)
+          InitProperty("MEI_Shuttle_RI_Net_Prep_Netting_T_B_Avg_MM_Task", "8863", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:34:28 AM", "", "In Development",  0,19794)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Ft", "8879", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:09 PM", "", "In Development",  0,14768)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Side", "8871", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:17:51 PM", "", "In Development",  0,14752)
+          InitProperty("MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Side", "8871", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 8:46:30 AM", "", "In Development",  0,19816)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Netting_Hours", "8796", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:41 PM", "", "In Development",  0,14602)
+          InitProperty("MEI_Shuttle_RI_Netting_Hours", "8796", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 11:13:11 AM", "", "In Development",  0,20227)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Netting_Hours_Per_Foot", "8885", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:25 PM", "", "In Development",  0,14780)
+          InitProperty("MEI_Shuttle_RI_Netting_Hours_Per_Foot", "8885", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:52:05 AM", "", "In Development",  0,19857)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Netting_Hours_Per_Side", "8884", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:23 PM", "", "In Development",  0,14778)
+          InitProperty("MEI_Shuttle_RI_Netting_Hours_Per_Side", "8884", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:51:19 AM", "", "In Development",  0,19856)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Netting_Input", "8739", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:14 PM", "", "In Development",  0,14488)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Netting_Rate", "8777", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:54 PM", "", "In Development",  0,14564)
+          InitProperty("MEI_Shuttle_RI_Netting_Rate", "8777", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 11:14:55 AM", "", "In Development",  0,20231)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Netting_System_Qty", "8758", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:03 PM", "", "In Development",  0,14526)
+          InitProperty("MEI_Shuttle_RI_Netting_System_Qty", "8758", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 11:43:16 AM", "", "In Development",  0,19347)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Service_Ladders_Hours", "8797", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:43 PM", "", "In Development",  0,14604)
+          InitProperty("MEI_Shuttle_RI_Service_Ladders_Hours", "8797", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 11:14:38 AM", "", "In Development",  0,20230)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Service_Ladders_Input", "8740", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:17 PM", "", "In Development",  0,14490)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Service_Ladders_Rate", "8778", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:56 PM", "", "In Development",  0,14566)
+          InitProperty("MEI_Shuttle_RI_Service_Ladders_Rate", "8778", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:44:54 PM", "", "In Development",  0,19597)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Service_Ladders_System_Qty", "8759", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:05 PM", "", "In Development",  0,14528)
+          InitProperty("MEI_Shuttle_RI_Service_Ladders_System_Qty", "8759", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 11:44:26 AM", "", "In Development",  0,19348)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Service_Levels_Aisle_Hours", "8786", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:16 PM", "", "In Development",  0,14582)
+          InitProperty("MEI_Shuttle_RI_Service_Levels_Aisle_Hours", "8786", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:52:39 PM", "", "In Development",  0,19605)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Service_Levels_Aisle_Input", "8729", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:11:48 PM", "", "In Development",  0,14468)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Service_Levels_Aisle_Rate", "8767", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:27 PM", "", "In Development",  0,14544)
+          InitProperty("MEI_Shuttle_RI_Service_Levels_Aisle_Rate", "8767", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:35:01 PM", "", "In Development",  0,19589)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Service_Levels_Aisle_System_Qty", "8748", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:36 PM", "", "In Development",  0,14506)
+          InitProperty("MEI_Shuttle_RI_Service_Levels_Aisle_System_Qty", "8748", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:13:33 AM", "", "In Development",  0,19324)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Service_Platform_Hours", "8794", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:36 PM", "", "In Development",  0,14598)
+          InitProperty("MEI_Shuttle_RI_Service_Platform_Hours", "8794", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:01:49 PM", "", "In Development",  0,19612)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Service_Platform_Input", "8737", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:09 PM", "", "In Development",  0,14484)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Service_Platform_Rate", "8775", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:48 PM", "", "In Development",  0,14560)
+          InitProperty("MEI_Shuttle_RI_Service_Platform_Rate", "8775", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:43:13 PM", "", "In Development",  0,19594)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Service_Platform_System_Qty", "8756", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:57 PM", "", "In Development",  0,14522)
+          InitProperty("MEI_Shuttle_RI_Service_Platform_System_Qty", "8756", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 11:36:36 AM", "", "In Development",  0,19343)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Sides_of_Netting_Hours", "8795", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:39 PM", "", "In Development",  0,14600)
+          InitProperty("MEI_Shuttle_RI_Sides_of_Netting_Hours", "8795", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:02:43 PM", "", "In Development",  0,19613)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Sides_of_Netting_Input", "8738", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:12 PM", "", "In Development",  0,14486)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Sides_of_Netting_Rate", "8776", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:52 PM", "", "In Development",  0,14562)
+          InitProperty("MEI_Shuttle_RI_Sides_of_Netting_Rate", "8776", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:43:41 PM", "", "In Development",  0,19595)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Sides_of_Netting_System_Qty", "8757", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:00 PM", "", "In Development",  0,14524)
+          InitProperty("MEI_Shuttle_RI_Sides_of_Netting_System_Qty", "8757", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 11:38:27 AM", "", "In Development",  0,19345)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Stairs_Hours", "8798", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:46 PM", "", "In Development",  0,14606)
+          InitProperty("MEI_Shuttle_RI_Stairs_Hours", "8798", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:05:21 PM", "", "In Development",  0,19616)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Stairs_Input", "8741", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:19 PM", "", "In Development",  0,14492)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Stairs_Rate", "8779", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:58 PM", "", "In Development",  0,14568)
+          InitProperty("MEI_Shuttle_RI_Stairs_Rate", "8779", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:45:09 PM", "", "In Development",  0,19598)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Stairs_System_Qty", "8760", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:08 PM", "", "In Development",  0,14530)
+          InitProperty("MEI_Shuttle_RI_Stairs_System_Qty", "8760", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 11:45:16 AM", "", "In Development",  0,19349)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Hours", "8784", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:11 PM", "", "In Development",  0,14578)
+          InitProperty("MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Hours", "8784", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:50:58 PM", "", "In Development",  0,19603)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input", "8727", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:11:43 PM", "", "In Development",  0,14464)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Rate", "8765", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:23 PM", "", "In Development",  0,14540)
+          InitProperty("MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Rate", "8765", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:33:57 PM", "", "In Development",  0,19587)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Std_Rack_Bays_Aisle_System_Qty", "8746", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:31 PM", "", "In Development",  0,14502)
+          InitProperty("MEI_Shuttle_RI_Std_Rack_Bays_Aisle_System_Qty", "8746", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:15:59 AM", "", "In Development",  0,19326)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Total_Rack_Hours", "8802", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:55 PM", "", "In Development",  0,14614)
+          InitProperty("MEI_Shuttle_RI_Total_Rack_Hours", "8802", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 6:08:02 PM", "", "In Development",  0,19620)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Totes_per_Bay_Hours", "8788", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:21 PM", "", "In Development",  0,14586)
+          InitProperty("MEI_Shuttle_RI_Totes_per_Bay_Hours", "8788", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:56:20 PM", "", "In Development",  0,19607)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Totes_per_Bay_Input", "8731", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:11:52 PM", "", "In Development",  0,14472)
@@ -4514,10 +4514,10 @@ Option Infer On
           InitProperty("MEI_Shuttle_RI_Totes_per_Bay_Rate", "8769", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:32 PM", "", "In Development",  0,14548)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Totes_per_Bay_System_Qty", "8750", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:41 PM", "", "In Development",  0,14510)
+          InitProperty("MEI_Shuttle_RI_Totes_per_Bay_System_Qty", "8750", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 10:57:21 AM", "", "In Development",  0,20223)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Width_Hours", "8792", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:14:30 PM", "", "In Development",  0,14594)
+          InitProperty("MEI_Shuttle_RI_Width_Hours", "8792", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 5:59:51 PM", "", "In Development",  0,19610)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_Shuttle_RI_Width_Input", "8735", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:03 PM", "", "In Development",  0,14480)
@@ -4526,178 +4526,178 @@ Option Infer On
           InitProperty("MEI_Shuttle_RI_Width_Rate", "8773", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:13:42 PM", "", "In Development",  0,14556)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_RI_Width_System_Qty", "8754", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:12:51 PM", "", "In Development",  0,14518)
+          InitProperty("MEI_Shuttle_RI_Width_System_Qty", "8754", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/19/2025 10:43:00 AM", "", "In Development",  0,19332)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_SL_Intermediate_AJ_FJ_Avg_MM_Task", "8900", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:02 PM", "", "In Development",  0,14810)
+          InitProperty("MEI_Shuttle_SL_Intermediate_AJ_FJ_Avg_MM_Task", "8900", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:57:59 AM", "", "In Development",  0,19869)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_SL_Intermediate_AJ_FJ_Time_Per_Row", "8903", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:10 PM", "", "In Development",  0,14816)
+          InitProperty("MEI_Shuttle_SL_Intermediate_AJ_FJ_Time_Per_Row", "8903", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:02:26 PM", "", "In Development",  0,19872)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_SL_Intermediate_SLG_Avg_MM_Task", "8898", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:18:57 PM", "", "In Development",  0,14806)
+          InitProperty("MEI_Shuttle_SL_Intermediate_SLG_Avg_MM_Task", "8898", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:57:17 AM", "", "In Development",  0,19867)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_SL_Intermediate_SLG_Screw_Avg_MM_Task", "8899", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:00 PM", "", "In Development",  0,14808)
+          InitProperty("MEI_Shuttle_SL_Intermediate_SLG_Screw_Avg_MM_Task", "8899", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 11:57:40 AM", "", "In Development",  0,19868)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_SL_Intermediate_SLG_Screw_Time_Per_Row", "8902", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:07 PM", "", "In Development",  0,14814)
+          InitProperty("MEI_Shuttle_SL_Intermediate_SLG_Screw_Time_Per_Row", "8902", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:01:15 PM", "", "In Development",  0,19871)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_SL_Intermediate_SLG_Time_Per_Row", "8901", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:05 PM", "", "In Development",  0,14812)
+          InitProperty("MEI_Shuttle_SL_Intermediate_SLG_Time_Per_Row", "8901", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 11:06:46 AM", "", "In Development",  0,20226)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_SL_Intermediate_Time_Per_SL", "8904", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:19:12 PM", "", "In Development",  0,14818)
+          InitProperty("MEI_Shuttle_SL_Intermediate_Time_Per_SL", "8904", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:02:56 PM", "", "In Development",  0,19873)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Intermediate_Aisle_JFB_AMM_Task", "8988", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:46 PM", "", "In Development",  0,14986)
+          InitProperty("MEI_Shuttle_ST_Intermediate_Aisle_JFB_AMM_Task", "8988", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:18:06 PM", "", "In Development",  0,19972)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Intermediate_Aisle_JFB_Time_ST", "8992", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:56 PM", "", "In Development",  0,14994)
+          InitProperty("MEI_Shuttle_ST_Intermediate_Aisle_JFB_Time_ST", "8992", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:20:59 PM", "", "In Development",  0,19977)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Intermediate_Aisle_JSB_AMM_Task", "8989", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:49 PM", "", "In Development",  0,14988)
+          InitProperty("MEI_Shuttle_ST_Intermediate_Aisle_JSB_AMM_Task", "8989", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:18:21 PM", "", "In Development",  0,19973)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Intermediate_Aisle_JSB_Time_ST", "8993", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:58 PM", "", "In Development",  0,14996)
+          InitProperty("MEI_Shuttle_ST_Intermediate_Aisle_JSB_Time_ST", "8993", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:21:17 PM", "", "In Development",  0,19978)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Intermediate_Grout_AMM_Task", "8990", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:51 PM", "", "In Development",  0,14990)
+          InitProperty("MEI_Shuttle_ST_Intermediate_Grout_AMM_Task", "8990", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:19:30 PM", "", "In Development",  0,19974)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Intermediate_Grout_Time_ST", "8994", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:01 PM", "", "In Development",  0,14998)
+          InitProperty("MEI_Shuttle_ST_Intermediate_Grout_Time_ST", "8994", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:21:43 PM", "", "In Development",  0,19979)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Intermediate_Standard_T_AMM_Task", "8987", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:43 PM", "", "In Development",  0,14984)
+          InitProperty("MEI_Shuttle_ST_Intermediate_Standard_T_AMM_Task", "8987", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:17:46 PM", "", "In Development",  0,19971)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Intermediate_Standard_T_Time_ST", "8991", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:54 PM", "", "In Development",  0,14992)
+          InitProperty("MEI_Shuttle_ST_Intermediate_Standard_T_Time_ST", "8991", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:20:00 PM", "", "In Development",  0,19975)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Layout_Anchor_Leveling_AMM_Task", "8966", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:54 PM", "", "In Development",  0,14942)
+          InitProperty("MEI_Shuttle_ST_Layout_Anchor_Leveling_AMM_Task", "8966", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:31:50 PM", "", "In Development",  0,19937)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Layout_Anchor_Leveling_Time_ST", "8970", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:03 PM", "", "In Development",  0,14950)
+          InitProperty("MEI_Shuttle_ST_Layout_Anchor_Leveling_Time_ST", "8970", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:35:00 PM", "", "In Development",  0,19941)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Layout_FAB_AMM_Task", "8965", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:52 PM", "", "In Development",  0,14940)
+          InitProperty("MEI_Shuttle_ST_Layout_FAB_AMM_Task", "8965", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:31:19 PM", "", "In Development",  0,19936)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Layout_FAB_Time_ST", "8969", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:01 PM", "", "In Development",  0,14948)
+          InitProperty("MEI_Shuttle_ST_Layout_FAB_Time_ST", "8969", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:34:37 PM", "", "In Development",  0,19940)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Layout_Pilot_Drill_AMM_Task", "8963", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:47 PM", "", "In Development",  0,14936)
+          InitProperty("MEI_Shuttle_ST_Layout_Pilot_Drill_AMM_Task", "8963", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:30:15 PM", "", "In Development",  0,19934)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Layout_Pilot_Drill_Time_ST", "8967", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:56 PM", "", "In Development",  0,14944)
+          InitProperty("MEI_Shuttle_ST_Layout_Pilot_Drill_Time_ST", "8967", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:33:42 PM", "", "In Development",  0,19938)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Layout_Second_Hole_AMM_Task", "8964", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:49 PM", "", "In Development",  0,14938)
+          InitProperty("MEI_Shuttle_ST_Layout_Second_Hole_AMM_Task", "8964", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:30:49 PM", "", "In Development",  0,19935)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Layout_Second_Hole_Time_ST", "8968", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:21:58 PM", "", "In Development",  0,14946)
+          InitProperty("MEI_Shuttle_ST_Layout_Second_Hole_Time_ST", "8968", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:34:18 PM", "", "In Development",  0,19939)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Level_Tight_Upright_Knock_AMM_Task", "8995", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:03 PM", "", "In Development",  0,15000)
+          InitProperty("MEI_Shuttle_ST_Level_Tight_Upright_Knock_AMM_Task", "8995", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:22:16 PM", "", "In Development",  0,19980)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Level_Tight_Upright_Knock_Time_ST", "8996", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:05 PM", "", "In Development",  0,15002)
+          InitProperty("MEI_Shuttle_ST_Level_Tight_Upright_Knock_Time_ST", "8996", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:22:31 PM", "", "In Development",  0,19981)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Material_PreStage_PR_AMM_Task", "8983", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:34 PM", "", "In Development",  0,14976)
+          InitProperty("MEI_Shuttle_ST_Material_PreStage_PR_AMM_Task", "8983", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:14:25 PM", "", "In Development",  0,19964)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Material_PreStage_PR_Time_ST", "8985", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:38 PM", "", "In Development",  0,14980)
+          InitProperty("MEI_Shuttle_ST_Material_PreStage_PR_Time_ST", "8985", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:15:07 PM", "", "In Development",  0,19966)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Material_Upright_RS_AMM_Task", "8984", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:36 PM", "", "In Development",  0,14978)
+          InitProperty("MEI_Shuttle_ST_Material_Upright_RS_AMM_Task", "8984", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:14:43 PM", "", "In Development",  0,19965)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Material_Upright_RS_Time_ST", "8986", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:41 PM", "", "In Development",  0,14982)
+          InitProperty("MEI_Shuttle_ST_Material_Upright_RS_Time_ST", "8986", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:15:27 PM", "", "In Development",  0,19967)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Assemble_GB_AMM_Task", "8974", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:12 PM", "", "In Development",  0,14958)
+          InitProperty("MEI_Shuttle_ST_Prepping_Assemble_GB_AMM_Task", "8974", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:00:27 PM", "", "In Development",  0,19949)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Assemble_GB_Time_ST", "8980", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:26 PM", "", "In Development",  0,14970)
+          InitProperty("MEI_Shuttle_ST_Prepping_Assemble_GB_Time_ST", "8980", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:09:37 PM", "", "In Development",  0,19958)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Clean_GB_AMM_Task", "8976", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:16 PM", "", "In Development",  0,14962)
+          InitProperty("MEI_Shuttle_ST_Prepping_Clean_GB_AMM_Task", "8976", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:03:09 PM", "", "In Development",  0,19952)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Clean_GB_Time_ST", "8982", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:31 PM", "", "In Development",  0,14974)
+          InitProperty("MEI_Shuttle_ST_Prepping_Clean_GB_Time_ST", "8982", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:10:28 PM", "", "In Development",  0,19961)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Cut_Wood_GB_AMM_Task", "8973", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:10 PM", "", "In Development",  0,14956)
+          InitProperty("MEI_Shuttle_ST_Prepping_Cut_Wood_GB_AMM_Task", "8973", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:59:22 PM", "", "In Development",  0,19947)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Cut_Wood_GB_Time_ST", "8979", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:23 PM", "", "In Development",  0,14968)
+          InitProperty("MEI_Shuttle_ST_Prepping_Cut_Wood_GB_Time_ST", "8979", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:08:36 PM", "", "In Development",  0,19957)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Oil_PB_Time_ST", "8981", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:28 PM", "", "In Development",  0,14972)
+          InitProperty("MEI_Shuttle_ST_Prepping_Oil_PB_Time_ST", "8981", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:10:00 PM", "", "In Development",  0,19960)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Oil_Place_Blocks_AMM_Task", "8975", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:14 PM", "", "In Development",  0,14960)
+          InitProperty("MEI_Shuttle_ST_Prepping_Oil_Place_Blocks_AMM_Task", "8975", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:02:49 PM", "", "In Development",  0,19951)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Prep_UR_AMM_Task", "8971", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:05 PM", "", "In Development",  0,14952)
+          InitProperty("MEI_Shuttle_ST_Prepping_Prep_UR_AMM_Task", "8971", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:46:33 PM", "", "In Development",  0,19943)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Prep_UR_Time_ST", "8977", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:19 PM", "", "In Development",  0,14964)
+          InitProperty("MEI_Shuttle_ST_Prepping_Prep_UR_Time_ST", "8977", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:06:02 PM", "", "In Development",  0,19955)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Upright_AP_AMM_Task", "8972", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:07 PM", "", "In Development",  0,14954)
+          InitProperty("MEI_Shuttle_ST_Prepping_Upright_AP_AMM_Task", "8972", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 12:46:50 PM", "", "In Development",  0,19944)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Prepping_Upright_AP_Time_ST", "8978", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:22:21 PM", "", "In Development",  0,14966)
+          InitProperty("MEI_Shuttle_ST_Prepping_Upright_AP_Time_ST", "8978", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:06:37 PM", "", "In Development",  0,19956)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_ST_Time_Per_Standard_Tower", "8997", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:23:08 PM", "", "In Development",  0,15004)
+          InitProperty("MEI_Shuttle_ST_Time_Per_Standard_Tower", "8997", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/20/2025 1:22:54 PM", "", "In Development",  0,19984)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Intermediate_ER_Install_AMM_Task", "9057", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:27 PM", "", "In Development",  0,15124)
+          InitProperty("MEI_Shuttle_TL_Intermediate_ER_Install_AMM_Task", "9057", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:11:34 AM", "", "In Development",  0,20164)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Intermediate_ER_Install_Time_Bay", "9061", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:36 PM", "", "In Development",  0,15132)
+          InitProperty("MEI_Shuttle_TL_Intermediate_ER_Install_Time_Bay", "9061", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:18:00 AM", "", "In Development",  0,20169)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Intermediate_FR_Bumper_AMM_Task", "9060", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:33 PM", "", "In Development",  0,15130)
+          InitProperty("MEI_Shuttle_TL_Intermediate_FR_Bumper_AMM_Task", "9060", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:15:27 AM", "", "In Development",  0,20168)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Intermediate_FR_Bumper_Time_Bay", "9064", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:43 PM", "", "In Development",  0,15138)
+          InitProperty("MEI_Shuttle_TL_Intermediate_FR_Bumper_Time_Bay", "9064", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:19:53 AM", "", "In Development",  0,20172)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Intermediate_Internal_SR_AMM_Task", "9058", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:29 PM", "", "In Development",  0,15126)
+          InitProperty("MEI_Shuttle_TL_Intermediate_Internal_SR_AMM_Task", "9058", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:12:08 AM", "", "In Development",  0,20165)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Intermediate_Internal_SR_Time_Bay", "9062", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:38 PM", "", "In Development",  0,15134)
+          InitProperty("MEI_Shuttle_TL_Intermediate_Internal_SR_Time_Bay", "9062", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:18:50 AM", "", "In Development",  0,20170)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Intermediate_Shelf_Insert_AMM_Task", "9059", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:31 PM", "", "In Development",  0,15128)
+          InitProperty("MEI_Shuttle_TL_Intermediate_Shelf_Insert_AMM_Task", "9059", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:14:53 AM", "", "In Development",  0,20167)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Intermediate_Shelf_Insert_Time_Bay", "9063", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:41 PM", "", "In Development",  0,15136)
+          InitProperty("MEI_Shuttle_TL_Intermediate_Shelf_Insert_Time_Bay", "9063", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:19:26 AM", "", "In Development",  0,20171)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Level_TightIR_Hole_Cover_AMM_Task", "9066", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:47 PM", "", "In Development",  0,15142)
+          InitProperty("MEI_Shuttle_TL_Level_TightIR_Hole_Cover_AMM_Task", "9066", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:21:38 AM", "", "In Development",  0,20175)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Level_TightIR_Hole_Cover_Time_Bay", "9069", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:54 PM", "", "In Development",  0,15148)
+          InitProperty("MEI_Shuttle_TL_Level_TightIR_Hole_Cover_Time_Bay", "9069", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:22:26 AM", "", "In Development",  0,20177)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Level_TightTight_ER_AMM_Task", "9067", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:49 PM", "", "In Development",  0,15144)
+          InitProperty("MEI_Shuttle_TL_Level_TightTight_ER_AMM_Task", "9067", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:21:16 AM", "", "In Development",  0,20174)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Level_TightTight_ER_Time_Bay", "9070", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:56 PM", "", "In Development",  0,15150)
+          InitProperty("MEI_Shuttle_TL_Level_TightTight_ER_Time_Bay", "9070", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:22:43 AM", "", "In Development",  0,20178)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Level_TightTight_IR_AMM_Task", "9065", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:45 PM", "", "In Development",  0,15140)
+          InitProperty("MEI_Shuttle_TL_Level_TightTight_IR_AMM_Task", "9065", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:20:26 AM", "", "In Development",  0,20173)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Level_TightTight_IR_Time_Bay", "9068", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:52 PM", "", "In Development",  0,15146)
+          InitProperty("MEI_Shuttle_TL_Level_TightTight_IR_Time_Bay", "9068", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:22:02 AM", "", "In Development",  0,20176)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_Shuttle_TL_Time_Per_Row", "9071", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H581955", "7/8/2025 2:25:59 PM", "", "In Development",  0,15152)
+          InitProperty("MEI_Shuttle_TL_Time_Per_Row", "9071", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H582667", "7/21/2025 6:24:15 AM", "", "In Development",  0,20179)
         End If
     End Sub
 
@@ -4764,7 +4764,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8859; TYPE:PF
-      Result = Me.MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle + Me.MEI_MI_Shuttle_Installation_Hours_Shuttle
+      'Excel formula - SUM(B72:C72)
+Result = Me.MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle + Me.MEI_MI_Shuttle_Installation_Hours_Shuttle
       '   END FORMULA; PROP ID:8859; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_MI_Shuttle_Install_Hours_Per_Shuttle", ex.Message)
@@ -4787,7 +4788,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8857; TYPE:PF
-      Result = 0.0
+      'Excel formula - B71/60
+Result = Me.MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle/60
       '   END FORMULA; PROP ID:8857; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_MI_Shuttle_Install_Mat_Move_Hours_Shuttle", ex.Message)
@@ -4810,7 +4812,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8855; TYPE:PF
-      Result = 0.0
+      Result = 20
       '   END FORMULA; PROP ID:8855; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_MI_Shuttle_Install_Mat_Move_Min_Per_Shuttle", ex.Message)
@@ -4833,7 +4835,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8858; TYPE:PF
-      Result = 0.0
+      'Excel formula - C71/60
+Result = Me.MEI_MI_Shuttle_Installation_Min_Per_Shuttle/60
       '   END FORMULA; PROP ID:8858; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_MI_Shuttle_Installation_Hours_Shuttle", ex.Message)
@@ -4856,7 +4859,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8856; TYPE:PF
-      Result = 0.0
+      Result = 40.8
       '   END FORMULA; PROP ID:8856; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_MI_Shuttle_Installation_Min_Per_Shuttle", ex.Message)
@@ -4879,7 +4882,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8914; TYPE:PF
-      Result = 0.0
+      'Excel formula - F133*2
+Result = Me.MEI_Shuttle_A_T_P_L_and_T_Frnt_Rear_PAvg_MM_Task * 2
       '   END FORMULA; PROP ID:8914; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_F_and_R_Plum_Time_Per_A", ex.Message)
@@ -4902,7 +4906,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8909; TYPE:PF
-      Result = 0.0
+      Result = 45
       '   END FORMULA; PROP ID:8909; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_Frnt_Rear_PAvg_MM_Task", ex.Message)
@@ -4925,7 +4929,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8905; TYPE:PF
-      Result = 0.0
+      Result = 3285
       '   END FORMULA; PROP ID:8905; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Avg_MM_Task", ex.Message)
@@ -4948,7 +4952,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8910; TYPE:PF
-      Result = 0.0
+      'Excel formula - B133*2
+Result = Me.MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Avg_MM_Task * 2
       '   END FORMULA; PROP ID:8910; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Time_Per_A", ex.Message)
@@ -4971,7 +4976,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8915; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(C134:F134)/60
+Result = (Me.MEI_Shuttle_A_T_P_L_and_T_L_Based_Time_Per_A +
+Me.MEI_Shuttle_A_T_P_L_and_T_T_Based_Time_Per_A +
+Me.MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Time_Per_A +
+Me.MEI_Shuttle_A_T_P_L_and_T_F_and_R_Plum_Time_Per_A)/60
       '   END FORMULA; PROP ID:8915; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_Hours_Per_Aisle", ex.Message)
@@ -4994,7 +5003,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8911; TYPE:PF
-      Result = 0.0
+      'Excel formula - C133*B9
+Result = Me.MEI_Shuttle_A_T_P_L_and_T_Level_Based_Avg_MM_Task * Me.MEI_Shuttle_RI_Levels_Aisle_Input
       '   END FORMULA; PROP ID:8911; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_L_Based_Time_Per_A", ex.Message)
@@ -5017,7 +5027,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8906; TYPE:PF
-      Result = 0.0
+      'Excel formula - B134/17*0.5
+Result = (Me.MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Time_Per_A/17)*0.5
       '   END FORMULA; PROP ID:8906; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_Level_Based_Avg_MM_Task", ex.Message)
@@ -5040,7 +5051,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8908; TYPE:PF
-      Result = 0.0
+      Result = 6.23
       '   END FORMULA; PROP ID:8908; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Avg_MM_Task", ex.Message)
@@ -5063,7 +5074,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8913; TYPE:PF
-      Result = 0.0
+      'Excel formula - E133*2*4
+Result = Me.MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Avg_MM_Task * 2 * 4
       '   END FORMULA; PROP ID:8913; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_Side_U_P_Time_Per_A", ex.Message)
@@ -5086,7 +5098,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8912; TYPE:PF
-      Result = 0.0
+      'Excel formula - D133*(B6+B7)
+Result = Me.MEI_Shuttle_A_T_P_L_and_T_Tower_Based_Avg_MM_Task * (Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input +  Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input)
       '   END FORMULA; PROP ID:8912; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_T_Based_Time_Per_A", ex.Message)
@@ -5109,7 +5122,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8907; TYPE:PF
-      Result = 0.0
+      'Excel formula - B134/13*0.5
+Result = (Me.MEI_Shuttle_A_T_P_L_and_T_Gen_Align_Time_Per_A/13)*0.5
       '   END FORMULA; PROP ID:8907; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_A_T_P_L_and_T_Tower_Based_Avg_MM_Task", ex.Message)
@@ -5132,7 +5146,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9035; TYPE:PF
-      Result = 0.0
+      Result = 4.1
       '   END FORMULA; PROP ID:9035; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Aisle_JFB_AMM_Task", ex.Message)
@@ -5155,7 +5169,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9043; TYPE:PF
-      Result = 0.0
+      'Excel Formula - U112*4
+Result = Me.MEI_Shuttle_BT_Intermediate_Aisle_JFB_AMM_Task * 4
       '   END FORMULA; PROP ID:9043; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Aisle_JFB_Time_Tower", ex.Message)
@@ -5178,7 +5193,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9036; TYPE:PF
-      Result = 0.0
+      Result = 2.75
       '   END FORMULA; PROP ID:9036; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Aisle_JSB_AMM_Task", ex.Message)
@@ -5201,7 +5216,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9044; TYPE:PF
-      Result = 0.0
+      'Excel Formula - V112*4
+Result = Me.MEI_Shuttle_BT_Intermediate_Aisle_JSB_AMM_Task * 4
       '   END FORMULA; PROP ID:9044; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Aisle_JSB_Time_Tower", ex.Message)
@@ -5224,7 +5240,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9037; TYPE:PF
-      Result = 0.0
+      Result = 16.3
       '   END FORMULA; PROP ID:9037; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Bracing_THR_AMM_Task", ex.Message)
@@ -5247,7 +5263,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9045; TYPE:PF
-      Result = 0.0
+      'Excel Formula - $B$8*W112
+Result = Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input  * Me.MEI_Shuttle_BT_Intermediate_Bracing_THR_AMM_Task
       '   END FORMULA; PROP ID:9045; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Bracing_THR_Time_Tower", ex.Message)
@@ -5270,7 +5287,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9041; TYPE:PF
-      Result = 0.0
+      Result = 12
       '   END FORMULA; PROP ID:9041; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Grout_AMM_Task", ex.Message)
@@ -5293,7 +5310,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9049; TYPE:PF
-      Result = 0.0
+      'Excel Formula - AA112*4
+Result =  Me.MEI_Shuttle_BT_Intermediate_Grout_AMM_Task * 4
       '   END FORMULA; PROP ID:9049; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Grout_Time_Tower", ex.Message)
@@ -5316,7 +5334,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9038; TYPE:PF
-      Result = 0.0
+      Result = 5.7
       '   END FORMULA; PROP ID:9038; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_HT_AMM_Task", ex.Message)
@@ -5339,7 +5357,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9046; TYPE:PF
-      Result = 0.0
+      'Excel Formula - ($B$8+1)*X112
+Result = (Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input + 1) * Me.MEI_Shuttle_BT_Intermediate_HT_AMM_Task
       '   END FORMULA; PROP ID:9046; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_HT_Time_Tower", ex.Message)
@@ -5362,7 +5381,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9034; TYPE:PF
-      Result = 0.0
+      Result = 16.3
       '   END FORMULA; PROP ID:9034; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Standard_T_AMM_Task", ex.Message)
@@ -5385,7 +5404,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9042; TYPE:PF
-      Result = 0.0
+      'Excel Formula - T112*4
+Result = Me.MEI_Shuttle_BT_Intermediate_Standard_T_AMM_Task * 4
       '   END FORMULA; PROP ID:9042; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_Standard_T_Time_Tower", ex.Message)
@@ -5431,7 +5451,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9047; TYPE:PF
-      Result = 0.0
+      'Excel Formula - Y112
+Result = Me.MEI_Shuttle_BT_Intermediate_VT_AMM_Task
       '   END FORMULA; PROP ID:9047; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_VT_Time_Tower", ex.Message)
@@ -5454,7 +5475,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9040; TYPE:PF
-      Result = 0.0
+      Result = 38.4
       '   END FORMULA; PROP ID:9040; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_VTFA_AMM_Task", ex.Message)
@@ -5477,7 +5498,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9048; TYPE:PF
-      Result = 0.0
+      'Excel Formula - Z112*2
+Result = Me.MEI_Shuttle_BT_Intermediate_VTFA_AMM_Task * 2
       '   END FORMULA; PROP ID:9048; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Intermediate_VTFA_Time_Tower", ex.Message)
@@ -5500,7 +5522,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9001; TYPE:PF
-      Result = 0.0
+      Result = 0.83
       '   END FORMULA; PROP ID:9001; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Layout_Anchor_Leveling_AMM_Task", ex.Message)
@@ -5523,7 +5545,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9005; TYPE:PF
-      Result = 0.0
+      'Excel formula - E112*8
+Result = Me.MEI_Shuttle_BT_Layout_Anchor_Leveling_AMM_Task * 8
       '   END FORMULA; PROP ID:9005; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Layout_Anchor_Leveling_Time_Tower", ex.Message)
@@ -5546,7 +5569,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9000; TYPE:PF
-      Result = 0.0
+      Result = 1.88
       '   END FORMULA; PROP ID:9000; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Layout_FAB_AMM_Task", ex.Message)
@@ -5569,7 +5592,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9004; TYPE:PF
-      Result = 0.0
+      'Excel formula - D112*8
+Result = Me.MEI_Shuttle_BT_Layout_FAB_AMM_Task * 8
       '   END FORMULA; PROP ID:9004; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Layout_FAB_Time_Tower", ex.Message)
@@ -5592,7 +5616,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8998; TYPE:PF
-      Result = 0.0
+      Result = 0.58
       '   END FORMULA; PROP ID:8998; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Layout_Pilot_Drill_AMM_Task", ex.Message)
@@ -5615,7 +5639,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9002; TYPE:PF
-      Result = 0.0
+      'Excel formula - B112*8
+Result = Me.MEI_Shuttle_BT_Layout_Pilot_Drill_AMM_Task * 8
       '   END FORMULA; PROP ID:9002; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Layout_Pilot_Drill_Time_Tower", ex.Message)
@@ -5638,7 +5663,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8999; TYPE:PF
-      Result = 0.0
+      Result = 1.39
       '   END FORMULA; PROP ID:8999; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Layout_Second_Hole_AMM_Task", ex.Message)
@@ -5661,7 +5686,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9003; TYPE:PF
-      Result = 0.0
+      'Excel formula - C112*8
+Result = Me.MEI_Shuttle_BT_Layout_Second_Hole_AMM_Task * 8
       '   END FORMULA; PROP ID:9003; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Layout_Second_Hole_Time_Tower", ex.Message)
@@ -5684,7 +5710,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9052; TYPE:PF
-      Result = 0.0
+      Result = 8
       '   END FORMULA; PROP ID:9052; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_AMM_Task", ex.Message)
@@ -5707,7 +5733,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9055; TYPE:PF
-      Result = 0.0
+      'Excel Formula - ($B$8+1)*AD112
+Result =  ( Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input + 1)* Me.MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_AMM_Task
       '   END FORMULA; PROP ID:9055; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_Time_Tower", ex.Message)
@@ -5730,7 +5757,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9050; TYPE:PF
-      Result = 0.0
+      Result = 0.17
       '   END FORMULA; PROP ID:9050; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Level_Tight_TT_Zone_AMM_Task", ex.Message)
@@ -5753,7 +5780,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9053; TYPE:PF
-      Result = 0.0
+      'Excel Formula - ($B$8+1)*AB112
+Result =  ( Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input + 1)* Me.MEI_Shuttle_BT_Level_Tight_TT_Zone_AMM_Task
       '   END FORMULA; PROP ID:9053; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Level_Tight_TT_Zone_Time_Tower", ex.Message)
@@ -5776,7 +5804,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9051; TYPE:PF
-      Result = 0.0
+      Result = 14.06
       '   END FORMULA; PROP ID:9051; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_AMM_Task", ex.Message)
@@ -5799,7 +5827,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9054; TYPE:PF
-      Result = 0.0
+      'Excel Formula - ($B$8+1)*AC112
+Result =  (Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input + 1 )* Me.MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_AMM_Task
       '   END FORMULA; PROP ID:9054; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_Time_Tower", ex.Message)
@@ -5822,7 +5851,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9028; TYPE:PF
-      Result = 0.0
+      Result = 1.78
       '   END FORMULA; PROP ID:9028; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Material_PreStage_PR_AMM_Task", ex.Message)
@@ -5845,7 +5874,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9031; TYPE:PF
-      Result = 0.0
+      'Excel Formula - Q112*4
+Result = Me.MEI_Shuttle_BT_Material_PreStage_PR_AMM_Task * 4
       '   END FORMULA; PROP ID:9031; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Material_PreStage_PR_Time_Tower", ex.Message)
@@ -5868,7 +5898,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9029; TYPE:PF
-      Result = 0.0
+      Result = 8.83
       '   END FORMULA; PROP ID:9029; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Material_Upright_RS_AMM_Task", ex.Message)
@@ -5891,7 +5921,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9032; TYPE:PF
-      Result = 0.0
+      Result = 35.33333333
       '   END FORMULA; PROP ID:9032; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Material_Upright_RS_Time_Tower", ex.Message)
@@ -5914,7 +5944,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9030; TYPE:PF
-      Result = 0.0
+      Result = 0.33
       '   END FORMULA; PROP ID:9030; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Material_VB_Prep_Area_AMM_Task", ex.Message)
@@ -5937,7 +5967,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9033; TYPE:PF
-      Result = 0.0
+      'Excel Formula - ((2*$B$8+1)*2)*S112
+Result = (((2*Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input + 1 ) * 2) * Me.MEI_Shuttle_BT_Material_VB_Prep_Area_AMM_Task)
       '   END FORMULA; PROP ID:9033; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Material_VB_Prep_Area_Time_Tower", ex.Message)
@@ -5960,7 +5991,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9009; TYPE:PF
-      Result = 0.0
+      Result = 1.76
       '   END FORMULA; PROP ID:9009; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Assemble_GB_AMM_Task", ex.Message)
@@ -5983,7 +6014,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9020; TYPE:PF
-      Result = 0.0
+      'Excel Formula - I112*8
+Result = Me.MEI_Shuttle_BT_Prepping_Assemble_GB_AMM_Task * 8
       '   END FORMULA; PROP ID:9020; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Assemble_GB_Time_Tower", ex.Message)
@@ -6006,7 +6038,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9015; TYPE:PF
-      Result = 0.0
+      Result = 8.58
       '   END FORMULA; PROP ID:9015; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_BU_Prep_AMM_Task", ex.Message)
@@ -6029,7 +6061,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9026; TYPE:PF
-      Result = 0.0
+      'Excel Formula - O112*4
+Result = Me.MEI_Shuttle_BT_Prepping_BU_Prep_AMM_Task * 4
       '   END FORMULA; PROP ID:9026; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_BU_Prep_Time_Tower", ex.Message)
@@ -6052,7 +6085,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9016; TYPE:PF
-      Result = 0.0
+      Result = 1.2
       '   END FORMULA; PROP ID:9016; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Clean_GB_AMM_Task", ex.Message)
@@ -6075,7 +6108,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9027; TYPE:PF
-      Result = 0.0
+      'Excel Formula - P112*4
+Result = Me.MEI_Shuttle_BT_Prepping_Clean_GB_AMM_Task * 4
       '   END FORMULA; PROP ID:9027; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Clean_GB_Time_Tower", ex.Message)
@@ -6098,7 +6132,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9008; TYPE:PF
-      Result = 0.0
+      Result = 1.83
       '   END FORMULA; PROP ID:9008; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Cut_Wood_GB_AMM_Task", ex.Message)
@@ -6121,7 +6155,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9019; TYPE:PF
-      Result = 0.0
+      'Excel Formula - H112*8
+Result = Me.MEI_Shuttle_BT_Prepping_Cut_Wood_GB_AMM_Task * 8
       '   END FORMULA; PROP ID:9019; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Cut_Wood_GB_Time_Tower", ex.Message)
@@ -6144,7 +6179,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9014; TYPE:PF
-      Result = 0.0
+      Result = 1.03
       '   END FORMULA; PROP ID:9014; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_H_Brace_AMM_Task", ex.Message)
@@ -6167,7 +6202,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9025; TYPE:PF
-      Result = 0.0
+      'Excel Formula - (2*($B$8+1))*N112
+Result = (2* (Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input + 1)) * Me.MEI_Shuttle_BT_Prepping_H_Brace_AMM_Task
       '   END FORMULA; PROP ID:9025; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_H_Brace_Time_Tower", ex.Message)
@@ -6190,7 +6226,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9013; TYPE:PF
-      Result = 0.0
+      Result = 0.23
       '   END FORMULA; PROP ID:9013; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_HT_Buckle_AMM_Task", ex.Message)
@@ -6213,7 +6249,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9024; TYPE:PF
-      Result = 0.0
+      'Excel Formula - (3*($B$8+1))*M112
+Result = ( 3 * (Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input + 1))* Me.MEI_Shuttle_BT_Prepping_HT_Buckle_AMM_Task
       '   END FORMULA; PROP ID:9024; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_HT_Buckle_Time_Tower", ex.Message)
@@ -6236,7 +6273,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9021; TYPE:PF
-      Result = 0.0
+      'Excel Formula - J112*8
+Result = Me.MEI_Shuttle_BT_Prepping_Oil_Place_Blocks_AMM_Task * 8
       '   END FORMULA; PROP ID:9021; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Oil_PB_Time_Tower", ex.Message)
@@ -6259,7 +6297,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9010; TYPE:PF
-      Result = 0.0
+      Result = 3.45
       '   END FORMULA; PROP ID:9010; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Oil_Place_Blocks_AMM_Task", ex.Message)
@@ -6282,7 +6320,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9006; TYPE:PF
-      Result = 0.0
+      Result = 18.19
       '   END FORMULA; PROP ID:9006; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Prep_UR_AMM_Task", ex.Message)
@@ -6328,7 +6366,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9007; TYPE:PF
-      Result = 0.0
+      Result =  3.07
       '   END FORMULA; PROP ID:9007; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Upright_AP_AMM_Task", ex.Message)
@@ -6351,7 +6389,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9018; TYPE:PF
-      Result = 0.0
+      'Excel Formula - G112*4
+Result = Me.MEI_Shuttle_BT_Prepping_Upright_AP_AMM_Task * 4
       '   END FORMULA; PROP ID:9018; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_Upright_AP_Time_Tower", ex.Message)
@@ -6374,7 +6413,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9012; TYPE:PF
-      Result = 0.0
+      Result = 0.82
       '   END FORMULA; PROP ID:9012; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_VBT_Buckle_AMM_Task", ex.Message)
@@ -6397,7 +6436,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9023; TYPE:PF
-      Result = 0.0
+      'Excel Formula - ((2*$B$8+1)*2)*L112
+Result = (((2* Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input + 1)* 2) * Me.MEI_Shuttle_BT_Prepping_VBT_Buckle_AMM_Task)
       '   END FORMULA; PROP ID:9023; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_VBT_Buckle_Time_Tower", ex.Message)
@@ -6420,7 +6460,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9011; TYPE:PF
-      Result = 0.0
+      Result = 0.25
       '   END FORMULA; PROP ID:9011; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_VT_Buckle_AMM_Task", ex.Message)
@@ -6443,7 +6483,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9022; TYPE:PF
-      Result = 0.0
+      'Excel Formula - K112*8
+Result = Me.MEI_Shuttle_BT_Prepping_VT_Buckle_AMM_Task * 8
       '   END FORMULA; PROP ID:9022; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Prepping_VT_Buckle_Time_Tower", ex.Message)
@@ -6466,7 +6507,36 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9056; TYPE:PF
-      Result = 0.0
+      'Excel Formula - SUM(B113:AD113)/60
+Result = (Me.MEI_Shuttle_BT_Layout_Pilot_Drill_Time_Tower + 
+Me.MEI_Shuttle_BT_Layout_Second_Hole_Time_Tower +
+Me.MEI_Shuttle_BT_Layout_FAB_Time_Tower +
+Me.MEI_Shuttle_BT_Layout_Anchor_Leveling_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_Prep_UR_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_Upright_AP_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_Cut_Wood_GB_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_Assemble_GB_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_Oil_PB_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_VT_Buckle_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_VBT_Buckle_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_HT_Buckle_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_H_Brace_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_BU_Prep_Time_Tower +
+Me.MEI_Shuttle_BT_Prepping_Clean_GB_Time_Tower +
+Me.MEI_Shuttle_BT_Material_PreStage_PR_Time_Tower +
+Me.MEI_Shuttle_BT_Material_Upright_RS_Time_Tower +
+Me.MEI_Shuttle_BT_Material_VB_Prep_Area_Time_Tower +
+Me.MEI_Shuttle_BT_Intermediate_Standard_T_Time_Tower +
+Me.MEI_Shuttle_BT_Intermediate_Aisle_JFB_Time_Tower +
+Me.MEI_Shuttle_BT_Intermediate_Aisle_JSB_Time_Tower +
+Me.MEI_Shuttle_BT_Intermediate_Bracing_THR_Time_Tower +
+Me.MEI_Shuttle_BT_Intermediate_HT_Time_Tower +
+Me.MEI_Shuttle_BT_Intermediate_VT_Time_Tower +
+Me.MEI_Shuttle_BT_Intermediate_VTFA_Time_Tower +
+Me.MEI_Shuttle_BT_Intermediate_Grout_Time_Tower +
+Me.MEI_Shuttle_BT_Level_Tight_TT_Zone_Time_Tower +
+Me.MEI_Shuttle_BT_Level_Tight_VT_1st_Pass_Time_Tower +
+Me.MEI_Shuttle_BT_Level_Tight_HT_1st_Pass_Time_Tower)/60
       '   END FORMULA; PROP ID:9056; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_BT_Time_Per_Bracing_Tower", ex.Message)
@@ -6489,7 +6559,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8942; TYPE:PF
-      Result = 0.0
+      Result = 15.5
       '   END FORMULA; PROP ID:8942; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Conveyor_SR_AMM_Task", ex.Message)
@@ -6512,7 +6582,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8952; TYPE:PF
-      Result = 0.0
+      'Excel formula - P98*1
+Result = Me.MEI_Shuttle_FZ_Intermediate_Conveyor_SR_AMM_Task * 1
       '   END FORMULA; PROP ID:8952; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Conveyor_SR_Time_Zone", ex.Message)
@@ -6535,7 +6606,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8944; TYPE:PF
-      Result = 0.0
+      Result = 1.95
       '   END FORMULA; PROP ID:8944; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_CS_AMM_Task", ex.Message)
@@ -6558,7 +6629,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8954; TYPE:PF
-      Result = 0.0
+      'Excel formula - R98*$B$9
+Result = Me.MEI_Shuttle_FZ_Intermediate_CS_AMM_Task * Me.MEI_Shuttle_RI_Levels_Aisle_Input
       '   END FORMULA; PROP ID:8954; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_CS_Time_Zone", ex.Message)
@@ -6581,7 +6653,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8946; TYPE:PF
-      Result = 0.0
+      Result = 10.59
       '   END FORMULA; PROP ID:8946; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Cut_HR_AMM_Task", ex.Message)
@@ -6604,7 +6676,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8956; TYPE:PF
-      Result = 0.0
+      'Excel formula - T98*3
+Result = Me.MEI_Shuttle_FZ_Intermediate_Cut_HR_AMM_Task * 3
       '   END FORMULA; PROP ID:8956; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Cut_HR_Time_Zone", ex.Message)
@@ -6627,7 +6700,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8945; TYPE:PF
-      Result = 0.0
+      Result = 2.4
       '   END FORMULA; PROP ID:8945; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Front_CS_AMM_Task", ex.Message)
@@ -6650,7 +6723,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8955; TYPE:PF
-      Result = 0.0
+      'Excel formula - S98*$B$9*2
+Result = Me.MEI_Shuttle_FZ_Intermediate_Front_CS_AMM_Task  * Me.MEI_Shuttle_RI_Levels_Aisle_Input * 2
       '   END FORMULA; PROP ID:8955; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Front_CS_Time_Zone", ex.Message)
@@ -6673,7 +6747,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8943; TYPE:PF
-      Result = 0.0
+      Result = 10.5
       '   END FORMULA; PROP ID:8943; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_FrontU_AMM_Task", ex.Message)
@@ -6696,7 +6770,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8953; TYPE:PF
-      Result = 0.0
+      'Excel formula - Q98*2*(0.5*$B$5)
+Result = Me.MEI_Shuttle_FZ_Intermediate_FrontU_AMM_Task * 2 * (0.5 * Me.MEI_Shuttle_RI_Aisles_Input)
       '   END FORMULA; PROP ID:8953; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_FrontU_Time_Zone", ex.Message)
@@ -6719,7 +6794,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8947; TYPE:PF
-      Result = 0.0
+      Result = 2.67
       '   END FORMULA; PROP ID:8947; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_FZ_HB_AMM_Task", ex.Message)
@@ -6742,7 +6817,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8957; TYPE:PF
-      Result = 0.0
+      'Excel formula - U98*6
+Result = Me.MEI_Shuttle_FZ_Intermediate_FZ_HB_AMM_Task * 6
       '   END FORMULA; PROP ID:8957; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_FZ_HB_Time_Zone", ex.Message)
@@ -6765,7 +6841,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8949; TYPE:PF
-      Result = 0.0
+      Result = 12
       '   END FORMULA; PROP ID:8949; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Grout_AMM_Task", ex.Message)
@@ -6788,7 +6864,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8959; TYPE:PF
-      Result = 0.0
+      'Excel formula - W98*4
+Result = Me.MEI_Shuttle_FZ_Intermediate_Grout_AMM_Task * 6
       '   END FORMULA; PROP ID:8959; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Grout_Time_Zone", ex.Message)
@@ -6811,7 +6888,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8941; TYPE:PF
-      Result = 0.0
+      Result = 2.48
       '   END FORMULA; PROP ID:8941; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Internal_SR_AMM_Task", ex.Message)
@@ -6834,7 +6911,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8951; TYPE:PF
-      Result = 0.0
+      'Excel formula - O98*$B$9
+Result = Me.MEI_Shuttle_FZ_Intermediate_Internal_SR_AMM_Task * Me.MEI_Shuttle_RI_Levels_Aisle_Input
       '   END FORMULA; PROP ID:8951; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Internal_SR_Time_Zone", ex.Message)
@@ -6857,7 +6935,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8948; TYPE:PF
-      Result = 0.0
+      Result = 1.1
       '   END FORMULA; PROP ID:8948; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Lift_SR_AMM_Task", ex.Message)
@@ -6880,7 +6958,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8958; TYPE:PF
-      Result = 0.0
+      'Excel formula - V98*6
+Result = Me.MEI_Shuttle_FZ_Intermediate_Lift_SR_AMM_Task * 6
       '   END FORMULA; PROP ID:8958; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_Lift_SR_Time_Zone", ex.Message)
@@ -6903,7 +6982,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8940; TYPE:PF
-      Result = 0.0
+      Result = 16.31
       '   END FORMULA; PROP ID:8940; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_ST_AMM_Task", ex.Message)
@@ -6926,7 +7005,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8950; TYPE:PF
-      Result = 0.0
+      'Excel formula - N98*2
+Result = Me.MEI_Shuttle_FZ_Intermediate_ST_AMM_Task * 2
       '   END FORMULA; PROP ID:8950; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Intermediate_ST_Time_Zone", ex.Message)
@@ -6949,7 +7029,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8919; TYPE:PF
-      Result = 0.0
+      Result = 0.83
       '   END FORMULA; PROP ID:8919; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Layout_Anchor_Leveling_AMM_Task", ex.Message)
@@ -6972,7 +7052,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8923; TYPE:PF
-      Result = 0.0
+      'Excel formula - E98*4
+Result = Me.MEI_Shuttle_FZ_Layout_Anchor_Leveling_AMM_Task * 4
       '   END FORMULA; PROP ID:8923; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Layout_Anchor_Leveling_Time_Zone", ex.Message)
@@ -6995,7 +7076,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8918; TYPE:PF
-      Result = 0.0
+      Result = 1.88
       '   END FORMULA; PROP ID:8918; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Layout_FAB_AMM_Task", ex.Message)
@@ -7018,7 +7099,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8922; TYPE:PF
-      Result = 0.0
+      'Excel formula - D98*4
+Result = Me.MEI_Shuttle_FZ_Layout_FAB_AMM_Task * 4
       '   END FORMULA; PROP ID:8922; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Layout_FAB_Time_Zone", ex.Message)
@@ -7041,7 +7123,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8916; TYPE:PF
-      Result = 0.0
+      Result = 0.58
       '   END FORMULA; PROP ID:8916; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Layout_Pilot_Drill_AMM_Task", ex.Message)
@@ -7064,7 +7146,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8920; TYPE:PF
-      Result = 0.0
+      'Excel formula - B98*4
+Result = Me.MEI_Shuttle_FZ_Layout_Pilot_Drill_AMM_Task * 4
       '   END FORMULA; PROP ID:8920; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Layout_Pilot_Drill_Time_Zone", ex.Message)
@@ -7087,7 +7170,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8917; TYPE:PF
-      Result = 0.0
+      Result = 1.39
       '   END FORMULA; PROP ID:8917; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Layout_Second_Hole_AMM_Task", ex.Message)
@@ -7110,7 +7193,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8921; TYPE:PF
-      Result = 0.0
+      'Excel formula - C98*4
+Result = Me.MEI_Shuttle_FZ_Layout_Second_Hole_AMM_Task * 4
       '   END FORMULA; PROP ID:8921; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Layout_Second_Hole_Time_Zone", ex.Message)
@@ -7133,7 +7217,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8960; TYPE:PF
-      Result = 0.0
+      Result = 1.38
       '   END FORMULA; PROP ID:8960; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Level_Tight_Upright_Knock_AMM_Task", ex.Message)
@@ -7156,7 +7240,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8961; TYPE:PF
-      Result = 0.0
+      'Excel formula - X98*4
+Result = Me.MEI_Shuttle_FZ_Level_Tight_Upright_Knock_AMM_Task * 4
       '   END FORMULA; PROP ID:8961; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Level_Tight_Upright_Knock_Time_Zone", ex.Message)
@@ -7179,7 +7264,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8936; TYPE:PF
-      Result = 0.0
+      Result = 1.78
       '   END FORMULA; PROP ID:8936; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Material_PreStage_PR_AMM_Task", ex.Message)
@@ -7202,7 +7287,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8938; TYPE:PF
-      Result = 0.0
+      'Excel formula - L98*2
+Result = Me.MEI_Shuttle_FZ_Material_PreStage_PR_AMM_Task * 2
       '   END FORMULA; PROP ID:8938; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Material_PreStage_PR_Time_Zone", ex.Message)
@@ -7225,7 +7311,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8937; TYPE:PF
-      Result = 0.0
+      Result = 8.83
       '   END FORMULA; PROP ID:8937; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Material_Upright_RS_AMM_Task", ex.Message)
@@ -7248,7 +7334,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8939; TYPE:PF
-      Result = 0.0
+      'Excel formula - M98*2
+Result = Me.MEI_Shuttle_FZ_Material_Upright_RS_AMM_Task * 2
       '   END FORMULA; PROP ID:8939; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Material_Upright_RS_Time_Zone", ex.Message)
@@ -7271,7 +7358,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8927; TYPE:PF
-      Result = 0.0
+      Result = 1.76
       '   END FORMULA; PROP ID:8927; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Assemble_GB_AMM_Task", ex.Message)
@@ -7294,7 +7381,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8933; TYPE:PF
-      Result = 0.0
+      'Excel formula - I98*4
+Result = Me.MEI_Shuttle_FZ_Prepping_Assemble_GB_AMM_Task * 4
       '   END FORMULA; PROP ID:8933; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Assemble_GB_Time_Zone", ex.Message)
@@ -7317,7 +7405,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8929; TYPE:PF
-      Result = 0.0
+      Result = 1.2
       '   END FORMULA; PROP ID:8929; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Clean_GB_AMM_Task", ex.Message)
@@ -7340,7 +7428,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8935; TYPE:PF
-      Result = 0.0
+      'Excel formula - K98*4
+Result = Me.MEI_Shuttle_FZ_Prepping_Clean_GB_AMM_Task * 4
       '   END FORMULA; PROP ID:8935; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Clean_GB_Time_Zone", ex.Message)
@@ -7363,7 +7452,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8926; TYPE:PF
-      Result = 0.0
+      Result = 1.83
       '   END FORMULA; PROP ID:8926; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_AMM_Task", ex.Message)
@@ -7386,7 +7475,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8932; TYPE:PF
-      Result = 0.0
+      'Excel formula - H98*4
+Result = Me.MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_AMM_Task * 4
       '   END FORMULA; PROP ID:8932; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_Time_Zone", ex.Message)
@@ -7409,7 +7499,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8934; TYPE:PF
-      Result = 0.0
+      'Excel formula - J98*4
+Result = Me.MEI_Shuttle_FZ_Prepping_Oil_Place_Blocks_AMM_Task * 4
       '   END FORMULA; PROP ID:8934; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Oil_PB_Time_Zone", ex.Message)
@@ -7432,7 +7523,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8928; TYPE:PF
-      Result = 0.0
+      Result = 3.45
       '   END FORMULA; PROP ID:8928; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Oil_Place_Blocks_AMM_Task", ex.Message)
@@ -7455,7 +7546,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8924; TYPE:PF
-      Result = 0.0
+      Result = 18.19
       '   END FORMULA; PROP ID:8924; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Prep_UR_AMM_Task", ex.Message)
@@ -7478,7 +7569,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8930; TYPE:PF
-      Result = 0.0
+      'Excel formula - F98*2
+Result = Me.MEI_Shuttle_FZ_Prepping_Prep_UR_AMM_Task * 2
       '   END FORMULA; PROP ID:8930; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Prep_UR_Time_Zone", ex.Message)
@@ -7501,7 +7593,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8925; TYPE:PF
-      Result = 0.0
+      Result = 3.07
       '   END FORMULA; PROP ID:8925; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Upright_AP_AMM_Task", ex.Message)
@@ -7524,7 +7616,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8931; TYPE:PF
-      Result = 0.0
+      'Excel formula - G98*2
+Result = Me.MEI_Shuttle_FZ_Prepping_Upright_AP_AMM_Task * 2
       '   END FORMULA; PROP ID:8931; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Prepping_Upright_AP_Time_Zone", ex.Message)
@@ -7547,7 +7640,30 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8962; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(B99:X99)/60
+Result = (Me.MEI_Shuttle_FZ_Layout_Pilot_Drill_Time_Zone +
+Me.MEI_Shuttle_FZ_Layout_Second_Hole_Time_Zone +
+Me.MEI_Shuttle_FZ_Layout_FAB_Time_Zone +
+Me.MEI_Shuttle_FZ_Layout_Anchor_Leveling_Time_Zone +
+Me.MEI_Shuttle_FZ_Prepping_Prep_UR_Time_Zone +
+Me.MEI_Shuttle_FZ_Prepping_Upright_AP_Time_Zone +
+Me.MEI_Shuttle_FZ_Prepping_Cut_Wood_GB_Time_Zone +
+Me.MEI_Shuttle_FZ_Prepping_Assemble_GB_Time_Zone +
+Me.MEI_Shuttle_FZ_Prepping_Oil_PB_Time_Zone +
+Me.MEI_Shuttle_FZ_Prepping_Clean_GB_Time_Zone +
+Me.MEI_Shuttle_FZ_Material_PreStage_PR_Time_Zone +
+Me.MEI_Shuttle_FZ_Material_Upright_RS_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_ST_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_Internal_SR_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_Conveyor_SR_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_FrontU_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_CS_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_Front_CS_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_Cut_HR_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_FZ_HB_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_Lift_SR_Time_Zone +
+Me.MEI_Shuttle_FZ_Intermediate_Grout_Time_Zone +
+Me.MEI_Shuttle_FZ_Level_Tight_Upright_Knock_Time_Zone)/60
       '   END FORMULA; PROP ID:8962; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_FZ_Time_Per_Front_Zone", ex.Message)
@@ -7570,7 +7686,14 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8854; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(B65:F65)+SUM(G65:H65)*2
+Result = (Me.MEI_Shuttle_MI_Lift_Install_Mat_Move_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_Staging_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_Lift_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_L_Plumb_Hours_lift) +
+((Me.MEI_Shuttle_MI_Lift_Install_MDR_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_Run_In_Hours_lift)*2)
       '   END FORMULA; PROP ID:8854; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Double_MDR_Lift", ex.Message)
@@ -7593,7 +7716,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8824; TYPE:PF
-      Result = 0.0
+      'Excel formula - E36*D36
+Result = Me.MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Rate * Me.MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_System_Qty
       '   END FORMULA; PROP ID:8824; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Hours", ex.Message)
@@ -7639,7 +7763,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8818; TYPE:PF
-      Result = 0.0
+      'Excel formula - B67
+Result = Me.MEI_Shuttle_MI_Double_MDR_Lift
       '   END FORMULA; PROP ID:8818; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Rate", ex.Message)
@@ -7662,7 +7787,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8812; TYPE:PF
-      Result = 0.0
+      'Excel formula - B36*$B$5
+Result = Me.MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8812; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_System_Qty", ex.Message)
@@ -7685,7 +7811,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8837; TYPE:PF
-      Result = 0.0
+      Result = 120
       '   END FORMULA; PROP ID:8837; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_H_Install_Attachment_Time_Per_Unit", ex.Message)
@@ -7708,7 +7834,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8836; TYPE:PF
-      Result = 0.0
+      Result = 18*60
       '   END FORMULA; PROP ID:8836; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_H_Install_Grid_Supp_Time_Per_Unit", ex.Message)
@@ -7731,7 +7857,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8835; TYPE:PF
-      Result = 0.0
+      Result = 15*4
       '   END FORMULA; PROP ID:8835; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_H_Install_Mat_Move_Time_Per_Unit", ex.Message)
@@ -7754,7 +7880,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8826; TYPE:PF
-      Result = 0.0
+      'Excel formula - E38*D38
+Result = Me.MEI_Shuttle_MI_Hoist_Rate * Me.MEI_Shuttle_MI_Hoist_System_Qty
       '   END FORMULA; PROP ID:8826; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Hoist_Hours", ex.Message)
@@ -7800,7 +7927,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8820; TYPE:PF
-      Result = 0.0
+      'Excel formula - B59
+Result = Me.MEI_Shuttle_MI_Hours_Per_Hoist
       '   END FORMULA; PROP ID:8820; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Hoist_Rate", ex.Message)
@@ -7823,7 +7951,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8814; TYPE:PF
-      Result = 0.0
+      'Excel formula - B38
+Result = Me.MEI_Shuttle_MI_Hoist_Input
       '   END FORMULA; PROP ID:8814; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Hoist_System_Qty", ex.Message)
@@ -7846,7 +7975,10 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8838; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(B57:D57)/60
+Result = (Me.MEI_Shuttle_MI_H_Install_Mat_Move_Time_Per_Unit +
+Me.MEI_Shuttle_MI_H_Install_Grid_Supp_Time_Per_Unit +
+Me.MEI_Shuttle_MI_H_Install_Attachment_Time_Per_Unit)/60
       '   END FORMULA; PROP ID:8838; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Hours_Per_Hoist", ex.Message)
@@ -7869,7 +8001,14 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8853; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(B65:H65)
+Result = Me.MEI_Shuttle_MI_Lift_Install_Mat_Move_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_Staging_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_Lift_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_L_Plumb_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_MDR_Hours_lift +
+Me.MEI_Shuttle_MI_Lift_Install_Run_In_Hours_lift
       '   END FORMULA; PROP ID:8853; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Hours_Per_Lift", ex.Message)
@@ -7892,7 +8031,12 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8834; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(B51:F51)/60
+Result = ( Me.MEI_Shuttle_MI_MDR_Install_Mat_Movement +
+Me.MEI_Shuttle_MI_MDR_Install_Uncrate +
+Me.MEI_Shuttle_MI_MDR_Install_Layout +
+Me.MEI_Shuttle_MI_MDR_Installation +
+Me.MEI_Shuttle_MI_MDR_Install_Attach_Guarding)/60
       '   END FORMULA; PROP ID:8834; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Hours_Per_MDR", ex.Message)
@@ -7915,7 +8059,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8848; TYPE:PF
-      Result = 0.0
+      'Excel formula - D64/60
+Result = Me.MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Min_Per_lift/60
       '   END FORMULA; PROP ID:8848; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Hours_lift", ex.Message)
@@ -7938,7 +8083,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8841; TYPE:PF
-      Result = 0.0
+      Result = 101.46
       '   END FORMULA; PROP ID:8841; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Adj_Brkt_Min_Per_lift", ex.Message)
@@ -7961,7 +8106,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8850; TYPE:PF
-      Result = 0.0
+      'Excel formula - F64/60
+Result = Me.MEI_Shuttle_MI_Lift_Install_L_Plumb_Min_Per_lift/60
       '   END FORMULA; PROP ID:8850; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_L_Plumb_Hours_lift", ex.Message)
@@ -7984,7 +8130,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8843; TYPE:PF
-      Result = 0.0
+      Result = 40.52
       '   END FORMULA; PROP ID:8843; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_L_Plumb_Min_Per_lift", ex.Message)
@@ -8007,7 +8153,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8849; TYPE:PF
-      Result = 0.0
+      'Excel formula - E64/60
+Result = Me.MEI_Shuttle_MI_Lift_Install_Lift_Min_Per_lift/60
       '   END FORMULA; PROP ID:8849; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Lift_Hours_lift", ex.Message)
@@ -8030,7 +8177,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8842; TYPE:PF
-      Result = 0.0
+      Result = 146.4
       '   END FORMULA; PROP ID:8842; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Lift_Min_Per_lift", ex.Message)
@@ -8053,7 +8200,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8846; TYPE:PF
-      Result = 0.0
+      'Excel formula - B64/60
+Result = Me.MEI_Shuttle_MI_Lift_Install_Mat_Move_Min_Per_lift /60
       '   END FORMULA; PROP ID:8846; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Mat_Move_Hours_lift", ex.Message)
@@ -8076,7 +8224,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8839; TYPE:PF
-      Result = 0.0
+      Result = 30
       '   END FORMULA; PROP ID:8839; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Mat_Move_Min_Per_lift", ex.Message)
@@ -8099,7 +8247,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8851; TYPE:PF
-      Result = 0.0
+      'Excel formula - G64/60
+Result = Me.MEI_Shuttle_MI_Lift_Install_MDR_Min_Per_lift/60
       '   END FORMULA; PROP ID:8851; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_MDR_Hours_lift", ex.Message)
@@ -8122,7 +8271,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8844; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(B51:E51)
+Result = Me.MEI_Shuttle_MI_MDR_Install_Mat_Movement +
+Me.MEI_Shuttle_MI_MDR_Install_Uncrate +
+Me.MEI_Shuttle_MI_MDR_Install_Layout +
+Me.MEI_Shuttle_MI_MDR_Installation
       '   END FORMULA; PROP ID:8844; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_MDR_Min_Per_lift", ex.Message)
@@ -8145,7 +8298,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8852; TYPE:PF
-      Result = 0.0
+      'Excel formula - H64/60
+Result = Me.MEI_Shuttle_MI_Lift_Install_Run_In_Min_Per_lift/60
       '   END FORMULA; PROP ID:8852; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Run_In_Hours_lift", ex.Message)
@@ -8168,7 +8322,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8845; TYPE:PF
-      Result = 0.0
+      Result = 90
       '   END FORMULA; PROP ID:8845; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Run_In_Min_Per_lift", ex.Message)
@@ -8191,7 +8345,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8847; TYPE:PF
-      Result = 0.0
+      'Excel formula - C64/60
+Result = Me.MEI_Shuttle_MI_Lift_Install_Staging_Min_Per_lift/60
       '   END FORMULA; PROP ID:8847; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Staging_Hours_lift", ex.Message)
@@ -8214,7 +8369,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8840; TYPE:PF
-      Result = 0.0
+      Result = 138.03
       '   END FORMULA; PROP ID:8840; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Lift_Install_Staging_Min_Per_lift", ex.Message)
@@ -8237,7 +8392,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8833; TYPE:PF
-      Result = 0.0
+      Result = 13
       '   END FORMULA; PROP ID:8833; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_MDR_Install_Attach_Guarding", ex.Message)
@@ -8260,7 +8415,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8831; TYPE:PF
-      Result = 0.0
+      'Excel formula - 15/B34
+Result = 15/Me.MEI_Shuttle_MI_MDR_Installation_Aisle_Input
       '   END FORMULA; PROP ID:8831; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_MDR_Install_Layout", ex.Message)
@@ -8283,7 +8439,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8829; TYPE:PF
-      Result = 0.0
+      Result = 15/5
       '   END FORMULA; PROP ID:8829; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_MDR_Install_Mat_Movement", ex.Message)
@@ -8306,7 +8462,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8830; TYPE:PF
-      Result = 0.0
+      Result = 20/5
       '   END FORMULA; PROP ID:8830; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_MDR_Install_Uncrate", ex.Message)
@@ -8329,7 +8485,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8832; TYPE:PF
-      Result = 0.0
+      Result = 32.3234375
       '   END FORMULA; PROP ID:8832; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_MDR_Installation", ex.Message)
@@ -8352,7 +8508,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8822; TYPE:PF
-      Result = 0.0
+      'Excel formula - E34*D34
+Result = Me.MEI_Shuttle_MI_MDR_Installation_Aisle_Rate * Me.MEI_Shuttle_MI_MDR_Installation_Aisle_System_Qty
       '   END FORMULA; PROP ID:8822; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_MDR_Installation_Aisle_Hours", ex.Message)
@@ -8398,7 +8555,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8816; TYPE:PF
-      Result = 0.0
+      'Excel formula - B53
+Result = Me.MEI_Shuttle_MI_Hours_Per_MDR
       '   END FORMULA; PROP ID:8816; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_MDR_Installation_Aisle_Rate", ex.Message)
@@ -8421,7 +8579,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8810; TYPE:PF
-      Result = 0.0
+      'Excel formula - B34*$B$5
+Result =  Me.MEI_Shuttle_MI_MDR_Installation_Aisle_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8810; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_MDR_Installation_Aisle_System_Qty", ex.Message)
@@ -8444,7 +8603,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8825; TYPE:PF
-      Result = 0.0
+      'Excel formula - E37*D37
+Result = Me.MEI_Shuttle_MI_Other_Lifts_Aisle_Rate * Me.MEI_Shuttle_MI_Other_Lifts_Aisle_System_Qty
       '   END FORMULA; PROP ID:8825; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Other_Lifts_Aisle_Hours", ex.Message)
@@ -8513,7 +8673,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8813; TYPE:PF
-      Result = 0.0
+      'Excel formula - B37*$B$5
+Result = Me.MEI_Shuttle_MI_Other_Lifts_Aisle_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8813; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Other_Lifts_Aisle_System_Qty", ex.Message)
@@ -8536,7 +8697,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8821; TYPE:PF
-      Result = 0.0
+      'Excel formula - E33*D33
+Result = Me.MEI_Shuttle_MI_Shuttles_Aisle_Rate * Me.MEI_Shuttle_MI_Shuttles_Aisle_System_Qty
       '   END FORMULA; PROP ID:8821; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Shuttles_Aisle_Hours", ex.Message)
@@ -8582,7 +8744,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8815; TYPE:PF
-      Result = 0.0
+      'Excel formula - B73
+Result = Me.MEI_MI_Shuttle_Install_Hours_Per_Shuttle
       '   END FORMULA; PROP ID:8815; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Shuttles_Aisle_Rate", ex.Message)
@@ -8605,7 +8768,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8809; TYPE:PF
-      Result = 0.0
+      'Excel formula - B33*$B$5
+Result = Me.MEI_Shuttle_MI_Shuttles_Aisle_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8809; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Shuttles_Aisle_System_Qty", ex.Message)
@@ -8628,7 +8792,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8828; TYPE:PF
-      Result = 0.0
+      Result = Me.MEI_Shuttle_MI_Total_Shuttle_Hours + Me.MEI_Shuttle_RI_Total_Rack_Hours
       '   END FORMULA; PROP ID:8828; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Total_Hours", ex.Message)
@@ -8651,7 +8815,14 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8827; TYPE:PF
-      Result = 0.0
+      'Excel formula - IFERROR(SUM(F33:F38),0)
+
+Result = Me.MEI_Shuttle_MI_Shuttles_Aisle_Hours +
+Me.MEI_Shuttle_MI_MDR_Installation_Aisle_Hours +
+Me.MEI_Shuttle_MI_Vertical_Lifts_Aisle_Hours +
+Me.MEI_Shuttle_MI_Double_MDR_Lifts_Aisle_Hours +
+Me.MEI_Shuttle_MI_Other_Lifts_Aisle_Hours +
+Me.MEI_Shuttle_MI_Hoist_Hours
       '   END FORMULA; PROP ID:8827; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Total_Shuttle_Hours", ex.Message)
@@ -8674,7 +8845,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8823; TYPE:PF
-      Result = 0.0
+      'Excel formula - E35*D35
+Result = Me.MEI_Shuttle_MI_Vertical_Lifts_Aisle_Rate * Me.MEI_Shuttle_MI_Vertical_Lifts_Aisle_System_Qty
       '   END FORMULA; PROP ID:8823; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Vertical_Lifts_Aisle_Hours", ex.Message)
@@ -8720,7 +8892,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8817; TYPE:PF
-      Result = 0.0
+      'Excel formula - B66
+Result = Me.MEI_Shuttle_MI_Hours_Per_Lift
       '   END FORMULA; PROP ID:8817; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Vertical_Lifts_Aisle_Rate", ex.Message)
@@ -8743,7 +8916,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8811; TYPE:PF
-      Result = 0.0
+      'Excel formula - B35*$B$5
+Result =  Me.MEI_Shuttle_MI_Vertical_Lifts_Aisle_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8811; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_MI_Vertical_Lifts_Aisle_System_Qty", ex.Message)
@@ -8766,7 +8940,9 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8783; TYPE:PF
-      Result = 0.0
+      'Excel formula - E5*D5*$E$13
+
+Result = Me.MEI_Shuttle_RI_Aisles_Rate * Me.MEI_Shuttle_RI_Aisles_System_Qty * Me.MEI_Shuttle_RI_Height_Rate
       '   END FORMULA; PROP ID:8783; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Aisles_Hours", ex.Message)
@@ -8812,7 +8988,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8764; TYPE:PF
-      Result = 0.0
+      'C135
+Result = Me.MEI_Shuttle_A_T_P_L_and_T_Hours_Per_Aisle
       '   END FORMULA; PROP ID:8764; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Aisles_Rate", ex.Message)
@@ -8835,7 +9012,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8745; TYPE:PF
-      Result = Me.MEI_Shuttle_RI_Aisles_Input
+      'Excel Formula -B5
+Result = Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8745; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Aisles_System_Qty", ex.Message)
@@ -8858,7 +9036,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8785; TYPE:PF
-      Result = 0.0
+      'Excel formula - E7*D7*$E$13
+Result = Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate * Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_System_Qty * Me.MEI_Shuttle_RI_Height_Rate
       '   END FORMULA; PROP ID:8785; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours", ex.Message)
@@ -8904,7 +9083,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8766; TYPE:PF
-      Result = 0.0
+      'Excel formula - C114
+Result = Me.MEI_Shuttle_BT_Time_Per_Bracing_Tower
       '   END FORMULA; PROP ID:8766; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Rate", ex.Message)
@@ -8927,7 +9107,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8747; TYPE:PF
-      Result = 0.0
+      'Excel Formula - B7*$B$5
+Result = Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8747; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_System_Qty", ex.Message)
@@ -8950,7 +9131,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8799; TYPE:PF
-      Result = 0.0
+      'Excel formula - E24*D24
+Result = Me.MEI_Shuttle_RI_Entry_Gates_Rate * Me.MEI_Shuttle_RI_Entry_Gates_System_Qty
       '   END FORMULA; PROP ID:8799; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Entry_Gates_Hours", ex.Message)
@@ -8996,7 +9178,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8780; TYPE:PF
-      Result = 0.0
+      'Excel formula - C93
+Result = Me.MEI_Shuttle_RI_Fencing_Entry_Door
       '   END FORMULA; PROP ID:8780; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Entry_Gates_Rate", ex.Message)
@@ -9019,7 +9202,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8761; TYPE:PF
-      Result = 0.0
+      'B24
+Result = Me.MEI_Shuttle_RI_Entry_Gates_Input
       '   END FORMULA; PROP ID:8761; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Entry_Gates_System_Qty", ex.Message)
@@ -9042,7 +9226,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8888; TYPE:PF
-      Result = 0.0
+      Result = 37.30
       '   END FORMULA; PROP ID:8888; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_Anchor_Drill_Avg_MM_Task", ex.Message)
@@ -9065,7 +9249,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8893; TYPE:PF
-      Result = 0.0
+      Result = 2.6
       '   END FORMULA; PROP ID:8893; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_Anchor_Drill_Time_Per_Ft", ex.Message)
@@ -9134,7 +9318,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8890; TYPE:PF
-      Result = 0.0
+      Result = 210
       '   END FORMULA; PROP ID:8890; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_Entry_D_Inst_Avg_MM_Task", ex.Message)
@@ -9180,7 +9364,9 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8897; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(E90:F90)/60
+Result = (Me.MEI_Shuttle_RI_Fencing_Entry_D_Build_Avg_MM_Task +
+Me.MEI_Shuttle_RI_Fencing_Entry_D_Inst_Avg_MM_Task)/60
       '   END FORMULA; PROP ID:8897; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_Entry_Door", ex.Message)
@@ -9203,7 +9389,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8793; TYPE:PF
-      Result = 0.0
+      'Excel formula - E17*D17
+Result = Me.MEI_Shuttle_RI_Fencing_Rate * Me.MEI_Shuttle_RI_Fencing_System_Qty
       '   END FORMULA; PROP ID:8793; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_Hours", ex.Message)
@@ -9249,7 +9436,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8886; TYPE:PF
-      Result = 0.0
+      Result = 22
       '   END FORMULA; PROP ID:8886; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_Layout_Avg_MM_Task", ex.Message)
@@ -9272,7 +9459,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8891; TYPE:PF
-      Result = 0.0
+      Result = 0.2
       '   END FORMULA; PROP ID:8891; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_Layout_Time_Per_Ft", ex.Message)
@@ -9295,7 +9482,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8774; TYPE:PF
-      Result = 0.0
+      'Excel formula - C92
+Result = Me.MEI_Shuttle_RI_Fencing_Time_Per_Foot
       '   END FORMULA; PROP ID:8774; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_Rate", ex.Message)
@@ -9318,7 +9506,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8887; TYPE:PF
-      Result = 0.0
+      Result = 26.9
       '   END FORMULA; PROP ID:8887; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_STD_Exterior_Avg_MM_Task", ex.Message)
@@ -9341,7 +9529,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8892; TYPE:PF
-      Result = 0.0
+      Result = 6.7
       '   END FORMULA; PROP ID:8892; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_STD_Exterior_Time_Per_Ft", ex.Message)
@@ -9364,7 +9552,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8755; TYPE:PF
-      Result = 0.0
+      'B17
+Result = Me.MEI_Shuttle_RI_Fencing_Input
       '   END FORMULA; PROP ID:8755; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_System_Qty", ex.Message)
@@ -9387,7 +9576,10 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8896; TYPE:PF
-      Result = 0.0
+      'Excel formula - (SUM(B91:D91))/60
+Result = (Me.MEI_Shuttle_RI_Fencing_Layout_Time_Per_Ft +
+Me.MEI_Shuttle_RI_Fencing_STD_Exterior_Time_Per_Ft +
+Me.MEI_Shuttle_RI_Fencing_Anchor_Drill_Time_Per_Ft)/60
       '   END FORMULA; PROP ID:8896; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Fencing_Time_Per_Foot", ex.Message)
@@ -9410,7 +9602,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8789; TYPE:PF
-      Result = 0.0
+      'Excel formula - E11*D11*$E$13
+Result = Me.MEI_Shuttle_RI_Front_Zone_Rate * Me.MEI_Shuttle_RI_Front_Zone_System_Qty * Me.MEI_Shuttle_RI_Height_Rate
       '   END FORMULA; PROP ID:8789; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Front_Zone_Hours", ex.Message)
@@ -9456,7 +9649,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8770; TYPE:PF
-      Result = 0.0
+      'Excel formula - $C$100
+Result = Me.MEI_Shuttle_FZ_Time_Per_Front_Zone
       '   END FORMULA; PROP ID:8770; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Front_Zone_Rate", ex.Message)
@@ -9479,7 +9673,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8751; TYPE:PF
-      Result = 0.0
+      'Excel Formula - B11*$B$5 
+Result = Me.MEI_Shuttle_RI_Front_Zone_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8751; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Front_Zone_System_Qty", ex.Message)
@@ -9548,7 +9743,13 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8771; TYPE:PF
-      Result = 0.0
+      'Excel formula - IF(B13>=34,2,1)
+
+If Me.MEI_Shuttle_RI_Height_Input >= 34 Then 
+Result = 2
+Else
+Result = 1
+End If
       '   END FORMULA; PROP ID:8771; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Height_Rate", ex.Message)
@@ -9571,7 +9772,12 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8752; TYPE:PF
-      Result = 0.0
+      'Excel Formula - IF(B13>=34,2,1)
+If (Me.MEI_Shuttle_RI_Height_Input > 34) Then
+Result = 2
+Else
+Result = 1
+End If
       '   END FORMULA; PROP ID:8752; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Height_System_Qty", ex.Message)
@@ -9594,7 +9800,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8800; TYPE:PF
-      Result = 0.0
+      'Excel formula - E26*D26
+Result = Me.MEI_Shuttle_RI_Layout_Rate * Me.MEI_Shuttle_RI_Layout_System_Qty
       '   END FORMULA; PROP ID:8800; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Layout_Hours", ex.Message)
@@ -9640,7 +9847,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8781; TYPE:PF
-      Result = 0.0
+      Result = 50
       '   END FORMULA; PROP ID:8781; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Layout_Rate", ex.Message)
@@ -9663,7 +9870,17 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8762; TYPE:PF
-      Result = 0.0
+      'Excel formula - If(B26=1,1,If(B26=2,1.5,If(B26=3,2,2.5)))
+
+If Me.MEI_Shuttle_RI_Layout_Input = 1 Then
+Result = 1
+Else If Me.MEI_Shuttle_RI_Layout_Input = 2 Then
+Result = 1.5
+Else If Me.MEI_Shuttle_RI_Layout_Input = 3 Then
+Result = 2
+Else 
+Result = 2.5
+End If
       '   END FORMULA; PROP ID:8762; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Layout_System_Qty", ex.Message)
@@ -9686,7 +9903,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8791; TYPE:PF
-      Result = 0.0
+      'Excel formula - E14*D14*$D$13
+Result = Me.MEI_Shuttle_RI_Length_Rate * Me.MEI_Shuttle_RI_Length_System_Qty * Me.MEI_Shuttle_RI_Height_System_Qty
       '   END FORMULA; PROP ID:8791; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Length_Hours", ex.Message)
@@ -9755,7 +9973,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8753; TYPE:PF
-      Result = 0.0
+      'Excel formula =  B14
+Result = Me.MEI_Shuttle_RI_Length_Input
       '   END FORMULA; PROP ID:8753; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Length_System_Qty", ex.Message)
@@ -9778,7 +9997,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8787; TYPE:PF
-      Result = 0.0
+      'Excel formula - E9*D9*$E$13
+Result = Me.MEI_Shuttle_RI_Levels_Aisle_Rate * Me.MEI_Shuttle_RI_Levels_Aisle_System_Qty * Me.MEI_Shuttle_RI_Height_Rate
       '   END FORMULA; PROP ID:8787; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Levels_Aisle_Hours", ex.Message)
@@ -9824,7 +10044,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8768; TYPE:PF
-      Result = 0.0
+      'Excel formula - C121
+Result = Me.MEI_Shuttle_TL_Time_Per_Row
       '   END FORMULA; PROP ID:8768; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Levels_Aisle_Rate", ex.Message)
@@ -9847,7 +10068,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8749; TYPE:PF
-      Result = 0.0
+      'Excel Formula -B9*$B$5
+Result = Me.MEI_Shuttle_RI_Levels_Aisle_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8749; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Levels_Aisle_System_Qty", ex.Message)
@@ -9870,7 +10092,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8801; TYPE:PF
-      Result = 0.0
+      'Excel formula - E27
+Result = Me.MEI_Shuttle_RI_Material_Movement_Rate
       '   END FORMULA; PROP ID:8801; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Material_Movement_Hours", ex.Message)
@@ -9916,7 +10139,22 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8782; TYPE:PF
-      Result = 0.0
+      'Excel formula - (40*D27)+(SUM(F19:F24,F13:F15,F5:F11,F17)*0.2)
+
+Result = (40* Me.MEI_Shuttle_RI_Material_Movement_System_Qty ) + (( Me.MEI_Shuttle_RI_Service_Platform_Hours +
+Me.MEI_Shuttle_RI_Sides_of_Netting_Hours +
+Me.MEI_Shuttle_RI_Netting_Hours +
+Me.MEI_Shuttle_RI_Service_Ladders_Hours +
+Me.MEI_Shuttle_RI_Stairs_Hours +
+Me.MEI_Shuttle_RI_Entry_Gates_Hours + Me.MEI_Shuttle_RI_Height_Hours +
+Me.MEI_Shuttle_RI_Length_Hours +
+Me.MEI_Shuttle_RI_Width_Hours + Me.MEI_Shuttle_RI_Aisles_Hours +
+Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Hours +
+Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours +
+Me.MEI_Shuttle_RI_Service_Levels_Aisle_Hours +
+Me.MEI_Shuttle_RI_Levels_Aisle_Hours +
+Me.MEI_Shuttle_RI_Totes_per_Bay_Hours +
+Me.MEI_Shuttle_RI_Front_Zone_Hours + Me.MEI_Shuttle_RI_Fencing_Hours)*0.2)
       '   END FORMULA; PROP ID:8782; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Material_Movement_Rate", ex.Message)
@@ -9939,7 +10177,17 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8763; TYPE:PF
-      Result = 0.0
+      'Excel formula - IF(B26=1,1,IF(B26=2,1.5,IF(B26=3,2,2.5)))
+
+If Me.MEI_Shuttle_RI_Layout_Input = 1 Then
+Result = 1
+Else If Me.MEI_Shuttle_RI_Layout_Input = 2 Then
+Result = 1.5
+Else If Me.MEI_Shuttle_RI_Layout_Input = 3 Then
+Result = 2
+Else 
+Result = 2.5
+End If
       '   END FORMULA; PROP ID:8763; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Material_Movement_System_Qty", ex.Message)
@@ -9962,7 +10210,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8866; TYPE:PF
-      Result = 0.0
+      Result = 10.88
       '   END FORMULA; PROP ID:8866; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Inst_Attach_N_Avg_MM_Task", ex.Message)
@@ -9985,7 +10233,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8882; TYPE:PF
-      Result = 0.0
+      'Excel formula - H82/8
+Result = Me.MEI_Shuttle_RI_Net_Inst_Attach_N_Avg_MM_Task/8
       '   END FORMULA; PROP ID:8882; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Ft", ex.Message)
@@ -10031,7 +10280,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8867; TYPE:PF
-      Result = 0.0
+      Result = 19.64
       '   END FORMULA; PROP ID:8867; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Avg_MM_Task", ex.Message)
@@ -10054,7 +10303,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8883; TYPE:PF
-      Result = 0.0
+      'Excel formula - I82/8
+Result = Me.MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Avg_MM_Task/8
       '   END FORMULA; PROP ID:8883; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Ft", ex.Message)
@@ -10100,7 +10350,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8864; TYPE:PF
-      Result = 0.0
+      Result = 2.51
       '   END FORMULA; PROP ID:8864; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Inst_N_Brkt_Avg_MM_Task", ex.Message)
@@ -10146,7 +10396,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8872; TYPE:PF
-      Result = 0.0
+      'Excel formula - (ROUND((SUM(B6:B7)+1)/3,0)+1)*(B8+1)*F82
+Dim Sum1 As Double = Math.Round((((Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input +
+Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input)+1)/3),0)
+
+Result = ((Sum1 + 1) *(Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input + 1 ) * Me.MEI_Shuttle_RI_Net_Inst_N_Brkt_Avg_MM_Task)
       '   END FORMULA; PROP ID:8872; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Side", ex.Message)
@@ -10169,7 +10423,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8865; TYPE:PF
-      Result = 0.0
+      Result = 27.7
       '   END FORMULA; PROP ID:8865; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Inst_Safety_NC_Avg_MM_Task", ex.Message)
@@ -10192,7 +10446,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8881; TYPE:PF
-      Result = 0.0
+      Result = 1.9
       '   END FORMULA; PROP ID:8881; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Ft", ex.Message)
@@ -10238,7 +10492,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8861; TYPE:PF
-      Result = 0.0
+      Result = 4.0
       '   END FORMULA; PROP ID:8861; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Avg_MM_Task", ex.Message)
@@ -10284,7 +10538,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8869; TYPE:PF
-      Result = 0.0
+      'Excel formula - C82*(1+B8)
+Result = Me.MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Avg_MM_Task * (1+ Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input)
       '   END FORMULA; PROP ID:8869; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Side", ex.Message)
@@ -10307,7 +10562,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8862; TYPE:PF
-      Result = 0.0
+      Result = 3
       '   END FORMULA; PROP ID:8862; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Avg_MM_Task", ex.Message)
@@ -10353,7 +10608,10 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8870; TYPE:PF
-      Result = 0.0
+      'Excel formula - (ROUND((SUM(B6:B7)+1)/3,0)+1)*D82
+Dim Sum1 As Double =  Math.Round((((Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input +
+Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input)+1)/3),0)
+Result = (Sum1 +1)* Me.MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Avg_MM_Task
       '   END FORMULA; PROP ID:8870; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Side", ex.Message)
@@ -10376,7 +10634,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8860; TYPE:PF
-      Result = 0.0
+      Result = 30
       '   END FORMULA; PROP ID:8860; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Avg_MM_Task", ex.Message)
@@ -10422,7 +10680,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8868; TYPE:PF
-      Result = 0.0
+      'Excel formula - B82/B20
+Result = Me.MEI_Shuttle_RI_Net_Prep_Netting_T_B_Avg_MM_Task / Me.MEI_Shuttle_RI_Sides_of_Netting_Input
       '   END FORMULA; PROP ID:8868; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Side", ex.Message)
@@ -10445,7 +10704,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8863; TYPE:PF
-      Result = 0.0
+      Result = 0.79
       '   END FORMULA; PROP ID:8863; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Prep_Netting_T_B_Avg_MM_Task", ex.Message)
@@ -10491,7 +10750,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8871; TYPE:PF
-      Result = 0.0
+      'Excel formula - (ROUND((SUM(B6:B7)+1)/3,0)+1)*(B8+1)*E82*2
+Dim Sum1 As Double = Math.Round((((Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input +
+Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input)+1)/3),0)
+
+Result = ((Sum1 + 1) *(Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input +1 ) * Me.MEI_Shuttle_RI_Net_Prep_Netting_T_B_Avg_MM_Task * 2)
       '   END FORMULA; PROP ID:8871; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Side", ex.Message)
@@ -10514,7 +10777,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8796; TYPE:PF
-      Result = 0.0
+      'Excel formula - E21*D21
+Result = Math.Ceiling(Me.MEI_Shuttle_RI_Netting_Rate * Me.MEI_Shuttle_RI_Netting_System_Qty)
       '   END FORMULA; PROP ID:8796; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Netting_Hours", ex.Message)
@@ -10537,7 +10801,11 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8885; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(F84:I84)/60
+Result = (Me.MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Ft +
+Me.MEI_Shuttle_RI_Net_Inst_Safety_NC_Time_Per_Ft +
+Me.MEI_Shuttle_RI_Net_Inst_Attach_N_Time_Per_Ft +
+Me.MEI_Shuttle_RI_Net_Inst_Finsh_N_C_Time_Per_Ft)/60
       '   END FORMULA; PROP ID:8885; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Netting_Hours_Per_Foot", ex.Message)
@@ -10560,7 +10828,12 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8884; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(B83:F83)/60
+Result = (Me.MEI_Shuttle_RI_Net_Prep_Mrk_FF_Dist_Time_Per_Side +
+Me.MEI_Shuttle_RI_Net_Prep_Cut_LN_Wire_Time_Per_Side +
+Me.MEI_Shuttle_RI_Net_Prep_Cut_SN_Wire_Time_Per_Side +
+Me.MEI_Shuttle_RI_Net_Prep_Netting_T_B_Time_Per_Side +
+Me.MEI_Shuttle_RI_Net_Inst_N_Brkt_Time_Per_Side)/60
       '   END FORMULA; PROP ID:8884; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Netting_Hours_Per_Side", ex.Message)
@@ -10606,7 +10879,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8777; TYPE:PF
-      Result = 0.0
+      'Excel formula - B86
+Result = Math.Round((Me.MEI_Shuttle_RI_Netting_Hours_Per_Foot),1)
       '   END FORMULA; PROP ID:8777; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Netting_Rate", ex.Message)
@@ -10629,7 +10903,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8758; TYPE:PF
-      Result = 0.0
+      'B21*B20
+Result = Me.MEI_Shuttle_RI_Netting_Input * Me.MEI_Shuttle_RI_Sides_of_Netting_Input
       '   END FORMULA; PROP ID:8758; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Netting_System_Qty", ex.Message)
@@ -10652,7 +10927,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8797; TYPE:PF
-      Result = 0.0
+      'Excel formula - E22*D22
+Result = Math.Round(( Me.MEI_Shuttle_RI_Service_Ladders_Rate * Me.MEI_Shuttle_RI_Service_Ladders_System_Qty),1)
       '   END FORMULA; PROP ID:8797; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Service_Ladders_Hours", ex.Message)
@@ -10698,7 +10974,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8778; TYPE:PF
-      Result = 0.0
+      Result = 10
       '   END FORMULA; PROP ID:8778; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Service_Ladders_Rate", ex.Message)
@@ -10721,7 +10997,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8759; TYPE:PF
-      Result = 0.0
+      'B22
+Result = Me.MEI_Shuttle_RI_Service_Ladders_Input
       '   END FORMULA; PROP ID:8759; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Service_Ladders_System_Qty", ex.Message)
@@ -10744,7 +11021,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8786; TYPE:PF
-      Result = 0.0
+      'Excel formula - E8*D8*$E$13
+Result = Me.MEI_Shuttle_RI_Service_Levels_Aisle_Rate * Me.MEI_Shuttle_RI_Service_Levels_Aisle_System_Qty * Me.MEI_Shuttle_RI_Height_Rate
       '   END FORMULA; PROP ID:8786; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Service_Levels_Aisle_Hours", ex.Message)
@@ -10790,7 +11068,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8767; TYPE:PF
-      Result = 0.0
+      'Excel formula - C128
+Result = Me.MEI_Shuttle_SL_Intermediate_Time_Per_SL
       '   END FORMULA; PROP ID:8767; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Service_Levels_Aisle_Rate", ex.Message)
@@ -10813,7 +11092,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8748; TYPE:PF
-      Result = 0.0
+      'Excel Formula - B8*$B$5
+Result = Me.MEI_Shuttle_RI_Service_Levels_Aisle_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8748; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Service_Levels_Aisle_System_Qty", ex.Message)
@@ -10836,7 +11116,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8794; TYPE:PF
-      Result = 0.0
+      'Excel formula - E19*D19
+Result = Me.MEI_Shuttle_RI_Service_Platform_Rate * Me.MEI_Shuttle_RI_Service_Platform_System_Qty
       '   END FORMULA; PROP ID:8794; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Service_Platform_Hours", ex.Message)
@@ -10882,7 +11163,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8775; TYPE:PF
-      Result = 0.0
+      'Excel formula - F18
+Result = Me.MEI_Shuttle_RI_Service_Platform_Hours
       '   END FORMULA; PROP ID:8775; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Service_Platform_Rate", ex.Message)
@@ -10905,7 +11187,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8756; TYPE:PF
-      Result = 0.0
+      'B19
+Result = Me.MEI_Shuttle_RI_Service_Platform_Input
       '   END FORMULA; PROP ID:8756; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Service_Platform_System_Qty", ex.Message)
@@ -10928,7 +11211,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8795; TYPE:PF
-      Result = 0.0
+      'Excel formula - E20*D20
+Result = Me.MEI_Shuttle_RI_Sides_of_Netting_Rate * Me.MEI_Shuttle_RI_Sides_of_Netting_System_Qty
       '   END FORMULA; PROP ID:8795; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Sides_of_Netting_Hours", ex.Message)
@@ -10974,7 +11258,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8776; TYPE:PF
-      Result = 0.0
+      'Excel formula - B85
+Result = Me.MEI_Shuttle_RI_Netting_Hours_Per_Side
       '   END FORMULA; PROP ID:8776; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Sides_of_Netting_Rate", ex.Message)
@@ -10997,7 +11282,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8757; TYPE:PF
-      Result = 0.0
+      'B20
+Result = Me.MEI_Shuttle_RI_Sides_of_Netting_Input
       '   END FORMULA; PROP ID:8757; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Sides_of_Netting_System_Qty", ex.Message)
@@ -11020,7 +11306,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8798; TYPE:PF
-      Result = 0.0
+      'Excel formula - E23*D23
+Result = Me.MEI_Shuttle_RI_Stairs_Rate * Me.MEI_Shuttle_RI_Stairs_System_Qty
       '   END FORMULA; PROP ID:8798; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Stairs_Hours", ex.Message)
@@ -11066,7 +11353,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8779; TYPE:PF
-      Result = 0.0
+      Result = 12
       '   END FORMULA; PROP ID:8779; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Stairs_Rate", ex.Message)
@@ -11089,7 +11376,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8760; TYPE:PF
-      Result = 0.0
+      'B23
+Result = Me.MEI_Shuttle_RI_Stairs_Input
       '   END FORMULA; PROP ID:8760; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Stairs_System_Qty", ex.Message)
@@ -11112,7 +11400,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8784; TYPE:PF
-      Result = 0.0
+      'Excel formula - E6*D6*$E$13
+Result = Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Rate * Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_System_Qty * Me.MEI_Shuttle_RI_Height_Rate
       '   END FORMULA; PROP ID:8784; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Hours", ex.Message)
@@ -11158,7 +11447,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8765; TYPE:PF
-      Result = 0.0
+      'Excel formula - C107
+Result = Me.MEI_Shuttle_ST_Time_Per_Standard_Tower
       '   END FORMULA; PROP ID:8765; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Rate", ex.Message)
@@ -11181,7 +11471,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8746; TYPE:PF
-      Result = 0.0
+      'Excel Formula -B6*$B$5
+Result = Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8746; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Std_Rack_Bays_Aisle_System_Qty", ex.Message)
@@ -11204,7 +11495,26 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8802; TYPE:PF
-      Result = 0.0
+      'Excel formula - IFERROR(SUM(F26:F27,F19:F24,F5:F11,F17),0)
+
+Dim Var1 As Double = Me.MEI_Shuttle_RI_Layout_Hours + 
+Me.MEI_Shuttle_RI_Material_Movement_Hours + 
+Me.MEI_Shuttle_RI_Service_Platform_Hours +
+Me.MEI_Shuttle_RI_Sides_of_Netting_Hours +
+Me.MEI_Shuttle_RI_Netting_Hours +
+Me.MEI_Shuttle_RI_Service_Ladders_Hours +
+Me.MEI_Shuttle_RI_Stairs_Hours +
+Me.MEI_Shuttle_RI_Entry_Gates_Hours +
+Me.MEI_Shuttle_RI_Aisles_Hours +
+Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Hours +
+Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Hours +
+Me.MEI_Shuttle_RI_Service_Levels_Aisle_Hours +
+Me.MEI_Shuttle_RI_Levels_Aisle_Hours +
+Me.MEI_Shuttle_RI_Totes_per_Bay_Hours +
+Me.MEI_Shuttle_RI_Front_Zone_Hours +
+Me.MEI_Shuttle_RI_Fencing_Hours
+
+Result = Var1
       '   END FORMULA; PROP ID:8802; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Total_Rack_Hours", ex.Message)
@@ -11227,7 +11537,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8788; TYPE:PF
-      Result = 0.0
+      'Excel formula - E10*D10*$E$13
+Result = Me.MEI_Shuttle_RI_Totes_per_Bay_Rate * Me.MEI_Shuttle_RI_Totes_per_Bay_System_Qty * Me.MEI_Shuttle_RI_Height_Rate
       '   END FORMULA; PROP ID:8788; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Totes_per_Bay_Hours", ex.Message)
@@ -11296,7 +11607,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8750; TYPE:PF
-      Result = 0.0
+      'Excel formula -B10*B9*(B7+B6)*B5
+Result = (Me.MEI_Shuttle_RI_Totes_per_Bay_Input * Me.MEI_Shuttle_RI_Levels_Aisle_Input) * (Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input + Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input) * Me.MEI_Shuttle_RI_Aisles_Input
       '   END FORMULA; PROP ID:8750; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Totes_per_Bay_System_Qty", ex.Message)
@@ -11319,7 +11631,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8792; TYPE:PF
-      Result = 0.0
+      'Excel formula - E15*D15*$D$13
+Result = Me.MEI_Shuttle_RI_Width_Rate * Me.MEI_Shuttle_RI_Width_System_Qty * Me.MEI_Shuttle_RI_Height_System_Qty
       '   END FORMULA; PROP ID:8792; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Width_Hours", ex.Message)
@@ -11388,7 +11701,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8754; TYPE:PF
-      Result = 0.0
+      'B15
+Result = Me.MEI_Shuttle_RI_Width_Input
       '   END FORMULA; PROP ID:8754; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_RI_Width_System_Qty", ex.Message)
@@ -11411,7 +11725,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8900; TYPE:PF
-      Result = 0.0
+      Result = 3.33
       '   END FORMULA; PROP ID:8900; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_SL_Intermediate_AJ_FJ_Avg_MM_Task", ex.Message)
@@ -11434,7 +11748,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8903; TYPE:PF
-      Result = 0.0
+      'Excel formula - ((B6+B7)*2+B11*3)*D126
+Result = ((Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input + Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input)*2)+ (Me.MEI_Shuttle_RI_Front_Zone_Input * 3)* Me.MEI_Shuttle_SL_Intermediate_AJ_FJ_Avg_MM_Task
       '   END FORMULA; PROP ID:8903; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_SL_Intermediate_AJ_FJ_Time_Per_Row", ex.Message)
@@ -11457,7 +11772,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8898; TYPE:PF
-      Result = 0.0
+      Result = 0.79
       '   END FORMULA; PROP ID:8898; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_SL_Intermediate_SLG_Avg_MM_Task", ex.Message)
@@ -11480,7 +11795,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8899; TYPE:PF
-      Result = 0.0
+      Result = 0.98
       '   END FORMULA; PROP ID:8899; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_SL_Intermediate_SLG_Screw_Avg_MM_Task", ex.Message)
@@ -11503,7 +11818,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8902; TYPE:PF
-      Result = 0.0
+      'Excel formula - C126*2*($B$6+$B$7+2*$B$11)
+Result = Me.MEI_Shuttle_SL_Intermediate_SLG_Screw_Avg_MM_Task * 2 * (Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input + Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input + 2 * Me.MEI_Shuttle_RI_Front_Zone_Input)
       '   END FORMULA; PROP ID:8902; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_SL_Intermediate_SLG_Screw_Time_Per_Row", ex.Message)
@@ -11526,7 +11842,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8901; TYPE:PF
-      Result = 0.0
+      'Excel formula - B126*2*(B6+B7+2*B11)
+Result = Me.MEI_Shuttle_SL_Intermediate_SLG_Avg_MM_Task * 2 * (Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input + Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input + 2 * Me.MEI_Shuttle_RI_Front_Zone_Input)
       '   END FORMULA; PROP ID:8901; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_SL_Intermediate_SLG_Time_Per_Row", ex.Message)
@@ -11549,7 +11866,10 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8904; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(B127:AB127)/60
+Result = (Me.MEI_Shuttle_SL_Intermediate_SLG_Time_Per_Row +
+Me.MEI_Shuttle_SL_Intermediate_SLG_Screw_Time_Per_Row +
+Me.MEI_Shuttle_SL_Intermediate_AJ_FJ_Time_Per_Row)/60
       '   END FORMULA; PROP ID:8904; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_SL_Intermediate_Time_Per_SL", ex.Message)
@@ -11572,7 +11892,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8988; TYPE:PF
-      Result = 0.0
+      Result = 4.09
       '   END FORMULA; PROP ID:8988; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Intermediate_Aisle_JFB_AMM_Task", ex.Message)
@@ -11595,7 +11915,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8992; TYPE:PF
-      Result = 0.0
+      'Excel formula - O105*4
+Result = Me.MEI_Shuttle_ST_Intermediate_Aisle_JFB_AMM_Task * 4
       '   END FORMULA; PROP ID:8992; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Intermediate_Aisle_JFB_Time_ST", ex.Message)
@@ -11618,7 +11939,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8989; TYPE:PF
-      Result = 0.0
+      Result = 2.75
       '   END FORMULA; PROP ID:8989; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Intermediate_Aisle_JSB_AMM_Task", ex.Message)
@@ -11641,7 +11962,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8993; TYPE:PF
-      Result = 0.0
+      'Excel formula - P105*4
+Result = Me.MEI_Shuttle_ST_Intermediate_Aisle_JSB_AMM_Task * 4
       '   END FORMULA; PROP ID:8993; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Intermediate_Aisle_JSB_Time_ST", ex.Message)
@@ -11664,7 +11986,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8990; TYPE:PF
-      Result = 0.0
+      Result = 12
       '   END FORMULA; PROP ID:8990; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Intermediate_Grout_AMM_Task", ex.Message)
@@ -11687,7 +12009,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8994; TYPE:PF
-      Result = 0.0
+      'Excel formula - Q105*4
+Result = Me.MEI_Shuttle_ST_Intermediate_Grout_AMM_Task * 4
       '   END FORMULA; PROP ID:8994; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Intermediate_Grout_Time_ST", ex.Message)
@@ -11710,7 +12033,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8987; TYPE:PF
-      Result = 0.0
+      Result = 16.31
       '   END FORMULA; PROP ID:8987; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Intermediate_Standard_T_AMM_Task", ex.Message)
@@ -11733,7 +12056,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8991; TYPE:PF
-      Result = 0.0
+      'Excel formula - N105*4
+Result = Me.MEI_Shuttle_ST_Intermediate_Standard_T_AMM_Task * 4
       '   END FORMULA; PROP ID:8991; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Intermediate_Standard_T_Time_ST", ex.Message)
@@ -11756,7 +12080,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8966; TYPE:PF
-      Result = 0.0
+      Result = 0.83
       '   END FORMULA; PROP ID:8966; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Layout_Anchor_Leveling_AMM_Task", ex.Message)
@@ -11779,7 +12103,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8970; TYPE:PF
-      Result = 0.0
+      'Excel formula - E105*8
+Result = Me.MEI_Shuttle_ST_Layout_Anchor_Leveling_AMM_Task * 8
       '   END FORMULA; PROP ID:8970; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Layout_Anchor_Leveling_Time_ST", ex.Message)
@@ -11802,7 +12127,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8965; TYPE:PF
-      Result = 0.0
+      Result = 1.88
       '   END FORMULA; PROP ID:8965; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Layout_FAB_AMM_Task", ex.Message)
@@ -11825,7 +12150,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8969; TYPE:PF
-      Result = 0.0
+      'Excel formula - D105*8
+Result = Me.MEI_Shuttle_ST_Layout_FAB_AMM_Task * 8
       '   END FORMULA; PROP ID:8969; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Layout_FAB_Time_ST", ex.Message)
@@ -11848,7 +12174,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8963; TYPE:PF
-      Result = 0.0
+      Result = 0.58
       '   END FORMULA; PROP ID:8963; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Layout_Pilot_Drill_AMM_Task", ex.Message)
@@ -11871,7 +12197,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8967; TYPE:PF
-      Result = 0.0
+      'Excel formula - B105*8
+Result = Me.MEI_Shuttle_ST_Layout_Pilot_Drill_AMM_Task * 8
       '   END FORMULA; PROP ID:8967; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Layout_Pilot_Drill_Time_ST", ex.Message)
@@ -11894,7 +12221,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8964; TYPE:PF
-      Result = 0.0
+      Result = 1.39
       '   END FORMULA; PROP ID:8964; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Layout_Second_Hole_AMM_Task", ex.Message)
@@ -11917,7 +12244,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8968; TYPE:PF
-      Result = 0.0
+      'Excel formula - C105*8
+Result = Me.MEI_Shuttle_ST_Layout_Second_Hole_AMM_Task * 8
       '   END FORMULA; PROP ID:8968; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Layout_Second_Hole_Time_ST", ex.Message)
@@ -11940,7 +12268,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8995; TYPE:PF
-      Result = 0.0
+      Result = 1.38
       '   END FORMULA; PROP ID:8995; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Level_Tight_Upright_Knock_AMM_Task", ex.Message)
@@ -11963,7 +12291,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8996; TYPE:PF
-      Result = 0.0
+      'Excel formula - R105*4
+Result = Me.MEI_Shuttle_ST_Level_Tight_Upright_Knock_AMM_Task * 4
       '   END FORMULA; PROP ID:8996; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Level_Tight_Upright_Knock_Time_ST", ex.Message)
@@ -11986,7 +12315,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8983; TYPE:PF
-      Result = 0.0
+      Result = 1.78
       '   END FORMULA; PROP ID:8983; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Material_PreStage_PR_AMM_Task", ex.Message)
@@ -12009,7 +12338,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8985; TYPE:PF
-      Result = 0.0
+      'Excel formula - L105*4
+Result = Me.MEI_Shuttle_ST_Material_PreStage_PR_AMM_Task * 4
       '   END FORMULA; PROP ID:8985; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Material_PreStage_PR_Time_ST", ex.Message)
@@ -12032,7 +12362,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8984; TYPE:PF
-      Result = 0.0
+      Result = 8.83
       '   END FORMULA; PROP ID:8984; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Material_Upright_RS_AMM_Task", ex.Message)
@@ -12055,7 +12385,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8986; TYPE:PF
-      Result = 0.0
+      'Excel formula - M105*4
+Result = Me.MEI_Shuttle_ST_Material_Upright_RS_AMM_Task * 4
       '   END FORMULA; PROP ID:8986; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Material_Upright_RS_Time_ST", ex.Message)
@@ -12078,7 +12409,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8974; TYPE:PF
-      Result = 0.0
+      Result = 1.76
       '   END FORMULA; PROP ID:8974; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Assemble_GB_AMM_Task", ex.Message)
@@ -12101,7 +12432,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8980; TYPE:PF
-      Result = 0.0
+      'Excel formula - I105*8
+Result = Me.MEI_Shuttle_ST_Prepping_Assemble_GB_AMM_Task * 8
       '   END FORMULA; PROP ID:8980; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Assemble_GB_Time_ST", ex.Message)
@@ -12124,7 +12456,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8976; TYPE:PF
-      Result = 0.0
+      Result = 1.2
       '   END FORMULA; PROP ID:8976; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Clean_GB_AMM_Task", ex.Message)
@@ -12147,7 +12479,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8982; TYPE:PF
-      Result = 0.0
+      'Excel formula - K105*8
+Result = Me.MEI_Shuttle_ST_Prepping_Clean_GB_AMM_Task * 8
       '   END FORMULA; PROP ID:8982; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Clean_GB_Time_ST", ex.Message)
@@ -12170,7 +12503,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8973; TYPE:PF
-      Result = 0.0
+      Result = 1.83
       '   END FORMULA; PROP ID:8973; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Cut_Wood_GB_AMM_Task", ex.Message)
@@ -12193,7 +12526,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8979; TYPE:PF
-      Result = 0.0
+      'Excel formula - H105*8
+Result = Me.MEI_Shuttle_ST_Prepping_Cut_Wood_GB_AMM_Task * 8
       '   END FORMULA; PROP ID:8979; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Cut_Wood_GB_Time_ST", ex.Message)
@@ -12216,7 +12550,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8981; TYPE:PF
-      Result = 0.0
+      'Excel formula - J105*8
+Result = Me.MEI_Shuttle_ST_Prepping_Oil_Place_Blocks_AMM_Task * 8
       '   END FORMULA; PROP ID:8981; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Oil_PB_Time_ST", ex.Message)
@@ -12239,7 +12574,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8975; TYPE:PF
-      Result = 0.0
+      Result = 3.45
       '   END FORMULA; PROP ID:8975; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Oil_Place_Blocks_AMM_Task", ex.Message)
@@ -12262,7 +12597,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8971; TYPE:PF
-      Result = 0.0
+      Result = 18.19
       '   END FORMULA; PROP ID:8971; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Prep_UR_AMM_Task", ex.Message)
@@ -12285,7 +12620,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8977; TYPE:PF
-      Result = 0.0
+      'Excel formula - F105*4
+Result = Me.MEI_Shuttle_ST_Prepping_Prep_UR_AMM_Task * 4
       '   END FORMULA; PROP ID:8977; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Prep_UR_Time_ST", ex.Message)
@@ -12308,7 +12644,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8972; TYPE:PF
-      Result = 0.0
+      Result = 3.07
       '   END FORMULA; PROP ID:8972; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Upright_AP_AMM_Task", ex.Message)
@@ -12331,7 +12667,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8978; TYPE:PF
-      Result = 0.0
+      'Excel formula - G105*4
+Result = Me.MEI_Shuttle_ST_Prepping_Upright_AP_AMM_Task * 4
       '   END FORMULA; PROP ID:8978; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Prepping_Upright_AP_Time_ST", ex.Message)
@@ -12354,7 +12691,24 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:8997; TYPE:PF
-      Result = 0.0
+      'Excel formula - SUM(B106:R106)/60
+Result = (Me.MEI_Shuttle_ST_Layout_Pilot_Drill_Time_ST +
+Me.MEI_Shuttle_ST_Layout_Second_Hole_Time_ST +
+Me.MEI_Shuttle_ST_Layout_FAB_Time_ST +
+Me.MEI_Shuttle_ST_Layout_Anchor_Leveling_Time_ST +
+Me.MEI_Shuttle_ST_Prepping_Prep_UR_Time_ST +
+Me.MEI_Shuttle_ST_Prepping_Upright_AP_Time_ST +
+Me.MEI_Shuttle_ST_Prepping_Cut_Wood_GB_Time_ST +
+Me.MEI_Shuttle_ST_Prepping_Assemble_GB_Time_ST +
+Me.MEI_Shuttle_ST_Prepping_Oil_PB_Time_ST +
+Me.MEI_Shuttle_ST_Prepping_Clean_GB_Time_ST +
+Me.MEI_Shuttle_ST_Material_PreStage_PR_Time_ST +
+Me.MEI_Shuttle_ST_Material_Upright_RS_Time_ST +
+Me.MEI_Shuttle_ST_Intermediate_Standard_T_Time_ST +
+Me.MEI_Shuttle_ST_Intermediate_Aisle_JFB_Time_ST +
+Me.MEI_Shuttle_ST_Intermediate_Aisle_JSB_Time_ST +
+Me.MEI_Shuttle_ST_Intermediate_Grout_Time_ST +
+Me.MEI_Shuttle_ST_Level_Tight_Upright_Knock_Time_ST)/60
       '   END FORMULA; PROP ID:8997; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_ST_Time_Per_Standard_Tower", ex.Message)
@@ -12377,7 +12731,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9057; TYPE:PF
-      Result = 0.0
+      Result = 1.09
       '   END FORMULA; PROP ID:9057; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Intermediate_ER_Install_AMM_Task", ex.Message)
@@ -12400,7 +12754,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9061; TYPE:PF
-      Result = 0.0
+      'Excel Formula - B119*2
+Result = Me.MEI_Shuttle_TL_Intermediate_ER_Install_AMM_Task * 2
       '   END FORMULA; PROP ID:9061; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Intermediate_ER_Install_Time_Bay", ex.Message)
@@ -12423,7 +12778,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9060; TYPE:PF
-      Result = 0.0
+      Result = 10.59
       '   END FORMULA; PROP ID:9060; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Intermediate_FR_Bumper_AMM_Task", ex.Message)
@@ -12446,7 +12801,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9064; TYPE:PF
-      Result = 0.0
+      'Excel Formula - E119*2
+Result = Me.MEI_Shuttle_TL_Intermediate_FR_Bumper_AMM_Task * 2
       '   END FORMULA; PROP ID:9064; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Intermediate_FR_Bumper_Time_Bay", ex.Message)
@@ -12469,7 +12825,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9058; TYPE:PF
-      Result = 0.0
+      Result = 2.48
       '   END FORMULA; PROP ID:9058; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Intermediate_Internal_SR_AMM_Task", ex.Message)
@@ -12492,7 +12848,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9062; TYPE:PF
-      Result = 0.0
+      'Excel Formula - C119*2
+Result = Me.MEI_Shuttle_TL_Intermediate_Internal_SR_AMM_Task * 2
       '   END FORMULA; PROP ID:9062; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Intermediate_Internal_SR_Time_Bay", ex.Message)
@@ -12515,7 +12872,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9059; TYPE:PF
-      Result = 0.0
+      Result = 0.26
       '   END FORMULA; PROP ID:9059; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Intermediate_Shelf_Insert_AMM_Task", ex.Message)
@@ -12538,7 +12895,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9063; TYPE:PF
-      Result = 0.0
+      'Excel Formula - D119*$B$10*2*2
+Result = Me.MEI_Shuttle_TL_Intermediate_Shelf_Insert_AMM_Task * Me.MEI_Shuttle_RI_Totes_per_Bay_Input * 2 * 2
       '   END FORMULA; PROP ID:9063; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Intermediate_Shelf_Insert_Time_Bay", ex.Message)
@@ -12561,7 +12919,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9066; TYPE:PF
-      Result = 0.0
+      Result = 1.13
       '   END FORMULA; PROP ID:9066; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Level_TightIR_Hole_Cover_AMM_Task", ex.Message)
@@ -12584,7 +12942,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9069; TYPE:PF
-      Result = 0.0
+      'Excel Formula - G119*2
+Result = Me.MEI_Shuttle_TL_Level_TightIR_Hole_Cover_AMM_Task * 2
       '   END FORMULA; PROP ID:9069; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Level_TightIR_Hole_Cover_Time_Bay", ex.Message)
@@ -12607,7 +12966,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9067; TYPE:PF
-      Result = 0.0
+      Result = 0.17
       '   END FORMULA; PROP ID:9067; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Level_TightTight_ER_AMM_Task", ex.Message)
@@ -12630,7 +12989,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9070; TYPE:PF
-      Result = 0.0
+      'Excel Formula - H119*2
+Result =  Me.MEI_Shuttle_TL_Level_TightTight_ER_AMM_Task * 2
       '   END FORMULA; PROP ID:9070; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Level_TightTight_ER_Time_Bay", ex.Message)
@@ -12653,7 +13013,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9065; TYPE:PF
-      Result = 0.0
+      Result = 3.56
       '   END FORMULA; PROP ID:9065; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Level_TightTight_IR_AMM_Task", ex.Message)
@@ -12676,7 +13036,8 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9068; TYPE:PF
-      Result = 0.0
+      'Excel Formula - F119*2
+Result = Me.MEI_Shuttle_TL_Level_TightTight_IR_AMM_Task * 2
       '   END FORMULA; PROP ID:9068; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Level_TightTight_IR_Time_Bay", ex.Message)
@@ -12699,7 +13060,15 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:9071; TYPE:PF
-      Result = 0.0
+      'Excel Formula - (SUM(B120:D120,F120:H120)/60)*(B6+B7)+E120/60
+
+Result = ((Me.MEI_Shuttle_TL_Intermediate_ER_Install_Time_Bay +
+Me.MEI_Shuttle_TL_Intermediate_Internal_SR_Time_Bay +
+Me.MEI_Shuttle_TL_Intermediate_Shelf_Insert_Time_Bay +
+Me.MEI_Shuttle_TL_Level_TightTight_IR_Time_Bay +
+Me.MEI_Shuttle_TL_Level_TightIR_Hole_Cover_Time_Bay +
+Me.MEI_Shuttle_TL_Level_TightTight_ER_Time_Bay)/60)*(Me.MEI_Shuttle_RI_Std_Rack_Bays_Aisle_Input +
+Me.MEI_Shuttle_RI_Bracing_Rack_Bays_Aisle_Input) + (Me.MEI_Shuttle_TL_Intermediate_FR_Bumper_Time_Bay/60)
       '   END FORMULA; PROP ID:9071; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Shuttle_Mech.Formula_MEI_Shuttle_TL_Time_Per_Row", ex.Message)

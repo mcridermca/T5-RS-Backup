@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_APC_MDR
-'$ GenerateDate: 07/19/2025 12:56:59
+'$ GenerateDate: 07/21/2025 12:25:40
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -162,6 +162,114 @@ Option Infer On
       End Get
       Set(ByVal Value As String)
       Properties("User_UOM_System").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_Entry_Eye_Dist_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_Entry_Eye_Dist_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_Entry_Eye_Dist_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_Exit_Eye_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_Exit_Eye_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_Exit_Eye_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_MDR_Speed_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_MDR_Speed_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_MDR_Speed_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_MDR_Transfer_Length_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_MDR_Transfer_Length_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_MDR_Transfer_Length_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_MDR_Width_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_MDR_Width_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_MDR_Width_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_MDR_Zone_Length_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_MDR_Zone_Length_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_MDR_Zone_Length_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_Net_Transfer_Width_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_Net_Transfer_Width_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_Net_Transfer_Width_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_Side_Exit_Eye_Dist_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_Side_Exit_Eye_Dist_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_Side_Exit_Eye_Dist_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_Transfer_Band_Speed_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_Transfer_Band_Speed_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_Transfer_Band_Speed_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM]() As String
+      Get
+      Return Properties("MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM").CalculatedValue = Value
       End Set
       End Property
     
@@ -848,9 +956,21 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_APC_MDR", <a><![CDATA[CAE_APC_MDR]]></a>.Value, 439, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/18/2025 20:56:10")
+    InitPart("CAE_APC_MDR", <a><![CDATA[CAE_APC_MDR]]></a>.Value, 439, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/21/2025 12:24:23")
     AddProperty("10697", "Gen_Sorter_Type", <a><![CDATA[Gen_Sorter_Type]]></a>.Value, "AppCalc^'MDR Sort'!C17", "String","","AppCalc_MDR","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 4:23:00 PM")
     AddProperty("10703", "User_UOM_System", <a><![CDATA[User_UOM_System]]></a>.Value, "", "String","","AppCalc_MDR","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 6:20:27 PM")
+    AddProperty("10960", "MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM", <a><![CDATA[MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:23:14 PM")
+    AddProperty("10961", "MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM", <a><![CDATA[MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:23:22 PM")
+    AddProperty("10954", "MDR_Diverter_Entry_Eye_Dist_User_UOM", <a><![CDATA[MDR_Diverter_Entry_Eye_Dist_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:21:21 PM")
+    AddProperty("10955", "MDR_Diverter_Exit_Eye_User_UOM", <a><![CDATA[MDR_Diverter_Exit_Eye_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:21:34 PM")
+    AddProperty("10962", "MDR_Diverter_MDR_Speed_User_UOM", <a><![CDATA[MDR_Diverter_MDR_Speed_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:24:13 PM")
+    AddProperty("10953", "MDR_Diverter_MDR_Transfer_Length_User_UOM", <a><![CDATA[MDR_Diverter_MDR_Transfer_Length_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:21:13 PM")
+    AddProperty("10951", "MDR_Diverter_MDR_Width_User_UOM", <a><![CDATA[MDR_Diverter_MDR_Width_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:20:48 PM")
+    AddProperty("10952", "MDR_Diverter_MDR_Zone_Length_User_UOM", <a><![CDATA[MDR_Diverter_MDR_Zone_Length_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:21:00 PM")
+    AddProperty("10958", "MDR_Diverter_Net_Transfer_Width_User_UOM", <a><![CDATA[MDR_Diverter_Net_Transfer_Width_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:22:25 PM")
+    AddProperty("10959", "MDR_Diverter_Side_Exit_Eye_Dist_User_UOM", <a><![CDATA[MDR_Diverter_Side_Exit_Eye_Dist_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:22:34 PM")
+    AddProperty("10963", "MDR_Diverter_Transfer_Band_Speed_User_UOM", <a><![CDATA[MDR_Diverter_Transfer_Band_Speed_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:24:23 PM")
+    AddProperty("10957", "MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM", <a><![CDATA[MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Diverter","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:22:08 PM")
     AddProperty("10729", "MTBH_Height_Average_IN", <a><![CDATA[MTBH_Height_Average_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:42:16 PM")
     AddProperty("10730", "MTBH_Height_Average_User", <a><![CDATA[MTBH_Height_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!H33", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:50:17 PM")
     AddProperty("10731", "MTBH_Height_Average_User_UOM", <a><![CDATA[MTBH_Height_Average_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:42:33 PM")
@@ -859,18 +979,18 @@ Option Infer On
     AddProperty("10734", "MTBH_Height_Maximum_User_Max_Value", <a><![CDATA[MTBH_Height_Maximum_User_Max_Value]]></a>.Value, "", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:43:09 PM")
     AddProperty("10735", "MTBH_Height_Maximum_User_UOM", <a><![CDATA[MTBH_Height_Maximum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:43:17 PM")
     AddProperty("10736", "MTBH_Height_Minimum_IN", <a><![CDATA[MTBH_Height_Minimum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:43:28 PM")
-    AddProperty("10737", "MTBH_Height_Minimum_User", <a><![CDATA[MTBH_Height_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!H31", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:51:53 PM")
+    AddProperty("10737", "MTBH_Height_Minimum_User", <a><![CDATA[MTBH_Height_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!H31", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:11:01 PM")
     AddProperty("10738", "MTBH_Height_Minimum_User_Min_Value", <a><![CDATA[MTBH_Height_Minimum_User_Min_Value]]></a>.Value, "", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:44:02 PM")
     AddProperty("10739", "MTBH_Height_Minimum_User_UOM", <a><![CDATA[MTBH_Height_Minimum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:44:10 PM")
     AddProperty("10740", "MTBH_Length_Average_IN", <a><![CDATA[MTBH_Length_Average_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:44:18 PM")
     AddProperty("10741", "MTBH_Length_Average_User", <a><![CDATA[MTBH_Length_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!D33", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:52:14 PM")
     AddProperty("10742", "MTBH_Length_Average_User_UOM", <a><![CDATA[MTBH_Length_Average_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:44:33 PM")
     AddProperty("10743", "MTBH_Length_Maximum_IN", <a><![CDATA[MTBH_Length_Maximum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:44:51 PM")
-    AddProperty("10744", "MTBH_Length_Maximum_User", <a><![CDATA[MTBH_Length_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!D32", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:53:01 PM")
+    AddProperty("10744", "MTBH_Length_Maximum_User", <a><![CDATA[MTBH_Length_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!D32", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:12:51 PM")
     AddProperty("10745", "MTBH_Length_Maximum_User_Max_Value", <a><![CDATA[MTBH_Length_Maximum_User_Max_Value]]></a>.Value, "", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:45:13 PM")
     AddProperty("10746", "MTBH_Length_Maximum_User_UOM", <a><![CDATA[MTBH_Length_Maximum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:45:21 PM")
     AddProperty("10747", "MTBH_Length_Minimum_IN", <a><![CDATA[MTBH_Length_Minimum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:46:05 PM")
-    AddProperty("10748", "MTBH_Length_Minimum_User", <a><![CDATA[MTBH_Length_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!D31", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:53:39 PM")
+    AddProperty("10748", "MTBH_Length_Minimum_User", <a><![CDATA[MTBH_Length_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!D31", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:14:09 PM")
     AddProperty("10749", "MTBH_Length_Minimum_User_Min_Value", <a><![CDATA[MTBH_Length_Minimum_User_Min_Value]]></a>.Value, "", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:45:57 PM")
     AddProperty("10750", "MTBH_Length_Minimum_User_UOM", <a><![CDATA[MTBH_Length_Minimum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:46:13 PM")
     AddProperty("10751", "MTBH_Use_Local", <a><![CDATA[MTBH_Use_Local]]></a>.Value, "AppCalc^'MDR Sort'!I31", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:46:47 PM")
@@ -878,7 +998,7 @@ Option Infer On
     AddProperty("10753", "MTBH_Weight_Average_User", <a><![CDATA[MTBH_Weight_Average_User]]></a>.Value, "AppCalc^'Belted PandA'!J33", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:53:53 PM")
     AddProperty("10754", "MTBH_Weight_Average_User_UOM", <a><![CDATA[MTBH_Weight_Average_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:47:01 PM")
     AddProperty("10755", "MTBH_Weight_Maximum_LBS", <a><![CDATA[MTBH_Weight_Maximum_LBS]]></a>.Value, "Property unit conversion", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:47:13 PM")
-    AddProperty("10756", "MTBH_Weight_Maximum_User", <a><![CDATA[MTBH_Weight_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!J32", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:54:04 PM")
+    AddProperty("10756", "MTBH_Weight_Maximum_User", <a><![CDATA[MTBH_Weight_Maximum_User]]></a>.Value, "AppCalc^'Belted PandA'!J32", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:15:10 PM")
     AddProperty("10757", "MTBH_Weight_Maximum_User_Max_Value", <a><![CDATA[MTBH_Weight_Maximum_User_Max_Value]]></a>.Value, "", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:47:41 PM")
     AddProperty("10758", "MTBH_Weight_Maximum_User_UOM", <a><![CDATA[MTBH_Weight_Maximum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:47:48 PM")
     AddProperty("10759", "MTBH_Weight_Minimum_LBS", <a><![CDATA[MTBH_Weight_Minimum_LBS]]></a>.Value, "Property unit conversion", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:47:54 PM")
@@ -893,7 +1013,7 @@ Option Infer On
     AddProperty("10768", "MTBH_Width_Maximum_User_Max_Value", <a><![CDATA[MTBH_Width_Maximum_User_Max_Value]]></a>.Value, "", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:48:44 PM")
     AddProperty("10769", "MTBH_Width_Maximum_User_UOM", <a><![CDATA[MTBH_Width_Maximum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:49:25 PM")
     AddProperty("10770", "MTBH_Width_Minimum_IN", <a><![CDATA[MTBH_Width_Minimum_IN]]></a>.Value, "Property unit conversion", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:49:31 PM")
-    AddProperty("10771", "MTBH_Width_Minimum_User", <a><![CDATA[MTBH_Width_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!F31", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:56:10 PM")
+    AddProperty("10771", "MTBH_Width_Minimum_User", <a><![CDATA[MTBH_Width_Minimum_User]]></a>.Value, "AppCalc^'Belted PandA'!F31", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/21/2025 12:17:39 PM")
     AddProperty("10772", "MTBH_Width_Minimum_User_Min_Value", <a><![CDATA[MTBH_Width_Minimum_User_Min_Value]]></a>.Value, "", "Double","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:49:12 PM")
     AddProperty("10773", "MTBH_Width_Minimum_User_UOM", <a><![CDATA[MTBH_Width_Minimum_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_MTBH","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 8:49:37 PM")
     AddProperty("10713", "Size_Limits_Height_Max_User_UOM", <a><![CDATA[Size_Limits_Height_Max_User_UOM]]></a>.Value, "Property User UOM", "String","","AppCalc_MDR_Size_Limits","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 7:33:29 PM")
@@ -929,17 +1049,17 @@ Option Infer On
     
       AddPropertyExtended(10733,"MTBH_Height_Maximum_User", "10294", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:50:58 PM")
     
-      AddPropertyExtended(10737,"MTBH_Height_Minimum_User", "10298", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:51:53 PM")
+      AddPropertyExtended(10737,"MTBH_Height_Minimum_User", "10298", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/21/2025 12:11:01 PM")
     
       AddPropertyExtended(10741,"MTBH_Length_Average_User", "10302", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:52:14 PM")
     
-      AddPropertyExtended(10744,"MTBH_Length_Maximum_User", "10305", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:53:01 PM")
+      AddPropertyExtended(10744,"MTBH_Length_Maximum_User", "10305", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/21/2025 12:12:51 PM")
     
-      AddPropertyExtended(10748,"MTBH_Length_Minimum_User", "10309", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:53:39 PM")
+      AddPropertyExtended(10748,"MTBH_Length_Minimum_User", "10309", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/21/2025 12:14:09 PM")
     
       AddPropertyExtended(10753,"MTBH_Weight_Average_User", "10314", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:53:53 PM")
     
-      AddPropertyExtended(10756,"MTBH_Weight_Maximum_User", "10317", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:54:04 PM")
+      AddPropertyExtended(10756,"MTBH_Weight_Maximum_User", "10317", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/21/2025 12:15:10 PM")
     
       AddPropertyExtended(10760,"MTBH_Weight_Minimum_User", "10321", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:54:14 PM")
     
@@ -947,11 +1067,35 @@ Option Infer On
     
       AddPropertyExtended(10767,"MTBH_Width_Maximum_User", "10328", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:55:59 PM")
     
-      AddPropertyExtended(10771,"MTBH_Width_Minimum_User", "10332", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/18/2025 8:56:10 PM")
+      AddPropertyExtended(10771,"MTBH_Width_Minimum_User", "10332", "EXTTOOLT", "Tooltip", "FORMULA", "GLOBAL\H602502", "7/21/2025 12:17:39 PM")
     
       AddValidValue("Gen_Sorter_Type")
     
       AddValidValue("User_UOM_System")
+    
+      AddValidValue("MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM")
+    
+      AddValidValue("MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM")
+    
+      AddValidValue("MDR_Diverter_Entry_Eye_Dist_User_UOM")
+    
+      AddValidValue("MDR_Diverter_Exit_Eye_User_UOM")
+    
+      AddValidValue("MDR_Diverter_MDR_Speed_User_UOM")
+    
+      AddValidValue("MDR_Diverter_MDR_Transfer_Length_User_UOM")
+    
+      AddValidValue("MDR_Diverter_MDR_Width_User_UOM")
+    
+      AddValidValue("MDR_Diverter_MDR_Zone_Length_User_UOM")
+    
+      AddValidValue("MDR_Diverter_Net_Transfer_Width_User_UOM")
+    
+      AddValidValue("MDR_Diverter_Side_Exit_Eye_Dist_User_UOM")
+    
+      AddValidValue("MDR_Diverter_Transfer_Band_Speed_User_UOM")
+    
+      AddValidValue("MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM")
     
       AddValidValue("MTBH_Height_Average_User_UOM")
     
@@ -1042,6 +1186,42 @@ Option Infer On
           InitProperty("User_UOM_System", "10264", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/18/2025 6:20:27 PM", "", "In Development",  0,19147)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM", "10513", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:23:14 PM", "", "In Development",  0,20261)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM", "10514", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:23:22 PM", "", "In Development",  0,20263)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_Entry_Eye_Dist_User_UOM", "10507", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:21:21 PM", "", "In Development",  0,20248)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_Exit_Eye_User_UOM", "10508", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:21:34 PM", "", "In Development",  0,20250)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_MDR_Speed_User_UOM", "10515", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:24:13 PM", "", "In Development",  0,20267)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_MDR_Transfer_Length_User_UOM", "10506", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:21:13 PM", "", "In Development",  0,20246)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_MDR_Width_User_UOM", "10504", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:20:39 PM", "", "In Development",  0,20241)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_MDR_Zone_Length_User_UOM", "10505", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:21:00 PM", "", "In Development",  0,20243)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_Net_Transfer_Width_User_UOM", "10511", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:22:25 PM", "", "In Development",  0,20257)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_Side_Exit_Eye_Dist_User_UOM", "10512", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:22:34 PM", "", "In Development",  0,20259)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_Transfer_Band_Speed_User_UOM", "10516", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:24:23 PM", "", "In Development",  0,20269)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM", "10510", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:22:08 PM", "", "In Development",  0,20255)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("MTBH_Height_Average_IN", "10290", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:16 PM", "", "In Development",  0,19221)
         End If
             If Incontext("-1", ctx) Then
@@ -1066,7 +1246,7 @@ Option Infer On
           InitProperty("MTBH_Height_Minimum_IN", "10297", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:16 PM", "", "In Development",  0,19234)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Height_Minimum_User", "10298", "MTBH_Height_Minimum_User_Min_Value", "MTBH_Height_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:51:38 PM", "", "In Development",  0,19235)
+          InitProperty("MTBH_Height_Minimum_User", "10298", "MTBH_Height_Minimum_User_Min_Value", "MTBH_Height_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:11:01 PM", "", "In Development",  0,19235)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Height_Minimum_User_Min_Value", "10299", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:43:53 PM", "", "In Development",  0,19304)
@@ -1087,7 +1267,7 @@ Option Infer On
           InitProperty("MTBH_Length_Maximum_IN", "10304", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:16 PM", "", "In Development",  0,19247)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Length_Maximum_User", "10305", "MTBH_Length_Minimum_User", "MTBH_Length_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:16 PM", "", "In Development",  0,19248)
+          InitProperty("MTBH_Length_Maximum_User", "10305", "MTBH_Length_Minimum_User", "MTBH_Length_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:12:51 PM", "", "In Development",  0,19248)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Length_Maximum_User_Max_Value", "10306", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:17 PM", "", "In Development",  0,19251)
@@ -1099,7 +1279,7 @@ Option Infer On
           InitProperty("MTBH_Length_Minimum_IN", "10308", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:17 PM", "", "In Development",  0,19254)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Length_Minimum_User", "10309", "MTBH_Length_Minimum_User_Min_Value", "MTBH_Length_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:53:39 PM", "", "In Development",  0,19255)
+          InitProperty("MTBH_Length_Minimum_User", "10309", "MTBH_Length_Minimum_User_Min_Value", "MTBH_Length_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:14:09 PM", "", "In Development",  0,19255)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Length_Minimum_User_Min_Value", "10310", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:45:52 PM", "", "In Development",  0,19305)
@@ -1123,7 +1303,7 @@ Option Infer On
           InitProperty("MTBH_Weight_Maximum_LBS", "10316", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:17 PM", "", "In Development",  0,19269)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Weight_Maximum_User", "10317", "MTBH_Weight_Minimum_User", "MTBH_Weight_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:17 PM", "", "In Development",  0,19270)
+          InitProperty("MTBH_Weight_Maximum_User", "10317", "MTBH_Weight_Minimum_User", "MTBH_Weight_Maximum_User_Max_Value", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:15:10 PM", "", "In Development",  0,19270)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Weight_Maximum_User_Max_Value", "10318", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:47:36 PM", "", "In Development",  0,19306)
@@ -1168,7 +1348,7 @@ Option Infer On
           InitProperty("MTBH_Width_Minimum_IN", "10331", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:17 PM", "", "In Development",  0,19296)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MTBH_Width_Minimum_User", "10332", "MTBH_Width_Minimum_User_Min_Value", "MTBH_Width_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:38:17 PM", "", "In Development",  0,19297)
+          InitProperty("MTBH_Width_Minimum_User", "10332", "MTBH_Width_Minimum_User_Min_Value", "MTBH_Width_Maximum_User", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/21/2025 12:17:39 PM", "", "In Development",  0,19297)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MTBH_Width_Minimum_User_Min_Value", "10333", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 8:49:12 PM", "", "In Development",  0,19307)
@@ -1275,6 +1455,54 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitValidValue("User_UOM_System_ValidValues", "10264", "-1", 19148)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM_ValidValues", "10513", "-1", 20262)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM_ValidValues", "10514", "-1", 20264)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_Entry_Eye_Dist_User_UOM_ValidValues", "10507", "-1", 20249)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_Exit_Eye_User_UOM_ValidValues", "10508", "-1", 20251)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_MDR_Speed_User_UOM_ValidValues", "10515", "-1", 20268)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_MDR_Transfer_Length_User_UOM_ValidValues", "10506", "-1", 20247)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_MDR_Width_User_UOM_ValidValues", "10504", "-1", 20242)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_MDR_Zone_Length_User_UOM_ValidValues", "10505", "-1", 20244)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_Net_Transfer_Width_User_UOM_ValidValues", "10511", "-1", 20258)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_Side_Exit_Eye_Dist_User_UOM_ValidValues", "10512", "-1", 20260)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_Transfer_Band_Speed_User_UOM_ValidValues", "10516", "-1", 20270)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM_ValidValues", "10510", "-1", 20256)
         End If
             If Incontext("-1", ctx) Then
           
@@ -1509,6 +1737,306 @@ Option Infer On
       '   END FORMULA; PROP ID:10264; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_User_UOM_System", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10513; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10513; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10514; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10514; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_Entry_Eye_Dist_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Entry_Eye_Dist_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10507; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10507; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Entry_Eye_Dist_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_Exit_Eye_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Exit_Eye_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10508; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10508; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Exit_Eye_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_MDR_Speed_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_MDR_Speed_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10515; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "FT/MIN" Else Result = "M/SEC"
+      '   END FORMULA; PROP ID:10515; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_MDR_Speed_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_MDR_Transfer_Length_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_MDR_Transfer_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10506; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10506; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_MDR_Transfer_Length_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_MDR_Width_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_MDR_Width_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10504; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10504; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_MDR_Width_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_MDR_Zone_Length_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_MDR_Zone_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10505; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10505; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_MDR_Zone_Length_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_Net_Transfer_Width_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Net_Transfer_Width_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10511; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10511; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Net_Transfer_Width_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_Side_Exit_Eye_Dist_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Side_Exit_Eye_Dist_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10512; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10512; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Side_Exit_Eye_Dist_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_Transfer_Band_Speed_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Transfer_Band_Speed_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10516; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "FT/MIN" Else Result = "M/SEC"
+      '   END FORMULA; PROP ID:10516; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Transfer_Band_Speed_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10510; TYPE:PF
+      If Me.User_UOM_System = "Imperial" Then Result = "IN" Else Result = "MM"
+      '   END FORMULA; PROP ID:10510; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -3580,9 +4108,9 @@ End Select
               '   BEGIN FORMULA; PROP ID:10298; TYPE:TT
               Select Case Me.MTBH_Height_Minimum_User_UOM
 	Case "IN"
-		Result = "Minimum Product Height" & vbcrlf & "The allowable input range is 0.75 inch to the defined Maximum Height."
+		Result = "Minimum Product Height" & vbcrlf & "The allowable input range is 0.75 inch to the defined Maximum Height.  Conveying product heights below 0.75 inch is possible, but requires spedial design considerations system wide and needs PAE/engineering approval."
 	Case Else
-		Result = "Minimum Product Height" & vbcrlf & "The allowable input range is 19.05 mm to the defined Maximum Height."
+		Result = "Minimum Product Height" & vbcrlf & "The allowable input range is 19.05 mm to the defined Maximum Height.  Conveying product heights below 19.05 mm is possible, but requires spedial design considerations system wide and needs PAE/engineering approval."
 End Select
               '   END FORMULA; PROP ID:10298; TYPE:TT
             
@@ -3633,9 +4161,9 @@ End Select
               '   BEGIN FORMULA; PROP ID:10305; TYPE:TT
               Select Case Me.MTBH_Length_Maximum_User_UOM
 	Case "IN"
-		Result = "Maximum Product Length" & vbcrlf & "Allow input range is the defined minimum length to 60 inches.  Please understand any length grater than 48 inches requires special design considerations for the PandA Reject Divert and should be reviewed by PAE/Engineering."
+		Result = "Maximum Product Length" & vbcrlf & "Allow input range is the defined minimum length to 60 inches.  Please understand any length grater than 42 inches requires special design considerations for MDR curves, merges and diverter/transfers and should be reviewed by PAE/Engineering."
 	Case Else
-		Result = "Maximum Product Length" & vbcrlf & "Allow input range is the defined minimum length to 1524 mm.  Please understand any length grater than 1219.2 mm requires special design considerations for the PandA Reject Divert and should be reviewed by PAE/Engineering."
+		Result = "Maximum Product Length" & vbcrlf & "Allow input range is the defined minimum length to 1524 mm.  Please understand any length grater than 1524 mm requires special design considerations for MDR curves, merges and diverter/transfers and should be reviewed by PAE/Engineering."
 End Select
               '   END FORMULA; PROP ID:10305; TYPE:TT
             
@@ -3662,9 +4190,9 @@ End Select
               '   BEGIN FORMULA; PROP ID:10309; TYPE:TT
               Select Case Me.MTBH_Length_Minimum_User_UOM
 	Case "IN"
-		Result = "Allowable input range is 4 to 48 inches.  Minimum lengths less than 9 inches must be conveyed on belt or suitable sorters only.  Minimum lengths less than 9 inches require roller conveyors with 2 inch roller centers."
+		Result = "Allowable input range is 9 inches to Maximum defined length for MDR conveyor."
 	Case Else
-		Result = "Allowable input range is 101.6 to 1219.2 mm.  Minimum lengths less than 152.4 mm must be conveyed on belt or suitable sorters only.  Minimum lengths less than 228.6 mm require roller conveyors with 50.8 mm roller centers."
+		Result = "Allowable input range is 228.6 mm to Maximum defined length for MDR conveyor."
 End Select
               '   END FORMULA; PROP ID:10309; TYPE:TT
             
@@ -3715,9 +4243,9 @@ End Select
               '   BEGIN FORMULA; PROP ID:10317; TYPE:TT
               Select Case Me.MTBH_Weight_Maximum_User_UOM
 	Case "IN"
-		Result = "Maximum Product Weight" & vbcrlf & "The allowable input range is the defined Minimum weight to 120 LBS.  Please Note!  The Maximum weight for MDR is 70 LBS."
+		Result = "Maximum Product Weight" & vbcrlf & "The allowable input range is the defined Minimum weight to 70 LBS for MDR"
 	Case Else
-		Result = "Maximum Product Weight" & vbcrlf & "The allowable input range is the defined Minimum weight to 54.43 Kg.  Please Note!  The Maximum weight for MDR is 31.75 Kg."
+		Result = "Maximum Product Weight" & vbcrlf & "The allowable input range is the defined Minimum weight to 31.75 Kg for MDR."
 End Select
               '   END FORMULA; PROP ID:10317; TYPE:TT
             
@@ -3826,9 +4354,9 @@ End Select
               '   BEGIN FORMULA; PROP ID:10332; TYPE:TT
               Select Case MTBH_Width_Minimum_User_UOM
 	Case "IN"
-		Result = "Minimum Product Width" & vbcrlf & "Allowable rand is 4 inches to the defined Maximum Width.  Please Note!  MADR Reject Diverts require a minimum of 6 inches for a BW Diverter & 9 inches for an MDR RAT."
+		Result = "Minimum Product Width" & vbcrlf & "Allowable input range is 6 inches to the defined Maximum width.  Note!  MDR RATS typically require a 9 inch minimum width."
 	Case "IN"
-		Result = "Minimum Product Width" & vbcrlf & "Allowable rand is 101.6 mm to the defined Maximum Width.  Please Note!  MADR Reject Diverts require a minimum of 152.4 mm for a BW Diverter & 228.6 mm for an MDR RAT."
+		Result = "Minimum Product Width" & vbcrlf & "Allowable input range is 152.4 mm to the defined Maximum width.  Note!  MDR RATS typically require a 228.6 mm minimum width."
 End Select
               '   END FORMULA; PROP ID:10332; TYPE:TT
             
@@ -3854,6 +4382,114 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_User_UOM_System_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Entry_Eye_Dist_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Exit_Eye_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Speed_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Transfer_Length_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Width_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Zone_Length_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Net_Transfer_Width_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Side_Exit_Eye_Dist_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Transfer_Band_Speed_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -4520,6 +5156,114 @@ End Select
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_User_UOM_System_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Entry_Eye_Dist_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Exit_Eye_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Speed_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Transfer_Length_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Width_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Zone_Length_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Net_Transfer_Width_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Side_Exit_Eye_Dist_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Transfer_Band_Speed_User_UOM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -5478,6 +6222,294 @@ End Select
       '   END FORMULA; PROP ID:10264; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_User_UOM_System_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10513; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10513; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Dist_Infeed_to_Trail_Edge_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10514; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10514; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Dist_Stop_Upstrm_Trans_Zone_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Entry_Eye_Dist_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Entry_Eye_Dist_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10507; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10507; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Entry_Eye_Dist_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Exit_Eye_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Exit_Eye_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10508; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10508; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Exit_Eye_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Speed_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_MDR_Speed_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10515; TYPE:VV
+      Result = MakeValidValues(Array("FT/MIN", "M/SEC"))
+      '   END FORMULA; PROP ID:10515; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_MDR_Speed_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Transfer_Length_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_MDR_Transfer_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10506; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10506; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_MDR_Transfer_Length_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Width_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_MDR_Width_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10504; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10504; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_MDR_Width_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_MDR_Zone_Length_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_MDR_Zone_Length_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10505; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10505; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_MDR_Zone_Length_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Net_Transfer_Width_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Net_Transfer_Width_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10511; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10511; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Net_Transfer_Width_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Side_Exit_Eye_Dist_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Side_Exit_Eye_Dist_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10512; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10512; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Side_Exit_Eye_Dist_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Transfer_Band_Speed_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Transfer_Band_Speed_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10516; TYPE:VV
+      Result = MakeValidValues(Array("FT/MIN", "M/SEC"))
+      '   END FORMULA; PROP ID:10516; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Transfer_Band_Speed_User_UOM_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10510; TYPE:VV
+      Result = MakeValidValues(Array("IN", "MM"))
+      '   END FORMULA; PROP ID:10510; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_MDR.Formula_MDR_Diverter_Transfer_Wdth_pl_Frame_Width_User_UOM_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Mech_Install_Metrics
-'$ GenerateDate: 07/18/2025 11:37:15
+'$ GenerateDate: 07/21/2025 12:25:40
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -156,6 +156,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Per_Diem_Ranges_Row_DBKeys]() As Long
+      Get
+      Return Properties("Per_Diem_Ranges_Row_DBKeys").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Per_Diem_Ranges_Row_DBKeys").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Conveyor_Hours_Row_DBKeys]() As Long
       Get
       Return Properties("Conveyor_Hours_Row_DBKeys").Value
@@ -237,6 +246,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [Per_Diem_Ranges]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("Per_Diem_Ranges")
+      End Get
+      End Property
+    
       Public ReadOnly Property [Misc_Constants]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Misc_Constants")
@@ -275,8 +290,9 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Mech_Install_Metrics", <a><![CDATA[CAE_Mech_Install_Metrics]]></a>.Value, 382, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/18/2025 08:53:10")
+    InitPart("CAE_Mech_Install_Metrics", <a><![CDATA[CAE_Mech_Install_Metrics]]></a>.Value, 382, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/20/2025 13:39:55")
     AddProperty("10446", "Equipment_Rentals_Row_DBKeys", <a><![CDATA[Equipment_Rentals_Row_DBKeys]]></a>.Value, "", "Long","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/17/2025 11:42:43 AM")
+    AddProperty("10914", "Per_Diem_Ranges_Row_DBKeys", <a><![CDATA[Per_Diem_Ranges_Row_DBKeys]]></a>.Value, "", "Long","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 1:39:55 PM")
     AddProperty("5585", "Conveyor_Hours_Row_DBKeys", <a><![CDATA[Conveyor_Hours_Row_DBKeys]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 4:39:59 PM")
     AddProperty("8357", "Misc_Constants_Row_DBKeys", <a><![CDATA[Misc_Constants_Row_DBKeys]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/7/2025 6:17:58 AM")
     AddProperty("9713", "Package_Flow_Rates_Row_DBKeys", <a><![CDATA[Package_Flow_Rates_Row_DBKeys]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H617242", "7/9/2025 11:08:52 AM")
@@ -286,6 +302,8 @@ Option Infer On
     AddProperty("4896", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/24/2025 6:28:55 PM")
     
       AddValidValue("Equipment_Rentals_Row_DBKeys")
+    
+      AddValidValue("Per_Diem_Ranges_Row_DBKeys")
     
       AddValidValue("Conveyor_Hours_Row_DBKeys")
     
@@ -309,15 +327,19 @@ Option Infer On
       
         oSubpart.AddVPF (428, "CAE_MEI_Equipment_Rentals", "CAE_MEI_Equipment_Rentals")
       
+      oSubpart = AddSubpart(357,"Per_Diem_Ranges", <a><![CDATA[Per_Diem_Ranges]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H611896", "7/20/2025 9:38:36 AM")
+      
+        oSubpart.AddVPF (447, "CAE_MEI_Per_Diem_Ranges", "CAE_MEI_Per_Diem_Ranges")
+      
       oSubpart = AddSubpart(301,"Misc_Constants", <a><![CDATA[Misc_Constants]]></a>.Value, "FD", "", "Mech Install Metrics", 9999, "", "GLOBAL\H617242", "7/18/2025 7:01:31 AM")
       
         oSubpart.AddVPF (427, "CAE_Misc_Constant", "CAE_Misc_Constant")
       
-      oSubpart = AddSubpart(313,"Package_Flow_Rates", <a><![CDATA[Package_Flow_Rates]]></a>.Value, "FD", "Package Flow Rates from Mech install Metrics tab.", "Mech Install Metrics", 9999, "", "GLOBAL\H617242", "7/9/2025 11:14:22 AM")
+      oSubpart = AddSubpart(313,"Package_Flow_Rates", <a><![CDATA[Package_Flow_Rates]]></a>.Value, "FD", "Package Flow Rates from Mech install Metrics tab.", "Mech Install Metrics", 9999, "", "GLOBAL\H617242", "7/19/2025 7:51:20 AM")
       
         oSubpart.AddVPF (410, "CAE_MEI_Package_Flow_Rates", "CAE_MEI_Package_Flow_Rates")
       
-      oSubpart = AddSubpart(329,"Pallet_Conveyor", <a><![CDATA[Pallet_Conveyor]]></a>.Value, "FD", "", "Mech Install Metrics", 9999, "", "GLOBAL\H617242", "7/11/2025 10:49:26 AM")
+      oSubpart = AddSubpart(329,"Pallet_Conveyor", <a><![CDATA[Pallet_Conveyor]]></a>.Value, "FD", "", "Mech Install Metrics", 9999, "", "GLOBAL\H617242", "7/19/2025 7:51:34 AM")
       
         oSubpart.AddVPF (415, "CAE_MEI_Pallet_Conveyor", "CAE_MEI_Pallet_Conveyor")
       
@@ -357,6 +379,9 @@ Option Infer On
           InitProperty("Equipment_Rentals_Row_DBKeys", "10018", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H617242", "7/17/2025 11:42:43 AM", "", "In Development",  0,18473)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Per_Diem_Ranges_Row_DBKeys", "10467", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H611896", "7/20/2025 1:39:55 PM", "", "In Development",  0,19836)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Conveyor_Hours_Row_DBKeys", "5198", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "6/27/2025 4:39:59 PM", "", "In Development",  0,8155)
         End If
             If Incontext("-1", ctx) Then
@@ -388,6 +413,10 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitValidValue("Equipment_Rentals_Row_DBKeys_ValidValues", "10018", "-1", 18470)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Per_Diem_Ranges_Row_DBKeys_ValidValues", "10467", "-1", 19837)
         End If
             If Incontext("-1", ctx) Then
           
@@ -440,19 +469,25 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
+        InitSubpart("Per_Diem_Ranges", 284, "", "", "Y", 0, "-1", "", "GLOBAL\H611896", "7/20/2025 9:38:36 AM", "", "In Development", "N",0,788,787)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
         InitSubpart("Misc_Constants", 228, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/18/2025 7:01:31 AM", "", "In Development", "Y",0,739,615)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Package_Flow_Rates", 240, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/9/2025 11:14:22 AM", "", "In Development", "N",0,648,649)
+        InitSubpart("Package_Flow_Rates", 240, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/19/2025 7:51:20 AM", "", "In Development", "N",0,648,649)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Pallet_Conveyor", 256, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/11/2025 10:49:26 AM", "", "In Development", "N",0,699,703)
+        InitSubpart("Pallet_Conveyor", 256, "", "", "Y", 0, "-1", "", "GLOBAL\H617242", "7/19/2025 7:51:34 AM", "", "In Development", "N",0,699,703)
         
           End If
         
@@ -541,6 +576,29 @@ Next p
       '   END FORMULA; PROP ID:10018; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Equipment_Rentals_Row_DBKeys", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Per_Diem_Ranges_Row_DBKeys() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Per_Diem_Ranges_Row_DBKeys").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10467; TYPE:PF
+      Result = Me.ValidValues("Per_Diem_Ranges_Row_DBKeys").Count
+      '   END FORMULA; PROP ID:10467; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Per_Diem_Ranges_Row_DBKeys", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -700,6 +758,15 @@ Next p
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Per_Diem_Ranges_Row_DBKeys_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Conveyor_Hours_Row_DBKeys_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -755,6 +822,15 @@ Next p
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Equipment_Rentals_Row_DBKeys_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Per_Diem_Ranges_Row_DBKeys_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -834,6 +910,33 @@ Result = MakeValidValueKeyFromDatabase($"[{TableName}]", $"[{PK_Name}]", $"[{PK_
       '   END FORMULA; PROP ID:10018; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Equipment_Rentals_Row_DBKeys_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Per_Diem_Ranges_Row_DBKeys_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Per_Diem_Ranges_Row_DBKeys").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10467; TYPE:VV
+      Dim TableName As String = "CAE_CMN_Per_Diem_Ranges"
+Dim PK_Name As String =  "CAE_CMN_Per_Diem_Ranges_ID"
+
+Result = MakeValidValueKeyFromDatabase($"[{TableName}]", $"[{PK_Name}]", $"[{PK_Name}]", $"Where [{PK_Name}] > " & FormatCriteria(0) & $" Order By [{PK_Name}]")
+      '   END FORMULA; PROP ID:10467; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Per_Diem_Ranges_Row_DBKeys_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1173,6 +1276,75 @@ Result = MakeValidValueKeyFromDatabase($"[{TableName}]", $"[{PK_Name}]", $"[{PK_
       '   END FORMULA; SUB ID:271; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Equipment_Rentals_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Per_Diem_Ranges_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:284; TYPE:PN
+      
+      '   END FORMULA; SUB ID:284; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Per_Diem_Ranges_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Per_Diem_Ranges_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Per_Diem_Ranges").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:284; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:284; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Per_Diem_Ranges_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Per_Diem_Ranges_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Per_Diem_Ranges").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:284; TYPE:OP
+      result = "CAE_MEI_Per_Diem_Ranges"
+      '   END FORMULA; SUB ID:284; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_Mech_Install_Metrics.Formula_Per_Diem_Ranges_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

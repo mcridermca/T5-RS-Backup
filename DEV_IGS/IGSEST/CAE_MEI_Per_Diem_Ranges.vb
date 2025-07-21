@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_MEI_Per_Diem_Ranges
-'$ GenerateDate: 07/20/2025 12:49:02
+'$ GenerateDate: 07/21/2025 12:25:40
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -215,15 +215,17 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_MEI_Per_Diem_Ranges", <a><![CDATA[CAE_MEI_Per_Diem_Ranges]]></a>.Value, 447, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/20/2025 12:41:13")
+    InitPart("CAE_MEI_Per_Diem_Ranges", <a><![CDATA[CAE_MEI_Per_Diem_Ranges]]></a>.Value, 447, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/20/2025 13:36:01")
     AddProperty("10915", "CAE_CMN_Per_Diem_Ranges_ID", <a><![CDATA[CAE_CMN_Per_Diem_Ranges_ID]]></a>.Value, "", "Long","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 9:59:19 AM")
     AddProperty("10919", "Per_Week_Price", <a><![CDATA[Per_Week_Price]]></a>.Value, "", "Double","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 10:06:30 AM")
-    AddProperty("10917", "Range_In_USD", <a><![CDATA[Range_In_USD]]></a>.Value, "", "String","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 10:04:05 AM")
+    AddProperty("10917", "Range_In_USD", <a><![CDATA[Range_In_USD]]></a>.Value, "", "String","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 1:13:22 PM")
     AddProperty("10918", "Role_Per_Diem", <a><![CDATA[Role_Per_Diem]]></a>.Value, "", "String","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 10:05:40 AM")
     AddProperty("10916", "Specilization", <a><![CDATA[Specilization]]></a>.Value, "", "String","","Database Lookup","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 10:02:14 AM")
     AddProperty("10913", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/20/2025 9:38:15 AM")
     
-      AddDBConstraint(17, "PerDiem_Ranges_DBInfo", <a><![CDATA[Per-Diem_Ranges_DBInfo]]></a>.Value,"Database Lookup", 9999)
+      AddValidValue("Range_In_USD")
+    
+      AddDBConstraint(18, "Per_Diem_Ranges_DBInfo", <a><![CDATA[Per_Diem_Ranges_DBInfo]]></a>.Value,"Database Lookup", 9999)
     
     End Sub
 
@@ -260,7 +262,7 @@ Option Infer On
           InitProperty("Per_Week_Price", "10472", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/20/2025 10:06:30 AM", "", "In Development",  0,19842)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Range_In_USD", "10470", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/20/2025 10:04:05 AM", "", "In Development",  0,19840)
+          InitProperty("Range_In_USD", "10470", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H611896", "7/20/2025 1:13:22 PM", "", "In Development",  0,19840)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Role_Per_Diem", "10471", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/20/2025 10:05:40 AM", "", "In Development",  0,19841)
@@ -279,6 +281,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Range_In_USD_ValidValues", "10470", "-1", 19963)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -314,9 +320,15 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitDBConstraint("PerDiem_Ranges_DBInfo", 17,"", "Y","", "", "CAE_CMN_Per_Diem_Ranges")
+        InitDBConstraint("Per_Diem_Ranges_DBInfo", 18,"", "Y","", "", "CAE_CMN_Per_Diem_Ranges")
         
-          InitDBproperty("PerDiem_Ranges_DBInfo", "Per_Week_Price",17, "Per_Week", "CAE_CMN_Per_Diem_Ranges")
+          InitDBproperty("Per_Diem_Ranges_DBInfo", "Per_Week_Price",18, "Per_Week", "CAE_CMN_Per_Diem_Ranges")
+        
+          InitDBproperty("Per_Diem_Ranges_DBInfo", "Range_In_USD",18, "Range_In_Dollars", "CAE_CMN_Per_Diem_Ranges")
+        
+          InitDBproperty("Per_Diem_Ranges_DBInfo", "Role_Per_Diem",18, "Role", "CAE_CMN_Per_Diem_Ranges")
+        
+          InitDBproperty("Per_Diem_Ranges_DBInfo", "Specilization",18, "Specilization", "CAE_CMN_Per_Diem_Ranges")
         
           End If
         
@@ -538,6 +550,30 @@ Option Infer On
       Return False
       End Function
     
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Range_In_USD_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Range_In_USD").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10470; TYPE:VV
+      Result = MakeValidValueKeyFromDatabase("[CAE_CMN_Per_Diem_Ranges]", "[Range_In_Dollars]", "[Range_In_Dollars]", " ORDER BY [CAE_CMN_Per_Diem_Ranges_ID]")
+      '   END FORMULA; PROP ID:10470; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_MEI_Per_Diem_Ranges.Formula_Range_In_USD_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
 
     '*****************************************************************************
     '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -567,20 +603,23 @@ Option Infer On
       'Used to set the parameters results
       Select Case lngDBConID
       
-        Case 17
+        Case 18
         ctx = this
             strWhereClause = ""
             strSelectList = ""
             
               strSelectList = strSelectList & leftDelimiter & "Per_Week" & rightDelimiter & ", "
             
+              strSelectList = strSelectList & leftDelimiter & "Range_In_Dollars" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Role" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Specilization" & rightDelimiter & ", "
+            
             'Build the WHERE clause
             
-                  varPropSpecVal = me.Range_In_USD
-              BuildWhereClause(strWhereClause, "0", "0", "  ", "[Range_In_Dollars]", "=", varPropSpecVal, "")
-            
-                  varPropSpecVal = me.Role_Per_Diem
-              BuildWhereClause(strWhereClause, "0", "0", " AND ", "[Role]", "=", varPropSpecVal, "")
+                  varPropSpecVal = me.CAE_CMN_Per_Diem_Ranges_ID
+              BuildWhereClause(strWhereClause, "0", "0", "  ", "[CAE_CMN_Per_Diem_Ranges_ID]", "=", varPropSpecVal, "")
             
             strSelectStmt = BuildSQLStatement(strSelectList, DelimitTableName("CAE_CMN_Per_Diem_Ranges"), strWhereClause, leftDelimiter & "CAE_CMN_Per_Diem_Ranges_ID" & rightDelimiter, "ASC")
           

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_Air_Piping_Control_Panel
-'$ GenerateDate: 07/18/2025 11:37:15
+'$ GenerateDate: 07/21/2025 12:25:40
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -2534,7 +2534,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_Air_Piping_Control_Panel", <a><![CDATA[CAE_Air_Piping_Control_Panel]]></a>.Value, 392, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/18/2025 09:14:40")
+    InitPart("CAE_Air_Piping_Control_Panel", <a><![CDATA[CAE_Air_Piping_Control_Panel]]></a>.Value, 392, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H611896", "07/21/2025 11:45:13")
     AddProperty("9496", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/10/2025 4:17:39 PM")
     AddProperty("6026", "CP_Name", <a><![CDATA[CP_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 6:19:50 PM")
     AddProperty("8949", "MEI_AP_Air_Subsystem", <a><![CDATA[MEI_AP_Air_Subsystem]]></a>.Value, "Mech Install^'Air Piping'!M4", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:47:46 PM")
@@ -2723,7 +2723,7 @@ Option Infer On
     AddProperty("8893", "MEI_AP_SS1_Pipe_Type_Total_Order_Sub_Totals", <a><![CDATA[MEI_AP_SS1_Pipe_Type_Total_Order_Sub_Totals]]></a>.Value, "Mech Install^'Air Piping'!B10", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H581955", "7/8/2025 4:00:20 AM")
     AddProperty("8956", "MEI_AP_SS1_Total_Costs", <a><![CDATA[MEI_AP_SS1_Total_Costs]]></a>.Value, "Mech Install^'Air Piping'!B17", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:55:52 PM")
     AddProperty("8957", "MEI_AP_SS1_Total_Hours", <a><![CDATA[MEI_AP_SS1_Total_Hours]]></a>.Value, "Mech Install^'Air Piping'!B18", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:57:59 PM")
-    AddProperty("8896", "MEI_AP_SS1_Total_Order_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_AC]]></a>.Value, "Mech Install^'Air Piping'!B13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/18/2025 7:42:24 AM")
+    AddProperty("8896", "MEI_AP_SS1_Total_Order_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_AC]]></a>.Value, "Mech Install^'Air Piping'!B13", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/21/2025 11:45:13 AM")
     AddProperty("8898", "MEI_AP_SS1_Total_Order_Dryer", <a><![CDATA[MEI_AP_SS1_Total_Order_Dryer]]></a>.Value, "Mech Install^'Air Piping'!B15", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:08:06 PM")
     AddProperty("8895", "MEI_AP_SS1_Total_Order_Filter_Reg", <a><![CDATA[MEI_AP_SS1_Total_Order_Filter_Reg]]></a>.Value, "Mech Install^'Air Piping'!B12", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/18/2025 7:38:39 AM")
     AddProperty("8897", "MEI_AP_SS1_Total_Order_Red_AC", <a><![CDATA[MEI_AP_SS1_Total_Order_Red_AC]]></a>.Value, "Mech Install^'Air Piping'!B14", "Double","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H611896", "7/15/2025 5:07:21 PM")
@@ -3408,7 +3408,7 @@ Option Infer On
           InitProperty("MEI_AP_SS1_Total_Hours", "8538", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:57:59 PM", "", "In Development",  0,17551)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("MEI_AP_SS1_Total_Order_AC", "8477", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/18/2025 7:42:24 AM", "", "In Development",  0,19004)
+          InitProperty("MEI_AP_SS1_Total_Order_AC", "8477", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/21/2025 11:45:13 AM", "", "In Development",  0,20232)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("MEI_AP_SS1_Total_Order_Dryer", "8479", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H611896", "7/15/2025 5:08:06 PM", "", "In Development",  0,17495)
@@ -8226,10 +8226,11 @@ End If
       '   BEGIN FORMULA; PROP ID:8477; TYPE:PF
       Dim VarL As String = Me.MEI_AP_Compressor_Required
 Dim VarChar As String = VarL.Substring(0,1) 
+
 If(VarChar = "A")
-Result = 1
+	Result = 1
 Else
-Result = 0
+	Result = 0
 End If
       '   END FORMULA; PROP ID:8477; TYPE:PF
       Catch ex As Exception
