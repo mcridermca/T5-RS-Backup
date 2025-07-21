@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Data_Master_App
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -83,9 +83,6 @@ Option Infer On
         Case "22"
         Result = Process_DefaultProcess_Pole_Masters_COMMENT()
         
-        Case "44"
-        Result = Process_DefaultProcess_Application_Masters_COMMENT()
-        
         Case "32"
         Result = Process_DefaultProcess_Controller_Family_Masters_COMMENT()
         
@@ -97,15 +94,6 @@ Option Infer On
         
         Case "34"
         Result = Process_DefaultProcess_CPU_IO_Masters_COMMENT()
-        
-        Case "45"
-        Result = Process_DefaultProcess_Device_Type_Masters_COMMENT()
-        
-        Case "46"
-        Result = Process_DefaultProcess_Parameter_Name_Masters_COMMENT()
-        
-        Case "47"
-        Result = Process_DefaultProcess_Part_Type_Masters_COMMENT()
         
         Case "35"
         Result = Process_DefaultProcess_Point_Type_Masters_COMMENT()
@@ -119,9 +107,6 @@ Option Infer On
         Case "37"
         Result = Process_DefaultProcess_Standard_Wiring_Detail_Masters_COMMENT()
         
-        Case "48"
-        Result = Process_DefaultProcess_Standards_Masters_COMMENT()
-        
         Case "28"
         Result = Process_DefaultProcess_Signal_Type_Masters_COMMENT()
         
@@ -130,6 +115,21 @@ Option Infer On
         
         Case "43"
         Result = Process_DefaultProcess_RSXLI_PLI_Search_Data_COMMENT()
+        
+        Case "44"
+        Result = Process_DefaultProcess_Application_Masters_COMMENT()
+        
+        Case "45"
+        Result = Process_DefaultProcess_Device_Type_Masters_COMMENT()
+        
+        Case "46"
+        Result = Process_DefaultProcess_Parameter_Name_Masters_COMMENT()
+        
+        Case "47"
+        Result = Process_DefaultProcess_Part_Type_Masters_COMMENT()
+        
+        Case "48"
+        Result = Process_DefaultProcess_Standards_Masters_COMMENT()
         End Select
         End Select
       
@@ -150,9 +150,6 @@ Option Infer On
         Case "22"
         Result = Process_DefaultProcess_Pole_Masters_STATUS()
         
-        Case "44"
-        Result = Process_DefaultProcess_Application_Masters_STATUS()
-        
         Case "32"
         Result = Process_DefaultProcess_Controller_Family_Masters_STATUS()
         
@@ -164,15 +161,6 @@ Option Infer On
         
         Case "34"
         Result = Process_DefaultProcess_CPU_IO_Masters_STATUS()
-        
-        Case "45"
-        Result = Process_DefaultProcess_Device_Type_Masters_STATUS()
-        
-        Case "46"
-        Result = Process_DefaultProcess_Parameter_Name_Masters_STATUS()
-        
-        Case "47"
-        Result = Process_DefaultProcess_Part_Type_Masters_STATUS()
         
         Case "35"
         Result = Process_DefaultProcess_Point_Type_Masters_STATUS()
@@ -186,9 +174,6 @@ Option Infer On
         Case "37"
         Result = Process_DefaultProcess_Standard_Wiring_Detail_Masters_STATUS()
         
-        Case "48"
-        Result = Process_DefaultProcess_Standards_Masters_STATUS()
-        
         Case "28"
         Result = Process_DefaultProcess_Signal_Type_Masters_STATUS()
         
@@ -197,6 +182,21 @@ Option Infer On
         
         Case "43"
         Result = Process_DefaultProcess_RSXLI_PLI_Search_Data_STATUS()
+        
+        Case "44"
+        Result = Process_DefaultProcess_Application_Masters_STATUS()
+        
+        Case "45"
+        Result = Process_DefaultProcess_Device_Type_Masters_STATUS()
+        
+        Case "46"
+        Result = Process_DefaultProcess_Parameter_Name_Masters_STATUS()
+        
+        Case "47"
+        Result = Process_DefaultProcess_Part_Type_Masters_STATUS()
+        
+        Case "48"
+        Result = Process_DefaultProcess_Standards_Masters_STATUS()
         End Select
         End Select
       
@@ -268,6 +268,15 @@ Option Infer On
     #End Region
 
     #Region " Properties, Subparts, Connections "
+    
+          Public Property [Testing_Mode]() As Boolean
+      Get
+      Return Properties("Testing_Mode").Value
+      End Get
+      Set(ByVal Value As Boolean)
+      Properties("Testing_Mode").CalculatedValue = Value
+      End Set
+      End Property
     
           Public Property [PartNumber]() As String
       Get
@@ -553,7 +562,8 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Data_Master_App", <a><![CDATA[ADM_Data_Master_App]]></a>.Value, 54, "HBSADMIN",  "", "", True, True, "In Development", "", "Top Level Data Maintenance Application", "", "", "",  "GLOBAL\H601423", "07/11/2025 14:25:59")
+    InitPart("ADM_Data_Master_App", <a><![CDATA[ADM_Data_Master_App]]></a>.Value, 54, "HBSADMIN",  "", "", True, True, "In Development", "", "Top Level Data Maintenance Application", "", "", "",  "GLOBAL\H601423", "07/21/2025 08:46:12")
+    AddProperty("1569", "Testing_Mode", <a><![CDATA[Testing Mode]]></a>.Value, "Variable to determine if this is currently in Testing Mode.", "Boolean","","Debugging","FD", 9999, "", 0,0, "RuleStream", "", "GLOBAL\H601423", "7/13/2025 12:26:06 PM")
     AddProperty("729", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/20/2025 3:39:14 PM")
     
       oSubpart = AddSubpart(127,"Application_Master", <a><![CDATA[Application_Master]]></a>.Value, "FD", "", "Master SubPart Collection", 9999, "", "GLOBAL\H601423", "7/9/2025 10:38:03 AM")
@@ -644,22 +654,22 @@ Option Infer On
         Initialize_Process_DefaultProcess_Introduction()
         Initialize_Process_DefaultProcess_Engineering_Units_Master()
         Initialize_Process_DefaultProcess_Pole_Masters()
-        Initialize_Process_DefaultProcess_Application_Masters()
         Initialize_Process_DefaultProcess_Controller_Family_Masters()
         Initialize_Process_DefaultProcess_Controller_Special_Features_Masters()
         Initialize_Process_DefaultProcess_Controller_Protocol_Masters()
         Initialize_Process_DefaultProcess_CPU_IO_Masters()
-        Initialize_Process_DefaultProcess_Device_Type_Masters()
-        Initialize_Process_DefaultProcess_Parameter_Name_Masters()
-        Initialize_Process_DefaultProcess_Part_Type_Masters()
         Initialize_Process_DefaultProcess_Point_Type_Masters()
         Initialize_Process_DefaultProcess_Process_Variable_Masters()
         Initialize_Process_DefaultProcess_Parts_Accessory_Mapping_Masters()
         Initialize_Process_DefaultProcess_Standard_Wiring_Detail_Masters()
-        Initialize_Process_DefaultProcess_Standards_Masters()
         Initialize_Process_DefaultProcess_Signal_Type_Masters()
         Initialize_Process_DefaultProcess_Voltage_Masters()
         Initialize_Process_DefaultProcess_RSXLI_PLI_Search_Data()
+        Initialize_Process_DefaultProcess_Application_Masters()
+        Initialize_Process_DefaultProcess_Device_Type_Masters()
+        Initialize_Process_DefaultProcess_Parameter_Name_Masters()
+        Initialize_Process_DefaultProcess_Part_Type_Masters()
+        Initialize_Process_DefaultProcess_Standards_Masters()
     Case Else
     Process = "DefaultProcess"
     End Select
@@ -696,17 +706,17 @@ Option Infer On
         oProcessStep.AddPath("ADM_Data_Master_App.Engg_Units_Master/ADM_Engg_Units_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 93, "1", "0", "RsGrid", 0, "", 50, 12, 492, 1085, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,110,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 93, "2", "1", "RsGridColumn", 0, "Engg_Units_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 93, "2", "1", "RsGridColumn", 0, "Engg_Units_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
         oProcessStep.AddCustomLayout(1, 93, "3", "1", "RsGridColumn", 0, "Engg_Units_Standard_Ref", 0, 0, 0, 100, 0, "Engg Units Standard Ref", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
         oProcessStep.AddCustomLayout(1, 93, "4", "1", "RsGridColumn", 0, "Unit_Of_Measure", 0, 0, 0, 150, 0, "Unit of Measure", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 93, "5", "1", "RsGridColumn", 0, "Base_Unit_Name", 0, 0, 0, 125, 0, "Base Unit Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 93, "5", "1", "RsGridColumn", 0, "Base_Unit_Name", 0, 0, 0, 125, 0, "Base Unit Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
         oProcessStep.AddCustomLayout(1, 93, "6", "1", "RsGridColumn", 0, "Base_Unit_Symbol", 0, 0, 0, 60, 0, "Base Unit Symbol", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 93, "7", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 93, "8", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 93, "9", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 93, "10", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 93, "11", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 93, "12", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 93, "7", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 93, "8", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 93, "9", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 93, "10", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 93, "11", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 93, "12", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
         oProcessStep.AddCustomLayout(1, 93, "13", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Engineering Units Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 93, "14", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,110,Rows")
         oProcessStep.AddCustomLayout(1, 93, "15", "14", "RsGroupBox", 0, "", 120, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
@@ -721,22 +731,23 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 93, "24", "15", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 93, "25", "15", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 93, "26", "14", "RsGroupBox", 0, "", 29, 18, 85, 894, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 93, "27", "26", "RsTextbox", 0, "Unit_Of_Measure", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 93, "28", "26", "RsCheckbox", 0, "Deleted", 21, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 93, "29", "26", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 93, "30", "26", "RsLabel", 0, "", 19, 9, 25, 58, 18, "Unit of Measure:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 93, "31", "26", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 93, "32", "26", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Engg_Units_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 93, "33", "26", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 93, "34", "26", "RsTextbox", 0, "Base_Unit_Symbol", 45, 307, 20, 100, 22, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 93, "35", "26", "RsTextbox", 0, "Base_Unit_Name", 45, 105, 20, 100, 23, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 93, "36", "26", "RsLabel", 0, "", 47, 211, 25, 90, 24, "Base Unit Symbol", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 93, "37", "26", "RsLabel", 0, "", 47, 9, 25, 90, 25, "Base Unit Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 93, "38", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 26, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 93, "39", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 27, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 93, "40", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 28, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 93, "41", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 29, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 93, "42", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 30, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Engg_Units_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 93, "27", "26", "RsTextbox", 0, "Unit_Of_Measure", 19, 105, 20, 240, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 93, "28", "26", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 93, "29", "26", "RsTextbox", 0, "Sort_Order", 19, 388, 20, 100, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 93, "30", "26", "RsLabel", 0, "", 19, 9, 25, 90, 18, "Unit of Measure:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 93, "31", "26", "RsLabel", 0, "", 19, 347, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 93, "32", "26", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 93, "33", "26", "RsTextbox", 0, "Base_Unit_Symbol", 45, 671, 20, 100, 21, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 93, "34", "26", "RsTextbox", 0, "Base_Unit_Name", 45, 388, 20, 120, 22, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 93, "35", "26", "RsTextbox", 0, "Engg_Units_Standard_Ref", 45, 105, 20, 181, 23, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 93, "36", "26", "RsLabel", 0, "", 45, 565, 20, 100, 24, "Base Unit Symbol:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 93, "37", "26", "RsLabel", 0, "", 45, 9, 30, 90, 25, "Engg Units Standard Ref:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 93, "38", "26", "RsLabel", 0, "", 45, 292, 20, 90, 26, "Base Unit Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 93, "39", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 27, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 93, "40", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 28, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 93, "41", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 29, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 93, "42", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 30, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 93, "43", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 31, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Engg_Units_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -754,10 +765,10 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 50, "1", "0", "RsGrid", 0, "", 59, 20, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,69,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
         oProcessStep.AddCustomLayout(1, 50, "2", "1", "RsGridColumn", 0, "Pole_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
         oProcessStep.AddCustomLayout(1, 50, "3", "1", "RsGridColumn", 0, "Pole_Name", 0, 0, 0, 250, 0, "Pole Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 50, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 50, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 50, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 50, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 50, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 50, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 50, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 50, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
         oProcessStep.AddCustomLayout(1, 50, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
         oProcessStep.AddCustomLayout(1, 50, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
         oProcessStep.AddCustomLayout(1, 50, "10", "0", "RsLabel", 0, "", 9, 22, 37, 297, 1, "Pole Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
@@ -774,67 +785,17 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 50, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 50, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 50, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 50, "24", "23", "RsTextbox", 0, "Pole_Name", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 50, "25", "23", "RsCheckbox", 0, "Deleted", 21, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 50, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 50, "27", "23", "RsLabel", 0, "", 19, 9, 25, 58, 18, "Pole Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 50, "28", "23", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 50, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Pole_Master_Save_Selected;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 50, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 50, "31", "0", "RsLabel", 0, "Row_DBKeys", 558, 22, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 50, "32", "0", "RsActionButton", 0, "", 556, 461, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 50, "33", "0", "RsActionButton", 0, "", 556, 595, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 50, "34", "0", "RsActionButton", 0, "", 556, 676, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 50, "35", "0", "RsActionButton", 0, "", 556, 791, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Pole_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        
-        End Sub
-      
-        '*****************************************************************************
-        '   Copyright (C) 2024 Siemens. All rights reserved.
-        '
-        '   Do not modify this procedure. Changes may render this application
-        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
-        '*****************************************************************************
-        Private Sub Initialize_Process_DefaultProcess_Application_Masters()
-        Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(44, "Application Masters", "Application Masters", 1, 26, 1, 4, 50, 50)
-        oProcessStep.AddPath("ADM_Data_Master_App.Application_Master/ADM_Application_Master")
-        oProcessStep.AddLayout(1, 11, "")
-        oProcessStep.AddCustomLayout(1, 114, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,125,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 114, "2", "1", "RsGridColumn", 0, "Application_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 114, "3", "1", "RsGridColumn", 0, "Application_Name", 0, 0, 0, 250, 0, "Application Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 114, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 114, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 114, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 114, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 114, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 114, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 114, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Application Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 114, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,125,Rows")
-        oProcessStep.AddCustomLayout(1, 114, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 114, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 114, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 114, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 114, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 114, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 114, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 114, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 114, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 114, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 114, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 114, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 114, "24", "23", "RsTextbox", 0, "Application_Name", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 114, "25", "23", "RsCheckbox", 0, "Deleted", 21, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 114, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 114, "27", "23", "RsLabel", 0, "", 19, 9, 25, 58, 18, "Application Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 114, "28", "23", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 114, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Application_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 114, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 114, "31", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 114, "32", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 114, "33", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 114, "34", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 114, "35", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Application_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 50, "24", "23", "RsTextbox", 0, "Pole_Name", 19, 76, 20, 240, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 50, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 50, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 363, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 50, "27", "23", "RsLabel", 0, "", 19, 6, 20, 65, 18, "Pole Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 50, "28", "23", "RsLabel", 0, "", 19, 322, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 50, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 50, "30", "0", "RsLabel", 0, "Row_DBKeys", 558, 22, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 50, "31", "0", "RsActionButton", 0, "", 556, 461, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 50, "32", "0", "RsActionButton", 0, "", 556, 595, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 50, "33", "0", "RsActionButton", 0, "", 556, 676, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 50, "34", "0", "RsActionButton", 0, "", 556, 791, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Pole_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -846,18 +807,18 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_Controller_Family_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(32, "Controller Family Masters", "Controller Family Masters", 1, 26, 1, 5, 50, 50)
+        oProcessStep = AddProcessStep(32, "Controller Family Masters", "Controller Family Masters", 1, 26, 1, 4, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.Controller_Family_Master/ADM_Controller_Family_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 81, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,95,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 81, "2", "1", "RsGridColumn", 0, "Controller_Family_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 81, "3", "1", "RsGridColumn", 0, "Controller_Family_Name", 0, 0, 0, 250, 0, "Controller Family Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 81, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 81, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 81, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 81, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 81, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 81, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 81, "2", "1", "RsGridColumn", 0, "Controller_Family_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 81, "3", "1", "RsGridColumn", 0, "Controller_Family_Name", 0, 0, 0, 250, 0, "Controller Family Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 81, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 81, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 81, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 81, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 81, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 81, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 81, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Controller Family Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 81, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,95,Rows")
         oProcessStep.AddCustomLayout(1, 81, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
@@ -872,18 +833,17 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 81, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 81, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 81, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 81, "24", "23", "RsTextbox", 0, "Controller_Family_Name", 19, 91, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 81, "25", "23", "RsCheckbox", 0, "Deleted", 19, 569, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 81, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 367, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 81, "27", "23", "RsLabel", 0, "", 19, 9, 25, 76, 18, "Controller Family Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 81, "28", "23", "RsLabel", 0, "", 19, 320, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 81, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Controller_Family_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 81, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 474, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 81, "31", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 81, "32", "0", "RsActionButton", 0, "", 547, 471, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 81, "33", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 81, "34", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 81, "35", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Controller_Family_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 81, "24", "23", "RsTextbox", 0, "Controller_Family_Name", 19, 142, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 81, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 81, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 432, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 81, "27", "23", "RsLabel", 0, "", 19, 6, 20, 130, 18, "Controller Family Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 81, "28", "23", "RsLabel", 0, "", 19, 391, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 81, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 81, "30", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 81, "31", "0", "RsActionButton", 0, "", 547, 471, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 81, "32", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 81, "33", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 81, "34", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Controller_Family_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -895,18 +855,18 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_Controller_Special_Features_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(33, "Controller Special Features Masters", "Controller Special Features Masters", 1, 26, 1, 6, 50, 50)
+        oProcessStep = AddProcessStep(33, "Controller Special Features Masters", "Controller Special Features Masters", 1, 26, 1, 5, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.Controller_Spl_Feature_Master/ADM_Controller_Spl_Feature_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 72, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,88,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 72, "2", "1", "RsGridColumn", 0, "Controller_Spl_Feature_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 72, "3", "1", "RsGridColumn", 0, "Special_Feature", 0, 0, 0, 250, 0, "Special Feature", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 72, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 72, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 72, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 72, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 72, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 72, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 72, "2", "1", "RsGridColumn", 0, "Controller_Spl_Feature_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 72, "3", "1", "RsGridColumn", 0, "Special_Feature", 0, 0, 0, 250, 0, "Special Feature", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 72, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 72, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 72, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 72, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 72, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 72, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 72, "10", "0", "RsLabel", 0, "", 0, 14, 37, 331, 1, "Controller Special Feature Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 72, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,88,Rows")
         oProcessStep.AddCustomLayout(1, 72, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
@@ -921,18 +881,17 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 72, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 72, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 72, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 72, "24", "23", "RsTextbox", 0, "Special_Feature", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 72, "25", "23", "RsCheckbox", 0, "Deleted", 19, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 72, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 72, "27", "23", "RsLabel", 0, "", 19, 9, 25, 58, 18, "Special Feature:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 72, "28", "23", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 72, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Controller_Spl_Feature_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 72, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 72, "31", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 72, "32", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 72, "33", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 72, "34", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 72, "35", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Controller_Spl_Feature_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 72, "24", "23", "RsTextbox", 0, "Special_Feature", 19, 115, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 72, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 72, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 405, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 72, "27", "23", "RsLabel", 0, "", 19, 9, 20, 100, 18, "Special Feature:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 72, "28", "23", "RsLabel", 0, "", 19, 364, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 72, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 72, "30", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 72, "31", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 72, "32", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 72, "33", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 72, "34", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Controller_Spl_Feature_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -944,18 +903,18 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_Controller_Protocol_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(30, "Controller Protocol Masters", "", 1, 26, 1, 7, 50, 50)
+        oProcessStep = AddProcessStep(30, "Controller Protocol Masters", "", 1, 26, 1, 6, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.Controller_Protocol_Master/ADM_Controller_Protocol_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 69, "1", "0", "RsGrid", 0, "", 50, 0, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,86,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 69, "2", "1", "RsGridColumn", 0, "Controller_Protocol_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 69, "3", "1", "RsGridColumn", 0, "Protocol_Type", 0, 0, 0, 250, 0, "Controller Protocol Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 69, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 69, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 69, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 69, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 69, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 50, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 69, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 50, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 69, "2", "1", "RsGridColumn", 0, "Controller_Protocol_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 69, "3", "1", "RsGridColumn", 0, "Protocol_Type", 0, 0, 0, 250, 0, "Controller Protocol Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 69, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 69, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 69, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 69, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 69, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 69, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 69, "10", "0", "RsLabel", 0, "", 0, 2, 37, 297, 1, "Controller Protocol Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 69, "11", "0", "RsLabel", 0, "Row_DBKeys", 549, 2, 16, 96, 2, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 69, "12", "0", "RsActionButton", 0, "", 547, 421, 27, 98, 3, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
@@ -972,15 +931,15 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 69, "23", "14", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 14, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 69, "24", "14", "RsLabel", 0, "", 20, 408, 21, 94, 15, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 69, "25", "13", "RsGroupBox", 0, "", 26, 3, 63, 893, 16, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 69, "26", "25", "RsTextbox", 0, "Protocol_Type", 19, 73, 20, 243, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 69, "27", "25", "RsTextbox", 0, "Sort_Order", 14, 371, 20, 99, 18, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 69, "28", "25", "RsLabel", 0, "", 14, 6, 39, 61, 19, "Controller Protocol:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 69, "29", "25", "RsLabel", 0, "", 14, 334, 25, 31, 20, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 69, "30", "25", "RsActionButton", 0, "", 19, 765, 34, 120, 21, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Controller_Protocol_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 69, "31", "25", "RsCheckbox", 0, "Is_Active", 14, 487, 18, 77, 22, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 69, "26", "25", "RsTextbox", 0, "Protocol_Type", 19, 128, 20, 243, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 69, "27", "25", "RsTextbox", 0, "Sort_Order", 19, 418, 20, 99, 18, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 69, "28", "25", "RsLabel", 0, "", 19, 6, 20, 116, 19, "Controller Protocol:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 69, "29", "25", "RsLabel", 0, "", 19, 377, 20, 35, 20, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 69, "30", "25", "RsCheckbox", 0, "Is_Active", 19, 556, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 69, "31", "25", "RsCheckbox", 0, "Deleted", 19, 645, 18, 69, 22, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
         oProcessStep.AddCustomLayout(1, 69, "32", "0", "RsActionButton", 0, "", 547, 561, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         oProcessStep.AddCustomLayout(1, 69, "33", "0", "RsActionButton", 0, "", 547, 642, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 69, "34", "0", "RsActionButton", 0, "", 547, 769, 27, 119, 25, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Controller_Protocol_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 69, "34", "0", "RsActionButton", 0, "", 547, 769, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Controller_Protocol_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -992,19 +951,19 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_CPU_IO_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(34, "CPU IO Masters", "CPU IO Masters", 1, 26, 1, 8, 50, 50)
+        oProcessStep = AddProcessStep(34, "CPU IO Masters", "CPU IO Masters", 1, 26, 1, 7, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.CPU_IO_Master/ADM_CPU_IO_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 66, "1", "0", "RsGrid", 0, "", 50, 12, 492, 1161, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,84,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 66, "2", "1", "RsGridColumn", 0, "CPU_IO_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 66, "3", "1", "RsGridColumn", 0, "CPU_IO_Type", 0, 0, 0, 250, 0, "CPU IO Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 66, "4", "1", "RsGridColumn", 0, "CPU_IO_Description", 0, 0, 0, 250, 0, "Description", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 66, "5", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 66, "6", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 66, "7", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 66, "8", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 66, "9", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 66, "10", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 66, "2", "1", "RsGridColumn", 0, "CPU_IO_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 66, "3", "1", "RsGridColumn", 0, "CPU_IO_Type", 0, 0, 0, 250, 0, "CPU IO Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 66, "4", "1", "RsGridColumn", 0, "CPU_IO_Description", 0, 0, 0, 250, 0, "Description", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 66, "5", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 66, "6", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 66, "7", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 66, "8", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 66, "9", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 66, "10", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 66, "11", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "CPU IO Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 66, "12", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,84,Rows")
         oProcessStep.AddCustomLayout(1, 66, "13", "12", "RsGroupBox", 0, "", 137, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
@@ -1019,167 +978,19 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 66, "22", "13", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 66, "23", "13", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 66, "24", "12", "RsGroupBox", 0, "", 29, 18, 84, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 66, "25", "24", "RsTextbox", 0, "CPU_IO_Type", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 66, "26", "24", "RsCheckbox", 0, "Deleted", 21, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 66, "27", "24", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 66, "28", "24", "RsLabel", 0, "", 19, 6, 25, 61, 18, "CPU IO Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 66, "29", "24", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 66, "30", "24", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_CPU_IO_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 66, "31", "24", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 66, "32", "24", "RsTextbox", 0, "CPU_IO_Description", 45, 73, 20, 243, 22, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 66, "33", "24", "RsLabel", 0, "", 45, 1, 25, 66, 23, "Description:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 66, "34", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 24, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 66, "35", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 25, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 66, "36", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 26, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 66, "37", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 27, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 66, "38", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 28, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_CPU_IO_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        
-        End Sub
-      
-        '*****************************************************************************
-        '   Copyright (C) 2024 Siemens. All rights reserved.
-        '
-        '   Do not modify this procedure. Changes may render this application
-        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
-        '*****************************************************************************
-        Private Sub Initialize_Process_DefaultProcess_Device_Type_Masters()
-        Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(45, "Device Type Masters", "Device Type Masters", 1, 26, 1, 9, 50, 50)
-        oProcessStep.AddPath("ADM_Data_Master_App.Device_Type_Master/ADM_Device_Type_Master")
-        oProcessStep.AddLayout(1, 11, "")
-        oProcessStep.AddCustomLayout(1, 111, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,123,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 111, "2", "1", "RsGridColumn", 0, "Device_Type_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 111, "3", "1", "RsGridColumn", 0, "Device_Type", 0, 0, 0, 250, 0, "Device Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 111, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 111, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 111, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 111, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 111, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 111, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 111, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Device Type Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 111, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,123,Rows")
-        oProcessStep.AddCustomLayout(1, 111, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 111, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 111, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 111, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 111, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 111, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 111, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 111, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 111, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 111, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 111, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 111, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 111, "24", "23", "RsTextbox", 0, "Device_Type", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 111, "25", "23", "RsCheckbox", 0, "Deleted", 21, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 111, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 111, "27", "23", "RsLabel", 0, "", 19, 9, 25, 58, 18, "Device Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 111, "28", "23", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 111, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Device_Type_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 111, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 111, "31", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 111, "32", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 111, "33", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 111, "34", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 111, "35", "0", "RsActionButton", 0, "", 547, 784, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Device_Type_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        
-        End Sub
-      
-        '*****************************************************************************
-        '   Copyright (C) 2024 Siemens. All rights reserved.
-        '
-        '   Do not modify this procedure. Changes may render this application
-        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
-        '*****************************************************************************
-        Private Sub Initialize_Process_DefaultProcess_Parameter_Name_Masters()
-        Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(46, "Parameter Name Masters", "Parameter Name Masters", 1, 26, 1, 10, 50, 50)
-        oProcessStep.AddPath("ADM_Data_Master_App.Parameter_Name_Master/ADM_Parameter_Name_Master")
-        oProcessStep.AddLayout(1, 11, "")
-        oProcessStep.AddCustomLayout(1, 102, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,117,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 102, "2", "1", "RsGridColumn", 0, "Parameter_Name_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 102, "3", "1", "RsGridColumn", 0, "Parameter_Name_Master", 0, 0, 0, 250, 0, "Parameter Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 102, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 102, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 102, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 102, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 102, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 102, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 102, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Parameter Name Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 102, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,117,Rows")
-        oProcessStep.AddCustomLayout(1, 102, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 102, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 102, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 102, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 102, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 102, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 102, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 102, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 102, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 102, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 102, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 102, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 102, "24", "23", "RsTextbox", 0, "Parameter_Name_Master", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 102, "25", "23", "RsCheckbox", 0, "Deleted", 21, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 102, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 102, "27", "23", "RsLabel", 0, "", 19, 9, 25, 58, 18, "Parameter Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 102, "28", "23", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 102, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Parameter_Name_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 102, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 102, "31", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 102, "32", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 102, "33", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 102, "34", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 102, "35", "0", "RsActionButton", 0, "", 547, 784, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Parameter_Name_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        
-        End Sub
-      
-        '*****************************************************************************
-        '   Copyright (C) 2024 Siemens. All rights reserved.
-        '
-        '   Do not modify this procedure. Changes may render this application
-        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
-        '*****************************************************************************
-        Private Sub Initialize_Process_DefaultProcess_Part_Type_Masters()
-        Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(47, "Part Type Masters", "Part Type Masters", 1, 26, 1, 11, 50, 50)
-        oProcessStep.AddPath("ADM_Data_Master_App.Part_Type_Master/ADM_Part_Type_Master")
-        oProcessStep.AddLayout(1, 11, "")
-        oProcessStep.AddCustomLayout(1, 105, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,119,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 105, "2", "1", "RsGridColumn", 0, "Part_Type_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 105, "3", "1", "RsGridColumn", 0, "Part_Type", 0, 0, 0, 250, 0, "Part Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 105, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 105, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 105, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 105, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 105, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 105, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 105, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Part Type Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 105, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,119,Rows")
-        oProcessStep.AddCustomLayout(1, 105, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 105, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 105, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 105, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 105, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 105, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 105, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 105, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 105, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 105, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 105, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 105, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 105, "24", "23", "RsTextbox", 0, "Part_Type", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 105, "25", "23", "RsCheckbox", 0, "Deleted", 21, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 105, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 105, "27", "23", "RsLabel", 0, "", 19, 9, 25, 58, 18, "Part Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 105, "28", "23", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 105, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Part_Type_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 105, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 105, "31", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 105, "32", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 105, "33", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 105, "34", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 105, "35", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Part_Type_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 66, "25", "24", "RsTextbox", 0, "CPU_IO_Type", 19, 92, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 66, "26", "24", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 66, "27", "24", "RsTextbox", 0, "Sort_Order", 19, 444, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 66, "28", "24", "RsLabel", 0, "", 19, 6, 20, 80, 18, "CPU IO Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 66, "29", "24", "RsLabel", 0, "", 19, 403, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 66, "30", "24", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 66, "31", "24", "RsTextbox", 0, "CPU_IO_Description", 45, 92, 20, 243, 21, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 66, "32", "24", "RsLabel", 0, "", 45, 6, 20, 80, 22, "Description:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 66, "33", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 23, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 66, "34", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 24, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 66, "35", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 25, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 66, "36", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 26, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 66, "37", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 27, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_CPU_IO_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -1191,18 +1002,18 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_Point_Type_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(35, "Point Type Masters", "Point Type Masters", 1, 26, 1, 12, 50, 50)
+        oProcessStep = AddProcessStep(35, "Point Type Masters", "Point Type Masters", 1, 26, 1, 8, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.Point_Type_Master/ADM_Point_Type_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 87, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,99,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 87, "2", "1", "RsGridColumn", 0, "Point_Type_ID", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 87, "3", "1", "RsGridColumn", 0, "Point_Type", 0, 0, 0, 250, 0, "Point Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 87, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 87, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 87, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 87, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 87, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 87, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 87, "2", "1", "RsGridColumn", 0, "Point_Type_Master_ID", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 87, "3", "1", "RsGridColumn", 0, "Point_Type", 0, 0, 0, 250, 0, "Point Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 87, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 87, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 87, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 87, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 87, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 87, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 87, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Point Type Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 87, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,99,Rows")
         oProcessStep.AddCustomLayout(1, 87, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
@@ -1217,18 +1028,17 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 87, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 87, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 87, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 87, "24", "23", "RsTextbox", 0, "Point_Type", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 87, "25", "23", "RsCheckbox", 0, "Deleted", 21, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 87, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 87, "27", "23", "RsLabel", 0, "", 19, 9, 25, 58, 18, "Point Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 87, "28", "23", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 87, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Point_Type_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 87, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 87, "31", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 87, "32", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 87, "33", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 87, "34", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 87, "35", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Point_Type_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 87, "24", "23", "RsTextbox", 0, "Point_Type", 17, 70, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 87, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 87, "26", "23", "RsTextbox", 0, "Sort_Order", 17, 360, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 87, "27", "23", "RsLabel", 0, "", 17, 6, 25, 58, 18, "Point Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 87, "28", "23", "RsLabel", 0, "", 17, 319, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 87, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 87, "30", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 87, "31", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 87, "32", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 87, "33", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 87, "34", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Point_Type_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -1240,18 +1050,18 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_Process_Variable_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(31, "Process Variable Masters", "Process Variable Masters", 1, 26, 1, 13, 50, 50)
+        oProcessStep = AddProcessStep(31, "Process Variable Masters", "Process Variable Masters", 1, 26, 1, 9, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.Process_Variable_Master/ADM_Process_Variable_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 90, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,101,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 90, "2", "1", "RsGridColumn", 0, "Process_Variable_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 90, "3", "1", "RsGridColumn", 0, "Process_Variable", 0, 0, 0, 250, 0, "Process Variable", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 90, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 90, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 90, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 90, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 90, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 90, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 90, "2", "1", "RsGridColumn", 0, "Process_Variable_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 90, "3", "1", "RsGridColumn", 0, "Process_Variable", 0, 0, 0, 250, 0, "Process Variable", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 90, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 90, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 90, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 90, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 90, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 90, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 90, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Process Variable Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 90, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,101,Rows")
         oProcessStep.AddCustomLayout(1, 90, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
@@ -1266,18 +1076,17 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 90, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 90, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 90, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 90, "24", "23", "RsTextbox", 0, "Process_Variable", 19, 98, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 90, "25", "23", "RsCheckbox", 0, "Deleted", 19, 569, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 90, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 381, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 90, "27", "23", "RsLabel", 0, "", 19, 9, 25, 83, 18, "Process Variable:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 90, "28", "23", "RsLabel", 0, "", 19, 334, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 90, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Process_Variable_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 90, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 486, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 90, "31", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 90, "32", "0", "RsActionButton", 0, "", 547, 483, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 90, "33", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 90, "34", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 90, "35", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Process_Variable_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 90, "24", "23", "RsTextbox", 0, "Process_Variable", 17, 102, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 90, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 90, "26", "23", "RsTextbox", 0, "Sort_Order", 17, 392, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 90, "27", "23", "RsLabel", 0, "", 17, 6, 20, 90, 18, "Process Variable:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 90, "28", "23", "RsLabel", 0, "", 17, 351, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 90, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 90, "30", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 90, "31", "0", "RsActionButton", 0, "", 547, 483, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 90, "32", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 90, "33", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 90, "34", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Process_Variable_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -1289,50 +1098,49 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_Parts_Accessory_Mapping_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(36, "Parts Accessory Mapping Masters", "Parts Accessory Mapping Masters", 1, 26, 1, 14, 50, 50)
+        oProcessStep = AddProcessStep(36, "Parts Accessory Mapping Masters", "Parts Accessory Mapping Masters", 1, 26, 1, 10, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.Parts_Accessory_Mapping_Master/ADM_Parts_Accessory_Mapping_Master")
         oProcessStep.AddLayout(1, 11, "")
-        oProcessStep.AddCustomLayout(1, 78, "1", "0", "RsGrid", 0, "", 50, 12, 492, 1005, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,92,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 78, "2", "1", "RsGridColumn", 0, "Parts_Accessory_Mapping_Master_Id", 0, 0, 0, 100, 0, "PKID", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 78, "3", "1", "RsGridColumn", 0, "Parts_Master_ID_Ref", 0, 0, 0, 150, 0, "Parts Master ID Reference", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 78, "4", "1", "RsGridColumn", 0, "Accessory", 0, 0, 0, 75, 0, "Accessory", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 78, "5", "1", "RsGridColumn", 0, "Accessory_Qty", 0, 0, 0, 75, 0, "Qty", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 78, "6", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 78, "7", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 78, "8", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 78, "9", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 78, "10", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 78, "11", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 78, "1", "0", "RsGrid", 0, "", 50, 12, 492, 1050, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,92,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
+        oProcessStep.AddCustomLayout(1, 78, "2", "1", "RsGridColumn", 0, "Parts_Accessory_Mapping_Master_Id", 0, 0, 0, 100, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 78, "3", "1", "RsGridColumn", 0, "Parts_Master_ID_Ref", 0, 0, 0, 90, 0, "Parts Master ID Reference", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 78, "4", "1", "RsGridColumn", 0, "Accessory", 0, 0, 0, 160, 0, "Accessory", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 78, "5", "1", "RsGridColumn", 0, "Accessory_Qty", 0, 0, 0, 75, 0, "Qty", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 78, "6", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 78, "7", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 78, "8", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 78, "9", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 78, "10", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 78, "11", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 78, "12", "0", "RsLabel", 0, "", 0, 14, 37, 320, 1, "Parts Accessory Mapping Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 78, "13", "0", "RsSubForm", 0, "", 582, 0, 247, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,92,Rows")
-        oProcessStep.AddCustomLayout(1, 78, "14", "13", "RsGroupBox", 0, "", 134, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 78, "15", "14", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 78, "16", "14", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 78, "17", "14", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 78, "18", "14", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 78, "19", "14", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 78, "20", "14", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 78, "21", "14", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 78, "22", "14", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 78, "23", "14", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 78, "24", "14", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 78, "25", "13", "RsGroupBox", 0, "", 29, 18, 87, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 78, "26", "25", "RsTextbox", 0, "Accessory", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 78, "27", "25", "RsCheckbox", 0, "Deleted", 19, 553, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 78, "28", "25", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 78, "29", "25", "RsLabel", 0, "", 19, 6, 25, 61, 18, "Accessory:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 78, "30", "25", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 78, "31", "25", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Parts_Accessory_Mapping_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 78, "32", "25", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 78, "33", "25", "RsTextbox", 0, "Parts_Master_ID_Ref", 45, 389, 20, 243, 22, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 78, "34", "25", "RsTextbox", 0, "Accessory_Qty", 45, 73, 20, 243, 23, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 78, "35", "25", "RsLabel", 0, "", 45, 322, 25, 61, 24, "Parts Master ID Ref:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 78, "36", "25", "RsLabel", 0, "", 45, 6, 25, 61, 25, "Accessory Quantity:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 78, "37", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 26, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 78, "38", "0", "RsActionButton", 0, "", 549, 453, 27, 98, 27, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 78, "39", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 28, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 78, "40", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 29, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 78, "41", "0", "RsActionButton", 0, "", 549, 783, 27, 119, 30, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Parts_Accessory_Mapping_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 78, "14", "13", "RsGroupBox", 0, "", 29, 18, 87, 893, 3, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 78, "15", "14", "RsLabel", 0, "", 19, 6, 25, 61, 4, "Accessory:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 78, "16", "14", "RsLabel", 0, "", 17, 400, 25, 38, 5, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 78, "17", "14", "RsComboBox", 0, "Accessory", 17, 73, 20, 243, 6, "", 2, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 78, "18", "14", "RsTextbox", 0, "Accessory_Qty", 45, 73, 20, 243, 7, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 78, "19", "14", "RsTextbox", 0, "Sort_Order", 17, 444, 20, 89, 8, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 78, "20", "14", "RsLabel", 0, "", 45, 322, 25, 116, 9, "Parts Master ID Ref:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 78, "21", "14", "RsTextbox", 0, "Parts_Master_ID_Ref", 45, 444, 20, 243, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 78, "22", "14", "RsLabel", 0, "", 45, 6, 25, 61, 11, "Accessory Quantity:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 78, "23", "14", "RsCheckbox", 0, "Is_Active", 17, 567, 18, 77, 12, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 78, "24", "14", "RsCheckbox", 0, "Deleted", 17, 656, 18, 69, 13, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 78, "25", "13", "RsGroupBox", 0, "", 134, 18, 94, 894, 14, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 78, "26", "25", "RsLabel", 0, "", 19, 9, 25, 41, 15, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 78, "27", "25", "RsLabel", 0, "", 51, 401, 21, 101, 16, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 78, "28", "25", "RsLabel", 0, "", 20, 408, 21, 94, 17, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 78, "29", "25", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 18, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 78, "30", "25", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 19, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 78, "31", "25", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 20, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 78, "32", "25", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 21, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 78, "33", "25", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 22, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 78, "34", "25", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 23, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 78, "35", "25", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 24, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 78, "36", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 25, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 78, "37", "0", "RsActionButton", 0, "", 549, 453, 27, 98, 26, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 78, "38", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 27, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 78, "39", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 28, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 78, "40", "0", "RsActionButton", 0, "", 549, 783, 27, 119, 29, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Parts_Accessory_Mapping_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -1344,26 +1152,26 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_Standard_Wiring_Detail_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(37, "Standard Wiring Detail Masters", "Standard Wiring Detail Masters", 1, 26, 1, 15, 50, 50)
+        oProcessStep = AddProcessStep(37, "Standard Wiring Detail Masters", "Standard Wiring Detail Masters", 1, 26, 1, 11, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.Std_Wiring_Detail_Master/ADM_Std_Wiring_Detail_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 75, "1", "0", "RsGrid", 0, "", 50, 12, 492, 1642, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,90,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 75, "2", "1", "RsGridColumn", 0, "Std_Wiring_Detail_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "3", "1", "RsGridColumn", 0, "Std_Wiring_Detail_Master_Id_String", 0, 0, 0, 60, 0, "Wiring ID", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "4", "1", "RsGridColumn", 0, "Wiring_Std_Detail_Description", 0, 0, 0, 250, 0, "Wiring Standard Detail Description", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "5", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "6", "1", "RsGridColumn", 0, "Point_Type", 0, 0, 0, 75, 0, "Point Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "7", "1", "RsGridColumn", 0, "Do_Type", 0, 0, 0, 75, 0, "Do Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "8", "1", "RsGridColumn", 0, "Wiring_Type", 0, 0, 0, 75, 0, "Wiring Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "9", "1", "RsGridColumn", 0, "No_Of_Terminals", 0, 0, 0, 75, 0, "# Terminals", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "10", "1", "RsGridColumn", 0, "Power_Supply", 0, 0, 0, 100, 0, "Power Supply", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "11", "1", "RsGridColumn", 0, "Wiring_Std_Detail_Dwg", 0, 0, 0, 140, 0, "Wiring Std. Detail Dwg", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "12", "1", "RsGridColumn", 0, "Resistor_Required", 0, 0, 0, 150, 0, "Resistor Required", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "13", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "14", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "15", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 100, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "16", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 75, "17", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 75, "2", "1", "RsGridColumn", 0, "Std_Wiring_Detail_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "3", "1", "RsGridColumn", 0, "Std_Wiring_Detail_Master_Id_String", 0, 0, 0, 60, 0, "Wiring ID", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "4", "1", "RsGridColumn", 0, "Wiring_Std_Detail_Description", 0, 0, 0, 250, 0, "Wiring Standard Detail Description", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "5", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "6", "1", "RsGridColumn", 0, "Point_Type", 0, 0, 0, 75, 0, "Point Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "7", "1", "RsGridColumn", 0, "Do_Type", 0, 0, 0, 75, 0, "Do Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "8", "1", "RsGridColumn", 0, "Wiring_Type", 0, 0, 0, 75, 0, "Wiring Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "9", "1", "RsGridColumn", 0, "No_Of_Terminals", 0, 0, 0, 75, 0, "# Terminals", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "10", "1", "RsGridColumn", 0, "Power_Supply", 0, 0, 0, 100, 0, "Power Supply", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "11", "1", "RsGridColumn", 0, "Wiring_Std_Detail_Dwg", 0, 0, 0, 140, 0, "Wiring Std. Detail Dwg", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "12", "1", "RsGridColumn", 0, "Resistor_Required", 0, 0, 0, 150, 0, "Resistor Required", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "13", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 75, "14", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "15", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 100, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 75, "16", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 75, "17", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 75, "18", "0", "RsLabel", 0, "", 0, 14, 37, 320, 1, "Standard Wiring Detail Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 75, "19", "0", "RsSubForm", 0, "", 576, 0, 300, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,90,Rows")
         oProcessStep.AddCustomLayout(1, 75, "20", "19", "RsGroupBox", 0, "", 203, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
@@ -1382,14 +1190,14 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 75, "33", "31", "RsLabel", 0, "", 47, 359, 25, 95, 16, "Do Type", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 75, "34", "31", "RsLabel", 0, "", 73, 359, 25, 95, 17, "Number of Terminals", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 75, "35", "31", "RsTextbox", 0, "Wiring_Std_Detail_Description", 19, 110, 20, 243, 18, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 75, "36", "31", "RsTextbox", 0, "Sort_Order", 19, 386, 20, 89, 19, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 75, "37", "31", "RsCheckbox", 0, "Deleted", 19, 588, 18, 69, 20, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 75, "36", "31", "RsTextbox", 0, "Sort_Order", 19, 460, 20, 89, 19, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 75, "37", "31", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 20, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
         oProcessStep.AddCustomLayout(1, 75, "38", "31", "RsLabel", 0, "", 19, 9, 25, 95, 21, "Wiring Standard Detail Description:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 75, "39", "31", "RsLabel", 0, "", 19, 339, 25, 41, 22, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 75, "40", "31", "RsActionButton", 0, "", 19, 765, 34, 120, 23, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Std_Wiring_Detail_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 75, "41", "31", "RsTextbox", 0, "Wiring_Std_Detail_Dwg", 127, 110, 20, 243, 24, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 75, "42", "31", "RsTextbox", 0, "Resistor_Required", 101, 460, 20, 243, 25, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 75, "43", "31", "RsCheckbox", 0, "Is_Active", 19, 493, 18, 77, 26, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 75, "39", "31", "RsLabel", 0, "", 19, 419, 20, 35, 22, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 75, "40", "31", "RsComboBox", 0, "Resistor_Required", 99, 460, 20, 243, 23, "", 2, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 75, "41", "31", "RsComboBox", 0, "Point_Type", 45, 110, 20, 243, 24, "", 2, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 75, "42", "31", "RsTextbox", 0, "Wiring_Std_Detail_Dwg", 127, 110, 20, 243, 25, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 75, "43", "31", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 26, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
         oProcessStep.AddCustomLayout(1, 75, "44", "31", "RsLabel", 0, "", 127, 9, 25, 95, 27, "Wiring Standard Detail Drawing", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 75, "45", "31", "RsTextbox", 0, "No_Of_Terminals", 73, 460, 20, 243, 28, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
         oProcessStep.AddCustomLayout(1, 75, "46", "31", "RsTextbox", 0, "Power_Supply", 101, 110, 20, 243, 29, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
@@ -1398,61 +1206,11 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 75, "49", "31", "RsLabel", 0, "", 73, 9, 25, 95, 32, "Wiring Type", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 75, "50", "31", "RsTextbox", 0, "Wiring_Type", 73, 110, 20, 243, 33, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
         oProcessStep.AddCustomLayout(1, 75, "51", "31", "RsLabel", 0, "", 47, 9, 25, 95, 34, "Point Type", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 75, "52", "31", "RsTextbox", 0, "Point_Type", 47, 110, 20, 243, 35, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 75, "53", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 36, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 75, "54", "0", "RsActionButton", 0, "", 547, 422, 27, 98, 37, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 75, "55", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 38, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 75, "56", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 39, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 75, "57", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 40, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Std_Wiring_Detail_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        
-        End Sub
-      
-        '*****************************************************************************
-        '   Copyright (C) 2024 Siemens. All rights reserved.
-        '
-        '   Do not modify this procedure. Changes may render this application
-        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
-        '*****************************************************************************
-        Private Sub Initialize_Process_DefaultProcess_Standards_Masters()
-        Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(48, "Standards Masters", "Standards Masters", 1, 26, 1, 16, 50, 50)
-        oProcessStep.AddPath("ADM_Data_Master_App.Standards_Master/ADM_Standards_Master")
-        oProcessStep.AddLayout(1, 11, "")
-        oProcessStep.AddCustomLayout(1, 108, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,121,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 108, "2", "1", "RsGridColumn", 0, "Standards_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 108, "3", "1", "RsGridColumn", 0, "Standards", 0, 0, 0, 250, 0, "Standards", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 108, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 108, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 108, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 108, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 108, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 108, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 108, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Standards Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 108, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,121,Rows")
-        oProcessStep.AddCustomLayout(1, 108, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 108, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 108, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 108, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 108, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 108, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 108, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 108, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 108, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 108, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
-        oProcessStep.AddCustomLayout(1, 108, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 108, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 108, "24", "23", "RsTextbox", 0, "Standards", 19, 73, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 108, "25", "23", "RsCheckbox", 0, "Deleted", 21, 551, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 108, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 108, "27", "23", "RsLabel", 0, "", 19, 9, 25, 58, 18, "Standards:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 108, "28", "23", "RsLabel", 0, "", 19, 302, 25, 41, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 108, "29", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 20, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Standards_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 108, "30", "23", "RsCheckbox", 0, "Is_Active", 19, 456, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 108, "31", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 22, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 108, "32", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 23, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 108, "33", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 24, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 108, "34", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 25, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 108, "35", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 26, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Standards_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 75, "52", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 35, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 75, "53", "0", "RsActionButton", 0, "", 547, 422, 27, 98, 36, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 75, "54", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 37, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 75, "55", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 38, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 75, "56", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 39, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Std_Wiring_Detail_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -1464,18 +1222,18 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_Signal_Type_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(28, "Signal Type Masters", "", 1, 26, 1, 17, 50, 50)
+        oProcessStep = AddProcessStep(28, "Signal Type Masters", "", 1, 26, 1, 12, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.Signal_Type_Master/ADM_Signal_Type_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 60, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,81,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
-        oProcessStep.AddCustomLayout(1, 60, "2", "1", "RsGridColumn", 0, "Signal_Type_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 60, "3", "1", "RsGridColumn", 0, "Signal_Type", 0, 0, 0, 250, 0, "Signal Type Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 60, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 60, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Is_Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 60, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 60, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 60, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 50, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
-        oProcessStep.AddCustomLayout(1, 60, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 50, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:False;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 60, "2", "1", "RsGridColumn", 0, "Signal_Type_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 60, "3", "1", "RsGridColumn", 0, "Signal_Type", 0, 0, 0, 250, 0, "Signal Type Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 60, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 60, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 60, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 60, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 60, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 60, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
         oProcessStep.AddCustomLayout(1, 60, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Signal Type Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 60, "11", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 2, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 60, "12", "0", "RsActionButton", 0, "", 547, 423, 27, 98, 3, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
@@ -1492,15 +1250,15 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 60, "23", "14", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 14, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 60, "24", "14", "RsLabel", 0, "", 20, 408, 21, 94, 15, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 60, "25", "13", "RsGroupBox", 0, "", 26, 3, 63, 893, 16, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 60, "26", "25", "RsTextbox", 0, "Signal_Type", 19, 73, 20, 243, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 60, "27", "25", "RsTextbox", 0, "Sort_Order", 14, 371, 20, 99, 18, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 60, "28", "25", "RsLabel", 0, "", 14, 29, 39, 38, 19, "Signal Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 60, "29", "25", "RsLabel", 0, "", 14, 334, 25, 31, 20, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 60, "30", "25", "RsActionButton", 0, "", 19, 765, 34, 120, 21, "Save Selected", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Signal_Type_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 60, "31", "25", "RsCheckbox", 0, "Is_Active", 14, 487, 18, 77, 22, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 60, "26", "25", "RsTextbox", 0, "Signal_Type", 19, 82, 20, 243, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 60, "27", "25", "RsTextbox", 0, "Sort_Order", 19, 372, 20, 99, 18, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 60, "28", "25", "RsLabel", 0, "", 19, 6, 20, 70, 19, "Signal Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 60, "29", "25", "RsLabel", 0, "", 19, 331, 20, 35, 20, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 60, "30", "25", "RsCheckbox", 0, "Is_Active", 19, 556, 18, 77, 21, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 60, "31", "25", "RsCheckbox", 0, "Deleted", 19, 645, 18, 69, 22, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
         oProcessStep.AddCustomLayout(1, 60, "32", "0", "RsActionButton", 0, "", 547, 573, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         oProcessStep.AddCustomLayout(1, 60, "33", "0", "RsActionButton", 0, "", 547, 654, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 60, "34", "0", "RsActionButton", 0, "", 547, 780, 27, 119, 25, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Signal_Type_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 60, "34", "0", "RsActionButton", 0, "", 547, 780, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Signal_Type_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -1512,18 +1270,18 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_Voltage_Masters()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(23, "Voltage Masters", "Voltage Masters", 1, 26, 1, 18, 50, 50)
+        oProcessStep = AddProcessStep(23, "Voltage Masters", "Voltage Masters", 1, 26, 1, 13, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.Voltage_Master/ADM_Voltage_Master")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 51, "1", "0", "RsGrid", 0, "", 59, 22, 492, 886, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,70,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
         oProcessStep.AddCustomLayout(1, 51, "2", "1", "RsGridColumn", 0, "Voltage_Master_ID", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 51, "3", "1", "RsGridColumn", 0, "Voltage", 0, 0, 0, 250, 0, "Voltage", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 51, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 100, 0, "Sort_Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 51, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 50, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 51, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified_By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 51, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified_On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 51, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 50, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
-        oProcessStep.AddCustomLayout(1, 51, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 50, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 51, "3", "1", "RsGridColumn", 0, "Voltage", 0, 0, 0, 150, 0, "Voltage", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 51, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 100, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 51, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 70, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 51, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 51, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 51, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 51, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
         oProcessStep.AddCustomLayout(1, 51, "10", "0", "RsLabel", 0, "", 9, 24, 37, 297, 1, "Voltage Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 51, "11", "0", "RsSubForm", 0, "", 585, 10, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,70,Rows")
         oProcessStep.AddCustomLayout(1, 51, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
@@ -1538,16 +1296,17 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 51, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
         oProcessStep.AddCustomLayout(1, 51, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
         oProcessStep.AddCustomLayout(1, 51, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 51, "24", "23", "RsTextbox", 0, "Voltage", 19, 73, 20, 214, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 51, "25", "23", "RsTextbox", 0, "Sort_Order", 19, 349, 20, 214, 16, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 51, "26", "23", "RsLabel", 0, "", 19, 9, 25, 58, 17, "Voltage:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 51, "27", "23", "RsLabel", 0, "", 19, 302, 25, 41, 18, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 51, "28", "23", "RsActionButton", 0, "", 19, 765, 34, 120, 19, "Save Selected Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:Is_Dirty;FunctionToCall:ADM_Voltage_Master_Save;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 51, "29", "0", "RsLabel", 0, "Row_DBKeys", 554, 24, 21, 150, 20, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 51, "30", "0", "RsActionButton", 0, "", 557, 446, 27, 98, 21, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 51, "31", "0", "RsActionButton", 0, "", 557, 580, 23, 75, 22, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 51, "32", "0", "RsActionButton", 0, "", 557, 661, 23, 75, 23, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
-        oProcessStep.AddCustomLayout(1, 51, "33", "0", "RsActionButton", 0, "", 557, 776, 27, 119, 24, "Save Changed Row(s)", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Voltage_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 51, "24", "23", "RsTextbox", 0, "Voltage", 19, 67, 20, 214, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 51, "25", "23", "RsTextbox", 0, "Sort_Order", 19, 328, 20, 100, 16, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 51, "26", "23", "RsLabel", 0, "", 19, 6, 20, 55, 17, "Voltage:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 51, "27", "23", "RsLabel", 0, "", 19, 287, 20, 35, 18, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 51, "28", "23", "RsCheckbox", 0, "Is_Active", 19, 550, 18, 77, 19, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 51, "29", "23", "RsCheckbox", 0, "Deleted", 19, 639, 18, 69, 20, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 51, "30", "0", "RsLabel", 0, "Row_DBKeys", 554, 24, 21, 150, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 51, "31", "0", "RsActionButton", 0, "", 557, 446, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 51, "32", "0", "RsActionButton", 0, "", 557, 580, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 51, "33", "0", "RsActionButton", 0, "", 557, 661, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 51, "34", "0", "RsActionButton", 0, "", 557, 776, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Voltage_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
         
         End Sub
       
@@ -1559,7 +1318,7 @@ Option Infer On
         '*****************************************************************************
         Private Sub Initialize_Process_DefaultProcess_RSXLI_PLI_Search_Data()
         Dim oProcessStep As ProcessStep = Nothing
-        oProcessStep = AddProcessStep(43, "RSXLI_PLI_Search_Data", "", 1, 26, 1, 19, 50, 50)
+        oProcessStep = AddProcessStep(43, "RSXLI_PLI_Search_Data", "", 1, 26, 1, 14, 50, 50)
         oProcessStep.AddPath("ADM_Data_Master_App.RSXLI_PLI_Search_Data/RSXLI_PLI_Search_Data")
         oProcessStep.AddLayout(1, 11, "")
         oProcessStep.AddCustomLayout(1, 98, "1", "0", "RsGrid", 0, "", 47, 3, 506, 1313, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,113,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
@@ -1611,6 +1370,246 @@ Option Infer On
         
         End Sub
       
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
+        Private Sub Initialize_Process_DefaultProcess_Application_Masters()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(44, "Application Masters", "Application Masters", 3, 26, 1, 15, 50, 50)
+        oProcessStep.AddPath("ADM_Data_Master_App.Application_Master/ADM_Application_Master")
+        oProcessStep.AddLayout(1, 11, "")
+        oProcessStep.AddCustomLayout(1, 114, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,125,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
+        oProcessStep.AddCustomLayout(1, 114, "2", "1", "RsGridColumn", 0, "Application_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 114, "3", "1", "RsGridColumn", 0, "Application_Name", 0, 0, 0, 250, 0, "Application Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 114, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 114, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 114, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 114, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 114, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 114, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 114, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Application Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 114, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,125,Rows")
+        oProcessStep.AddCustomLayout(1, 114, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 114, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 114, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 114, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 114, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 114, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 114, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 114, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 114, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 114, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 114, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 114, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 114, "24", "23", "RsTextbox", 0, "Application_Name", 19, 112, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 114, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 114, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 402, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 114, "27", "23", "RsLabel", 0, "", 19, 6, 20, 100, 18, "Application Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 114, "28", "23", "RsLabel", 0, "", 19, 361, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 114, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 114, "30", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 114, "31", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 114, "32", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 114, "33", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 114, "34", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Application_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        
+        End Sub
+      
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
+        Private Sub Initialize_Process_DefaultProcess_Device_Type_Masters()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(45, "Device Type Masters", "Device Type Masters", 3, 26, 1, 16, 50, 50)
+        oProcessStep.AddPath("ADM_Data_Master_App.Device_Type_Master/ADM_Device_Type_Master")
+        oProcessStep.AddLayout(1, 11, "")
+        oProcessStep.AddCustomLayout(1, 111, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,123,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
+        oProcessStep.AddCustomLayout(1, 111, "2", "1", "RsGridColumn", 0, "Device_Type_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 111, "3", "1", "RsGridColumn", 0, "Device_Type", 0, 0, 0, 250, 0, "Device Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 111, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 111, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 111, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 111, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 111, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 111, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 111, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Device Type Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 111, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,123,Rows")
+        oProcessStep.AddCustomLayout(1, 111, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 111, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 111, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 111, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 111, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 111, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 111, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 111, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 111, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 111, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 111, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 111, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 111, "24", "23", "RsTextbox", 0, "Device_Type", 19, 95, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 111, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 111, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 385, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 111, "27", "23", "RsLabel", 0, "", 19, 6, 20, 83, 18, "Device Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 111, "28", "23", "RsLabel", 0, "", 19, 344, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 111, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 111, "30", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 111, "31", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 111, "32", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 111, "33", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 111, "34", "0", "RsActionButton", 0, "", 547, 784, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Device_Type_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        
+        End Sub
+      
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
+        Private Sub Initialize_Process_DefaultProcess_Parameter_Name_Masters()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(46, "Parameter Name Masters", "Parameter Name Masters", 3, 26, 1, 17, 50, 50)
+        oProcessStep.AddPath("ADM_Data_Master_App.Parameter_Name_Master/ADM_Parameter_Name_Master")
+        oProcessStep.AddLayout(1, 11, "")
+        oProcessStep.AddCustomLayout(1, 102, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,117,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
+        oProcessStep.AddCustomLayout(1, 102, "2", "1", "RsGridColumn", 0, "Parameter_Name_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 102, "3", "1", "RsGridColumn", 0, "Parameter_Name_Master", 0, 0, 0, 250, 0, "Parameter Name", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 102, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 102, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 102, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 102, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 102, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 102, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 102, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Parameter Name Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 102, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,117,Rows")
+        oProcessStep.AddCustomLayout(1, 102, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 102, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 102, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 102, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 102, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 102, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 102, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 102, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 102, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 102, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 102, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 102, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 102, "24", "23", "RsTextbox", 0, "Parameter_Name_Master", 17, 112, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 102, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 102, "26", "23", "RsTextbox", 0, "Sort_Order", 17, 402, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 102, "27", "23", "RsLabel", 0, "", 17, 6, 20, 100, 18, "Parameter Name:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 102, "28", "23", "RsLabel", 0, "", 17, 361, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 102, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 102, "30", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 102, "31", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 102, "32", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 102, "33", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 102, "34", "0", "RsActionButton", 0, "", 547, 784, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Parameter_Name_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        
+        End Sub
+      
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
+        Private Sub Initialize_Process_DefaultProcess_Part_Type_Masters()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(47, "Part Type Masters", "Part Type Masters", 3, 26, 1, 18, 50, 50)
+        oProcessStep.AddPath("ADM_Data_Master_App.Part_Type_Master/ADM_Part_Type_Master")
+        oProcessStep.AddLayout(1, 11, "")
+        oProcessStep.AddCustomLayout(1, 105, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,119,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
+        oProcessStep.AddCustomLayout(1, 105, "2", "1", "RsGridColumn", 0, "Part_Type_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 105, "3", "1", "RsGridColumn", 0, "Part_Type", 0, 0, 0, 250, 0, "Part Type", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 105, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 105, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 105, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 105, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 105, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 105, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 105, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Part Type Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 105, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,119,Rows")
+        oProcessStep.AddCustomLayout(1, 105, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 105, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 105, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 105, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 105, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 105, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 105, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 105, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 105, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 105, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 105, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 105, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 105, "24", "23", "RsTextbox", 0, "Part_Type", 17, 72, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 105, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 105, "26", "23", "RsTextbox", 0, "Sort_Order", 17, 364, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 105, "27", "23", "RsLabel", 0, "", 17, 6, 20, 60, 18, "Part Type:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 105, "28", "23", "RsLabel", 0, "", 17, 321, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 105, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 105, "30", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 105, "31", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 105, "32", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 105, "33", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 105, "34", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Part_Type_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        
+        End Sub
+      
+        '*****************************************************************************
+        '   Copyright (C) 2024 Siemens. All rights reserved.
+        '
+        '   Do not modify this procedure. Changes may render this application
+        '   inoperable and will not be supported by Siemens Product Lifecycle Management Software Inc.
+        '*****************************************************************************
+        Private Sub Initialize_Process_DefaultProcess_Standards_Masters()
+        Dim oProcessStep As ProcessStep = Nothing
+        oProcessStep = AddProcessStep(48, "Standards Masters", "Standards Masters", 3, 26, 1, 19, 50, 50)
+        oProcessStep.AddPath("ADM_Data_Master_App.Standards_Master/ADM_Standards_Master")
+        oProcessStep.AddLayout(1, 11, "")
+        oProcessStep.AddCustomLayout(1, 108, "1", "0", "RsGrid", 0, "", 50, 12, 492, 920, 0, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:S,121,Rows;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True;SelectedPartPropertyName:Selected_Row")
+        oProcessStep.AddCustomLayout(1, 108, "2", "1", "RsGridColumn", 0, "Standards_Master_Id", 0, 0, 0, 50, 0, "ID (PK)", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 108, "3", "1", "RsGridColumn", 0, "Standards", 0, 0, 0, 250, 0, "Standards", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 108, "4", "1", "RsGridColumn", 0, "Sort_Order", 0, 0, 0, 70, 0, "Sort Order", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 108, "5", "1", "RsGridColumn", 0, "Is_Active", 0, 0, 0, 60, 0, "Active", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 108, "6", "1", "RsGridColumn", 0, "Modified_By", 0, 0, 0, 150, 0, "Modified By", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 108, "7", "1", "RsGridColumn", 0, "Modified_On", 0, 0, 0, 150, 0, "Modified On", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:True")
+        oProcessStep.AddCustomLayout(1, 108, "8", "1", "RsGridColumn", 0, "Is_Dirty", 0, 0, 0, 70, 0, "Edited", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 108, "9", "1", "RsGridColumn", 0, "Deleted", 0, 0, 0, 70, 0, "Deleted", 0, 0, 0, 5, 0, "", "", "AllowRowFiltering:True;HeaderProperty:;WordWrap:False")
+        oProcessStep.AddCustomLayout(1, 108, "10", "0", "RsLabel", 0, "", 0, 14, 37, 297, 1, "Standards Master", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.16;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 108, "11", "0", "RsSubForm", 0, "", 576, 0, 253, 932, 2, "", 0, 0, 0, 5, 0, "", "", "SubpartConnection:S,121,Rows")
+        oProcessStep.AddCustomLayout(1, 108, "12", "11", "RsGroupBox", 0, "", 98, 18, 94, 894, 3, "Audit / Info", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 108, "13", "12", "RsCheckbox", 0, "Is_New", 47, 190, 18, 126, 4, "Is_New (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 108, "14", "12", "RsTextbox", 0, "Data_Hash", 19, 56, 19, 214, 5, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 108, "15", "12", "RsLabel", 0, "", 19, 9, 25, 41, 6, "Hash:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 108, "16", "12", "RsLabel", 0, "", 51, 401, 21, 101, 7, "Modified By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 108, "17", "12", "RsCheckbox", 0, "Is_Dirty", 47, 56, 18, 128, 8, "Is_Dirty (delete me)", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 108, "18", "12", "RsTextbox", 0, "Modified_On", 47, 675, 20, 209, 9, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 108, "19", "12", "RsTextbox", 0, "Created_On", 20, 675, 20, 209, 10, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 108, "20", "12", "RsTextbox", 0, "Created_By", 21, 508, 20, 161, 11, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 108, "21", "12", "RsTextbox", 0, "Modified_By", 47, 508, 20, 161, 12, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:True;")
+        oProcessStep.AddCustomLayout(1, 108, "22", "12", "RsLabel", 0, "", 20, 408, 21, 94, 13, "Created By:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 108, "23", "11", "RsGroupBox", 0, "", 29, 18, 63, 893, 14, "Data", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 108, "24", "23", "RsTextbox", 0, "Standards", 19, 72, 20, 243, 15, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 108, "25", "23", "RsCheckbox", 0, "Deleted", 19, 656, 18, 69, 16, "Deleted", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 108, "26", "23", "RsTextbox", 0, "Sort_Order", 19, 362, 20, 89, 17, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 108, "27", "23", "RsLabel", 0, "", 19, 6, 20, 60, 18, "Standards:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 108, "28", "23", "RsLabel", 0, "", 19, 321, 20, 35, 19, "Sort:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 108, "29", "23", "RsCheckbox", 0, "Is_Active", 19, 567, 18, 77, 20, "Is_Active", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 108, "30", "0", "RsLabel", 0, "Row_DBKeys", 549, 14, 16, 96, 21, "", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 108, "31", "0", "RsActionButton", 0, "", 547, 453, 27, 98, 22, "Refresh", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_LoadFromDB;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 108, "32", "0", "RsActionButton", 0, "", 547, 587, 23, 75, 23, "Add Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Add;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 108, "33", "0", "RsActionButton", 0, "", 547, 668, 23, 75, 24, "Delete Row", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:Adm_Master_Row_Delete;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        oProcessStep.AddCustomLayout(1, 108, "34", "0", "RsActionButton", 0, "", 547, 783, 27, 119, 25, "Save", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:3;Enabled:;FunctionToCall:ADM_Standards_Master_Save_Changed;ActionButtonBehavior:0;ImmediateReturnMessageTitle:;ImmediateReturnMessageText:;")
+        
+        End Sub
+      
 
     '*****************************************************************************
     '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -1622,6 +1621,9 @@ Option Infer On
     Dim ctx as String
     ctx = ContextId
     
+            If Incontext("-1", ctx) Then
+          InitProperty("Testing_Mode", "1450", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601423", "7/13/2025 12:16:33 PM", "", "In Development",  0,2624)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -1912,51 +1914,6 @@ result = STATUS_ENABLED
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Process_DefaultProcess_Application_Masters_STATUS() as Integer 'Long
-      Dim Result as Integer = 0 'Long
-      Try
-      '   BEGIN FORMULA; PROC ID:44; TYPE:ST
-      ' Status Formula Result Constants
-' -------------------------------
-' STATUS_ENABLED = 0
-' STATUS_READONLY = 1
-' STATUS_COMPLETED = 2
-' STATUS_ATTENTION = 3
-' STATUS_HIDDEN = 4
-' STATUS_DISABLED = 5
-
-result = STATUS_ENABLED
-      '   END FORMULA; PROC ID:44; TYPE:ST
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Application_Masters_STATUS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Process_DefaultProcess_Application_Masters_COMMENT() as String
-      Dim Result as String = ""
-      Try
-      '   BEGIN FORMULA; PROC ID:44; TYPE:CO
-      result = String.Empty
-      '   END FORMULA; PROC ID:44; TYPE:CO
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Application_Masters_COMMENT", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Process_DefaultProcess_Controller_Family_Masters_STATUS() as Integer 'Long
       Dim Result as Integer = 0 'Long
       Try
@@ -2127,141 +2084,6 @@ result = STATUS_ENABLED
       '   END FORMULA; PROC ID:34; TYPE:CO
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_CPU_IO_Masters_COMMENT", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Process_DefaultProcess_Device_Type_Masters_STATUS() as Integer 'Long
-      Dim Result as Integer = 0 'Long
-      Try
-      '   BEGIN FORMULA; PROC ID:45; TYPE:ST
-      ' Status Formula Result Constants
-' -------------------------------
-' STATUS_ENABLED = 0
-' STATUS_READONLY = 1
-' STATUS_COMPLETED = 2
-' STATUS_ATTENTION = 3
-' STATUS_HIDDEN = 4
-' STATUS_DISABLED = 5
-
-result = STATUS_ENABLED
-      '   END FORMULA; PROC ID:45; TYPE:ST
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Device_Type_Masters_STATUS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Process_DefaultProcess_Device_Type_Masters_COMMENT() as String
-      Dim Result as String = ""
-      Try
-      '   BEGIN FORMULA; PROC ID:45; TYPE:CO
-      result = String.Empty
-      '   END FORMULA; PROC ID:45; TYPE:CO
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Device_Type_Masters_COMMENT", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Process_DefaultProcess_Parameter_Name_Masters_STATUS() as Integer 'Long
-      Dim Result as Integer = 0 'Long
-      Try
-      '   BEGIN FORMULA; PROC ID:46; TYPE:ST
-      ' Status Formula Result Constants
-' -------------------------------
-' STATUS_ENABLED = 0
-' STATUS_READONLY = 1
-' STATUS_COMPLETED = 2
-' STATUS_ATTENTION = 3
-' STATUS_HIDDEN = 4
-' STATUS_DISABLED = 5
-
-result = STATUS_ENABLED
-      '   END FORMULA; PROC ID:46; TYPE:ST
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Parameter_Name_Masters_STATUS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Process_DefaultProcess_Parameter_Name_Masters_COMMENT() as String
-      Dim Result as String = ""
-      Try
-      '   BEGIN FORMULA; PROC ID:46; TYPE:CO
-      result = String.Empty
-      '   END FORMULA; PROC ID:46; TYPE:CO
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Parameter_Name_Masters_COMMENT", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Process_DefaultProcess_Part_Type_Masters_STATUS() as Integer 'Long
-      Dim Result as Integer = 0 'Long
-      Try
-      '   BEGIN FORMULA; PROC ID:47; TYPE:ST
-      ' Status Formula Result Constants
-' -------------------------------
-' STATUS_ENABLED = 0
-' STATUS_READONLY = 1
-' STATUS_COMPLETED = 2
-' STATUS_ATTENTION = 3
-' STATUS_HIDDEN = 4
-' STATUS_DISABLED = 5
-
-result = STATUS_ENABLED
-      '   END FORMULA; PROC ID:47; TYPE:ST
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Part_Type_Masters_STATUS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Process_DefaultProcess_Part_Type_Masters_COMMENT() as String
-      Dim Result as String = ""
-      Try
-      '   BEGIN FORMULA; PROC ID:47; TYPE:CO
-      result = String.Empty
-      '   END FORMULA; PROC ID:47; TYPE:CO
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Part_Type_Masters_COMMENT", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -2452,51 +2274,6 @@ result = STATUS_ENABLED
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Process_DefaultProcess_Standards_Masters_STATUS() as Integer 'Long
-      Dim Result as Integer = 0 'Long
-      Try
-      '   BEGIN FORMULA; PROC ID:48; TYPE:ST
-      ' Status Formula Result Constants
-' -------------------------------
-' STATUS_ENABLED = 0
-' STATUS_READONLY = 1
-' STATUS_COMPLETED = 2
-' STATUS_ATTENTION = 3
-' STATUS_HIDDEN = 4
-' STATUS_DISABLED = 5
-
-result = STATUS_ENABLED
-      '   END FORMULA; PROC ID:48; TYPE:ST
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Standards_Masters_STATUS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Process_DefaultProcess_Standards_Masters_COMMENT() as String
-      Dim Result as String = ""
-      Try
-      '   BEGIN FORMULA; PROC ID:48; TYPE:CO
-      result = String.Empty
-      '   END FORMULA; PROC ID:48; TYPE:CO
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Standards_Masters_COMMENT", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Process_DefaultProcess_Signal_Type_Masters_STATUS() as Integer 'Long
       Dim Result as Integer = 0 'Long
       Try
@@ -2625,6 +2402,292 @@ result = STATUS_ENABLED
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Application_Masters_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:44; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+If (Rootpart.Testing_Mode) Then
+	Result = STATUS_ENABLED
+Else
+	Result = STATUS_HIDDEN
+End If
+      '   END FORMULA; PROC ID:44; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Application_Masters_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Application_Masters_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:44; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:44; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Application_Masters_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Device_Type_Masters_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:45; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+If (Rootpart.Testing_Mode) Then
+	Result = STATUS_ENABLED
+Else
+	Result = STATUS_HIDDEN
+End If
+      '   END FORMULA; PROC ID:45; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Device_Type_Masters_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Device_Type_Masters_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:45; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:45; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Device_Type_Masters_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Parameter_Name_Masters_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:46; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+If (Rootpart.Testing_Mode) Then
+	Result = STATUS_ENABLED
+Else
+	Result = STATUS_HIDDEN
+End If
+      '   END FORMULA; PROC ID:46; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Parameter_Name_Masters_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Parameter_Name_Masters_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:46; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:46; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Parameter_Name_Masters_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Part_Type_Masters_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:47; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+If (Rootpart.Testing_Mode) Then
+	Result = STATUS_ENABLED
+Else
+	Result = STATUS_HIDDEN
+End If
+      '   END FORMULA; PROC ID:47; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Part_Type_Masters_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Part_Type_Masters_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:47; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:47; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Part_Type_Masters_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Standards_Masters_STATUS() as Integer 'Long
+      Dim Result as Integer = 0 'Long
+      Try
+      '   BEGIN FORMULA; PROC ID:48; TYPE:ST
+      ' Status Formula Result Constants
+' -------------------------------
+' STATUS_ENABLED = 0
+' STATUS_READONLY = 1
+' STATUS_COMPLETED = 2
+' STATUS_ATTENTION = 3
+' STATUS_HIDDEN = 4
+' STATUS_DISABLED = 5
+
+If (Rootpart.Testing_Mode) Then
+	Result = STATUS_ENABLED
+Else
+	Result = STATUS_HIDDEN
+End If
+      '   END FORMULA; PROC ID:48; TYPE:ST
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Standards_Masters_STATUS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Process_DefaultProcess_Standards_Masters_COMMENT() as String
+      Dim Result as String = ""
+      Try
+      '   BEGIN FORMULA; PROC ID:48; TYPE:CO
+      result = String.Empty
+      '   END FORMULA; PROC ID:48; TYPE:CO
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Process_DefaultProcess_Standards_Masters_COMMENT", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Testing_Mode() As Boolean
+          Dim Result as Boolean
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Testing_Mode").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1450; TYPE:PF
+      Result = False
+      '   END FORMULA; PROP ID:1450; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Data_Master_App.Formula_Testing_Mode", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Testing_Mode_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Testing_Mode_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************

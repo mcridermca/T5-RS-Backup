@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Std_Wiring_Detail_Master_Row
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -356,28 +356,32 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Std_Wiring_Detail_Master_Row", <a><![CDATA[ADM_Std_Wiring_Detail_Master_Row]]></a>.Value, 76, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "06/30/2025 00:10:28")
+    InitPart("ADM_Std_Wiring_Detail_Master_Row", <a><![CDATA[ADM_Std_Wiring_Detail_Master_Row]]></a>.Value, 76, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/20/2025 15:31:19")
     AddProperty("946", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:34:17 PM")
     AddProperty("947", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:34:38 PM")
     AddProperty("951", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:36:07 PM")
     AddProperty("952", "Is_New", <a><![CDATA[Is_New]]></a>.Value, "Is this a Dirty / Changed Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:36:44 PM")
     AddProperty("953", "Modified_By", <a><![CDATA[Modified_By]]></a>.Value, "User that modified the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:37:25 PM")
     AddProperty("954", "Modified_On", <a><![CDATA[Modified_On]]></a>.Value, "Date modified", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:37:43 PM")
-    AddProperty("949", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:35:32 PM")
+    AddProperty("949", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 12:18:44 PM")
     AddProperty("958", "Do_Type", <a><![CDATA[Do_Type]]></a>.Value, "Do Type", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:39:25 PM")
     AddProperty("950", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolete)", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:35:44 PM")
     AddProperty("960", "No_Of_Terminals", <a><![CDATA[No_Of_Terminals]]></a>.Value, "Number of Terminals", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:40:29 PM")
-    AddProperty("957", "Point_Type", <a><![CDATA[Point_Type]]></a>.Value, "Point Type", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:39:01 PM")
+    AddProperty("957", "Point_Type", <a><![CDATA[Point_Type]]></a>.Value, "Point Type", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/20/2025 3:31:08 PM")
     AddProperty("961", "Power_Supply", <a><![CDATA[Power_Supply]]></a>.Value, "Power Supply for Wiring", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:40:48 PM")
-    AddProperty("963", "Resistor_Required", <a><![CDATA[Resistor_Required]]></a>.Value, "Is Resistor Required", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:41:39 PM")
-    AddProperty("964", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:41:54 PM")
+    AddProperty("963", "Resistor_Required", <a><![CDATA[Resistor_Required]]></a>.Value, "Is Resistor Required", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/20/2025 3:31:19 PM")
+    AddProperty("964", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 3:05:02 AM")
     AddProperty("956", "Wiring_Std_Detail_Description", <a><![CDATA[Wiring_Std_Detail_Description]]></a>.Value, "Standard Wiring Detail Description", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:38:26 PM")
     AddProperty("962", "Wiring_Std_Detail_Dwg", <a><![CDATA[Wiring_Std_Detail_Dwg]]></a>.Value, "File Name of Wiring Drawing", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:41:21 PM")
     AddProperty("959", "Wiring_Type", <a><![CDATA[Wiring_Type]]></a>.Value, "Wiring Type", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:39:48 PM")
     AddProperty("955", "Std_Wiring_Detail_Master_Id", <a><![CDATA[Std_Wiring_Detail_Master_Id]]></a>.Value, "Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601423", "6/29/2025 1:02:41 PM")
     AddProperty("1179", "Std_Wiring_Detail_Master_Id_String", <a><![CDATA[Std_Wiring_Detail_Master_Id_String]]></a>.Value, "Primary Key", "String","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/30/2025 12:10:28 AM")
-    AddProperty("948", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:34:54 PM")
+    AddProperty("948", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 1:29:15 AM")
     AddProperty("941", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:32:43 PM")
+    
+      AddValidValue("Point_Type")
+    
+      AddValidValue("Resistor_Required")
     
       oSubpart = AddSubpart(91,"DbInfo", <a><![CDATA[DB Info Part Family]]></a>.Value, "FD", "Subpart for Database Information for this Part", "Master Audit", 9999, "", "GLOBAL\H601424", "6/27/2025 1:41:54 PM")
       
@@ -430,7 +434,7 @@ Option Infer On
           InitProperty("Modified_On", "879", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:37:43 PM", "Date modified", "In Development",  0,1861)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Deleted", "874", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:35:32 PM", "Deleted Flag", "In Development",  0,1856)
+          InitProperty("Deleted", "874", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 12:18:44 PM", "Deleted Flag", "In Development",  0,1856)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Do_Type", "883", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:39:25 PM", "Do Type", "In Development",  0,1865)
@@ -442,16 +446,16 @@ Option Infer On
           InitProperty("No_Of_Terminals", "885", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:40:29 PM", "Number of Terminals", "In Development",  0,1867)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Point_Type", "882", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:39:01 PM", "Point Type", "In Development",  0,1864)
+          InitProperty("Point_Type", "882", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/20/2025 3:31:08 PM", "Point Type", "In Development",  0,1864)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Power_Supply", "886", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:40:48 PM", "Power Supply for Wiring", "In Development",  0,1868)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Resistor_Required", "888", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:41:39 PM", "Is Resistor Required", "In Development",  0,1870)
+          InitProperty("Resistor_Required", "888", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/20/2025 3:31:19 PM", "Is Resistor Required", "In Development",  0,2918)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Sort_Order", "889", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:41:54 PM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,1871)
+          InitProperty("Sort_Order", "889", "0", "999", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/14/2025 3:05:02 AM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,1871)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Wiring_Std_Detail_Description", "881", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:38:26 PM", "Standard Wiring Detail Description", "In Development",  0,1863)
@@ -469,7 +473,7 @@ Option Infer On
           InitProperty("Std_Wiring_Detail_Master_Id_String", "1089", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "6/30/2025 12:10:10 AM", "", "In Development",  0,2086)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Data_Hash", "873", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 1:34:54 PM", "Hash of Master Data Fields", "In Development",  0,1855)
+          InitProperty("Data_Hash", "873", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 1:29:15 AM", "Hash of Master Data Fields", "In Development",  0,2634)
         End If
     End Sub
 
@@ -482,6 +486,14 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Point_Type_ValidValues", "882", "-1", 2630)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Resistor_Required_ValidValues", "888", "-1", 2913)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -868,7 +880,9 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:888; TYPE:PF
-      If Me.DBInfo.Quantity = 1 Then
+      Result = Me.ValidValues("Resistor_Required").FirstValue
+
+If Me.DBInfo.Quantity = 1 Then
 	Dim MyPropertyName As String  = Me.CurrentProperty.Name
 	Result = Me.DBInfo(1).Properties(MyPropertyName).DisplayValue
 End If
@@ -1064,8 +1078,16 @@ End If
       Result = ""
 
 For Each p As PropertySF In Me.properties
-	If P.CategoryName.Trim().ToLower() = "master data" Or P.CategoryName.Trim().ToLower() = "master data pk"Then
-		Result = Result & $"{P.Value}".Tolower() & ";"
+	'g_ObjectManager.LogInfo("ADM_Std_Wiring_Detail_Master_Row.Data_Hash", $"Property: <{p.Name}> ", , True)
+	
+	'If a property has ValidValues, it confuses the Data_Hash to think that it is a property
+	If Not (p.Name.Contains("_ValidValues")) Then
+		
+		If P.CategoryName.Trim().ToLower() = "master data" Or P.CategoryName.Trim().ToLower() = "master data pk" Then
+			'g_ObjectManager.LogInfo("ADM_Std_Wiring_Detail_Master_Row.Data_Hash", $"P.CategoryName: <{P.CategoryName.ToString}> ", , True)
+			Result = Result & $"{P.Value}".Tolower() & ";"
+		End If
+		
 	End If
 Next P
       '   END FORMULA; PROP ID:873; TYPE:PF
@@ -1316,7 +1338,7 @@ Next P
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Deleted_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************
@@ -1434,6 +1456,55 @@ Next P
       '*****************************************************************************
       Public Function Formula_Data_Hash_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Point_Type_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Point_Type").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:882; TYPE:VV
+      'Result = MakeValidValueKeyFromDatabase("[Point_Type_Master]", "[Point_Type_Master_ID]", "[Point_Type]", " ORDER BY [Point_Type]")
+Result = MakeValidValuesFromDatabase("[Point_Type_Master]", "[Point_Type]", "", " ORDER BY [Sort_Order]")
+      '   END FORMULA; PROP ID:882; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Std_Wiring_Detail_Master_Row.Formula_Point_Type_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Resistor_Required_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Resistor_Required").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:888; TYPE:VV
+      Result = MakeValidValues(Array("No", "Yes", "Refer to Controller Term"))
+      '   END FORMULA; PROP ID:888; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Std_Wiring_Detail_Master_Row.Formula_Resistor_Required_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
       '*****************************************************************************

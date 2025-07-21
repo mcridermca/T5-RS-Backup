@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Process_Variable_Master_Row
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -284,17 +284,17 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Process_Variable_Master_Row", <a><![CDATA[ADM_Process_Variable_Master_Row]]></a>.Value, 91, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "06/27/2025 20:39:48")
+    InitPart("ADM_Process_Variable_Master_Row", <a><![CDATA[ADM_Process_Variable_Master_Row]]></a>.Value, 91, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/14/2025 12:18:05")
     AddProperty("1150", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:34:32 PM")
     AddProperty("1151", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:35:09 PM")
     AddProperty("1155", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:36:53 PM")
     AddProperty("1156", "Is_New", <a><![CDATA[Is_New]]></a>.Value, "Is this a Dirty / Changed Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:37:21 PM")
     AddProperty("1157", "Modified_By", <a><![CDATA[Modified_By]]></a>.Value, "User that modified the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:37:35 PM")
     AddProperty("1158", "Modified_On", <a><![CDATA[Modified_On]]></a>.Value, "Date modified", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:38:10 PM")
-    AddProperty("1153", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:35:59 PM")
+    AddProperty("1153", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 12:18:05 PM")
     AddProperty("1154", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolete)", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:36:29 PM")
     AddProperty("1160", "Process_Variable", <a><![CDATA[Process_Variable]]></a>.Value, "Process Variable Name", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:39:08 PM")
-    AddProperty("1161", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:39:48 PM")
+    AddProperty("1161", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 3:03:36 AM")
     AddProperty("1159", "Process_Variable_Master_Id", <a><![CDATA[Process_Variable_Master_Id]]></a>.Value, "Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:38:32 PM")
     AddProperty("1152", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 8:35:44 PM")
     AddProperty("1024", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 7:37:41 PM")
@@ -350,7 +350,7 @@ Option Infer On
           InitProperty("Modified_On", "1068", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 8:38:10 PM", "Date modified", "In Development",  0,2055)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Deleted", "1063", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 8:35:59 PM", "Deleted Flag", "In Development",  0,2050)
+          InitProperty("Deleted", "1063", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 12:18:05 PM", "Deleted Flag", "In Development",  0,2050)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Is_Active", "1064", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 8:36:29 PM", "Is Record Active (Not Obsolete)", "In Development",  0,2051)
@@ -359,7 +359,7 @@ Option Infer On
           InitProperty("Process_Variable", "1070", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 8:39:08 PM", "Process Variable Name", "In Development",  0,2057)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Sort_Order", "1071", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 8:39:48 PM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,2058)
+          InitProperty("Sort_Order", "1071", "0", "999", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/14/2025 3:03:36 AM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,2058)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Process_Variable_Master_Id", "1069", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 8:38:32 PM", "Primary Key", "In Development",  0,2056)
@@ -918,7 +918,7 @@ Next P
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Deleted_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************

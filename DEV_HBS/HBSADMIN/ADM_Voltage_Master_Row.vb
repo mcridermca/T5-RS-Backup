@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Voltage_Master_Row
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -284,7 +284,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Voltage_Master_Row", <a><![CDATA[ADM_Voltage_Master_Row]]></a>.Value, 52, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/11/2025 02:15:15")
+    InitPart("ADM_Voltage_Master_Row", <a><![CDATA[ADM_Voltage_Master_Row]]></a>.Value, 52, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/14/2025 12:18:56")
     AddProperty("713", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:46:12 PM")
     AddProperty("714", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:46:54 PM")
     AddProperty("719", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:48:49 PM")
@@ -292,9 +292,9 @@ Option Infer On
     AddProperty("718", "Is_New", <a><![CDATA[Is_New]]></a>.Value, "Is this a Dirty / Changed Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/20/2025 6:34:41 PM")
     AddProperty("715", "Modified_By", <a><![CDATA[Modified_By]]></a>.Value, "User that modified the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:47:17 PM")
     AddProperty("716", "Modified_On", <a><![CDATA[Modified_On]]></a>.Value, "Date modified", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:47:58 PM")
-    AddProperty("1176", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601423", "6/28/2025 4:34:01 PM")
+    AddProperty("1176", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 12:18:56 PM")
     AddProperty("1220", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolete)", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601423", "6/30/2025 5:17:58 PM")
-    AddProperty("711", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Default Sort Order 1 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/11/2025 2:15:15 AM")
+    AddProperty("711", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Default Sort Order 1 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 3:05:18 AM")
     AddProperty("712", "Voltage", <a><![CDATA[Voltage]]></a>.Value, "Voltage in Volts AC/ DC (ie. 120 VAC or 200 VDC)", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:45:46 PM")
     AddProperty("710", "Voltage_Master_ID", <a><![CDATA[Voltage_Master_ID]]></a>.Value, "Table Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:44:58 PM")
     AddProperty("705", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:43:08 PM")
@@ -353,13 +353,13 @@ Option Infer On
           InitProperty("Modified_On", "665", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 7:47:58 PM", "Date modified", "In Development",  0,1551)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Deleted", "1086", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601423", "6/28/2025 4:34:01 PM", "Deleted Flag", "In Development",  0,2078)
+          InitProperty("Deleted", "1086", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 12:18:56 PM", "Deleted Flag", "In Development",  0,2078)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Is_Active", "1127", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601423", "6/30/2025 5:17:58 PM", "Is Record Active (Not Obsolute)", "In Development",  0,2150)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Sort_Order", "660", "1", "999", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/11/2025 2:14:55 AM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,1546)
+          InitProperty("Sort_Order", "660", "0", "999", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/14/2025 3:05:18 AM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,1546)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Voltage", "661", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 7:45:46 PM", "Voltage in Volts AC/ DC (ie. 120 VAC or 200 VDC)", "In Development",  0,1547)
@@ -927,24 +927,7 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Deleted_USERCHANGE() as Boolean
-      
-              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
-              Dim Result as Boolean = False
-              Dim ctx as Object
-              Try
-              ctx = this
-              If Me.Properties("Deleted").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
-              Stop
-              End If
-              '   BEGIN FORMULA; PROP ID:1086; TYPE:UC
-              Result = Not (Me.Deleted)
-              '   END FORMULA; PROP ID:1086; TYPE:UC
-              Catch ex As Exception
-              ObjectManager.LogError("Application: " + Me.Application + " ADM_Voltage_Master_Row.Formula_Deleted_USERCHANGE", ex.Message)
-              If ObjectManager.DebugMode Then Stop
-              End Try
-              Return Result
-            
+      Return True
       End Function
     
       '*****************************************************************************

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Signal_Type_Master_Row
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -284,7 +284,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Signal_Type_Master_Row", <a><![CDATA[ADM_Signal_Type_Master_Row]]></a>.Value, 61, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "06/25/2025 12:55:46")
+    InitPart("ADM_Signal_Type_Master_Row", <a><![CDATA[ADM_Signal_Type_Master_Row]]></a>.Value, 61, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/14/2025 12:18:22")
     AddProperty("782", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 1:11:46 AM")
     AddProperty("783", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 1:11:46 AM")
     AddProperty("784", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 12:45:32 PM")
@@ -292,10 +292,10 @@ Option Infer On
     AddProperty("786", "Is_New", <a><![CDATA[Is_New]]></a>.Value, "Is this a Dirty / Changed Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 1:11:46 AM")
     AddProperty("787", "Modified_By", <a><![CDATA[Modified_By]]></a>.Value, "User that modified the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 1:11:46 AM")
     AddProperty("788", "Modified_On", <a><![CDATA[Modified_On]]></a>.Value, "Date modified", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 1:11:46 AM")
-    AddProperty("805", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 12:55:46 PM")
+    AddProperty("805", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 12:18:22 PM")
     AddProperty("792", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolete)", "Boolean","","Master Data","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601422", "6/25/2025 2:09:45 AM")
     AddProperty("790", "Signal_Type", <a><![CDATA[Signal_Type]]></a>.Value, "The Signal Type {0-10 VDC,0-20 mA,NTC 10K3} for this ID", "String","","Master Data","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601422", "6/25/2025 12:44:18 PM")
-    AddProperty("789", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Default Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 1:11:46 AM")
+    AddProperty("789", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Default Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 3:04:08 AM")
     AddProperty("791", "Signal_Type_Master_ID", <a><![CDATA[Signal_Type_Master_ID]]></a>.Value, "Table Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601422", "6/25/2025 12:17:37 PM")
     AddProperty("781", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/25/2025 1:11:06 AM")
     
@@ -353,7 +353,7 @@ Option Infer On
           InitProperty("Modified_On", "729", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "6/25/2025 1:11:46 AM", "Date modified", "In Development",  0,1673)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Deleted", "745", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "6/25/2025 12:55:46 PM", "Deleted Flag", "In Development",  0,1703)
+          InitProperty("Deleted", "745", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 12:18:22 PM", "Deleted Flag", "In Development",  0,1703)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Is_Active", "733", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "6/25/2025 2:08:31 AM", "Is Record Active (Not Obsolute)", "In Development",  0,1677)
@@ -362,7 +362,7 @@ Option Infer On
           InitProperty("Signal_Type", "731", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "6/25/2025 12:44:18 PM", "", "In Development",  0,1700)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Sort_Order", "730", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "6/25/2025 1:11:46 AM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,1674)
+          InitProperty("Sort_Order", "730", "0", "999", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/14/2025 3:04:08 AM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,1674)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Signal_Type_Master_ID", "732", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "6/25/2025 12:17:37 PM", "", "In Development",  0,1698)
@@ -928,7 +928,7 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Deleted_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************

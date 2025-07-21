@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Device_Type_Master_Row
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -284,17 +284,17 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Device_Type_Master_Row", <a><![CDATA[ADM_Device_Type_Master_Row]]></a>.Value, 112, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/08/2025 21:28:29")
+    InitPart("ADM_Device_Type_Master_Row", <a><![CDATA[ADM_Device_Type_Master_Row]]></a>.Value, 112, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/14/2025 12:16:32")
     AddProperty("1378", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:23:44 PM")
     AddProperty("1379", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:24:17 PM")
     AddProperty("1383", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:26:17 PM")
     AddProperty("1384", "Is_New", <a><![CDATA[Is_New]]></a>.Value, "Is this a Dirty / Changed Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:26:32 PM")
     AddProperty("1385", "Modified_By", <a><![CDATA[Modified_By]]></a>.Value, "User that modified the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:26:44 PM")
     AddProperty("1386", "Modified_On", <a><![CDATA[Modified_On]]></a>.Value, "Date modified", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:27:20 PM")
-    AddProperty("1381", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:25:18 PM")
+    AddProperty("1381", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 12:16:32 PM")
     AddProperty("1388", "Device_Type", <a><![CDATA[Device_Type]]></a>.Value, "Device Type", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:28:14 PM")
     AddProperty("1382", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolete)", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:25:46 PM")
-    AddProperty("1389", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:28:29 PM")
+    AddProperty("1389", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 2:34:07 AM")
     AddProperty("1387", "Device_Type_Master_Id", <a><![CDATA[Device_Type_Master_Id]]></a>.Value, "Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:27:35 PM")
     AddProperty("1380", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:24:55 PM")
     AddProperty("1373", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 9:22:08 PM")
@@ -350,7 +350,7 @@ Option Infer On
           InitProperty("Modified_On", "1275", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 9:27:20 PM", "Date modified", "In Development",  0,2350)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Deleted", "1270", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 9:25:18 PM", "Deleted Flag", "In Development",  0,2345)
+          InitProperty("Deleted", "1270", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 12:16:32 PM", "Deleted Flag", "In Development",  0,2345)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Device_Type", "1277", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 9:28:14 PM", "Device Type", "In Development",  0,2352)
@@ -359,7 +359,7 @@ Option Infer On
           InitProperty("Is_Active", "1271", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 9:25:46 PM", "Is Record Active (Not Obsolete)", "In Development",  0,2346)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Sort_Order", "1278", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 9:28:29 PM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,2353)
+          InitProperty("Sort_Order", "1278", "0", "999", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/14/2025 2:34:07 AM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,2353)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Device_Type_Master_Id", "1276", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 9:27:35 PM", "Primary Key", "In Development",  0,2351)
@@ -918,7 +918,7 @@ Next P
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Deleted_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************

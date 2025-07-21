@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: RSXLI_PLI_Search_Data
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -361,7 +361,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("RSXLI_PLI_Search_Data", <a><![CDATA[RSXLI_PLI_Search_Data]]></a>.Value, 98, "HBSADMIN",  "N", "N", True, True, "In Development", "", "", "", "", "",  "GLOBAL\H599123", "07/09/2025 06:53:39")
+    InitPart("RSXLI_PLI_Search_Data", <a><![CDATA[RSXLI_PLI_Search_Data]]></a>.Value, 98, "HBSADMIN",  "N", "N", True, True, "In Development", "", "", "", "", "",  "GLOBAL\H621524", "07/14/2025 17:44:33")
     AddProperty("1228", "Row_DBKeys", <a><![CDATA[Row_DBKeys]]></a>.Value, "DataBase Extract of Key Values for Lines", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/1/2025 1:59:15 AM")
     AddProperty("1229", "Selected_Row", <a><![CDATA[Selected_Row]]></a>.Value, "Selected Row Identifier", "Long","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:33:51 AM")
     AddProperty("1226", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/1/2025 1:28:42 AM")

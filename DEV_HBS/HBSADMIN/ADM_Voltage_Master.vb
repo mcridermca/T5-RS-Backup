@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Voltage_Master
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -212,10 +212,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Voltage_Master", <a><![CDATA[ADM_Voltage_Master]]></a>.Value, 51, "HBSADMIN",  "", "", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/11/2025 02:13:36")
+    InitPart("ADM_Voltage_Master", <a><![CDATA[ADM_Voltage_Master]]></a>.Value, 51, "HBSADMIN",  "", "", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/18/2025 22:14:35")
     AddProperty("707", "Row_DBKeys", <a><![CDATA[Row DBKeys]]></a>.Value, "DataBase Extract of Key Values for Lines", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/20/2025 7:23:32 PM")
     AddProperty("708", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:44:11 PM")
-    AddProperty("1549", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/11/2025 2:13:36 AM")
+    AddProperty("1549", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/18/2025 10:14:35 PM")
     AddProperty("709", "Selected_Row", <a><![CDATA[Selected_Row]]></a>.Value, "Selected Row Identifier", "Long","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:44:43 PM")
     AddProperty("704", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:43:08 PM")
     
@@ -260,7 +260,7 @@ Option Infer On
           InitProperty("Data_Hash", "657", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 7:44:11 PM", "Hash of Master Data Fields", "In Development",  0,1543)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Is_Dirty", "1430", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/11/2025 2:13:36 AM", "Is this a new Record", "In Development",  0,2590)
+          InitProperty("Is_Dirty", "1430", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/18/2025 10:14:35 PM", "Is this a new Record", "In Development",  0,3388)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Selected_Row", "658", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 7:44:43 PM", "Selected Row Identifier", "In Development",  0,1544)
@@ -400,7 +400,7 @@ If (Me.Rows.Count > 0) Then
 				g_ObjectManager.LogError(_module, "PF Is Nothing", False,)
 
 			Else
-				g_ObjectManager.LogInfo(_module, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+				'g_ObjectManager.LogInfo(_module, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
 				If PF.Properties("Is_Dirty").Value = True Then
 					Result = True
 					Exit While

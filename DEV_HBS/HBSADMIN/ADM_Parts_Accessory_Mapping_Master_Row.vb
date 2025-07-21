@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Parts_Accessory_Mapping_Master_Row
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -302,22 +302,24 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Parts_Accessory_Mapping_Master_Row", <a><![CDATA[ADM_Parts_Accessory_Mapping_Master_Row]]></a>.Value, 79, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "06/29/2025 22:44:19")
+    InitPart("ADM_Parts_Accessory_Mapping_Master_Row", <a><![CDATA[ADM_Parts_Accessory_Mapping_Master_Row]]></a>.Value, 79, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/19/2025 23:19:15")
     AddProperty("988", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:00:15 PM")
     AddProperty("989", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:00:41 PM")
     AddProperty("993", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:02:41 PM")
     AddProperty("994", "Is_New", <a><![CDATA[Is_New]]></a>.Value, "Is this a Dirty / Changed Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:03:21 PM")
     AddProperty("995", "Modified_By", <a><![CDATA[Modified_By]]></a>.Value, "User that modified the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:03:33 PM")
     AddProperty("996", "Modified_On", <a><![CDATA[Modified_On]]></a>.Value, "Date modified", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:04:15 PM")
-    AddProperty("999", "Accessory", <a><![CDATA[Accessory]]></a>.Value, "", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:05:59 PM")
+    AddProperty("999", "Accessory", <a><![CDATA[Accessory]]></a>.Value, "", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 1:39:24 AM")
     AddProperty("1000", "Accessory_Qty", <a><![CDATA[Accessory_Qty]]></a>.Value, "Quantity of Accessory", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:06:40 PM")
-    AddProperty("991", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:01:38 PM")
+    AddProperty("991", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 12:15:45 PM")
     AddProperty("992", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolete)", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:02:12 PM")
     AddProperty("998", "Parts_Master_ID_Ref", <a><![CDATA[Parts_Master_ID_Ref]]></a>.Value, "ID reference of Part", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:05:27 PM")
     AddProperty("1001", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:07:07 PM")
     AddProperty("997", "Parts_Accessory_Mapping_Master_Id", <a><![CDATA[Parts_Accessory_Mapping_Master_Id]]></a>.Value, "Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "6/29/2025 10:44:19 PM")
-    AddProperty("990", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:01:06 PM")
+    AddProperty("990", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/19/2025 11:19:15 PM")
     AddProperty("983", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:58:27 PM")
+    
+      AddValidValue("Accessory")
     
       oSubpart = AddSubpart(93,"DbInfo", <a><![CDATA[DB Info Part Family]]></a>.Value, "FD", "Subpart for Database Information for this Part", "Master Audit", 9999, "", "GLOBAL\H601424", "6/27/2025 2:07:07 PM")
       
@@ -370,13 +372,13 @@ Option Infer On
           InitProperty("Modified_On", "918", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 2:04:15 PM", "Date modified", "In Development",  0,1901)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Accessory", "921", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 2:05:59 PM", "", "In Development",  0,1904)
+          InitProperty("Accessory", "921", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 1:39:24 AM", "", "In Development",  0,1904)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Accessory_Qty", "922", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 2:06:40 PM", "Quantity of Accessory", "In Development",  0,1905)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Deleted", "913", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 2:01:38 PM", "Deleted Flag", "In Development",  0,1896)
+          InitProperty("Deleted", "913", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 12:15:45 PM", "Deleted Flag", "In Development",  0,1896)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Is_Active", "914", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 2:02:12 PM", "Is Record Active (Not Obsolete)", "In Development",  0,1897)
@@ -391,7 +393,7 @@ Option Infer On
           InitProperty("Parts_Accessory_Mapping_Master_Id", "919", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "6/29/2025 10:44:19 PM", "Primary Key", "In Development",  0,1902)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Data_Hash", "912", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 2:01:06 PM", "Hash of Master Data Fields", "In Development",  0,1895)
+          InitProperty("Data_Hash", "912", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/19/2025 11:19:15 PM", "Hash of Master Data Fields", "In Development",  0,3423)
         End If
     End Sub
 
@@ -404,6 +406,10 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Accessory_ValidValues", "921", "-1", 2636)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -814,8 +820,16 @@ End If
       Result = ""
 
 For Each p As PropertySF In Me.properties
-	If P.CategoryName.Trim().ToLower() = "master data" Or P.CategoryName.Trim().ToLower() = "master data pk"Then
-		Result = Result & $"{P.Value}".Tolower() & ";"
+	'g_ObjectManager.LogInfo("ADM_Parts_Accessory_Mapping_Master_Row.Data_Hash", String.Format($"Processing Property: <{p.Name}>"), , True)
+
+	'If a property has ValidValues, it confuses the Data_Hash to think that it is a property
+	If Not (p.Name.Contains("_ValidValues")) Then
+		
+		If P.CategoryName.Trim().ToLower() = "master data" Or P.CategoryName.Trim().ToLower() = "master data pk" Then
+			'g_ObjectManager.LogInfo("ADM_Std_Wiring_Detail_Master_Row.Data_Hash", $"P.CategoryName: <{P.CategoryName.ToString}> ", , True)
+			Result = Result & $"{P.Value}".Tolower() & ";"
+		End If
+		
 	End If
 Next P
       '   END FORMULA; PROP ID:912; TYPE:PF
@@ -1030,7 +1044,7 @@ Next P
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Deleted_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************
@@ -1076,6 +1090,30 @@ Next P
       '*****************************************************************************
       Public Function Formula_Data_Hash_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Accessory_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Accessory").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:921; TYPE:VV
+      Result = MakeValidValueKeyFromDatabase("[Part_Type_Master]", "[Part_Type_Master_ID]", "[Part_Type]", " ORDER BY [Sort_Order]")
+      '   END FORMULA; PROP ID:921; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " ADM_Parts_Accessory_Mapping_Master_Row.Formula_Accessory_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
       '*****************************************************************************

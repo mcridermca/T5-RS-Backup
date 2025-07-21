@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Part_Type_Master_Row
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -284,17 +284,17 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Part_Type_Master_Row", <a><![CDATA[ADM_Part_Type_Master_Row]]></a>.Value, 106, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/08/2025 20:13:44")
+    InitPart("ADM_Part_Type_Master_Row", <a><![CDATA[ADM_Part_Type_Master_Row]]></a>.Value, 106, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/14/2025 12:15:55")
     AddProperty("1322", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:09:35 PM")
     AddProperty("1323", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:10:08 PM")
     AddProperty("1327", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:11:45 PM")
     AddProperty("1328", "Is_New", <a><![CDATA[Is_New]]></a>.Value, "Is this a Dirty / Changed Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:12:03 PM")
     AddProperty("1329", "Modified_By", <a><![CDATA[Modified_By]]></a>.Value, "User that modified the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:12:15 PM")
     AddProperty("1330", "Modified_On", <a><![CDATA[Modified_On]]></a>.Value, "Date modified", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:12:35 PM")
-    AddProperty("1325", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:11:00 PM")
+    AddProperty("1325", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 12:15:55 PM")
     AddProperty("1326", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolete)", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:11:24 PM")
     AddProperty("1332", "Part_Type", <a><![CDATA[Part_Type]]></a>.Value, "Part Type", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:13:29 PM")
-    AddProperty("1333", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:13:44 PM")
+    AddProperty("1333", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 2:30:55 AM")
     AddProperty("1331", "Part_Type_Master_Id", <a><![CDATA[Part_Type_Master_Id]]></a>.Value, "Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:13:02 PM")
     AddProperty("1324", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:10:20 PM")
     AddProperty("1317", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/8/2025 8:07:59 PM")
@@ -350,7 +350,7 @@ Option Infer On
           InitProperty("Modified_On", "1225", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 8:12:35 PM", "Date modified", "In Development",  0,2298)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Deleted", "1220", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 8:11:00 PM", "Deleted Flag", "In Development",  0,2293)
+          InitProperty("Deleted", "1220", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 12:15:55 PM", "Deleted Flag", "In Development",  0,2293)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Is_Active", "1221", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 8:11:24 PM", "Is Record Active (Not Obsolete)", "In Development",  0,2294)
@@ -359,7 +359,7 @@ Option Infer On
           InitProperty("Part_Type", "1227", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 8:13:29 PM", "Part Type", "In Development",  0,2300)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Sort_Order", "1228", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 8:13:44 PM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,2301)
+          InitProperty("Sort_Order", "1228", "0", "999", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/14/2025 2:30:55 AM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,2301)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Part_Type_Master_Id", "1226", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/8/2025 8:13:02 PM", "Primary Key", "In Development",  0,2299)
@@ -918,7 +918,7 @@ Next P
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Deleted_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************

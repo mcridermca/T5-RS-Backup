@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Engg_Units_Master_Row
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -311,7 +311,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Engg_Units_Master_Row", <a><![CDATA[ADM_Engg_Units_Master_Row]]></a>.Value, 94, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/07/2025 15:37:55")
+    InitPart("ADM_Engg_Units_Master_Row", <a><![CDATA[ADM_Engg_Units_Master_Row]]></a>.Value, 94, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/14/2025 12:16:20")
     AddProperty("1193", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:02:14 PM")
     AddProperty("1194", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:02:41 PM")
     AddProperty("1198", "Is_Dirty", <a><![CDATA[Is_Dirty]]></a>.Value, "Is this a new Record", "Boolean","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:04:32 PM")
@@ -320,10 +320,10 @@ Option Infer On
     AddProperty("1201", "Modified_On", <a><![CDATA[Modified_On]]></a>.Value, "Date modified", "String","","Master Audit","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:05:28 PM")
     AddProperty("1204", "Base_Unit_Name", <a><![CDATA[Base_Unit_Name]]></a>.Value, "Name for the Base Unit", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:07:09 PM")
     AddProperty("1205", "Base_Unit_Symbol", <a><![CDATA[Base_Unit_Symbol]]></a>.Value, "Symbol of the Base Unit", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:07:51 PM")
-    AddProperty("1196", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:03:34 PM")
+    AddProperty("1196", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 12:16:20 PM")
     AddProperty("1285", "Engg_Units_Standard_Ref", <a><![CDATA[Engg_Units_Standard_Ref]]></a>.Value, "Which Units Standard Ref is this row for?", "String","","Master Data","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601422", "7/7/2025 3:37:55 PM")
     AddProperty("1197", "Is_Active", <a><![CDATA[Is_Active]]></a>.Value, "Is Record Active (Not Obsolete)", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:04:09 PM")
-    AddProperty("1206", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:08:31 PM")
+    AddProperty("1206", "Sort_Order", <a><![CDATA[Sort_Order]]></a>.Value, "First Sort Order 0 = Default = 100 , Adjust Accordingly", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/14/2025 2:59:38 AM")
     AddProperty("1203", "Unit_Of_Measure", <a><![CDATA[Unit_Of_Measure]]></a>.Value, "What the Unit Measures", "String","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:06:36 PM")
     AddProperty("1202", "Engg_Units_Master_ID", <a><![CDATA[Engg_Units_Master_ID]]></a>.Value, "Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:06:05 PM")
     AddProperty("1195", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/30/2025 12:03:17 PM")
@@ -386,7 +386,7 @@ Option Infer On
           InitProperty("Base_Unit_Symbol", "1112", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/30/2025 12:07:51 PM", "Symbol of the Base Unit", "In Development",  0,2135)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Deleted", "1103", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/30/2025 12:03:34 PM", "Deleted Flag", "In Development",  0,2126)
+          InitProperty("Deleted", "1103", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/14/2025 12:16:20 PM", "Deleted Flag", "In Development",  0,2126)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Engg_Units_Standard_Ref", "1186", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/7/2025 3:36:41 PM", "Symbol of the Base Unit", "In Development",  0,2248)
@@ -395,7 +395,7 @@ Option Infer On
           InitProperty("Is_Active", "1104", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/30/2025 12:04:09 PM", "Is Record Active (Not Obsolete)", "In Development",  0,2127)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Sort_Order", "1113", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/30/2025 12:08:31 PM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,2136)
+          InitProperty("Sort_Order", "1113", "0", "999", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601422", "7/14/2025 2:59:38 AM", "First Sort Order 0 = Default = 100 , Adjust Accordingly", "In Development",  0,2136)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Unit_Of_Measure", "1110", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/30/2025 12:06:36 PM", "What the Unit Measures", "In Development",  0,2133)
@@ -1086,7 +1086,7 @@ Next P
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Deleted_USERCHANGE() as Boolean
-      Return False
+      Return True
       End Function
     
       '*****************************************************************************

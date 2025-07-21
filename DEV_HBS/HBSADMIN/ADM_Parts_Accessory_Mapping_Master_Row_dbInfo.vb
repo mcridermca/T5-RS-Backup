@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBSADMIN
 '$ PartFamily: ADM_Parts_Accessory_Mapping_Master_Row_dbInfo
-'$ GenerateDate: 07/12/2025 14:08:17
+'$ GenerateDate: 07/21/2025 12:33:29
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -278,7 +278,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ADM_Parts_Accessory_Mapping_Master_Row_dbInfo", <a><![CDATA[ADM_Parts_Accessory_Mapping_Master_Row_dbInfo]]></a>.Value, 80, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "06/29/2025 22:27:27")
+    InitPart("ADM_Parts_Accessory_Mapping_Master_Row_dbInfo", <a><![CDATA[ADM_Parts_Accessory_Mapping_Master_Row_dbInfo]]></a>.Value, 80, "HBSADMIN",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601422", "07/13/2025 21:35:51")
     AddProperty("1011", "Accessory", <a><![CDATA[Accessory]]></a>.Value, "", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:11:30 PM")
     AddProperty("1012", "Accessory_Qty", <a><![CDATA[Accessory_Qty]]></a>.Value, "Quantity of Accessory", "Long","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:12:10 PM")
     AddProperty("1005", "Deleted", <a><![CDATA[Deleted]]></a>.Value, "Deleted Flag", "Boolean","","Master Data","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:08:56 PM")
@@ -288,7 +288,7 @@ Option Infer On
     AddProperty("1009", "Parts_Accessory_Mapping_Master_Id", <a><![CDATA[Parts_Accessory_Mapping_Master_Id]]></a>.Value, "Primary Key", "Long","","Master Data PK","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:10:22 PM")
     AddProperty("1002", "Created_By", <a><![CDATA[Created_By]]></a>.Value, "User that created the record", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:07:28 PM")
     AddProperty("1003", "Created_On", <a><![CDATA[Created_On]]></a>.Value, "Date User Created record", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:07:52 PM")
-    AddProperty("1004", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:08:32 PM")
+    AddProperty("1004", "Data_Hash", <a><![CDATA[Data_Hash]]></a>.Value, "Hash of Master Data Fields", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601422", "7/13/2025 9:35:51 PM")
     AddProperty("1007", "Modified_By", <a><![CDATA[Modified_By]]></a>.Value, "User that modified the record", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:09:23 PM")
     AddProperty("1008", "Modified_On", <a><![CDATA[Modified_On]]></a>.Value, "Date modified", "String","","Master DBInfo","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 2:09:51 PM")
     AddProperty("984", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/27/2025 1:58:27 PM")
@@ -351,7 +351,7 @@ Option Infer On
           InitProperty("Created_On", "925", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 2:07:52 PM", "Date User Created record", "In Development",  0,1908)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Data_Hash", "926", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 2:08:32 PM", "Hash of Master Data Fields", "In Development",  0,1909)
+          InitProperty("Data_Hash", "926", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601422", "7/13/2025 9:35:51 PM", "Hash of Master Data Fields", "In Development",  0,2625)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Modified_By", "929", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/27/2025 2:09:23 PM", "User that modified the record", "In Development",  0,1912)
@@ -666,7 +666,7 @@ Option Infer On
       Result = ""
 
 For Each p As PropertySF In Me.properties
-	If P.CategoryName.Trim().ToLower() = "master data" Or P.CategoryName.Trim().ToLower() = "master data pk"Then
+	If P.CategoryName.Trim().ToLower() = "master data" Or P.CategoryName.Trim().ToLower() = "master data pk" Then
 		Result = Result & $"{P.Value}".Tolower() & ";"
 	End If
 Next P
