@@ -334,8 +334,15 @@ Module Custom
 
     End Function
 
+	Public Function IsInputNumeric(input As String) As Boolean
+		If String.IsNullOrWhiteSpace(input) Then Return False
+		If IsNumeric(input) Then Return True
+		Dim parts() As String = input.Split("/"c)
+		If parts.Length <> 2 Then Return False
+		Return IsNumeric(parts(0)) AndAlso IsNumeric(parts(1))
+	End Function
 
-    Public Function RemoveCommaStringDuplicates(txt As String, Optional delim As String = ",") As String
+	Public Function RemoveCommaStringDuplicates(txt As String, Optional delim As String = ",") As String
         'Purpose:		Return a string of comma values without duplicates  string = "a,a,b,b,c"
         'Parameters:	comma String optional delimitator = ","
         'Returns: 		string = "a,b,c"
@@ -1409,92 +1416,8 @@ Module Custom
 						sender.Refresh()
 						g_ObjectManager.RSEngineer.RefreshModelViews(-1)
 					End If
-					
 				
-				Case "ADM_Pole_Master_Save_Selected"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Pole_Master_Id").Value
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
-					Dim _sb As New Text.StringBuilder
-					Dim Item_Name_Value as String = PF.Properties("Pole_Name").Value
-
-					'Don't save if there isn't a valid Pole_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Pole Name is Null or Empty, please correct."), False,)
-
-					Else
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Pole_Master", connection)
-								_sb.AppendLine("Calling sp_adm_Pole_Master")
-							
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Pole_Master_Id", PF.Properties("Pole_Master_Id").Value)
-								_sb.AppendLine($"Adding @Pole_Master_Id = <{PF.Properties("Pole_Master_Id").Value.ToString}>")
-
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								_sb.AppendLine($"Adding @Sort_Order = <{PF.Properties("Sort_Order").Value.ToString}>")
-								command.Parameters.AddWithValue("@Pole_Name", Item_Name_Value)
-								_sb.AppendLine($"Adding @Pole_Name = <{Item_Name_Value}>")
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								_sb.AppendLine($"Adding @Is_Active = <{PF.Properties("Is_Active").Value.ToString}>")
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								_sb.AppendLine($"Adding @Created_By = <{PF.Properties("Created_By").Value}>")
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								_sb.AppendLine($"Adding @Created_On = <{PF.Properties("Created_On").Value.ToString}>")
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								_sb.AppendLine($"Adding @Modified_By = <{g_RSUser.Name} [{g_RSUser.UserName}]>")
-								command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-								_sb.AppendLine($"Adding @Modified_On = <{DateTime.now.ToString}>")
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								_sb.AppendLine($"Adding @Deleted = <{PF.Properties("Deleted").Value.ToString}>")
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								g_ObjectManager.LogInfo(e.FunctionName, _sb.ToString(), , True)
-								_sb.Clear()
-								command.ExecuteNonQuery()
-							
-								Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-								g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-
-								'Test For Error Condition
-								If MyResult <= 0 Then
-									 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-									 '-2601 = Foreign Key Violation
-									 errorCaught = True
-									 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-									 If MyResult = -3 Then
-										errText = "Duplicate Data detected"
-									 End if
-									 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-									 
-								'If OriginalPK was -1, then save the new PKID
-								Else If OriginalPK < 0 Then
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-									PF.Properties("Pole_Master_Id").InputValue = MyResult
-								
-								Else 'Update of existing Row was successful
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-
-								End If
-								
-								If Not errorCaught
-									
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-
-								End If
-								
-							End Using
-						End Using
-					End If 'Empty Pole_Name
-
+				
 				Case "ADM_Pole_Master_Save_Changed"
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
 					Dim OwnerSubpartCollection As Subpart = sender.SelectedPart.Rows
@@ -1504,180 +1427,120 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
-							Dim _sb As New Text.StringBuilder
+							connection.Open()
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
+							
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-
-								Else
-									OriginalPK = PF.Properties("Pole_Master_Id").Value
-
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
-
-									Item_Name_Value = PF.Properties("Pole_Name").Value
-
-									'Don't save if there isn't a valid Pole_Name
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Pole Name is Null or Empty, please correct."), False,)
-										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
+								' loop the collection
+								While PartEnum.MoveNext
 									
-										errorCaught = False
-										'OriginalPK = PF.Properties("Pole_Master_Id").Value
-										'g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , Trug43e)
-
-										'Using connection As New SqlConnection(CompDBConnString)
-										'	connection.Open()
-										Using command As New SqlCommand("sp_adm_Pole_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Pole_Master")
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
+									
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "Pole_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Pole_Name").Value
 										
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Pole_Master_Id", PF.Properties("Pole_Master_Id").Value)
-											_sb.AppendLine($"Adding @Pole_Master_Id = <{PF.Properties("Pole_Master_Id").Value.ToString}>")
-
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											_sb.AppendLine($"Adding @Sort_Order = <{PF.Properties("Sort_Order").Value.ToString}>")
-											command.Parameters.AddWithValue("@Pole_Name", Item_Name_Value)
-											_sb.AppendLine($"Adding @Pole_Name = <{Item_Name_Value}>")
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											_sb.AppendLine($"Adding @Is_Active = <{PF.Properties("Is_Active").Value.ToString}>")
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											_sb.AppendLine($"Adding @Created_By = <{PF.Properties("Created_By").Value}>")
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											_sb.AppendLine($"Adding @Created_On = <{PF.Properties("Created_On").Value.ToString}>")
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											_sb.AppendLine($"Adding @Modified_By = <{g_RSUser.Name} [{g_RSUser.UserName}]>")
-											command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-											_sb.AppendLine($"Adding @Modified_On = <{DateTime.now.ToString}>")
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											_sb.AppendLine($"Adding @Deleted = <{PF.Properties("Deleted").Value.ToString}>")
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											g_ObjectManager.LogInfo(e.FunctionName, _sb.ToString(), , True)
-											_sb.Clear()
-											command.ExecuteNonQuery()
-										
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Pole_Master_Id").InputValue = MyResult
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-
-											End If
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											If Not errorCaught
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Pole Name is Null, Empty, or otherwise invalid, please correct."), False,)
+											
+											Else
+												errorCaught = False
+												Using command As New SqlCommand("sp_adm_Pole_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Pole_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Pole_Master_Id", OriginalPK)
+													_sb.AppendLine($"Adding @Pole_Master_Id = <{OriginalPK.ToString}>")
+													
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													_sb.AppendLine($"Adding @Sort_Order = <{PF.Properties("Sort_Order").Value.ToString}>")
+													command.Parameters.AddWithValue("@Pole_Name", Item_Name_Value)
+													_sb.AppendLine($"Adding @Pole_Name = <{Item_Name_Value}>")
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													_sb.AppendLine($"Adding @Is_Active = <{PF.Properties("Is_Active").Value.ToString}>")
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													_sb.AppendLine($"Adding @Created_By = <{PF.Properties("Created_By").Value}>")
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													_sb.AppendLine($"Adding @Created_On = <{PF.Properties("Created_On").Value.ToString}>")
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													_sb.AppendLine($"Adding @Modified_By = <{g_RSUser.Name} [{g_RSUser.UserName}]>")
+													command.Parameters.AddWithValue("@Modified_On", DateTime.now)
+													_sb.AppendLine($"Adding @Modified_On = <{DateTime.now.ToString}>")
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													_sb.AppendLine($"Adding @Deleted = <{PF.Properties("Deleted").Value.ToString}>")
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													g_ObjectManager.LogInfo(e.FunctionName, _sb.ToString(), , True)
+													_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-
-											End If
+												End Using
 											
-										End Using
-
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
 				
-				Case "ADM_Voltage_Master_Save"
-					'stop
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Voltage_Master_ID").Value
-					Dim Item_Name_Value as String = PF.Properties("Voltage").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Voltage is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Voltage_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Voltage_Master_ID", PF.Properties("Voltage_Master_ID").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Voltage", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2601 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Voltage_Master Row: {errText}"), False,)
-										 
-									Else
-										PF.Properties("Voltage_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-								
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-						
+				
 				Case "ADM_Voltage_Master_Save_Changed"
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
 					Dim OwnerSubpartCollection As Subpart = sender.SelectedPart.Rows
@@ -1687,167 +1550,113 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
-							
-							Dim _sb As New Text.StringBuilder
-							
-							' loop the collection
-							While PartEnum.MoveNext
-								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+							connection.Open()
+
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
+
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim Item_Name_Value As String = String.Empty
+								Dim MyResult As Integer = 0
+								Dim MyErrMsg As String = String.Empty
+
+								Dim _sb As New Text.StringBuilder
+
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Voltage").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Voltage_Name
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Voltage Name is Null or Empty, please correct."), False,)
-										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
 									
-										errorCaught = False
+									Else
 										OriginalPK = PF.Properties("Voltage_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										Item_Name_Value = PF.Properties("Voltage").Value
+										
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Voltage_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Voltage_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Voltage_Master_ID", PF.Properties("Voltage_Master_ID").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Voltage", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Voltage Name is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Voltage_Master_ID").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+												Using command As New SqlCommand("sp_adm_Voltage_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Voltage_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Voltage_Master_ID", PF.Properties("Voltage_Master_ID").Value)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Voltage", Item_Name_Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													MyResult = CInt(command.Parameters("@OutputPK").Value)
+													If Not (ISDBNull(command.Parameters("@OutputErrMsg"))) Then MyErrMsg = CStr(command.Parameters("@OutputErrMsg").Value)
+													
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}>, MyErrMsg: <{MyErrMsg}>", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error:{errText}"), False,)
+														
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting new PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties("Voltage_Master_ID").InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.Subparts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
+												
+												End Using 'SQLcommand
+												
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					
-				Case "ADM_Signal_Type_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Signal_Type_Master_Id").Value
-					Dim Item_Name_Value As String = PF.Properties("Signal_Type").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Signal Type is Null or Empty, please correct."), False,)
-					
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand($"sp_adm_Signal_Type_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Signal_Type_Master_Id", PF.Properties("Signal_Type_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Signal_Type", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										'Error Condition Exists
-										'-2603 = Foreign Key Violation
-										errorCaught = True
-										Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										End if
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Signal_Type_Master Row: {errText}"), False,)
-										
-									Else
-										PF.Properties("Signal_Type_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-								
-							End Using
-						End Using
-					End If
-					
+				
+				
 				Case "ADM_Signal_Type_Master_Save_Changed"
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
 					Dim OwnerSubpartCollection As Subpart = sender.SelectedPart.Rows
@@ -1857,168 +1666,109 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Signal_Type").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Signal_Type
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Signal Type is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
 									
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
+									Else
+										PKID_Property_Name = "Signal_Type_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Signal_Type").Value
 										
-										errorCaught = False
-										OriginalPK = PF.Properties("Signal_Type_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Signal_Type_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Signal_Type_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Signal_Type_Master_ID", PF.Properties("Signal_Type_Master_ID").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Signal_Type", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Signal Type is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Signal_Type_Master_ID").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+											Else
+												errorCaught = False
+												Using command As New SqlCommand("sp_adm_Signal_Type_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Signal_Type_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Signal_Type_Master_ID", OriginalPK)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Signal_Type", Item_Name_Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
 												
-											End If
+												End Using
 											
-											If Not errorCaught
-												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-											
-											End If
-										
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
 				
-					
-				Case "ADM_Controller_Protocol_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Controller_Protocol_Master_ID").Value
-					Dim Item_Name_Value as String = PF.Properties("Protocol_Type").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Protocol Type is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Controller_Protocol_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Controller_Protocol_Master_ID", PF.Properties("Controller_Protocol_Master_ID").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Protocol_Type", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-								
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										'Error Condition Exists
-										'-2603 = Foreign Key Violation
-										errorCaught = True
-										Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										End if
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Controller_Protocol_Master Row: {errText}"), False,)
-										
-									Else
-										PF.Properties("Controller_Protocol_Master_ID").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
 				Case "ADM_Controller_Protocol_Master_Save_Changed"
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
 					Dim OwnerSubpartCollection As Subpart = sender.SelectedPart.Rows
@@ -2028,168 +1778,110 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Protocol_Type").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Protocol_Type
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Protocol Type is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "Controller_Protocol_Master_ID"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Protocol_Type").Value
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("Controller_Protocol_Master_ID").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Controller_Protocol_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Controller_Protocol_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Controller_Protocol_Master_ID", PF.Properties("Controller_Protocol_Master_ID").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Protocol_Type", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Protocol Type is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Controller_Protocol_Master_ID").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
+												Using command As New SqlCommand("sp_adm_Controller_Protocol_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Controller_Protocol_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Controller_Protocol_Master_ID", OriginalPK)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Protocol_Type", Item_Name_Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												End Using
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					
-				Case "ADM_Controller_Family_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Controller_Family_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("Controller_Family_Name").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Controller Family Name is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Controller_Family_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Controller_Family_Master_Id", PF.Properties("Controller_Family_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Controller_Family_Name", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-								command.Parameters.AddWithValue("@Obsolete", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										'Error Condition Exists
-										'-2603 = Foreign Key Violation
-										errorCaught = True
-										Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										End if
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Controller_Family_Master Row: {errText}"), False,)
-										
-									Else
-										PF.Properties("Controller_Family_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-							
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
+				
 				Case "ADM_Controller_Family_Master_Save_Changed"
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
 					Dim OwnerSubpartCollection As Subpart = sender.SelectedPart.Rows
@@ -2199,168 +1891,110 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Controller_Family_Name").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Controller_Family_Name
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Controller Family Name is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "Controller_Family_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Controller_Family_Name").Value
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("Controller_Family_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Controller_Family_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Controller_Family_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Controller_Family_Master_Id", PF.Properties("Controller_Family_Master_Id").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Controller_Family_Name", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Obsolete", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
-											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Controller_Family_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Controller Family Name is Null, Empty, or otherwise invalid, please correct."), False,)
+
+											Else
+												errorCaught = False
+												Using command As New SqlCommand("sp_adm_Controller_Family_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Controller_Family_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Controller_Family_Master_Id", OriginalPK)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Controller_Family_Name", Item_Name_Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Obsolete", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												End Using
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					
-				Case "ADM_Controller_Spl_Feature_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Controller_Spl_Feature_Master_ID").Value
-					Dim Item_Name_Value as String = PF.Properties("Special_Feature").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Special Feature name is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Controller_Spl_Feature_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Controller_Spl_Feature_Master_ID", PF.Properties("Controller_Spl_Feature_Master_ID").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Special_Feature", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										'Error Condition Exists
-										'-2603 = Foreign Key Violation
-										errorCaught = True
-										Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										End if
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Controller_Spl_Feature_Master Row: {errText}"), False,)
-										
-									Else
-										PF.Properties("Controller_Spl_Feature_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-							
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
+				
 				Case "ADM_Controller_Spl_Feature_Master_Save_Changed"
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
 					Dim OwnerSubpartCollection As Subpart = sender.SelectedPart.Rows
@@ -2370,171 +2004,112 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Special_Feature").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Special_Feature
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Special Feature name is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "Controller_Spl_Feature_Master_ID"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Special_Feature").Value
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("Controller_Spl_Feature_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Controller_Spl_Feature_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Controller_Spl_Feature_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Controller_Spl_Feature_Master_ID", PF.Properties("Controller_Spl_Feature_Master_ID").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Special_Feature", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Special Feature is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Controller_Spl_Feature_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												Using command As New SqlCommand("sp_adm_Controller_Spl_Feature_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Controller_Spl_Feature_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Controller_Spl_Feature_Master_ID", OriginalPK)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Special_Feature", Item_Name_Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
+												
+												End Using
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					
-				Case "ADM_CPU_IO_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("CPU_IO_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("CPU_IO_Type").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: CPU IO Type is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_CPU_IO_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@CPU_IO_Master_Id", PF.Properties("CPU_IO_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Type", Item_Name_Value)
-								command.Parameters.AddWithValue("@Description", PF.Properties("CPU_IO_Description").Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										'Error Condition Exists
-										'-2603 = Foreign Key Violation
-										errorCaught = True
-										Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										End if
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new CPU_IO_Master Row: {errText}"), False,)
-										
-									Else
-										PF.Properties("CPU_IO_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-							
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
+				
 				Case "ADM_CPU_IO_Master_Save_Changed"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
 					Dim OwnerSubpartCollection As Subpart = sender.SelectedPart.Rows
 					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Subpart: <{OwnerSubpartCollection.Name}>"), , True)
 					
@@ -2542,171 +2117,112 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("CPU_IO_Type").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid CPU_IO_Type
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: CPU IO Type is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "CPU_IO_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("CPU_IO_Type").Value
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("CPU_IO_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_CPU_IO_Master", connection)
-											_sb.AppendLine("Calling sp_adm_CPU_IO_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@CPU_IO_Master_Id", PF.Properties("CPU_IO_Master_Id").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Type", Item_Name_Value)
-											command.Parameters.AddWithValue("@Description", PF.Properties("CPU_IO_Description").Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: CPU IO Type is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("CPU_IO_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												Using command As New SqlCommand("sp_adm_CPU_IO_Master", connection)
+													_sb.AppendLine("Calling sp_adm_CPU_IO_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@CPU_IO_Master_Id", OriginalPK)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Type", Item_Name_Value)
+													command.Parameters.AddWithValue("@Description", PF.Properties("CPU_IO_Description").Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
+												
+												End Using
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					
-				Case "ADM_Parts_Accessory_Mapping_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Parts_Accessory_Mapping_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("Accessory").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Accessory is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Parts_Accessory_Mapping_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Parts_Accessory_Mapping_Master_Id", PF.Properties("Parts_Accessory_Mapping_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Parts_Master_ID_Ref", PF.Properties("Parts_Master_ID_Ref").Value)
-								command.Parameters.AddWithValue("@Accessory", PF.Properties("Accessory").Value)
-								command.Parameters.AddWithValue("@Accessory_Qty", PF.Properties("Accessory_Qty").Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Parts_Accessory_Mapping_Master Row: {errText}"), False,)
-										 
-									Else
-										PF.Properties("Parts_Accessory_Mapping_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-							
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
+				
 				Case "ADM_Parts_Accessory_Mapping_Master_Save_Changed"
 					
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
@@ -2717,170 +2233,113 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Accessory").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Accessory
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Accessory is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "Parts_Accessory_Mapping_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Accessory").Value
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("Parts_Accessory_Mapping_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Parts_Accessory_Mapping_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Parts_Accessory_Mapping_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Parts_Accessory_Mapping_Master_Id", PF.Properties("Parts_Accessory_Mapping_Master_Id").Value)
-											command.Parameters.AddWithValue("@Parts_Master_ID_Ref", PF.Properties("Parts_Master_ID_Ref").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Accessory", PF.Properties("Accessory").Value)
-											command.Parameters.AddWithValue("@Accessory_Qty", PF.Properties("Accessory_Qty").Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Accessory Name is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Parts_Accessory_Mapping_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												Using command As New SqlCommand("sp_adm_Parts_Accessory_Mapping_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Parts_Accessory_Mapping_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Parts_Accessory_Mapping_Master_Id", OriginalPK)
+													command.Parameters.AddWithValue("@Parts_Master_ID_Ref", PF.Properties("Parts_Master_ID_Ref").Value)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Accessory", PF.Properties("Accessory").Value)
+													command.Parameters.AddWithValue("@Accessory_Qty", PF.Properties("Accessory_Qty").Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}>, MyErrMsg: <{MyErrMsg}>", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}{vbCrLf}Error:{vbCrLf}{errText}"), False,)
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties("Parts_Accessory_Mapping_Master_Id").InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.Subparts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
+												
+												End Using 'SQLcommand
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					
-				Case "ADM_Engg_Units_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Engg_Units_Master_ID").Value
-					Dim Item_Name_Value as String = PF.Properties("Unit_Of_Measure").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Unit of Measure is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Engg_Units_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Engg_Units_Master_ID", PF.Properties("Engg_Units_Master_ID").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Unit_Of_Measure", Item_Name_Value)
-								command.Parameters.AddWithValue("@Base_Unit_Name", PF.Properties("Base_Unit_Name").Value)
-								command.Parameters.AddWithValue("@Base_Unit_Symbol", PF.Properties("Base_Unit_Symbol").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", g_RSUser.UserName)
-								command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Engg_Units_Master Row: {errText}"), False,)
-										 
-									Else
-										PF.Properties("Engg_Units_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
+				
 				Case "ADM_Engg_Units_Master_Save_Changed"
 					
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
@@ -2891,170 +2350,113 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Unit_Of_Measure").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Unit_Of_Measure
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Unit of Measure is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "Engg_Units_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Unit_of_Measure").Value
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("Engg_Units_Master_ID").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Engg_Units_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Engg_Units_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Engg_Units_Master_ID", PF.Properties("Engg_Units_Master_ID").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Unit_Of_Measure", Item_Name_Value)
-											command.Parameters.AddWithValue("@Base_Unit_Name", PF.Properties("Base_Unit_Name").Value)
-											command.Parameters.AddWithValue("@Base_Unit_Symbol", PF.Properties("Base_Unit_Symbol").Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Unit of Measure is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Engg_Units_Master_ID").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												Using command As New SqlCommand("sp_adm_Engg_Units_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Engg_Units_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Engg_Units_Master_ID", OriginalPK)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Unit_Of_Measure", Item_Name_Value)
+													command.Parameters.AddWithValue("@Base_Unit_Name", PF.Properties("Base_Unit_Name").Value)
+													command.Parameters.AddWithValue("@Base_Unit_Symbol", PF.Properties("Base_Unit_Symbol").Value)
+													command.Parameters.AddWithValue("@Engg_Units_Standard_Ref", PF.Properties("Engg_Units_Standard_Ref").Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
+												
+												End Using
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					
-				Case "ADM_Point_Type_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Point_Type_Master_ID").Value
-					Dim Item_Name_Value as String = PF.Properties("Point_Type").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Point Type is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Point_Type_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Point_Type_Master_ID", PF.Properties("Point_Type_Master_ID").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Point_Type", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Point_Type_Master Row: {errText}"), False,)
-										 
-									Else
-										PF.Properties("Point_Type_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
+				
 				Case "ADM_Point_Type_Master_Save_Changed"
 					
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
@@ -3065,221 +2467,111 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Point_Type").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Point_Type
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Point Type is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "Point_Type_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Point_Type").Value
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("Point_Type_Master_ID").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Point_Type_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Point_Type_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Point_Type_Master_ID", PF.Properties("Point_Type_Master_ID").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Point_Type", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Point Type is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Point_Type_Master_ID").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												Using command As New SqlCommand("sp_adm_Point_Type_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Point_Type_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Point_Type_Master_ID", OriginalPK)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Point_Type", Item_Name_Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
+												
+												End Using
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					Case "ADM_Process_Variable_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Process_Variable_Master_Id").Value
-					Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-					Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						Using command As New SqlCommand("sp_adm_Process_Variable_Master", connection)
-							command.CommandType = CommandType.StoredProcedure
-							command.Parameters.AddWithValue("@Process_Variable_Master_Id", PF.Properties("Process_Variable_Master_Id").Value)
-							command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-							command.Parameters.AddWithValue("@Process_Variable", PF.Properties("Process_Variable").Value)
-							'command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-							command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-							command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-							command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-							command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-							'command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-							command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-							command.ExecuteNonQuery()
-							'If returned value (OriginalPF) is negative, this is a new record
-							If OriginalPK < 0 Then 
-								
-								Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-								g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-								
-								'Test For Error Condition
-								If MyResult <= 0 Then
-									 'Error Condition Exists
-									 '-2603 = Foreign Key Violation
-									 errorCaught = True
-									 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-									 If MyResult = -3 Then
-										errText = "Duplicate Data detected"
-									 End if
-									 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Process_Variable_Master Row: {errText}"), False,)
-									 
-								Else
-									PF.Properties("Process_Variable_Master_Id").InputValue = MyResult
-								End If
-							End If
-							
-							If Not errorCaught
-								PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-								g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-								g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-							End If
-
-						End Using
-					End Using
-					
-				Case "ADM_Process_Variable_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Process_Variable_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("Process_Variable").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Process Variable is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Process_Variable_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Process_Variable_Master_Id", PF.Properties("Process_Variable_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Process_Variable", Item_Name_Value)
-								'command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-								'command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Process_Variable_Master Row: {errText}"), False,)
-										 
-									Else
-										PF.Properties("Process_Variable_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
+				
 				Case "ADM_Process_Variable_Master_Save_Changed"
 					
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
@@ -3290,177 +2582,112 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Process_Variable").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Process_Variable
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Process Variable is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "Process_Variable_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Process_Variable").Value
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("Process_Variable_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Process_Variable_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Process_Variable_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Process_Variable_Master_Id", PF.Properties("Process_Variable_Master_Id").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Process_Variable", Item_Name_Value)
-											'command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-											'command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Process Variable Name is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Process_Variable_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												Using command As New SqlCommand("sp_adm_Process_Variable_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Process_Variable_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Process_Variable_Master_Id", OriginalPK)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Process_Variable", Item_Name_Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", DateTime.now)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													
+													
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
+												
+												End Using
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					
-					
-				Case "ADM_Std_Wiring_Detail_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Std_Wiring_Detail_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("Wiring_Std_Detail_Description").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Wiring Standard Detail Description is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand("sp_adm_Std_Wiring_Detail_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Std_Wiring_Detail_Master_Id", PF.Properties("Std_Wiring_Detail_Master_Id").Value)
-								command.Parameters.AddWithValue("@Std_Wiring_Detail_Master_Id_String", PF.Properties("Std_Wiring_Detail_Master_Id_String").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Wiring_Std_Detail_Description", Item_Name_Value)
-								command.Parameters.AddWithValue("@Point_Type", PF.Properties("Point_Type").Value)
-								command.Parameters.AddWithValue("@Do_Type", PF.Properties("Do_Type").Value)
-								command.Parameters.AddWithValue("@Wiring_Type", PF.Properties("Wiring_Type").Value)
-								command.Parameters.AddWithValue("@No_Of_Terminals", PF.Properties("No_Of_Terminals").Value)
-								command.Parameters.AddWithValue("@Power_Supply", PF.Properties("Power_Supply").Value)
-								command.Parameters.AddWithValue("@Wiring_Std_Detail_Dwg", PF.Properties("Wiring_Std_Detail_Dwg").Value)
-								command.Parameters.AddWithValue("@Resistor_Required", PF.Properties("Resistor_Required").Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Std_Wiring_Detail_Master Row: {errText}"), False,)
-										 
-									Else
-										PF.Properties("Std_Wiring_Detail_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
+				
 				Case "ADM_Std_Wiring_Detail_Master_Save_Changed"
 					
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
@@ -3471,175 +2698,119 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Wiring_Std_Detail_Description").Value
-									
-									'Don't save if there isn't a valid Wiring_Std_Detail_Description
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Wiring Standard Detail Description is Null or Empty, please correct."), False,)
-										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("Std_Wiring_Detail_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
+
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+
+									Else
+										PKID_Property_Name = "Std_Wiring_Detail_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Wiring_Std_Detail_Description").Value
+
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Std_Wiring_Detail_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Std_Wiring_Detail_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Std_Wiring_Detail_Master_Id", PF.Properties("Std_Wiring_Detail_Master_Id").Value)
-											command.Parameters.AddWithValue("@Std_Wiring_Detail_Master_Id_String", PF.Properties("Std_Wiring_Detail_Master_Id_String").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Wiring_Std_Detail_Description", Item_Name_Value)
-											command.Parameters.AddWithValue("@Point_Type", PF.Properties("Point_Type").Value)
-											command.Parameters.AddWithValue("@Do_Type", PF.Properties("Do_Type").Value)
-											command.Parameters.AddWithValue("@Wiring_Type", PF.Properties("Wiring_Type").Value)
-											command.Parameters.AddWithValue("@No_Of_Terminals", PF.Properties("No_Of_Terminals").Value)
-											command.Parameters.AddWithValue("@Power_Supply", PF.Properties("Power_Supply").Value)
-											command.Parameters.AddWithValue("@Wiring_Std_Detail_Dwg", PF.Properties("Wiring_Std_Detail_Dwg").Value)
-											command.Parameters.AddWithValue("@Resistor_Required", PF.Properties("Resistor_Required").Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", DateTime.now)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Wiring Std Detail Description is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Std_Wiring_Detail_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												Using command As New SqlCommand("sp_adm_Std_Wiring_Detail_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Std_Wiring_Detail_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Std_Wiring_Detail_Master_Id", OriginalPK)
+													command.Parameters.AddWithValue("@Std_Wiring_Detail_Master_Id_String", PF.Properties("Std_Wiring_Detail_Master_Id_String").Value)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Wiring_Std_Detail_Description", Item_Name_Value)
+													command.Parameters.AddWithValue("@Point_Type", PF.Properties("Point_Type").Value)
+													command.Parameters.AddWithValue("@Do_Type", PF.Properties("Do_Type").Value)
+													command.Parameters.AddWithValue("@Wiring_Type", PF.Properties("Wiring_Type").Value)
+													command.Parameters.AddWithValue("@No_Of_Terminals", PF.Properties("No_Of_Terminals").Value)
+													command.Parameters.AddWithValue("@Power_Supply", PF.Properties("Power_Supply").Value)
+													command.Parameters.AddWithValue("@Wiring_Std_Detail_Dwg", PF.Properties("Wiring_Std_Detail_Dwg").Value)
+													command.Parameters.AddWithValue("@Resistor_Required", PF.Properties("Resistor_Required").Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", DateTime.now)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+														
+													'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+													
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
+												
+												End Using
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-				Case "ADM_Application_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
-					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Application_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("Application_Name").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Application Name is Null or Empty, please correct."), False,)
-						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand($"sp_adm_Application_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Application_Master_Id", PF.Properties("Application_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Application", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
-									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Application_Master Row: {errText}"), False,)
-										 
-									Else
-										PF.Properties("Application_Master_Id").InputValue = MyResult
-									End If
-								End If
-								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+				
+				
 				Case "ADM_Application_Master_Save_Changed"
 					
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
@@ -3650,168 +2821,173 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum As IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim PKID_Property_Name As String = String.Empty
+								Dim Item_Name_Value As String = String.Empty
+								Dim _sb As New Text.StringBuilder
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
-								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Application_Name").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Application_Name
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Application Name is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										PKID_Property_Name = "Application_Master_Id"
+										OriginalPK = PF.Properties(PKID_Property_Name).Value
+										Item_Name_Value = PF.Properties("Application_Name").Value
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
-										OriginalPK = PF.Properties("Application_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										'Only process changed rows
+										If PF.Properties("Is_Dirty").Value = True Then
 											
-											Using command As New SqlCommand("sp_adm_Application_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Application_Master")
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}>, Item_Name_Value: <{Item_Name_Value}> "), , True)
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Application_Master_Id", PF.Properties("Application_Master_Id").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Application", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
+											'Don't save if there isn't a valid Item_Value_Name
+											If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+												g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Application Name is Null, Empty, or otherwise invalid, please correct."), False,)
 											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Application_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											Else
+												errorCaught = False
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												Using command As New SqlCommand("sp_adm_Application_Master", connection)
+													_sb.AppendLine("Calling sp_adm_Application_Master")
+													
+													command.CommandType = CommandType.StoredProcedure
+													command.Parameters.AddWithValue("@Application_Master_Id", OriginalPK)
+													command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+													command.Parameters.AddWithValue("@Application", Item_Name_Value)
+													command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+													command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+													command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+													command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+													command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+													command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+													command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+													command.Parameters.Add("@OutputErrMsg", SqlDbType.NVarChar, 255).Direction = ParameterDirection.Output
+													'_sb.Clear()
+													command.ExecuteNonQuery()
+													
+													Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+													Dim MyErrMsg As String = CStr(command.Parameters("@OutputErrMsg").Value)
+													g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+													
+													'Test For Error Condition
+													If MyResult <= 0 Then
+														'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+														'-2601 = Foreign Key Violation
+														errorCaught = True
+														Dim errText As String = $"Error code = <{MyResult.ToString}>"
+														If MyResult = -3 Then
+															errText = "Duplicate Data detected"
+														Else
+															errText = MyErrMsg
+														End If
+														g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+														
+														'If OriginalPK was -1, then save the new PKID
+													ElseIf OriginalPK < 0 Then
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+														PF.Properties(PKID_Property_Name).InputValue = MyResult
+														
+													Else 'Update of existing Row was successful
+														g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+													
+													End If
+													
+													If Not errorCaught Then
+														
+														PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+														g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+														g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+													
+													End If
+												
+												End Using
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End If 'Item_Name_Value <> String.Empty
+										End If  'Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
+				
+				
+				' Case "ADM_Device_Type_Master_Save"
+					' g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
+					' Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
+					' g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
 					
+					' Dim errorCaught As Boolean = False
+					' Dim OriginalPK As Long = PF.Properties("Device_Type_Master_Id").Value
+					' Dim Item_Name_Value as String = PF.Properties("Device_Type").Value
 					
-				Case "ADM_Device_Type_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
+					' 'Don't save if there isn't a valid Item_Name
+					' If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+						' g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Device Type is Null or Empty, please correct."), False,)
 					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Device_Type_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("Device_Type").Value
-					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Device Type is Null or Empty, please correct."), False,)
+					' ElseIf PF.Properties("Is_Dirty").Value = True Then
 						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
-						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand($"sp_adm_Device_Type_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Device_Type_Master_Id", PF.Properties("Device_Type_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Device_Type", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
+						' Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
+						' Using connection As New SqlConnection(CompDBConnString)
+							' connection.Open()
+							' Using command As New SqlCommand($"sp_adm_Device_Type_Master", connection)
+								' command.CommandType = CommandType.StoredProcedure
+								' command.Parameters.AddWithValue("@Device_Type_Master_Id", PF.Properties("Device_Type_Master_Id").Value)
+								' command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+								' command.Parameters.AddWithValue("@Device_Type", Item_Name_Value)
+								' command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+								' command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+								' command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+								' command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+								' command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+								' command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+								' command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+								' command.ExecuteNonQuery()
+								' 'If returned value (OriginalPF) is negative, this is a new record
+								' If OriginalPK < 0 Then 
 									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+									' Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+									' g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
 									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Device_Type_Master Row: {errText}"), False,)
-										 
-									Else
-										PF.Properties("Device_Type_Master_Id").InputValue = MyResult
-									End If
-								End If
+									' 'Test For Error Condition
+									' If MyResult <= 0 Then
+										' 'Error Condition Exists
+										' '-2603 = Foreign Key Violation
+										' errorCaught = True
+										' Dim errText As String = $"Error code = <{MyResult.ToString}>"
+										' If MyResult = -3 Then
+											' errText = "Duplicate Data detected"
+										' End if
+										' g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Device_Type_Master Row: {errText}"), False,)
+										
+									' Else
+										' PF.Properties("Device_Type_Master_Id").InputValue = MyResult
+									' End If
+								' End If
 								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-					
+								' If Not errorCaught
+									' PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+									' g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+									' g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+								' End If
+							
+							' End Using
+						' End Using
+					' End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
+				
 				Case "ADM_Device_Type_Master_Save_Changed"
 					
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
@@ -3822,167 +2998,166 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim Item_Name_Value as String = String.Empty
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
+								Dim _sb As New Text.StringBuilder
 								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Device_Type").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Device_Type
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Device Type is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
 										OriginalPK = PF.Properties("Device_Type_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										Item_Name_Value = PF.Properties("Device_Type").Value
+										
+										'Don't save if there isn't a valid Device_Type
+										If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+											g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Device Type is Null or Empty, please correct."), False,)
+											
+										ElseIf PF.Properties("Is_Dirty").Value = True Then
+											
+											errorCaught = False
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
 											
 											Using command As New SqlCommand("sp_adm_Device_Type_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Device_Type_Master")
-											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Device_Type_Master_Id", PF.Properties("Device_Type_Master_Id").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Device_Type", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
-											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Device_Type_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+												_sb.AppendLine("Calling sp_adm_Device_Type_Master")
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												command.CommandType = CommandType.StoredProcedure
+												command.Parameters.AddWithValue("@Device_Type_Master_Id", PF.Properties("Device_Type_Master_Id").Value)
+												command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+												command.Parameters.AddWithValue("@Device_Type", Item_Name_Value)
+												command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+												command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+												command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+												command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+												command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+												command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+												command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+												
+												'_sb.Clear()
+												command.ExecuteNonQuery()
+												
+												Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+												g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+												
+												'Test For Error Condition
+												If MyResult <= 0 Then
+													'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+													'-2601 = Foreign Key Violation
+													errorCaught = True
+													Dim errText As String = $"Error code = <{MyResult.ToString}>"
+													If MyResult = -3 Then
+														errText = "Duplicate Data detected"
+													End if
+													g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+												
+												'If OriginalPK was -1, then save the new PKID
+												Else If OriginalPK < 0 Then
+													g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+													PF.Properties("Device_Type_Master_Id").InputValue = MyResult
+												
+												Else 'Update of existing Row was successful
+													g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+												
+												End If
+												
+												If Not errorCaught
+													
+													PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+													g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+													g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												
+												End If
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End Using
+										
+										End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
 					
 					
-				Case "ADM_Parameter_Name_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
+				' Case "ADM_Parameter_Name_Master_Save"
+					' g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
+					' Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
+					' g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
 					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Parameter_Name_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("Parameter_Name_Master").Value
+					' Dim errorCaught As Boolean = False
+					' Dim OriginalPK As Long = PF.Properties("Parameter_Name_Master_Id").Value
+					' Dim Item_Name_Value as String = PF.Properties("Parameter_Name_Master").Value
 					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Parameter Name is Null or Empty, please correct."), False,)
+					' 'Don't save if there isn't a valid Item_Name
+					' If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+						' g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Parameter Name is Null or Empty, please correct."), False,)
 						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
+					' ElseIf PF.Properties("Is_Dirty").Value = True Then
 						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand($"sp_adm_Parameter_Name_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Parameter_Name_Master_ID", PF.Properties("Parameter_Name_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Parameter_Name_Master", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
+						' Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
+						' Using connection As New SqlConnection(CompDBConnString)
+							' connection.Open()
+							' Using command As New SqlCommand($"sp_adm_Parameter_Name_Master", connection)
+								' command.CommandType = CommandType.StoredProcedure
+								' command.Parameters.AddWithValue("@Parameter_Name_Master_ID", PF.Properties("Parameter_Name_Master_Id").Value)
+								' command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+								' command.Parameters.AddWithValue("@Parameter_Name_Master", Item_Name_Value)
+								' command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+								' command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+								' command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+								' command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+								' command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+								' command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+								' command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+								' command.ExecuteNonQuery()
+								' 'If returned value (OriginalPF) is negative, this is a new record
+								' If OriginalPK < 0 Then 
 									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+									' Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+									' g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
 									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Parameter_Name_Master Row: {errText}"), False,)
+									' 'Test For Error Condition
+									' If MyResult <= 0 Then
+										 ' 'Error Condition Exists
+										 ' '-2603 = Foreign Key Violation
+										 ' errorCaught = True
+										 ' Dim errText As String = $"Error code = <{MyResult.ToString}>"
+										 ' If MyResult = -3 Then
+											' errText = "Duplicate Data detected"
+										 ' End if
+										 ' g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Parameter_Name_Master Row: {errText}"), False,)
 										 
-									Else
-										PF.Properties("Parameter_Name_Master_Id").InputValue = MyResult
-									End If
-								End If
+									' Else
+										' PF.Properties("Parameter_Name_Master_Id").InputValue = MyResult
+									' End If
+								' End If
 								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
+								' If Not errorCaught
+									' PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+									' g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+									' g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+								' End If
+							
+							' End Using
+						' End Using
+					' End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
 					
 				Case "ADM_Parameter_Name_Master_Save_Changed"
 					
@@ -3994,166 +3169,166 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim Item_Name_Value as String = String.Empty
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
+								Dim _sb As New Text.StringBuilder
 								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Parameter_Name_Master").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Parameter_Name_Master
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Parameter Name is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
 										OriginalPK = PF.Properties("Parameter_Name_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										Item_Name_Value = PF.Properties("Parameter_Name_Master").Value
+										
+										'Don't save if there isn't a valid Parameter_Name_Master
+										If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+											g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Parameter Name is Null or Empty, please correct."), False,)
+											
+										ElseIf PF.Properties("Is_Dirty").Value = True Then
+											
+											errorCaught = False
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
 											
 											Using command As New SqlCommand("sp_adm_Parameter_Name_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Parameter_Name_Master")
-											
-											command.Parameters.AddWithValue("@Parameter_Name_Master_ID", PF.Properties("Parameter_Name_Master_Id").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Parameter_Name_Master", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
-											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Parameter_Name_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+												_sb.AppendLine("Calling sp_adm_Parameter_Name_Master")
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												command.CommandType = CommandType.StoredProcedure
+												command.Parameters.AddWithValue("@Parameter_Name_Master_ID", PF.Properties("Parameter_Name_Master_Id").Value)
+												command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+												command.Parameters.AddWithValue("@Parameter_Name_Master", Item_Name_Value)
+												command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+												command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+												command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+												command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+												command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+												command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+												command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+												
+												'_sb.Clear()
+												command.ExecuteNonQuery()
+												
+												Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+												g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+												
+												'Test For Error Condition
+												If MyResult <= 0 Then
+													 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+													 '-2601 = Foreign Key Violation
+													 errorCaught = True
+													 Dim errText As String = $"Error code = <{MyResult.ToString}>"
+													 If MyResult = -3 Then
+														errText = "Duplicate Data detected"
+													 End if
+													 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													 
+												'If OriginalPK was -1, then save the new PKID
+												Else If OriginalPK < 0 Then
+													g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+													PF.Properties("Parameter_Name_Master_Id").InputValue = MyResult
+												
+												Else 'Update of existing Row was successful
+													g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+												
+												End If
+												
+												If Not errorCaught
+													
+													PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+													g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+													g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												
+												End If
 											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											End Using
+										
+										End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
 					
 					
-				Case "ADM_Part_Type_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
+				' Case "ADM_Part_Type_Master_Save"
+					' g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
+					' Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
+					' g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
 					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Part_Type_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("Part_Type").Value
+					' Dim errorCaught As Boolean = False
+					' Dim OriginalPK As Long = PF.Properties("Part_Type_Master_Id").Value
+					' Dim Item_Name_Value as String = PF.Properties("Part_Type").Value
 					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Part Type is Null or Empty, please correct."), False,)
+					' 'Don't save if there isn't a valid Item_Name
+					' If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+						' g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Part Type is Null or Empty, please correct."), False,)
 						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
+					' ElseIf PF.Properties("Is_Dirty").Value = True Then
 						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand($"sp_adm_Part_Type_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Part_Type_Master_Id", PF.Properties("Part_Type_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Part_Type", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
+						' Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
+						' Using connection As New SqlConnection(CompDBConnString)
+							' connection.Open()
+							' Using command As New SqlCommand($"sp_adm_Part_Type_Master", connection)
+								' command.CommandType = CommandType.StoredProcedure
+								' command.Parameters.AddWithValue("@Part_Type_Master_Id", PF.Properties("Part_Type_Master_Id").Value)
+								' command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+								' command.Parameters.AddWithValue("@Part_Type", Item_Name_Value)
+								' command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+								' command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+								' command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+								' command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+								' command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+								' command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+								' command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+								' command.ExecuteNonQuery()
+								' 'If returned value (OriginalPF) is negative, this is a new record
+								' If OriginalPK < 0 Then 
 									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+									' Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+									' g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
 									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Part_Type_Master Row: {errText}"), False,)
+									' 'Test For Error Condition
+									' If MyResult <= 0 Then
+										 ' 'Error Condition Exists
+										 ' '-2603 = Foreign Key Violation
+										 ' errorCaught = True
+										 ' Dim errText As String = $"Error code = <{MyResult.ToString}>"
+										 ' If MyResult = -3 Then
+											' errText = "Duplicate Data detected"
+										 ' End if
+										 ' g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Part_Type_Master Row: {errText}"), False,)
 										 
-									Else
-										PF.Properties("Part_Type_Master_Id").InputValue = MyResult
-									End If
-								End If
+									' Else
+										' PF.Properties("Part_Type_Master_Id").InputValue = MyResult
+									' End If
+								' End If
 								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
+								' If Not errorCaught
+									' PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+									' g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+									' g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+								' End If
+							
+							' End Using
+						' End Using
+					' End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
 					
 				Case "ADM_Part_Type_Master_Save_Changed"
 					
@@ -4165,167 +3340,165 @@ Module Custom
 						'only open a connection if we have changes
 						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
 						Using connection As New SqlConnection(CompDBConnString)
-						connection.Open()
-						
-						Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
-						
-						' Make sure you have an enumerator
-						If Not PartEnum Is Nothing Then
-							Dim PF As Part = Nothing
-							Dim errorCaught As Boolean = False
-							Dim OriginalPK As Long = -1
-							Dim Item_Name_Value as String = String.Empty
+							connection.Open()
 							
-							Dim _sb As New Text.StringBuilder
+							Dim PartEnum as IEnumerator = OwnerSubpartCollection.GetEnumerator
 							
-							' loop the collection
-							While PartEnum.MoveNext
+							' Make sure you have an enumerator
+							If Not PartEnum Is Nothing Then
+								Dim PF As Part = Nothing
+								Dim errorCaught As Boolean = False
+								Dim OriginalPK As Long = -1
+								Dim Item_Name_Value as String = String.Empty
 								
-								' get the part, add it if it's not destroyed
-								PF = PartEnum.Current
+								Dim _sb As New Text.StringBuilder
 								
-								If PF Is Nothing Then
-									g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
-								
-								Else
-									g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
+								' loop the collection
+								While PartEnum.MoveNext
 									
-									Item_Name_Value = PF.Properties("Part_Type").Value
+									' get the part, add it if it's not destroyed
+									PF = PartEnum.Current
 									
-									'Don't save if there isn't a valid Part_Type
-									If String.IsNullOrEmpty(Item_Name_Value) Then
-										g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Part Type is Null or Empty, please correct."), False,)
+									If PF Is Nothing Then
+										g_ObjectManager.LogError(e.FunctionName, "PF Is Nothing", False,)
+									
+									Else
+										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
 										
-									ElseIf PF.Properties("Is_Dirty").Value = True Then
-									
-										errorCaught = False
 										OriginalPK = PF.Properties("Part_Type_Master_Id").Value
-										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
+										Item_Name_Value = PF.Properties("Part_Type").Value
+										
+										'Don't save if there isn't a valid Part_Type
+										If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+											g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Part Type is Null or Empty, please correct."), False,)
 											
-											Using command As New SqlCommand("sp_adm_Part_Type_Master", connection)
-											_sb.AppendLine("Calling sp_adm_Part_Type_Master")
+										ElseIf PF.Properties("Is_Dirty").Value = True Then
 											
-											command.CommandType = CommandType.StoredProcedure
-											command.Parameters.AddWithValue("@Part_Type_Master_Id", PF.Properties("Part_Type_Master_Id").Value)
-											command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-											command.Parameters.AddWithValue("@Part_Type", Item_Name_Value)
-											command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-											command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-											command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-											command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-											command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-											command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-											command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-											command.ExecuteNonQuery()
-											
-											'_sb.Clear()
-											command.ExecuteNonQuery()
-											
-											Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-											g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
-											
-											'Test For Error Condition
-											If MyResult <= 0 Then
-												 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
-												 '-2601 = Foreign Key Violation
-												 errorCaught = True
-												 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-												 If MyResult = -3 Then
-													errText = "Duplicate Data detected"
-												 End if
-												 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
-												 
-											'If OriginalPK was -1, then save the new PKID
-											Else If OriginalPK < 0 Then
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
-												PF.Properties("Part_Type_Master_Id").InputValue = MyResult
-											
-											Else 'Update of existing Row was successful
-												g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
-											
-											End If
-											
-											If Not errorCaught
+											errorCaught = False
+											g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
 												
-												PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-												g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-												g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-											
-											End If
-											
-										End Using
-									
-									End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
-								End If 'PF Is Nothing
-							
-							End While
-						End If
+											Using command As New SqlCommand("sp_adm_Part_Type_Master", connection)
+												_sb.AppendLine("Calling sp_adm_Part_Type_Master")
+												
+												command.CommandType = CommandType.StoredProcedure
+												command.Parameters.AddWithValue("@Part_Type_Master_Id", PF.Properties("Part_Type_Master_Id").Value)
+												command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+												command.Parameters.AddWithValue("@Part_Type", Item_Name_Value)
+												command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+												command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+												command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+												command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+												command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+												command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+												command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output											
+												'_sb.Clear()
+												command.ExecuteNonQuery()
+												
+												Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+												g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+												
+												'Test For Error Condition
+												If MyResult <= 0 Then
+													 'Error Condition Exists, and MyResult contains -(SQLErrorCode)
+													 '-2601 = Foreign Key Violation
+													 errorCaught = True
+													 Dim errText As String = $"Error code = <{MyResult.ToString}>"
+													 If MyResult = -3 Then
+														errText = "Duplicate Data detected"
+													 End if
+													 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: {errText}"), False,)
+													 
+												'If OriginalPK was -1, then save the new PKID
+												Else If OriginalPK < 0 Then
+													g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Setting PKID: <{MyResult.ToString}>"), , True)
+													PF.Properties("Part_Type_Master_Id").InputValue = MyResult
+												
+												Else 'Update of existing Row was successful
+													g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Successful Update of Row for PKID: <{MyResult.ToString}>"), , True)
+												
+												End If
+												
+												If Not errorCaught
+													
+													PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+													g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+													g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+												
+												End If
+												
+											End Using
+										
+										End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
+									End If 'PF Is Nothing
+								
+								End While
+							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
 					
 					
-				Case "ADM_Standards_Master_Save"
-					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
-					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
+				' Case "ADM_Standards_Master_Save"
+					' g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
+					' Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
+					' g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>"), , True)
 					
-					Dim errorCaught As Boolean = False
-					Dim OriginalPK As Long = PF.Properties("Standards_Master_Id").Value
-					Dim Item_Name_Value as String = PF.Properties("Standards").Value
+					' Dim errorCaught As Boolean = False
+					' Dim OriginalPK As Long = PF.Properties("Standards_Master_Id").Value
+					' Dim Item_Name_Value as String = PF.Properties("Standards").Value
 					
-					'Don't save if there isn't a valid Item_Name
-					If String.IsNullOrEmpty(Item_Name_Value) Then
-						g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Standards is Null or Empty, please correct."), False,)
+					' 'Don't save if there isn't a valid Item_Name
+					' If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
+						' g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Standards is Null or Empty, please correct."), False,)
 						
-					ElseIf PF.Properties("Is_Dirty").Value = True Then
+					' ElseIf PF.Properties("Is_Dirty").Value = True Then
 						
-						Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
-						Using connection As New SqlConnection(CompDBConnString)
-							connection.Open()
-							Using command As New SqlCommand($"sp_adm_Standards_Master", connection)
-								command.CommandType = CommandType.StoredProcedure
-								command.Parameters.AddWithValue("@Standards_Master_ID", PF.Properties("Standards_Master_Id").Value)
-								command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
-								command.Parameters.AddWithValue("@Standards", Item_Name_Value)
-								command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
-								command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
-								command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
-								command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
-								command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
-								command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
-								command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
-								command.ExecuteNonQuery()
-								'If returned value (OriginalPF) is negative, this is a new record
-								If OriginalPK < 0 Then 
+						' Dim CompDBConnString As String = g_rsUser.UserSettings.ActiveProfile.ComponentsConnectionString
+						' Using connection As New SqlConnection(CompDBConnString)
+							' connection.Open()
+							' Using command As New SqlCommand($"sp_adm_Standards_Master", connection)
+								' command.CommandType = CommandType.StoredProcedure
+								' command.Parameters.AddWithValue("@Standards_Master_ID", PF.Properties("Standards_Master_Id").Value)
+								' command.Parameters.AddWithValue("@Sort_Order", PF.Properties("Sort_Order").Value)
+								' command.Parameters.AddWithValue("@Standards", Item_Name_Value)
+								' command.Parameters.AddWithValue("@Is_Active", PF.Properties("Is_Active").Value)
+								' command.Parameters.AddWithValue("@Created_By", PF.Properties("Created_By").Value)
+								' command.Parameters.AddWithValue("@Created_On", PF.Properties("Created_On").Value)
+								' command.Parameters.AddWithValue("@Modified_By", String.Format($"{g_RSUser.Name} [{g_RSUser.UserName}]"))
+								' command.Parameters.AddWithValue("@Modified_On", PF.Properties("Modified_On").Value)
+								' command.Parameters.AddWithValue("@Deleted", PF.Properties("Deleted").Value)
+								' command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
+								' command.ExecuteNonQuery()
+								' 'If returned value (OriginalPF) is negative, this is a new record
+								' If OriginalPK < 0 Then 
 									
-									Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
-									g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
+									' Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
+									' g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
 									
-									'Test For Error Condition
-									If MyResult <= 0 Then
-										 'Error Condition Exists
-										 '-2603 = Foreign Key Violation
-										 errorCaught = True
-										 Dim errText As String = $"Error code = <{MyResult.ToString}>"
-										 If MyResult = -3 Then
-											errText = "Duplicate Data detected"
-										 End if
-										 g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Standards_Master Row: {errText}"), False,)
+									' 'Test For Error Condition
+									' If MyResult <= 0 Then
+										 ' 'Error Condition Exists
+										 ' '-2603 = Foreign Key Violation
+										 ' errorCaught = True
+										 ' Dim errText As String = $"Error code = <{MyResult.ToString}>"
+										 ' If MyResult = -3 Then
+											' errText = "Duplicate Data detected"
+										 ' End if
+										 ' g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter new Standards_Master Row: {errText}"), False,)
 										 
-									Else
-										PF.Properties("Standards_Master_Id").InputValue = MyResult
-									End If
-								End If
+									' Else
+										' PF.Properties("Standards_Master_Id").InputValue = MyResult
+									' End If
+								' End If
 								
-								If Not errorCaught
-									PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
-									g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-									g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
-								End If
-
-							End Using
-						End Using
-					End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
+								' If Not errorCaught
+									' PF.SubParts("DbInfo")(1).RefreshDatabaseValues()
+									' g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+									' g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
+								' End If
+							
+							' End Using
+						' End Using
+					' End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
 					
 					
 				Case "ADM_Standards_Master_Save_Changed"
@@ -4362,13 +3535,13 @@ Module Custom
 									
 									Else
 										OriginalPK = PF.Properties("Standards_Master_Id").Value
-
+										
 										g_ObjectManager.LogInfo(e.FunctionName, String.Format($"PF: <{PF.Name}>, OriginalPK: <{OriginalPK.ToString}>, IsDirty: <{PF.Properties("Is_Dirty").Value.ToString}> "), , True)
 										
 										Item_Name_Value = PF.Properties("Standards").Value
 										
 										'Don't save if there isn't a valid Standards
-										If String.IsNullOrEmpty(Item_Name_Value) Then
+										If String.IsNullOrEmpty(Item_Name_Value.Trim()) Then
 											g_ObjectManager.LogError(e.FunctionName, String.Format($"Error when trying to enter/update Row for PKID: <{OriginalPK}>.{vbCrLf}Error: Standards is Null or Empty, please correct."), False,)
 											
 										ElseIf PF.Properties("Is_Dirty").Value = True Then
@@ -4376,7 +3549,7 @@ Module Custom
 											errorCaught = False
 											'OriginalPK = PF.Properties("Standards_Master_Id").Value
 											'g_ObjectManager.LogInfo(e.FunctionName, String.Format($"OriginalPK: <{OriginalPK.ToString}>"), , True)
-												
+											
 											Using command As New SqlCommand("sp_adm_Standards_Master", connection)
 												_sb.AppendLine("Calling sp_adm_Standards_Master")
 												
@@ -4393,7 +3566,7 @@ Module Custom
 												command.Parameters.Add("@OutputPK", SqlDbType.Int).Direction = ParameterDirection.Output
 												command.ExecuteNonQuery()
 												
-											
+												
 												Dim MyResult As Integer = CInt(command.Parameters("@OutputPK").Value)
 												g_ObjectManager.LogInfo(e.FunctionName, $"OriginalPK: <{OriginalPK.ToString}>, Returned MyResult: <{MyResult.ToString}> ", , True)
 												
@@ -4425,7 +3598,7 @@ Module Custom
 													g_ObjectManager.LogInfo(e.FunctionName, $"Saved New Item: {PF.Name} ", , True)
 												
 												End If
-												
+											
 											End Using
 										
 										End If 'Item_Name_Value <> String.Empty AND Is_Dirty = True
@@ -4435,229 +3608,61 @@ Module Custom
 							End If
 						End Using ' close the Connection
 					End If 'Any Rows have Is_Dirty = True
-					
-					
+				
+				
 				Case "Adm_RSXLI_PLI_Search_Data_LoadFromDB"
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entry", , True)
-
-                    'Dim TableName As String = "RSXLI_PLI_Search_Data"
-                    Dim SubpartName As String = "RSXLI_PLI_Search_Data_Row"
-                    Dim PK_Name As String = "RSXLI_PLI_Search_Data_ID"
-
-                    Dim SubpartColName As String = "Rows"
-                    Dim PF As Part = RootPart.RSXLI_PLI_Search_Data(1)
-                    PF.RefreshDatabaseValues()
-                    PF.Properties("Row_DBKeys").RevertToCalc()
-                    PF.Subparts(SubpartColName).RevertToCalc()
-                    PF.Subparts(SubpartColName).RemoveAll()
-                    PF.Subparts(SubpartColName).RevertToCalc()
-                    PF.RefreshDatabaseValues()
+					
+					'Dim TableName As String = "RSXLI_PLI_Search_Data"
+					Dim SubpartName As String = "RSXLI_PLI_Search_Data_Row"
+					Dim PK_Name As String = "RSXLI_PLI_Search_Data_ID"
+					
+					Dim SubpartColName As String = "Rows"
+					Dim PF As Part = RootPart.RSXLI_PLI_Search_Data(1)
+					PF.RefreshDatabaseValues()
+					PF.Properties("Row_DBKeys").RevertToCalc()
+					PF.Subparts(SubpartColName).RevertToCalc()
+					PF.Subparts(SubpartColName).RemoveAll()
+					PF.Subparts(SubpartColName).RevertToCalc()
+					PF.RefreshDatabaseValues()
 					
 					Dim i As Integer = 0
-                    For Each s As String In PF.ValidValues("Row_DBKeys").Keys
- '                       Dim i As Integer = CInt(s)
+					For Each s As String In PF.ValidValues("Row_DBKeys").Keys
+						'Dim i As Integer = CInt(s)
 						i += 1
 						
-                        Dim Item As Part = PF.Subparts(SubpartColName).AddPart(SubpartName)
+						Dim Item As Part = PF.Subparts(SubpartColName).AddPart(SubpartName)
 						g_ObjectManager.LogInfo(e.FunctionName, $"Item.Name: <{Item.Name}, setting {PK_Name}: <{s}>.", , True)
-
-                        Item.Properties(PK_Name).InputValue = s
-                    Next s
-
-
-                    g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-                    g_ObjectManager.LogInfo(e.FunctionName, $"RSXLI_PLI_Search_Data Refreshed", , True)
-
-
-				Case "ADM_RSXLI_PLI_Search_Data_Launch"
+						
+						Item.Properties(PK_Name).InputValue = s
+					Next s
+					
+					g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+					g_ObjectManager.LogInfo(e.FunctionName, $"RSXLI_PLI_Search_Data Refreshed", , True)
 				
+				
+				Case "ADM_RSXLI_PLI_Search_Data_Launch"
+					
 					g_ObjectManager.LogInfo(e.FunctionName, $"Entered Save Action Button Click", , True)
 					Dim PF As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
 					g_ObjectManager.LogInfo("Search", String.Format($"Launching Project #: <{PF.Properties("Project_Number").Value}>,{vbCrLf}Project Name: <{PF.Properties("Project_Name").Value}>,{vbCrLf}Project Name: <{PF.Properties("SFDC_Opportunity_ID").Value}> "), , False)
-
 				
-
-
+				
 #Region "Unused"
-				' "Adm_RSXLI_PLI_Search_Data_LoadFromDB"
-'                Case "Adm_Pole_Master_LoadFromDB_old"
-'
-'                    'Dim TableName As String = Me.Name.Split(":")(0).Trim()
-'                    Dim SubpartName As String = "Adm_Pole_Master_Row"
-'                    Dim PK_Name As String = "Pole_Master_ID"
-'
-'                    Dim SubpartColName As String = "Rows"
-'                    Dim PF As Part = RootPart.Pole_Master(1)
-'                    PF.RefreshDatabaseValues()
-'                    PF.Properties("Row_DBKeys").RevertToCalc()
-'                    PF.Subparts(SubpartColName).RevertToCalc()
-'                    PF.Subparts(SubpartColName).RemoveAll()
-'                    PF.Subparts(SubpartColName).RevertToCalc()
-'                    PF.RefreshDatabaseValues()
-'
-'                    For Each s As String In PF.ValidValues("Row_DBKeys").Keys
-'                        Dim i As Integer = CInt(s)
-'                        Dim Item As Part = PF.Subparts(SubpartColName).AddPart(SubpartName)
-'                        Item.Properties(PK_Name).InputValue = i
-'                    Next s
-
-
-'                    g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-'                    g_ObjectManager.LogInfo("Pole Master Data", $"Pole Master Data Refreshed", , True)
-
-
-
-'                Case "Adm_Signal_Type_Master_LoadFromDB_old"'
-'
-'                    'Dim TableName As String = Me.Name.Split(":")(0).Trim()
-'                    Dim SubpartName As String = "Adm_Signal_Type_Master_Row"
-'                    Dim PK_Name As String = "Signal_Type_Master_ID"
-'
-'                    Dim SubpartColName As String = "Rows"
-'                    Dim PF As Part = RootPart.Signal_Type_Master(1)
-'                    PF.RefreshDatabaseValues()
-'                    PF.Properties("Row_DBKeys").RevertToCalc()
-'                    PF.Subparts(SubpartColName).RevertToCalc()
-'                    PF.Subparts(SubpartColName).RemoveAll()
-'                    PF.Subparts(SubpartColName).RevertToCalc()
-'                    PF.RefreshDatabaseValues()
-'
-'                    For Each s As String In PF.ValidValues("Row_DBKeys").Keys
-'                        Dim i As Integer = CInt(s)
-'                        Dim Item As Part = PF.Subparts(SubpartColName).AddPart(SubpartName)
-'                        Item.Properties(PK_Name).InputValue = i
-'                    Next s
-'
-'
- '                   g_ObjectManager.RSEngineer.RefreshModelViews(-1)
- '                   g_ObjectManager.LogInfo("Signal Type Master Data", $"Signal Type Master Data Refreshed", , True)
-
-
-'                Case "Adm_Controller_Protocol_Master_LoadFromDB_old"
-                    'stop
-'                    'Dim TableName As String = Me.Name.Split(":")(0).Trim()
-'                    Dim SubpartName As String = "Adm_Controller_Protocol_Master_Row"
-'                    Dim PK_Name As String = "Controller_Protocol_Master_ID"
-'					                    g_ObjectManager.LogInfo(e.FunctionName, $"SubpartName: <{SubpartName}", , True)
-'					                    g_ObjectManager.LogInfo(e.FunctionName, $"PK_Name: <{PK_Name}", , True)
-'
-'                    Dim SubpartColName As String = "Rows"
-'                    Dim PF As Part = RootPart.Controller_Protocol_Master(1)
-'                    PF.RefreshDatabaseValues()
-'                    PF.Properties("Row_DBKeys").RevertToCalc()
-'                    PF.Subparts(SubpartColName).RevertToCalc()
-'                    PF.Subparts(SubpartColName).RemoveAll()
-'                    PF.Subparts(SubpartColName).RevertToCalc()
-'                    PF.RefreshDatabaseValues()
-'
-'                    For Each s As String In PF.ValidValues("Row_DBKeys").Keys
-'                        Dim i As Integer = CInt(s)
-'                        Dim Item As Part = PF.Subparts(SubpartColName).AddPart(SubpartName)
-'                        Item.Properties(PK_Name).InputValue = i'
-'                    Next s
-
-
-'                    g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-'                    g_ObjectManager.LogInfo("Controller_Protocol_Master Data", $"Controller_Protocol_Master Data Refreshed", , True)
-'					
-'
-'                Case "Adm_Voltage_Master_LoadFromDB_old"
-'
-'                    'Dim TableName As String = Me.Name.Split(":")(0).Trim()
-'                    Dim SubpartName As String = "Adm_Voltage_Master_Row"
-'                    Dim PK_Name As String = "Voltage_Master_ID"
-'
-'                    Dim SubpartColName As String = "Rows"
-'                    Dim PF As Part = RootPart.Voltage_Master(1)
-'                    PF.RefreshDatabaseValues()
-'                    PF.Subparts(SubpartColName).RevertToCalc()
-'                    PF.Subparts(SubpartColName).RemoveAll()
-'                    PF.Subparts(SubpartColName).RevertToCalc()
-'                    PF.RefreshDatabaseValues()
-'
-'                    For Each s As String In PF.ValidValues("Row_DBKeys").Keys
-'                        Dim i As Integer = CInt(s)
-'                        Dim Item As Part = PF.Subparts(SubpartColName).AddPart(SubpartName)
-'                        Item.Properties(PK_Name).InputValue = i
-'                    Next s
-'
-'                    g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-'                    g_ObjectManager.LogInfo("Voltage Master Data", $"Voltage Master Data Refreshed", , True)
-'					
-'				Case "Adm_Voltage_Master_Add"
-'				
-'					Dim Item As Part = sender.SelectedPart.Subparts("Rows").AddPart("Adm_Voltage_Master_Row")
-'					If Item Is Nothing Then 
-'						g_ObjectManager.LogError(_module, String.Format($"Error then trying to add new Adm_Voltage_Master_Row"), False,)
-'					Else
-'						g_ObjectManager.DecacheCalculatedValuesPart(sender.SelectedPart)
-'						sender.Refresh()
-'						g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-'					End If
-					
-
-'                Case "Adm_Signal_Type_Master_Add"
-'				
-'					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Entered with Part: <{sender.SelectedPart.Name}>"), , True)
-'
-'					Dim Item As Part = sender.SelectedPart.Subparts("Rows").AddPart("Adm_Signal_Type_Master_Row")
-'					If Item Is Nothing Then 
-'						g_ObjectManager.LogError(_module, String.Format($"Error then trying to add new Adm_Signal_Type_Master_Row"), False,)
-'					Else
-'						g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Adding Row for Part: <{Item.Name}>"), , True)
-'
-'						'g_ObjectManager.LogInfo(e.FunctionName, String.Format($"RowID for Part: <{sender.SelectedPart.Subparts("Rows").SelectedRowId()}>"), , True)
-'
-'						g_ObjectManager.DecacheCalculatedValuesPart(sender.SelectedPart)
-'						sender.Refresh()
-'						g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-'					End If
-'
-'				Case "Adm_Signal_Type_Master_Row_Delete_old"
-'				
-'					g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Entered with Part: <{sender.SelectedPart.Name}>"), , True)
-'
-'					Dim Item As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-'					If Item Is Nothing Then 
-'						g_ObjectManager.LogError(_module, String.Format($"Error when trying to Delete Row for Part: <{sender.SelectedPart.Subparts("Rows").SelectedRowId()}>"), False,)
-'					Else
-'						g_ObjectManager.LogInfo(e.FunctionName, String.Format($"Deleting Row for Part: <{Item.Name}>"), , True)
-'
-'						g_ObjectManager.LogInfo(e.FunctionName, String.Format($"RowID for Part: <{sender.SelectedPart.Subparts("Rows").SelectedRowId()}>"), , True)
-'
-'						Item.Properties("Deleted").SetInputValue(True)
-'						g_ObjectManager.DecacheCalculatedValuesPart(sender.SelectedPart)
-'						sender.Refresh()
-'						g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-'					End If
-					
-'				Case "Adm_Voltage_Master_Row_Delete"
-'				
-'					Dim Item As Part = sender.SelectedPart.Subparts("Rows")(sender.SelectedPart.Properties("Selected_Row").Value)
-'					If Item Is Nothing Then 
-'						g_ObjectManager.LogError(_module, String.Format($"Error then trying to Adm_Voltage_Master_Row_Delete: <{sender.SelectedPart.Subparts("Rows").SelectedRowId()}>"), False,)
-'					Else
-'						Item.Properties("Deleted").SetInputValue(True)
-'						g_ObjectManager.DecacheCalculatedValuesPart(sender.SelectedPart)
-'						sender.Refresh()
-'						g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-'					End If
-
-					
-                'ITO Events
+				
+				
+				'ITO Events
                 Case "ITO_BudgetSpec_Generate_Report"
                     g_ObjectManager.LogInfo(_module, "Calling: Aspose_DoBudgetSpecOutput", , True)
-'                    Aspose_DoBudgetSpecOutput()
-
-                    'DoBudgetSpecOutput()
-
-
-
-                Case "ITO_BudgetSpec_OutputToTable"
-                    g_ObjectManager.LogInfo(_module, "Calling: ITO_BudgetSpec_OutputToTable Called with DoXLIUpdates = True", , True)
-                    g_ObjectManager.DoComponentDBInserts(True)
-                    g_ObjectManager.RSEngineer.RefreshModelViews(-1)
-
+					'Aspose_DoBudgetSpecOutput()
+					
+					'DoBudgetSpecOutput()
+				
+				Case "ITO_BudgetSpec_OutputToTable"
+					g_ObjectManager.LogInfo(_module, "Calling: ITO_BudgetSpec_OutputToTable Called with DoXLIUpdates = True", , True)
+					g_ObjectManager.DoComponentDBInserts(True)
+					g_ObjectManager.RSEngineer.RefreshModelViews(-1)
+				
  '               Case "ITO_View_Changelog"
  '                   'MessageBox.Show(RootPart.OrderItems(1).ITOChangeLog, "Changelog For Version: " & RootPart.OrderItems(1).ITOBuildNumber.ToString)
  '                   g_ObjectManager.LogInfo(_module, "Calling: DoITO_OpenURL (ITO_View_Changelog)", , True)
@@ -4687,8 +3692,9 @@ Module Custom
 					CreateExcelPlantBlocks()
                 Case "CreateSchedules"
                     CreateSchedules()
-
-                Case Else
+				Case "CreateSteamSchedules"
+					CreateSteamSchedules()
+				Case Else
 					g_ObjectManager.LogInfo(_module, "Event NOT MAPPED in Custom.vb in g_rsEngineer_RsActionButtonClick()", , False)
 					
 				
@@ -4741,82 +3747,252 @@ Module Custom
 
 
 
-    'Public Sub ConvertSVG(filenamePath As String)
-    '    Dim pngFile As String = filenamePath.Replace(".svg", ".png")
+	'Public Sub ConvertSVG(filenamePath As String)
+	'    Dim pngFile As String = filenamePath.Replace(".svg", ".png")
 
-    '    If File.Exists(filenamePath) Then
+	'    If File.Exists(filenamePath) Then
 
-    '        Dim svgDoc = Svg.SvgDocument.Open(filenamePath)
-    '        Dim bitmap = svgDoc.Draw()
+	'        Dim svgDoc = Svg.SvgDocument.Open(filenamePath)
+	'        Dim bitmap = svgDoc.Draw()
 
-    '        Using bitmap
-    '            Dim width = bitmap.Width
-    '            Dim height = bitmap.Height
-    '            Dim size = 100
+	'        Using bitmap
+	'            Dim width = bitmap.Width
+	'            Dim height = bitmap.Height
+	'            Dim size = 100
 
-    '            If width <> size Then
-    '                width = size
-    '                height = size / bitmap.Width * height
-    '            End If
+	'            If width <> size Then
+	'                width = size
+	'                height = size / bitmap.Width * height
+	'            End If
 
-    '            Dim bitmap2 = svgDoc.Draw(width, height)
+	'            Dim bitmap2 = svgDoc.Draw(width, height)
 
-    '            Using bitmap2
-    '                bitmap2.Save(pngFile, System.Drawing.Imaging.ImageFormat.Png)
-    '            End Using
+	'            Using bitmap2
+	'                bitmap2.Save(pngFile, System.Drawing.Imaging.ImageFormat.Png)
+	'            End Using
 
-    '        End Using
+	'        End Using
 
-    '    End If
-    'End Sub
-    Public Sub CreateSchedules()
-        Dim iRow As Integer = 7
+	'    End If
+	'End Sub
+	Public Function SqrtV_Calc(SteamPressure As String) As String
 
-        Dim TemplateFile As String = Path.Combine(g_DocAccess.MasterDocumentsFolder, "Templates", "Valve_Schedules.xlsx")
-        Dim OutputFile As String = Path.Combine(g_DocAccess.WorkingFolder, "Schedules_Report.xlsx")
+		Dim SteamTable As DataTable = New DataTable("SteamTableData")
+		Dim X1, Y1, X2, Y2 As Double
 
-        Dim wbook = New XLWorkbook(TemplateFile)
-        Dim ws = wbook.Worksheet(1)
+		SteamTable.Columns.Add("Pressure")
+		SteamTable.Columns.Add("SqrtV")
+		SteamTable.Rows.Add("-14.21", "26.57")
+		SteamTable.Rows.Add("-12.25", "12.04")
+		SteamTable.Rows.Add("-9.8", "8.672")
+		SteamTable.Rows.Add("-7.35", "7.162")
+		SteamTable.Rows.Add("-6.86", "6.95")
+		SteamTable.Rows.Add("-5.88", "6.576")
+		SteamTable.Rows.Add("-4.9", "6.257")
+		SteamTable.Rows.Add("-3.92", "5.984")
+		SteamTable.Rows.Add("-2.94", "5.744")
+		SteamTable.Rows.Add("-1.96", "5.533")
+		SteamTable.Rows.Add("-0.98", "5.345")
+		SteamTable.Rows.Add("0", "5.175")
+		SteamTable.Rows.Add("1", "5.02")
+		SteamTable.Rows.Add("2", "4.876")
+		SteamTable.Rows.Add("3", "4.751")
+		SteamTable.Rows.Add("4", "4.626")
+		SteamTable.Rows.Add("5", "4.518")
+		SteamTable.Rows.Add("6", "4.41")
+		SteamTable.Rows.Add("7", "4.317")
+		SteamTable.Rows.Add("8", "4.225")
+		SteamTable.Rows.Add("9", "4.142")
+		SteamTable.Rows.Add("10", "4.061")
+		SteamTable.Rows.Add("11", "3.987")
+		SteamTable.Rows.Add("12", "3.918")
+		SteamTable.Rows.Add("15", "3.724")
+		SteamTable.Rows.Add("20", "3.464")
+		SteamTable.Rows.Add("25", "3.251")
+		SteamTable.Rows.Add("30", "3.076")
+		SteamTable.Rows.Add("40", "2.797")
+		SteamTable.Rows.Add("50", "2.585")
+		SteamTable.Rows.Add("60", "2.416")
+		SteamTable.Rows.Add("70", "2.276")
+		SteamTable.Rows.Add("80", "2.159")
+		SteamTable.Rows.Add("90", "2.059")
+		SteamTable.Rows.Add("100", "1.972")
+		SteamTable.Rows.Add("120", "1.827")
+		SteamTable.Rows.Add("140", "1.71")
+		SteamTable.Rows.Add("160", "1.613")
+		SteamTable.Rows.Add("180", "1.531")
+		SteamTable.Rows.Add("200", "1.461")
+		SteamTable.Rows.Add("250", "1.32")
+		SteamTable.Rows.Add("300", "1.213")
+		SteamTable.Rows.Add("350", "1.128")
+		SteamTable.Rows.Add("400", "1.058")
+		SteamTable.Rows.Add("450", "0.999")
+		SteamTable.Rows.Add("500", "0.949")
+		SteamTable.Rows.Add("550", "0.904")
+		SteamTable.Rows.Add("600", "0.865")
+		SteamTable.Rows.Add("650", "0.831")
+		SteamTable.Rows.Add("700", "0.799")
+		SteamTable.Rows.Add("800", "0.744")
+		SteamTable.Rows.Add("900", "0.699")
+		SteamTable.Rows.Add("1000", "0.659")
 
-        For Each _valve As Object In RootPart().Schedules(1).Valves
-            ws.Cell("B" & iRow).Value = _valve.ValveTag.ToString()
-            ws.Cell("C" & iRow).Value = _valve.EquipmentLocation.ToString()
-            ws.Cell("D" & iRow).Value = _valve.Service_Application.ToString()
-            ws.Cell("E" & iRow).Value = _valve.ControlType.ToString()
-            ws.Cell("F" & iRow).Value = _valve.LineSize.ToString()
-            ws.Cell("G" & iRow).Value = _valve.DesignFlowGPM.ToString()
+
+		Dim count As Integer = 1
+		For Each row As DataRow In SteamTable.Rows
+			If Double.Parse(row.Item("Pressure")) >= Double.Parse(SteamPressure) Then
+				X2 = Double.Parse(row.Item("Pressure"))
+				Y2 = Double.Parse(row.Item("SqrtV"))
+				If count > 1 Then
+					X1 = Double.Parse(SteamTable.Rows(count - 2)(0))
+					Y1 = Double.Parse(SteamTable.Rows(count - 2)(1))
+				End If
+				Exit For
+			End If
+			count += 1
+		Next row
+
+
+		Return (Y1 + (Double.Parse(SteamPressure) - X1) * (Y2 - Y1) / (X2 - X1))
+	End Function
+
+	Public Sub CreateSteamSchedules()
+		Dim iRow As Integer = 7
+
+		Dim TemplateFile As String = Path.Combine(g_DocAccess.MasterDocumentsFolder, "Templates", "Steam_Schedules.xlsx.xlsx")
+		Dim OutputFile As String = Path.Combine(g_DocAccess.WorkingFolder, "Steam_Schedules_Report.xlsx")
+
+		Dim wbook = New XLWorkbook(TemplateFile)
+		Dim ws = wbook.Worksheet(1)
+
+		For Each _valve As Object In RootPart().Schedules(1).Steam_Valves
+			ws.Cell("B" & iRow).Value = _valve.ValveTag.ToString()
+			ws.Cell("C" & iRow).Value = _valve.EquipmentLocation.ToString()
+			ws.Cell("D" & iRow).Value = _valve.Service_Application.ToString()
+			ws.Cell("E" & iRow).Value = _valve.ControlType.ToString()
+			ws.Cell("F" & iRow).Value = _valve.LineSize.ToString()
+			ws.Cell("G" & iRow).Value = _valve.SteamSupplyPressPSI.ToString()
+			ws.Cell("H" & iRow).Value = _valve.SteamSupplyPresskPa.ToString()
+			ws.Cell("I" & iRow).Value = _valve.DesignFlowLbs_Hr.ToString()
+			ws.Cell("J" & iRow).Value = _valve.DesignFlow_KgHr.ToString()
+			ws.Cell("K" & iRow).Value = _valve.DesignPressureDropPSI.ToString()
+			ws.Cell("L" & iRow).Value = _valve.DesignPressureDropkPa.ToString()
+			ws.Cell("M" & iRow).Value = _valve.ValveDropAtDesignFlowPSI.ToString()
+			ws.Cell("N" & iRow).Value = _valve.ValveDropAtDesignFlowkPa.ToString()
+			ws.Cell("O" & iRow).Value = _valve.SizeIn.ToString()
+			ws.Cell("P" & iRow).Value = _valve.Cv.ToString()
+			ws.Cell("Q" & iRow).Value = _valve.Conn.ToString()
+			ws.Cell("R" & iRow).Value = _valve.BodyRating.ToString()
+			ws.Cell("S" & iRow).Value = _valve.FlowCharacterstics.ToString()
+			ws.Cell("T" & iRow).Value = _valve.ManufacturerType.ToString()
+			ws.Cell("U" & iRow).Value = _valve.ValvePartNumber.ToString()
+			ws.Cell("V" & iRow).Value = _valve.ActuatorPartNumber.ToString()
+			ws.Cell("W" & iRow).Value = _valve.LinkagePartNumber.ToString()
+			ws.Cell("X" & iRow).Value = _valve.ActuatorType.ToString()
+			ws.Cell("Y" & iRow).Value = _valve.Signal.ToString()
+			ws.Cell("Z" & iRow).Value = _valve.FailPos.ToString()
+			ws.Cell("AA" & iRow).Value = _valve.CloseOff.ToString()
+			ws.Cell("AB" & iRow).Value = _valve.Remarks.ToString()
+			iRow += 1
+		Next
+		wbook.SaveAs(OutputFile)
+		MessageBox.Show("Steam Schedules have been successfully saved!", "Schedules")
+
+	End Sub
+
+	Public Sub CreateSchedules()
+		Dim iRow As Integer = 7
+
+		Dim TemplateFile As String = Path.Combine(g_DocAccess.MasterDocumentsFolder, "Templates", "Valve_Schedules.xlsx")
+		Dim OutputFile As String = Path.Combine(g_DocAccess.WorkingFolder, "Water_Schedules_Report.xlsx")
+
+		Dim wbook = New XLWorkbook(TemplateFile)
+		Dim ws = wbook.Worksheet(1)
+
+		For Each _valve As Object In RootPart().Schedules(1).Water_Valves
+			ws.Cell("B" & iRow).Value = _valve.ValveTag.ToString()
+			ws.Cell("C" & iRow).Value = _valve.EquipmentLocation.ToString()
+			ws.Cell("D" & iRow).Value = _valve.Service_Application.ToString()
+			ws.Cell("E" & iRow).Value = _valve.ControlType.ToString()
+			ws.Cell("F" & iRow).Value = _valve.LineSize.ToString()
+			ws.Cell("G" & iRow).Value = _valve.DesignFlowGPM.ToString()
 
 
 
 
 
-            ws.Cell("M" & iRow).Value = _valve.DesignPressureDropPSI.ToString()
+			ws.Cell("M" & iRow).Value = _valve.DesignPressureDropPSI.ToString()
 
 
-            ws.Cell("Q" & iRow).Value = _valve.SizeIn.ToString()
-            ws.Cell("R" & iRow).Value = _valve.Cv.ToString()
-            ws.Cell("S" & iRow).Value = _valve.Pattern.ToString()
-            ws.Cell("T" & iRow).Value = _valve.Conn.ToString()
-            ws.Cell("U" & iRow).Value = _valve.BodyRating.ToString()
-            ws.Cell("V" & iRow).Value = _valve.FlowCharacterstics.ToString()
-            ws.Cell("W" & iRow).Value = _valve.ManufacturerType.ToString()
-            ws.Cell("X" & iRow).Value = _valve.ValvePartNumber.ToString()
-            ws.Cell("Y" & iRow).Value = _valve.ActuatorPartNumber.ToString()
-            ws.Cell("Z" & iRow).Value = _valve.LinkagePartNumber.ToString()
-            ws.Cell("AA" & iRow).Value = _valve.ActuatorType.ToString()
-            ws.Cell("AB" & iRow).Value = _valve.Signal.ToString()
-            ws.Cell("AV" & iRow).Value = _valve.FailPos.ToString()
-            ws.Cell("AD" & iRow).Value = _valve.CloseOff.ToString()
-            ws.Cell("AE" & iRow).Value = _valve.Remarks.ToString()
+			ws.Cell("Q" & iRow).Value = _valve.SizeIn.ToString()
+			ws.Cell("R" & iRow).Value = _valve.Cv.ToString()
+			ws.Cell("S" & iRow).Value = _valve.Pattern.ToString()
+			ws.Cell("T" & iRow).Value = _valve.Conn.ToString()
+			ws.Cell("U" & iRow).Value = _valve.BodyRating.ToString()
+			ws.Cell("V" & iRow).Value = _valve.FlowCharacterstics.ToString()
+			ws.Cell("W" & iRow).Value = _valve.ManufacturerType.ToString()
+			ws.Cell("X" & iRow).Value = _valve.ValvePartNumber.ToString()
+			ws.Cell("Y" & iRow).Value = _valve.ActuatorPartNumber.ToString()
+			ws.Cell("Z" & iRow).Value = _valve.LinkagePartNumber.ToString()
+			ws.Cell("AA" & iRow).Value = _valve.ActuatorType.ToString()
+			ws.Cell("AB" & iRow).Value = _valve.Signal.ToString()
+			ws.Cell("AC" & iRow).Value = _valve.FailPos.ToString()
+			ws.Cell("AD" & iRow).Value = _valve.CloseOff.ToString()
+			ws.Cell("AE" & iRow).Value = _valve.Remarks.ToString()
 
-            iRow += 1
-        Next
-        wbook.SaveAs(OutputFile)
-        'RootPart().Schedules(1).Properties("EnableExport").InputValue = True
-        MessageBox.Show("Schedules have ben successfully saved!", "Schedules")
+			iRow += 1
+		Next
+		wbook.SaveAs(OutputFile)
+		'RootPart().Schedules(1).Properties("EnableExport").InputValue = True
+		MessageBox.Show("Schedules have been successfully saved!", "Schedules")
 
-    End Sub
-    Public Sub CreateExcelBOM()
+	End Sub
+
+	Public Function Schedule_Size_List(ManufacturerType As String, Pattern As String) As ArrayList
+		Dim SQLToExecute As String = ""
+		Dim ds As DataSet
+		Dim arr As ArrayList = New ArrayList()
+		Dim displayValue As String = ""
+
+		SQLToExecute = "Select size  from Valve_Data_Master where Media = 'WATER' AND Manufacturer_Type = " & "'" & ManufacturerType & "' AND Valve_Type_Ref = " & "'" & Pattern & "' Order By Valve_Data_Master_ID DESC"
+
+		ds = g_ComponentData.ExecuteSQL(SQLToExecute)
+
+		Try
+			If ds IsNot Nothing AndAlso ds.Tables.Count > 0 Then
+				For Each dr As DataRow In ds.Tables(0).Rows
+					If IsDBNull(dr.Item(0)) Then
+						arr.Add(String.Empty)
+					Else
+						If dr.Item(0).ToString.Trim = "0.5" Then
+							displayValue = "1/2"
+						ElseIf dr.Item(0).ToString.Trim = "0.75" Then
+							displayValue = "3/4"
+						ElseIf dr.Item(0).ToString.Trim = "1.25" Then
+							displayValue = "1 1/4"
+						ElseIf dr.Item(0).ToString.Trim = "1.5" Then
+							displayValue = "1 1/2"
+						ElseIf dr.Item(0).ToString.Trim = "2.5" Then
+							displayValue = "2 1/2"
+						Else
+							displayValue = dr.Item(0).ToString.Trim
+						End If
+
+						If Not arr.contains(displayValue) Then arr.Add(displayValue)
+					End If
+				Next
+			Else
+				Throw New Exception("[BodyRating] Unable to create valid values; no data was returned.")
+			End If
+
+		Catch ex As Exception
+			g_ObjectManager.LogError("BodyRating", ex.ToString)
+		End Try
+
+		Return arr
+
+	End Function
+
+	Public Sub CreateExcelBOM()
 
         Dim appXL As Excel.Application
         Dim wbXl As Excel.Workbook

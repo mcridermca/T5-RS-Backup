@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{335c14da-b994-4d95-95bb-cc725e97239f}</ProjectGuid>
+		<ProjectGuid>{522d0b53-a354-424e-81f7-90db656e00b0}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>HBS_Demo</RootNamespace>
 		<AssemblyName>HBS_Demo</AssemblyName>
