@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: HBSSystem
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -118,6 +118,8 @@ Option Infer On
     'Dim MethodName as String = string.format("Formula_{0}_WHENCHANGED{1}", specName, context)
     'CallByName(Me, MethodName, CallType.Method)
     Select Case specName & "_" & context
+      Case "Building_"
+      Formula_Building_WHENCHANGED
     End Select
     Select Case specName & "_" & context
     
@@ -128,6 +130,12 @@ Option Infer On
     'Dim MethodName as String = string.format("Formula_{0}_WHENCHANGED{1}", specName, context)
     'CallByName(Me, MethodName, CallType.Method, Value)
     Select Case specName & "_" & context
+    
+      Case "BuildingName_"
+      Formula_BuildingName_WHENCHANGED(Value, OldValue)
+    
+      Case "FloorName_"
+      Formula_FloorName_WHENCHANGED(Value, OldValue)
     
       Case "PastePlant_"
       Formula_PastePlant_WHENCHANGED(Value, OldValue)
@@ -140,6 +148,14 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Dim Status as Boolean = False
     Select Case specName & "_" & context
+    
+      Case "BuildingName_"
+      'Formula_BuildingName_WHENCHANGED(Value, OldValue)
+      Status = True
+    
+      Case "FloorName_"
+      'Formula_FloorName_WHENCHANGED(Value, OldValue)
+      Status = True
     
       Case "PastePlant_"
       'Formula_PastePlant_WHENCHANGED(Value, OldValue)
@@ -172,6 +188,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Controller]() As String
+      Get
+      Return Properties("Controller").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Controller").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Shadows Property [DisplayName]() As String
       Get
       Return Properties("DisplayName").Value
@@ -187,6 +212,15 @@ Option Infer On
       End Get
       Set(ByVal Value As String)
       Properties("ElementName").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [FloorName]() As String
+      Get
+      Return Properties("FloorName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("FloorName").CalculatedValue = Value
       End Set
       End Property
     
@@ -355,6 +389,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [Floor]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Floor")
+      End Get
+      End Property
+    
       Public ReadOnly Property [Group]() As Rulestream.Kernel.Connection
       Get
       Return Connections("Group")
@@ -376,6 +416,12 @@ Option Infer On
       Public ReadOnly Property [PowerSupplies]() As Rulestream.Kernel.Connection
       Get
       Return Connections("PowerSupplies")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [PowerSupplyViewNodes]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("PowerSupplyViewNodes")
       End Get
       End Property
     
@@ -405,11 +451,13 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("HBSSystem", <a><![CDATA[HBS System]]></a>.Value, 17, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/05/2025 03:58:46")
-    AddProperty("586", "BuildingName", <a><![CDATA[Building Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    InitPart("HBSSystem", <a><![CDATA[HBS System]]></a>.Value, 17, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/21/2025 06:49:23")
+    AddProperty("586", "BuildingName", <a><![CDATA[Building Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/21/2025 6:33:47 AM")
     AddProperty("446", "CanAddChild", <a><![CDATA[Can Add Child]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("1848", "Controller", <a><![CDATA[Controller]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/19/2025 5:28:49 AM")
     AddProperty("429", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("806", "ElementName", <a><![CDATA[Element Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/25/2025 8:38:13 PM")
+    AddProperty("1839", "FloorName", <a><![CDATA[Floor Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/21/2025 6:32:57 AM")
     AddProperty("192", "Indentation", <a><![CDATA[Indentation]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("197", "IndentedDisplayName", <a><![CDATA[Indented Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("445", "IndentLevel", <a><![CDATA[Indent Level]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -430,6 +478,10 @@ Option Infer On
     
       AddValidValue("BuildingName")
     
+      AddValidValue("Controller")
+    
+      AddValidValue("FloorName")
+    
       oSubpart = AddSubpart(16,"Plants", <a><![CDATA[Plants]]></a>.Value, "FD", "", "Subparts and Connections", 9999, "", "GLOBAL\H601421", "4/14/2025 6:50:17 PM")
       
         oSubpart.AddVPF (4, "Plant", "Plant")
@@ -448,9 +500,13 @@ Option Infer On
       
         oConnection.AddVPF(4, "Plant")
       
-      oConnection = AddConnection("Building", <a><![CDATA[Building]]></a>.Value, "", "47", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+      oConnection = AddConnection("Building", <a><![CDATA[Building]]></a>.Value, "", "93", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/21/2025 6:49:23 AM")
       
         oConnection.AddVPF(45, "Building")
+      
+      oConnection = AddConnection("Floor", <a><![CDATA[Floor]]></a>.Value, "", "101", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/21/2025 5:43:44 AM")
+      
+        oConnection.AddVPF(46, "Floor")
       
       oConnection = AddConnection("Group", <a><![CDATA[Group]]></a>.Value, "", "33", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
       
@@ -469,6 +525,12 @@ Option Infer On
       oConnection = AddConnection("PowerSupplies", <a><![CDATA[Power Supplies]]></a>.Value, "", "57", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "6/23/2025 9:20:22 PM")
       
         oConnection.AddVPF(22, "PowerSupply")
+      
+      oConnection = AddConnection("PowerSupplyViewNodes", <a><![CDATA[Power Supply View Nodes]]></a>.Value, "", "87", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/14/2025 2:53:46 AM")
+      
+        oConnection.AddVPF(5, "Device")
+      
+        oConnection.AddVPF(6, "Controller")
       
       oConnection = AddConnection("Systems", <a><![CDATA[Systems]]></a>.Value, "", "32", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
       
@@ -507,16 +569,22 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("BuildingName", "542", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601421", "4/25/2025 9:16:18 PM", "", "In Development",  0,1282)
+          InitProperty("BuildingName", "542", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601421", "7/21/2025 6:33:47 AM", "", "In Development",  0,3488)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("CanAddChild", "425", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/19/2025 3:07:32 AM", "", "In Development",  0,1065)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Controller", "1713", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601421", "7/19/2025 5:28:49 AM", "", "In Development",  0,3399)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("DisplayName", "408", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/15/2025 2:20:27 AM", "", "In Development",  0,1052)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ElementName", "746", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/25/2025 8:38:13 PM", "", "In Development",  0,1707)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("FloorName", "1704", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/21/2025 6:32:57 AM", "", "In Development",  0,3495)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Indentation", "175", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/19/2025 4:10:16 AM", "", "In Development",  0,1069)
@@ -573,7 +641,15 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitValidValue("BuildingName_ValidValues", "542", "-1", 1297)
+        InitValidValue("BuildingName_ValidValues", "542", "-1", 3511)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Controller_ValidValues", "1713", "-1", 3403)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("FloorName_ValidValues", "1704", "-1", 3510)
         End If
     End Sub
 
@@ -623,7 +699,13 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("Building", "43", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/25/2025 5:59:05 PM", "", "In Development", "N",75)
+        InitConnection("Building", "85", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/21/2025 6:49:23 AM", "", "In Development", "N",184)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("Floor", "93", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/21/2025 5:43:44 AM", "", "In Development", "N",190)
         
           End If
         
@@ -648,6 +730,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitConnection("PowerSupplies", "52", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "6/23/2025 9:20:22 PM", "", "In Development", "N",106)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("PowerSupplyViewNodes", "79", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/14/2025 2:53:46 AM", "", "In Development", "N",154)
         
           End If
         
@@ -776,16 +864,34 @@ CollectPlants(Result, Me)
       Dim ctx as Object
       Try
       ctx = this
-        '   BEGIN FORMULA; CON ID:43; TYPE:PF
-        Dim _myBuildingName As String = BuildingName
-
-For Each _building As Object In RootPart.FacilityView(1).Buildings
-	If _building.BuildingName = _myBuildingName Then Result = _building : Exit For
-Next
-        '   END FORMULA; CON ID:43; TYPE:PF
+        '   BEGIN FORMULA; CON ID:85; TYPE:PF
+        Result = Nothing
+        '   END FORMULA; CON ID:85; TYPE:PF
       
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_Building_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Floor_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:93; TYPE:PF
+        Result = Nothing
+        '   END FORMULA; CON ID:93; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_Floor_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -898,6 +1004,48 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_PowerSupplyViewNodes_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:79; TYPE:PF
+        Dim _selectedCircuit As Object = If(IsConnected(RootPart.PowerSupplyView(1).SelectedCircuit), RootPart.PowerSupplyView(1).SelectedCircuit(1), Nothing)
+
+If _selectedCircuit IsNot Nothing Then
+	Dim _psTypePart As String
+	Dim _psType = _selectedCircuit.OutputVoltage.Replace(" ", String.Empty).Trim().ToUpper()
+
+	Result = New rsCollection
+
+	For Each _part As Object In AllParts
+		_psTypePart = _part.PowerSupply.Replace(" ", String.Empty).Trim().ToUpper()
+
+		'if the part's power supply type is exactly same as selected circuit's power supply then
+		'add it to the list
+		If _psType = _psTypePart Then
+			'add the physical instances (that are based on quantity value
+			For Each _partPhysical As Object In _part.Physical
+				Result.Add(_partPhysical)
+			Next
+		End If
+	Next
+End If
+        '   END FORMULA; CON ID:79; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_PowerSupplyViewNodes_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Systems_PARTS() as Rulestream.Kernel.rsCollection
       
       Dim Result as Object = Nothing
@@ -957,7 +1105,7 @@ Next
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:542; TYPE:PF
-      Result = String.Empty
+      Result = If(ValidValues("BuildingName").Contains("Multiple"), "Multiple", If(IsConnected(Building), Building(1).BuildingName, String.Empty))
       '   END FORMULA; PROP ID:542; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_BuildingName", ex.Message)
@@ -984,6 +1132,31 @@ Next
       '   END FORMULA; PROP ID:425; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_CanAddChild", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Controller() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Controller").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1713; TYPE:PF
+      Result = String.Empty
+      '   END FORMULA; PROP ID:1713; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_Controller", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1034,6 +1207,32 @@ Next
       '   END FORMULA; PROP ID:746; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_ElementName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_FloorName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FloorName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1704; TYPE:PF
+      Dim _vv As ValidValues = ValidValues("FloorName")
+Result = If(_vv IsNot Nothing AndAlso _vv.Contains("Multiple"), "Multiple", If(IsConnected(Floor), Floor(1).FloorName, String.Empty))
+      '   END FORMULA; PROP ID:1704; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_FloorName", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1407,6 +1606,15 @@ Result = _sb.ToString()
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Controller_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1417,6 +1625,15 @@ Result = _sb.ToString()
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_ElementName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FloorName_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1569,6 +1786,15 @@ Result = _sb.ToString()
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Controller_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_DisplayName_USERCHANGE() as Boolean
       Return False
       End Function
@@ -1580,6 +1806,15 @@ Result = _sb.ToString()
       '*****************************************************************************
       Public Function Formula_ElementName_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FloorName_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************
@@ -1741,9 +1976,87 @@ Result = _sb.ToString()
       End If
       '   BEGIN FORMULA; PROP ID:542; TYPE:VV
       Result = RootPart.FacilityView(1).ValidValues("BuildingNames")
+
+If Result.Contains("Multiple") Then Result.Remove("Multiple")
+
+Dim _bldg As Object = If(IsConnected(Building), Building(1), Nothing)
+	
+If _bldg IsNot Nothing Then
+	'if there's at least one plant that was modified after the initial value then it should show 'Multiple'
+	For Each _plant As Object In Plants
+		If Not IsConnected(_plant.Building) OrElse _plant.Building(1) IsNot _bldg Then Result.Add("Multiple") : Exit For
+	Next
+End If
       '   END FORMULA; PROP ID:542; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_BuildingName_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Controller_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Controller").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1713; TYPE:VV
+      Result = New ValidValues
+
+Dim _controllerName As String
+For Each _controller In RootPart.ControllerView(1).Controllers
+	_controllerName = _controller.ControllerName
+	Result.Add(_controllerName, _controllerName & "-" & _controller.ControllerPartNumber)
+Next
+      '   END FORMULA; PROP ID:1713; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_Controller_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FloorName_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FloorName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1704; TYPE:VV
+      Result = If(IsConnected(Building), Building(1).ValidValues("FloorNames"), Nothing)
+
+If Result IsNot Nothing Then
+	If Result.Contains("Multiple") Then Result.Remove("Multiple")
+
+	Dim _floor As Object = If(IsConnected(Floor), Floor(1), Nothing)
+
+	If _floor IsNot Nothing Then
+		'if there's at least one plant that was modified after the initial value then it should show 'Multiple'
+		For Each _plant As Object In Plants
+			If Not IsConnected(_plant.Floor) OrElse _plant.Floor(1) IsNot _floor Then Result.Add("Multiple") : Exit For
+		Next
+	End If
+End If
+      '   END FORMULA; PROP ID:1704; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_FloorName_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1823,6 +2136,81 @@ Result = _sb.ToString()
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Sub Formula_BuildingName_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("BuildingName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:542; TYPE:WC
+      Dim _me As Object = Properties("BuildingName")
+
+If Not _me.UseCalculatedValue Then
+	Dim _buildingName As String = Value
+	Dim _building As Object
+
+	For Each _building In RootPart.FacilityView(1).Buildings
+		If _building.BuildingName = _buildingName Then Building.Connect(_building) : Exit For
+	Next
+
+	'all plants should point to this new building
+	For Each _plant As Object In Plants
+		_plant.Building.Connect(_building)
+	Next
+
+	_me.RevertToCalc()
+End If
+      '   END FORMULA; PROP ID:542; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_BuildingName_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_FloorName_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FloorName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1704; TYPE:WC
+      Dim _me As Object = Properties("FloorName")
+
+If Not _me.UseCalculatedValue Then
+	Dim _floorName As String = Value
+	Dim _floor As Object
+	
+	For Each _floor In Building(1).Floors
+		If _floor.FloorName = _floorName Then Floor.Connect(_floor) : Exit For
+	Next
+
+	For Each _plant As Object In Plants
+		_plant.Floor.Connect(_floor)
+	Next
+
+	_me.RevertToCalc()
+End If
+      '   END FORMULA; PROP ID:1704; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_FloorName_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Sub Formula_PastePlant_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
       
       Dim ctx as Object
@@ -1838,6 +2226,25 @@ RootPart.CopyPlantSource.DisConnect(_fromPlant)
       '   END FORMULA; PROP ID:349; TYPE:WC
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_PastePlant_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_Building_WHENCHANGED()
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; CON ID:85; TYPE:WC
+      If IsConnected(Floor) Then Floor.DisConnect(Floor(1))
+      '   END FORMULA; CON ID:85; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " HBSSystem.Formula_Building_WHENCHANGED", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       End Sub

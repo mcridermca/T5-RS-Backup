@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{4d54d34f-2c9c-46bb-9f99-1186cccfe8fd}</ProjectGuid>
+		<ProjectGuid>{58777f95-e1e5-4783-8a19-de854790d51c}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>HBS</RootNamespace>
 		<AssemblyName>HBS</AssemblyName>
@@ -109,6 +109,9 @@
 		<Compile Include="controller.vb">
 			<SubType>Code</SubType>
 		</Compile>
+		<Compile Include="controllermodel.vb">
+			<SubType>Code</SubType>
+		</Compile>
 		<Compile Include="controllerphysical.vb">
 			<SubType>Code</SubType>
 		</Compile>
@@ -116,6 +119,9 @@
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="cv2.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="damper.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="datemp_tnl2.vb">
@@ -202,7 +208,10 @@
 		<Compile Include="site.vb">
 			<SubType>Code</SubType>
 		</Compile>
-		<Compile Include="valve.vb">
+		<Compile Include="steam_valve.vb">
+			<SubType>Code</SubType>
+		</Compile>
+		<Compile Include="water_valve.vb">
 			<SubType>Code</SubType>
 		</Compile>
 		<Compile Include="wire.vb">

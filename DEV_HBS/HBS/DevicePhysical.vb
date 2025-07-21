@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: DevicePhysical
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -237,14 +237,14 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("DevicePhysical", <a><![CDATA[Device Physical]]></a>.Value, 122, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/10/2025 04:37:43")
-    AddProperty("1528", "ElementName", <a><![CDATA[Element Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:36:53 AM")
+    InitPart("DevicePhysical", <a><![CDATA[Device Physical]]></a>.Value, 122, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/18/2025 05:04:23")
+    AddProperty("1528", "ElementName", <a><![CDATA[Element Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/18/2025 5:04:23 AM")
     AddProperty("1515", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:28:47 AM")
     AddProperty("1517", "PowerConsumption", <a><![CDATA[Power Consumption]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:02:44 AM")
     AddProperty("1518", "PowerConsumptionDisplay", <a><![CDATA[Power Consumption Display]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:04:32 AM")
     AddProperty("1520", "RowIconPowerSupplyAvailability", <a><![CDATA[Row Icon Power Supply Availability]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:24:02 AM")
     AddProperty("1519", "SelectedForPowerSupply", <a><![CDATA[Selected For Power Supply]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:24:22 AM")
-    AddProperty("1516", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:37:43 AM")
+    AddProperty("1516", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/17/2025 1:23:31 PM")
     
       oConnection = AddConnection("Circuit", <a><![CDATA[Circuit]]></a>.Value, "", "78", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/10/2025 3:08:39 AM")
       
@@ -279,7 +279,7 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("ElementName", "1409", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/10/2025 4:36:53 AM", "", "In Development",  0,2527)
+          InitProperty("ElementName", "1409", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/18/2025 5:04:23 AM", "", "In Development",  0,3372)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PartNumber", "1405", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/10/2025 4:28:47 AM", "", "In Development",  0,2523)
@@ -297,7 +297,7 @@ Option Infer On
           InitProperty("SelectedForPowerSupply", "1399", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/10/2025 4:24:22 AM", "", "In Development",  0,2509)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Tag", "1396", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/10/2025 4:37:43 AM", "", "In Development",  0,2505)
+          InitProperty("Tag", "1396", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/17/2025 1:23:31 PM", "", "In Development",  0,3309)
         End If
     End Sub
 
@@ -394,7 +394,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:1409; TYPE:PF
-      Result = Tag
+      Result = PartNumber
       '   END FORMULA; PROP ID:1409; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " DevicePhysical.Formula_ElementName", ex.Message)
@@ -556,7 +556,7 @@ Result = If(_available, "Green Hand Point Right.png", "Red Hand Stop.png")
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:1396; TYPE:PF
-      Result = PartNumber & "-" & Parent.DeviceIndex & "-" & SubpartId
+      Result = Parent.Mnemonics & "-" & Parent.DeviceIndex & "-" & SubpartId
       '   END FORMULA; PROP ID:1396; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " DevicePhysical.Formula_Tag", ex.Message)

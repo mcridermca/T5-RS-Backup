@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: PowerSupplyModel
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -132,9 +132,6 @@ Option Infer On
       Case "button_AddPowerSupply_"
       Formula_button_AddPowerSupply_WHENCHANGED(Value, OldValue)
     
-      Case "button_UnassignAll_"
-      Formula_button_UnassignAll_WHENCHANGED(Value, OldValue)
-    
       Case "PowerSupplyPick_"
       Formula_PowerSupplyPick_WHENCHANGED(Value, OldValue)
     
@@ -149,10 +146,6 @@ Option Infer On
     
       Case "button_AddPowerSupply_"
       'Formula_button_AddPowerSupply_WHENCHANGED(Value, OldValue)
-      Status = True
-    
-      Case "button_UnassignAll_"
-      'Formula_button_UnassignAll_WHENCHANGED(Value, OldValue)
       Status = True
     
       Case "PowerSupplyPick_"
@@ -174,15 +167,6 @@ Option Infer On
       End Get
       Set(ByVal Value As String)
       Properties("button_AddPowerSupply").CalculatedValue = Value
-      End Set
-      End Property
-    
-          Public Property [button_UnassignAll]() As String
-      Get
-      Return Properties("button_UnassignAll").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("button_UnassignAll").CalculatedValue = Value
       End Set
       End Property
     
@@ -255,12 +239,6 @@ Option Infer On
       End Get
       End Property
     
-      Public ReadOnly Property [AllParts]() As Rulestream.Kernel.Connection
-      Get
-      Return Connections("AllParts")
-      End Get
-      End Property
-    
       Public ReadOnly Property [ProjectElements]() As Rulestream.Kernel.Connection
       Get
       Return Connections("ProjectElements")
@@ -305,9 +283,8 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("PowerSupplyModel", <a><![CDATA[Power Supply Model]]></a>.Value, 48, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/01/2025 03:12:43")
+    InitPart("PowerSupplyModel", <a><![CDATA[Power Supply Model]]></a>.Value, 48, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/14/2025 02:59:17")
     AddProperty("686", "button_AddPowerSupply", <a><![CDATA[button_Add Power Supply Delete]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/26/2025 7:58:44 PM")
-    AddProperty("1184", "button_UnassignAll", <a><![CDATA[button_Unassign All]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 5:17:41 AM")
     AddProperty("807", "ElementName", <a><![CDATA[Element Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/25/2025 8:40:28 PM")
     AddProperty("765", "PowerSupplyDescription", <a><![CDATA[Power Supply Description]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/23/2025 9:10:18 PM")
     AddProperty("683", "PowerSupplyPick", <a><![CDATA[Power Supply Pick]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/26/2025 1:48:36 AM")
@@ -318,21 +295,11 @@ Option Infer On
     
       AddPropertyExtended(686,"button_AddPowerSupply", "640", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "6/26/2025 7:58:44 PM")
     
-      AddPropertyExtended(1184,"button_UnassignAll", "1094", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "6/30/2025 5:17:41 AM")
-    
       AddValidValue("PowerSupplyPick")
     
       oSubpart = AddSubpart(68,"PowerSupplies", <a><![CDATA[Power Supplies]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
       
         oSubpart.AddVPF (22, "PowerSupply", "Power Supply")
-      
-      oConnection = AddConnection("AllParts", <a><![CDATA[All Parts DELETE]]></a>.Value, "", "66", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "6/30/2025 6:10:02 AM")
-      
-        oConnection.AddVPF(5, "Device")
-      
-        oConnection.AddVPF(6, "Controller")
-      
-        oConnection.AddVPF(17, "HBSSystem")
       
       oConnection = AddConnection("ProjectElements", <a><![CDATA[Project Elements]]></a>.Value, "", "61", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
       
@@ -390,9 +357,6 @@ Option Infer On
     
             If Incontext("-1", ctx) Then
           InitProperty("button_AddPowerSupply", "640", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/24/2025 1:21:54 AM", "", "In Development",  0,1522)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("button_UnassignAll", "1094", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/30/2025 5:17:41 AM", "", "In Development",  0,2106)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ElementName", "747", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/25/2025 8:40:28 PM", "", "In Development",  0,1708)
@@ -457,12 +421,6 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("AllParts", "59", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "6/30/2025 5:49:19 AM", "", "In Development", "N",125)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
         InitConnection("ProjectElements", "55", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "6/18/2025 8:16:32 PM", "", "In Development", "N",100)
         
           End If
@@ -518,49 +476,6 @@ Option Infer On
 
     #Region " Formulas "
 
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_AllParts_PARTS() as Rulestream.Kernel.rsCollection
-      
-      Dim Result as Object = Nothing
-      Dim ctx as Object
-      Try
-      ctx = this
-        '   BEGIN FORMULA; CON ID:59; TYPE:PF
-        Result = New rsCollection
-Return Result
-Dim _psType As String = String.Empty
-
-If IsConnected(SelectedCircuit) Then
-	Dim _psTypePart As String
-
-	Dim _ckt As Object = SelectedCircuit(1)
-	_psType = _ckt.OutputVoltage.Replace(" ", String.Empty).Trim().ToUpper()
-
-	For Each _system As Object In RootPart.PlantView(1).Systems
-		Result.Add(_system)
-
-		For Each _part As Object In _system.AllParts
-			_psTypePart = _part.PowerSupply.Replace(" ", String.Empty).Trim().ToUpper()
-
-			'if the part's power supply type is exactly same as selected circuit's power supply then
-			'add it to the list
-			If _psType = _psTypePart Then	Result.Add(_part)
-		Next
-	Next
-End If
-        '   END FORMULA; CON ID:59; TYPE:PF
-      
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " PowerSupplyModel.Formula_AllParts_PARTS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return ConvertToCollection(Result)
-      End Function
     
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -729,31 +644,6 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_button_UnassignAll() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("button_UnassignAll").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:1094; TYPE:PF
-      Result = String.Empty
-      '   END FORMULA; PROP ID:1094; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " PowerSupplyModel.Formula_button_UnassignAll", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_ElementName() As String
           
           Dim Result as String = String.Empty
@@ -907,15 +797,6 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_button_UnassignAll_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_ElementName_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -985,36 +866,6 @@ Next
               '   END FORMULA; PROP ID:640; TYPE:UC
               Catch ex As Exception
               ObjectManager.LogError("Application: " + Me.Application + " PowerSupplyModel.Formula_button_AddPowerSupply_USERCHANGE", ex.Message)
-              If ObjectManager.DebugMode Then Stop
-              End Try
-              Return Result
-            
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_button_UnassignAll_USERCHANGE() as Boolean
-      
-              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
-              Dim Result as Boolean = False
-              Dim ctx as Object
-              Try
-              ctx = this
-              If Me.Properties("button_UnassignAll").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
-              Stop
-              End If
-              '   BEGIN FORMULA; PROP ID:1094; TYPE:UC
-              Result = False
-
-For Each _part As Object In AllParts
-	If _part.AssignedPowerSupply.Length > 0 Then Result = True : Exit For
-Next
-              '   END FORMULA; PROP ID:1094; TYPE:UC
-              Catch ex As Exception
-              ObjectManager.LogError("Application: " + Me.Application + " PowerSupplyModel.Formula_button_UnassignAll_USERCHANGE", ex.Message)
               If ObjectManager.DebugMode Then Stop
               End Try
               Return Result
@@ -1194,30 +1045,6 @@ End Select
       '   END FORMULA; PROP ID:640; TYPE:WC
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " PowerSupplyModel.Formula_button_AddPowerSupply_WHENCHANGED", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      End Sub
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Sub Formula_button_UnassignAll_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
-      
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("button_UnassignAll").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:1094; TYPE:WC
-      For Each _part As Object In AllParts
-	If _part.AssignedPowerSupply.Length > 0 Then _part.Properties("AssignedPowerSupply").RevertToCalc()
-Next
-      '   END FORMULA; PROP ID:1094; TYPE:WC
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " PowerSupplyModel.Formula_button_UnassignAll_WHENCHANGED", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       End Sub

@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: FacilityModel
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -135,6 +135,12 @@ Option Infer On
       Case "AddFloor_"
       Formula_AddFloor_WHENCHANGED(Value, OldValue)
     
+      Case "button_AddToClipboard_"
+      Formula_button_AddToClipboard_WHENCHANGED(Value, OldValue)
+    
+      Case "button_MoveFacilityItem_"
+      Formula_button_MoveFacilityItem_WHENCHANGED(Value, OldValue)
+    
       Case "DeleteFacilityItem_"
       Formula_DeleteFacilityItem_WHENCHANGED(Value, OldValue)
     
@@ -156,6 +162,14 @@ Option Infer On
     
       Case "AddFloor_"
       'Formula_AddFloor_WHENCHANGED(Value, OldValue)
+      Status = True
+    
+      Case "button_AddToClipboard_"
+      'Formula_button_AddToClipboard_WHENCHANGED(Value, OldValue)
+      Status = True
+    
+      Case "button_MoveFacilityItem_"
+      'Formula_button_MoveFacilityItem_WHENCHANGED(Value, OldValue)
       Status = True
     
       Case "DeleteFacilityItem_"
@@ -199,6 +213,24 @@ Option Infer On
       End Get
       Set(ByVal Value As String)
       Properties("BuildingNames").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [button_AddToClipboard]() As String
+      Get
+      Return Properties("button_AddToClipboard").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("button_AddToClipboard").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [button_MoveFacilityItem]() As String
+      Get
+      Return Properties("button_MoveFacilityItem").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("button_MoveFacilityItem").CalculatedValue = Value
       End Set
       End Property
     
@@ -271,6 +303,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [FacilityClipboard]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("FacilityClipboard")
+      End Get
+      End Property
+    
       Public ReadOnly Property [FacilityTree]() As Rulestream.Kernel.Connection
       Get
       Return Connections("FacilityTree")
@@ -315,10 +353,12 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("FacilityModel", <a><![CDATA[Facility Model]]></a>.Value, 44, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/11/2025 18:19:15")
+    InitPart("FacilityModel", <a><![CDATA[Facility Model]]></a>.Value, 44, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/20/2025 03:42:17")
     AddProperty("588", "AddBuilding", <a><![CDATA[Add Building]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("589", "AddFloor", <a><![CDATA[Add Floor]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("589", "AddFloor", <a><![CDATA[Add Floor]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/14/2025 2:30:46 AM")
     AddProperty("580", "BuildingNames", <a><![CDATA[Building Names]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("1678", "button_AddToClipboard", <a><![CDATA[button_Add To Clipboard]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/15/2025 3:19:59 AM")
+    AddProperty("1680", "button_MoveFacilityItem", <a><![CDATA[button_Move Facility Item]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/15/2025 4:28:30 AM")
     AddProperty("620", "DeleteFacilityItem", <a><![CDATA[Delete Facility Item]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("592", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("572", "FacilityDisplayName", <a><![CDATA[Facility Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -329,7 +369,11 @@ Option Infer On
     
       AddPropertyExtended(588,"AddBuilding", "544", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "4/25/2025 7:16:31 PM")
     
-      AddPropertyExtended(589,"AddFloor", "545", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "4/25/2025 7:24:13 PM")
+      AddPropertyExtended(589,"AddFloor", "545", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/14/2025 2:30:46 AM")
+    
+      AddPropertyExtended(1678,"button_AddToClipboard", "1546", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/15/2025 3:19:59 AM")
+    
+      AddPropertyExtended(1680,"button_MoveFacilityItem", "1548", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/15/2025 4:28:30 AM")
     
       AddPropertyExtended(620,"DeleteFacilityItem", "576", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "5/5/2025 8:59:12 PM")
     
@@ -339,6 +383,16 @@ Option Infer On
       
         oSubpart.AddVPF (45, "Building", "Building")
       
+      oConnection = AddConnection("FacilityClipboard", <a><![CDATA[Facility Clipboard]]></a>.Value, "", "92", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/15/2025 3:03:31 AM")
+      
+        oConnection.AddVPF(4, "Plant")
+      
+        oConnection.AddVPF(6, "Controller")
+      
+        oConnection.AddVPF(45, "Building")
+      
+        oConnection.AddVPF(46, "Floor")
+      
       oConnection = AddConnection("FacilityTree", <a><![CDATA[Facility Tree]]></a>.Value, "", "48", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/11/2025 6:19:15 PM")
       
         oConnection.AddVPF(44, "FacilityModel")
@@ -347,11 +401,13 @@ Option Infer On
       
         oConnection.AddVPF(46, "Floor")
       
-      oConnection = AddConnection("FacilityViewNodes", <a><![CDATA[Facility View Nodes]]></a>.Value, "", "82", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/11/2025 5:37:52 AM")
+      oConnection = AddConnection("FacilityViewNodes", <a><![CDATA[Facility View Nodes]]></a>.Value, "", "85", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/14/2025 3:33:22 AM")
       
         oConnection.AddVPF(45, "Building")
       
-      oConnection = AddConnection("SelectedBuilding", <a><![CDATA[Selected Building]]></a>.Value, "", "51", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+        oConnection.AddVPF(46, "Floor")
+      
+      oConnection = AddConnection("SelectedBuilding", <a><![CDATA[Selected Building]]></a>.Value, "", "51", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/20/2025 3:10:49 AM")
       
         oConnection.AddVPF(45, "Building")
       
@@ -363,7 +419,7 @@ Option Infer On
       
         oConnection.AddVPF(46, "Floor")
       
-      oConnection = AddConnection("SelectedFloor", <a><![CDATA[Selected Floor]]></a>.Value, "", "50", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+      oConnection = AddConnection("SelectedFloor", <a><![CDATA[Selected Floor]]></a>.Value, "", "50", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/20/2025 3:42:17 AM")
       
         oConnection.AddVPF(46, "Floor")
       
@@ -399,10 +455,16 @@ Option Infer On
           InitProperty("AddBuilding", "544", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 7:16:31 PM", "", "In Development",  0,1285)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("AddFloor", "545", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 7:24:13 PM", "", "In Development",  0,1287)
+          InitProperty("AddFloor", "545", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/14/2025 2:30:46 AM", "", "In Development",  0,1287)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("BuildingNames", "536", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 4:55:16 AM", "", "In Development",  0,1266)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("button_AddToClipboard", "1546", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/15/2025 3:19:59 AM", "", "In Development",  0,2839)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("button_MoveFacilityItem", "1548", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/15/2025 4:28:30 AM", "", "In Development",  0,2843)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("DeleteFacilityItem", "576", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "5/5/2025 8:59:12 PM", "", "In Development",  0,1397)
@@ -467,19 +529,25 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
+        InitConnection("FacilityClipboard", "84", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/15/2025 3:03:31 AM", "", "In Development", "Y",166)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
         InitConnection("FacilityTree", "44", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/11/2025 6:19:15 PM", "", "In Development", "N",149)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("FacilityViewNodes", "74", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/11/2025 5:37:52 AM", "", "In Development", "Y",147)
+        InitConnection("FacilityViewNodes", "77", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/14/2025 3:33:22 AM", "", "In Development", "N",157)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("SelectedBuilding", "47", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/26/2025 4:22:11 AM", "", "In Development", "N",87)
+        InitConnection("SelectedBuilding", "47", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/20/2025 3:10:49 AM", "", "In Development", "N",177)
         
           End If
         
@@ -491,7 +559,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("SelectedFloor", "46", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/26/2025 4:19:22 AM", "", "In Development", "N",86)
+        InitConnection("SelectedFloor", "46", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/20/2025 3:42:17 AM", "", "In Development", "N",179)
         
           End If
         
@@ -512,6 +580,28 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FacilityClipboard_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:84; TYPE:PF
+        Result = Nothing
+        '   END FORMULA; CON ID:84; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_FacilityClipboard_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
     
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -564,18 +654,18 @@ Next
       Dim ctx as Object
       Try
       ctx = this
-        '   BEGIN FORMULA; CON ID:74; TYPE:PF
-        Dim _buildingsSorted As New SortedList
+        '   BEGIN FORMULA; CON ID:77; TYPE:PF
+        Dim _buildingsSorted As New SortedList(Of Integer, Object)
 
 For Each _building As Object In Buildings
 	_buildingsSorted.Add(_building.BuildingIndex, _building)
 Next
 
 Result = New rsCollection
-For Each _building As Object In _buildingsSorted
-	Result.Add(_building)
+For Each _buildingIndex As Integer In _buildingsSorted.Keys
+	Result.Add(_buildingsSorted(_buildingIndex))
 Next
-        '   END FORMULA; CON ID:74; TYPE:PF
+        '   END FORMULA; CON ID:77; TYPE:PF
       
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_FacilityViewNodes_PARTS", ex.Message)
@@ -601,8 +691,9 @@ Next
 
 	Select Case _selectedPart.PartFamily
 		Case "Building" : Result = _selectedPart
-		Case "Floor" : Result = _selectedPart.Building(1)
-		Case "Controller" : Result = _selectedPart.Parent.Parent.Building(1) 'System.Building(1)
+		Case "Floor" : Result = _selectedPart.Parent
+		Case "Plant" : Result = _selectedPart.Building(1)
+		Case "Controller" : Result = _selectedPart.Building(1)
 		Case Else : Result = Nothing
 	End Select
 End If
@@ -655,7 +746,7 @@ Result = If(_index > 0, FacilityTree(_index), Nothing)
 
 	Select Case _selectedPart.PartFamily
 		Case "Floor" : Result = _selectedPart
-		Case "Controller" : _selectedPart.Parent.Floor(1)
+		Case "Controller" : Result = _selectedPart.Floor(1)
 		Case Else : Result = Nothing
 	End Select
 End If
@@ -738,6 +829,56 @@ End If
       '   END FORMULA; PROP ID:536; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_BuildingNames", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_button_AddToClipboard() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("button_AddToClipboard").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1546; TYPE:PF
+      Result = String.Empty
+      '   END FORMULA; PROP ID:1546; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_button_AddToClipboard", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_button_MoveFacilityItem() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("button_MoveFacilityItem").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1548; TYPE:PF
+      Result = String.Empty
+      '   END FORMULA; PROP ID:1548; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_button_MoveFacilityItem", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -921,6 +1062,24 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_button_AddToClipboard_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_button_MoveFacilityItem_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_DeleteFacilityItem_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1012,6 +1171,69 @@ End If
       '*****************************************************************************
       Public Function Formula_BuildingNames_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_button_AddToClipboard_USERCHANGE() as Boolean
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("button_AddToClipboard").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:1546; TYPE:UC
+              Result = SelectedTreeIndex > 1 'cannot move the root node
+              '   END FORMULA; PROP ID:1546; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_button_AddToClipboard_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_button_MoveFacilityItem_USERCHANGE() as Boolean
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("button_MoveFacilityItem").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:1548; TYPE:UC
+              If IsConnected(FacilityClipboard) AndAlso IsConnected(SelectedFacilityItem) Then
+	Dim _clipboardItem As Object = FacilityClipboard(1)
+	Dim _targetItem As Object = SelectedFacilityItem(1)
+
+	If _clipboardItem.PartFamily = _targetItem.PartFamily Then
+		Select Case _clipboardItem.PartFamily
+			Case "Building" : Result = True
+			Case "Floor" : Result = _targetItem.Parent Is _clipboardItem.Parent 'within same building
+			Case Else : Result = False
+		End Select
+	End If
+End If
+              '   END FORMULA; PROP ID:1548; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_button_MoveFacilityItem_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -1218,13 +1440,72 @@ Next
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:545; TYPE:WC
-      If IsConnected(SelectedBuilding) Then
-	Dim _newFloor As Object = Subparts("Floors").AddPart("Floor")
-	SelectedBuilding(1).Floors.Connect(_newFloor)
-End If
+      If IsConnected(SelectedBuilding) Then SelectedBuilding(1).Subparts("Floors").AddPart("Floor")
       '   END FORMULA; PROP ID:545; TYPE:WC
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_AddFloor_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_button_AddToClipboard_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("button_AddToClipboard").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1546; TYPE:WC
+      FacilityClipboard.Connect(SelectedFacilityItem(1))
+      '   END FORMULA; PROP ID:1546; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_button_AddToClipboard_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_button_MoveFacilityItem_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("button_MoveFacilityItem").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1548; TYPE:WC
+      Dim _clipboardItem As Object = FacilityClipboard(1)
+Dim _targetItem As Object = SelectedFacilityItem(1)
+Dim _targetIndex As Integer = _targetItem.FacilityIndex
+Dim _index As Integer = 1
+Dim _sp As Subpart = _targetItem.Owner
+
+For Each _facilityItem As Object In _sp
+	If _facilityItem IsNot _clipboardItem Then
+		If _targetIndex > _index Then
+			_facilityItem.Properties("FacilityIndex").InputValue = _index
+		Else
+			_facilityItem.Properties("FacilityIndex").InputValue += _facilityItem.FacilityIndex
+		End If
+	Else
+		_clipboardItem.Properties("FacilityIndex").InputValue = _targetIndex
+	End If
+
+	_index += 1
+Next
+      '   END FORMULA; PROP ID:1548; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " FacilityModel.Formula_button_MoveFacilityItem_WHENCHANGED", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       End Sub

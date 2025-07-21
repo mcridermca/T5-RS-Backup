@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: PowerSupply
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -208,12 +208,12 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Mnemonic]() As String
+          Public Property [Mnemonics]() As String
       Get
-      Return Properties("Mnemonic").Value
+      Return Properties("Mnemonics").Value
       End Get
       Set(ByVal Value As String)
-      Properties("Mnemonic").CalculatedValue = Value
+      Properties("Mnemonics").CalculatedValue = Value
       End Set
       End Property
     
@@ -357,14 +357,14 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("PowerSupply", <a><![CDATA[Power Supply]]></a>.Value, 22, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/09/2025 04:16:37")
+    InitPart("PowerSupply", <a><![CDATA[Power Supply]]></a>.Value, 22, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/17/2025 21:35:51")
     AddProperty("349", "ApplicationUse", <a><![CDATA[Application Use]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("1183", "button_RemovePowerSupply", <a><![CDATA[button_Remove Power Supply]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/9/2025 3:18:35 AM")
     AddProperty("419", "CircuitCount", <a><![CDATA[Circuit Count]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("1484", "DefaultQuantity", <a><![CDATA[Default Quantity]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/9/2025 4:16:13 AM")
     AddProperty("426", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("350", "InputVoltage", <a><![CDATA[Input Voltage]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("680", "Mnemonic", <a><![CDATA[Mnemonic]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/26/2025 4:11:21 AM")
+    AddProperty("1833", "Mnemonics", <a><![CDATA[Mnemonics]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/17/2025 9:34:51 PM")
     AddProperty("351", "OutputVoltage", <a><![CDATA[Output Voltage]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("348", "PartDescription", <a><![CDATA[Part Description]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 4:01:03 AM")
     AddProperty("855", "PowerConsumption", <a><![CDATA[Power Consumption]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/27/2025 4:39:22 AM")
@@ -375,7 +375,7 @@ Option Infer On
     AddProperty("853", "SafetyMargin", <a><![CDATA[Safety Margin]]></a>.Value, "%", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/1/2025 3:20:09 AM")
     AddProperty("810", "Scope", <a><![CDATA[Scope]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/26/2025 2:51:57 AM")
     AddProperty("770", "SelectedCircuitIndex", <a><![CDATA[Selected Circuit Index]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 5:31:05 AM")
-    AddProperty("681", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 12:24:23 AM")
+    AddProperty("681", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/17/2025 9:35:51 PM")
     AddProperty("347", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601421", "4/2/2025 8:44:26 PM")
     
       AddPropertyExtended(1183,"button_RemovePowerSupply", "1093", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/9/2025 3:18:35 AM")
@@ -443,7 +443,7 @@ Option Infer On
           InitProperty("InputVoltage", "328", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/2/2025 10:31:47 PM", "", "In Development",  0,824)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Mnemonic", "635", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/26/2025 4:11:21 AM", "", "In Development",  0,1515)
+          InitProperty("Mnemonics", "1698", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/17/2025 9:34:51 PM", "", "In Development",  0,3348)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("OutputVoltage", "329", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/2/2025 10:35:35 PM", "", "In Development",  0,825)
@@ -476,7 +476,7 @@ Option Infer On
           InitProperty("SelectedCircuitIndex", "714", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/30/2025 5:31:05 AM", "", "In Development",  0,1657)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Tag", "636", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/30/2025 12:24:23 AM", "", "In Development",  0,2087)
+          InitProperty("Tag", "636", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/17/2025 9:35:51 PM", "", "In Development",  0,3349)
         End If
     End Sub
 
@@ -556,7 +556,7 @@ Option Infer On
         
           InitDBproperty("PowerSupplyData", "InputVoltage",11, "Input_Voltage", "Power_Supply_Vest")
         
-          InitDBproperty("PowerSupplyData", "Mnemonic",11, "Power_Supply_Mnemonic", "Power_Supply_Vest")
+          InitDBproperty("PowerSupplyData", "Mnemonics",11, "Power_Supply_Mnemonic", "Power_Supply_Vest")
         
           InitDBproperty("PowerSupplyData", "OutputVoltage",11, "Output_Voltage", "Power_Supply_Vest")
         
@@ -782,21 +782,21 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Mnemonic() As String
+          Public Function Formula_Mnemonics() As String
           
           Dim Result as String = String.Empty
         
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Mnemonic").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("Mnemonics").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:635; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:1698; TYPE:PF
       Result = String.Empty
-      '   END FORMULA; PROP ID:635; TYPE:PF
+      '   END FORMULA; PROP ID:1698; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " PowerSupply.Formula_Mnemonic", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " PowerSupply.Formula_Mnemonics", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1060,7 +1060,7 @@ Next
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:636; TYPE:PF
-      Result = PartNumber & "-" & PowerSupplyIndex
+      Result = Mnemonics & "-" & PowerSupplyIndex
       '   END FORMULA; PROP ID:636; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " PowerSupply.Formula_Tag", ex.Message)
@@ -1128,7 +1128,7 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Mnemonic_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_Mnemonics_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1290,7 +1290,7 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Mnemonic_USERCHANGE() as Boolean
+      Public Function Formula_Mnemonics_USERCHANGE() as Boolean
       Return False
       End Function
     

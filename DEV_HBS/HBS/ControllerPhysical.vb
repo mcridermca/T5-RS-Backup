@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: ControllerPhysical
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -237,14 +237,14 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("ControllerPhysical", <a><![CDATA[Controller Physical]]></a>.Value, 123, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/10/2025 04:35:59")
+    InitPart("ControllerPhysical", <a><![CDATA[Controller Physical]]></a>.Value, 123, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/19/2025 03:07:49")
     AddProperty("1527", "ElementName", <a><![CDATA[Element Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:35:59 AM")
     AddProperty("1521", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:29:09 AM")
     AddProperty("1522", "PowerConsumption", <a><![CDATA[Power Consumption]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:11:05 AM")
     AddProperty("1523", "PowerConsumptionDisplay", <a><![CDATA[Power Consumption Display]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:12:16 AM")
     AddProperty("1524", "RowIconPowerSupplyAvailability", <a><![CDATA[Row Icon Power Supply Availability]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:23:17 AM")
     AddProperty("1525", "SelectedForPowerSupply", <a><![CDATA[Selected For Power Supply]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:23:41 AM")
-    AddProperty("1526", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 4:30:33 AM")
+    AddProperty("1526", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/19/2025 3:07:49 AM")
     
       oConnection = AddConnection("Circuit", <a><![CDATA[Circuit]]></a>.Value, "", "79", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/10/2025 4:13:05 AM")
       
@@ -297,7 +297,7 @@ Option Infer On
           InitProperty("SelectedForPowerSupply", "1404", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/10/2025 4:23:41 AM", "", "In Development",  0,2516)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Tag", "1407", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/10/2025 4:30:33 AM", "", "In Development",  0,2525)
+          InitProperty("Tag", "1407", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/19/2025 3:07:49 AM", "", "In Development",  0,3389)
         End If
     End Sub
 
@@ -554,7 +554,7 @@ Result = If(_available, "Green Hand Point Right.png", "Red Hand Stop.png")
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:1407; TYPE:PF
-      Result = PartNumber & "-" & SubpartId & "-" & SubpartId
+      Result = Parent.ControllerName
       '   END FORMULA; PROP ID:1407; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " ControllerPhysical.Formula_Tag", ex.Message)

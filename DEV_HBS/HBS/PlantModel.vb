@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: PlantModel
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -393,6 +393,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [UnassginedFacilityPlants]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("UnassginedFacilityPlants")
+      End Get
+      End Property
+    
       Public ReadOnly Property [GroupTree]() As Rulestream.Kernel.Connection
       Get
       Return Connections("GroupTree")
@@ -419,10 +425,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("PlantModel", <a><![CDATA[Plant Model]]></a>.Value, 24, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/07/2025 21:06:58")
+    InitPart("PlantModel", <a><![CDATA[Plant Model]]></a>.Value, 24, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/21/2025 06:56:48")
     AddProperty("451", "AddGroup", <a><![CDATA[Add Group]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/5/2025 6:16:00 AM")
     AddProperty("452", "AddPlant", <a><![CDATA[Add Plant]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("453", "AddSystem", <a><![CDATA[Add System]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/5/2025 4:06:22 AM")
+    AddProperty("453", "AddSystem", <a><![CDATA[Add System]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/21/2025 6:56:48 AM")
     AddProperty("454", "CopyPlant", <a><![CDATA[Copy Plant]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("618", "CutSystem", <a><![CDATA[Cut System]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("455", "DeleteTreeItem", <a><![CDATA[Delete Tree Item]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -440,7 +446,7 @@ Option Infer On
     
       AddPropertyExtended(452,"AddPlant", "430", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "5/5/2025 4:53:51 PM")
     
-      AddPropertyExtended(453,"AddSystem", "431", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/5/2025 4:06:22 AM")
+      AddPropertyExtended(453,"AddSystem", "431", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/21/2025 6:56:48 AM")
     
       AddPropertyExtended(454,"CopyPlant", "432", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "4/20/2025 3:32:57 AM")
     
@@ -483,6 +489,10 @@ Option Infer On
       oConnection = AddConnection("SelectedSystemItem", <a><![CDATA[Selected System Item]]></a>.Value, "", "42", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
       
         oConnection.AddVPF(17, "HBSSystem")
+      
+      oConnection = AddConnection("UnassginedFacilityPlants", <a><![CDATA[Unassgined Facility Plants]]></a>.Value, "", "100", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/20/2025 4:36:47 AM")
+      
+        oConnection.AddVPF(4, "Plant")
       
       oConnection = AddConnection("GroupTree", <a><![CDATA[Group Tree]]></a>.Value, "", "39", "OM", 0, "","Subparts and Connections", 9999, "", "GLOBAL\H601421", "7/7/2025 9:06:58 PM")
       
@@ -537,7 +547,7 @@ Option Infer On
           InitProperty("AddPlant", "430", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "5/5/2025 4:53:51 PM", "", "In Development",  0,1390)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("AddSystem", "431", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/5/2025 4:06:22 AM", "", "In Development",  0,1084)
+          InitProperty("AddSystem", "431", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/21/2025 6:56:48 AM", "", "In Development",  0,1084)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("CopyPlant", "432", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/20/2025 3:32:57 AM", "", "In Development",  0,1087)
@@ -632,6 +642,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitConnection("SelectedSystemItem", "38", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/20/2025 3:32:57 AM", "", "In Development", "N",68)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("UnassginedFacilityPlants", "92", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/20/2025 4:36:47 AM", "", "In Development", "N",181)
         
           End If
         
@@ -747,6 +763,34 @@ End Select
       
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " PlantModel.Formula_SelectedSystemItem_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_UnassginedFacilityPlants_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:92; TYPE:PF
+        Result = New rsCollection
+
+For Each _system As Object In Systems
+	For Each _plant As Object In _system.Plants
+		If Not IsConnected(_plant.Floor) Then Result.Add(_plant)
+	Next
+Next
+        '   END FORMULA; CON ID:92; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " PlantModel.Formula_UnassginedFacilityPlants_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -1352,6 +1396,8 @@ End If
 	Dim _group As Object = SelectedGroupItem(1)
 
 	Result = _group.CanAddSystem
+ElseIf IsConnected(SelectedTreeItem) AndAlso SelectedTreeItem(1) Is RootPart.PlantView(1) Then
+	Result = True
 End If
               '   END FORMULA; PROP ID:431; TYPE:UC
               Catch ex As Exception

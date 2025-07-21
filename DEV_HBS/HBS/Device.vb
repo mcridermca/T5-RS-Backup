@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Device
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -678,7 +678,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Device", <a><![CDATA[Device]]></a>.Value, 5, "HBS",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/10/2025 04:36:24")
+    InitPart("Device", <a><![CDATA[Device]]></a>.Value, 5, "HBS",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/17/2025 13:23:21")
     AddProperty("338", "SequenceText", <a><![CDATA[SequenceText]]></a>.Value, "The Sequence Of Operations Text for this Part", "String","","Database View Mapper","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "5/2/2025 6:01:26 AM")
     AddProperty("28", "ApplicationUse", <a><![CDATA[Application Use]]></a>.Value, "The application use for the device. Used to filter Device Part Numbers.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("23", "Classification", <a><![CDATA[Classification]]></a>.Value, "The classification of this device.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")

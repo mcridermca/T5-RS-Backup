@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Circuit
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -251,6 +251,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [PowerRemaining]() As Double
+      Get
+      Return Properties("PowerRemaining").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("PowerRemaining").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PowerUnits]() As String
       Get
       Return Properties("PowerUnits").Value
@@ -313,9 +322,9 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Circuit", <a><![CDATA[Circuit]]></a>.Value, 23, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/10/2025 04:27:17")
-    AddProperty("1186", "button_AssignAll", <a><![CDATA[button_Assign All]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/10/2025 3:36:39 AM")
-    AddProperty("1185", "button_UnassignAll", <a><![CDATA[button_Unassign All]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/9/2025 3:08:59 AM")
+    InitPart("Circuit", <a><![CDATA[Circuit]]></a>.Value, 23, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/16/2025 04:32:33")
+    AddProperty("1186", "button_AssignAll", <a><![CDATA[button_Assign All]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/14/2025 10:11:52 PM")
+    AddProperty("1185", "button_UnassignAll", <a><![CDATA[button_Unassign All]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/14/2025 3:51:55 PM")
     AddProperty("423", "CircuitDescription", <a><![CDATA[Circuit Description]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("1287", "CircuitPartsLabel", <a><![CDATA[Circuit Parts Label]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/8/2025 6:13:17 PM")
     AddProperty("425", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
@@ -324,14 +333,15 @@ Option Infer On
     AddProperty("1174", "PowerConsumption", <a><![CDATA[Power Consumption]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/28/2025 5:44:14 AM")
     AddProperty("1181", "PoweredPartsText", <a><![CDATA[Powered Parts Text]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 3:24:33 AM")
     AddProperty("424", "PowerRating", <a><![CDATA[Power Rating]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("1182", "PowerUnits", <a><![CDATA[Power Units]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 3:19:37 AM")
+    AddProperty("1672", "PowerRemaining", <a><![CDATA[Power Remaining]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/16/2025 4:32:33 AM")
+    AddProperty("1182", "PowerUnits", <a><![CDATA[Power Units]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/16/2025 4:27:03 AM")
     AddProperty("432", "SafetyMargin", <a><![CDATA[Safety Margin]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/27/2025 4:07:49 AM")
     AddProperty("728", "Tag", <a><![CDATA[Tag]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/28/2025 4:50:15 AM")
     AddProperty("418", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/30/2025 1:37:17 AM")
     
-      AddPropertyExtended(1186,"button_AssignAll", "1096", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/10/2025 3:36:39 AM")
+      AddPropertyExtended(1186,"button_AssignAll", "1096", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/14/2025 10:11:52 PM")
     
-      AddPropertyExtended(1185,"button_UnassignAll", "1095", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/9/2025 3:08:59 AM")
+      AddPropertyExtended(1185,"button_UnassignAll", "1095", "EXTWC   ", "WhenChanged", "BUTTONCLICK", "GLOBAL\H601421", "7/14/2025 3:51:56 PM")
     
       AddValidValue("InputVoltage")
     
@@ -343,7 +353,7 @@ Option Infer On
       
         oConnection.AddVPF(6, "Controller")
       
-      oConnection = AddConnection("PowerSupplyViewNodes", <a><![CDATA[Power Supply View Nodes]]></a>.Value, "", "77", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/10/2025 4:20:38 AM")
+      oConnection = AddConnection("PowerSupplyViewNodes", <a><![CDATA[Power Supply View Nodes]]></a>.Value, "", "77", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/14/2025 2:55:38 AM")
       
         oConnection.AddVPF(17, "HBSSystem")
       
@@ -380,10 +390,10 @@ Option Infer On
     ctx = ContextId
     
             If Incontext("-1", ctx) Then
-          InitProperty("button_AssignAll", "1096", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/10/2025 3:36:39 AM", "", "In Development",  0,2114)
+          InitProperty("button_AssignAll", "1096", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/14/2025 10:11:52 PM", "", "In Development",  0,2114)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("button_UnassignAll", "1095", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/9/2025 3:08:59 AM", "", "In Development",  0,2110)
+          InitProperty("button_UnassignAll", "1095", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/14/2025 3:51:55 PM", "", "In Development",  0,2110)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("CircuitDescription", "402", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/8/2025 6:38:38 PM", "", "In Development",  0,971)
@@ -410,7 +420,10 @@ Option Infer On
           InitProperty("PowerRating", "403", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/8/2025 7:49:59 PM", "", "In Development",  0,974)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("PowerUnits", "1092", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/30/2025 3:19:37 AM", "", "In Development",  0,2091)
+          InitProperty("PowerRemaining", "1541", "0", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/16/2025 4:32:33 AM", "", "In Development",  0,2817)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("PowerUnits", "1092", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/16/2025 4:27:03 AM", "", "In Development",  0,2965)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("SafetyMargin", "411", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/27/2025 4:07:49 AM", "", "In Development",  0,1767)
@@ -470,7 +483,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitConnection("PowerSupplyViewNodes", "66", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/10/2025 4:18:00 AM", "", "In Development", "N",141)
+        InitConnection("PowerSupplyViewNodes", "66", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/14/2025 2:55:38 AM", "", "In Development", "N",155)
         
           End If
         
@@ -535,28 +548,15 @@ Next
       ctx = this
         '   BEGIN FORMULA; CON ID:66; TYPE:PF
         Result = New rsCollection
-Dim _psType As String = String.Empty
-Dim _psTypePart As String
 Dim _selectedElement As Object = RootPart.PowerSupplyView(1).SelectedElement(1) 'this shouldn't be Nothing so no need to check for it
-
-_psType = OutputVoltage.Replace(" ", String.Empty).Trim().ToUpper()
 
 For Each _system As Object In RootPart.PlantView(1).Systems
 	'include the part if the selected element is the 'Project' Or if it is this 'System'
 	If _selectedElement.PartFamily <> "HBSSystem" OrElse _selectedElement Is _system Then
 		Result.Add(_system)
 
-		For Each _part As Object In _system.AllParts
-			_psTypePart = _part.PowerSupply.Replace(" ", String.Empty).Trim().ToUpper()
-
-			'if the part's power supply type is exactly same as selected circuit's power supply then
-			'add it to the list
-			If _psType = _psTypePart Then
-				'add the physical instances (that are based on quantity value
-				For Each _partPhysical As Object In _part.Physical
-					Result.Add(_partPhysical)
-				Next
-			End If
+		For Each _part As Object In _system.PowerSupplyViewNodes
+			Result.Add(_part)
 		Next
 	End If
 Next
@@ -826,6 +826,29 @@ Result = Result * (1 + (SafetyMargin / 100))
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_PowerRemaining() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("PowerRemaining").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1541; TYPE:PF
+      Result = Val(PowerRating) - PowerConsumption
+      '   END FORMULA; PROP ID:1541; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PowerRemaining", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_PowerUnits() As String
           
           Dim Result as String = String.Empty
@@ -837,7 +860,7 @@ Result = Result * (1 + (SafetyMargin / 100))
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:1092; TYPE:PF
-      Result = If(OutputVoltage.ToLower().Contains("DC"), "mA", "VA")
+      Result = If(OutputVoltage.ToUpper().Contains("DC"), "mA", "VA")
       '   END FORMULA; PROP ID:1092; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Circuit.Formula_PowerUnits", ex.Message)
@@ -1014,6 +1037,15 @@ Result = Result * (1 + (SafetyMargin / 100))
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_PowerRemaining_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_PowerUnits_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1162,6 +1194,15 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_PowerRemaining_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_PowerUnits_USERCHANGE() as Boolean
       Return False
       End Function
@@ -1267,15 +1308,17 @@ Dim _myPowerRating As Double = Val(PowerRating)
 Dim _circuit As Object
 
 For Each _part As Object In PowerSupplyViewNodes
-	_circuit = If(_part.PartFamily <> "HBSSystem" AndAlso IsConnected(_part.Circuit), _part.Circuit(1), Nothing)
-	If _circuit Is Nothing OrElse _circuit = Me Then
-		'include it in total power calculation
-		_devicePowerTotal += _part.PowerConsumption * _safetyMarginFactor
+	If _part.PartFamily <> "HBSSystem" Then
+		_circuit = If(IsConnected(_part.Circuit), _part.Circuit(1), Nothing)
+		If _circuit Is Nothing OrElse _circuit = Me Then
+			'include it in total power calculation
+			_devicePowerTotal += _part.PowerConsumption * _safetyMarginFactor
 
-		If _devicePowerTotal <= _myPowerRating Then
-			If _circuit Is Nothing Then _part.Circuit.Connect(Me) 'connect only if not already connected
-		Else 'exceeded power supply power rating including safety margin
-			Exit For
+			If _devicePowerTotal <= _myPowerRating Then
+				If _circuit Is Nothing Then _part.Circuit.Connect(Me) 'connect only if not already connected
+			Else 'exceeded power supply power rating including safety margin
+				Exit For
+			End If
 		End If
 	End If
 Next
@@ -1301,7 +1344,7 @@ Next
       End If
       '   BEGIN FORMULA; PROP ID:1095; TYPE:WC
       For Each _part As Object In PowerSupplyViewNodes
-	If _part.PartFamily <> "HBSSystem" AndAlso IsConnected(_part.Circuit) Then _part.Circuit.RevertToCalc()
+	If _part.PartFamily <> "HBSSystem" AndAlso IsConnected(_part.Circuit) AndAlso _part.Circuit(1) Is Me Then _part.Circuit.RevertToCalc()
 Next
       '   END FORMULA; PROP ID:1095; TYPE:WC
       Catch ex As Exception

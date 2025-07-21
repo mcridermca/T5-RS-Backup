@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Controller
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -129,6 +129,12 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Select Case specName & "_" & context
     
+      Case "BuildingName_"
+      Formula_BuildingName_WHENCHANGED(Value, OldValue)
+    
+      Case "FloorName_"
+      Formula_FloorName_WHENCHANGED(Value, OldValue)
+    
     End Select
     End Sub
 
@@ -137,6 +143,14 @@ Option Infer On
     'CallByName(Me, MethodName, CallType.Method, Value)
     Dim Status as Boolean = False
     Select Case specName & "_" & context
+    
+      Case "BuildingName_"
+      'Formula_BuildingName_WHENCHANGED(Value, OldValue)
+      Status = True
+    
+      Case "FloorName_"
+      'Formula_FloorName_WHENCHANGED(Value, OldValue)
+      Status = True
     Case Else
     Status = False
     End Select
@@ -183,21 +197,21 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [IO_Capacity]() As Long
-      Get
-      Return Properties("IO_Capacity").Value
-      End Get
-      Set(ByVal Value As Long)
-      Properties("IO_Capacity").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [AssignedPowerSupply]() As String
       Get
       Return Properties("AssignedPowerSupply").Value
       End Get
       Set(ByVal Value As String)
       Properties("AssignedPowerSupply").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [BuildingName]() As String
+      Get
+      Return Properties("BuildingName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("BuildingName").CalculatedValue = Value
       End Set
       End Property
     
@@ -246,6 +260,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [ControllerFamily]() As String
+      Get
+      Return Properties("ControllerFamily").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("ControllerFamily").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [ControllerLocation]() As String
       Get
       Return Properties("ControllerLocation").Value
@@ -282,15 +305,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [CurrentRating]() As Double
-      Get
-      Return Properties("CurrentRating").Value
-      End Get
-      Set(ByVal Value As Double)
-      Properties("CurrentRating").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [DefaultQuantity]() As Long
       Get
       Return Properties("DefaultQuantity").Value
@@ -318,6 +332,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [FacilityIndex]() As Long
+      Get
+      Return Properties("FacilityIndex").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("FacilityIndex").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Family]() As String
       Get
       Return Properties("Family").Value
@@ -327,12 +350,30 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [Mnemonic]() As String
+          Public Property [FloorName]() As String
       Get
-      Return Properties("Mnemonic").Value
+      Return Properties("FloorName").Value
       End Get
       Set(ByVal Value As String)
-      Properties("Mnemonic").CalculatedValue = Value
+      Properties("FloorName").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [IO_Capacity]() As String
+      Get
+      Return Properties("IO_Capacity").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("IO_Capacity").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Mnemonics]() As String
+      Get
+      Return Properties("Mnemonics").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Mnemonics").CalculatedValue = Value
       End Set
       End Property
     
@@ -417,15 +458,6 @@ Option Infer On
       End Set
       End Property
     
-          Public Property [VA_mA]() As String
-      Get
-      Return Properties("VA_mA").Value
-      End Get
-      Set(ByVal Value As String)
-      Properties("VA_mA").CalculatedValue = Value
-      End Set
-      End Property
-    
           Public Property [ParentGroupName]() As String
       Get
       Return Properties("ParentGroupName").Value
@@ -477,9 +509,33 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [Building]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Building")
+      End Get
+      End Property
+    
       Public ReadOnly Property [Devices]() As Rulestream.Kernel.Connection
       Get
       Return Connections("Devices")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [FacilityViewNodes]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("FacilityViewNodes")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [Floor]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Floor")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [Plants]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Plants")
       End Get
       End Property
     
@@ -497,57 +553,79 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Controller", <a><![CDATA[Controller]]></a>.Value, 6, "HBS",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/10/2025 04:35:28")
+    InitPart("Controller", <a><![CDATA[Controller]]></a>.Value, 6, "HBS",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/20/2025 21:42:19")
     AddProperty("329", "AI_UI_Capacity", <a><![CDATA[AI_UI Capacity]]></a>.Value, "The Controller AI_UI Capacity", "Long","","Database Lookup","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:07 AM")
     AddProperty("330", "AO_Capacity", <a><![CDATA[AO Capacity]]></a>.Value, "The Controller AO Capacity", "Long","","Database Lookup","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:14 AM")
     AddProperty("331", "DI_Capacity", <a><![CDATA[DI Capacity]]></a>.Value, "The Controller DI Capacity", "Long","","Database Lookup","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:27 AM")
     AddProperty("332", "DO_Capacity", <a><![CDATA[DO Capacity]]></a>.Value, "The Controller DO Capacity", "Long","","Database Lookup","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:35 AM")
-    AddProperty("333", "IO_Capacity", <a><![CDATA[IO Capacity]]></a>.Value, "The Controller IO Capacity", "Long","","Database Lookup","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:47 AM")
     AddProperty("378", "AssignedPowerSupply", <a><![CDATA[Assigned Power Supply]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "6/26/2025 8:13:41 PM")
+    AddProperty("1846", "BuildingName", <a><![CDATA[Building Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/20/2025 9:32:23 PM")
     AddProperty("56", "ConfigurablePortQuantity", <a><![CDATA[Configurable Port Quantity]]></a>.Value, "The number of configurable ports on this controller.", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("59", "ConfigurablePortsOptions", <a><![CDATA[Configurable Ports Options]]></a>.Value, "The options for the configurable port(s) on this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("55", "ConfigurablePortType", <a><![CDATA[Configurable Port Type]]></a>.Value, "The type of configurable port(s) on this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("158", "ConfigurablePortTypeLimits", <a><![CDATA[Configurable Port Type Limits]]></a>.Value, "The type names of the configurable port(s) on this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("57", "ConfigurablePortTypeNames", <a><![CDATA[Configurable Port Type Names]]></a>.Value, "The type names of the configurable port(s) on this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("1842", "ControllerFamily", <a><![CDATA[Controller Family]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/19/2025 3:45:20 AM")
     AddProperty("248", "ControllerLocation", <a><![CDATA[Controller Location]]></a>.Value, "The Location of the Controller", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("247", "ControllerName", <a><![CDATA[Controller Name]]></a>.Value, "The Name of the Controller", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("43", "ControllerPartNumber", <a><![CDATA[Controller Part Number]]></a>.Value, "The part number or code for this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("49", "CPU_IOType", <a><![CDATA[CPU IO Type]]></a>.Value, "The IO type for the controller's CPU.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("402", "CurrentRating", <a><![CDATA[Current Rating]]></a>.Value, "milliAmps", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("46", "DefaultQuantity", <a><![CDATA[Default Quantity]]></a>.Value, "The default quantity for this controller.", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("334", "DynamicSQLQuery", <a><![CDATA[Dynamic SQL Query]]></a>.Value, "The options for the configurable port(s) on this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("595", "FacilityDisplayName", <a><![CDATA[Facility Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("1676", "FacilityIndex", <a><![CDATA[Facility Index]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/15/2025 2:30:12 AM")
     AddProperty("42", "Family", <a><![CDATA[Family]]></a>.Value, "The family this controller belongs to.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("47", "Mnemonic", <a><![CDATA[Mnemonic]]></a>.Value, "The mnemonic for this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("1847", "FloorName", <a><![CDATA[Floor Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/20/2025 9:42:19 PM")
+    AddProperty("1855", "IO_Capacity", <a><![CDATA[IO_Capacity]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/20/2025 2:35:40 AM")
+    AddProperty("1834", "Mnemonics", <a><![CDATA[Mnemonics]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/17/2025 9:42:09 PM")
     AddProperty("48", "Mount", <a><![CDATA[Mount]]></a>.Value, "Where this controller is mounted.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("45", "PartDescription", <a><![CDATA[Part Description]]></a>.Value, "Description of the part for this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("44", "Pole", <a><![CDATA[Pole]]></a>.Value, "The super-region or collection of regions this controller belongs to.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("377", "PowerConsumption", <a><![CDATA[Power Consumption]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+    AddProperty("377", "PowerConsumption", <a><![CDATA[Power Consumption]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/20/2025 2:40:28 AM")
     AddProperty("375", "PowerSupply", <a><![CDATA[Power Supply]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("51", "UplinkPortQuantity", <a><![CDATA[Uplink Port Quantity]]></a>.Value, "The quantity of uplink ports for this controller.", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("50", "UplinkPortType", <a><![CDATA[Uplink Port Type]]></a>.Value, "The type of uplink port for this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("160", "UplinkPortTypeLimits", <a><![CDATA[Uplink Port Type Limits]]></a>.Value, "The names of the uplink ports of this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("52", "UplinkPortTypeNames", <a><![CDATA[Uplink Port Type Names]]></a>.Value, "The names of the uplink ports of this controller.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("376", "VA_mA", <a><![CDATA[VA_mA]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("323", "ParentGroupName", <a><![CDATA[Parent Group Name]]></a>.Value, "My Parent Group", "String","","System","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601421", "4/15/2025 5:11:23 AM")
-    AddProperty("249", "ParentPlantName", <a><![CDATA[Parent Plant Name]]></a>.Value, "My Parent Plant", "String","","System","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/21/2025 2:56:03 PM")
-    AddProperty("250", "ParentPlantType", <a><![CDATA[Parent Plant Type]]></a>.Value, "My Parent Plant Type", "String","","System","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/21/2025 3:00:18 PM")
-    AddProperty("251", "ParentSystemName", <a><![CDATA[Parent System Name]]></a>.Value, "My Parent System Name", "String","","System","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\SVRSDevAdmin", "3/31/2025 2:36:40 AM")
+    AddProperty("323", "ParentGroupName", <a><![CDATA[Parent Group Name  DELETE]]></a>.Value, "My Parent Group", "String","","System","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601421", "7/19/2025 7:02:12 AM")
+    AddProperty("249", "ParentPlantName", <a><![CDATA[Parent Plant Name DELETE]]></a>.Value, "My Parent Plant", "String","","System","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601421", "7/19/2025 7:02:45 AM")
+    AddProperty("250", "ParentPlantType", <a><![CDATA[Parent Plant Type DELETE]]></a>.Value, "My Parent Plant Type", "String","","System","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601421", "7/19/2025 7:03:15 AM")
+    AddProperty("251", "ParentSystemName", <a><![CDATA[Parent System Name DELETE]]></a>.Value, "My Parent System Name", "String","","System","FD", 9999, "", 0,0, "HBS", "", "GLOBAL\H601421", "7/19/2025 7:03:30 AM")
     AddProperty("6", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "4/7/2025 12:17:53 AM")
     
       AddPropertyExtended(59,"ConfigurablePortsOptions", "52", "EXTLABEL", "Label", "Options for Configurable Ports", "GLOBAL\SVRSDevAdmin", "3/31/2025 3:32:41 AM")
     
       AddPropertyExtended(334,"DynamicSQLQuery", "313", "EXTLABEL", "Label", "Options for Configurable Ports", "GLOBAL\H601421", "4/7/2025 1:03:29 AM")
     
+      AddValidValue("BuildingName")
+    
+      AddValidValue("FloorName")
+    
       oSubpart = AddSubpart(135,"Physical", <a><![CDATA[Physical]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601421", "7/10/2025 4:09:35 AM")
       
         oSubpart.AddVPF (123, "ControllerPhysical", "Controller Physical")
+      
+      oConnection = AddConnection("Building", <a><![CDATA[Building]]></a>.Value, "", "94", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/20/2025 9:26:21 PM")
+      
+        oConnection.AddVPF(45, "Building")
       
       oConnection = AddConnection("Devices", <a><![CDATA[Devices]]></a>.Value, "", "27", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
       
         oConnection.AddVPF(5, "Device")
       
-      AddDBConstraint(10, "dbControllersTable", <a><![CDATA[dbControllersTable]]></a>.Value,"Database Lookup", 9999)
+      oConnection = AddConnection("FacilityViewNodes", <a><![CDATA[Facility View Nodes]]></a>.Value, "", "98", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/19/2025 6:36:47 AM")
+      
+        oConnection.AddVPF(4, "Plant")
+      
+      oConnection = AddConnection("Floor", <a><![CDATA[Floor]]></a>.Value, "", "96", "OO", 0, "","General", 9999, "", "GLOBAL\H601421", "7/20/2025 9:33:32 PM")
+      
+        oConnection.AddVPF(46, "Floor")
+      
+      oConnection = AddConnection("Plants", <a><![CDATA[Plants]]></a>.Value, "", "97", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/19/2025 6:35:25 AM")
+      
+        oConnection.AddVPF(4, "Plant")
+      
+      AddDBConstraint(42, "ControllerData", <a><![CDATA[Controller Data]]></a>.Value,"General", 9999)
     
     End Sub
 
@@ -590,10 +668,10 @@ Option Infer On
           InitProperty("DO_Capacity", "311", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:35 AM", "", "In Development",  0,755)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("IO_Capacity", "312", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:47 AM", "", "In Development",  0,757)
+          InitProperty("AssignedPowerSupply", "357", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/26/2025 8:13:41 PM", "", "In Development",  0,910)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("AssignedPowerSupply", "357", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "6/26/2025 8:13:41 PM", "", "In Development",  0,910)
+          InitProperty("BuildingName", "1711", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601421", "7/20/2025 9:32:23 PM", "", "In Development",  0,3483)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("ConfigurablePortQuantity", "49", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 2:30:05 AM", "", "In Development",  0,765)
@@ -611,6 +689,9 @@ Option Infer On
           InitProperty("ConfigurablePortTypeNames", "50", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 2:30:28 AM", "", "In Development",  0,767)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("ControllerFamily", "1707", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/19/2025 3:45:20 AM", "", "In Development",  0,3390)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("ControllerLocation", "229", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/20/2025 3:50:31 PM", "", "In Development",  0,524)
         End If
             If Incontext("-1", ctx) Then
@@ -623,9 +704,6 @@ Option Infer On
           InitProperty("CPU_IOType", "42", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 2:33:48 AM", "", "In Development",  0,774)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("CurrentRating", "392", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/9/2025 1:52:14 AM", "", "In Development",  0,990)
-        End If
-            If Incontext("-1", ctx) Then
           InitProperty("DefaultQuantity", "39", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 2:33:29 AM", "", "In Development",  0,773)
         End If
             If Incontext("-1", ctx) Then
@@ -635,10 +713,19 @@ Option Infer On
           InitProperty("FacilityDisplayName", "551", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/26/2025 4:06:05 AM", "", "In Development",  0,1299)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("FacilityIndex", "1544", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/15/2025 2:30:12 AM", "", "In Development",  0,2837)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Family", "35", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 2:25:38 AM", "", "In Development",  0,756)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Mnemonic", "40", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 3:20:57 AM", "", "In Development",  0,758)
+          InitProperty("FloorName", "1712", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601421", "7/20/2025 9:42:19 PM", "", "In Development",  0,3485)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("IO_Capacity", "1720", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/20/2025 2:35:40 AM", "", "In Development",  0,3425)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Mnemonics", "1699", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/17/2025 9:42:09 PM", "", "In Development",  0,3350)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Mount", "41", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 2:25:38 AM", "", "In Development",  0,759)
@@ -650,7 +737,7 @@ Option Infer On
           InitProperty("Pole", "37", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 3:21:40 AM", "", "In Development",  0,762)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("PowerConsumption", "356", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/9/2025 1:52:58 AM", "", "In Development",  0,991)
+          InitProperty("PowerConsumption", "356", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/20/2025 2:40:28 AM", "", "In Development",  0,3426)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PowerSupply", "354", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/7/2025 12:53:52 AM", "", "In Development",  0,906)
@@ -668,19 +755,16 @@ Option Infer On
           InitProperty("UplinkPortTypeNames", "45", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 2:32:07 AM", "", "In Development",  0,771)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("VA_mA", "355", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/7/2025 12:54:46 AM", "", "In Development",  0,907)
+          InitProperty("ParentGroupName", "302", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/19/2025 7:02:12 AM", "", "In Development",  0,3410)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ParentGroupName", "302", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/15/2025 5:11:23 AM", "", "In Development",  0,1055)
+          InitProperty("ParentPlantName", "230", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/19/2025 7:02:45 AM", "", "In Development",  0,3411)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ParentPlantName", "230", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/21/2025 2:56:03 PM", "", "In Development",  0,528)
+          InitProperty("ParentPlantType", "231", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/19/2025 7:03:15 AM", "", "In Development",  0,3412)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("ParentPlantType", "231", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/21/2025 3:00:18 PM", "", "In Development",  0,530)
-        End If
-            If Incontext("-1", ctx) Then
-          InitProperty("ParentSystemName", "232", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\SVRSDevAdmin", "3/31/2025 2:36:26 AM", "", "In Development",  0,776)
+          InitProperty("ParentSystemName", "232", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/19/2025 7:03:30 AM", "", "In Development",  0,3413)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PartNumber", "351", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/7/2025 12:17:53 AM", "", "In Development",  0,903)
@@ -696,6 +780,14 @@ Option Infer On
     Private Sub NewContextInit_ValidValues()
     Dim ctx as String
     ctx = ContextId
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("BuildingName_ValidValues", "1711", "-1", 3396)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("FloorName_ValidValues", "1712", "-1", 3398)
+        End If
     End Sub
 
     '*****************************************************************************
@@ -726,7 +818,31 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
+        InitConnection("Building", "86", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/20/2025 9:26:21 PM", "", "In Development", "N",182)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
         InitConnection("Devices", "25", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/14/2025 8:06:57 PM", "", "In Development", "N",47)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("FacilityViewNodes", "90", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/19/2025 6:36:47 AM", "", "In Development", "N",176)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("Floor", "88", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/20/2025 9:33:32 PM", "", "In Development", "N",183)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("Plants", "89", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/19/2025 6:35:25 AM", "", "In Development", "Y",175)
         
           End If
         
@@ -743,29 +859,29 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitDBConstraint("dbControllersTable", 10,"", "Y","", "", "me.DynamicSQLQuery")
+        InitDBConstraint("ControllerData", 42,"", "Y","", "", "Controller")
         
-          InitDBproperty("dbControllersTable", "AI_UI_Capacity",10, "AI_UI", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "AI_UI_Capacity",42, "AI_UI", "Controller")
         
-          InitDBproperty("dbControllersTable", "AO_Capacity",10, "AO", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "AO_Capacity",42, "AO", "Controller")
         
-          InitDBproperty("dbControllersTable", "DI_Capacity",10, "DI", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "ControllerFamily",42, "Family", "Controller")
         
-          InitDBproperty("dbControllersTable", "DO_Capacity",10, "DO", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "DI_Capacity",42, "DI", "Controller")
         
-          InitDBproperty("dbControllersTable", "Family",10, "Family", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "DO_Capacity",42, "DO", "Controller")
         
-          InitDBproperty("dbControllersTable", "IO_Capacity",10, "IO_Capacity", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "IO_Capacity",42, "IO_Capacity", "Controller")
         
-          InitDBproperty("dbControllersTable", "Mnemonic",10, "Contoroller_Mnemonic", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "Mnemonics",42, "Contoroller_Mnemonic", "Controller")
         
-          InitDBproperty("dbControllersTable", "PartDescription",10, "Description", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "PartDescription",42, "Description", "Controller")
         
-          InitDBproperty("dbControllersTable", "Pole",10, "Pole", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "Pole",42, "Pole", "Controller")
         
-          InitDBproperty("dbControllersTable", "PowerSupply",10, "Input_Power", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "PowerConsumption",42, "VA_mA", "Controller")
         
-          InitDBproperty("dbControllersTable", "VA_mA",10, "VA_mA", "me.DynamicSQLQuery")
+          InitDBproperty("ControllerData", "PowerSupply",42, "Input_Power", "Controller")
         
           End If
         
@@ -775,6 +891,28 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Building_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:86; TYPE:PF
+        Result = Nothing
+        '   END FORMULA; CON ID:86; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Building_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
     
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -801,6 +939,76 @@ Next
       
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Devices_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FacilityViewNodes_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:90; TYPE:PF
+        Result = New rsCollection
+
+For Each _plant As Object In Plants
+	Result.Add(_plant)
+Next
+        '   END FORMULA; CON ID:90; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_FacilityViewNodes_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Floor_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:88; TYPE:PF
+        Result = Nothing
+        '   END FORMULA; CON ID:88; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Floor_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Plants_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:89; TYPE:PF
+        Result = Nothing
+        '   END FORMULA; CON ID:89; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Plants_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -903,29 +1111,6 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_IO_Capacity() As Long
-          Dim Result as Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("IO_Capacity").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:312; TYPE:PF
-      result = 0
-      '   END FORMULA; PROP ID:312; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_IO_Capacity", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_AssignedPowerSupply() As String
           
           Dim Result as String = String.Empty
@@ -941,6 +1126,31 @@ Next
       '   END FORMULA; PROP ID:357; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_AssignedPowerSupply", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_BuildingName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("BuildingName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1711; TYPE:PF
+      If IsConnected(Building) Then Result = Building(1).BuildingName Else Result = String.Empty
+      '   END FORMULA; PROP ID:1711; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_BuildingName", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1074,6 +1284,31 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_ControllerFamily() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("ControllerFamily").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1707; TYPE:PF
+      Result = String.Empty
+      '   END FORMULA; PROP ID:1707; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_ControllerFamily", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_ControllerLocation() As String
           
           Dim Result as String = String.Empty
@@ -1174,29 +1409,6 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_CurrentRating() As Double
-          Dim Result as Double
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("CurrentRating").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:392; TYPE:PF
-      Result = If(PowerSupply.ToUpper().Contains("DC"), Val(VA_ma), 0.0)
-      '   END FORMULA; PROP ID:392; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_CurrentRating", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_DefaultQuantity() As Long
           Dim Result as Long
       Dim ctx as Object
@@ -1272,6 +1484,29 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_FacilityIndex() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FacilityIndex").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1544; TYPE:PF
+      Result = 9999
+      '   END FORMULA; PROP ID:1544; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_FacilityIndex", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Family() As String
           
           Dim Result as String = String.Empty
@@ -1297,21 +1532,71 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_Mnemonic() As String
+          Public Function Formula_FloorName() As String
           
           Dim Result as String = String.Empty
         
       Dim ctx as Object
       Try
       ctx = this
-      If Me.Properties("Mnemonic").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      If Me.Properties("FloorName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
       Stop
       End If
-      '   BEGIN FORMULA; PROP ID:40; TYPE:PF
-      Result = ""
-      '   END FORMULA; PROP ID:40; TYPE:PF
+      '   BEGIN FORMULA; PROP ID:1712; TYPE:PF
+      If IsConnected(Floor) Then Result = Floor(1).FloorName Else Result = String.Empty
+      '   END FORMULA; PROP ID:1712; TYPE:PF
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Mnemonic", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_FloorName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_IO_Capacity() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("IO_Capacity").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1720; TYPE:PF
+      Result = String.Empty
+      '   END FORMULA; PROP ID:1720; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_IO_Capacity", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Mnemonics() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Mnemonics").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1699; TYPE:PF
+      Result = String.Empty
+      '   END FORMULA; PROP ID:1699; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_Mnemonics", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1406,7 +1691,7 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:356; TYPE:PF
-      Result = If(PowerSupply.ToUpper().Contains("AC"), Val(VA_ma), 0.0)
+      Result = 0.0
       '   END FORMULA; PROP ID:356; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_PowerConsumption", ex.Message)
@@ -1544,31 +1829,6 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
-          Public Function Formula_VA_mA() As String
-          
-          Dim Result as String = String.Empty
-        
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Properties("VA_mA").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; PROP ID:355; TYPE:PF
-      Result = String.Empty
-      '   END FORMULA; PROP ID:355; TYPE:PF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_VA_mA", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-          '*****************************************************************************
-          '   Copyright (C) 2024 Siemens. All rights reserved.
-          '
-          '   Changes to this procedure may only be made within formula comment blocks.
-          '*****************************************************************************
           Public Function Formula_ParentGroupName() As String
           
           Dim Result as String = String.Empty
@@ -1580,7 +1840,7 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:302; TYPE:PF
-      Result = Parent.Parent.Group(1).GroupName
+      Result = String.Empty 'Parent.Parent.Group(1).GroupName
       '   END FORMULA; PROP ID:302; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_ParentGroupName", ex.Message)
@@ -1605,7 +1865,7 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:230; TYPE:PF
-      Result = Me.Parent.PlantName
+      Result = String.Empty 'Me.Parent.PlantName
       '   END FORMULA; PROP ID:230; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_ParentPlantName", ex.Message)
@@ -1630,7 +1890,7 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:231; TYPE:PF
-      Result = Me.Parent.PlantType
+      Result = String.Empty 'Me.Parent.PlantType
       '   END FORMULA; PROP ID:231; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_ParentPlantType", ex.Message)
@@ -1655,7 +1915,7 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:232; TYPE:PF
-      Result = me.Parent.Parent.SystemName
+      Result = String.Empty 'Me.Parent.Parent.SystemName
       '   END FORMULA; PROP ID:232; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_ParentSystemName", ex.Message)
@@ -1730,7 +1990,7 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_IO_Capacity_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_AssignedPowerSupply_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1739,7 +1999,7 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_AssignedPowerSupply_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_BuildingName_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1793,6 +2053,15 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_ControllerFamily_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_ControllerLocation_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1829,15 +2098,6 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_CurrentRating_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_DefaultQuantity_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1865,6 +2125,15 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_FacilityIndex_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Family_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1874,7 +2143,25 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Mnemonic_HIDE_CALCULATED_VALUE() as Boolean
+      Public Function Formula_FloorName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_IO_Capacity_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Mnemonics_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1964,15 +2251,6 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_VA_mA_HIDE_CALCULATED_VALUE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_ParentGroupName_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -2054,7 +2332,7 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_IO_Capacity_USERCHANGE() as Boolean
+      Public Function Formula_AssignedPowerSupply_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -2063,8 +2341,8 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_AssignedPowerSupply_USERCHANGE() as Boolean
-      Return False
+      Public Function Formula_BuildingName_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************
@@ -2117,6 +2395,15 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_ControllerFamily_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_ControllerLocation_USERCHANGE() as Boolean
       Return True
       End Function
@@ -2153,15 +2440,6 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_CurrentRating_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_DefaultQuantity_USERCHANGE() as Boolean
       Return True
       End Function
@@ -2189,6 +2467,15 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_FacilityIndex_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Family_USERCHANGE() as Boolean
       Return True
       End Function
@@ -2198,7 +2485,25 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Mnemonic_USERCHANGE() as Boolean
+      Public Function Formula_FloorName_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_IO_Capacity_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Mnemonics_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -2288,15 +2593,6 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_VA_mA_USERCHANGE() as Boolean
-      Return False
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
       Public Function Formula_ParentGroupName_USERCHANGE() as Boolean
       Return False
       End Function
@@ -2335,6 +2631,54 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       '*****************************************************************************
       Public Function Formula_PartNumber_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_BuildingName_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("BuildingName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1711; TYPE:VV
+      Result = RootPart.FacilityView(1).ValidValues("BuildingNames")
+      '   END FORMULA; PROP ID:1711; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_BuildingName_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FloorName_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FloorName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1712; TYPE:VV
+      Result = If(IsConnected(Building), Building(1).ValidValues("FloorNames"), Nothing)
+      '   END FORMULA; PROP ID:1712; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_FloorName_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
       '*****************************************************************************
@@ -2406,6 +2750,70 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       Return Result
       End Function
     
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_BuildingName_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("BuildingName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1711; TYPE:WC
+      Dim _me As Object = Properties("BuildingName")
+
+If Not _me.UseCalculatedValue Then
+	Dim _buildingName As String = Value
+
+	For Each _building As Object In RootPart.FacilityView(1).Buildings
+		If _building.BuildingName = _buildingName Then Building.Connect(_building) : Exit For
+	Next
+
+	_me.RevertToCalc()
+End If
+      '   END FORMULA; PROP ID:1711; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_BuildingName_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Sub Formula_FloorName_WHENCHANGED(ByRef Value as Object, ByVal OldValue as Object)
+      
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FloorName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.WHENCHANGED_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1712; TYPE:WC
+      Dim _me As Object = Properties("FloorName")
+
+If Not _me.UseCalculatedValue Then
+	Dim _floorName As String = Value
+
+	For Each _floor As Object In Building(1).Floors
+		If _floor.FloorName = _floorName Then Floor.Connect(_floor) : Exit For
+	Next
+
+	_me.RevertToCalc()
+End If
+      '   END FORMULA; PROP ID:1712; TYPE:WC
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Controller.Formula_FloorName_WHENCHANGED", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      End Sub
+    
 
     '*****************************************************************************
     '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -2435,9 +2843,37 @@ g_ObjectManager.LogInfo(_Module, Result,, True)
       'Used to set the parameters results
       Select Case lngDBConID
       
-        Case 10
+        Case 42
         ctx = this
-            strSelectStmt = me.DynamicSQLQuery
+            strWhereClause = ""
+            strSelectList = ""
+            
+              strSelectList = strSelectList & leftDelimiter & "AI_UI" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "AO" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Family" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "DI" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "DO" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "IO_Capacity" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Contoroller_Mnemonic" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Description" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Pole" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "VA_mA" & rightDelimiter & ", "
+            
+              strSelectList = strSelectList & leftDelimiter & "Input_Power" & rightDelimiter & ", "
+            
+            'Build the WHERE clause
+            
+            strSelectStmt = BuildSQLStatement(strSelectList, DelimitTableName("Controller"), strWhereClause, leftDelimiter & "" & rightDelimiter, "")
+          
       End Select
       Catch ex as Exception
       Dim strError As String = ex.Message

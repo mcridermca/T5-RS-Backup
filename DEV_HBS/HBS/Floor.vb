@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: HBS
 '$ PartFamily: Floor
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -163,6 +163,24 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [FacilityIndex]() As Long
+      Get
+      Return Properties("FacilityIndex").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("FacilityIndex").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [FacilityItemDescription]() As String
+      Get
+      Return Properties("FacilityItemDescription").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("FacilityItemDescription").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [FacilityItemName]() As String
       Get
       Return Properties("FacilityItemName").Value
@@ -208,15 +226,9 @@ Option Infer On
       End Set
       End Property
     
-      Public ReadOnly Property [Building]() As Rulestream.Kernel.Connection
+      Public ReadOnly Property [FacilityViewNodes]() As Rulestream.Kernel.Connection
       Get
-      Return Connections("Building")
-      End Get
-      End Property
-    
-      Public ReadOnly Property [Plants]() As Rulestream.Kernel.Connection
-      Get
-      Return Connections("Plants")
+      Return Connections("FacilityViewNodes")
       End Get
       End Property
     
@@ -234,21 +246,21 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("Floor", <a><![CDATA[Floor]]></a>.Value, 46, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/11/2025 05:52:50")
+    InitPart("Floor", <a><![CDATA[Floor]]></a>.Value, 46, "HBS",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601421", "07/20/2025 04:29:44")
     AddProperty("576", "FacilityDisplayName", <a><![CDATA[Facility Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-    AddProperty("591", "FacilityItemName", <a><![CDATA[Facility Item Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/11/2025 5:52:50 AM")
+    AddProperty("1682", "FacilityIndex", <a><![CDATA[Facility Index]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/15/2025 4:29:37 AM")
+    AddProperty("1684", "FacilityItemDescription", <a><![CDATA[Facility Item Description]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/15/2025 4:58:13 AM")
+    AddProperty("591", "FacilityItemName", <a><![CDATA[Facility Item Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/20/2025 4:29:44 AM")
     AddProperty("575", "FloorIndex", <a><![CDATA[Floor Index]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601421", "7/11/2025 5:20:49 AM")
     AddProperty("578", "FloorName", <a><![CDATA[Floor Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("601", "Selected", <a><![CDATA[Selected]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
     AddProperty("570", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601421", "4/25/2025 3:55:47 AM")
     
-      oConnection = AddConnection("Building", <a><![CDATA[Building]]></a>.Value, "", "45", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
-      
-        oConnection.AddVPF(45, "Building")
-      
-      oConnection = AddConnection("Plants", <a><![CDATA[Plants]]></a>.Value, "", "54", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/19/2025 7:41:00 PM")
+      oConnection = AddConnection("FacilityViewNodes", <a><![CDATA[Facility View Nodes]]></a>.Value, "", "89", "OM", 0, "","General", 9999, "", "GLOBAL\H601421", "7/19/2025 6:32:32 AM")
       
         oConnection.AddVPF(4, "Plant")
+      
+        oConnection.AddVPF(6, "Controller")
       
     End Sub
 
@@ -282,7 +294,13 @@ Option Infer On
           InitProperty("FacilityDisplayName", "532", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "4/25/2025 4:53:28 AM", "", "In Development",  0,1263)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("FacilityItemName", "547", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/11/2025 5:52:50 AM", "", "In Development",  0,1292)
+          InitProperty("FacilityIndex", "1550", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/15/2025 4:29:37 AM", "", "In Development",  0,2847)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("FacilityItemDescription", "1552", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/15/2025 4:58:13 AM", "", "In Development",  0,2855)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("FacilityItemName", "547", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/20/2025 4:29:44 AM", "", "In Development",  0,1292)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("FloorIndex", "531", "", "", "N", "","", 3, "-1", 0, "", "N","0",  "GLOBAL\H601421", "7/11/2025 5:20:49 AM", "", "In Development",  0,1258)
@@ -328,13 +346,7 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
-        InitConnection("Building", "41", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/25/2025 4:46:11 AM", "", "In Development", "N",73)
-        
-          End If
-        
-            If Incontext("-1", ctx) Then
-          
-        InitConnection("Plants", "50", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "4/25/2025 10:14:57 PM", "", "In Development", "N",83)
+        InitConnection("FacilityViewNodes", "81", "","", "Y", 0, "-1", "", "GLOBAL\H601421", "7/19/2025 6:32:32 AM", "", "In Development", "N",174)
         
           End If
         
@@ -361,54 +373,22 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
-      Public Function Formula_Building_PARTS() as Rulestream.Kernel.rsCollection
+      Public Function Formula_FacilityViewNodes_PARTS() as Rulestream.Kernel.rsCollection
       
       Dim Result as Object = Nothing
       Dim ctx as Object
       Try
       ctx = this
-        '   BEGIN FORMULA; CON ID:41; TYPE:PF
-        For Each _building As Object In Parent.Buildings
-	For Each _floor As Object In _building.Floors
-		If _floor Is Me Then Result = _building : Exit For
-	Next
+        '   BEGIN FORMULA; CON ID:81; TYPE:PF
+        Result = New rsCollection
 
-	If Result IsNot Nothing Then Exit For
+For Each _controller As Object In RootPart.ControllerView(1).Controllers
+	If IsConnected(_controller.Floor) AndAlso _controller.Floor(1) Is Me Then Result.Add(_controller)
 Next
-        '   END FORMULA; CON ID:41; TYPE:PF
+        '   END FORMULA; CON ID:81; TYPE:PF
       
       Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Floor.Formula_Building_PARTS", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return ConvertToCollection(Result)
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Plants_PARTS() as Rulestream.Kernel.rsCollection
-      
-      Dim Result as Object = Nothing
-      Dim ctx as Object
-      Try
-      ctx = this
-        '   BEGIN FORMULA; CON ID:50; TYPE:PF
-        If IsConnected(Building) Then
-	Result = New rsCollection
-
-	For Each _system As Object In Building(1).Systems
-		For Each _plant As Object In _system.Plants
-			If IsConnected(_plant.Floor) AndAlso _plant.Floor(1) Is Me Then Result.Add(_plant)
-		Next
-	Next
-End If
-        '   END FORMULA; CON ID:50; TYPE:PF
-      
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " Floor.Formula_Plants_PARTS", ex.Message)
+      ObjectManager.LogError("Application: " + Me.Application + " Floor.Formula_FacilityViewNodes_PARTS", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
@@ -434,6 +414,54 @@ End If
       '   END FORMULA; PROP ID:532; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " Floor.Formula_FacilityDisplayName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_FacilityIndex() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FacilityIndex").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1550; TYPE:PF
+      Result = FloorIndex
+      '   END FORMULA; PROP ID:1550; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Floor.Formula_FacilityIndex", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_FacilityItemDescription() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("FacilityItemDescription").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:1552; TYPE:PF
+      Result = FacilityItemName
+      '   END FORMULA; PROP ID:1552; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " Floor.Formula_FacilityItemDescription", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -549,6 +577,24 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_FacilityIndex_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FacilityItemDescription_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_FacilityItemName_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -587,6 +633,24 @@ End If
       '*****************************************************************************
       Public Function Formula_FacilityDisplayName_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FacilityIndex_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_FacilityItemDescription_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************
@@ -639,12 +703,12 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:547; TYPE:WC
-      If Properties("FacilityItemName").UseCalculatedValue Then
+      If Not Properties("FacilityItemName").UseCalculatedValue Then
 	Dim _newName As String = Value
 
 	For Each _floor As Object In Owner
 		If _floor IsNot Me Then
-			If _floor.FacilityName = _newName Then
+			If _floor.FacilityItemName = _newName Then
 				MessageBox.Show("Floor Name Already Exists!", "Rename Floor", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 				Value = OldValue
