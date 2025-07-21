@@ -5,7 +5,7 @@
 		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 		<ProductVersion>10.0.20506</ProductVersion>
 		<SchemaVersion>2.0</SchemaVersion>
-		<ProjectGuid>{4b73d29b-5bb6-48c1-aea4-4d8581ef66ea}</ProjectGuid>
+		<ProjectGuid>{3e5646e3-63db-41c2-9be6-78fd457fbaa6}</ProjectGuid>
 		<OutputType>Library</OutputType>
 		<RootNamespace>SharedHW</RootNamespace>
 		<AssemblyName>SharedHW</AssemblyName>

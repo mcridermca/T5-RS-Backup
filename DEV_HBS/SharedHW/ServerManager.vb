@@ -256,7 +256,7 @@ End Function
 	End Sub
 
 	Public Function LastGenerated() As Date Implements RuleStream.IRsApplicationManager.LastGenerated
-		Return "07/12/2025 14:09:38"
+		Return "07/21/2025 12:30:04"
 	End Function
 
 	Public Function GetSpecPaths(ByVal intSYS as Integer) As String Implements RuleStream.IRsApplicationManager.GetSpecPaths

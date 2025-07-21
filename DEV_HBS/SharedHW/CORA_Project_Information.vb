@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: SharedHW
 '$ PartFamily: CORA_Project_Information
-'$ GenerateDate: 07/12/2025 14:09:33
+'$ GenerateDate: 07/21/2025 12:30:00
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -629,7 +629,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CORA_Project_Information", <a><![CDATA[CORA Project Information]]></a>.Value, 19, "SharedHW",  "N", "N", True, False, "In Development", "", "A shared location for information imported from CORA.", "", "", "RSXLI_PLI_Search_Data",  "GLOBAL\H601422", "07/01/2025 01:53:12")
+    InitPart("CORA_Project_Information", <a><![CDATA[CORA Project Information]]></a>.Value, 19, "SharedHW",  "N", "N", True, False, "In Development", "", "A shared location for information imported from CORA.", "", "", "",  "GLOBAL\H601422", "07/16/2025 19:49:53")
     AddProperty("670", "Account_Name", <a><![CDATA[Account Name]]></a>.Value, "The name of the account associated with this project.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "5/6/2025 10:17:10 PM")
     AddProperty("227", "Actual_Schedule_End_Date", <a><![CDATA[Actual Schedule End Date]]></a>.Value, "The actual end date of the schedule.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:44:25 PM")
     AddProperty("226", "Actual_Schedule_Start_Date", <a><![CDATA[Actual Schedule Start Date]]></a>.Value, "The actual start date of the schedule.", "String","","CORA Data","FD", 9999, "", 0,0, "CORA", "", "GLOBAL\H601423", "3/17/2025 12:38:57 PM")
