@@ -2188,6 +2188,12 @@ Module Custom
                 Case "m/sec/sec->in/sec/sec"
                     result = InputValue / 0.0254
 
+                    ' Radian-Degree Conversions
+                Case "deg->rad"
+                    result = InputValue * 0.0174533
+                Case "rad->deg"
+                    result = InputValue / 0.0174533
+
                 Case Else
                     Throw New ArgumentException($"Conversion from {from_uom} to {to_uom} is not supported.")
             End Select
@@ -2266,6 +2272,12 @@ Module Custom
 #End Region
 #Region "Error Summary"
 
+    Public Enum ErrorLevel
+        Info = 0
+        Warnings = 1
+        Errors = 2
+        Critical = 3
+    End Enum
 
     Public Class HWError
         ' Properties

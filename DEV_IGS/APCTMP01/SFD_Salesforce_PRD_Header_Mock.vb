@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: SFD_Salesforce_PRD_Header_Mock
-'$ GenerateDate: 07/18/2025 17:35:28
+'$ GenerateDate: 07/23/2025 19:25:03
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -153,6 +153,33 @@ Option Infer On
       End Get
       Set(ByVal Value As Boolean)
       Properties("Debug_Mode").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Date_Comm_Duration]() As Long
+      Get
+      Return Properties("Date_Comm_Duration").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Date_Comm_Duration").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Date_Install_Duration]() As Long
+      Get
+      Return Properties("Date_Install_Duration").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Date_Install_Duration").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Date_Pre_Install_Duration]() As Long
+      Get
+      Return Properties("Date_Pre_Install_Duration").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Date_Pre_Install_Duration").CalculatedValue = Value
       End Set
       End Property
     
@@ -372,6 +399,69 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Proposal_Date_Contract_Award]() As Date
+      Get
+      Return Properties("Proposal_Date_Contract_Award").Value
+      End Get
+      Set(ByVal Value As Date)
+      Properties("Proposal_Date_Contract_Award").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Proposal_Date_Eng_InHouse_Start]() As Date
+      Get
+      Return Properties("Proposal_Date_Eng_InHouse_Start").Value
+      End Get
+      Set(ByVal Value As Date)
+      Properties("Proposal_Date_Eng_InHouse_Start").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Proposal_Date_Installation_End]() As Date
+      Get
+      Return Properties("Proposal_Date_Installation_End").Value
+      End Get
+      Set(ByVal Value As Date)
+      Properties("Proposal_Date_Installation_End").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Proposal_Date_Installation_Start]() As Date
+      Get
+      Return Properties("Proposal_Date_Installation_Start").Value
+      End Get
+      Set(ByVal Value As Date)
+      Properties("Proposal_Date_Installation_Start").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Proposal_Date_Quote]() As Date
+      Get
+      Return Properties("Proposal_Date_Quote").Value
+      End Get
+      Set(ByVal Value As Date)
+      Properties("Proposal_Date_Quote").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Proposal_Date_Run_In_End]() As Date
+      Get
+      Return Properties("Proposal_Date_Run_In_End").Value
+      End Get
+      Set(ByVal Value As Date)
+      Properties("Proposal_Date_Run_In_End").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Proposal_Date_Turn_Over_To_Customer_Go_Live]() As Date
+      Get
+      Return Properties("Proposal_Date_Turn_Over_To_Customer_Go_Live").Value
+      End Get
+      Set(ByVal Value As Date)
+      Properties("Proposal_Date_Turn_Over_To_Customer_Go_Live").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Proposal_Description]() As String
       Get
       Return Properties("Proposal_Description").Value
@@ -390,12 +480,39 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Proposal_Installation_End_Date]() As String
+      Get
+      Return Properties("Proposal_Installation_End_Date").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Proposal_Installation_End_Date").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Proposal_Installation_Start_Date]() As String
+      Get
+      Return Properties("Proposal_Installation_Start_Date").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Proposal_Installation_Start_Date").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Proposal_Name]() As String
       Get
       Return Properties("Proposal_Name").Value
       End Get
       Set(ByVal Value As String)
       Properties("Proposal_Name").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Proposal_Turn_Over_To_Customer_Go_Live_Date]() As String
+      Get
+      Return Properties("Proposal_Turn_Over_To_Customer_Go_Live_Date").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Proposal_Turn_Over_To_Customer_Go_Live_Date").CalculatedValue = Value
       End Set
       End Property
     
@@ -491,8 +608,11 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("SFD_Salesforce_PRD_Header_Mock", <a><![CDATA[SFD_Salesforce_PRD_Header_Mock]]></a>.Value, 163, "APCTMP01",  "N", "N", True, False, "In Development", "", "Salesforce PRD Document Mockup", "", "", "",  "GLOBAL\H602502", "07/18/2025 13:21:40")
+    InitPart("SFD_Salesforce_PRD_Header_Mock", <a><![CDATA[SFD_Salesforce_PRD_Header_Mock]]></a>.Value, 163, "APCTMP01",  "N", "N", True, False, "In Development", "", "Salesforce PRD Document Mockup", "", "", "",  "GLOBAL\H602502", "07/23/2025 19:10:31")
     AddProperty("10386", "Debug_Mode", <a><![CDATA[Debug_Mode]]></a>.Value, "True = Debug On / False = Debug Off", "Boolean","","Debugging","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 1:15:05 PM")
+    AddProperty("11302", "Date_Comm_Duration", <a><![CDATA[Date_Comm_Duration]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 7:10:08 PM")
+    AddProperty("11301", "Date_Install_Duration", <a><![CDATA[Date_Install_Duration]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 7:10:21 PM")
+    AddProperty("11306", "Date_Pre_Install_Duration", <a><![CDATA[Date_Pre_Install_Duration]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 7:10:31 PM")
     AddProperty("1442", "Debug_1", <a><![CDATA[Debug_1]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/27/2025 12:04:45 AM")
     AddProperty("10650", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 1:21:40 PM")
     AddProperty("1529", "Opportunity_Data_Source_Type", <a><![CDATA[Opportunity_Data_Source_Type]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "CORA Data", "", "GLOBAL\H601424", "3/28/2025 11:26:09 AM")
@@ -517,9 +637,19 @@ Option Infer On
     AddProperty("3939", "Proposal_Customer_Name", <a><![CDATA[Proposal Customer Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:26:25 PM")
     AddProperty("3940", "Proposal_Customer_Number", <a><![CDATA[Proposal Customer Number]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/16/2025 7:59:09 PM")
     AddProperty("10447", "Proposal_Date", <a><![CDATA[Proposal_Date]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/17/2025 11:41:30 AM")
+    AddProperty("11307", "Proposal_Date_Contract_Award", <a><![CDATA[Proposal_Date_Contract_Award]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 7:05:09 PM")
+    AddProperty("11305", "Proposal_Date_Eng_InHouse_Start", <a><![CDATA[Proposal_Date_Eng_InHouse_Start]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 6:47:26 PM")
+    AddProperty("11300", "Proposal_Date_Installation_End", <a><![CDATA[Proposal_Date_Installation_End]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 6:17:54 PM")
+    AddProperty("11299", "Proposal_Date_Installation_Start", <a><![CDATA[Proposal_Date_Installation_Start]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 6:17:30 PM")
+    AddProperty("11308", "Proposal_Date_Quote", <a><![CDATA[Proposal_Date_Quote]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 7:05:52 PM")
+    AddProperty("11298", "Proposal_Date_Run_In_End", <a><![CDATA[Proposal_Date_Run_In_End]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 6:17:35 PM")
+    AddProperty("11304", "Proposal_Date_Turn_Over_To_Customer_Go_Live", <a><![CDATA[Proposal_Date_Turn_Over_To_Customer_Go_Live]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 6:46:00 PM")
     AddProperty("3938", "Proposal_Description", <a><![CDATA[Proposal Description]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:26:35 PM")
     AddProperty("3935", "Proposal_ID", <a><![CDATA[Proposal ID]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:26:42 PM")
+    AddProperty("11296", "Proposal_Installation_End_Date", <a><![CDATA[Proposal_Installation_End_Date]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 4:27:23 PM")
+    AddProperty("11295", "Proposal_Installation_Start_Date", <a><![CDATA[Proposal_Installation_Start_Date]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 4:26:55 PM")
     AddProperty("3936", "Proposal_Name", <a><![CDATA[Proposal Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/15/2025 7:26:53 PM")
+    AddProperty("11303", "Proposal_Turn_Over_To_Customer_Go_Live_Date", <a><![CDATA[Proposal_Turn_Over_To_Customer_Go_Live_Date]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/23/2025 6:45:25 PM")
     AddProperty("1436", "Use_PRD_Total_Text", <a><![CDATA[Use_PRD_Total_Text]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/26/2025 11:25:31 AM")
     AddProperty("927", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/25/2025 9:02:46 PM")
     
@@ -617,6 +747,15 @@ Option Infer On
           InitProperty("Debug_Mode", "9961", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 1:15:05 PM", "True = Debug On / False = Debug Off", "In Development",  0,18060)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Date_Comm_Duration", "10852", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 7:10:08 PM", "", "In Development",  0,21375)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Date_Install_Duration", "10851", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 7:10:21 PM", "", "In Development",  0,21376)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Date_Pre_Install_Duration", "10856", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 7:10:31 PM", "", "In Development",  0,21377)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Debug_1", "1141", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "3/27/2025 12:04:45 AM", "", "In Development",  0,1214)
         End If
             If Incontext("-1", ctx) Then
@@ -689,13 +828,43 @@ Option Infer On
           InitProperty("Proposal_Date", "10019", "", "", "N", "","", 3, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/17/2025 11:41:30 AM", "", "In Development",  0,18469)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Date_Contract_Award", "10857", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 7:05:09 PM", "", "In Development",  0,21372)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Date_Eng_InHouse_Start", "10855", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 6:47:26 PM", "", "In Development",  0,21358)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Date_Installation_End", "10850", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 6:17:54 PM", "", "In Development",  0,21338)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Date_Installation_Start", "10849", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 6:17:30 PM", "", "In Development",  0,21336)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Date_Quote", "10858", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 7:05:52 PM", "", "In Development",  0,21374)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Date_Run_In_End", "10848", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 6:17:35 PM", "", "In Development",  0,21334)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Date_Turn_Over_To_Customer_Go_Live", "10854", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 6:46:00 PM", "", "In Development",  0,21356)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Proposal_Description", "3567", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:26:35 PM", "", "In Development",  0,4998)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Proposal_ID", "3564", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:26:42 PM", "", "In Development",  0,4995)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Installation_End_Date", "10846", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 4:27:23 PM", "", "In Development",  0,21332)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Installation_Start_Date", "10845", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 4:26:55 PM", "", "In Development",  0,21330)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Proposal_Name", "3565", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/15/2025 7:26:53 PM", "", "In Development",  0,4996)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Proposal_Turn_Over_To_Customer_Go_Live_Date", "10853", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/23/2025 6:45:25 PM", "", "In Development",  0,21354)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Use_PRD_Total_Text", "1135", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "3/26/2025 11:25:31 AM", "", "In Development",  0,1151)
@@ -916,6 +1085,75 @@ End If
       '   END FORMULA; PROP ID:9961; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Debug_Mode", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Date_Comm_Duration() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Date_Comm_Duration").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10852; TYPE:PF
+      Result = math.ceiling(((DateDiff(DateInterval.Day, Me.Proposal_Date_Installation_End, Me.Proposal_Date_Run_In_End) + 1) / 7))
+      '   END FORMULA; PROP ID:10852; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Date_Comm_Duration", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Date_Install_Duration() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Date_Install_Duration").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10851; TYPE:PF
+      Result = math.ceiling(((DateDiff(DateInterval.Day, Me.Proposal_Date_Installation_Start, Me.Proposal_Date_Installation_End) + 1) / 7))
+      '   END FORMULA; PROP ID:10851; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Date_Install_Duration", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Date_Pre_Install_Duration() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Date_Pre_Install_Duration").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10856; TYPE:PF
+      Result = math.ceiling(((DateDiff(DateInterval.Day, Me.Proposal_Date_Eng_InHouse_Start, Me.Proposal_Date_Installation_Start) + 1) / 7))
+      '   END FORMULA; PROP ID:10856; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Date_Pre_Install_Duration", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1568,6 +1806,167 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Proposal_Date_Contract_Award() As Date
+          Dim Result as Date
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Date_Contract_Award").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10857; TYPE:PF
+      Result = Convert.ToDateTime(me.PRD_Date_Contract_Award)
+      '   END FORMULA; PROP ID:10857; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Date_Contract_Award", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Proposal_Date_Eng_InHouse_Start() As Date
+          Dim Result as Date
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Date_Eng_InHouse_Start").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10855; TYPE:PF
+      Result = Convert.ToDateTime(Me.PRD_Date_Eng_InHouse_Start)
+      '   END FORMULA; PROP ID:10855; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Date_Eng_InHouse_Start", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Proposal_Date_Installation_End() As Date
+          Dim Result as Date
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Date_Installation_End").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10850; TYPE:PF
+      Result = Convert.ToDateTime(Me.Proposal_Installation_End_Date)
+      '   END FORMULA; PROP ID:10850; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Date_Installation_End", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Proposal_Date_Installation_Start() As Date
+          Dim Result as Date
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Date_Installation_Start").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10849; TYPE:PF
+      Result = Convert.ToDateTime(Me.Proposal_Installation_Start_Date)
+      '   END FORMULA; PROP ID:10849; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Date_Installation_Start", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Proposal_Date_Quote() As Date
+          Dim Result as Date
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Date_Quote").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10858; TYPE:PF
+      Result = Convert.ToDateTime(me.Proposal_Date)
+      '   END FORMULA; PROP ID:10858; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Date_Quote", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Proposal_Date_Run_In_End() As Date
+          Dim Result as Date
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Date_Run_In_End").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10848; TYPE:PF
+      result = Date.Today()
+      '   END FORMULA; PROP ID:10848; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Date_Run_In_End", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Proposal_Date_Turn_Over_To_Customer_Go_Live() As Date
+          Dim Result as Date
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Date_Turn_Over_To_Customer_Go_Live").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10854; TYPE:PF
+      Result = Convert.ToDateTime(Me.Proposal_Turn_Over_To_Customer_Go_Live_Date)
+      '   END FORMULA; PROP ID:10854; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Date_Turn_Over_To_Customer_Go_Live", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Proposal_Description() As String
           
           Dim Result as String = String.Empty
@@ -1642,6 +2041,80 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Proposal_Installation_End_Date() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Installation_End_Date").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10846; TYPE:PF
+      result = ""
+Const SearchElement As String = "installation end date"
+Const SearchVVList As String = "PRD_Generic_KeyValue_List_Distinct_VV"
+
+'If Element = "customer/prd information" Or Element = "prd name" Or Element = "customer/prd information" Or Element = "prd name" _
+'Or Element = "proposal" Or Element = "city, state" Or Element = "description" Then
+
+For Each s As String In Me.ValidValues(SearchVVList).Keys
+	'Dim s As String = vv.Value
+	If s.ToLower().Trim().split("|")(0) = SearchElement Then
+		Result = s.split("|")(1)
+	End If
+Next
+      '   END FORMULA; PROP ID:10846; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Installation_End_Date", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Proposal_Installation_Start_Date() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Installation_Start_Date").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10845; TYPE:PF
+      result = ""
+Const SearchElement As String = "installation start date"
+Const SearchVVList As String = "PRD_Generic_KeyValue_List_Distinct_VV"
+
+'If Element = "customer/prd information" Or Element = "prd name" Or Element = "customer/prd information" Or Element = "prd name" _
+'Or Element = "proposal" Or Element = "city, state" Or Element = "description" Then
+
+For Each s As String In Me.ValidValues(SearchVVList).Keys
+	'Dim s As String = vv.Value
+	If s.ToLower().Trim().split("|")(0) = SearchElement Then
+		Result = s.split("|")(1)
+	End If
+Next
+      '   END FORMULA; PROP ID:10845; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Installation_Start_Date", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Proposal_Name() As String
           
           Dim Result as String = String.Empty
@@ -1679,6 +2152,43 @@ Next
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Proposal_Turn_Over_To_Customer_Go_Live_Date() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Proposal_Turn_Over_To_Customer_Go_Live_Date").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10853; TYPE:PF
+      result = ""
+Const SearchElement As String = "turnover to customer"
+Const SearchVVList As String = "PRD_Generic_KeyValue_List_Distinct_VV"
+
+'If Element = "customer/prd information" Or Element = "prd name" Or Element = "customer/prd information" Or Element = "prd name" _
+'Or Element = "proposal" Or Element = "city, state" Or Element = "description" Then
+
+For Each s As String In Me.ValidValues(SearchVVList).Keys
+	'Dim s As String = vv.Value
+	If s.ToLower().Trim().split("|")(0) = SearchElement Then
+		Result = s.split("|")(1)
+	End If
+Next
+      '   END FORMULA; PROP ID:10853; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " SFD_Salesforce_PRD_Header_Mock.Formula_Proposal_Turn_Over_To_Customer_Go_Live_Date", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Use_PRD_Total_Text() As Boolean
           Dim Result as Boolean
       Dim ctx as Object
@@ -1703,6 +2213,33 @@ Next
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Debug_Mode_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Date_Comm_Duration_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Date_Install_Duration_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Date_Pre_Install_Duration_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1927,6 +2464,69 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Proposal_Date_Contract_Award_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Eng_InHouse_Start_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Installation_End_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Installation_Start_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Quote_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Run_In_End_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Turn_Over_To_Customer_Go_Live_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Proposal_Description_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1945,7 +2545,34 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Proposal_Installation_End_Date_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Installation_Start_Date_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Proposal_Name_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Turn_Over_To_Customer_Go_Live_Date_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -1965,6 +2592,33 @@ Next
       '*****************************************************************************
       Public Function Formula_Debug_Mode_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Date_Comm_Duration_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Date_Install_Duration_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Date_Pre_Install_Duration_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -2205,6 +2859,69 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Proposal_Date_Contract_Award_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Eng_InHouse_Start_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Installation_End_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Installation_Start_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Quote_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Run_In_End_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Date_Turn_Over_To_Customer_Go_Live_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Proposal_Description_USERCHANGE() as Boolean
       Return False
       End Function
@@ -2223,7 +2940,34 @@ Next
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Proposal_Installation_End_Date_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Installation_Start_Date_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Proposal_Name_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Proposal_Turn_Over_To_Customer_Go_Live_Date_USERCHANGE() as Boolean
       Return False
       End Function
     

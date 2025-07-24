@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: IGS_AppCalc_App
-'$ GenerateDate: 07/19/2025 14:19:09
+'$ GenerateDate: 07/21/2025 16:02:54
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -574,7 +574,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_AppCalc_App", <a><![CDATA[IGS_AppCalc_App]]></a>.Value, 116, "APCTMP01",  "N", "N", True, True, "In Development", "", "App Calc Top Part", "", "", "",  "GLOBAL\H601424", "07/19/2025 14:15:15")
+    InitPart("IGS_AppCalc_App", <a><![CDATA[IGS_AppCalc_App]]></a>.Value, 116, "APCTMP01",  "N", "N", True, True, "In Development", "", "App Calc Top Part", "", "", "",  "GLOBAL\H601424", "07/21/2025 16:01:41")
     AddProperty("4535", "App_Calc_Name", <a><![CDATA[App_Calc_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "6/18/2025 8:26:13 PM")
     AddProperty("1521", "Approved_By", <a><![CDATA[Approved By]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/28/2025 5:13:01 AM")
     AddProperty("1522", "Approved_Date", <a><![CDATA[Approved Date]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "3/28/2025 5:13:01 AM")
@@ -602,9 +602,9 @@ Option Infer On
       
         oSubpart.AddVPF (133, "APC_Continuous_RA_Discharge", "APC_Continuous_RA_Discharge")
       
-      oSubpart = AddSubpart(36,"Induction", <a><![CDATA[Induction]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "3/26/2025 1:58:22 AM")
+      oSubpart = AddSubpart(36,"Induction", <a><![CDATA[Induction]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/21/2025 4:01:41 PM")
       
-        oSubpart.AddVPF (122, "APC_Induction", "APC_Induction")
+        oSubpart.AddVPF (448, "CAE_APC_Induction", "CAE_APC_Induction")
       
       oSubpart = AddSubpart(32,"Instructions", <a><![CDATA[Instructions]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "3/26/2025 1:58:22 AM")
       
@@ -839,32 +839,33 @@ Option Infer On
         oProcessStep.AddCustomLayout(1, 119, "75", "69", "RsTextbox", 0, "Conveyor_Curve_BF_Calc_Min_In", 88, 128, 21, 74, 74, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
         oProcessStep.AddCustomLayout(1, 119, "76", "69", "RsTextbox", 0, "Conveyor_Curve_BF_Calc_Rcmd_In", 115, 127, 21, 74, 75, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
         oProcessStep.AddCustomLayout(1, 119, "77", "69", "RsComboBox", 0, "Conveyor_BF_Selected_Min_User", 142, 127, 22, 140, 76, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 119, "78", "69", "RsTextbox", 0, "Material_Gap_Override_User", 167, 529, 21, 60, 77, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 119, "79", "69", "RsComboBox", 0, "Conveyor_BF_Selected_Min_User_UOM", 142, 267, 22, 60, 78, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 119, "80", "69", "RsLabel", 0, "", 64, 6, 18, 115, 79, "Min Converyor Width:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "81", "69", "RsTextbox", 0, "Conveyor_Skew_Total_Length_MTBH_Width_IN", 26, 604, 21, 74, 80, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 119, "82", "69", "RsTextbox", 0, "Conveyor_Skew_Bed_Length_Min_Reqd_IN", 53, 604, 21, 74, 81, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 119, "83", "69", "RsLabel", 0, "", 114, 346, 22, 177, 82, "Target Sort Rate:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "84", "69", "RsCheckbox", 0, "Sort_Dual_Sided", 80, 584, 18, 129, 83, "Dual Sided Sortation", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 119, "85", "69", "RsLabel", 0, "", 145, 684, 18, 22, 84, "M", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "86", "69", "RsTextbox", 0, "Sort_Rate_Required_CPM", 114, 529, 21, 60, 85, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 119, "87", "69", "RsLabel", 0, "", 166, 418, 22, 105, 86, "Design Gap Override:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "88", "69", "RsLabel", 0, "", 117, 590, 18, 116, 87, "CPM (Cases Per Min)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "89", "69", "RsTextbox", 0, "Case_Length_Per_Minute_Target_FT", 142, 529, 21, 60, 88, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 119, "90", "69", "RsLabel", 0, "", 145, 590, 18, 22, 89, "Ft.", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "91", "69", "RsTextbox", 0, "Case_Length_Per_Minute_Target_M", 142, 618, 21, 60, 90, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
-        oProcessStep.AddCustomLayout(1, 119, "92", "69", "RsLabel", 0, "", 91, 7, 18, 115, 91, "Min Calc Curve Width:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "93", "69", "RsComboBox", 0, "Material_Gap_Override_User_UOM", 166, 595, 22, 60, 92, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
-        oProcessStep.AddCustomLayout(1, 119, "94", "69", "RsLabel", 0, "", 56, 253, 18, 345, 93, "Minimum Required Skew Bed Length for Selected MTBH Width and BF", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "95", "69", "RsLabel", 0, "", 118, 6, 18, 115, 94, "Min Rcmd Curve Width:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "96", "69", "RsLabel", 0, "", 29, 684, 18, 22, 95, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "97", "69", "RsLabel", 0, "", 56, 684, 18, 22, 96, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "98", "69", "RsLabel", 0, "", 142, 16, 22, 105, 97, "Selected Min Wdith:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "99", "69", "RsLabel", 0, "", 91, 207, 18, 22, 98, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "100", "69", "RsLabel", 0, "", 64, 207, 18, 22, 99, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "101", "69", "RsLabel", 0, "", 118, 207, 18, 22, 100, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
-        oProcessStep.AddCustomLayout(1, 119, "102", "0", "RsPrevActionButton", 0, "", 861, 26, 38, 94, 101, "Previous", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:2;Enabled:;")
-        oProcessStep.AddCustomLayout(1, 119, "103", "0", "RsNextActionButton", 0, "", 861, 648, 38, 116, 102, "Next", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:2;Enabled:;")
+        oProcessStep.AddCustomLayout(1, 119, "78", "69", "RsGrid", 0, "", 217, 115, 206, 497, 77, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;SubpartConnection:,0,;ShowFilter:False;ShowGroups:False;RowIcon:;RowIconSize:70,70;CanDelete:;RowColor:;RowTooltip:;AddPrompt:False;AllowEdit:True;RememberSelectedPart:False;HorizontalScrollbar:0;AllowSorting:True")
+        oProcessStep.AddCustomLayout(1, 119, "79", "69", "RsTextbox", 0, "Material_Gap_Override_User", 167, 529, 21, 60, 78, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 119, "80", "69", "RsComboBox", 0, "Conveyor_BF_Selected_Min_User_UOM", 142, 267, 22, 60, 79, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 119, "81", "69", "RsLabel", 0, "", 64, 6, 18, 115, 80, "Min Converyor Width:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "82", "69", "RsTextbox", 0, "Conveyor_Skew_Total_Length_MTBH_Width_IN", 26, 604, 21, 74, 81, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 119, "83", "69", "RsTextbox", 0, "Conveyor_Skew_Bed_Length_Min_Reqd_IN", 53, 604, 21, 74, 82, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 119, "84", "69", "RsLabel", 0, "", 114, 346, 22, 177, 83, "Target Sort Rate:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "85", "69", "RsCheckbox", 0, "Sort_Dual_Sided", 80, 584, 18, 129, 84, "Dual Sided Sortation", 0, 0, 1, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 119, "86", "69", "RsLabel", 0, "", 145, 684, 18, 22, 85, "M", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "87", "69", "RsTextbox", 0, "Sort_Rate_Required_CPM", 114, 529, 21, 60, 86, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 119, "88", "69", "RsLabel", 0, "", 166, 418, 22, 105, 87, "Design Gap Override:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "89", "69", "RsLabel", 0, "", 117, 590, 18, 116, 88, "CPM (Cases Per Min)", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "90", "69", "RsTextbox", 0, "Case_Length_Per_Minute_Target_FT", 142, 529, 21, 60, 89, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 119, "91", "69", "RsLabel", 0, "", 145, 590, 18, 22, 90, "Ft.", 0, 0, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "92", "69", "RsTextbox", 0, "Case_Length_Per_Minute_Target_M", 142, 618, 21, 60, 91, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;Disabled:False;")
+        oProcessStep.AddCustomLayout(1, 119, "93", "69", "RsLabel", 0, "", 91, 7, 18, 115, 92, "Min Calc Curve Width:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "94", "69", "RsComboBox", 0, "Material_Gap_Override_User_UOM", 166, 595, 22, 60, 93, "", 0, 0, 0, 5, 0, "", "", "RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;")
+        oProcessStep.AddCustomLayout(1, 119, "95", "69", "RsLabel", 0, "", 56, 253, 18, 345, 94, "Minimum Required Skew Bed Length for Selected MTBH Width and BF", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "96", "69", "RsLabel", 0, "", 118, 6, 18, 115, 95, "Min Rcmd Curve Width:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "97", "69", "RsLabel", 0, "", 29, 684, 18, 22, 96, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "98", "69", "RsLabel", 0, "", 56, 684, 18, 22, 97, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "99", "69", "RsLabel", 0, "", 142, 16, 22, 105, 98, "Selected Min Wdith:", 0, 1, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "100", "69", "RsLabel", 0, "", 91, 207, 18, 22, 99, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "101", "69", "RsLabel", 0, "", 64, 207, 18, 22, 100, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "102", "69", "RsLabel", 0, "", 118, 207, 18, 22, 101, "In.", 0, 2, 0, 5, 0, "", "", "Font:1.;Font_Size:1.;Font_Style:1.0;ForeColor:ControlText;BackColor:Control;URL:;")
+        oProcessStep.AddCustomLayout(1, 119, "103", "0", "RsPrevActionButton", 0, "", 861, 26, 38, 94, 102, "Previous", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:2;Enabled:;")
+        oProcessStep.AddCustomLayout(1, 119, "104", "0", "RsNextActionButton", 0, "", 861, 654, 38, 116, 103, "Next", 0, 0, 0, 5, 0, "", "", "ImageFileName:1.;DisabledImageFileName:1.;RsTooltip:;Font:1.;Font_Size:1.;Font_Style:1.;ButtonStyle:2;Enabled:;")
         
         End Sub
       
@@ -1133,7 +1134,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Induction", 31, "N", "N", "N", 0, "-1", "", "GLOBAL\H601424", "3/26/2025 1:58:22 AM", "", "In Development", "N",0,80,81)
+        InitSubpart("Induction", 31, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/21/2025 4:01:41 PM", "", "In Development", "N",0,798,81)
         
           End If
         
@@ -2235,7 +2236,7 @@ result = STATUS_ENABLED
       Stop
       End If
       '   BEGIN FORMULA; SUB ID:31; TYPE:OP
-      result = "APC_Induction"
+      Result = "CAE_APC_Induction"
       '   END FORMULA; SUB ID:31; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " IGS_AppCalc_App.Formula_Induction_OPTIMALPARTFAMILY", ex.Message)

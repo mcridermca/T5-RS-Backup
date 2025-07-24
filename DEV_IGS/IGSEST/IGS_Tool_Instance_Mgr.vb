@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: IGS_Tool_Instance_Mgr
-'$ GenerateDate: 07/19/2025 14:28:13
+'$ GenerateDate: 07/22/2025 17:54:01
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -257,9 +257,9 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/19/2025 13:01:11")
+    InitPart("IGS_Tool_Instance_Mgr", <a><![CDATA[IGS_Tool_Instance_Mgr]]></a>.Value, 377, "IGSEST",  "N", "N", False, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/22/2025 17:38:01")
     AddProperty("10655", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/18/2025 1:19:58 PM")
-    AddProperty("5588", "HasAppCalc", <a><![CDATA[Has App Calc]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:34:26 PM")
+    AddProperty("5588", "HasAppCalc", <a><![CDATA[Has App Calc]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/22/2025 12:20:45 PM")
     AddProperty("4829", "HasElecInstall", <a><![CDATA[Has Elec Install]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 11:46:05 AM")
     AddProperty("5587", "HasHeaderHanger", <a><![CDATA[Has Header Hanger]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:35:54 PM")
     AddProperty("4828", "HasMechInstall", <a><![CDATA[Has Mech Install]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "6/30/2025 11:45:58 AM")
@@ -269,7 +269,7 @@ Option Infer On
       
         oSubpart.AddVPF (360, "CAE_Mech_Install_App", "CAE Mech Install App")
       
-      oSubpart = AddSubpart(314,"App_Calc", <a><![CDATA[App_Calc]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/14/2025 5:29:35 PM")
+      oSubpart = AddSubpart(314,"App_Calc", <a><![CDATA[App_Calc]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/22/2025 5:38:01 PM")
       
         oSubpart.AddVPF (411, "CAE_App_Calc", "CAE_App_Calc")
       
@@ -325,7 +325,7 @@ Option Infer On
           InitProperty("DisplayName", "10219", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/18/2025 1:19:58 PM", "", "In Development",  0,19051)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("HasAppCalc", "5200", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:34:26 PM", "", "In Development",  0,8161)
+          InitProperty("HasAppCalc", "5200", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/22/2025 12:20:45 PM", "", "In Development",  0,20825)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("HasElecInstall", "4452", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "6/30/2025 11:46:05 AM", "", "In Development",  0,6393)
@@ -366,7 +366,7 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("App_Calc", 241, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/9/2025 8:29:48 PM", "", "In Development", "N",0,652,651)
+        InitSubpart("App_Calc", 241, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/22/2025 5:38:01 PM", "", "In Development", "Y",0,652,807)
         
           End If
         
@@ -547,7 +547,11 @@ Result = ocol
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:5200; TYPE:PF
-      Result = False
+      If Me.App_Calc.Quantity = 0 Then
+	Result = False
+Else
+	Result = True
+End If
       '   END FORMULA; PROP ID:5200; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_HasAppCalc", ex.Message)
@@ -908,7 +912,7 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; SUB ID:241; TYPE:QF
-      Result = If(Me.HasAppCalc, 1, 0)
+      Result = 0
       '   END FORMULA; SUB ID:241; TYPE:QF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " IGS_Tool_Instance_Mgr.Formula_App_Calc_QUANTITY", ex.Message)

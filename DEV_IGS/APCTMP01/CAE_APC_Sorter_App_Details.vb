@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: CAE_APC_Sorter_App_Details
-'$ GenerateDate: 07/20/2025 19:33:46
+'$ GenerateDate: 07/21/2025 17:19:18
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -291,6 +291,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Gap_Min_IN_Formatted]() As Double
+      Get
+      Return Properties("Gap_Min_IN_Formatted").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Gap_Min_IN_Formatted").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Grid_Icon]() As String
       Get
       Return Properties("Grid_Icon").Value
@@ -342,6 +351,24 @@ Option Infer On
       End Get
       Set(ByVal Value As Long)
       Properties("PK_ID").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rate_Max_CPM]() As Double
+      Get
+      Return Properties("Rate_Max_CPM").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Rate_Max_CPM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Rate_Max_CPM_Formatted]() As String
+      Get
+      Return Properties("Rate_Max_CPM_Formatted").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Rate_Max_CPM_Formatted").CalculatedValue = Value
       End Set
       End Property
     
@@ -485,7 +512,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_APC_Sorter_App_Details", <a><![CDATA[CAE_APC_Sorter_App_Details]]></a>.Value, 443, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/20/2025 19:33:41")
+    InitPart("CAE_APC_Sorter_App_Details", <a><![CDATA[CAE_APC_Sorter_App_Details]]></a>.Value, 443, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/21/2025 17:18:07")
     AddProperty("10872", "Check_Width", <a><![CDATA[Check_Width]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 3:08:47 PM")
     AddProperty("10882", "DisplayName", <a><![CDATA[DisplayName]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 4:51:13 PM")
     AddProperty("10870", "Divert_Angle", <a><![CDATA[Divert_Angle]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 3:14:27 PM")
@@ -502,12 +529,15 @@ Option Infer On
     AddProperty("10834", "Faults_Width_Min", <a><![CDATA[Faults Width Min]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 7:26:34 PM")
     AddProperty("10861", "Gap_Design", <a><![CDATA[Gap_Design]]></a>.Value, "Design Gap From Sortation Screen", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 1:45:54 PM")
     AddProperty("10835", "Gap_Min_IN", <a><![CDATA[Gap Min IN]]></a>.Value, "Extra gap required to prevent ""scissoring"". 18"" per Product Management & Sorter Group 3/16/16. Check with Engineering if smaller gaps are needed.", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 7:19:12 PM")
+    AddProperty("11052", "Gap_Min_IN_Formatted", <a><![CDATA[Gap_Min_IN_Formatted]]></a>.Value, "Extra gap required to prevent ""scissoring"". 18"" per Product Management & Sorter Group 3/16/16. Check with Engineering if smaller gaps are needed.", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/21/2025 5:18:07 PM")
     AddProperty("10920", "Grid_Icon", <a><![CDATA[Grid_Icon]]></a>.Value, "Icon for Grids that represent status of the Item compared to the application", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 2:03:30 PM")
     AddProperty("10836", "Length_Max_IN", <a><![CDATA[Length Max  IN]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 1:07:41 PM")
     AddProperty("10837", "Length_Min_IN", <a><![CDATA[Length Min IN]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 1:07:41 PM")
     AddProperty("10868", "Model", <a><![CDATA[Model]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 2:37:42 PM")
     AddProperty("10885", "OwnerName", <a><![CDATA[OwnerName]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 2:22:52 PM")
     AddProperty("10838", "PK_ID", <a><![CDATA[PK_ID]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 8:16:28 PM")
+    AddProperty("11043", "Rate_Max_CPM", <a><![CDATA[Rate_Max_CPM]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/21/2025 5:01:51 PM")
+    AddProperty("11045", "Rate_Max_CPM_Formatted", <a><![CDATA[Rate_Max_CPM_Formatted]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/21/2025 5:01:12 PM")
     AddProperty("10922", "Rate_Max_Formatted", <a><![CDATA[Rate_Max_Formatted]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 2:28:57 PM")
     AddProperty("10839", "Rate_Max_IN", <a><![CDATA[Rate Max IN]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 7:08:00 PM")
     AddProperty("10921", "Shoe_Set", <a><![CDATA[Shoe_Set]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 3:08:36 PM")
@@ -610,6 +640,9 @@ Option Infer On
           InitProperty("Gap_Min_IN", "10392", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 7:16:33 PM", "", "In Development",  0,19648)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Gap_Min_IN_Formatted", "10604", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 5:17:54 PM", "", "In Development",  0,20580)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Grid_Icon", "10473", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/20/2025 2:03:30 PM", "", "In Development",  0,20038)
         End If
             If Incontext("-1", ctx) Then
@@ -626,6 +659,12 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("PK_ID", "10395", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 8:16:28 PM", "", "In Development",  0,19670)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rate_Max_CPM", "10595", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 5:00:32 PM", "", "In Development",  0,20557)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Rate_Max_CPM_Formatted", "10597", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 5:01:12 PM", "", "In Development",  0,20560)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Rate_Max_Formatted", "10475", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/20/2025 2:28:50 PM", "", "In Development",  0,20041)
@@ -1229,6 +1268,29 @@ End Select
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Gap_Min_IN_Formatted() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gap_Min_IN_Formatted").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10604; TYPE:PF
+      Result = Round(Me.Gap_Min_IN,0)
+      '   END FORMULA; PROP ID:10604; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sorter_App_Details.Formula_Gap_Min_IN_Formatted", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Grid_Icon() As String
           
           Dim Result as String = String.Empty
@@ -1382,6 +1444,57 @@ End If
       '   END FORMULA; PROP ID:10395; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sorter_App_Details.Formula_PK_ID", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rate_Max_CPM() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rate_Max_CPM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10595; TYPE:PF
+      Result = 0.0
+
+       '=Sort Choices'!D18/((E18+BoxSize_Length_Avg)/12)
+Result = Me.Speed_Max_RPM /((Me.Gap_Min_In + Me.My_Setup(1).BoxSize_Length_Avg_IN)/12)
+      '   END FORMULA; PROP ID:10595; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sorter_App_Details.Formula_Rate_Max_CPM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Rate_Max_CPM_Formatted() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Rate_Max_CPM_Formatted").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10597; TYPE:PF
+      Result = Round(Me.Rate_Max_CPM, 2)
+      '   END FORMULA; PROP ID:10597; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sorter_App_Details.Formula_Rate_Max_CPM_Formatted", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1834,6 +1947,15 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Gap_Min_IN_Formatted_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Grid_Icon_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -1880,6 +2002,24 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_PK_ID_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rate_Max_CPM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rate_Max_CPM_Formatted_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -2131,6 +2271,15 @@ End If
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Gap_Min_IN_Formatted_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Grid_Icon_USERCHANGE() as Boolean
       Return False
       End Function
@@ -2177,6 +2326,24 @@ End If
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_PK_ID_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rate_Max_CPM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Rate_Max_CPM_Formatted_USERCHANGE() as Boolean
       Return False
       End Function
     

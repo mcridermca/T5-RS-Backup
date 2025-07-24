@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Scan_Configuration
-'$ GenerateDate: 07/19/2025 14:28:13
+'$ GenerateDate: 07/23/2025 18:16:31
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -500,7 +500,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/19/2025 14:17:15")
+    InitPart("APC_Scan_Configuration", <a><![CDATA[APC_Scan_Configuration]]></a>.Value, 417, "APCTMP01",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/22/2025 19:39:31")
     AddProperty("9964", "AppType", <a><![CDATA[AppType]]></a>.Value, "Primary Application Type", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 9:16:22 PM")
     AddProperty("9963", "BoxPanelsScanned", <a><![CDATA[BoxPanelsScanned]]></a>.Value, "Count of Box Panels Scanned", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:38:15 PM")
     AddProperty("9962", "CartonPresentation", <a><![CDATA[CartonPresentation]]></a>.Value, "Carton Presentation?", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:36:38 PM")
@@ -512,7 +512,7 @@ Option Infer On
     AddProperty("9976", "MinGapOverride_Vendor_Provider_IN", <a><![CDATA[MinGapOverride (Inches)]]></a>.Value, "Min. Gap for Scanner Application  (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:12:36 PM")
     AddProperty("9977", "MinGapOverride_Vendor_Provider_MM", <a><![CDATA[MinGapOverride (mm)]]></a>.Value, "Min. Gap for Scanner Application  (mm)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:13:16 PM")
     AddProperty("9978", "MinGapOverride_Vendor_Provider_User", <a><![CDATA[MinGapOverride_User]]></a>.Value, "Scanner Gap Requirement Override (if vendor supplied)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 5:59:49 PM")
-    AddProperty("9965", "MinGapRequired_IN", <a><![CDATA[MinGapRequired]]></a>.Value, "Min. Gap Required for Scanner Application  (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 10:28:20 PM")
+    AddProperty("9965", "MinGapRequired_IN", <a><![CDATA[MinGapRequired_IN]]></a>.Value, "Min. Gap Required for Scanner Application  (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/22/2025 7:39:31 PM")
     AddProperty("9966", "MinGapRequired_User", <a><![CDATA[MinGapRequired_User]]></a>.Value, "Min. Gap Required for Scanner Application  (mm)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:11:57 PM")
     AddProperty("9967", "MinGapRequired_User_UOM", <a><![CDATA[MinGapRequired_User_UOM]]></a>.Value, "Scanner Gap Unit Of Measure", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/12/2025 1:12:23 PM")
     AddProperty("9979", "ReadWindowSize_IN", <a><![CDATA[ReadWindowSize_IN]]></a>.Value, "Estimated Scanner Read Window Size (Inch)", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/16/2025 7:56:35 PM")

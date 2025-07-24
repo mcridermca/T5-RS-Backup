@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_App_Calc
-'$ GenerateDate: 07/19/2025 14:28:13
+'$ GenerateDate: 07/24/2025 15:42:33
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -174,6 +174,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Shadows Property [DisplayName]() As String
+      Get
+      Return Properties("DisplayName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("DisplayName").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Estimated_By]() As String
       Get
       Return Properties("Estimated_By").Value
@@ -216,6 +225,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [Belt_Turn]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("Belt_Turn")
+      End Get
+      End Property
+    
       Public ReadOnly Property [EHS350_Data]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("EHS350_Data")
@@ -240,6 +255,12 @@ Option Infer On
       End Get
       End Property
     
+      Public ReadOnly Property [Scan_Belt]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("Scan_Belt")
+      End Get
+      End Property
+    
       Public ReadOnly Property [Scan_Configurations]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Scan_Configurations")
@@ -255,6 +276,18 @@ Option Infer On
       Public ReadOnly Property [Sortation]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Sortation")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [ZFA_Applications]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("ZFA_Applications")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [ZFA_Choices]() As Rulestream.Kernel.Subpart
+      Get
+      Return Subparts("ZFA_Choices")
       End Get
       End Property
     
@@ -284,12 +317,13 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_App_Calc", <a><![CDATA[CAE_App_Calc]]></a>.Value, 411, "IGSEST",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/19/2025 13:00:45")
+    InitPart("CAE_App_Calc", <a><![CDATA[CAE_App_Calc]]></a>.Value, 411, "IGSEST",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H602502", "07/24/2025 15:12:03")
     AddProperty("10125", "App_Calc_Name", <a><![CDATA[App_Calc_Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 5:35:19 PM")
     AddProperty("10126", "Approved_By", <a><![CDATA[Approved By]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 5:35:19 PM")
     AddProperty("10127", "Approved_Date", <a><![CDATA[Approved Date]]></a>.Value, "", "Date","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 5:35:19 PM")
+    AddProperty("11162", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/22/2025 1:50:58 PM")
     AddProperty("10128", "Estimated_By", <a><![CDATA[Estimated By]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/14/2025 5:35:19 PM")
-    AddProperty("10434", "Tool_Name", <a><![CDATA[Tool_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:33:01 PM")
+    AddProperty("10434", "Tool_Name", <a><![CDATA[Tool_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/22/2025 1:49:06 PM")
     AddProperty("10435", "Tool_Status", <a><![CDATA[Tool_Status]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/16/2025 8:32:44 PM")
     AddProperty("9733", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/9/2025 8:29:17 PM")
     
@@ -299,13 +333,17 @@ Option Infer On
       
         oSubpart.AddVPF (437, "CAE_App_Calc_Metrics", "CAE_App_Calc_Metrics")
       
+      oSubpart = AddSubpart(362,"Belt_Turn", <a><![CDATA[Belt_Turn]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/23/2025 11:19:59 PM")
+      
+        oSubpart.AddVPF (452, "CAE_APC_Belt_Turn", "CAE_APC_Belt_Turn")
+      
       oSubpart = AddSubpart(334,"EHS350_Data", <a><![CDATA[EHS350_Data]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/14/2025 4:19:04 PM")
       
         oSubpart.AddVPF (419, "CAE_EHS350_Data", "CAE_EHS350_Data")
       
-      oSubpart = AddSubpart(339,"Induction", <a><![CDATA[Induction]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/14/2025 10:35:42 PM")
+      oSubpart = AddSubpart(339,"Induction", <a><![CDATA[Induction]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/21/2025 3:57:10 PM")
       
-        oSubpart.AddVPF (122, "APC_Induction", "APC_Induction")
+        oSubpart.AddVPF (448, "CAE_APC_Induction", "CAE_APC_Induction")
       
       oSubpart = AddSubpart(352,"MDR", <a><![CDATA[MDR]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/18/2025 4:20:41 PM")
       
@@ -314,6 +352,10 @@ Option Infer On
       oSubpart = AddSubpart(330,"Print_And_Apply", <a><![CDATA[Print_And_Apply]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/10/2025 4:45:59 PM")
       
         oSubpart.AddVPF (416, "CAE_App_Calc_Print_And_Apply", "CAE_App_Calc_Print_And_Apply")
+      
+      oSubpart = AddSubpart(361,"Scan_Belt", <a><![CDATA[Scan_Belt]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/23/2025 9:51:52 PM")
+      
+        oSubpart.AddVPF (451, "CAE_APC_Scan_Belt", "CAE_APC_Scan_Belt")
       
       oSubpart = AddSubpart(335,"Scan_Configurations", <a><![CDATA[Scan_Configurations]]></a>.Value, "MN", "", "General", 9999, "", "GLOBAL\H601424", "7/14/2025 5:35:19 PM")
       
@@ -326,6 +368,14 @@ Option Infer On
       oSubpart = AddSubpart(337,"Sortation", <a><![CDATA[Sortation]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/19/2025 1:00:45 PM")
       
         oSubpart.AddVPF (442, "CAE_APC_Sortation", "CAE_APC_Sortation")
+      
+      oSubpart = AddSubpart(366,"ZFA_Applications", <a><![CDATA[ZFA_Applications]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/24/2025 3:12:03 PM")
+      
+        oSubpart.AddVPF (455, "CAE_APC_ZFA_Applications", "CAE_APC_ZFA_Applications")
+      
+      oSubpart = AddSubpart(365,"ZFA_Choices", <a><![CDATA[ZFA_Choices]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H602502", "7/24/2025 3:11:32 PM")
+      
+        oSubpart.AddVPF (454, "CAE_APC_ZFA_Choices", "CAE_APC_ZFA_Choices")
       
       oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "169", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/14/2025 6:14:48 PM")
       
@@ -373,10 +423,13 @@ Option Infer On
           InitProperty("Approved_Date", "9708", "", "", "N", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 5:35:19 PM", "", "In Development",  0,17113)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("DisplayName", "10714", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/22/2025 1:50:58 PM", "", "In Development",  0,20839)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Estimated_By", "9709", "", "", "N", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/14/2025 5:35:20 PM", "", "In Development",  0,17114)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Tool_Name", "10007", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:33:01 PM", "", "In Development",  0,18242)
+          InitProperty("Tool_Name", "10007", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/22/2025 1:49:06 PM", "", "In Development",  0,20837)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Tool_Status", "10008", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H602502", "7/16/2025 8:32:44 PM", "", "In Development",  0,18240)
@@ -415,13 +468,19 @@ Option Infer On
         
             If Incontext("-1", ctx) Then
           
+        InitSubpart("Belt_Turn", 289, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/23/2025 11:19:59 PM", "", "In Development", "N",0,812,811)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
         InitSubpart("EHS350_Data", 261, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/14/2025 4:19:04 PM", "", "In Development", "N",0,714,713)
         
           End If
         
             If Incontext("-1", ctx) Then
           
-        InitSubpart("Induction", 266, "N", "N", "N", 0, "-1", "", "GLOBAL\H601424", "7/14/2025 10:35:42 PM", "", "In Development", "N",0,724,723)
+        InitSubpart("Induction", 266, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/21/2025 3:57:02 PM", "", "In Development", "N",0,797,723)
         
           End If
         
@@ -434,6 +493,12 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitSubpart("Print_And_Apply", 257, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/10/2025 4:45:59 PM", "", "In Development", "N",0,702,701)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("Scan_Belt", 288, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/23/2025 9:51:52 PM", "", "In Development", "N",0,810,809)
         
           End If
         
@@ -452,6 +517,18 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitSubpart("Sortation", 264, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/19/2025 1:00:27 PM", "", "In Development", "N",0,777,719)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("ZFA_Applications", 293, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/24/2025 3:12:03 PM", "", "In Development", "N",0,822,821)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitSubpart("ZFA_Choices", 292, "", "", "Y", 0, "-1", "", "GLOBAL\H602502", "7/24/2025 3:11:32 PM", "", "In Development", "N",0,820,819)
         
           End If
         
@@ -618,6 +695,31 @@ Option Infer On
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_DisplayName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("DisplayName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10714; TYPE:PF
+      Result = Me.Tool_Name
+      '   END FORMULA; PROP ID:10714; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_DisplayName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Estimated_By() As String
           
           Dim Result as String = String.Empty
@@ -654,7 +756,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:10007; TYPE:PF
-      Result = "App Calc"
+      Result = Me.My_PRD(1).DisplayName & ": App Calc " & Me.SubpartID
       '   END FORMULA; PROP ID:10007; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Tool_Name", ex.Message)
@@ -720,6 +822,15 @@ Option Infer On
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Estimated_By_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -766,6 +877,15 @@ Option Infer On
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Approved_Date_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_DisplayName_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -884,6 +1004,75 @@ Option Infer On
       '   END FORMULA; SUB ID:277; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_App_Calc_Metrics_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Belt_Turn_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:289; TYPE:PN
+      
+      '   END FORMULA; SUB ID:289; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Belt_Turn_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Belt_Turn_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Belt_Turn").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:289; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:289; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Belt_Turn_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Belt_Turn_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Belt_Turn").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:289; TYPE:OP
+      result = "CAE_APC_Belt_Turn"
+      '   END FORMULA; SUB ID:289; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Belt_Turn_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1018,7 +1207,7 @@ Option Infer On
       Stop
       End If
       '   BEGIN FORMULA; SUB ID:266; TYPE:OP
-      result = "APC_Induction"
+      Result = "CAE_APC_Induction"
       '   END FORMULA; SUB ID:266; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Induction_OPTIMALPARTFAMILY", ex.Message)
@@ -1160,6 +1349,75 @@ Option Infer On
       '   END FORMULA; SUB ID:257; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Print_And_Apply_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Scan_Belt_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:288; TYPE:PN
+      
+      '   END FORMULA; SUB ID:288; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Scan_Belt_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Scan_Belt_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Scan_Belt").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:288; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:288; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Scan_Belt_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Scan_Belt_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("Scan_Belt").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:288; TYPE:OP
+      result = "CAE_APC_Scan_Belt"
+      '   END FORMULA; SUB ID:288; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Scan_Belt_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1367,6 +1625,144 @@ Option Infer On
       '   END FORMULA; SUB ID:264; TYPE:OP
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_Sortation_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_ZFA_Applications_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:293; TYPE:PN
+      
+      '   END FORMULA; SUB ID:293; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_ZFA_Applications_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_ZFA_Applications_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("ZFA_Applications").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:293; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:293; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_ZFA_Applications_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_ZFA_Applications_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("ZFA_Applications").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:293; TYPE:OP
+      result = "CAE_APC_ZFA_Applications"
+      '   END FORMULA; SUB ID:293; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_ZFA_Applications_OPTIMALPARTFAMILY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_ZFA_Choices_PARTNAMES() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      '   BEGIN FORMULA; SUB ID:292; TYPE:PN
+      
+      '   END FORMULA; SUB ID:292; TYPE:PN
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_ZFA_Choices_PARTNAMES", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_ZFA_Choices_QUANTITY() as Integer 'Long
+      
+      Dim Result as Integer = 0 'Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("ZFA_Choices").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:292; TYPE:QF
+      result = 1
+      '   END FORMULA; SUB ID:292; TYPE:QF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_ZFA_Choices_QUANTITY", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_ZFA_Choices_OPTIMALPARTFAMILY() as String
+      
+      Dim Result as String = ""
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Subparts("ZFA_Choices").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; SUB ID:292; TYPE:OP
+      result = "CAE_APC_ZFA_Choices"
+      '   END FORMULA; SUB ID:292; TYPE:OP
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_App_Calc.Formula_ZFA_Choices_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

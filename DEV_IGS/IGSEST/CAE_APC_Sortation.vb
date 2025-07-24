@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: IGSEST
 '$ PartFamily: CAE_APC_Sortation
-'$ GenerateDate: 07/20/2025 22:09:35
+'$ GenerateDate: 07/24/2025 22:14:38
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -354,6 +354,24 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM]() As Double
+      Get
+      Return Properties("Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin]() As Double
+      Get
+      Return Properties("Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Check_Width]() As Boolean
       Get
       Return Properties("Check_Width").Value
@@ -435,6 +453,33 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Gap_Global_Design_Override_IN]() As Double
+      Get
+      Return Properties("Gap_Global_Design_Override_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Gap_Global_Design_Override_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Gap_Head_to_Head_Spacing_Min_IN]() As Double
+      Get
+      Return Properties("Gap_Head_to_Head_Spacing_Min_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Gap_Head_to_Head_Spacing_Min_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Gap_Highest_Min_IN]() As Double
+      Get
+      Return Properties("Gap_Highest_Min_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Gap_Highest_Min_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Gap_Reqd_Box_Width_Min_IN]() As Double
       Get
       Return Properties("Gap_Reqd_Box_Width_Min_IN").Value
@@ -444,12 +489,66 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Gap_Requirement_Calculated_IN]() As Double
+      Get
+      Return Properties("Gap_Requirement_Calculated_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Gap_Requirement_Calculated_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Gap_Scale_Required_Min_IN]() As Double
+      Get
+      Return Properties("Gap_Scale_Required_Min_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Gap_Scale_Required_Min_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Gap_Scanner_Required_Min_IN]() As Double
+      Get
+      Return Properties("Gap_Scanner_Required_Min_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Gap_Scanner_Required_Min_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Gap_Sorter_Operation_Reqd_Min_IN]() As Double
+      Get
+      Return Properties("Gap_Sorter_Operation_Reqd_Min_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Gap_Sorter_Operation_Reqd_Min_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Gap_Tolerance]() As String
       Get
       Return Properties("Gap_Tolerance").Value
       End Get
       Set(ByVal Value As String)
       Properties("Gap_Tolerance").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Gap_ZipperMerge_Required_Min_IN]() As Double
+      Get
+      Return Properties("Gap_ZipperMerge_Required_Min_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Gap_ZipperMerge_Required_Min_IN").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Gapping_Method_If_Active]() As String
+      Get
+      Return Properties("Gapping_Method_If_Active").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Gapping_Method_If_Active").CalculatedValue = Value
       End Set
       End Property
     
@@ -597,6 +696,42 @@ Option Infer On
       End Set
       End Property
     
+          Public Property [Valid]() As Boolean
+      Get
+      Return Properties("Valid").Value
+      End Get
+      Set(ByVal Value As Boolean)
+      Properties("Valid").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Valid_Message]() As String
+      Get
+      Return Properties("Valid_Message").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Valid_Message").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Tool_Name]() As String
+      Get
+      Return Properties("Tool_Name").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Tool_Name").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Tool_Status]() As String
+      Get
+      Return Properties("Tool_Status").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Tool_Status").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [PartNumber]() As String
       Get
       Return Properties("PartNumber").Value
@@ -615,6 +750,12 @@ Option Infer On
       Public ReadOnly Property [Sorter_Candidates]() As Rulestream.Kernel.Subpart
       Get
       Return Subparts("Sorter_Candidates")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [My_Induction]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("My_Induction")
       End Get
       End Property
     
@@ -650,7 +791,7 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("CAE_APC_Sortation", <a><![CDATA[CAE_APC_Sortation]]></a>.Value, 442, "IGSEST",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/20/2025 22:09:26")
+    InitPart("CAE_APC_Sortation", <a><![CDATA[CAE_APC_Sortation]]></a>.Value, 442, "IGSEST",  "N", "N", True, False, "In Development", "", "", "", "", "",  "GLOBAL\H601424", "07/24/2025 22:08:43")
     AddProperty("10889", "Decouple_Merge_From_Sorter", <a><![CDATA[Decouple_Merge_From_Sorter]]></a>.Value, "", "Boolean","","File","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 8:33:12 PM")
     AddProperty("10890", "BoxSize_Length_Max_IN", <a><![CDATA[BoxSize Length Max IN]]></a>.Value, "BoxSize Length Max IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 8:41:22 PM")
     AddProperty("10891", "BoxSize_Length_Max_MM", <a><![CDATA[BoxSize Length Max MM]]></a>.Value, "BoxSize Length Max MM", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 8:56:09 PM")
@@ -674,6 +815,8 @@ Option Infer On
     AddProperty("10910", "BoxSize_Width_Min_MM", <a><![CDATA[BoxSize Width Min MM]]></a>.Value, "BoxSize Width Min MM", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 8:58:08 PM")
     AddProperty("10911", "BoxSize_Width_Min_User", <a><![CDATA[BoxSize Width Min User]]></a>.Value, "The allowable input range is from 4 inches (101.6 mm) to the defined ""Average Width"".", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 9:02:43 PM")
     AddProperty("10912", "BoxSize_Width_Min_User_UOM", <a><![CDATA[BoxSize Width Min User UOM]]></a>.Value, "BoxSize Width Min User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 8:50:10 PM")
+    AddProperty("11114", "Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM", <a><![CDATA[Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM]]></a>.Value, "Max Theoretical Capacity for Passive Gap Control (CPM)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/21/2025 6:56:14 PM")
+    AddProperty("11115", "Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin", <a><![CDATA[Capacity_Theoretic_Max Passive_Gap_w10pct_Margin]]></a>.Value, "Max Theoretical Capacity for Passive Gap Control (CPM)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/22/2025 1:21:15 PM")
     AddProperty("10946", "Check_Width", <a><![CDATA[Check_Width]]></a>.Value, "", "Boolean","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 9:30:15 PM")
     AddProperty("10879", "Chosen_Sort_Speed_FPM", <a><![CDATA[Chosen_Sort_Speed_FPM]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 8:05:29 PM")
     AddProperty("10880", "Chosen_Sort_Speed_User", <a><![CDATA[Chosen_Sort_Speed_User]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 3:53:41 PM")
@@ -681,10 +824,19 @@ Option Infer On
     AddProperty("10936", "Chosen_Sorter_Divert_Angle", <a><![CDATA[Chosen_Sorter_Divert_Angle]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 9:59:32 PM")
     AddProperty("10950", "Chosen_Sorter_Divert_Angle_Radians", <a><![CDATA[Chosen_Sorter_Divert_Angle_Radians]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 9:59:13 PM")
     AddProperty("10884", "Chosen_Sorter_ID", <a><![CDATA[Chosen_Sorter_ID]]></a>.Value, "USer Selected Sorter Model", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 6:42:06 PM")
-    AddProperty("10886", "Gap_Control_Method", <a><![CDATA[Gap_Control_Method]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 8:30:00 PM")
-    AddProperty("10860", "Gap_Design", <a><![CDATA[Gap_Design]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 1:43:12 PM")
+    AddProperty("10886", "Gap_Control_Method", <a><![CDATA[Gap_Control_Method]]></a>.Value, "Active gapping method -   All active gapping options will utilize a gapping B/M belt with a VFD/Servo drive at the sorter induction. This parameter determines what type of merge arrangement is used upstream of the sorter induction when active gapping is used.   ""Passive"" gap contro -  Generates inter-carton gaps using fixed speed differentials (Blow-Thru). With ""Active"" gap control, gaps are generated via logic/speed control of the induction conveyors.", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/24/2025 8:18:51 PM")
+    AddProperty("10860", "Gap_Design", <a><![CDATA[Gap_Design]]></a>.Value, "Design Gap", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/21/2025 6:50:28 PM")
+    AddProperty("11113", "Gap_Global_Design_Override_IN", <a><![CDATA[Gap_Global_Design_Override_IN]]></a>.Value, "Gap Override  From Global setup", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/21/2025 6:47:45 PM")
+    AddProperty("10994", "Gap_Head_to_Head_Spacing_Min_IN", <a><![CDATA[Gap_ Head_to_Head_Spacing_IN]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/21/2025 2:29:34 PM")
+    AddProperty("11111", "Gap_Highest_Min_IN", <a><![CDATA[Gap_Highest_Min_IN]]></a>.Value, "Largest Gap Required", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/21/2025 6:44:13 PM")
     AddProperty("10947", "Gap_Reqd_Box_Width_Min_IN", <a><![CDATA[Gap_Reqd_Box_Width_Min_IN]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/20/2025 10:09:26 PM")
+    AddProperty("11108", "Gap_Requirement_Calculated_IN", <a><![CDATA[Gap_Requirement_Calculated_IN]]></a>.Value, "Calculated Gap Required", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/21/2025 6:50:46 PM")
+    AddProperty("11059", "Gap_Scale_Required_Min_IN", <a><![CDATA[Gap_Scale_Required_Min_IN]]></a>.Value, "Scanner Gap Required", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/22/2025 5:19:13 PM")
+    AddProperty("11001", "Gap_Scanner_Required_Min_IN", <a><![CDATA[Gap_Scanner_Required_Min_IN]]></a>.Value, "Scanner Gap Required", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/21/2025 4:30:44 PM")
+    AddProperty("11085", "Gap_Sorter_Operation_Reqd_Min_IN", <a><![CDATA[Gap_Sorter_Operation_Reqd_Min_IN]]></a>.Value, "Sorter Gap Required", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/21/2025 6:14:40 PM")
     AddProperty("10887", "Gap_Tolerance", <a><![CDATA[Gap_Tolerance]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 8:30:48 PM")
+    AddProperty("11072", "Gap_ZipperMerge_Required_Min_IN", <a><![CDATA[Gap_ZipperMerge_Required_Min_IN]]></a>.Value, "Zipper Merge Gap Required", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/21/2025 5:41:49 PM")
+    AddProperty("11064", "Gapping_Method_If_Active", <a><![CDATA[Gapping_Method_If_Active]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/21/2025 5:34:47 PM")
     AddProperty("10859", "Sorter_Candidates_dbKeys", <a><![CDATA[Sorter_Candidates_dbKeys]]></a>.Value, "", "Long","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 3:02:16 PM")
     AddProperty("10821", "Sorter_Selected_Width_IN", <a><![CDATA[Sorter_Selected_Width_IN]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 12:40:59 PM")
     AddProperty("10934", "Speed_After_Sort_Recd_Calc1", <a><![CDATA[Speed_After_Sort_Recd_Calc1]]></a>.Value, "", "Double","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 8:26:54 PM")
@@ -701,6 +853,10 @@ Option Infer On
     AddProperty("10931", "Spur_After_Sort_Reqd_Slope_Min", <a><![CDATA[Spur_After_Sort_Reqd_Slope_Min]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 5:56:17 PM")
     AddProperty("10926", "Spur_After_Sort_Type", <a><![CDATA[Spur_After_Sort_Type]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/20/2025 3:59:21 PM")
     AddProperty("10904", "User_UOM_System", <a><![CDATA[User UOM System]]></a>.Value, "App Calc Default UOM System", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 8:39:53 PM")
+    AddProperty("11277", "Valid", <a><![CDATA[Valid]]></a>.Value, "Are Plastic Totes Used?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/23/2025 1:07:54 PM")
+    AddProperty("11278", "Valid_Message", <a><![CDATA[Valid_Message]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/24/2025 10:08:43 PM")
+    AddProperty("11275", "Tool_Name", <a><![CDATA[Tool_Name]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/23/2025 1:07:54 PM")
+    AddProperty("11276", "Tool_Status", <a><![CDATA[Tool_Status]]></a>.Value, "", "String","","Mech Install","FD", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/23/2025 1:07:54 PM")
     AddProperty("10820", "PartNumber", <a><![CDATA[Part Number]]></a>.Value, "", "String","N","System","MN", 9999, "", 0,0, "", "", "GLOBAL\H601424", "7/19/2025 12:39:50 PM")
     
       AddValidValue("BoxSize_Length_Max_User_UOM")
@@ -723,6 +879,8 @@ Option Infer On
     
       AddValidValue("Gap_Tolerance")
     
+      AddValidValue("Gapping_Method_If_Active")
+    
       AddValidValue("Sorter_Candidates_dbKeys")
     
       AddValidValue("Sorter_Selected_Width_IN")
@@ -735,6 +893,8 @@ Option Infer On
     
       AddValidValue("User_UOM_System")
     
+      AddValidValue("Tool_Status")
+    
       oSubpart = AddSubpart(356,"Selected_Sorter", <a><![CDATA[Selected_Sorter]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/19/2025 8:13:19 PM")
       
         oSubpart.AddVPF (443, "CAE_APC_Sorter_App_Details", "CAE_APC_Sorter_App_Details")
@@ -742,6 +902,10 @@ Option Infer On
       oSubpart = AddSubpart(355,"Sorter_Candidates", <a><![CDATA[Sorter_Candidates]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/19/2025 1:16:44 PM")
       
         oSubpart.AddVPF (443, "CAE_APC_Sorter_App_Details", "CAE_APC_Sorter_App_Details")
+      
+      oConnection = AddConnection("My_Induction", <a><![CDATA[My_Induction]]></a>.Value, "Connection to My Induction Object", "226", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/21/2025 4:14:34 PM")
+      
+        oConnection.AddVPF(448, "CAE_APC_Induction")
       
       oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "216", "OO", 0, "","General", 9999, "", "GLOBAL\H601424", "7/19/2025 2:42:40 PM")
       
@@ -853,6 +1017,12 @@ Option Infer On
           InitProperty("BoxSize_Width_Min_User_UOM", "10466", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 8:50:10 PM", "BoxSize Width Min User UOM", "In Development",  0,19719)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM", "10666", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 6:55:54 PM", "BoxSize Width Max IN", "In Development",  0,20711)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin", "10667", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/22/2025 1:21:15 PM", "BoxSize Width Max IN", "In Development",  0,20826)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Check_Width", "10499", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/20/2025 9:30:15 PM", "", "In Development",  0,20120)
         End If
             If Incontext("-1", ctx) Then
@@ -877,13 +1047,40 @@ Option Infer On
           InitProperty("Gap_Control_Method", "10440", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/19/2025 8:29:52 PM", "", "In Development",  0,19674)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Gap_Design", "10416", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 1:43:02 PM", "", "In Development",  0,19486)
+          InitProperty("Gap_Design", "10416", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 6:50:12 PM", "", "In Development",  0,20709)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Gap_Global_Design_Override_IN", "10665", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 6:47:19 PM", "BoxSize Width Max IN", "In Development",  0,20704)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Gap_Head_to_Head_Spacing_Min_IN", "10547", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 2:29:34 PM", "BoxSize Width Max IN", "In Development",  0,20406)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Gap_Highest_Min_IN", "10663", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 6:44:13 PM", "BoxSize Width Max IN", "In Development",  0,20699)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Gap_Reqd_Box_Width_Min_IN", "10500", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/20/2025 10:09:26 PM", "BoxSize Width Max IN", "In Development",  0,20139)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("Gap_Requirement_Calculated_IN", "10660", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 6:45:05 PM", "BoxSize Width Max IN", "In Development",  0,20701)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Gap_Scale_Required_Min_IN", "10611", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/22/2025 5:19:13 PM", "BoxSize Width Max IN", "In Development",  0,20958)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Gap_Scanner_Required_Min_IN", "10554", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 4:30:44 PM", "BoxSize Width Max IN", "In Development",  0,20521)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Gap_Sorter_Operation_Reqd_Min_IN", "10637", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 6:12:42 PM", "BoxSize Width Max IN", "In Development",  0,20645)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Gap_Tolerance", "10441", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/19/2025 8:30:48 PM", "", "In Development",  0,19677)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Gap_ZipperMerge_Required_Min_IN", "10624", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/21/2025 5:41:38 PM", "BoxSize Width Max IN", "In Development",  0,20624)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Gapping_Method_If_Active", "10616", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/21/2025 5:34:44 PM", "", "In Development",  0,20610)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Sorter_Candidates_dbKeys", "10415", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/19/2025 3:02:16 PM", "", "In Development",  0,19465)
@@ -932,6 +1129,18 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           InitProperty("User_UOM_System", "10458", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 8:39:53 PM", "Default UOM System", "In Development",  0,19703)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Valid", "10827", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/23/2025 1:07:54 PM", "Are Plastic Totes Used?", "In Development",  0,21253)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Valid_Message", "10828", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/24/2025 10:08:43 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,21763)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Tool_Name", "10825", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/23/2025 1:07:54 PM", "", "In Development",  0,21250)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Tool_Status", "10826", "", "", "Y", "","", 0, "-1", 1, "", "N","0",  "GLOBAL\H601424", "7/23/2025 1:07:54 PM", "", "In Development",  0,21251)
         End If
     End Sub
 
@@ -986,6 +1195,10 @@ Option Infer On
         End If
             If Incontext("-1", ctx) Then
           
+        InitValidValue("Gapping_Method_If_Active_ValidValues", "10616", "-1", 20607)
+        End If
+            If Incontext("-1", ctx) Then
+          
         InitValidValue("Sorter_Candidates_dbKeys_ValidValues", "10415", "-1", 19520)
         End If
             If Incontext("-1", ctx) Then
@@ -1007,6 +1220,10 @@ Option Infer On
             If Incontext("-1", ctx) Then
           
         InitValidValue("User_UOM_System_ValidValues", "10458", "-1", 19702)
+        End If
+            If Incontext("-1", ctx) Then
+          
+        InitValidValue("Tool_Status_ValidValues", "10826", "-1", 21252)
         End If
     End Sub
 
@@ -1044,6 +1261,12 @@ Option Infer On
     ctx = ContextId
             If Incontext("-1", ctx) Then
           
+        InitConnection("My_Induction", "205", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/21/2025 4:14:34 PM", "", "In Development", "N",362)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
         InitConnection("My_PRD", "195", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "7/19/2025 2:42:40 PM", "", "In Development", "N",349)
         
           End If
@@ -1077,6 +1300,31 @@ Option Infer On
 
     #Region " Formulas "
 
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_My_Induction_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:205; TYPE:PF
+        Result = Nothing
+If Me.Parent.Induction.Quantity > 0 Then
+	Result = Me.Parent.Induction(1)
+End If
+        '   END FORMULA; CON ID:205; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_My_Induction_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
     
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
@@ -1695,6 +1943,59 @@ Next p
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10666; TYPE:PF
+      Result = 0
+
+'=IF($H$50="Passive",(12*ChosenSortSpeed/((BoxSize_Length_Min_IN+DesignGap)/BoxSize_Length_Min_IN))/BoxSize_Length_Avg,"")
+
+Result = If(Me.Gap_Control_Method="Passive",(12*Me.Chosen_Sort_Speed_FPM / ((Me.My_Setup(1).BoxSize_Length_Min_IN + Me.Gap_Design)/Me.My_Setup(1).BoxSize_Length_Min_IN))/Me.My_Setup(1).BoxSize_Length_Avg,0)
+      '   END FORMULA; PROP ID:10666; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10667; TYPE:PF
+      Result = 0
+
+'=If($H$50="Passive",H78*0.9,"")
+Result = If(Me.Gap_Control_Method="Passive", Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM * 0.9,0)
+      '   END FORMULA; PROP ID:10667; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Check_Width() As Boolean
           Dim Result as Boolean
       Dim ctx as Object
@@ -1898,10 +2199,85 @@ End If
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:10416; TYPE:PF
-      Result = 0
+      '=IF(OverrideGap>0,OverrideGap,CalculatedGap)
+Result = If(Me.Gap_Global_Design_Override_IN > 0, Gap_Global_Design_Override_IN , Me.Gap_Requirement_Calculated_IN)
       '   END FORMULA; PROP ID:10416; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_Design", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Gap_Global_Design_Override_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gap_Global_Design_Override_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10665; TYPE:PF
+      Result = Me.My_Setup(1).Material_Gap_Override_IN
+      '   END FORMULA; PROP ID:10665; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_Global_Design_Override_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Gap_Head_to_Head_Spacing_Min_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gap_Head_to_Head_Spacing_Min_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10547; TYPE:PF
+      '=IF(H50="Passive",IF(BoxSize_Length_Min_IN<15,15-BoxSize_Length_Min_IN,""),"")
+Result = If(Me.Gap_Control_Method="Passive",If(Me.My_Setup(1).BoxSize_Length_Min_IN < 15, 15 - Me.My_Setup(1).BoxSize_Length_Min_IN,0),0)
+      '   END FORMULA; PROP ID:10547; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_Head_to_Head_Spacing_Min_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Gap_Highest_Min_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gap_Highest_Min_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10663; TYPE:PF
+      Result = 0
+
+'=MAX(H66:H71,H38)
+Result = XLSMax(Me.Gap_Head_to_Head_Spacing_Min_IN, Me.Gap_Head_to_Head_Spacing_Min_IN, Me.Gap_Reqd_Box_Width_Min_IN, Me.Gap_Scale_Required_Min_IN)
+Result = XlsMax(Result, Me.Gap_Sorter_Operation_Reqd_Min_IN, Me.Gap_ZipperMerge_Required_Min_IN, Me.Gap_Scanner_Required_Min_IN )
+      '   END FORMULA; PROP ID:10663; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_Highest_Min_IN", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -1945,6 +2321,114 @@ Result = If(Me.Check_Width,If(Me.My_Setup(1).BoxSize_Width_Avg_IN>20,R67,R68),0)
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_Gap_Requirement_Calculated_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gap_Requirement_Calculated_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10660; TYPE:PF
+      Result = 0
+
+'=IF(H49="Standard",IF(H72>10,H72,10),H72)
+
+Result =If (Me.Gap_Tolerance = "Standard",If(Me.Gap_Highest_Min_IN >10,Me.Gap_Highest_Min_IN,10),Me.Gap_Highest_Min_IN)
+      '   END FORMULA; PROP ID:10660; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_Requirement_Calculated_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Gap_Scale_Required_Min_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gap_Scale_Required_Min_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10611; TYPE:PF
+      'Todo: MPC Fix  Link to Induction
+Result = 0
+If Me.My_Induction.Quantity > 0
+	
+	'Result = Me.My_Induction(1).Gap_Scan_Application_Min_IN
+End If
+      '   END FORMULA; PROP ID:10611; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_Scale_Required_Min_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Gap_Scanner_Required_Min_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gap_Scanner_Required_Min_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10554; TYPE:PF
+      Result = 0
+If Me.My_Induction.Quantity > 0
+	Result = Me.My_Induction(1).Gap_Scan_Application_Min_IN
+End If
+      '   END FORMULA; PROP ID:10554; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_Scanner_Required_Min_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Gap_Sorter_Operation_Reqd_Min_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gap_Sorter_Operation_Reqd_Min_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10637; TYPE:PF
+      Result = 0
+
+'=IF(H49="Standard",MAX(MinGapForType,10),MinGapForType)
+Dim Gap_Min_IN = Me.Selected_Sorter(1).Gap_Min_IN
+Result = If(Me.Gap_Tolerance="Standard",MAX(Gap_Min_IN,10),Gap_Min_IN)
+      '   END FORMULA; PROP ID:10637; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_Sorter_Operation_Reqd_Min_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Gap_Tolerance() As String
           
           Dim Result as String = String.Empty
@@ -1960,6 +2444,63 @@ Result = If(Me.Check_Width,If(Me.My_Setup(1).BoxSize_Width_Avg_IN>20,R67,R68),0)
       '   END FORMULA; PROP ID:10441; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_Tolerance", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Gap_ZipperMerge_Required_Min_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gap_ZipperMerge_Required_Min_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10624; TYPE:PF
+      Result = 0
+If Me.My_Induction.Quantity > 0
+	' =IF(AND(H52="Zippering Merge",H49="Small"),8,"")
+	Result =If(XlsAND(Me.Gapping_Method_If_Active="Zippering Merge",Me.Gap_Tolerance="Small"),8,0)
+	
+End If
+      '   END FORMULA; PROP ID:10624; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gap_ZipperMerge_Required_Min_IN", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Gapping_Method_If_Active() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gapping_Method_If_Active").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10616; TYPE:PF
+      If Me.Gap_Control_Method = "Active" Then
+	Result = "IntelliMerge"
+Else
+	Result = ""
+End If
+      '   END FORMULA; PROP ID:10616; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gapping_Method_If_Active", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -2413,6 +2954,333 @@ Result = If(Me.Spur_After_Sort_Orientation="Sloped",If(Me.Spur_After_Sort_Type="
       Return Result
       End Function
     
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Valid() As Boolean
+          Dim Result as Boolean
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Valid").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10827; TYPE:PF
+      Result = True
+' !!!Attention !!! : This will need to be broken from subscription and reworked for the Part Family in Scope
+
+'Error Levels 
+'	0 = Info
+'	1 = Warning
+'	2 = Error
+'	3 = Critical (Critical Means Nothing beyond associated process step should be allowed until this is fixed
+
+Dim InValidity_Trigger_Level As Integer = 2 ' Set to Error
+Dim Source As String = Me.Name ' Set To Current Property's name, Override If neccessary for more detailed source log info
+
+'This Section should be a duplicate Of Valid Message
+
+ Dim EList As New Custom.HWErrorList
+
+ EList.Add(0, "Warning Message", "ERR000", Source)
+ EList.Add(1, "Warning Message", "ERR001", Source)
+ EList.Add(2, "Errror Message", "ERR002", Source)
+ EList.Add(3, "Critcal Message", "ERR003", Source)
+
+ ' End Duplicate Section
+EList.Add(3, "Critical, Not Impleented - Warnings and Errors Need Implemented", "ERR003", Me.Name)
+
+Result = EList.IsValid(InValidity_Trigger_Level)
+      '   END FORMULA; PROP ID:10827; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Valid", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Valid_Message() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Valid_Message").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10828; TYPE:PF
+      Result = ""
+
+' !!!Attention !!! : This will need to be broken from subscription and implemented specically for the Part Family in Scope
+
+'ErrorLevels 
+'	0 = Info
+'	1 = Warnings
+'	2 = Error2
+'	3 = Critical (Critical Means Nothing beyond associated process step should be allowed until this is fixed
+
+Dim Show_Errors_Level As Integer = 2 ' Set to Error
+Dim Source As String = Me.Name ' Set To Current Property's name, Override If neccessary for more detailed source log info
+Dim EList As New Custom.HWErrorList
+
+'Add Error Evaluations in this section
+
+ 'EList.Add(ErrorLevel.Info, "Warning Message", "ERR000", Source)
+ 'EList.Add(ErrorLevel.Warnings, "Warning Message", "ERR001", Source)
+ 'EList.Add(ErrorLevel.Errors, "Errror Message", "ERR002", Source)
+ 'EList.Add(ErrorLevel.Critical, "Critcal Message", "ERR003", Source)
+
+'=IF(AND(SorterType="", Setup!D69>0),"ERROR: VALID SORTER CHOICES ARE AVAILABLE BUT NONE ARE CURRENTLY SELECTED","") 
+Dim Available_Sorter_Options As Integer = Me.My_Setup(1).Sorter_Options_Found_Qty
+Dim Is_Sorter_Seleted As Boolean = (Selected_Sorter.Quantity > 0)
+Dim Chosen_Sorter_Model As String = ""
+
+If Is_Sorter_Seleted Then
+	Chosen_Sorter_Model = Me.Selected_Sorter(1).Model
+End If
+
+If Not Is_Sorter_Seleted And Available_Sorter_Options > 0 Then
+	EList.Add(3, "CRITICAL!: VALID SORTER CHOICES ARE AVAILABLE BUT NONE ARE CURRENTLY SELECTED","APC001", Source) 
+End If
+
+'=IF(SorterType<>"",IF(OR(BoxSize_Length_Min_IN<SortMinBoxLength,BoxSize_Width_Min_IN<SortMinBoxWidth,BoxSize_Weight_Min_LBS<SortMinBoxWeight,BoxSize_Length_Max_IN>SortMaxBoxLength,BoxSize_Width_Max_IN>SortMaxBoxWidth,BoxSize_Weight_Max_LBS>SortMaxBoxWeight),"ERROR: CHOSEN SORTER CANNOT HANDLE PRODUCT - DEFINED PRODUCT SIZES EXCEED DESIGN LIMITS OF SORTER",""),"") - K34
+If Is_Sorter_Seleted  Then
+	If(Custom.XlsOR(BoxSize_Length_Min_IN < BoxSize_Length_Min_User, BoxSize_Width_Min_IN < BoxSize_Width_Min_User, BoxSize_Weight_Min_LBS < BoxSize_Weight_Min_User, BoxSize_Length_Max_IN > BoxSize_Length_Max_User)) Then 'BoxSize_Width_Max_IN > BoxSize_Width_Max_User, BoxSize_Weight_Max_LBS > BoxSize_Weight_Max_User)) Then 
+ 		EList.Add(2, "ERROR: CHOSEN SORTER CANNOT HANDLE PRODUCT - DEFINED PRODUCT SIZES EXCEED DESIGN LIMITS OF SORTER", "APC002", Source)
+	End If
+End If
+
+' TODO: VY - MC  7/23/2025  Complete this error , ref Sortation Cell k35
+'=IF(Setup!D69<>0,IF(COUNTIF('Sort Choices'!C38:C52,SorterType)=0,"ERROR: SORTER CHOICE IS INCOMPATIABLE WITH APPLICATION AS CONFIGURED. CHECK SORTER ","3"),"ERROR: NO  COMPATIABLE SORTER CHOICE IS AVAILABLE FOR THIS APPLICATION AS DEFINED", "4) - K35
+'=IF(Setup!D69<>0,IF(COUNTIF('Sort Choices'!C38:C52,SorterType)=0,"ERROR: SORTER CHOICE IS INCOMPATIABLE WITH APPLICATION AS CONFIGURED. CHECK SORTER ","3"),"ERROR: NO  COMPATIABLE SORTER CHOICE IS AVAILABLE FOR THIS APPLICATION AS DEFINED", "4) - K35
+
+
+
+' TODO: VY - MPC  7/23/2025  Complete this error , ref Sortation Cell M36
+'=If(Setup!D69<>0,If(COUNTIF('Sort Choices'!C38:C52,SorterType)=0,"CHOICES TAB FOR REASONS, MODIFIY THE APPLICATION REQUIREMENTS OR PICK A DIFFERENT SORTER!","5"),)
+
+
+' TODO: MPC  7/23/2025  Complete this error , ref Sortation Cell L37
+'=IF(SorterType="HDS, Dual Sided, 20°","WARNING: BE ADVISED THAT ALL HDS SORTER APPLICATIONS MUST BE REVIEWED AND APPROVED BY","") - L37
+If Chosen_Sorter_Model.StartsWith("HDS") Then
+	EList.Add(ErrorLevel.Info, "WARNING: BE ADVISED THAT ALL HDS SORTER APPLICATIONS MUST BE REVIEWED AND APPROVED BY","APC006", Source)
+End If
+
+' TODO: MPC  7/23/2025  Complete this error , ref Sortation Cell M38
+'=IF(SorterType="HDS, Dual Sided, 20°","THE SORTER ENGINEERING GROUP WITHOUT EXCEPTION!","") - M38
+If Chosen_Sorter_Model.StartsWith("HDS, Dual Sided, 20") Then
+	EList.Add(ErrorLevel.Warnings, "WARNING: THE SORTER ENGINEERING GROUP WITHOUT EXCEPTION!","APC007", Source)
+End If
+
+'=IF(SorterCategory="Transnorm","NOTE! GAP REQUIREMENTS FOR TRANSNORM SORTERS VARY BASED ON SPEED, CARTON SIZE AND GAPPING METHOD","") - M39
+If(Me.Selected_Sorter(1).Sorter_Type = "Transnorm") Then
+	EList.Add(ErrorLevel.Warnings, "WARNING: NOTE! GAP REQUIREMENTS FOR TRANSNORM SORTERS VARY BASED ON SPEED, CARTON SIZE AND GAPPING METHOD","AP008", Source)
+End If
+
+' TODO: MPC  7/23/2025  Complete this error , ref Sortation Cell k40
+'=IF(H40>Temp_Sort_Operating_Min,"ERROR: DEFINED SORTATION AREA MINIMUM TEMPERATURE IS BELOW THE SELECTED SORTER'S ALLOWABLE RANGE","")
+'If(H40 > Temp_Sort_Operating_Min) Then
+	'EList.Add(1, "ERROR: DEFINED SORTATION AREA MINIMUM TEMPERATURE IS BELOW THE SELECTED SORTER'S ALLOWABLE RANGE","", Source)
+'End If
+
+' TODO: MPC  7/23/2025  Complete this error , ref Sortation Cell K45
+'=IF(AND(SorterWidth<Conveyor_BF_Selected_Min_IN,Conveyor_BF_Selected_Min_IN<40,SorterType<>"HDS, Dual Sided, 20°"),"ERROR - CHOOSEN SORTER WIDTH NARROWER THAN SELECTED SYSTEM B/F!",IF(AND(SorterWidth<>22,SorterType="HDS, Dual Sided, 20°"),"ERROR: HDS SORTER IS ONLY AVAILABLE IN A 22 INCH B/F",""))
+'If(Custom.XlsAnd(SorterWidth < Conveyor_BF_Selected_Min_IN, Conveyor_BF_Selected_Min_IN<40,SorterType<>"HDS, Dual Sided, 20°"),"ERROR - CHOOSEN SORTER WIDTH NARROWER THAN SELECTED SYSTEM B/F!", "APC009", Source)
+'If(And(SorterWidth<>22, SorterType="HDS, Dual Sided, 20°"),"ERROR: HDS SORTER IS ONLY AVAILABLE IN A 22 INCH B/F","APC0010", Source)
+'End If
+'End If
+
+' TODO: VY - MC  7/23/2025  Complete this error , ref Sortation Cell K46
+'=IF(OR(AND(BoxSize_Width_Max_IN>(SorterWidth-2),Conveyor_Product_Line_Used="Imperial"),AND(BoxSize_Width_Max_MM>(SorterWidthMetric-50.8),Conveyor_Product_Line_Used="Metric")),"ERROR: CHOOSEN SORTER TOO NARROW FOR MATERIAL TO BE HANDLED!","")
+'IF(OR(AND(BoxSize_Width_Max_IN>(SorterWidth-2),Conveyor_Product_Line_Used="Imperial"),AND(BoxSize_Width_Max_MM>(SorterWidthMetric-50.8),Conveyor_Product_Line_Used="Metric")),"ERROR: CHOOSEN SORTER TOO NARROW FOR MATERIAL TO BE HANDLED!","APC0010", Source)
+
+
+' TODO: MPC  7/23/2025  Complete this error , ref Sortation Cell k47
+'=IF(OR(AND(Conveyor_Product_Line_Used="Imperial",SorterWidth=38,R48<>38),AND(Conveyor_Product_Line_Used="Metric",SorterWidthMetric=960,S48<>960)),"ERROR: INVALID WIDTH FOR CHOSEN SORTER TYPE","")
+'If(Custom.XlsOR(Custom.XlsAND(Conveyor_Product_Line_Used = "Imperial", SorterWidth=38,R48<>38), Custom.XlsAND(Conveyor_Product_Line_Used = "Metric",SorterWidthMetric=960,S48<>960)))
+'	EList.Add(2,"ERROR: INVALID WIDTH FOR CHOSEN SORTER TYPE","APC0011", Source)
+'End If
+
+' TODO: MPC  7/23/2025  Complete this error , ref Sortation Cell L47
+'=IF(OR(AND(Conveyor_Product_Line_Used="Imperial",SorterWidth<>Conveyor_BF_Selected_Min_IN),AND(Conveyor_Product_Line_Used="Metric",SorterWidthMetric<>SelectedMinConvBFMetric)),"WARNING: SORTER WIDTH DOES NOT MATCH SELECTED SYSTEM B/F!","")
+'If(Custom.XlsOr(Custom.XlsAnd(Conveyor_Product_Line_Used = "Imperial",SorterWidth<>Conveyor_BF_Selected_Min_IN),Custom.XlsAnd(Conveyor_Product_Line_Used="Metric",SorterWidthMetric<>SelectedMinConvBFMetric)))
+'EList.Add(1, "WARNING: SORTER WIDTH DOES NOT MATCH SELECTED SYSTEM B/F!","", Source)
+'End If
+
+' TODO: MPC  7/23/2025  Complete this error , ref Sortation Cell K48
+'=IF(ChosenSortSpeed>MaxSortSpeed,"ERROR: SELECTED SPEED TOO FAST FOR CHOSEN SORTER","") 
+'If(ChosenSortSpeed > MaxSortSpeed) Then
+'EList.Add(2,"ERROR: SELECTED SPEED TOO FAST FOR CHOSEN SORTER","", Source)
+'End If
+
+'TODO: MPC  7/23/2025  Complete this error , ref Sortation Cell  L50
+'IF(AND(GapControlMethod="Active",ActiveGappingMethod="Std Mrg w/ Induct Accum",Case_Length_Per_Ft_Minute_Target>110),"WARNING: ACTIVE GAPPING WITH A STANDARD MERGE WITH INDUCTION ACCUMULATION MUST BE","")
+'=IF(Custom.XlsAND(GapControlMethod = "Active", ActiveGappingMethod = "Std Mrg w/ Induct Accum",Case_Length_Per_Ft_Minute_Target>110)) Then
+'EList.Add(1, "WARNING: ACTIVE GAPPING WITH A STANDARD MERGE WITH INDUCTION ACCUMULATION MUST BE","", Source)
+'End If
+
+'TODO: MPC  7/23/2025  Complete this error , ref Sortation Cell  M51
+'=IF(AND(GapControlMethod="Active",ActiveGappingMethod="Std Mrg w/ Induct Accum",Case_Length_Per_Ft_Minute_Target>110),"REVIEWED BY APPLICATIONS ENGINEERING IF ABOVE A 110 CFPM RATE REQUIREMENT!","")
+'If(Custom.XlsAnd(GapControlMethod="Active", ActiveGappingMethod = "Std Mrg w/ Induct Accum", Case_Length_Per_Ft_Minute_Target>110)) then
+'EList.Add(1, "WARNING: REVIEWED BY APPLICATIONS ENGINEERING IF ABOVE A 110 CFPM RATE REQUIREMENT!","", Source)
+'End if
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell K52
+'=If(Or(And(ActiveGappingMethod="PLC Slug Merge",Selected_Sortation_Controls<>"PLC"),And(Or(ActiveGappingMethod="Zippering Merge",ActiveGappingMethod="Intellimerge"),Selected_Sortation_Controls="PLC")),"ERROR: THE ACTIVE GAPPING METHOD SELECTED (MERGE TYPE) IS NOT SUPPORTED BY THE SELECTED CONTROL SYSTEM","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell K53
+'=IF(AND(GapControlMethod="Active",ActiveGappingMethod="Zippering Merge",ChosenSortSpeed>600),"ERROR: SORTATION SPEEDS ABOVE 600 FPM ARE NOT CURRENTLY SUPPORTED BY A ZIPPERING MERGE!","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell K54
+'=If(And(H53="Gravity",H54="Horizontal"),"ERROR - GRAVITY CANNOT BE HORIZONTAL!","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell K55
+'=IF(AND(OR(SorterType="WD (Pop-Up Wheel)",SorterCategory="Transnorm"),OR(H53<>"Powered",H54<>"Horizontal")),IF(H53<>"Powered","ERROR: GRAVITY AFTER-SORT SPURS CANNOT BE USED WITH THIS SORTER TYPE!","ERROR: POWERED SPURS MUST BE HORIZONTAL WITH THIS SORTER TYPE!"),"")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell K63
+'=IF(H62>MaxSortSpeed,"ERROR - REQUESTED RATE EXCEEDS SELECTED SORTER'S THEORETICAL CAPACITY","")
+'If(H62>MaxSortSpeed) Then
+'Elist.Add(2, "ERROR - REQUESTED RATE EXCEEDS SELECTED SORTER'S THEORETICAL CAPACITY","", Source)
+'End If
+	
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell M64
+'=IF(H64="**","CHECK PRODUCT MANUAL FOR STANDARD SPEEDS OF NON-INTELLISORT (SLIDING SHOE) EQUIPMENT","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell M66
+'=IF(BoxSize_Width_Avg_IN>20,"AVERAGE BOX WIDTH GREATER THAN 20 INCHES, USING MAX WIDTH FOR GAP REQUIREMENT!","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell L74
+'=IF(AND(OverrideGap>0,OverrideGap<CalculatedGap),"WARNING: GAP OVERRIDE IS ENABLED AND GAP SELECTED IS SMALLER THAN CALCULATED REQUIREMENT","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell L79
+'=IF(H79<Sort_Rate_Required_CPM,"WARNING: BLOW-THRU WILL NOT MEET TARGET SORTATION RATE !","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell L82
+'=IF(AND(GapControlMethod="Passive",DecoupleStdMergeFromSorterFlag="Yes"),"WARNING: STANDARD MERGE CALCULATIONS HAVE BEEN DECOUPLED FROM THE SORTER!","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell M83
+'=IF(AND(GapControlMethod="Passive",DecoupleStdMergeFromSorterFlag="Yes"),"NO RATE RESULTS WILL BE DISPLAYED FOR SORTATION IN THIS MODE.","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell L84
+'=IF(AND(H84>0,H84<>""),"REVIEW ALL WARNINGS ON STANDARD MERGE CALCULATION SHEET BEFORE USING THIS RATE ESTIMATE!","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell K85
+'=IF(AND(H85>0,H85<>""),"CORRECT ALL ERRORS ON STANDARD MERGE CALCULATION SHEET BEFORE USING THIS ESTIMATE!","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell L88
+'=IF(AND(H88>0,H88<>""),"REVIEW ALL WARNINGS ON RATE MATCHING MERGE CALCULATION SHEET BEFORE USING THIS RATE ESTIMATE!","")
+
+' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell K89
+'=If(And(H89>0,H89<>""),"CORRECT ALL ERRORS ON  RATE MATCHING MERGE CALCULATION SHEET BEFORE USING THIS ESTIMATE!","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell L91
+'=IF(AND(TotalPreMrgAvailableCPM<Sort_Rate_Required_CPM,H52="Zippering Merge"),"INSUFFICIENT VOLUME INPUT DEFINED UPSTREAM OF ZIPPER MERGE FOR FULL UTILIZATION!","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell  L92
+'=IF(AND(H92>0,H92<>""),"REVIEW ALL WARNINGS ON ZIPPER MERGE CALCULATION SHEET BEFORE USING THIS RATE ESTIMATE!","")
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell K93
+'=IF(AND(H93>0,H93<>""),"CORRECT ALL ERRORS ON ZIPPER MERGE CALCULATION SHEET BEFORE USING THIS ESTIMATE!","")
+'If(Custom.XlsAnd(H93>0,H93<>"")) Then
+	'EList.Add(1, "Warning: CORRECT ALL ERRORS ON ZIPPER MERGE CALCULATION SHEET BEFORE USING THIS ESTIMATE!","APC00", Source)
+'End If
+
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell L95
+'=If(And(TotalPreMrgAvailableCPM<(Sort_Rate_Required_CPM*1.02),H52="Intellimerge"),"INSUFFICIENT VOLUME INPUT DEFINED! INTELLIMERGE RATE CALCULATION WILL NOT BE ACCURATE!","")
+'If(Custom.XlsAnd(TotalPreMrgAvailableCPM<(Sort_Rate_Required_CPM*1.02),H52="Intellimerge")) Then
+	'EList.Add(1, "Warning: INSUFFICIENT VOLUME INPUT DEFINED! INTELLIMERGE RATE CALCULATION WILL NOT BE ACCURATE!","APC00", Source)
+'End If
+	
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell  L96
+'=IF(AND(H96>0,H96<>""),"REVIEW ALL WARNINGS ON INTELLIMERGE CALCULATION SHEET BEFORE USING THIS RATE ESTIMATE!","")
+'If(Custom.XlsAnd(H96>0,H96<>"")) Then
+	'EList.Add(1, "Warning: REVIEW ALL WARNINGS ON INTELLIMERGE CALCULATION SHEET BEFORE USING THIS RATE ESTIMATE!","APC00", Source)	
+'End If
+	
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell K97
+'=IF(AND(H97>0,H97<>""),"CORRECT ALL ERRORS ON INTELLIMERGE CALCULATION SHEET BEFORE USING THIS ESTIMATE!","")
+'If(Custom.XlsAnd(H97>0,H97<>"")) Then
+'EList.Add(1, "Warning: CORRECT ALL ERRORS On INTELLIMERGE CALCULATION SHEET BEFORE Using THIS ESTIMATE!","APC00", Source)
+	'End If
+'' TODO:  MPC  7/23/2025  Complete this error , ref Sortation Cell L101
+'=If(H101<Sort_Rate_Required_CPM,"WARNING: CURRENT APPLICATION CONFIGURATION DOESN'T MEET THE DEFINED RATE REQUIREMENT!","")
+'If(H101<Sort_Rate_Required_CPM) Then
+'EList.Add(1, "WARNING: CURRENT APPLICATION CONFIGURATION DOESN'T MEET THE DEFINED RATE REQUIREMENT!","APC00", Source)
+	
+'Result = EList.ErrorSummary(1)
+Result = EList.ErrorSummary(Show_Errors_Level)
+      '   END FORMULA; PROP ID:10828; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Valid_Message", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Tool_Name() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Name").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10825; TYPE:PF
+      Result = "Tool Name Not Implented" ' Implement this name
+
+'Delete this Section section after implementing Tool Name Above
+If Result = "Tool Name Not Implented" Then
+	MsgBox ("Error in {Me.Name}. Tool_Name Property Not Implemented")
+End If
+'End Delete Section
+      '   END FORMULA; PROP ID:10825; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Tool_Name", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Tool_Status() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Status").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10826; TYPE:PF
+      Result = "New"
+      '   END FORMULA; PROP ID:10826; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Tool_Status", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
       '*****************************************************************************
       '   Copyright (C) 2024 Siemens. All rights reserved.
       '
@@ -2625,6 +3493,24 @@ Result = If(Me.Spur_After_Sort_Orientation="Sloped",If(Me.Spur_After_Sort_Type="
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Check_Width_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -2706,6 +3592,33 @@ Result = If(Me.Spur_After_Sort_Orientation="Sloped",If(Me.Spur_After_Sort_Type="
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Gap_Global_Design_Override_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Head_to_Head_Spacing_Min_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Highest_Min_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Gap_Reqd_Box_Width_Min_IN_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -2715,7 +3628,61 @@ Result = If(Me.Spur_After_Sort_Orientation="Sloped",If(Me.Spur_After_Sort_Type="
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Gap_Requirement_Calculated_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Scale_Required_Min_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Scanner_Required_Min_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Sorter_Operation_Reqd_Min_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Gap_Tolerance_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_ZipperMerge_Required_Min_IN_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gapping_Method_If_Active_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -2860,6 +3827,42 @@ Result = If(Me.Spur_After_Sort_Orientation="Sloped",If(Me.Spur_After_Sort_Type="
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_User_UOM_System_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Valid_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Valid_Message_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Name_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -3075,6 +4078,24 @@ Result = If(Me.Spur_After_Sort_Orientation="Sloped",If(Me.Spur_After_Sort_Type="
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Capacity_Theoretic_Max_for_Passive_Gap_Control_CPM_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Capacity_Theoretic_MaxPassive_Gap_w10pct_Margin_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Check_Width_USERCHANGE() as Boolean
       Return False
       End Function
@@ -3156,7 +4177,70 @@ Result = If(Me.Spur_After_Sort_Orientation="Sloped",If(Me.Spur_After_Sort_Type="
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Gap_Global_Design_Override_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Head_to_Head_Spacing_Min_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Highest_Min_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Gap_Reqd_Box_Width_Min_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Requirement_Calculated_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Scale_Required_Min_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Scanner_Required_Min_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_Sorter_Operation_Reqd_Min_IN_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -3167,6 +4251,45 @@ Result = If(Me.Spur_After_Sort_Orientation="Sloped",If(Me.Spur_After_Sort_Type="
       '*****************************************************************************
       Public Function Formula_Gap_Tolerance_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gap_ZipperMerge_Required_Min_IN_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Gapping_Method_If_Active_USERCHANGE() as Boolean
+      
+              '/Part_Family/Property_Spec/Property_Constraint/Property_Formula[@Formula_Type = 'UC']
+              Dim Result as Boolean = False
+              Dim ctx as Object
+              Try
+              ctx = this
+              If Me.Properties("Gapping_Method_If_Active").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.UI_FORMULA) Then
+              Stop
+              End If
+              '   BEGIN FORMULA; PROP ID:10616; TYPE:UC
+              If Me.Gap_Control_Method = "Active" Then
+	Result = True
+Else
+	Result = False
+End If
+              '   END FORMULA; PROP ID:10616; TYPE:UC
+              Catch ex As Exception
+              ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gapping_Method_If_Active_USERCHANGE", ex.Message)
+              If ObjectManager.DebugMode Then Stop
+              End Try
+              Return Result
+            
       End Function
     
       '*****************************************************************************
@@ -3311,6 +4434,42 @@ Result = If(Me.Spur_After_Sort_Orientation="Sloped",If(Me.Spur_After_Sort_Type="
       '*****************************************************************************
       Public Function Formula_User_UOM_System_USERCHANGE() as Boolean
       Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Valid_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Valid_Message_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Name_USERCHANGE() as Boolean
+      Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_USERCHANGE() as Boolean
+      Return True
       End Function
     
       '*****************************************************************************
@@ -3572,6 +4731,34 @@ Result = MakeValidValueKeyFromDatabase("[vw_CAE_APC_Sorter_Types]", "[PK_ID]", "
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_Gapping_Method_If_Active_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Gapping_Method_If_Active").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10616; TYPE:VV
+      If Me.Gap_Control_Method = "Active" Then
+	Result = MakeValidValues(Array("Std Mrg w/ Induct Accum", "Rate Matching Merge","Zippering Merge","IntelliMerge","PLC Slug Merge"))
+Else
+	Result = MakeValidValues(Array(""))
+End If
+      '   END FORMULA; PROP ID:10616; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Gapping_Method_If_Active_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Sorter_Candidates_dbKeys_ValidValues() as Rulestream.Kernel.ValidValues
       
       Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
@@ -3706,6 +4893,30 @@ Result = MakeValidValueKeyFromDatabase("[vw_CAE_APC_Sorter_Types]", "[PK_ID]", "
       '   END FORMULA; PROP ID:10458; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_User_UOM_System_ValidValues", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Tool_Status_ValidValues() as Rulestream.Kernel.ValidValues
+      
+      Dim Result as Rulestream.Kernel.ValidValues = Nothing 'HashTable
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Tool_Status").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALIDVALUES_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10826; TYPE:VV
+      Result = MakeValidValues(Array("New", "Work In Progress", "Approved", "As Sold"))
+      '   END FORMULA; PROP ID:10826; TYPE:VV
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " CAE_APC_Sortation.Formula_Tool_Status_ValidValues", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result

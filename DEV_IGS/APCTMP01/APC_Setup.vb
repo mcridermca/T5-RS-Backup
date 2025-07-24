@@ -4,7 +4,7 @@ Option Infer On
 
 '$ Application: APCTMP01
 '$ PartFamily: APC_Setup
-'$ GenerateDate: 07/19/2025 16:41:40
+'$ GenerateDate: 07/23/2025 18:16:31
 
     Imports Microsoft.VisualBasic
     Imports System
@@ -146,6 +146,33 @@ Option Infer On
     #End Region
 
     #Region " Properties, Subparts, Connections "
+    
+          Public Property [Application_Guidelines_URL_Environment]() As String
+      Get
+      Return Properties("Application_Guidelines_URL_Environment").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Application_Guidelines_URL_Environment").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Application_Guidelines_URL_MarketMaterial]() As String
+      Get
+      Return Properties("Application_Guidelines_URL_MarketMaterial").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Application_Guidelines_URL_MarketMaterial").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Application_Guidelines_URL_OutOfSpec]() As String
+      Get
+      Return Properties("Application_Guidelines_URL_OutOfSpec").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Application_Guidelines_URL_OutOfSpec").CalculatedValue = Value
+      End Set
+      End Property
     
           Public Property [Belt_InclineDecline_Max_Deg]() As Double
       Get
@@ -714,6 +741,15 @@ Option Infer On
       End Set
       End Property
     
+          Public Shadows Property [DisplayName]() As String
+      Get
+      Return Properties("DisplayName").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("DisplayName").CalculatedValue = Value
+      End Set
+      End Property
+    
           Public Property [Live_Load_Avg_KGM]() As Double
       Get
       Return Properties("Live_Load_Avg_KGM").Value
@@ -747,6 +783,15 @@ Option Infer On
       End Get
       Set(ByVal Value As String)
       Properties("Live_Load_Avg_User_UOM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Material_Gap_Design_Sorter_IN]() As Double
+      Get
+      Return Properties("Material_Gap_Design_Sorter_IN").Value
+      End Get
+      Set(ByVal Value As Double)
+      Properties("Material_Gap_Design_Sorter_IN").CalculatedValue = Value
       End Set
       End Property
     
@@ -828,6 +873,231 @@ Option Infer On
       End Get
       Set(ByVal Value As Double)
       Properties("Sort_Rate_Required_CPM").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Sorter_Options_Found_Qty]() As Long
+      Get
+      Return Properties("Sorter_Options_Found_Qty").Value
+      End Get
+      Set(ByVal Value As Long)
+      Properties("Sorter_Options_Found_Qty").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Accuguide_Accumulation]() As String
+      Get
+      Return Properties("Suitable_Accuguide_Accumulation").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Accuguide_Accumulation").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Accuguide_Accumulation_Icon]() As String
+      Get
+      Return Properties("Suitable_Accuguide_Accumulation_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Accuguide_Accumulation_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Belt]() As String
+      Get
+      Return Properties("Suitable_Belt").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Belt").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Belt_Status_Icon]() As String
+      Get
+      Return Properties("Suitable_Belt_Status_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Belt_Status_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_EZ_Set_Roller]() As String
+      Get
+      Return Properties("Suitable_EZ_Set_Roller").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_EZ_Set_Roller").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_EZ_Set_Roller_Icon]() As String
+      Get
+      Return Properties("Suitable_EZ_Set_Roller_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_EZ_Set_Roller_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Gravity_Roller]() As String
+      Get
+      Return Properties("Suitable_Gravity_Roller").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Gravity_Roller").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Gravity_Roller_Icon]() As String
+      Get
+      Return Properties("Suitable_Gravity_Roller_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Gravity_Roller_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Gravity_Wheel]() As String
+      Get
+      Return Properties("Suitable_Gravity_Wheel").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Gravity_Wheel").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Gravity_Wheel_Icon]() As String
+      Get
+      Return Properties("Suitable_Gravity_Wheel_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Gravity_Wheel_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Intelli_Merge]() As String
+      Get
+      Return Properties("Suitable_Intelli_Merge").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Intelli_Merge").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Intelli_Merge_Icon]() As String
+      Get
+      Return Properties("Suitable_Intelli_Merge_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Intelli_Merge_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Intelliq_Accumulation]() As String
+      Get
+      Return Properties("Suitable_Intelliq_Accumulation").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Intelliq_Accumulation").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Intelliq_Accumulation_Icon]() As String
+      Get
+      Return Properties("Suitable_Intelliq_Accumulation_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Intelliq_Accumulation_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_MDR]() As String
+      Get
+      Return Properties("Suitable_MDR").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_MDR").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_MDR_Icon]() As String
+      Get
+      Return Properties("Suitable_MDR_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_MDR_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Rate_Matching_Merge]() As String
+      Get
+      Return Properties("Suitable_Rate_Matching_Merge").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Rate_Matching_Merge").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Rate_Matching_Merge_Icon]() As String
+      Get
+      Return Properties("Suitable_Rate_Matching_Merge_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Rate_Matching_Merge_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Standard_Merge]() As String
+      Get
+      Return Properties("Suitable_Standard_Merge").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Standard_Merge").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Standard_Merge_Icon]() As String
+      Get
+      Return Properties("Suitable_Standard_Merge_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Standard_Merge_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_V_Belt_Roller]() As String
+      Get
+      Return Properties("Suitable_V_Belt_Roller").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_V_Belt_Roller").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_V_Belt_Roller_Icon]() As String
+      Get
+      Return Properties("Suitable_V_Belt_Roller_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_V_Belt_Roller_Icon").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Zippering_Merge]() As String
+      Get
+      Return Properties("Suitable_Zippering_Merge").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Zippering_Merge").CalculatedValue = Value
+      End Set
+      End Property
+    
+          Public Property [Suitable_Zippering_Merge_Icon]() As String
+      Get
+      Return Properties("Suitable_Zippering_Merge_Icon").Value
+      End Get
+      Set(ByVal Value As String)
+      Properties("Suitable_Zippering_Merge_Icon").CalculatedValue = Value
       End Set
       End Property
     
@@ -939,15 +1209,15 @@ Option Infer On
       End Set
       End Property
     
-      Public ReadOnly Property [Sort_Equipment_Options]() As Rulestream.Kernel.Subpart
-      Get
-      Return Subparts("Sort_Equipment_Options")
-      End Get
-      End Property
-    
       Public ReadOnly Property [My_PRD]() As Rulestream.Kernel.Connection
       Get
       Return Connections("My_PRD")
+      End Get
+      End Property
+    
+      Public ReadOnly Property [Sort_Equipment_Options]() As Rulestream.Kernel.Connection
+      Get
+      Return Connections("Sort_Equipment_Options")
       End Get
       End Property
     
@@ -965,7 +1235,10 @@ Option Infer On
     Dim oConnection as Rulestream.Kernel.Connection = Nothing
     Dim oSubpart as Rulestream.Kernel.Subpart = Nothing
     dim oMasterDoc as Rulestream.Kernel.MasterDoc = Nothing
-    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", True, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H601424", "07/19/2025 16:40:41")
+    InitPart("APC_Setup", <a><![CDATA[APC_Setup]]></a>.Value, 119, "APCTMP01",  "N", "N", True, False, "In Development", "", "Initially Application Setup Object", "", "", "",  "GLOBAL\H621516", "07/22/2025 21:46:32")
+    AddProperty("11211", "Application_Guidelines_URL_Environment", <a><![CDATA[Application_Guidelines_URL_Environment]]></a>.Value, "Special Equipment Application Environmental Guidelines link", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 6:04:28 PM")
+    AddProperty("11212", "Application_Guidelines_URL_MarketMaterial", <a><![CDATA[Application_Guidelines_URL_MarketMaterial]]></a>.Value, "Special Equipment Application Market Material Product Status Guidelines", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 6:03:56 PM")
+    AddProperty("11213", "Application_Guidelines_URL_OutOfSpec", <a><![CDATA[Application_Guidelines_URL_OutOfSpec]]></a>.Value, "Special Equipment Application Out Of Spec Guidelines link", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 6:03:15 PM")
     AddProperty("3778", "Belt_InclineDecline_Max_Deg", <a><![CDATA[Belt InclineDecline Max Deg (Degrees)]]></a>.Value, "Max. Belt Incline/Decline Angle for Stable Product (in Degrees)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 6:37:40 PM")
     AddProperty("3170", "BoxSize_Height_Avg_IN", <a><![CDATA[BoxSize Height Avg IN]]></a>.Value, "BoxSize Height Avg IN", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:34:04 PM")
     AddProperty("3158", "BoxSize_Height_Avg_User", <a><![CDATA[BoxSize Height Avg User]]></a>.Value, "Todo: Enter Description from Spreadsheet", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/13/2025 6:21:15 PM")
@@ -1024,16 +1297,18 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     AddProperty("4827", "Conveyor_Curve_OffSet_Guide_Viable", <a><![CDATA[Conveyor_Curve_OffSet_Guide_Viable]]></a>.Value, "Offset Guide Option for Curves Viable for This App?  (2""- 50mm Max)", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/23/2025 4:40:58 PM")
     AddProperty("4518", "Conveyor_Inside_Radius_Min_IN", <a><![CDATA[Conveyor Inside Radius Min IN]]></a>.Value, "Inside Radius of Curve", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:03:35 PM")
     AddProperty("3785", "Conveyor_Product_Line_Used", <a><![CDATA[Conveyor Product Line Used]]></a>.Value, "Control system used for Primary Merge/Sortation?", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:40:12 PM")
-    AddProperty("4524", "Conveyor_Skew_Bed_Length_Min_Reqd_IN", <a><![CDATA[Conveyor Skew Bed Length Min Reqd IN]]></a>.Value, "Minimum Required Skew Bed Length for Selected MTBH Width and BF", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 12:31:10 PM")
+    AddProperty("4524", "Conveyor_Skew_Bed_Length_Min_Reqd_IN", <a><![CDATA[Conveyor Skew Bed Length Min Reqd IN]]></a>.Value, "Minimum Required Skew Bed Length for Selected MTBH Width and BF", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 6:25:41 PM")
     AddProperty("4526", "Conveyor_Skew_Bed_Length_MTBH_Width_IN", <a><![CDATA[Conveyor Skew Bed Length MTBH Width IN]]></a>.Value, "Minimum Required Skew Bed Length for Selected MTBH Width and BF", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 11:59:57 AM")
     AddProperty("4525", "Conveyor_Skew_Total_Length_MTBH_Width_IN", <a><![CDATA[Conveyor Skew Total Length MTBH Width IN]]></a>.Value, "Total Skew Length Required for Selected MTBH Width and BF", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 11:53:07 AM")
     AddProperty("4517", "Conveyor_Width_Min_IN", <a><![CDATA[Conveyor Width Min IN]]></a>.Value, "Min. Allowable Straight Conveyor Width  ' =VLOOKUP(BoxSize_Width_Max_IN+1.99,$S$55:$U$60,2,TRUE)  'B/F (Imperial)  IR '0 16 30 '16 22 40 '22 28 50 '28 34 60 '34 40 60 '40 40 60", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/23/2025 4:26:26 PM")
     AddProperty("3154", "Customer_Location_CityState", <a><![CDATA[Customer Location CityState]]></a>.Value, "Customer's Site Location (City, St)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 7:17:39 PM")
     AddProperty("3153", "Customer_Name", <a><![CDATA[Customer Name]]></a>.Value, "Customer Name (From Salesforce ePRD If Available)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/16/2025 7:16:14 PM")
+    AddProperty("11165", "DisplayName", <a><![CDATA[Display Name]]></a>.Value, "", "String","","General","FD", 9999, "", 0,0, "", "", "GLOBAL\H602502", "7/22/2025 1:53:14 PM")
     AddProperty("3774", "Live_Load_Avg_KGM", <a><![CDATA[Live Load Avg KGM]]></a>.Value, "Live Load", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:39:19 PM")
     AddProperty("3773", "Live_Load_Avg_LBSFT", <a><![CDATA[Live Load Avg LBSFT]]></a>.Value, "Live Load", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:39:34 PM")
     AddProperty("3308", "Live_Load_Avg_User", <a><![CDATA[Live Load Avg User]]></a>.Value, "Live Load (Average)", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 2:11:18 PM")
     AddProperty("3856", "Live_Load_Avg_User_UOM", <a><![CDATA[Live_Load_Avg_User_UOM]]></a>.Value, "Live Load (UOM)", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/19/2025 12:16:28 PM")
+    AddProperty("11042", "Material_Gap_Design_Sorter_IN", <a><![CDATA[Material_Gap_Design_Sorter_IN]]></a>.Value, "Sortation equipment Defined Minimum Design Gap", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/21/2025 5:06:08 PM")
     AddProperty("4529", "Material_Gap_Override_IN", <a><![CDATA[Material Gap Override IN]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:39:48 PM")
     AddProperty("4530", "Material_Gap_Override_MM", <a><![CDATA[Material Gap Override MM]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:40:23 PM")
     AddProperty("4528", "Material_Gap_Override_User", <a><![CDATA[Material Gap Override User]]></a>.Value, "Global Design Gap Override", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 5:38:22 PM")
@@ -1043,6 +1318,31 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     AddProperty("3307", "Selected_Sortation_Controls", <a><![CDATA[Selected Sortation Controls]]></a>.Value, "Control system used for Primary Merge/Sortation? ICW & Boss Control platforms are now in ""sunset"" status and should not used for new projects moving forward.", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:36:08 PM")
     AddProperty("3770", "Sort_Dual_Sided", <a><![CDATA[Sort Dual Sided]]></a>.Value, "Dual Sided Sort Application?", "Boolean","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:31:09 PM")
     AddProperty("3771", "Sort_Rate_Required_CPM", <a><![CDATA[Sort_Rate_Required_CPM]]></a>.Value, "Target Sortation Rate (CPM)  This is the maximum expected throughput the sortation system is to be designed to convey with the carton parameters input above. Allowable input range for this parameter is 5 to 400 CPM.", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/24/2025 2:19:48 PM")
+    AddProperty("11039", "Sorter_Options_Found_Qty", <a><![CDATA[Sorter_Options_Found_Qty]]></a>.Value, "Total sorters found in sorter equipment", "Long","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/21/2025 5:06:02 PM")
+    AddProperty("11127", "Suitable_Accuguide_Accumulation", <a><![CDATA[Suitable_Accuguide_Accumulation]]></a>.Value, "Conveyor Product Suitability Accuguide Accumulation", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 3:39:31 PM")
+    AddProperty("11236", "Suitable_Accuguide_Accumulation_Icon", <a><![CDATA[Suitable_Accuguide_Accumulation_Icon]]></a>.Value, "Conveyor Product Suitability Accuguide Accumulation Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:34:49 PM")
+    AddProperty("11135", "Suitable_Belt", <a><![CDATA[Suitable_Belt]]></a>.Value, "Conveyor Product Suitability Belt", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/22/2025 1:49:33 PM")
+    AddProperty("11160", "Suitable_Belt_Status_Icon", <a><![CDATA[Suitable_Belt_Status_Icon]]></a>.Value, "Conveyor Product Suitability Belt Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 2:22:10 PM")
+    AddProperty("11133", "Suitable_EZ_Set_Roller", <a><![CDATA[Suitable_EZ_Set_Roller]]></a>.Value, "Conveyor Product Suitability EZ_ Set Roller", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 3:54:55 PM")
+    AddProperty("11247", "Suitable_EZ_Set_Roller_Icon", <a><![CDATA[Suitable_EZ_Set_Roller_Icon]]></a>.Value, "Conveyor Product Suitability EZ Set Roller Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:46:15 PM")
+    AddProperty("11148", "Suitable_Gravity_Roller", <a><![CDATA[Suitable_Gravity_Roller]]></a>.Value, "Conveyor Product Suitability Gravity Roller", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 4:51:48 PM")
+    AddProperty("11171", "Suitable_Gravity_Roller_Icon", <a><![CDATA[Suitable_Gravity_Roller_Icon]]></a>.Value, "Conveyor Product Suitability Gravity Roller Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 5:06:08 PM")
+    AddProperty("11139", "Suitable_Gravity_Wheel", <a><![CDATA[Suitable_Gravity_Wheel]]></a>.Value, "Conveyor Product Suitability Gravity Wheel", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 4:53:02 PM")
+    AddProperty("11178", "Suitable_Gravity_Wheel_Icon", <a><![CDATA[Suitable_Gravity_Wheel_Icon]]></a>.Value, "Conveyor Product Suitability Gravity Wheel Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:28:05 PM")
+    AddProperty("11230", "Suitable_Intelli_Merge", <a><![CDATA[Suitable_Intelli_Merge]]></a>.Value, "Sort Induction Intelli Merge", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 8:09:16 PM")
+    AddProperty("11238", "Suitable_Intelli_Merge_Icon", <a><![CDATA[Suitable_Intelli_Merge_Icon]]></a>.Value, "Sort Induction Intelli Merge icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:25:39 PM")
+    AddProperty("11131", "Suitable_Intelliq_Accumulation", <a><![CDATA[Suitable_Intelliq_Accumulation]]></a>.Value, "Conveyor Product Suitability Intelliq Accumulation", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:39:55 PM")
+    AddProperty("11179", "Suitable_Intelliq_Accumulation_Icon", <a><![CDATA[Suitable_Intelliq_Accumulation_Icon]]></a>.Value, "Conveyor Product Suitability Intelliq Accumulation Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:30:58 PM")
+    AddProperty("11136", "Suitable_MDR", <a><![CDATA[Suitable_MDR]]></a>.Value, "Conveyor Product Suitability MDR", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 4:47:04 PM")
+    AddProperty("11180", "Suitable_MDR_Icon", <a><![CDATA[Suitable_MDR_Icon]]></a>.Value, "Conveyor Product Suitability MDR Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:40:54 PM")
+    AddProperty("11237", "Suitable_Rate_Matching_Merge", <a><![CDATA[Suitable_Rate_Matching_Merge]]></a>.Value, "Sort Induction Rate Matching Merge", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 8:47:46 PM")
+    AddProperty("11240", "Suitable_Rate_Matching_Merge_Icon", <a><![CDATA[Suitable_Rate_Matching_Merge_Icon]]></a>.Value, "Sort Induction Rate Matching Merge Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:24:05 PM")
+    AddProperty("11214", "Suitable_Standard_Merge", <a><![CDATA[Suitable_Standard_Merge]]></a>.Value, "Sort Induction Standard Merge", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:42:40 PM")
+    AddProperty("11239", "Suitable_Standard_Merge_Icon", <a><![CDATA[Suitable_Standard_Merge_Icon]]></a>.Value, "Sort Induction Standard Merge Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:27:37 PM")
+    AddProperty("11134", "Suitable_V_Belt_Roller", <a><![CDATA[Suitable_V_Belt_Roller]]></a>.Value, "Conveyor Product Suitability V- Belt Roller", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 4:41:56 PM")
+    AddProperty("11181", "Suitable_V_Belt_Roller_Icon", <a><![CDATA[Suitable_V_Belt_Roller_Icon]]></a>.Value, "Conveyor Product Suitability V- Belt Roller Icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:43:56 PM")
+    AddProperty("11216", "Suitable_Zippering_Merge", <a><![CDATA[Suitable_Zippering_Merge]]></a>.Value, "Sort Induction Zippering Merge", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 8:07:05 PM")
+    AddProperty("11241", "Suitable_Zippering_Merge_Icon", <a><![CDATA[Suitable_Zippering_Merge_Icon]]></a>.Value, "Sort Induction Zippering Merge icon", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H621516", "7/22/2025 9:24:38 PM")
     AddProperty("3781", "Temp_Sort_Operating_Min_F", <a><![CDATA[Temp Sort Operating Min F]]></a>.Value, "Min. Operating Temp. for Sorter Environment", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "7/19/2025 4:40:41 PM")
     AddProperty("3779", "Temp_Sort_Operating_Min_User", <a><![CDATA[Temp Sort Operating Min User]]></a>.Value, "Min. Operating Temp. for Sorter Environment", "Double","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/16/2025 12:37:15 PM")
     AddProperty("3780", "Temp_Sort_Operating_Min_User_UOM", <a><![CDATA[Temp Sort Operating Min User UOM]]></a>.Value, "Temp Sort Operating Min User UOM", "String","","General","FD", 9999, "", 0,0, "AppCalc Spreadsheet", "", "GLOBAL\H601424", "6/18/2025 7:04:54 PM")
@@ -1100,13 +1400,13 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     
       AddValidValue("User_UOM_System")
     
-      oSubpart = AddSubpart(349,"Sort_Equipment_Options", <a><![CDATA[Sort_Equipment_Options]]></a>.Value, "FD", "", "General", 9999, "", "GLOBAL\H601424", "7/18/2025 11:52:12 AM")
-      
-        oSubpart.AddVPF (436, "APC_Setup_Sort_Equip_Option", "APC_Setup_Sort_Equip_Option")
-      
       oConnection = AddConnection("My_PRD", <a><![CDATA[My PRD]]></a>.Value, "", "115", "OM", 0, "","General", 9999, "", "GLOBAL\H601424", "6/18/2025 9:30:13 PM")
       
         oConnection.AddVPF(163, "SFD_Salesforce_PRD_Header_Mock")
+      
+      oConnection = AddConnection("Sort_Equipment_Options", <a><![CDATA[Sort_Equipment_Options]]></a>.Value, "", "222", "OM", 0, "","General", 9999, "", "GLOBAL\H621516", "7/21/2025 2:42:49 PM")
+      
+        oConnection.AddVPF(443, "CAE_APC_Sorter_App_Details")
       
     End Sub
 
@@ -1136,6 +1436,15 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     Dim ctx as String
     ctx = ContextId
     
+            If Incontext("-1", ctx) Then
+          InitProperty("Application_Guidelines_URL_Environment", "10761", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 6:04:28 PM", "", "In Development",  0,20977)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Application_Guidelines_URL_MarketMaterial", "10762", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 6:03:56 PM", "", "In Development",  0,20976)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Application_Guidelines_URL_OutOfSpec", "10763", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 6:03:15 PM", "", "In Development",  0,20975)
+        End If
             If Incontext("-1", ctx) Then
           InitProperty("Belt_InclineDecline_Max_Deg", "3408", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 6:37:40 PM", "Max. Belt Incline/Decline Angle for Stable Product (in Degrees)", "In Development",  0,5690)
         End If
@@ -1309,7 +1618,7 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Conveyor_Product_Line_Used", "3415", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/16/2025 12:40:12 PM", "Control system used for Primary Merge/Sortation?", "In Development",  0,4794)
         End If
             If Incontext("-1", ctx) Then
-          InitProperty("Conveyor_Skew_Bed_Length_Min_Reqd_IN", "4152", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/24/2025 12:31:10 PM", "Minimum Required Skew Bed Length for Selected MTBH Width and BF", "In Development",  0,6519)
+          InitProperty("Conveyor_Skew_Bed_Length_Min_Reqd_IN", "4152", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 6:25:41 PM", "Minimum Required Skew Bed Length for Selected MTBH Width and BF", "In Development",  0,20978)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Conveyor_Skew_Bed_Length_MTBH_Width_IN", "4154", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/24/2025 11:59:57 AM", "Minimum Required Skew Bed Length for Selected MTBH Width and BF", "In Development",  0,6509)
@@ -1327,6 +1636,9 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
           InitProperty("Customer_Name", "2787", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/16/2025 7:16:14 PM", "Customer Name (From Salesforce ePRD If Available)", "In Development",  0,5732)
         End If
             If Incontext("-1", ctx) Then
+          InitProperty("DisplayName", "10717", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H602502", "7/22/2025 1:53:14 PM", "", "In Development",  0,20842)
+        End If
+            If Incontext("-1", ctx) Then
           InitProperty("Live_Load_Avg_KGM", "3404", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:39:19 PM", "Live Load", "In Development",  0,19567)
         End If
             If Incontext("-1", ctx) Then
@@ -1337,6 +1649,9 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Live_Load_Avg_User_UOM", "3486", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/19/2025 12:16:28 PM", "Live Load (UOM)", "In Development",  0,5790)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Material_Gap_Design_Sorter_IN", "10594", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/21/2025 5:06:08 PM", "", "In Development",  0,20556)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Material_Gap_Override_IN", "4157", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:39:48 PM", "Global Design Gap Override", "In Development",  0,19569)
@@ -1364,6 +1679,81 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Sort_Rate_Required_CPM", "3401", "", "", "Y", "N","N", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "6/18/2025 5:22:47 PM", "Target Sortation Rate (CPM)  This is the maximum expected throughput the sortation system is to be designed to convey with the carton parameters input above. Allowable input range for this parameter is 5 to 400 CPM.", "In Development",  0,4780)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Sorter_Options_Found_Qty", "10591", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/21/2025 5:06:02 PM", "", "In Development",  0,20550)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Accuguide_Accumulation", "10679", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 3:39:31 PM", "", "In Development",  0,20913)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Accuguide_Accumulation_Icon", "10786", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:34:49 PM", "", "In Development",  0,21086)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Belt", "10687", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/22/2025 1:49:33 PM", "", "In Development",  0,20838)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Belt_Status_Icon", "10712", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/22/2025 1:35:14 PM", "", "In Development",  0,20832)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_EZ_Set_Roller", "10685", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 3:54:34 PM", "", "In Development",  0,20916)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_EZ_Set_Roller_Icon", "10797", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:46:15 PM", "", "In Development",  0,21096)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Gravity_Roller", "10700", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 4:51:48 PM", "", "In Development",  0,20920)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Gravity_Roller_Icon", "10723", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 5:06:08 PM", "", "In Development",  0,20946)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Gravity_Wheel", "10691", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 4:53:02 PM", "", "In Development",  0,20921)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Gravity_Wheel_Icon", "10730", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:28:05 PM", "", "In Development",  0,21079)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Intelli_Merge", "10780", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 7:53:16 PM", "", "In Development",  0,21034)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Intelli_Merge_Icon", "10788", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:25:39 PM", "", "In Development",  0,21075)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Intelliq_Accumulation", "10683", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 3:47:02 PM", "", "In Development",  0,20914)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Intelliq_Accumulation_Icon", "10731", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:30:58 PM", "", "In Development",  0,21082)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_MDR", "10688", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 4:45:39 PM", "", "In Development",  0,20918)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_MDR_Icon", "10732", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:40:54 PM", "", "In Development",  0,21091)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Rate_Matching_Merge", "10787", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 8:47:46 PM", "", "In Development",  0,21061)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Rate_Matching_Merge_Icon", "10790", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:24:05 PM", "", "In Development",  0,21072)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Standard_Merge", "10764", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:42:40 PM", "", "In Development",  0,21092)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Standard_Merge_Icon", "10789", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:27:37 PM", "", "In Development",  0,21078)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_V_Belt_Roller", "10686", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 4:41:56 PM", "", "In Development",  0,20917)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_V_Belt_Roller_Icon", "10733", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:43:56 PM", "", "In Development",  0,21093)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Zippering_Merge", "10766", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 8:07:05 PM", "", "In Development",  0,21037)
+        End If
+            If Incontext("-1", ctx) Then
+          InitProperty("Suitable_Zippering_Merge_Icon", "10791", "", "", "N", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H621516", "7/22/2025 9:24:38 PM", "", "In Development",  0,21073)
         End If
             If Incontext("-1", ctx) Then
           InitProperty("Temp_Sort_Operating_Min_F", "3411", "", "", "Y", "","", 0, "-1", 0, "", "N","0",  "GLOBAL\H601424", "7/19/2025 4:40:41 PM", "Min. Operating Temp. for Sorter Environment", "In Development",  0,19571)
@@ -1508,12 +1898,6 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
     Private Sub NewContextInit_Subparts()
     Dim ctx as String
     ctx = ContextId
-            If Incontext("-1", ctx) Then
-          
-        InitSubpart("Sort_Equipment_Options", 276, "", "", "Y", 0, "-1", "", "GLOBAL\H601424", "7/18/2025 11:52:03 AM", "", "In Development", "N",0,765,766)
-        
-          End If
-        
     End Sub
 
     '*****************************************************************************
@@ -1528,6 +1912,12 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
             If Incontext("-1", ctx) Then
           
         InitConnection("My_PRD", "95", "","", "Y", 0, "-1", "", "GLOBAL\H601424", "6/18/2025 9:30:13 PM", "", "In Development", "N",166)
+        
+          End If
+        
+            If Incontext("-1", ctx) Then
+          
+        InitConnection("Sort_Equipment_Options", "201", "","", "Y", 0, "-1", "", "GLOBAL\H621516", "7/21/2025 2:42:49 PM", "", "In Development", "N",357)
         
           End If
         
@@ -1569,6 +1959,106 @@ This is the recommended minimum conveyor width (B/F dimension) based on the Mate
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return ConvertToCollection(Result)
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sort_Equipment_Options_PARTS() as Rulestream.Kernel.rsCollection
+      
+      Dim Result as Object = Nothing
+      Dim ctx as Object
+      Try
+      ctx = this
+        '   BEGIN FORMULA; CON ID:201; TYPE:PF
+        Result = Nothing
+If Me.Parent.Sortation.Quantity > 0 Then
+	Result = Me.Parent.Sortation(1).Valid_Sorter_Candidates
+End If
+        '   END FORMULA; CON ID:201; TYPE:PF
+      
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Sort_Equipment_Options_PARTS", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return ConvertToCollection(Result)
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Application_Guidelines_URL_Environment() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Application_Guidelines_URL_Environment").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10761; TYPE:PF
+      Result = "https://honeywellprod.sharepoint.com/teams/productdocs/System%20Application%20Standards/Environment%20Application%20Guidelines.pdf"
+      '   END FORMULA; PROP ID:10761; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Application_Guidelines_URL_Environment", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Application_Guidelines_URL_MarketMaterial() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Application_Guidelines_URL_MarketMaterial").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10762; TYPE:PF
+      Result = "https://honeywellprod.sharepoint.com/:b:/r/teams/IGS_marketing/Other%20Marketing%20Documents/Product%20Status.pdf?csf=1&e=PvFRbw"
+      '   END FORMULA; PROP ID:10762; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Application_Guidelines_URL_MarketMaterial", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Application_Guidelines_URL_OutOfSpec() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Application_Guidelines_URL_OutOfSpec").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10763; TYPE:PF
+      Result = "https://honeywellprod.sharepoint.com/:w:/r/teams/nawdbid/Application%20Guides/Equipment%20Guide%20Table%20for%20Handling%20Out-Of-Spec%20Product%20-%20Rev%203.docx?d=w031a3b4a80754983b30989f470537dbe&csf=1&e=6X2M9X"
+      '   END FORMULA; PROP ID:10763; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Application_Guidelines_URL_OutOfSpec", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
       End Function
     
           '*****************************************************************************
@@ -2999,8 +3489,8 @@ If SearchWidth >= 40  And SearchWidth <= 40 Then Result = 60
       Stop
       End If
       '   BEGIN FORMULA; PROP ID:4152; TYPE:PF
-      result = 0
-
+      Result = 0
+' Todo: MPC,  FIX: This is the wrong formula
 If Conveyor_BF_Selected_Min_IN <= 40 Then Result = 6
 If Conveyor_BF_Selected_Min_IN <= 34 Then Result = 5
 If Conveyor_BF_Selected_Min_IN <= 28 Then Result = 4
@@ -3165,6 +3655,31 @@ End If
           '
           '   Changes to this procedure may only be made within formula comment blocks.
           '*****************************************************************************
+          Public Function Formula_DisplayName() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("DisplayName").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10717; TYPE:PF
+      Result = Me.Parent.DisplayName
+      '   END FORMULA; PROP ID:10717; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_DisplayName", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
           Public Function Formula_Live_Load_Avg_KGM() As Double
           Dim Result as Double
       Dim ctx as Object
@@ -3249,6 +3764,29 @@ End If
       '   END FORMULA; PROP ID:3486; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Live_Load_Avg_User_UOM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Material_Gap_Design_Sorter_IN() As Double
+          Dim Result as Double
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Material_Gap_Design_Sorter_IN").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10594; TYPE:PF
+      result = 0.0
+      '   END FORMULA; PROP ID:10594; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Material_Gap_Design_Sorter_IN", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -3465,6 +4003,840 @@ End If
       '   END FORMULA; PROP ID:3401; TYPE:PF
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Sort_Rate_Required_CPM", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Sorter_Options_Found_Qty() As Long
+          Dim Result as Long
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Sorter_Options_Found_Qty").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10591; TYPE:PF
+      Result = Me.Sort_Equipment_Options.Quantity
+      '   END FORMULA; PROP ID:10591; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Sorter_Options_Found_Qty", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Accuguide_Accumulation() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Accuguide_Accumulation").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10679; TYPE:PF
+      result = ""
+'=IF(MinSystemOpTemp<20,"Not Suitable",IF(OR(BoxSize_Height_Min_IN<1,MinSystemOpTemp<40),"SOPERS Required",IF(BoxSize_Length_Min_IN<9,"Options Required","OK")))
+
+Result = If(Temp_System_Operating_Min_F < 20, "Not Suitable", If(Custom.XlsOR(BoxSize_Height_Min_IN < 1, Temp_System_Operating_Min_F < 40),"SOPERS Required",If(BoxSize_Length_Min_IN < 9,"Options Required","OK")))
+      '   END FORMULA; PROP ID:10679; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Accuguide_Accumulation", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Accuguide_Accumulation_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Accuguide_Accumulation_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10786; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_Accuguide_Accumulation.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10786; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Accuguide_Accumulation_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Belt() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Belt").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10687; TYPE:PF
+      Result = ""
+
+'=IF(OR(BoxSize_Length_Min_IN<6,MinSystemOpTemp<20),"SOPERS Required",IF(BoxSize_Length_Min_IN<9,"Options Required","OK"))
+'Custom Excel Branch Commands
+' Limited To 5 Inputs
+'Custom.XlsAnd  
+'Custom.XlsOR
+'Custom.XlsMAX
+
+Result =If(Custom.XlsOR( Me.BoxSize_Length_Min_IN < 6, Me.Temp_System_Operating_Min_F <20),"SOPERS Required",If(Me.BoxSize_Length_Min_IN < 9, "Options Required", "OK"))
+      '   END FORMULA; PROP ID:10687; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Belt", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Belt_Status_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Belt_Status_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10712; TYPE:PF
+      result = ""
+
+Select Case Me.Suitable_Belt.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10712; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Belt_Status_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_EZ_Set_Roller() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_EZ_Set_Roller").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10685; TYPE:PF
+      Result = ""
+'=IF(MinSystemOpTemp<0,"Not Suitable",IF(MinSystemOpTemp<20,"SOPERS Required",IF(BoxSize_Length_Min_IN<9,"Options Required","OK")))
+Result = If(Temp_System_Operating_Min_F < 0, "Not Suitable", If(Temp_System_Operating_Min_F < 20, "SOPERS Required", If(BoxSize_Length_Min_IN < 9, "Options Required", "OK")))
+      '   END FORMULA; PROP ID:10685; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_EZ_Set_Roller", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_EZ_Set_Roller_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_EZ_Set_Roller_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10797; TYPE:PF
+      result = ""
+
+Select Case Me.Suitable_EZ_Set_Roller.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10797; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_EZ_Set_Roller_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Gravity_Roller() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Gravity_Roller").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10700; TYPE:PF
+      result = ""
+'=If(BoxSize_Length_Min_IN<9,"Options Required","OK")
+Result = If(BoxSize_Length_Min_IN < 9,"Options Required","OK")
+      '   END FORMULA; PROP ID:10700; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Gravity_Roller", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Gravity_Roller_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Gravity_Roller_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10723; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_Gravity_Roller.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10723; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Gravity_Roller_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Gravity_Wheel() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Gravity_Wheel").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10691; TYPE:PF
+      result = ""
+'=IF(MinSystemOpTemp<0,"SOPERS Required",IF(BoxSize_Length_Min_IN<9,"Options Required","OK"))
+Result = If(Temp_System_Operating_Min_F < 0,"SOPERS Required", If(BoxSize_Length_Min_IN < 9,"Options Required", "OK"))
+      '   END FORMULA; PROP ID:10691; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Gravity_Wheel", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Gravity_Wheel_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Gravity_Wheel_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10730; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_Gravity_Wheel.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10730; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Gravity_Wheel_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Intelli_Merge() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Intelli_Merge").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10780; TYPE:PF
+      Result = ""
+'=IF(Case_Length_Per_Ft_Minute_Target>599,"Not Suitable",IF(Case_Length_Per_Ft_Minute_Target>425,"Marginal",IF(Case_Length_Per_Ft_Minute_Target<216,"Overkill","OK")))
+Result = If(Case_Length_Per_Minute_Target_Ft > 599,"Not Suitable",If(Case_Length_Per_Minute_Target_Ft > 425, "Marginal",If(Case_Length_Per_Minute_Target_Ft < 216, "Overkill", "OK")))
+      '   END FORMULA; PROP ID:10780; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Intelli_Merge", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Intelli_Merge_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Intelli_Merge_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10788; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_Intelli_Merge.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10788; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Intelli_Merge_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Intelliq_Accumulation() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Intelliq_Accumulation").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10683; TYPE:PF
+      result = ""
+'=IF(MinSystemOpTemp<20,"Not Suitable",IF(OR(BoxSize_Height_Min_IN<1,MinSystemOpTemp<40),"SOPERS Required",IF(BoxSize_Length_Min_IN<9,"Options Required","OK")))
+Result = If(Temp_System_Operating_Min_F < 20, "Not Suitable", If(Custom.XlsOR(BoxSize_Height_Min_IN < 1,Temp_System_Operating_Min_F < 40), "SOPERS Required", If(BoxSize_Length_Min_IN < 9, "Options Required", "OK")))
+      '   END FORMULA; PROP ID:10683; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Intelliq_Accumulation", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Intelliq_Accumulation_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Intelliq_Accumulation_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10731; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_Intelliq_Accumulation.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10731; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Intelliq_Accumulation_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_MDR() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_MDR").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10688; TYPE:PF
+      result = ""
+'=IF(MinSystemOpTemp<20,"Not Suitable",IF(OR(MinSystemOpTemp<33,BoxSize_Length_Min_IN<6),"SOPERS Required",IF(OR(BoxSize_Length_Min_IN<9,MinSystemOpTemp<45),"Review Required","OK")))
+Result = If(Temp_System_Operating_Min_F < 20,"Not Suitable",If(Custom.XlsOR(Temp_System_Operating_Min_F < 33, BoxSize_Length_Min_IN < 6), "SOPERS Required", If(Custom.XlsOR(BoxSize_Length_Min_IN < 9, Temp_System_Operating_Min_F < 45),"Review Required","OK")))
+      '   END FORMULA; PROP ID:10688; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_MDR", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_MDR_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_MDR_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10732; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_MDR.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10732; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_MDR_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Rate_Matching_Merge() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Rate_Matching_Merge").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10787; TYPE:PF
+      Result = ""
+'=IF(Case_Length_Per_Ft_Minute_Target>255,"Not Suitable",IF(Case_Length_Per_Ft_Minute_Target>216,"Marginal",IF(Case_Length_Per_Ft_Minute_Target<125,"Overkill","OK")))
+Result = If(Case_Length_Per_Minute_Target_Ft > 255, "Not Suitable", If(Case_Length_Per_Minute_Target_Ft > 216,"Marginal", If(Case_Length_Per_Minute_Target_Ft < 125, "Overkill","OK")))
+      '   END FORMULA; PROP ID:10787; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Rate_Matching_Merge", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Rate_Matching_Merge_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Rate_Matching_Merge_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10790; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_Rate_Matching_Merge.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10790; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Rate_Matching_Merge_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Standard_Merge() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Standard_Merge").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10764; TYPE:PF
+      Result = ""
+'=IF(Case_Length_Per_Ft_Minute_Target>216,"Not Suitable",IF(Case_Length_Per_Ft_Minute_Target>155,"Marginal","OK"))
+Result = If(Case_Length_Per_Minute_Target_Ft > 216,"Not Suitable",If(Case_Length_Per_Minute_Target_Ft > 155,"Marginal","OK"))
+      '   END FORMULA; PROP ID:10764; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Standard_Merge", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Standard_Merge_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Standard_Merge_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10789; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_Standard_Merge.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10789; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Standard_Merge_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_V_Belt_Roller() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_V_Belt_Roller").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10686; TYPE:PF
+      Result = ""
+'=If(MinSystemOpTemp<0,"Not Suitable",If(Or(MinSystemOpTemp<20,BoxSize_Length_Min_IN<6),"SOPERS Required",If(BoxSize_Length_Min_IN<9,"Options Required","OK")))
+Result = If(Temp_System_Operating_Min_F < 0,"Not Suitable",If(Custom.XlsOR(Temp_System_Operating_Min_F < 20, BoxSize_Length_Min_IN < 6),"SOPERS Required", If(BoxSize_Length_Min_IN < 9,"Options Required","OK")))
+      '   END FORMULA; PROP ID:10686; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_V_Belt_Roller", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_V_Belt_Roller_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_V_Belt_Roller_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10733; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_V_Belt_Roller_Icon.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10733; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_V_Belt_Roller_Icon", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Zippering_Merge() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Zippering_Merge").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10766; TYPE:PF
+      Result = ""
+'=IF(Case_Length_Per_Ft_Minute_Target>385,"Not Suitable",IF(Case_Length_Per_Ft_Minute_Target>334,"Marginal",IF(Case_Length_Per_Ft_Minute_Target<155,"Overkill","OK")))
+Result = If(Case_Length_Per_Minute_Target_Ft > 385, "Not Suitable", If(Case_Length_Per_Minute_Target_Ft > 334,"Marginal",If(Case_Length_Per_Minute_Target_Ft < 155, "Overkill", "OK")))
+      '   END FORMULA; PROP ID:10766; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Zippering_Merge", ex.Message)
+      If ObjectManager.StopOnErrors Then Stop
+      End Try
+      Return Result
+      End Function
+    
+          '*****************************************************************************
+          '   Copyright (C) 2024 Siemens. All rights reserved.
+          '
+          '   Changes to this procedure may only be made within formula comment blocks.
+          '*****************************************************************************
+          Public Function Formula_Suitable_Zippering_Merge_Icon() As String
+          
+          Dim Result as String = String.Empty
+        
+      Dim ctx as Object
+      Try
+      ctx = this
+      If Me.Properties("Suitable_Zippering_Merge_Icon").GetDebugState(Rulestream.Kernel.PropertySF.FormulaDebugTypes.VALUE_FORMULA) Then
+      Stop
+      End If
+      '   BEGIN FORMULA; PROP ID:10791; TYPE:PF
+      Result = ""
+
+Select Case Me.Suitable_Zippering_Merge.ToUpper()
+	Case "Not Suitable".ToUpper()
+		Result = "Bad"
+	Case "SOPERS Required".ToUpper()
+		Result = "Warning1"
+	Case "Options Required".ToUpper()
+		Result = "Warning2"
+	Case "OK".ToUpper()
+		Result = "Good"
+	Case Else
+		Result = "Warning"
+End Select
+			
+Result = $"Status.Icon.{result}.png"
+      '   END FORMULA; PROP ID:10791; TYPE:PF
+      Catch ex As Exception
+      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Suitable_Zippering_Merge_Icon", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
@@ -3865,6 +5237,33 @@ Result = EList.ErrorSummary(1)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Application_Guidelines_URL_Environment_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Application_Guidelines_URL_MarketMaterial_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Application_Guidelines_URL_OutOfSpec_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -4439,6 +5838,15 @@ Result = EList.ErrorSummary(1)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_DisplayName_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Live_Load_Avg_KGM_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
@@ -4467,6 +5875,15 @@ Result = EList.ErrorSummary(1)
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Live_Load_Avg_User_UOM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Material_Gap_Design_Sorter_IN_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -4548,6 +5965,231 @@ Result = EList.ErrorSummary(1)
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Sort_Rate_Required_CPM_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sorter_Options_Found_Qty_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Accuguide_Accumulation_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Accuguide_Accumulation_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Belt_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Belt_Status_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_EZ_Set_Roller_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_EZ_Set_Roller_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Gravity_Roller_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Gravity_Roller_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Gravity_Wheel_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Gravity_Wheel_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Intelli_Merge_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Intelli_Merge_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Intelliq_Accumulation_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Intelliq_Accumulation_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_MDR_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_MDR_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Rate_Matching_Merge_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Rate_Matching_Merge_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Standard_Merge_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Standard_Merge_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_V_Belt_Roller_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_V_Belt_Roller_Icon_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Zippering_Merge_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Zippering_Merge_Icon_HIDE_CALCULATED_VALUE() as Boolean
       Return False
       End Function
     
@@ -4647,6 +6289,33 @@ Result = EList.ErrorSummary(1)
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
       Public Function Formula_Valid_Message_HIDE_CALCULATED_VALUE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Application_Guidelines_URL_Environment_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Application_Guidelines_URL_MarketMaterial_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Application_Guidelines_URL_OutOfSpec_USERCHANGE() as Boolean
       Return False
       End Function
     
@@ -5222,6 +6891,15 @@ Result = EList.ErrorSummary(1)
       '
       '   Changes to this procedure may only be made within formula comment blocks.
       '*****************************************************************************
+      Public Function Formula_DisplayName_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
       Public Function Formula_Live_Load_Avg_KGM_USERCHANGE() as Boolean
       Return True
       End Function
@@ -5251,6 +6929,15 @@ Result = EList.ErrorSummary(1)
       '*****************************************************************************
       Public Function Formula_Live_Load_Avg_User_UOM_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Material_Gap_Design_Sorter_IN_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -5332,6 +7019,231 @@ Result = EList.ErrorSummary(1)
       '*****************************************************************************
       Public Function Formula_Sort_Rate_Required_CPM_USERCHANGE() as Boolean
       Return True
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Sorter_Options_Found_Qty_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Accuguide_Accumulation_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Accuguide_Accumulation_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Belt_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Belt_Status_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_EZ_Set_Roller_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_EZ_Set_Roller_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Gravity_Roller_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Gravity_Roller_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Gravity_Wheel_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Gravity_Wheel_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Intelli_Merge_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Intelli_Merge_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Intelliq_Accumulation_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Intelliq_Accumulation_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_MDR_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_MDR_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Rate_Matching_Merge_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Rate_Matching_Merge_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Standard_Merge_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Standard_Merge_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_V_Belt_Roller_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_V_Belt_Roller_Icon_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Zippering_Merge_USERCHANGE() as Boolean
+      Return False
+      End Function
+    
+      '*****************************************************************************
+      '   Copyright (C) 2024 Siemens. All rights reserved.
+      '
+      '   Changes to this procedure may only be made within formula comment blocks.
+      '*****************************************************************************
+      Public Function Formula_Suitable_Zippering_Merge_Icon_USERCHANGE() as Boolean
+      Return False
       End Function
     
       '*****************************************************************************
@@ -5960,75 +7872,6 @@ End If
       '   END FORMULA; PROP ID:2806; TYPE:VV
       Catch ex As Exception
       ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_User_UOM_System_ValidValues", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-    
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Sort_Equipment_Options_PARTNAMES() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      '   BEGIN FORMULA; SUB ID:276; TYPE:PN
-      
-      '   END FORMULA; SUB ID:276; TYPE:PN
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Sort_Equipment_Options_PARTNAMES", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Sort_Equipment_Options_QUANTITY() as Integer 'Long
-      
-      Dim Result as Integer = 0 'Long
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Sort_Equipment_Options").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.QUANTITY_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:276; TYPE:QF
-      Result = 1 ' This needs updated
-      '   END FORMULA; SUB ID:276; TYPE:QF
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Sort_Equipment_Options_QUANTITY", ex.Message)
-      If ObjectManager.StopOnErrors Then Stop
-      End Try
-      Return Result
-      End Function
-
-      '*****************************************************************************
-      '   Copyright (C) 2024 Siemens. All rights reserved.
-      '
-      '   Changes to this procedure may only be made within formula comment blocks.
-      '*****************************************************************************
-      Public Function Formula_Sort_Equipment_Options_OPTIMALPARTFAMILY() as String
-      
-      Dim Result as String = ""
-      Dim ctx as Object
-      Try
-      ctx = this
-      If Me.Subparts("Sort_Equipment_Options").GetDebugState(Rulestream.Kernel.Subpart.FormulaDebugTypes.OPF_FORMULA) Then
-      Stop
-      End If
-      '   BEGIN FORMULA; SUB ID:276; TYPE:OP
-      result = "APC_Setup_Sort_Equip_Option"
-      '   END FORMULA; SUB ID:276; TYPE:OP
-      Catch ex As Exception
-      ObjectManager.LogError("Application: " + Me.Application + " APC_Setup.Formula_Sort_Equipment_Options_OPTIMALPARTFAMILY", ex.Message)
       If ObjectManager.StopOnErrors Then Stop
       End Try
       Return Result
